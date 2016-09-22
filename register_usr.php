@@ -129,6 +129,18 @@ function cnv_dbstr($string) {
 				-->
 			<? php
 				//fbからのユーザ認証がされているなら、IDとPWの入力が要らないように分岐する
+				//----------------------------------------	
+				// ■　エラーメッセージがあったら表示
+				//----------------------------------------	
+				if (strlen($error)>0){
+					echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+					if ($error == "登録が完了しました" || $error == "変更が完了しました") {
+						echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>\n";
+						echo "</body>\n";
+						echo "</html>";
+						exit;
+					}
+				}
 			?>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br>[ニックネームor実名]</div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
