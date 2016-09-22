@@ -1,4 +1,4 @@
-<? php
+<?php
 	/*
 	//ログイン済み(Cookieが保存されている)なら
 	if(isset($_COOKIE["usr_id"])){
@@ -11,8 +11,10 @@
 //======================================================================
 //require_once("PostgreSQL.php");
 require_once("com_require2.php");
-$pgsql = new PostgreSQL;
 
+$pgsql = new PostgreSQL;
+?>
+<?php
 $error = "";
 //エラーメッセージ
 // POSTメソッドで送信された場合は書き込み処理を実行する
