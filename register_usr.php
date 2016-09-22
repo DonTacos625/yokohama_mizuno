@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// □ 入力内容チェック
 	//--------------------------------
 	//パスワード
-	if (!preg_match("/^[A-Za-z0-9]{1,10}$/", $usr_pw)||$usr_pw != $usr_pw2){
+	if (!preg_match("/^[A-Za-z0-9]{1,10}$/", $usr_pw)){
 		$error = "パスワードに誤りがあります<br>";
 	}
 	if (strlen($usr_pw)==0||strlen($usr_pw2)==0){$error = "パスワードが未入力です";
