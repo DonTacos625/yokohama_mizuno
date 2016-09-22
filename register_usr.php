@@ -96,11 +96,6 @@ function cnv_dbstr($string) {
 <link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
-<div id="page">
-	<div id="head">
-		<a href="./login_fb.php">Loginページへ戻る</a>
-	</div>
-</div>
 <?php
 	echo "ok";
 	//----------------------------------------	
@@ -109,13 +104,19 @@ function cnv_dbstr($string) {
 	if (strlen($error)>0){
 		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		if ($error == "登録が完了しました") {
-			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>\n";
-			echo "</body>\n";
+			echo "ok1";
+			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>";
+			echo "</body>";
 			echo "</html>";
 			exit;
 		}
 	}
 ?>
+<div id="page">
+	<div id="head">
+		<a href="./login_fb.php">Loginページへ戻る</a>
+	</div>
+</div>
 <div id="page">
 	<div id="contents">
 		<!-- #main 本文スペース -->
