@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			 $sql = "INSERT INTO friendinfo VALUES('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
 		}
 		$pgsql->query($sql);
-		$error = "<font size =\"6\">登録が完了しました。</font>";
+		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
 	}
 }
@@ -97,7 +97,6 @@ function cnv_dbstr($string) {
 </head>
 <body>
 <?php
-	echo "ok";
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
