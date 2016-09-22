@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
-			 $sql = 'INSERT INTO friendinfo ('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')';
+			 $sql = "INSERT INTO friendinfo ('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
 		}
 		$pgsql->query($sql);
 		$error = "<font size =\"6\">登録が完了しました。</font>";
