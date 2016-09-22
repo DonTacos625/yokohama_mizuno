@@ -11,7 +11,6 @@
 //======================================================================
 //require_once("PostgreSQL.php");
 require_once("com_require2.php");
-
 $pgsql = new PostgreSQL;
 ?>
 <?php
@@ -29,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
-	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
+	//$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
 	$sex = htmlspecialchars($_POST['sex']);
 	$age = htmlspecialchars($_POST['age']);
 	$a1 = htmlspecialchars($_POST['a1']);
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if (!preg_match("/^[A-Za-z0-9]{1,10}$/", $usr_pw)){
 		$error = "パスワードに誤りがあります<br>";
 	}
-	if (strlen($usr_pw)==0||strlen($usr_pw2)==0){$error = "パスワードが未入力です";
+	if (strlen($usr_pw)==0){$error = "パスワードが未入力です";
 	}
 	//ユーザID
 	if (strlen($usr_id)>30){$error = "ユーザIDは30桁までです";
@@ -69,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
-			 $sql = "INSERT INTO friendinfo ('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
+			 $sql = "INSERT INTO friendinfo VALUES('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
 		}
 		$pgsql->query($sql);
 		$error = "<font size =\"6\">登録が完了しました。</font>";
@@ -109,9 +108,7 @@ function cnv_dbstr($string) {
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
-				<!--
 				<?php
-				/*
 				//----------------------------------------	
 				// ■ エラーメッセージがあったら表示
 				//----------------------------------------	
@@ -124,23 +121,9 @@ function cnv_dbstr($string) {
 						exit;
 					}
 				}
-				*/
 				?>
-				-->
-			<? php
+			<?php
 				//fbからのユーザ認証がされているなら、IDとPWの入力が要らないように分岐する
-				//----------------------------------------	
-				// ■　エラーメッセージがあったら表示
-				//----------------------------------------	
-				if (strlen($error)>0){
-					echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-					if ($error == "登録が完了しました" || $error == "変更が完了しました") {
-						echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>\n";
-						echo "</body>\n";
-						echo "</html>";
-						exit;
-					}
-				}
 			?>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br>[ニックネームor実名]</div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
