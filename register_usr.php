@@ -101,6 +101,20 @@ function cnv_dbstr($string) {
 		<a href="./login_fb.php">Loginページへ戻る</a>
 	</div>
 </div>
+<?php
+	//----------------------------------------	
+	// ■ エラーメッセージがあったら表示
+	//----------------------------------------	
+	if (strlen($error)>0){
+		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+		if ($error == "登録が完了しました") {
+			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>\n";
+			echo "</body>\n";
+			echo "</html>";
+			exit;
+		}
+	}
+?>
 <div id="page">
 	<div id="contents">
 		<!-- #main 本文スペース -->
@@ -108,21 +122,7 @@ function cnv_dbstr($string) {
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
-				<?php
-				//----------------------------------------	
-				// ■ エラーメッセージがあったら表示
-				//----------------------------------------	
-				if (strlen($error)>0){
-					echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-					if ($error == "登録が完了しました" || $error == "変更が完了しました") {
-						echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>\n";
-						echo "</body>\n";
-						echo "</html>";
-						exit;
-					}
-				}
-				?>
-			<?php
+			<? php
 				//fbからのユーザ認証がされているなら、IDとPWの入力が要らないように分岐する
 			?>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br>[ニックネームor実名]</div></td>
