@@ -53,17 +53,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	// □ 入力内容チェック
 	//--------------------------------
 	//ユーザID
-	if (strlen($usr_id)==0){$error = "ユーザIDが入力されていません";}
-		error_message($error);
+	if (strlen($usr_id)==0){
+		$error = "ユーザIDが入力されていません";
+		echo $error;
+	}
 	//パスワード
-	if (strlen($usr_pw)==0){$error = "パスワードが入力されていません";}
-		error_message($error);
-
-	//--------------------------------------------------------------------
-	// ■  エラーメッセージがあったら表示
-	//--------------------------------------------------------------------
-	function error_message($msg){
-			echo "<font size=\"2\" color=\"#da0b00\">{$msg}</font><p>";
+	if (strlen($usr_pw)==0){
+		$error = "パスワードが入力されていません";
+		echo $error;
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
