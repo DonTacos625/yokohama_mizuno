@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		//--------------------------------------------
 		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
 		$row = $pgsql->fetch();
-		echo($row["id"]);
+		echo($row['id']);
 		if (isset($row['id'])){//IDが存在した場合
 			echo("てすと1");
 			if ($row["pw"] == $usr_pw){
