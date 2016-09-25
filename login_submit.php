@@ -14,7 +14,7 @@ $postgresql = new PostgreSQL;
 //----------------------------------------	
 // ■ 外部ファイルの取り込み
 //----------------------------------------	
-require_once("com_define.php");		//定数
+//require_once("com_define.php");		//定数
 require_once("com_function.php");	//関数
 //----------------------------------------	
 // ■ HOSTの取得
@@ -63,8 +63,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			if ($pgsql->rows()>0){//会員情報が存在した場合
 				$row = $pgsql->fetch();
 				if ($row["usrpw"] == $usr_pw){
-					//$no = mysql_query('SELECT no from cookinginfo');
-					//$no = $row["no"]
 					$_SESSION["my_no"] = $row["no"];
 					$_SESSION["my_id"] = $usr_id;
 					$_SESSION["my_login"] = 1;
@@ -72,11 +70,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 					// □ クッキーを保存する
 					//------------------------------------
 					setcookie("usr_id",$usr_id);//ユーザIDを保存
-					//setcookie("sns[usrpw]",$usr_pw);//パスワードを保存
 					//------------------------------------
 					// □ トップページへジャンプ
 					//------------------------------------
-					header("Location: ./index.php");
+					header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 					exit;
 				}
 			}else{	//会員情報が存在しない場合

@@ -13,6 +13,7 @@ class PostgreSQL{
 	// □：コンストラクタ
 	//---------------------------
 	function PostgreSQL(){
+		//website上ここから
 		// 環境変数から接続情報(DBのURLからhostnameなど)を取得
 		$this->dburl = parse_url(getenv('DATABASE_URL'));
 
@@ -20,7 +21,8 @@ class PostgreSQL{
 		$this->conn = sprintf('host=%s dbname=%s port=%d user=%s password=%s', $this->dburl['host'], substr($this->dburl['path'], 1), $this->dburl['port'], $this->dburl['user'], $this->dburl['pass']);
 		// DBに接続
 		$this->link = pg_connect($this->conn);
-
+		//ここまで
+		//$this->link = pg_connect("host=localhost dbname=study user=yamamotolab password=yamamoto");
 		// 接続失敗時のエラー
 		if (!$this->link) {
     	die('接続失敗です。'.pg_last_error());
