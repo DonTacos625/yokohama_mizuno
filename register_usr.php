@@ -71,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
-		close(); //postgresql通信終了
 	}
 }
 

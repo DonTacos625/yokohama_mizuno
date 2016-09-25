@@ -103,9 +103,6 @@ while($row = $pgsql->fetch()){ //行がある限り
 EOT;
 }
 //ここまでwhileループ[終了の閉じカッコ]
-
-close(); //postgresql通信終了
-
 ?>
 </table>
 </form>
