@@ -23,10 +23,11 @@ $host = get_host();
 //----------------------------------------	
 // ■ SESSION設定
 //----------------------------------------	
-session_start();		//セッション開始
+/*session_start();		//セッション開始
 $_SESSION["my_no"] = 0;		//自分の番号
 $_SESSION["my_id"] = "";	//自分のID
 $_SESSION["my_login"] = 0;	//ログイン
+*/
 //----------------------------------------	
 // ■ 変数初期化
 //----------------------------------------	
@@ -59,17 +60,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			//--------------------------------------------
 			// □ 会員情報テーブル(friendinfo)をチェック
 			//--------------------------------------------
-			$pgsql->query("SELECT * FROM friendinfo WHERE usrid='$usr_id'");
+			$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
 			if ($pgsql->rows()>0){//会員情報が存在した場合
 				$row = $pgsql->fetch();
-				if ($row["usrpw"] == $usr_pw){
-					$_SESSION["my_no"] = $row["no"];
-					$_SESSION["my_id"] = $usr_id;
-					$_SESSION["my_login"] = 1;
+				if ($row["pw"] == $usr_pw){
+					//$_SESSION["my_no"] = $row["no"];
+					//$_SESSION["my_id"] = $usr_id;
+					//$_SESSION["my_login"] = 1;
 					//------------------------------------
 					// □ クッキーを保存する
 					//------------------------------------
-					setcookie("usr_id",$usr_id);//ユーザIDを保存
+					//setcookie("usr_id",$usr_id);//ユーザIDを保存
 					//------------------------------------
 					// □ トップページへジャンプ
 					//------------------------------------
