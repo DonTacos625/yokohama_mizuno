@@ -1,1 +1,1 @@
-<?php echo file_get_contents('login_fb.php'); ?>
+<?php echo file_get_contents('./.test/login_fb.php'); ?>
