@@ -1,5 +1,5 @@
-<? php
-header("Content-type: text/html; charset=utf-8"); //文字形式をUTF-8に
+<?php
+//header("Content-type: text/html; charset=utf-8"); //文字形式をUTF-8に
 //======================================================================
 //  ■： ログイン送信管理(ID,PWを用いたログイン) login_submit.php
 //======================================================================
@@ -15,7 +15,7 @@ $postgresql = new PostgreSQL;
 // ■ 外部ファイルの取り込み
 //----------------------------------------	
 //require_once("com_define.php");		//定数
-require_once("com_function.php");	//関数
+//require_once("com_function.php");	//関数
 //----------------------------------------	
 // ■ HOSTの取得
 //----------------------------------------	
