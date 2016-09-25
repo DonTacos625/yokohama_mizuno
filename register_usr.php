@@ -7,7 +7,7 @@
 //======================================================================
 //  ■： 会員情報登録ページ
 //======================================================================
-//require_once("PostgreSQL.php");
+require_once("PostgreSQL.php");
 require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 ?>
@@ -71,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
+		close(); //postgresql通信終了
 	}
 }
 

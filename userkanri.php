@@ -81,8 +81,8 @@ if (strlen($error)>0){
 //----------------------------------------
 // □：テーブルからデータを読む (friendinfoテーブル)
 //----------------------------------------
-$pgsql->query("SELECT * FROM friendinfo ORDER BY no ASC");
-while($row = $pgsql->fetch()){
+$pgsql->query("SELECT * FROM friendinfo ORDER BY no ASC"); //クエリの送信
+while($row = $pgsql->fetch()){ //行がある限り
 	$no = $row["no"];
 	$id = $row["id"];
 	$sex = $row["sex"];
@@ -103,6 +103,9 @@ while($row = $pgsql->fetch()){
 EOT;
 }
 //ここまでwhileループ[終了の閉じカッコ]
+
+close(); //postgresql通信終了
+
 ?>
 </table>
 </form>
