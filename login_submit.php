@@ -54,13 +54,18 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	//--------------------------------
 	//ユーザID
 	if (strlen($usr_id)==0){$error = "ユーザIDが入力されていません";}
+		error_message($error);
 	//パスワード
 	if (strlen($usr_pw)==0){$error = "パスワードが入力されていません";}
+		error_message($error);
+
 	//--------------------------------------------------------------------
 	// ■  エラーメッセージがあったら表示
 	//--------------------------------------------------------------------
-	if (strlen($error)>0){
-		echo "<font size=\"2\" color=\"#da0b00\">{$error}</font><p>";
+	function error_message($msg){
+		if (strlen($error)>0){
+			echo "<font size=\"2\" color=\"#da0b00\">{$msg}</font><p>";
+		}
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
@@ -70,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		//--------------------------------------------
 		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
 		$row = $pgsql->fetch();
+		echo($row["id"]);
 		if (isset($row['id'])){//IDが存在した場合
 			echo("てすと1");
 			if ($row["pw"] == $usr_pw){
