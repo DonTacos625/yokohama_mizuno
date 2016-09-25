@@ -27,19 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
 	//$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
-	$sex = htmlspecialchars($_POST['sex']);
-	$age = htmlspecialchars($_POST['age']);
-	$a1 = htmlspecialchars($_POST['a1']);
-	$a2 = htmlspecialchars($_POST['a2']);
-	$a3 = htmlspecialchars($_POST['a3']);
-	$a4 = htmlspecialchars($_POST['a4']);
-	$a5 = htmlspecialchars($_POST['a5']);
-	$a6 = htmlspecialchars($_POST['a6']);
-	$a7 = htmlspecialchars($_POST['a7']);
-	$a8 = htmlspecialchars($_POST['a8']);
-	$a9 = htmlspecialchars($_POST['a9']);
-	$a10 = htmlspecialchars($_POST['a10']);
-	$a11 = htmlspecialchars($_POST['a11']);
+	$sex = intval(htmlspecialchars($_POST['sex']));
+	$age = intval(htmlspecialchars($_POST['age']));
+	$a1 = intval(htmlspecialchars($_POST['a1']));
+	$a2 = intval(htmlspecialchars($_POST['a2']));
+	$a3 = intval(htmlspecialchars($_POST['a3']));
+	$a4 = intval(htmlspecialchars($_POST['a4']));
+	$a5 = intval(htmlspecialchars($_POST['a5']));
+	$a6 = intval(htmlspecialchars($_POST['a6']));
+	$a7 = intval(htmlspecialchars($_POST['a7']));
+	$a8 = intval(htmlspecialchars($_POST['a8']));
+	$a9 = intval(htmlspecialchars($_POST['a9']));
+	$a10 = intval(htmlspecialchars($_POST['a10']));
+	$a11 = intval(htmlspecialchars($_POST['a11']));
 	//$email = htmlspecialchars($_POST['email']);
 	//--------------------------------
 	// □ 入力内容チェック
