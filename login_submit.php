@@ -55,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	//ユーザID
 	if (strlen($usr_id)==0){
 		$error = "ユーザIDが入力されていません";
-		echo $error;
+		echo $error.$br;
 	}
 	//パスワード
 	if (strlen($usr_pw)==0){
 		$error = "パスワードが入力されていません";
-		echo $error;
+		echo $error.$br;
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
