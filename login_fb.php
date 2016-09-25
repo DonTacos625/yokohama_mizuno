@@ -59,7 +59,7 @@
 		ここに記述
 	-->
 	
-		<a href="./register_usr.php"><font size = 4>利用登録(Sign up)</font></a>
+		<a href="./.test/register_usr.php"><font size = 4>利用登録(Sign up)</font></a>
 		<br><br>
 		<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
 </body>
