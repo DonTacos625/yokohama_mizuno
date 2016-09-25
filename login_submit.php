@@ -63,9 +63,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	// ■  エラーメッセージがあったら表示
 	//--------------------------------------------------------------------
 	function error_message($msg){
-		if (strlen($error)>0){
 			echo "<font size=\"2\" color=\"#da0b00\">{$msg}</font><p>";
-		}
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
@@ -89,7 +87,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
-				echo("てすとおｋ");
 				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 				exit;
 			}else{
