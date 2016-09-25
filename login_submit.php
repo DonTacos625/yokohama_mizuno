@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$error = "パスワードが入力されていません";
 		echo $error;
 	}
+	echo($usr_id);
 	//エラーなし
 	if (strlen($error)==NULL){
 		echo("えらーないよ！");
