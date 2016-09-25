@@ -35,15 +35,15 @@ $error = "";
 $usr_no = 0;
 $usr_id = "";
 $usr_pw = "";
+$login_url = './login_fb.php';
+$login_html = '<a href="'.$login_url.'">ログインページ</a>';
+$signup_url = './sregister2.php';
+$signup_html = '<a href="'.$signup_url.'">会員登録ページ</a>';
+$br = '<br>';
 //----------------------------------------	
 // ■ POSTされたとき
 //----------------------------------------	
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
-	echo("すごい");
-	//--------------------------------
-	// □ submitが押されたら
-	//--------------------------------
-	echo("えらい");
 	//--------------------------------
 	// □ POSTされたデータを取得
 	//--------------------------------
@@ -62,17 +62,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$error = "パスワードが入力されていません";
 		echo $error;
 	}
-	echo($usr_id);
 	//エラーなし
 	if (strlen($error)==NULL){
-		echo("えらーないよ！");
 		//--------------------------------------------
 		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
 		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
-		echo("てすと1");
 		$row = $pgsql->fetch();
-		echo($row['id']);
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				//$_SESSION["my_no"] = $row["no"];
@@ -88,19 +84,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 				exit;
 			}else{
-				$login_url = './login_fb.php';
-				$login_html = '<a href="'.$login_url.'">ログインページ</a>';
-				echo "Passwords が間違っています。";
+				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
 			}
 		}else{	//IDが存在しない場合
-			$login_url = './login_fb.php';
-			$login_html = '<a href="'.$login_url.'">ログインページ</a>';
-			$signup_url = './sregister2.php';
-			$signup_html = '<a href="'.$signup_url.'">会員登録ページ</a>';
-
-			echo "IDが間違っています。";
-			echo $login_html."よりログインし直して下さい。";
+			echo "IDが間違っています。".$br;
+			echo $login_html."よりログインし直して下さい。".$br;
 			echo "登録がまだの方は".$signup_html."より登録してください。";
 			/*
 			//------------------------------------
