@@ -63,8 +63,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			// □ 会員情報テーブル(friendinfo)をチェック
 			//--------------------------------------------
 			$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
-			if ($pgsql->rows()>0){//IDが存在した場合
-				$row = $pgsql->fetch();
+			if ($row = $pgsql->fetch()){//IDが存在した場合
+				echo("てすと1");
 				if ($row["pw"] == $usr_pw){
 					//$_SESSION["my_no"] = $row["no"];
 					//$_SESSION["my_id"] = $usr_id;
