@@ -37,7 +37,7 @@ $usr_id = "";
 $usr_pw = "";
 $login_url = './login_fb.php';
 $login_html = '<a href="'.$login_url.'">ログインページ</a>';
-$signup_url = './sregister2.php';
+$signup_url = './register_usr.php';
 $signup_html = '<a href="'.$signup_url.'">会員登録ページ</a>';
 $br = '<br>';
 //----------------------------------------	
