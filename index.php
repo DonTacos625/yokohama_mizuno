@@ -91,11 +91,11 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
-			/*
+			
 			document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + response.id + '!';
+				'Thanks for logging in, ' + response.gender + '!';
 			});
-			*/
+			
 		}
 	</script>
 	<h3>ログインページ</h3>
