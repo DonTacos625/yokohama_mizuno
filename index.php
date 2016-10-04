@@ -59,7 +59,7 @@
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
+    version    : 'v2.7' // use graph api version 2.5
   });
 
   // Now that we've initialized the JavaScript SDK, we call 
@@ -158,7 +158,7 @@
   data-show-faces="true">
 </div>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status">
 </div>
