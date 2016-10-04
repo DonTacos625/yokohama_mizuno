@@ -24,8 +24,8 @@
     $facebook = new Facebook($config);
 		// ユーザIDの取得
     $user = $facebook->getUser();
-
-    if(isset($user)){
+    echo $user;
+    if($user){
         // ユーザの情報を取得
         $userStatus = $facebook->api('/me?fields=name','GET');
         var_dump($userStatus);
