@@ -106,8 +106,7 @@
 			//idのCookieを保持してphpファイルに飛ばす
 			userid = response.id;
 			document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + response.id + '!';
-			document.getElementById('status').innerHTML = 'つかれた';
+				'Thanks for logging in, ' + userid + '!';
 		});
 	}
 
