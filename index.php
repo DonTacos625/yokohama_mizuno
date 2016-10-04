@@ -45,14 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			//location.href="./fb_regster.php";
 			//setTimeout("redirect()", 5);
 			$.ajax({
-    type: 'POST',
-    url: './index.php',
-    data: {
-    'id' : userid,
-  	},
-    success: function(data) {
-        alert(data);
-    }
+    		type: 'POST',
+    		url: './fb_regster.php',
+    		data: {
+    		'id' : userid,
+  		},
 		});
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
