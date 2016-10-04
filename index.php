@@ -100,8 +100,7 @@
 			//document.cookie = 'userid='+ response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
-		});
-		$.ajax({
+				$.ajax({
         type: "POST",
         url: "./fb_regster.php",
         data: 'userid='+response.id,
@@ -109,6 +108,8 @@
           alert('success');
         }
 			}
+		});
+		
 	}
 
 	function redirect(){
