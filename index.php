@@ -96,7 +96,11 @@
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
-		location.href="./fb_regster.php";
+		setTimeout("redirect()", 5);
+	}
+
+	function redirect(){
+    location.href='./fb_regster.php';
 	}
 
 	</script>
