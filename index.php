@@ -1,7 +1,6 @@
 <?php
   echo test;
  ?>
-<!DOCTYPE html>
 <html>
 <head>
 <title>Facebook Login JavaScript Example</title>
