@@ -27,7 +27,7 @@
 
     if($user){
         // ユーザの情報を取得
-        $userStatus = $facebook->api('/me','GET');
+        $userStatus = $facebook->api('/me?fields=name','GET');
         var_dump($userStatus);
     }
 ?>
