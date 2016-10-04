@@ -14,21 +14,17 @@
 	}
 	*/
     // アップロードしたFacebook SDKのfacebook.phpまでのパス
-    require_once("./src/facebook.php");
+    require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
     // appIdとsecretを入力。appIdとsecretはDashboardで確認できます。
-    $config = array(
-        'appId' => '783967058409220', 
-        'secret' => 'SECRET'
-    );
-    // 下記の様に$configを引数に持たせて、インスタンス化させます
-    $facebook = new Facebook($config);
+		$fb = new Facebook\Facebook([
+  		'app_id' => '783967058409220', // Replace {app-id} with your app id
+  		'app_secret' => '{app-secret}',
+  		'default_graph_version' => 'v2.7',
+  	]);
 
-    if($user){
-        // ユーザの情報を取得
-        $userStatus = $facebook->api('/me?fields=name','GET');
-        var_dump($userStatus);
-    }
-
+		$helper = $fb->getRedirectLoginHelper();
+		$permissions = ['id'];
+		$loginUrl = $helper->getLoginUrl('https:websitetest1234.herokuapp.com/fb-callback.php', $permissions);
 ?>
 
 <html>
@@ -89,7 +85,7 @@
 			<td>Facebook連帯ログイン</td>
 		</tr>
 		<tr>
-			<td><a href="<?php echo $facebook->getLoginUrl();?>">ログイン</a>
+			<td><a href="<?php htmlspecialchars($loginUrl) ?>">Log in with Facebook!</a>
 			</td>
 			</tr>
 		</table>
