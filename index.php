@@ -34,6 +34,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
+			location.href='./fb_regster.php';
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -94,11 +95,10 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
-			$.cookie("userid", response.id, { secure: true });
+			document.cookie = 'userid='+ response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
-		location.href='./fb_regster.php';
 	}
 	</script>
 	<h3>ログインページ</h3>
