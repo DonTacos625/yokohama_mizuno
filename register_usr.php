@@ -29,17 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
 	$sex = intval(htmlspecialchars($_POST['sex']));
 	$age = intval(htmlspecialchars($_POST['age']));
-	$a1 = intval(htmlspecialchars($_POST['a1']));
-	$a2 = intval(htmlspecialchars($_POST['a2']));
-	$a3 = intval(htmlspecialchars($_POST['a3']));
-	$a4 = intval(htmlspecialchars($_POST['a4']));
-	$a5 = intval(htmlspecialchars($_POST['a5']));
-	$a6 = intval(htmlspecialchars($_POST['a6']));
-	$a7 = intval(htmlspecialchars($_POST['a7']));
-	$a8 = intval(htmlspecialchars($_POST['a8']));
-	$a9 = intval(htmlspecialchars($_POST['a9']));
-	$a10 = intval(htmlspecialchars($_POST['a10']));
-	$a11 = intval(htmlspecialchars($_POST['a11']));
+	// $a1 = intval(htmlspecialchars($_POST['a1']));
+	// $a2 = intval(htmlspecialchars($_POST['a2']));
+	// $a3 = intval(htmlspecialchars($_POST['a3']));
+	// $a4 = intval(htmlspecialchars($_POST['a4']));
+	// $a5 = intval(htmlspecialchars($_POST['a5']));
+	// $a6 = intval(htmlspecialchars($_POST['a6']));
+	// $a7 = intval(htmlspecialchars($_POST['a7']));
+	// $a8 = intval(htmlspecialchars($_POST['a8']));
+	// $a9 = intval(htmlspecialchars($_POST['a9']));
+	// $a10 = intval(htmlspecialchars($_POST['a10']));
+	// $a11 = intval(htmlspecialchars($_POST['a11']));
 	//$email = htmlspecialchars($_POST['email']);
 	//--------------------------------
 	// □ 入力内容チェック
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//ユーザID
 	if (strlen($usr_id)>30){$error = "ユーザIDは30桁までです";
 	}
-//	$pgsql->query("SELECT * FROM friendinfo WHERE usrid='$usr_id');
+	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
 	$row = $pgsql->fetch();
 	if ($row){$error = "このユーザIDは既に使われています";
 	}
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
-			 $sql = "INSERT INTO friendinfo VALUES('$no','$usr_id','$usr_pw','$sex','$age','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
+			 $sql = "INSERT INTO friendinfo(no,id,pw,sex,age) VALUES('$no','$usr_id','$usr_pw','$sex','$age')";
 		}
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
@@ -111,7 +111,7 @@ function cnv_dbstr($string) {
 ?>
 <div id="page">
 	<div id="head">
-		<a href="./login_fb.php">Loginページへ戻る</a>
+		<a href="./login.php">Loginページへ戻る</a>
 	</div>
 </div>
 <div id="page">

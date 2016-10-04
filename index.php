@@ -13,6 +13,10 @@
 		header("Location:./index.php"); //トップページへ
 	}
 	*/
+
+	require_once("PostgreSQL.php");
+	require_once("com_require2.php");
+	$pgsql = new PostgreSQL;
 ?>
 <html>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -91,6 +95,7 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
+
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 			});
@@ -129,7 +134,7 @@
 			</form></td>
 		</tr>
 		<tr>
-			<td>Facebook連帯ログイン</td>
+			<td>Facebook連帯登録/ログイン</td>
 		</tr>
 		<tr>
 			<td>
