@@ -14,7 +14,7 @@
 	}
 	*/
     // アップロードしたFacebook SDKのfacebook.phpまでのパス
-    require_once __DIR__ . './facebook-sdk-v5/autoload.php';
+    require_once('./facebook-sdk-v5/autoload.php');
     // appIdとsecretを入力。appIdとsecretはDashboardで確認できます。
 		$fb = new Facebook\Facebook([
   		'app_id' => '783967058409220', // Replace {app-id} with your app id
