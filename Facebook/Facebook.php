@@ -142,7 +142,7 @@ class Facebook
             throw new FacebookSDKException('Required "app_secret" key not supplied in config and could not find fallback environment variable "' . static::APP_SECRET_ENV_NAME . '"');
         }
 
-        $this->app = new Facebook\FacebookApp($config['app_id'], $config['app_secret']);
+        $this->app = new FacebookApp($config['app_id'], $config['app_secret']);
         $this->client = new FacebookClient(
             HttpClientsFactory::createHttpClient($config['http_client_handler']),
             $config['enable_beta_mode']
