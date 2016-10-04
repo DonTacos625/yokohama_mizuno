@@ -32,7 +32,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
-			location.href='./fb_regster.php';
+			location.href='https://websitetest1234.herokuapp.com/fb_regster.php';
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
