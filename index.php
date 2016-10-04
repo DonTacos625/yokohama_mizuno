@@ -101,14 +101,6 @@
 
 	</script>
 	<h3>ログインページ</h3>
-	<?php
-		echo $_COOKIE["userid"];
-		if (isset($_COOKIE["userid"])){
-			header('Location: ./fb_regster.php');
-		}else{
-			echo "しっぱい";
-		}
-	?>
 	<!--
 	<?php
 //--------------------------------------------------------------------
