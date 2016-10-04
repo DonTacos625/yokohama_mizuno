@@ -23,8 +23,10 @@
   	]);
 
 		$helper = $fb->getRedirectLoginHelper();
-		$permissions = ['id'];
-		$loginUrl = $helper->getLoginUrl('https:websitetest1234.herokuapp.com/fb-callback.php', $permissions);
+		$permissions = ['email']; // Optional permissions
+		$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
+
+echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
 ?>
 
 <html>
@@ -68,7 +70,7 @@
 			<td>Facebook連帯ログイン</td>
 		</tr>
 		<tr>
-			<td><a href="<?php htmlspecialchars($loginUrl) ?>">Log in with Facebook!</a>
+			<td>
 			</td>
 			</tr>
 		</table>
