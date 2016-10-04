@@ -25,7 +25,7 @@
 		// ユーザIDの取得
     $user = $facebook->getUser();
 
-    if($user){
+    if(isset($user)){
         // ユーザの情報を取得
         $userStatus = $facebook->api('/me?fields=name','GET');
         var_dump($userStatus);
