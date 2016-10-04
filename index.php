@@ -32,6 +32,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
+			setTimeout("redirect()", 10);
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -96,7 +97,6 @@
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
-		setTimeout("redirect()", 10);
 	}
 
 	function redirect(){
