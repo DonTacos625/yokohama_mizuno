@@ -20,7 +20,6 @@
 <title>研究用SNSページ</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
-	<script type="text/javascript" src="jquery-2.1.4.js"></script>
 	<!--fecebookを使ったログイン-->
 	<script>
 	var userid;
@@ -35,15 +34,9 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
-			//location.href="./fb_regster.php";
+			document.cookie = "userid="+userid;
+			location.href="./fb_regster.php";
 			//setTimeout("redirect()", 5);
-			$.ajax({
-    		type: 'POST',
-    		url: './fb_regster.php',
-    		data: {
-    		'id' : userid,
-  		},
-		});
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
