@@ -30,6 +30,7 @@
         $userStatus = $facebook->api('/me?fields=name','GET');
         var_dump($userStatus);
         echo $userStatus;
+        echo "ok";
     }
 ?>
 <html>
