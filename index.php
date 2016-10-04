@@ -14,7 +14,7 @@
 	}
 	*/
     // アップロードしたFacebook SDKのfacebook.phpまでのパス
-    require_once("./Facebook/facebook.php");
+    require_once("./src/facebook.php");
     // appIdとsecretを入力。appIdとsecretはDashboardで確認できます。
     $config = array(
         'appId' => 'ID', 
