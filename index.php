@@ -13,13 +13,6 @@
 		header("Location:./index.php"); //トップページへ
 	}
 	*/
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	echo "ok";
-}
-
-
-
-
 
 ?>
 <html>
@@ -27,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <title>研究用SNSページ</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-2.1.4.js"></script>
 	<!--fecebookを使ったログイン-->
 	<script>
 	var userid;
