@@ -5,7 +5,7 @@
     'appId'  => 'ID',
     'secret' => 'SECRET'
   );
-  require_once('./src/facebook.php');
+  require_once('./src/Facebook/facebook.php');
   $facebook = new Facebook($config);
 
   $feed = $facebook->api('/me/id', 'GET');
