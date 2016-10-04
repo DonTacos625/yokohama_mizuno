@@ -29,6 +29,7 @@
         // ユーザの情報を取得
         $userStatus = $facebook->api('/me?fields=name','GET');
         var_dump($userStatus);
+        echo $userStatus;
     }
 ?>
 <html>
