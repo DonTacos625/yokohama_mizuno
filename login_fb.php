@@ -37,7 +37,7 @@
 <!--<head>-->
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>研究用SNSページ</title>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
 <!--fecebookを使ったログイン-->
 	<script>
