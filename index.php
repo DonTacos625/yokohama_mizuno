@@ -31,6 +31,8 @@
         var_dump($userStatus);
         echo $userStatus;
         echo "ok";
+    }else{
+    	echo "なんか変だよ";
     }
 ?>
 <html>
