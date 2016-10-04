@@ -5,6 +5,5 @@
 		setcookie("userid", $usr_id, time() - 1800); //Cookieの削除
 	}else{
 		echo "不正なアクセスです";
-		echo ‘<script type=”text/javascript”>window.location.reload();</script>’;
 	}
  ?>
