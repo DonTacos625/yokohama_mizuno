@@ -1,7 +1,7 @@
 <?php
   ini_set( 'display_errors', 1 );
   require_once("./Facebook/Facebook.php");
-  $fb = new Facebook([
+  $fb = new Facebook\Facebook([
    'app_id' => 'ID', // Replace {app-id} with your app id
    'app_secret' => 'SECRET',
    'default_graph_version' => 'v2.2',
