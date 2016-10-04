@@ -44,6 +44,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			testAPI();
 			//location.href="./fb_regster.php";
 			//setTimeout("redirect()", 5);
+			$.ajax({
+    type: 'POST',
+    url: './index.php',
+    data: {
+    'id' : userid,
+  	},
+    success: function(data) {
+        alert(data);
+    }
+		});
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -107,16 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			userid = response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
-		});
-		$.ajax({
-    type: 'POST',
-    url: './index.php',
-    data: {
-    'id' : userid,
-  	},
-    success: function(data) {
-        alert(data);
-    }
 		});
 	}
 
