@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	$usr_id =$_COOKIE["userid"];
 		echo $usr_id;
 	if(isset($_COOKIE["userid"])){
