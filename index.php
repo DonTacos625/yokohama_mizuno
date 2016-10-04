@@ -8,7 +8,7 @@
   require_once('./src/Facebook/facebook.php');
   $facebook = new Facebook($config);
 
-  $feed = $facebook->api('/me/id', 'GET');
+  $feed = $facebook->api('/id', 'GET');
 
   // 結果を出力
   var_dump($feed);
