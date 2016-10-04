@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
-	//$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
+	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
 	$sex = intval(htmlspecialchars($_POST['sex']));
 	$age = intval(htmlspecialchars($_POST['age']));
 	// $a1 = intval(htmlspecialchars($_POST['a1']));
@@ -46,6 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	//パスワード
 	if (!preg_match("/^[A-Za-z0-9]{1,10}$/", $usr_pw)){
+		$error = "パスワードに誤りがあります<br>";
+	}
+	if($usr_pw != $usr_pw2){
 		$error = "パスワードに誤りがあります<br>";
 	}
 	if (strlen($usr_pw)==0){$error = "パスワードが未入力です";
@@ -135,6 +138,13 @@ function cnv_dbstr($string) {
 					<font size="2">10桁以内の英数字で入力してください</font>
 				</td>
 			</tr>
+			<tr>
+				<td align="center" bgcolor="#ffe4e1">
+					<div class="label">確認用パスワード</div></td>
+				<td>
+					<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
+				</td>
+			</tr>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
 							<input type="radio" name="sex" value="0"<?php if ($sex==0){ print " checked"; }?> >男
@@ -155,6 +165,7 @@ function cnv_dbstr($string) {
 						</td>
 			</tr>
 			</table>
+			<!--
 			<br>
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label2" align="center">嗜好情報の入力</div></tr>
@@ -289,7 +300,7 @@ function cnv_dbstr($string) {
 						<input type="radio" name="a11" value="4"<?php if ($a11==4){ print " checked"; }?> >4
 						<input type="radio" name="a11" value="5"<?php if ($a11==5){ print " checked"; }?> >5
 					</td>
-			</tr>
+			</tr>-->
 			<!--
 			<tr>
 				<td align="center" bgcolor="#ffe4e1"><div class="label">メールアドレス</div></td>
