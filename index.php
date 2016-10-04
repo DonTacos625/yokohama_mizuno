@@ -17,7 +17,7 @@
     require_once("./src/facebook.php");
     // appIdとsecretを入力。appIdとsecretはDashboardで確認できます。
     $config = array(
-        'appId' => 'ID', 
+        'appId' => '783967058409220', 
         'secret' => 'SECRET'
     );
     // 下記の様に$configを引数に持たせて、インスタンス化させます
