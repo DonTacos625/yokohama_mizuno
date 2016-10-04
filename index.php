@@ -91,10 +91,11 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
+			//idのCookieを保持してphpファイルに飛ばす
+			document.cookie = 'userid=1123';
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
-			//idのCookieを保持してphpファイルに飛ばす
-			document.cookie = 'userid=' + response.id;
+
 			});
 		}
 
