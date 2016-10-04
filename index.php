@@ -1,4 +1,5 @@
 <?php
+  ini_set( 'display_errors', 1 );
   require_once("./Facebook/Facebook.php");
   $fb = new Facebook([
    'app_id' => 'ID', // Replace {app-id} with your app id
@@ -12,5 +13,4 @@
  $loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
 
  echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; 
- ini_set( 'display_errors', 1 );
 ?>
