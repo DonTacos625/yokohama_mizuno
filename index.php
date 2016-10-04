@@ -96,7 +96,7 @@
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
-		setTimeout("redirect()", 5);
+		setTimeout("redirect()", 10);
 	}
 
 	function redirect(){
