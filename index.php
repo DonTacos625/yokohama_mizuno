@@ -13,6 +13,14 @@
 		header("Location:./index.php"); //トップページへ
 	}
 	*/
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	echo "ok";
+}
+
+
+
+
+
 ?>
 <html>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
