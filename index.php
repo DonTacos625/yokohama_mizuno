@@ -110,10 +110,9 @@
 	*/
 	?>
 	-->
-<table cellspacing="10">
+<table cellpadding="5">
 <tr>
 <td>会員ログイン</td>
-<td>Facebook連帯ログイン</td>
 </tr>
 <tr>
 <td><form action="./login_submit.php" method="POST">
@@ -130,11 +129,17 @@
 			</tr>
 		</table>
 	</form></td>
+</tr>
+<tr>
+<td>Facebook連帯ログイン</td>
+</tr>
+<tr>
 <td><fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status"></td>
 </tr>
 </table>
+<br>
 		<a href="./register_usr.php"><font size = 4>利用登録(Sign up)</font></a>
 		<br><br>
 		<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
