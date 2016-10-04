@@ -34,8 +34,6 @@
 			testAPI();
 			//idのCookieを保持してphpファイルに飛ばす
 			setCookie(userid,response.id,1);
-			window.location.replace('fb_regster.php');
-
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -130,6 +128,11 @@
 
 	</script>
 	<h3>ログインページ</h3>
+	<?php
+		if (isset($_COOKIE["userid"])){
+			header('Location: ./fb_regster.php');
+		}
+	?>
 	<!--
 	<?php
 //--------------------------------------------------------------------
