@@ -20,6 +20,8 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
 	<!--fecebookを使ったログイン-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.cookie.js"></script>
 	<script>
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
@@ -92,7 +94,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
-			document.cookie = 'userid='+ response.id;
+			$.cookie("userid", response.id, { secure: true });
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
