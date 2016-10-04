@@ -113,6 +113,9 @@
 <table cellspacing="10">
 <tr>
 <td>会員ログイン</td>
+<td>Facebook連帯ログイン</td>
+</tr>
+<tr>
 <td><form action="./login_submit.php" method="POST">
 		<table border="0">
 			<tr>
@@ -127,9 +130,6 @@
 			</tr>
 		</table>
 	</form></td>
-</tr>
-<tr>
-<td>Facebook連帯ログイン</td>
 <td><fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status"></td>
