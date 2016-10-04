@@ -134,7 +134,9 @@
 <td>Facebook連帯ログイン</td>
 </tr>
 <tr>
-<td><fb:login-button scope="public_profile" onlogin="checkLoginState();">
+<td>
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
+<fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status"></td>
 </tr>
