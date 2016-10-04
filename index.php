@@ -15,7 +15,6 @@
 	*/
 
 	require_once("PostgreSQL.php");
-	require_once("com_require2.php");
 	$pgsql = new PostgreSQL;
 ?>
 <html>
@@ -97,8 +96,45 @@
 			console.log('Successful login for: ' + response.name);
 
 			document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + response.id + '!';
+				'Thanks for logging in, ' + response.gender + '!';
 			});
+
+		var a = response.id;
+		var b = response.gender;
+		var c = response.age_range;
+		/*サーチ
+		新規登録ならDBに登録してセッション登録
+		新規じゃなかったらセッション登録
+			そして5秒後にページ飛ばす*/
+		//DB登録されているかの確認(サーチ)
+		<?php
+		  $usr_id = '<script type="text/javascript">document.write(a);</script>';
+		  $sex = '<script type="text/javascript">document.write(b);</script>';
+		  $age = '<script type="text/javascript">document.write(c);</script>';
+
+			$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //id検索
+			$row = $pgsql->fetch(); //結果を登録
+
+			if (isset($row['id'])){//IDが存在した場合
+				if ($row["pw"] == $usr_pw){
+					$_SESSION["my_no"] = $row["no"];
+					$_SESSION["my_id"] = $usr_id;
+				}
+				echo "ok";
+			}else{
+				$pgsql->query("SELECT MAX(no) AS no FROM friendinfo");
+				if ($pgsql->rows()>0) {
+					$row = $pgsql->fetch();
+					$no = $row['no'];
+					$no++;
+				}
+				$sql = "INSERT INTO friendinfo(no,id,sex,age) VALUES('$no','$usr_id','$sex','$age')";
+				$pgsql->query($sql);
+				$_SESSION["my_no"] = $row["no"];
+				$_SESSION["my_id"] = $usr_id;
+			}
+			 ?>
+			}
 		}
 	</script>
 	<h3>ログインページ</h3>
