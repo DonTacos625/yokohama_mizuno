@@ -99,7 +99,7 @@
 				'Thanks for logging in, ' + response.gender + '!';
 			});
 
-		var a = response.id;
+		/*var a = response.id;
 		var b = response.gender;
 		var c = response.age_range;
 		/*サーチ
@@ -108,7 +108,7 @@
 			そして5秒後にページ飛ばす*/
 		//DB登録されているかの確認(サーチ)
 		<?php
-		  $usr_id = '<script type="text/javascript">document.write(a);</script>';
+		  /*$usr_id = '<script type="text/javascript">document.write(a);</script>';
 		  $sex = '<script type="text/javascript">document.write(b);</script>';
 		  $age = '<script type="text/javascript">document.write(c);</script>';
 
@@ -132,7 +132,7 @@
 				$pgsql->query($sql);
 				$_SESSION["my_no"] = $row["no"];
 				$_SESSION["my_id"] = $usr_id;
-			}
+			}*/
 			 ?>
 			}
 		}
