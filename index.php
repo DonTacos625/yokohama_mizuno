@@ -22,7 +22,6 @@
 <body>
 	<!--fecebookを使ったログイン-->
 	<script>
-	var userid;
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -97,9 +96,9 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
-			userid = response.id;
+			document.cookie = "userid="+response.name;
 			document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + userid + '!';
+				'Thanks for logging in, ' + response.name + '!';
 		});
 	}
 
