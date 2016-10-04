@@ -19,10 +19,10 @@
 <title>研究用SNSページ</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
-	<!--fecebookを使ったログイン-->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery.cookie.js"></script>
+	<!--fecebookを使ったログイン-->
 	<script>
+	var userid;
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -34,7 +34,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
-			location.href="./fb_regster.php";
+			//location.href="./fb_regster.php";
 			//setTimeout("redirect()", 5);
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
@@ -96,9 +96,19 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
-			document.cookie = 'userid='+ response.id;
+			userid = response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
+		});
+		$.ajax({
+    type: 'POST',
+    url: './index.php',
+    data: {
+    'id' : userid,
+  	},
+    success: function(data) {
+        alert(data);
+    }
 		});
 	}
 
