@@ -32,6 +32,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
+			setcokkie();
 			location.href='./fb_regster.php';
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
@@ -92,12 +93,18 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
-			//idのCookieを保持してphpファイルに飛ばす
-			document.cookie = 'userid='+ response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.id + '!';
 		});
 	}
+
+	function setcokkie() {
+			//idのCookieを保持してphpファイルに飛ばす
+			FB.api('/me', function(response) {
+				document.cookie = 'userid='+ response.id;
+			}
+	}
+
 	</script>
 	<h3>ログインページ</h3>
 	<!--
