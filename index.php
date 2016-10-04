@@ -32,23 +32,6 @@
 <title>研究用SNSページ</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '783967058409220',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 	<h3>ログインページ</h3>
 	<!--
 	<?php
