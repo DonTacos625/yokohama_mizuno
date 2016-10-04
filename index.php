@@ -98,7 +98,7 @@
           });
   }
   </script>
-	<h3>研究用みなとみらい観光スポットページへようこそ</h3>
+	<h3>ログインページ</h3>
 	<!--
 	<?php
 //--------------------------------------------------------------------
@@ -110,9 +110,10 @@
 	*/
 	?>
 	-->
-	Login<br>
-	<!--facebookを使わないログイン-->
-	<form action="./login_submit.php" method="POST">
+<table cellspacing="10">
+<tr>
+<td>会員ログイン</td>
+<td><form action="./login_submit.php" method="POST">
 		<table border="0">
 			<tr>
 				<td align="left">ユーザID</td>
@@ -125,21 +126,20 @@
 				<td align="right" colspan="4"><input type="submit" value="Submit"></td>
 			</tr>
 		</table>
-	</form>
+	</form></td>
+</tr>
+<tr>
+<td>Facebook連帯ログイン</td>
+<td><fb:login-button scope="public_profile" onlogin="checkLoginState();">
+</fb:login-button>
+<div id="status"></td>
+</tr>
+</table>
 		<a href="./register_usr.php"><font size = 4>利用登録(Sign up)</font></a>
 		<br><br>
 		<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
-
-		<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
 <br>
-<fb:login-button scope="public_profile" onlogin="checkLoginState();">
-</fb:login-button>
-<div id="status">
+
 </div>
 </body>
 </html>
