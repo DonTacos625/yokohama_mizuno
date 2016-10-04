@@ -26,7 +26,7 @@
     if($user){
         // ユーザの情報を取得
         $userStatus = $facebook->api('/id','GET');
-        var_dump($userStatus);
+        echo $userStatus;
     }
 
 ?>
