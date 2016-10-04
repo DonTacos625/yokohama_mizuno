@@ -1,7 +1,7 @@
 <?php
   //Facebook SDK for PHP の src/ にあるファイルを
   //サーバ内の適当な場所にコピーしておく
-  require_once('php-sdk/facebook.php');
+  require_once('./src/facebook.php');
   $config = array(
     'appId'  => 'ID',
     'secret' => 'SECRET'
