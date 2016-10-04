@@ -32,7 +32,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
-			setTimeout("redirect()", 20);
+			location.href='./fb_regster.php';
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -98,11 +98,6 @@
 				'Thanks for logging in, ' + response.id + '!';
 		});
 	}
-
-	function redirect(){
-    location.href='./fb_regster.php';
-	}
-
 	</script>
 	<h3>ログインページ</h3>
 	<!--
