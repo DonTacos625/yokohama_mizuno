@@ -18,7 +18,7 @@
     // appIdとsecretを入力。appIdとsecretはDashboardで確認できます。
 		$fb = new Facebook\Facebook([
   		'app_id' => '783967058409220', // Replace {app-id} with your app id
-  		'app_secret' => '{app-secret}',
+  		'app_secret' => 'SECRET',
   		'default_graph_version' => 'v2.7',
   	]);
 
