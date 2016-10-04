@@ -34,13 +34,11 @@
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+      document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
     }
   }
 
@@ -100,25 +98,6 @@
           });
   }
   </script>
- <!--
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '783967058409220',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
--->
 	<h3>研究用みなとみらい観光スポットページへようこそ</h3>
 	<!--
 	<?php
@@ -157,14 +136,10 @@
   data-width="450"
   data-show-faces="true">
 </div>
-
+<br>
 <fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status">
 </div>
-
-<!--
-<a href="<?php echo $facebook->getLoginUrl();?>">ログイン</a>
--->
 </body>
 </html>
