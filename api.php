@@ -48,6 +48,10 @@ if (strlen($error)==0){
 	$pgsql->query($sql);
 	$error = "登録が完了しました";
 	$_SESSION["my_id"] = $usr_id;
+	echo json_encode(compact('error'));
+}else{
+	http_response_code(400);
+    echo json_encode(compact('error'));
 }
 }
 
