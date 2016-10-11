@@ -45,23 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
+
+		//エラーメッセージ表示用
+		http_response_code(400);
 		echo json_encode(compact('error'));
 	}else{
+		//エラーメッセージ表示用
 		http_response_code(400);
 		echo json_encode(compact('error'));
 	}
-}
-
-// SQLコマンド用の文字列に変換する関数
-function cnv_dbstr($string) {
-// タグを無効にする
-	$string = htmlspecialchars($string);
-	// magic_quotes_gpcがONの場合はエスケープを解除する
-	if (get_magic_quotes_gpc()) {
-		$string = stripslashes($string);
-	}
-	// SQLコマンド用の文字列にエスケープする
-	$string = mysql_real_escape_string($string);
-	return $string;
+}else{
+	echo "不正なアクセスです.";
 }
 ?>
