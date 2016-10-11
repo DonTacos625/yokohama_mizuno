@@ -111,8 +111,8 @@ function cnv_dbstr($string) {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
 		}
-		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		if ($error == "登録が完了しました") {
+			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>";
 			echo "</body>";
 			echo "</html>";
@@ -132,9 +132,7 @@ function cnv_dbstr($string) {
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
-			<? php
-				//fbからのユーザ認証がされているなら、IDとPWの入力が要らないように分岐する
-			?>
+
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br>[ニックネームor実名]</div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
 			<font size="2">30桁以内の任意の文字で入力してください</font></td></tr>

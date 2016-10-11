@@ -1,6 +1,6 @@
 <?php
 //======================================================================
-//  ■： ログインページ login.php
+//  ■： ログインページ login.php セッション以外完成
 //======================================================================
 	/*
 		管理はセッションでやるといいかも
@@ -38,11 +38,11 @@
 			connection();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
-			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
 		} else {
 			// The person is not logged into Facebook, so we're not sure if
 			// they are logged into this app or not.
-			document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+			document.getElementById('status').innerHTML = 'Facebookにログインして下さい.';
 		}
 	}
 
@@ -96,7 +96,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			userid = response.id;
-			document.getElementById('status').innerHTML = 'Facebookログインボタンを押して下さい.';
+			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
 		});
 	}
 
@@ -111,7 +111,6 @@
             },
         success:function(){ //facebook初回ログイン
         	location.href='./fb_regster.php'; //facebook初回ログイン登録用
-        	//document.getElementById('status').innerHTML = response.msg;
         },
         error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);

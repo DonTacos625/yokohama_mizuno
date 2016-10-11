@@ -1,4 +1,7 @@
 <?php
+//======================================================================
+//  ■： facebookログインに必要なDB操作 api.php セッション以外完成
+//======================================================================
 
 // Content-TypeをJSONに指定する
 header('Content-Type: application/json');
@@ -43,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
 		}
 		$pgsql->query($sql);
-		$msg = "登録が完了しました.もう一度facebookログインボタンを押して下さい.";
+		$msg = "登録が完了しました.";
 		$_SESSION["my_id"] = $usr_id;
 		echo json_encode(compact('msg'));
 	}else{
