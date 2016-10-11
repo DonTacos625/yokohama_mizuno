@@ -115,10 +115,12 @@
             type: 'post', // getかpostを指定(デフォルトは前者)
             dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                id: userid
+                u_id: userid
             },
         success:function(){
-        	location.href='./top.php';
+        	//location.href='./top.php';
+        	document.getElementById('status').innerHTML =
+				'Thanks for logging in, ' + userid + '!';
         },
         error:function(){
         	alert("しっぱい");

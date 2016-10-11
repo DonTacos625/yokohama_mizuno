@@ -4,12 +4,12 @@
 header('Content-Type: application/json');
 
 // $_POST['age']、$_POST['job']をエラーを出さないように文字列として安全に展開する
-foreach (['id'] as $v) {
+foreach (['u_id'] as $v) {
     $$v = (string)filter_input(INPUT_POST, $v);
 }
 
 // 整合性チェック
-if ($userid === '') {
+if ($u_id === '') {
     $error = 'しっぱい';
 }
 
