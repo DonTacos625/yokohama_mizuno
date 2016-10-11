@@ -113,8 +113,8 @@
         	location.href='./fb_regster.php'; //facebook初回ログイン登録用
         },
         error:function(){ //2回目以降のログイン
-        	//var tmp = errorHandler(arguments);
-        	//document.getElementById('status').innerHTML = tmp;
+        	var tmp = errorHandler(arguments);
+        	document.getElementById('status').innerHTML = tmp;
         }
         });
 	}
