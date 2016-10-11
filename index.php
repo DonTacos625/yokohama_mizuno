@@ -123,7 +123,8 @@
 				'Thanks for logging in, ' + userid + '!';
         },
         error:function(){
-        	alert("しっぱい");
+        	var tmp = errorHandler(arguments);
+        	document.getElementById('status').innerHTML = tmp;
         }
 
         });

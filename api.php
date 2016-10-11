@@ -7,11 +7,11 @@ require_once("PostgreSQL.php");
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 
-$error1 = "";
+$error = "";
 //エラーメッセージ
 // POSTメソッドで送信された場合は書き込み処理を実行する
 
-//if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 // $_POST['age']、$_POST['job']をエラーを出さないように文字列として安全に展開する
 foreach (['u_id'] as $v) {
 	$$v = (string)filter_input(INPUT_POST, $v);
@@ -30,13 +30,13 @@ if ($pgsql->rows()>0) {
 	//--------------------------------
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
 	$row = $pgsql->fetch();
-	if ($row){$error1 = "このユーザIDは既に使われています";
-	//echo $error1;
+	if ($row){$error = "このユーザIDは既に使われています";
+	//echo $error;
 	//ここに登録済みの処理を書く
 }
-if (strlen($usr_id)==0){$error1 = "ユーザIDが未入力です";
+if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";
 }
-if (strlen($error1)==0){
+if (strlen($error)==0){
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
@@ -46,10 +46,10 @@ if (strlen($error1)==0){
 		$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
 	}
 	$pgsql->query($sql);
-	$error1 = "登録が完了しました";
+	$error = "登録が完了しました";
 	$_SESSION["my_id"] = $usr_id;
 }
-//}
+}
 
 // SQLコマンド用の文字列に変換する関数
 function cnv_dbstr($string) {
