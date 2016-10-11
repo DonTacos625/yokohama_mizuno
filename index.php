@@ -16,12 +16,16 @@
 
 ?>
 <html>
+<head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>研究用SNSページ</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+</head>
 <body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<!--fecebookを使ったログイン-->
 	<script>
+	var userid;
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -32,9 +36,16 @@
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			testAPI();
-			//location.href="./fb_regster.php";
-			//setTimeout("redirect()", 5);
+			//testAPI();
+			//Ajaxを使った通信
+			$.ajax({
+            url: 'api.php',
+            type: 'post', // getかpostを指定(デフォルトは前者)
+            dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
+            data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
+                userid: $(response.id).val();
+            }
+        });
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -95,7 +106,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
-			document.cookie = 'userid='+ response.id;
+			//document.cookie = 'userid='+ response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.name + '!';
 		});
@@ -104,6 +115,28 @@
 	function redirect(){
     location.href='./fb_regster.php';
 	}
+
+	/* エラー文字列の生成 */
+function errorHandler(args) {
+    var error;
+    // errorThrownはHTTP通信に成功したときだけ空文字列以外の値が定義される
+    if (args[2]) {
+        try {
+            // JSONとしてパースが成功し、且つ {"error":"..."} という構造であったとき
+            // (undefinedが代入されるのを防ぐためにtoStringメソッドを使用)
+            error = $.parseJSON(args[0].responseText).error.toString();
+        } catch (e) {
+            // パースに失敗した、もしくは期待する構造でなかったとき
+            // (PHP側にエラーがあったときにもデバッグしやすいようにレスポンスをテキストとして返す)
+            error = 'parsererror(' + args[2] + '): ' + args[0].responseText;
+        }
+    } else {
+        // 通信に失敗したとき
+        error = args[1] + '(HTTP request failed)';
+    }
+    return error;
+}
+
 	</script>
 	<h3>ログインページ</h3>
 	<!--

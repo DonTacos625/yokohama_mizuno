@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Routing</title>
+
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    
+    <script src="http://js.arcgis.com/3.14/"></script>
+
+    <script>
+      require([
+         // "esri/urlUtils",
+          "esri/map",
+          "esri/tasks/FeatureSet",
+          "esri/geometry/Point",
+          "esri/graphic",
+          "esri/Color",
+          "esri/symbols/SimpleMarkerSymbol",
+          "esri/symbols/SimpleLineSymbol"
+      ], function (
+        Map,
+      //  RouteTask,
+        RouteParameters,
+        FeatureSet,
+        Point,
+        Graphic,
+        Color,
+        SimpleMarkerSymbol,
+        SimpleLineSymbol
+      ) {
+        var map, routeTask, routeParams;
+
+        map = new Map("map", {
+            basemap : "streets",
+            center : [139.625854, 35.457448],
+            zoom : 14
+          });
+
+        //routeTask = new RouteTask("http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World");
+
+        //routeTask.on("solve-complete", showRoute);
+        //routeTask.on("error", errorHandler);
+
+        // setup the route parameters
+        //routeParams = new RouteParameters();
+        //routeParams.stops = new FeatureSet();
+
+        var stopSymbol = new SimpleMarkerSymbol(
+            SimpleMarkerSymbol.STYLE_CROSS,
+            15,
+            new SimpleLineSymbol(
+              SimpleLineSymbol.STYLE_SOLID,
+              new Color("black"),
+              1
+            ),
+            new Color("red")
+          );
+          
+        var routeSymbol = new SimpleLineSymbol(
+            SimpleLineSymbol.STYLE_DASH,
+            new Color("blue"),
+            5
+          );
+
+        map.on("click", function(){
+          // 始点
+          var start_geometry = new Point(139.643525, 35.453596);
+          var start = map.graphics.add(new Graphic(start_geometry, stopSymbol));
+          routeParams.stops.features.push(start);
+
+          // 終点
+          var goal_geometry = new Point(139.6310839, 35.4552397);
+          var goal = map.graphics.add(new Graphic(goal_geometry, stopSymbol));
+          routeParams.stops.features.push(goal);
+          
+          // ルート検索
+          routeTask.solve(routeParams);
+        });
+
+        // Adds the solved route to the map as a graphic
+        function showRoute(evt) {
+          console.log("success");
+          map.graphics.add(evt.result.routeResults[0].route.setSymbol(routeSymbol));
+        }
+
+        // Displays any error returned by the Route Task
+        function errorHandler(err) {
+          console.log("error");
+          alert("An error occured\n" + err.message + "\n" + err.details.join("\n"));
+        }
+
+       });
+    </script>
+
+  </head>
+  <body class="claro">
+    <div id="map" style="width:90%; height:400px;"></div>
+  </body>
+</html>
