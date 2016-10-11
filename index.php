@@ -110,7 +110,8 @@
             	u_id: userid
             },
         success:function(){ //facebook初回ログイン
-        	location.href='./fb_regster.php'; //facebook初回ログイン登録用
+        	document.getElementById('status').innerHTML = "できたよ";
+        	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
         },
         error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);

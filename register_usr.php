@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if($usr_pw != $usr_pw2){
 		$error1 = "パスワードが一致しません<br>";
 	}
-	if (strlen($usr_pw)==0){$error = "パスワードが未入力です<br>";
+	if (strlen($usr_pw)==0){$error1 = "パスワードが未入力です<br>";
 	}
 
 	//ユーザID
