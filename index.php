@@ -35,7 +35,7 @@
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			//testAPI();
+			testAPI();
 			//Ajaxを使った通信
 			$.ajax({
             url: 'api.php',
