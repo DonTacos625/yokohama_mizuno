@@ -1,19 +1,21 @@
 <?php
+	/*ここセッションに変更
 	//ログイン済み(Cookieが保存されている)なら
 	if(isset($_COOKIE["usr_id"])){
 		header("HTTP/1.1 301 Moved Permanetly");
 		header("Location:./index.php"); //トップページへ
-	}
+	}*/
 //======================================================================
 //  ■： 会員情報登録ページ
 //======================================================================
 require_once("PostgreSQL.php");
-require_once("com_require2.php");
+//require_once("com_require2.php");
 $pgsql = new PostgreSQL;
-?>
-<?php
-$error = "";
+
 //エラーメッセージ
+$error = ""; //ID関係
+$error1 = ""; //PW関係
+
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$pgsql->query("SELECT MAX(no) AS no FROM friendinfo");
@@ -44,25 +46,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
+
 	//パスワード
-	if (!preg_match("/^[A-Za-z0-9]{1,10}$/", $usr_pw)){
-		$error = "パスワードに誤りがあります<br>";
+	if (!preg_match('/\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,100}+\z/', $usr_pw)){
+		$error1 = "パスワードに誤りがあります<br>";
 	}
 	if($usr_pw != $usr_pw2){
-		$error = "パスワードに誤りがあります<br>";
+		$error1 = "パスワードが一致しません<br>";
 	}
-	if (strlen($usr_pw)==0){$error = "パスワードが未入力です";
+	if (strlen($usr_pw)==0){$error = "パスワードが未入力です<br>";
 	}
+
 	//ユーザID
-	if (strlen($usr_id)>30){$error = "ユーザIDは30桁までです";
+	if (!preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,30}+\z/i', $usr_id)){
+		$error = "IDに誤りがあります<br>";
 	}
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
 	$row = $pgsql->fetch();
-	if ($row){$error = "このユーザIDは既に使われています";
+	if ($row){$error = "このユーザIDは既に使われています<br>";
 	}
-	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";
+	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です<br>";
 	}
-	if (strlen($error)==0){
+	if (strlen($error)==0 and strlen($error1)==0){
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
@@ -102,9 +107,12 @@ function cnv_dbstr($string) {
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 	if (strlen($error)>0){
+		if($error != "登録が完了しました" and strlen($error1) != 0){
+			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+		}
 		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		if ($error == "登録が完了しました") {
-			echo "ok1";
 			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>";
 			echo "</body>";
 			echo "</html>";

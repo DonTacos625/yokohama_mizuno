@@ -19,6 +19,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
 <body>
+	<!--JQueryの読み込み-->
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<!--fecebookを使ったログイン-->
 	<script>
@@ -35,15 +36,20 @@
 			testAPI();
 			//Ajaxを使った通信
 			connection();
-        //document.getElementById('status').innerHTML = errorHandler(arguments);
-
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+					// Logged into your app and Facebook.
+			testAPI();
+			//Ajaxを使った通信
+			connection();
 		} else {
 			// The person is not logged into Facebook, so we're not sure if
 			// they are logged into this app or not.
-			document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+			document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';		// Logged into your app and Facebook.
+			testAPI();
+			//Ajaxを使った通信
+			connection();
 		}
 	}
 
@@ -96,20 +102,12 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
-			//idのCookieを保持してphpファイルに飛ばす
-			//document.cookie = 'userid='+ response.id;
 			userid = response.id;
-			//document.getElementById('status').innerHTML =
-				//'Thanks for logging in, ' + response.name + '!';
 		});
 	}
 
-	function redirect(){
-    location.href='./fb_regster.php';
-	}
-
+	//Ajax
 	function connection(){
-		//document.getElementById('status').innerHTML = 'Thanks for logging in, ';
 		$.ajax({
             url: 'api.php',
             type: 'post', // getかpostを指定(デフォルトは前者)
@@ -117,12 +115,10 @@
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
                 u_id: userid
             },
-        success:function(){
-        	//location.href='./top.php';
-        	document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + userid + '!';
+        success:function(){ //facebook初回ログイン
+        	location.href='./fb_regster.php'; //facebook初回ログイン登録用
         },
-        error:function(){
+        error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);
         	document.getElementById('status').innerHTML = tmp;
         }
