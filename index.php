@@ -122,7 +122,7 @@
         })
         // ・ステータスコードは正常で、dataTypeで定義したようにパース出来たとき
         .done(function (response) {
-            document.getElementById('status').innerHTML = response.data;
+            document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.data;
         })
         // ・サーバからステータスコード400以上が返ってきたとき
         // ・ステータスコードは正常だが、dataTypeで定義したようにパース出来なかったとき
