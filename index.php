@@ -96,7 +96,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			userid = response.id;
-			document.getElementById('status').innerHTML = 'Thanks.';
+			document.getElementById('status').innerHTML = 'Facebookログインボタンを押して下さい.';
 		});
 	}
 
@@ -109,10 +109,9 @@
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
             	u_id: userid
             },
-        success:function(){ //facebook初回ログイン
+        success:function(response){ //facebook初回ログイン
         	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
-					var tmp = errorHandler(arguments);
-        	document.getElementById('status').innerHTML = tmp;
+        	document.getElementById('status').innerHTML = response.msg;
         },
         error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);
