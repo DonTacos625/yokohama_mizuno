@@ -37,16 +37,9 @@
 			// Logged into your app and Facebook.
 			testAPI();
 			//Ajaxを使った通信
-			/*
-			$.ajax({
-            url: 'api.php',
-            type: 'post', // getかpostを指定(デフォルトは前者)
-            dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
-            data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                userid: $(userid).val();
-            }
-        });
-        */
+			connection();
+        //document.getElementById('status').innerHTML = errorHandler(arguments);
+
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -116,6 +109,29 @@
 
 	function redirect(){
     location.href='./fb_regster.php';
+	}
+
+	function connection(){
+		$.ajax({
+            url: 'api.php',
+            type: 'post', // getかpostを指定(デフォルトは前者)
+            dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
+            data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
+                userid: $userid
+            }
+        })
+        // ・ステータスコードは正常で、dataTypeで定義したようにパース出来たとき
+        .done(function (response) {
+            document.getElementById('status').innerHTML = response.data;
+        })
+        // ・サーバからステータスコード400以上が返ってきたとき
+        // ・ステータスコードは正常だが、dataTypeで定義したようにパース出来なかったとき
+        // ・通信に失敗したとき
+        .fail(function () {
+            // jqXHR, textStatus, errorThrown と書くのは長いので、argumentsでまとめて渡す
+            // (PHPのfunc_get_args関数の返り値のようなもの)
+           document.getElementById('status').innerHTML = errorHandler(arguments);
+        });
 	}
 
 	/* エラー文字列の生成 */
