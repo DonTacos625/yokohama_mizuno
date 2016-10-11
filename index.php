@@ -11,18 +11,18 @@
 		header("HTTP/1.1 301 Moved Permanetly");
 		header("Location:./index.php"); //トップページへ
 	}*/
-?>
-<html>
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<title>研究用SNSページ</title>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-</head>
-<body>
-	<!--JQueryの読み込み-->
-	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<!--fecebookを使ったログイン-->
-	<script>
+	?>
+	<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>研究用SNSページ</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+		<!--JQueryの読み込み-->
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<!--fecebookを使ったログイン-->
+		<script>
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -75,10 +75,10 @@
 	//
 	// These three cases are handled in the callback function.
 
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		});
-	};
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+	});
+};
 
 	// Load the SDK asynchronously
 	(function(d, s, id) {
@@ -100,48 +100,50 @@
 		});
 	}
 
-	//Ajax
+	//Ajax通信関数
 	function connection(){
 		$.ajax({
-            url: 'api.php',
+			url: 'api.php',
             type: 'post', // getかpostを指定(デフォルトは前者)
             dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                u_id: userid
+            	u_id: userid
             },
         success:function(){ //facebook初回ログイン
-        	location.href='./fb_regster.php'; //facebook初回ログイン登録用
+        	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
+					var tmp = errorHandler(arguments);
+        	document.getElementById('status').innerHTML = tmp;
         },
         error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);
         	document.getElementById('status').innerHTML = tmp;
         }
-        });
+      });
 	}
 
 	/* エラー文字列の生成 */
-function errorHandler(args) {
-    var error;
+	function errorHandler(args) {
+		var error;
     // errorThrownはHTTP通信に成功したときだけ空文字列以外の値が定義される
     if (args[2]) {
-        try {
+    	try {
             // JSONとしてパースが成功し、且つ {"error":"..."} という構造であったとき
             // (undefinedが代入されるのを防ぐためにtoStringメソッドを使用)
             error = $.parseJSON(args[0].responseText).error.toString();
-        } catch (e) {
+          } catch (e) {
             // パースに失敗した、もしくは期待する構造でなかったとき
             // (PHP側にエラーがあったときにもデバッグしやすいようにレスポンスをテキストとして返す)
             error = 'parsererror(' + args[2] + '): ' + args[0].responseText;
-        }
-    } else {
+          }
+        } else {
         // 通信に失敗したとき
         error = args[1] + '(HTTP request failed)';
+      }
+      return error;
     }
-    return error;
-}
 
-	</script>
-	<h3>ログインページ</h3>
+  </script>
+  <h3>ログインページ</h3>
 	<!--
 	<?php
 //--------------------------------------------------------------------

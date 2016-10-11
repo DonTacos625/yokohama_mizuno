@@ -43,9 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
 		}
 		$pgsql->query($sql);
-		$error = "登録が完了しました";
+		$msg = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
-		echo json_encode(compact('error'));
+		http_response_code(400);
+		echo json_encode(compact('msg'));
 	}else{
 		//エラーメッセージ表示用
 		http_response_code(400);
