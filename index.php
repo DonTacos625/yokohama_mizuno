@@ -117,7 +117,7 @@
             type: 'post', // getかpostを指定(デフォルトは前者)
             dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                userid: $userid
+                userid: userid
             }
         })
         // ・ステータスコードは正常で、dataTypeで定義したようにパース出来たとき
