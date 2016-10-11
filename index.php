@@ -96,6 +96,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			userid = response.id;
+			document.getElementById('status').innerHTML = 'Thanks.';
 		});
 	}
 
