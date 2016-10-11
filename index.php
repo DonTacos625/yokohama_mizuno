@@ -25,7 +25,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<!--fecebookを使ったログイン-->
 	<script>
-	var userid;
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -43,7 +42,7 @@
             type: 'post', // getかpostを指定(デフォルトは前者)
             dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                userid: $(response.id).val();
+                userid: $(userid).val();
             }
         });
 		} else if (response.status === 'not_authorized') {
@@ -107,6 +106,7 @@
 			console.log('Successful login for: ' + response.name);
 			//idのCookieを保持してphpファイルに飛ばす
 			//document.cookie = 'userid='+ response.id;
+			userid = response.id;
 			document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.name + '!';
 		});
