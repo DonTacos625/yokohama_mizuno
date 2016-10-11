@@ -67,6 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です<br>";
 	}
+
+	//登録
 	if (strlen($error)==0 and strlen($error1)==0){
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
@@ -78,21 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
+		$error1 = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
 	}
-}
-
-// SQLコマンド用の文字列に変換する関数
-function cnv_dbstr($string) {
-// タグを無効にする
-	$string = htmlspecialchars($string);
-	// magic_quotes_gpcがONの場合はエスケープを解除する
-	if (get_magic_quotes_gpc()) {
-	$string = stripslashes($string);
-	}
-	// SQLコマンド用の文字列にエスケープする
-	$string = mysql_real_escape_string($string);
-	return $string;
 }
 ?>
 <html>
@@ -107,11 +97,13 @@ function cnv_dbstr($string) {
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 	if (strlen($error)>0){
-		if($error != "登録が完了しました" and strlen($error1) != 0){
+		if($error != "登録が完了しました"){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+		}
+		if($error1 != "登録が完了しました"){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
 		}
-		if ($error == "登録が完了しました") {
+		if ($error == "登録が完了しました" and $error1 == "登録が完了しました") {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>";
 			echo "</body>";
