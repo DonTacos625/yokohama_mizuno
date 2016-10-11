@@ -109,9 +109,9 @@
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
             	u_id: userid
             },
-        success:function(response){ //facebook初回ログイン
-        	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
-        	document.getElementById('status').innerHTML = response.msg;
+        success:function(){ //facebook初回ログイン
+        	location.href='./fb_regster.php'; //facebook初回ログイン登録用
+        	//document.getElementById('status').innerHTML = response.msg;
         },
         error:function(){ //2回目以降のログイン
         	var tmp = errorHandler(arguments);
