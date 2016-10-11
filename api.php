@@ -11,7 +11,7 @@ $error = "";
 //エラーメッセージ
 // POSTメソッドで送信された場合は書き込み処理を実行する
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+//if ($_SERVER['REQUEST_METHOD'] == "POST") {
 // $_POST['age']、$_POST['job']をエラーを出さないように文字列として安全に展開する
 foreach (['u_id'] as $v) {
     $$v = (string)filter_input(INPUT_POST, $v);
@@ -49,7 +49,7 @@ foreach (['u_id'] as $v) {
 		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
 	}
-}
+//}
 
 // SQLコマンド用の文字列に変換する関数
 function cnv_dbstr($string) {
