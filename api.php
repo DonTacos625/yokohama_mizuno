@@ -40,7 +40,7 @@ foreach (['u_id'] as $v) {
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
-		if (!empty($usr_id) and !empty($usr_pw)) {
+		if (!empty($usr_id)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
 			 $sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
