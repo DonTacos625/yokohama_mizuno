@@ -4,7 +4,7 @@
 header('Content-Type: application/json');
 
 // $_POST['age']、$_POST['job']をエラーを出さないように文字列として安全に展開する
-foreach (['userid'] as $v) {
+foreach (['id'] as $v) {
     $$v = (string)filter_input(INPUT_POST, $v);
 }
 

@@ -5,15 +5,12 @@
 	/*
 		管理はセッションでやるといいかも
 	*/
-
-	/*
+/*
 	//ログイン済み(Cookieが保存されている)なら
 	if(isset($_COOKIE["usr_id"])){
 		header("HTTP/1.1 301 Moved Permanetly");
 		header("Location:./index.php"); //トップページへ
-	}
-	*/
-
+	}*/
 ?>
 <html>
 <head>
@@ -118,20 +115,15 @@
             type: 'post', // getかpostを指定(デフォルトは前者)
             dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
             data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-                userid: userid
-            }
-        })
-        // ・ステータスコードは正常で、dataTypeで定義したようにパース出来たとき
-        .done(function (response) {
-            document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.data;
-        })
-        // ・サーバからステータスコード400以上が返ってきたとき
-        // ・ステータスコードは正常だが、dataTypeで定義したようにパース出来なかったとき
-        // ・通信に失敗したとき
-        .fail(function () {
-            // jqXHR, textStatus, errorThrown と書くのは長いので、argumentsでまとめて渡す
-            // (PHPのfunc_get_args関数の返り値のようなもの)
-           document.getElementById('status').innerHTML = errorHandler(arguments);
+                id: userid
+            },
+        success:function(){
+        	alert("成功");
+        },
+        error:function(){
+        	alert("しっぱい");
+        }
+
         });
 	}
 
