@@ -112,7 +112,7 @@
 	}
 
 	function connection(){
-		document.getElementById('status').innerHTML = 'Thanks for logging in, ';
+		//document.getElementById('status').innerHTML = 'Thanks for logging in, ';
 		$.ajax({
             url: 'api.php',
             type: 'post', // getかpostを指定(デフォルトは前者)
