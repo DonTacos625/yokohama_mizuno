@@ -35,7 +35,6 @@
 			// Logged into your app and Facebook.
 			testAPI();
 			//Ajaxを使った通信
-			connection();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
@@ -98,10 +97,6 @@
 			userid = response.id;
 			//document.getElementById('status').innerHTML = 'Facebookログインボタンを押して下さい.';
 		});
-	}
-
-	//Ajax通信関数
-	function connection(){
 		$.ajax({
 			url: 'api.php',
             type: 'post', // getかpostを指定(デフォルトは前者)
