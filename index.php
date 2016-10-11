@@ -96,7 +96,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			userid = response.id;
-			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
+			//document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
 		});
 	}
 
