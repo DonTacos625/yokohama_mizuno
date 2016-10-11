@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$_SESSION["my_id"] = $usr_id;
-				echo json_encode(compact('error'));
+		echo json_encode(compact('error'));
 	}else{
 		//エラーメッセージ表示用
 		http_response_code(400);
