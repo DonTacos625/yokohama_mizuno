@@ -118,7 +118,7 @@
                 id: userid
             },
         success:function(){
-        	alert("成功");
+        	location.href='./top.php';
         },
         error:function(){
         	alert("しっぱい");
