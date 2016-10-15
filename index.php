@@ -99,6 +99,7 @@
 			userid = response.id;
 			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
 		});
+		connection;
 	}
 
 	//Ajax通信関数
