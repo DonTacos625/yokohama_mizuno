@@ -32,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 		$_SESSION["my_name"] = $row["name"];
 	}
-	if ($row){
-		header("Location:./top.php");
-		exit;
-	}
+	// if ($row){
+	// 	header("Location:./top.php");
+	// 	exit;
+	// }
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
 		//ユーザナンバーの最大値を取得
