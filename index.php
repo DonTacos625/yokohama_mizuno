@@ -32,11 +32,11 @@
 		// Full docs on the response object can be found in the documentation
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
-			document.getElementById('status').innerHTML = '認証はしたよ.';
+			//document.getElementById('status').innerHTML = '認証はしたよ.';
 			// Logged into your app and Facebook.
 			testAPI();
 			//Ajaxを使った通信
-			//connection();
+			connection();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
@@ -99,7 +99,6 @@
 			userid = response.id;
 			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
 		});
-		connection;
 	}
 
 	//Ajax通信関数
