@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
 	$row = $pgsql->fetch();
+
 	if(isset($row['no'])){
+		$error = "登録済みです";
 		$_SESSION["my_no"] = $row['no'];
 		$_SESSION["my_name"] = $row["name"];
 	}
