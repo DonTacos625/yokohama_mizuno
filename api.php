@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 	if ($row){
 		header("Location:./top.php");
+		exit;
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
@@ -47,19 +48,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
-		if (!empty($usr_id)) {
+	if (!empty($usr_id)) {
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
 		}
 		$pgsql->query($sql);
-		$msg = "登録が完了しました.";
-		$_SESSION["my_id"] = $usr_id;
-		echo json_encode(compact('msg'));
+		$_SESSION["my_no"] = $row['no'];
+//		$msg = "登録が完了しました.";
+//		echo json_encode(compact('msg'));
+		if(!isset($_SESSION["my_name"])){
+			header("Location:./top.php");
+			exit;
+		}
 	}else{
 		//エラーメッセージ表示用
 		http_response_code(400);
 		echo json_encode(compact('error'));
 	}
+
 }else{
 	echo "不正なアクセスです.";
 }
