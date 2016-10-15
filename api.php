@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 //		$msg = "登録が完了しました.";
 //		echo json_encode(compact('msg'));
-		if(!empty($usr_id)){
+		if($row["no"]>0){
 			header("Location:./fb_regster.php");
 			exit;
 		}
