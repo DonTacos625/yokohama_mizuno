@@ -115,8 +115,6 @@
         },
         error:function(){ //2回目以降のログイン
         	location.href = "./top.php";
-        	var tmp = errorHandler(arguments);
-        	document.getElementById('status').innerHTML = tmp;
         }
       });
 	}

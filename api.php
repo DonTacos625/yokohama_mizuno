@@ -13,6 +13,8 @@ $error = "";
 //エラーメッセージ
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	//セッションのスタートの宣言
+	session_start();
 // $_POST['age']、$_POST['job']をエラーを出さないように文字列として安全に展開する
 	foreach (['u_id'] as $v) {
 		$$v = (string)filter_input(INPUT_POST, $v);
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	// facebook ID を受け取る
 	//--------------------------------
-	$usr_id = htmlspecialchars($u_id, ENT_QUOTES);	//ID
+	$usr_id = password_hash(htmlspecialchars($u_id, ENT_QUOTES), PASSWORD_DEFAULT);	//ID
 	//--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
@@ -28,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$row = $pgsql->fetch();
 	if(isset($row['no'])){
 		$_SESSION["my_no"] = $row['no'];
+		$_SESSION["my_name"] = $row["name"];
 	}
 	if ($row){
 		header("Location:./top.php");
-		//$error = "登録済み";
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
