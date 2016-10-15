@@ -32,6 +32,7 @@
 		// Full docs on the response object can be found in the documentation
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
+			document.getElementById('status').innerHTML = '認証はしたよ.';
 			// Logged into your app and Facebook.
 			testAPI();
 			//Ajaxを使った通信
@@ -110,7 +111,7 @@
             	u_id: userid
             },
         success:function(){ //facebook初回ログイン
-        	//document.getElementById('status').innerHTML = "登録できた！";
+        	document.getElementById('status').innerHTML = "登録できた！";
         	//alert("しっぱい！");
         	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
         },
