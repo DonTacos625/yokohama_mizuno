@@ -32,10 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 		$_SESSION["my_name"] = $row["name"];
 	}
-	// if ($row){
-	// 	header("Location:./top.php");
-	// 	exit;
-	// }
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
 		//ユーザナンバーの最大値を取得
@@ -56,10 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 //		$msg = "登録が完了しました.";
 //		echo json_encode(compact('msg'));
-		if(isset($_SESSION["my_no"])){
-			header("Location:./fb_regster.php");
-			exit;
-		}
+		// if(isset($_SESSION["my_no"])){
+		// 	header("Location:./fb_regster.php");
+		// 	exit;
+		// }
 	}else{
 		//エラーメッセージ表示用
 		http_response_code(400);
