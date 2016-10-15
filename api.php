@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 	// facebook ID を受け取る
 	//--------------------------------
-	$usr_id = password_hash(htmlspecialchars($u_id, ENT_QUOTES), PASSWORD_DEFAULT);	//ID
+	$usr_id = hash("sha256", htmlspecialchars($u_id, ENT_QUOTES));	//ID
 	//--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
