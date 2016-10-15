@@ -111,9 +111,9 @@
             	u_id: userid
             },
         success:function(){ //facebook初回ログイン
-        	document.getElementById('status').innerHTML = "登録できた！";
+        	//document.getElementById('status').innerHTML = "登録できた！";
         	//alert("しっぱい！");
-        	//location.href='./fb_regster.php'; //facebook初回ログイン登録用
+        	location.href='./fb_regster.php'; //facebook初回ログイン登録用
         },
         error:function(){ //2回目以降のログイン
         	location.href = "./top.php";
