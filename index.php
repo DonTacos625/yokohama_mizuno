@@ -97,7 +97,7 @@
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
 			userid = response.id;
-			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを押して下さい.';
+			document.getElementById('status').innerHTML = response.id+'Facebook用ログインボタンを(もう一度)押して下さい.';
 		});
 	}
 
@@ -113,7 +113,7 @@
         success:function(){ //facebook初回ログイン
         	//document.getElementById('status').innerHTML = "登録できた！";
         	//alert("しっぱい！");
-        	location.href = "./fb_regster.php"; //facebook初回ログイン登録用
+        	location.replace = "./fb_regster.php"; //facebook初回ログイン登録用
         },
         error:function(){ //2回目以降のログイン
         	location.href = "./top.php";

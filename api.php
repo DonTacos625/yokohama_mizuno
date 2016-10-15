@@ -19,11 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	foreach (['u_id'] as $v) {
 		$$v = (string)filter_input(INPUT_POST, $v);
 	}
+
 	//--------------------------------
 	// facebook ID を受け取る
 	//--------------------------------
 	$usr_id = hash("sha256", htmlspecialchars($u_id, ENT_QUOTES));	//ID
-	//--------------------------------
+//--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
@@ -32,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if(isset($row['no'])){
 		$error = "登録済みです";
 		$_SESSION["my_no"] = $row['no'];
-		$_SESSION["my_name"] = $row["name"];
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
@@ -54,10 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 		$msg = "登録が完了しました.";
 		echo json_encode(compact('msg'));
-		// if($row["no"]>0){
-		// 	header("Location:./fb_regster.php");
-		// 	exit;
-		// }
 	}else{
 		//エラーメッセージ表示用
 		http_response_code(400);

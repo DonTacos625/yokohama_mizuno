@@ -1,10 +1,4 @@
 <?php
-	/*ここセッションに変更
-	//ログイン済み(Cookieが保存されている)なら
-	if(isset($_COOKIE["usr_id"])){
-		header("HTTP/1.1 301 Moved Permanetly");
-		header("Location:./index.php"); //トップページへ
-	}*/
 //======================================================================
 //  ■： 会員情報登録ページ pwハッシュ化
 //======================================================================
@@ -162,8 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<input type="radio" name="age" value="60"<?php if ($age==60){ print " checked"; }?> >60以上
 						</td>
 			</tr>
+<!--
 			</table>
-			<!--
 			<br>
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label2" align="center">嗜好情報の入力</div></tr>
