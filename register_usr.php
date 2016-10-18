@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$no = $row['no'];
 		$no++;
 	}
+
 	// フォームからデータを受け取る
 	//--------------------------------
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
