@@ -91,8 +91,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
-				//header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
-				//exit;
+				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
+				exit;
 			}else{
 				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
@@ -101,37 +101,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			echo "IDが間違っています。".$br;
 			echo $login_html."よりログインし直して下さい。".$br;
 			echo "登録がまだの方は".$signup_html."より登録してください。";
-			/*
-			//------------------------------------
-			// □ 友達テーブル(friends)をチェック
-			//------------------------------------
-			$sql = "SELECT friends.no,friendinfo.usrid FROM friends";
-			$sql.= " LEFT JOIN friendinfo ON friends.no=friendinfo.no";
-			$sql.= " WHERE friends.email='$usr_id'";
-			$pgsql->query($sql);
-			print $sql;
-			if ($pgsql->rows()>0){
-				$row = $pgsql->fetch();
-				//----------------------------------------------
-				// 一番最初にログインするときのチェック
-				//----------------------------------------------
-				if (!$row["usrid"] && $usr_pw == FIRST_PASS){
-					print "1番最初にログインですね？";
-					$_SESSION["my_no"] = $row["no"];
-					$_SESSION["my_login"] = 1;
-					//------------------------------------
-					// □ マイ情報設定ページへジャンプ
-					//------------------------------------
-					header("Location: http://$host/friendinfo.php");
-					exit;
-				}
-			}else{
-				print "ミス！";
-			}
-			*/
 		}
-		//$error = "ユーザIDかパスワードに誤りがあります";
-	}
 }
 //--------------------------------------------------------------------
 // ■ ブラウザからHTMLページを要求されたとき(クッキーを取得する)
