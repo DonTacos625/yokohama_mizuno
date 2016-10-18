@@ -15,8 +15,6 @@ $error1 = ""; //年齢
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-	echo $_SESSION["my_no"];
-
 	$my_no = $_SESSION["my_no"];
 
 	// フォームからデータを受け取る
@@ -43,13 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
 		$pgsql->query($sql);
 	//嗜好情報のクエリを送信
-		//$sql = "INSERT INTO tasteinfo(no,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11) VALUES ('$my_no','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11'";
-		//$pgsql->query($sql);
-
+		$sql = "UPDATE tasteinfo(no,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11) VALUES ('$my_no','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11'";
+		$pgsql->query($sql);
 		$error = "登録が完了しました.";
 	}
 }else{
-	echo "不正なアクセスです。";
+	if(isset($_SESSION["my_no"])){
+		$my_no = $_SESSION["my_no"];
+	}else{
+		echo "不正なアクセスです.";
+	}
 }
 ?>
 <html>
