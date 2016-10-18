@@ -73,8 +73,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
-			$usr_pw = hash("sha256",$usr_pw);
-			if ($row["pw"] == $usr_pw){
+			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
 				//echo "てすと";
 				if(isset($row["sex"])){
