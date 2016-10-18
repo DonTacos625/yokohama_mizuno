@@ -5,8 +5,8 @@
 		for($i=1;i<6;$i++){
 			if(strlen($row[$i])==0)
 				break;
-			//$tmp = $tmp + $row[i];
-			echo $row[$i];
+			$tmp = $tmp + $row[$i];
+			//echo $row[$i];
 		}
 	}
 	echo $tmp;
