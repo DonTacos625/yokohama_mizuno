@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$a11 = intval(htmlspecialchars($_POST['a11']));
 
 	//性別,年齢の入力がなかったらエラー出力
-	if(!isset($sex) or !isset($age)){
+	if(strlen($sex)==0 || strlen($age)==0){
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//性別,年齢のクエリを送信

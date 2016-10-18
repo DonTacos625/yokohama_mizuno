@@ -5,12 +5,13 @@
 	/*
 		セッション管理
 	*/
-
+		/*
 		session_start();
 		if(isset($_SESSION["my_no"])){
 			header("Location:./top.php");
 			exit;
 		}
+		*/
 ?>
 	<html>
 	<head>
