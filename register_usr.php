@@ -71,12 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
 		if (!empty($usr_id) and !empty($usr_pw)) {
-			// 名前とメッセージが入力されていればデータの追加を実行する
-			// データを追加する
+			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
-			 $sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
+			// データを追加する
+			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
+			$pgsql->query($sql);
+			//嗜好情報のカラムの作成
+			$sql = "INSERT INTO tasteinfo(no) VALUES('$no')";
+			$pgsql->query($sql);
 		}
-		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";
 		$_SESSION["my_no"] = $no;
