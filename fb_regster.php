@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
+		echo "$my_no";
 	}else{
 		echo "不正なアクセスです.";
 	}
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 if (strlen($error)>0){
-	if($error != "登録が完了しました"){
+	if($error != "登録が完了しました."){
 		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 	}else{
 		header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
