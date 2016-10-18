@@ -25,8 +25,8 @@ $pgsql = new PostgreSQL;
 //----------------------------------------	
 session_start();		//セッション開始
 $_SESSION["my_no"] = 0;		//自分の番号
-$_SESSION["my_id"] = "";	//自分のID
-$_SESSION["my_login"] = 0;	//ログイン
+//$_SESSION["my_id"] = "";	//自分のID
+//$_SESSION["my_login"] = 0;	//ログイン
 
 //----------------------------------------	
 // ■ 変数初期化
