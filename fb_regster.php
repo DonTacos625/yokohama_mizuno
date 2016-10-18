@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
-		echo "$my_no";
+//		echo "$my_no";
 	}else{
 		$access_error = "不正なアクセスです";
 	}
