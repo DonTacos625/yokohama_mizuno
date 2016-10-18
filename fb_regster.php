@@ -40,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//性別,年齢のクエリを送信
-		$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
-		$pgsql->query($sql);
+		//$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
+		//$pgsql->query($sql);
 	//嗜好情報のクエリを送信
 		$sql = "INSERT INTO tasteinfo(no,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11) VALUES ('$my_no','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11'";
 		$pgsql->query($sql);
