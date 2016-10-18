@@ -3,8 +3,10 @@
 	$tmp = 0;
 	if(strlen($row[1])!=0){
 		for($i=1;i<8;$i++){
-			if(strlen($row[$i])==0)
+			if(strlen($row[$i])==0){
+				echo "ぶれーく！";
 				break;
+			}
 			$tmp = $tmp + $row[$i];
 			//echo $row[$i];
 		}
