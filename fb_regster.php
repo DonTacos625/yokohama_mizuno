@@ -10,13 +10,13 @@ $pgsql = new PostgreSQL;
 session_start(); //セッションスタート
 //エラーメッセージ
 $error = ""; //性別
-$error1 = ""; //年齢
+$error1 = ""; //アクセスエラー
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$my_no = $_SESSION["my_no"];
-
+	$error1 = ""; //アクセスエラー
 	// フォームからデータを受け取る
 	//--------------------------------
 	$sex = intval(htmlspecialchars($_POST['sex']));
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$my_no = $_SESSION["my_no"];
 		echo "$my_no";
 	}else{
-		echo "不正なアクセスです.";
+		$error1 = "不正なアクセスです";
 	}
 }
 ?>
@@ -72,6 +72,10 @@ if (strlen($error)>0){
 		header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 		exit;
 	}
+}
+if(strlen($error1)>0){
+	echo $error1;
+	echo "</body></html>";
 }
 ?>
 <div id="page">
