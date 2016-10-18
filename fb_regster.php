@@ -10,13 +10,13 @@ $pgsql = new PostgreSQL;
 session_start(); //セッションスタート
 //エラーメッセージ
 $error = ""; //性別
-$error1 = ""; //アクセスエラー
+$access_error = ""; //アクセスエラー
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$my_no = $_SESSION["my_no"];
-	$error1 = ""; //アクセスエラー
+	$access_error = ""; //アクセスエラー
 	// フォームからデータを受け取る
 	//--------------------------------
 	$sex = intval(htmlspecialchars($_POST['sex']));
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$my_no = $_SESSION["my_no"];
 		echo "$my_no";
 	}else{
-		$error1 = "不正なアクセスです";
+		$access_error = "不正なアクセスです";
 	}
 }
 ?>
@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
-if(strlen($error1)>0){
-	echo $error1;
+if(strlen($access_error)>0){
+	echo $access_error;
 	echo "</body></html>";
 	exit;
 }

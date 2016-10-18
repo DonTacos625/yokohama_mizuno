@@ -45,10 +45,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		*/
 		//友達情報テーブル(friendinfo)から削除
 		$sql = "DELETE FROM friendinfo WHERE no=$no";
-		$pgsql->query($sql);
+		$pgsql->query($sql); //クエリの送信
+		//嗜好情報の削除
+		$sql = "DELETE FROM tasteinfo WHERE no=$no";
+		$pgsql->query($sql); //クエリの送信
+
 		/*もしかしたらアンケートのcsvの行削除もするかもしれない*/
-		//クエリの送信
-		$pgsql->query($sql);
+
 		//完了の出力
 		$error = "{$no}番のデータを削除しました";
 	}
