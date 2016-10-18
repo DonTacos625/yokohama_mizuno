@@ -77,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				$_SESSION["my_no"] = $row["no"];
 				if(!isset($row["sex"])){
 					header("Location: ./fb_regster.php");
+					exit;
 				}
 				//$_SESSION["my_id"] = $usr_id;
 				//$_SESSION["my_login"] = 1;
