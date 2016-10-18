@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
-				echo $row["sex"]."てすと";
+				echo "てすと";
 				/*if(!isset($row["sex"])){
 					header("Location: ./fb_regster.php");
 					exit;
