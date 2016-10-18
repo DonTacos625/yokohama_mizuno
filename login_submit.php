@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
-				if($row["sex"]or$row["age"]){
+				if(empty($row["sex"]) or empty($row["age"])){
 					echo "１回目のログインです.";
 					echo $regist_html+"より詳細な会員情報入力をお願いします."
 
@@ -91,8 +91,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
-				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
-				exit;
+				//header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
+				//exit;
 			}else{
 				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
