@@ -6,9 +6,6 @@ require_once("PostgreSQL.php");
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 
-//セッションスタートの宣言
-session_start();
-
 //エラーメッセージ
 $error = ""; //ID関係
 $error1 = ""; //PW関係
@@ -83,7 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";
-		$_SESSION["my_no"] = $no;
 	}
 }
 ?>
