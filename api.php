@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
 	if (!empty($usr_id)) {
+			$_SESSION["my_no"] = $row['no'];
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
+			$pgsql->query($sql);
 		}
-		$pgsql->query($sql);
-		$_SESSION["my_no"] = $row['no'];
 		$msg = "登録が完了しました.";
 		echo json_encode(compact('msg'));
 	}else{
