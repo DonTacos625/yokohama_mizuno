@@ -88,6 +88,9 @@ $pgsql->query("SELECT * FROM friendinfo ORDER BY no ASC"); //クエリの送信
 while($row = $pgsql->fetch()){ //行がある限り
 	$no = $row["no"];
 	$id = $row["id"];
+	if(strlen($id)>30){
+		$id = "Facebook"
+	}
 	$sex = $row["sex"];
 	$age = $row["age"];
 	if($sex==1){
@@ -100,7 +103,7 @@ while($row = $pgsql->fetch()){ //行がある限り
 	echo <<<EOT
 <tr>
 <td align="center">$no</td>
-<td>$name</td>
+<td>$id</td>
 <td>$sex</td>
 <td>$age</td>
 <td><input type="submit" name="submit_del[$no]" value="削除"></td>
