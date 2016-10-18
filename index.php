@@ -7,7 +7,10 @@
 	*/
 
 		session_start();
-		echo $_SESSION["my_no"];
+		if(isset($_SESSION["my_no"])){
+			header("./top.php");
+			exit;
+		}
 ?>
 	<html>
 	<head>
