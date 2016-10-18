@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
-				if(empty($row["sex"]) or empty($row["age"])){
+				if(!isset($row["sex"])){
 					echo "１回目のログインです.";
 					echo $regist_html+"より詳細な会員情報入力をお願いします."
 
