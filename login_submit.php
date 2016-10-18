@@ -75,14 +75,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
-				//echo "てすと";
-				if(isset($row["sex"])){
+				echo "てすと";
+				/*if(isset($row["sex"])){
 					header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 					exit;
 				}else{
 					header("Location: ./fb_regster.php");
 					exit;
-				}
+				}*/
 				//$_SESSION["my_id"] = $usr_id;
 				//$_SESSION["my_login"] = 1;
 				//------------------------------------
