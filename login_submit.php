@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				$_SESSION["my_no"] = $row["no"];
 				if(!isset($row["sex"])){
 					echo "１回目のログインです.";
-					echo $regist_html."より詳細な会員情報入力をお願いします."
+					echo $regist_html."より詳細な会員情報入力をお願いします.";
 
 				}
 				//$_SESSION["my_id"] = $usr_id;
@@ -102,7 +102,5 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			echo $login_html."よりログインし直して下さい。".$br;
 			echo "登録がまだの方は".$signup_html."より登録してください。";
 		}
-}else{
-	echo "不正なアクセスです。";
 }
 ?>
