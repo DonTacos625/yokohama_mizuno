@@ -74,13 +74,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
-				//$_SESSION["my_no"] = $row["no"];
-				echo "てすと";
-				/*if(!isset($row["sex"])){
+				$_SESSION["my_no"] = $row["no"];
+				//echo "てすと";
+				if(!isset($row["sex"])){
 					header("Location: ./fb_regster.php");
 					exit;
 				}
-				*/
 				//$_SESSION["my_id"] = $usr_id;
 				//$_SESSION["my_login"] = 1;
 				//------------------------------------
@@ -90,8 +89,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
-				//header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
-				//exit;
+				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
+				exit;
 			}else{
 				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
@@ -101,5 +100,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			echo $login_html."よりログインし直して下さい。".$br;
 			echo "登録がまだの方は".$signup_html."より登録してください。";
 		}
+	}
 }
 ?>
