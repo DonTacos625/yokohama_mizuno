@@ -1,13 +1,11 @@
 <?php
+session_start(); //セッションのスタートの宣言
 //======================================================================
 //  ■： facebookログインに必要なDB操作 api.php セッション,hash以外完成
 //======================================================================
 
 // Content-TypeをJSONに指定する
 header('Content-Type: application/json');
-
-//セッションのスタートの宣言
-session_start();
 
 require_once("PostgreSQL.php");
 $pgsql = new PostgreSQL;
