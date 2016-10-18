@@ -59,13 +59,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	if (strlen($usr_id)==0){
 		$error = "ユーザIDが入力されていません";
 		echo $error.$br;
-		echo $login_html."へ";
 	}
 	//パスワード
 	if (strlen($usr_pw)==0){
 		$error = "パスワードが入力されていません";
 		echo $error.$br;
-		echo $login_html."へ";
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
@@ -77,11 +75,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
-				if(!isset($row["sex"])){
+				/*if(!isset($row["sex"])){
 					echo "１回目のログインです.";
 					echo $regist_html."より詳細な会員情報入力をお願いします.";
-
-				}
+				*/}
 				//$_SESSION["my_id"] = $usr_id;
 				//$_SESSION["my_login"] = 1;
 				//------------------------------------
