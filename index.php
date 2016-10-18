@@ -8,7 +8,7 @@
 
 		session_start();
 		if(isset($_SESSION["my_no"])){
-			header("./top.php");
+			header("Location:./top.php");
 			exit;
 		}
 ?>
