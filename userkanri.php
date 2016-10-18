@@ -87,10 +87,12 @@ while($row = $pgsql->fetch()){ //行がある限り
 	$id = $row["id"];
 	$sex = $row["sex"];
 	$age = $row["age"];
-	if($sex==0){
+	if($sex==1){
 		$sex = "男";
-	}else{
+	}elseif($sex==2){
 		$sex = "女";
+	}else{
+		$sex = "未入力";
 	}
 	echo <<<EOT
 <tr>
