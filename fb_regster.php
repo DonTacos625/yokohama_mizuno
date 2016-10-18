@@ -1,6 +1,5 @@
 <?php
 session_start(); //セッションスタート
-	echo $_SESSION["my_no"]."だよ";
 //======================================================================
 //  ■： 会員情報登録ページ pwハッシュ化
 //======================================================================
@@ -8,7 +7,6 @@ require_once("PostgreSQL.php");
 
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
-
 
 //エラーメッセージ
 $error = ""; //性別
@@ -84,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 <div id="page">
 	<div id="head">
-		<a href="./login.php">Loginページへ戻る</a>
+		<a href="./index.php">Loginページへ戻る</a>
 	</div>
 </div>
 <div id="page">
