@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
 	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
-	//$sex = intval(htmlspecialchars($_POST['sex']));
+	//$gender = intval(htmlspecialchars($_POST['gender']));
 	//$age = intval(htmlspecialchars($_POST['age']));
 	// $a1 = intval(htmlspecialchars($_POST['a1']));
 	// $a2 = intval(htmlspecialchars($_POST['a2']));
@@ -73,9 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
-			$pgsql->query($sql);
-			//嗜好情報のカラムの作成
-			$sql = "INSERT INTO tasteinfo(no) VALUES('$no')";
 			$pgsql->query($sql);
 		}
 		$error = "登録が完了しました";
@@ -144,8 +141,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<!--
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
-							<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >男
-							<input type="radio" name="sex" value="2"<?php if ($sex==2){ print " checked"; }?> >女
+							<input type="radio" name="gender" value="1"<?php if ($gender==1){ print " checked"; }?> >男
+							<input type="radio" name="gender" value="2"<?php if ($gender==2){ print " checked"; }?> >女
 						</td>
 			</tr>
 			<tr>

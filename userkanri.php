@@ -46,9 +46,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		//友達情報テーブル(friendinfo)から削除
 		$sql = "DELETE FROM friendinfo WHERE no=$no";
 		$pgsql->query($sql); //クエリの送信
-		//嗜好情報の削除
-		$sql = "DELETE FROM tasteinfo WHERE no=$no";
-		$pgsql->query($sql); //クエリの送信
 
 		/*もしかしたらアンケートのcsvの行削除もするかもしれない*/
 
@@ -91,20 +88,20 @@ while($row = $pgsql->fetch()){ //行がある限り
 	if(strlen($id)>30){
 		$id = "Facebook";
 	}
-	$sex = $row["sex"];
+	$gender = $row["gender"];
 	$age = $row["age"];
-	if($sex==1){
-		$sex = "男";
-	}elseif($sex==2){
-		$sex = "女";
+	if($gender==1){
+		$gender = "男";
+	}elseif($gender==2){
+		$gender = "女";
 	}else{
-		$sex = "未入力";
+		$gender = "未入力";
 	}
 	echo <<<EOT
 <tr>
 <td align="center">$no</td>
 <td>$id</td>
-<td>$sex</td>
+<td>$gender</td>
 <td>$age</td>
 <td><input type="submit" name="submit_del[$no]" value="削除"></td>
 </tr>

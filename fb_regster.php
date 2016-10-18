@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$access_error = ""; //アクセスエラー
 	// フォームからデータを受け取る
 	//--------------------------------
-	$sex = intval(htmlspecialchars($_POST['sex']));
+	$gender = intval(htmlspecialchars($_POST['gender']));
 	$age = intval(htmlspecialchars($_POST['age']));
 	$a1 = intval(htmlspecialchars($_POST['a1']));
 	$a2 = intval(htmlspecialchars($_POST['a2']));
@@ -34,14 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$a11 = intval(htmlspecialchars($_POST['a11']));
 
 	//性別,年齢の入力がなかったらエラー出力
-	if(strlen($sex)==0 || strlen($age)==0){
+	if(strlen($gender)==0 || strlen($age)==0){
 		$error = "年齢又は性別が未入力です.";
 	}else{
-	//性別,年齢のクエリを送信
-		$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
-		$pgsql->query($sql);
-	//嗜好情報のクエリを送信
-		$sql = "INSERT INTO tasteinfo(no,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11) VALUES ('$my_no','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
+	//登録クエリを送信
+		$sql = "UPDATE friendinfo SET gender='$gender', age='$age', a1='$a1', a2='$a2', a3='$a3', a4='$a4', a5='$a5', a6='$a6', a7='$a7', a8='$a8', a9='$a9', a10='$a10', a11='$a11' WHERE no='$my_no'";
 		$pgsql->query($sql);
 		$error = "登録が完了しました.";
 	}
@@ -94,8 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<tr><div class="label" align="center">個人ステータスの登録</div></tr>
 					<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
-							<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >男
-							<input type="radio" name="sex" value="2"<?php if ($sex==2){ print " checked"; }?> >女
+							<input type="radio" name="gender" value="1"<?php if ($gender==1){ print " checked"; }?> >男
+							<input type="radio" name="gender" value="2"<?php if ($gender==2){ print " checked"; }?> >女
 						</td>
 					</tr>
 					<tr>

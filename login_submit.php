@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
-				if(isset($row["sex"])){
+				if(isset($row["gender"])){
 					header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
 					exit;
 				}else{

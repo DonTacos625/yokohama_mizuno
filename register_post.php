@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']  == "POST") {
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
 	//$usr_msg = htmlspecialchars($_POST["usr_msg"], ENT_QUOTES);	//メッセージ
-	$sex = htmlspecialchars($_POST['sex']);
+	$gender = htmlspecialchars($_POST['gender']);
 	$age = htmlspecialchars($_POST['age']);
 	//$local = htmlspecialchars($_POST['local']);
 	//$twi_id = htmlspecialchars($_POST['twi_id']);
@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD']  == "POST") {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
 //			if (strlen($_SESSION["my_id"]) == 0){	//新規
-			 $sql = 'INSERT INTO friendinfo ('$no','$usr_pw','$usr_msg',now(),'$usr_id','$age','$sex','$email')';
-			// $sql = "INSERT INTO friendinfo ('$no','$usr_pw','$usr_msg',now(),'$usr_id','$age','$sex','$email','0','0','0','null','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
+			 $sql = 'INSERT INTO friendinfo ('$no','$usr_pw','$usr_msg',now(),'$usr_id','$age','$gender','$email')';
+			// $sql = "INSERT INTO friendinfo ('$no','$usr_pw','$usr_msg',now(),'$usr_id','$age','$gender','$email','0','0','0','null','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
 		}
 		$pgsql->query($sql);
 //			$sql = null;

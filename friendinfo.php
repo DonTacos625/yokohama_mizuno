@@ -12,7 +12,7 @@ require_once("com_require.php");
 $usr_pw = "";
 $usr_msg = "";
 $age = "";
-$sex = "";
+$gender = "";
 $local = "";
 $twi_id = "";
 $a1="";
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
 		$usr_msg = htmlspecialchars($_POST["usr_msg"], ENT_QUOTES);	//メッセージ
 		$age = htmlspecialchars($_POST['age']);
-		$sex = htmlspecialchars($_POST['sex']);
+		$gender = htmlspecialchars($_POST['gender']);
 //		$local = htmlspecialchars($_POST['local']);
 		$email = htmlspecialchars($_POST['email']);
 		$twi_id = htmlspecialchars($_POST['twi_id']);
@@ -77,9 +77,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			//--------------------------------------------
 			if (strlen($_SESSION["my_id"]) == 0){	//新規
 			
-				$sql = "INSERT INTO friendinfo VALUES($usr_no,'$usr_pw','$usr_msg',now(),'$usr_id','$age','$sex','$email','$twi_id','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
+				$sql = "INSERT INTO friendinfo VALUES($usr_no,'$usr_pw','$usr_msg',now(),'$usr_id','$age','$gender','$email','$twi_id','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11')";
 			}else{	//更新
-				$sql = "UPDATE friendinfo SET usrid='$usr_id',usrpw='$usr_pw',age='$age',sex='$sex',email='$email',twi_id='$twi_id',";
+				$sql = "UPDATE friendinfo SET usrid='$usr_id',usrpw='$usr_pw',age='$age',gender='$gender',email='$email',twi_id='$twi_id',";
 				$sql.= "msg='$usr_msg',a1='$a1',a2='$a2',a3='$a3',a4='$a4',a5='$a5',a6='$a6',a7='$a7',a8='$a8',a9='$a9',a10='$a10',a11='$a11',upddate=now() WHERE no=$usr_no";
 			}
 			$mysql->query($sql);
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			$usr_pw = $row["usrpw"];
 			$usr_msg = $row["msg"];
 			$age = $row["age"];
-			$sex = $row["sex"];
+			$gender = $row["gender"];
 			$email = $row["email"];
 			$twi_id = $row["twi_id"];	//twitterID
 			$_SESSION["my_id"] =$usr_id;	//ユーザID
@@ -185,8 +185,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			</tr>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
-							<input type="radio" name="sex" value="0"<?php if ($sex==0){ print " checked"; }?> >男
-							<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >女
+							<input type="radio" name="gender" value="0"<?php if ($gender==0){ print " checked"; }?> >男
+							<input type="radio" name="gender" value="1"<?php if ($gender==1){ print " checked"; }?> >女
 						</td>
 			</tr>
 <!--			<tr><td align="center"><div class="label">地域</div></td>
