@@ -48,10 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------------------
 		if (!empty($usr_id)) {
 			// データを追加する
+			$_SESSION["my_no"] = $row['no'];
 			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
 			$pgsql->query($sql);
 		}
-		$_SESSION["my_no"] = $row['no'];
+		//$_SESSION["my_no"] = $row['no'];
 		$msg = "登録が完了しました.";
 		echo json_encode(compact('msg'));
 	}else{
@@ -62,4 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }else{
 	echo "不正なアクセスです.";
 }
+
+exit;
 ?>
