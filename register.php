@@ -16,7 +16,7 @@ $error1 = ""; //年齢
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	echo $_SESSION["my_no"];
-	/*
+
 	$my_no = $_SESSION["my_no"];
 
 	// フォームからデータを受け取る
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	//性別,年齢の入力がなかったらエラー出力
 	if(!isset($sex) or !isset($age)){
-		$error = "年齢又は性別が未入力です."
+		$error = "年齢又は性別が未入力です.";
 	}else{
 	//性別,年齢のクエリを送信
 		$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
