@@ -5,13 +5,10 @@
 	/*
 		管理はセッションでやるといいかも
 	*/
-/*
-	//ログイン済み(Cookieが保存されている)なら
-	if(isset($_COOKIE["usr_id"])){
-		header("HTTP/1.1 301 Moved Permanetly");
-		header("Location:./index.php"); //トップページへ
-	}*/
-	?>
+
+		session_start();
+		echo $_SESSION["my_no"];
+?>
 	<html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
