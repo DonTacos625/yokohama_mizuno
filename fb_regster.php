@@ -8,30 +8,49 @@ session_start(); //セッションスタート
 $pgsql = new PostgreSQL;
 
 //エラーメッセージ
-$error = "";
+$error = ""; //性別
+$error1 = ""; //年齢
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$pgsql->query("SELECT MAX(no) AS no FROM friendinfo");
-	if ($pgsql->rows()>0) {
-		$row = $pgsql->fetch();
-		$no = $row['no'];
-		$no++;
-	}
+
+	$my_no = $_SESSION["my_no"];
+
 	// フォームからデータを受け取る
 	//--------------------------------
 	$sex = intval(htmlspecialchars($_POST['sex']));
 	$age = intval(htmlspecialchars($_POST['age']));
+	$a1 = intval(htmlspecialchars($_POST['a1']));
+	$a2 = intval(htmlspecialchars($_POST['a2']));
+	$a3 = intval(htmlspecialchars($_POST['a3']));
+	$a4 = intval(htmlspecialchars($_POST['a4']));
+	$a5 = intval(htmlspecialchars($_POST['a5']));
+	$a6 = intval(htmlspecialchars($_POST['a6']));
+	$a7 = intval(htmlspecialchars($_POST['a7']));
+	$a8 = intval(htmlspecialchars($_POST['a8']));
+	$a9 = intval(htmlspecialchars($_POST['a9']));
+	$a10 = intval(htmlspecialchars($_POST['a10']));
+	$a11 = intval(htmlspecialchars($_POST['a11']));
 
-	$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$_SESSION["my_no"]'";
+	//性別,年齢の入力がなかったらエラー出力
+	if(empty($sex) or empty($age)){
+		$error = "年齢又は性別が未入力です."
+	}else{
+	//性別,年齢のクエリを送信
+	$sql = "UPDATE friendinfo SET sex='$sex', age='$age' WHERE no='$my_no'";
 	$pgsql->query($sql);
-	$error = "登録が完了しました";
+	//嗜好情報のクエリを送信
+	$sql = "INSERT INTO tasteinfo(no,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11) VALUES ('$my_no','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11'";
+	$pgsql->query($sql);
+
+	$error = "登録が完了しました.";
+	}
 }
 ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ユーザ登録</title>
+<title>ユーザ詳細情報登録</title>
 <link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
@@ -42,13 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if (strlen($error)>0){
 		if($error != "登録が完了しました"){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-		}
-		if($error1 != "登録が完了しました"){
-			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
-		}
-		if ($error == "登録が完了しました" and $error1 == "登録が完了しました") {
+		}else{
 			echo "<font size=\"6\" color=\"#da0b00\">"
-			echo "続けて、嗜好情報の入力をお願いします。</font><p>";
 			echo "<br><center><a href=\"./top.php\">HOMEへ</a></center>";
 			echo "</body>";
 			echo "</html>";
@@ -68,14 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
-
-			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">表示名<br>[ニックネームor実名]</div></td>
-			<td><input type="text" name="usr_name" value="<?=$usr_name ?>" size="30"><br>
-			<font size="2">30桁以内の任意の文字で入力してください</font></td></tr>
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 				<td>
-					<input type="radio" name="sex" value="0"<?php if ($sex==0){ print " checked"; }?> >男
-					<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >女
+					<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >男
+					<input type="radio" name="sex" value="2"<?php if ($sex==2){ print " checked"; }?> >女
 				</td>
 			</tr>
 			<tr>

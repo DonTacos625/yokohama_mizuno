@@ -1,10 +1,13 @@
 <?php
 //======================================================================
-//  ■： 会員情報登録ページ pwハッシュ化
+//  ■： 会員情報登録ページ user情報登録は、fbと一緒に
 //======================================================================
 require_once("PostgreSQL.php");
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
+
+//セッションスタートの宣言
+session_start();
 
 //エラーメッセージ
 $error = ""; //ID関係
@@ -21,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// フォームからデータを受け取る
 	//--------------------------------
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
-	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
-	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
-	$sex = intval(htmlspecialchars($_POST['sex']));
-	$age = intval(htmlspecialchars($_POST['age']));
+	$usr_pw = hash("sha256",htmlspecialchars($_POST["usr_pw"], ENT_QUOTES));	//パスワード
+	$usr_pw2 = hash("sha256",htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES));	//パスワード確認
+	//$sex = intval(htmlspecialchars($_POST['sex']));
+	//$age = intval(htmlspecialchars($_POST['age']));
 	// $a1 = intval(htmlspecialchars($_POST['a1']));
 	// $a2 = intval(htmlspecialchars($_POST['a2']));
 	// $a3 = intval(htmlspecialchars($_POST['a3']));
@@ -70,12 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
-			 $sql = "INSERT INTO friendinfo(no,id,pw,sex,age) VALUES('$no','$usr_id','$usr_pw','$sex','$age')";
+			 $sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
 		}
 		$pgsql->query($sql);
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";
-		$_SESSION["my_id"] = $usr_id;
+		$_SESSION["my_no"] = $no;
 	}
 }
 ?>
@@ -99,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 		if ($error == "登録が完了しました" and $error1 == "登録が完了しました") {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-			echo "<br><center><a href=\"./index.php\">HOMEへ</a></center>";
+			echo "<br><center><a href=\"./index.php\">Login画面へ</a></center>";
 			echo "</body>";
 			echo "</html>";
 			exit;
@@ -119,15 +122,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
 
-			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br>[ニックネームor実名]</div></td>
+			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
-			<font size="2">30桁以内の任意の文字で入力してください</font></td></tr>
+			<font size="2">8〜30文字の半角英字を入力して下さい</font></td></tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
 					<div class="label">パスワード</div></td>
 				<td>
 					<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
-					<font size="2">10桁以内の英数字で入力してください</font>
+					<font size="2">8文字以上で半角英[小文字/大文字],数字を混在させたものを入力して下さい</font>
 				</td>
 			</tr>
 			<tr>
@@ -137,10 +140,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
 				</td>
 			</tr>
+			<!--
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
-							<input type="radio" name="sex" value="0"<?php if ($sex==0){ print " checked"; }?> >男
-							<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >女
+							<input type="radio" name="sex" value="1"<?php if ($sex==1){ print " checked"; }?> >男
+							<input type="radio" name="sex" value="2"<?php if ($sex==2){ print " checked"; }?> >女
 						</td>
 			</tr>
 			<tr>
@@ -156,6 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<input type="radio" name="age" value="60"<?php if ($age==60){ print " checked"; }?> >60以上
 						</td>
 			</tr>
+			-->
 <!--
 			</table>
 			<br>

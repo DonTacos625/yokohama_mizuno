@@ -36,10 +36,12 @@ $usr_no = 0;
 $usr_id = "";
 $usr_pw = "";
 //タグ出力用
-$login_url = './login_fb.php';
+$regist_url = './fb_regster.php';
+$regist_html = '<a href="'.$regist_url.'">会員情報登録ページ</a>';
+$login_url = './index.php';
 $login_html = '<a href="'.$login_url.'">ログインページ</a>';
 $signup_url = './register_usr.php';
-$signup_html = '<a href="'.$signup_url.'">会員登録ページ</a>';
+$signup_html = '<a href="'.$signup_url.'">利用登録ページ</a>';
 $br = '<br>';
 //----------------------------------------
 // ■ POSTされたとき
@@ -57,11 +59,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	if (strlen($usr_id)==0){
 		$error = "ユーザIDが入力されていません";
 		echo $error.$br;
+		echo $login_html+"へ";
 	}
 	//パスワード
 	if (strlen($usr_pw)==0){
 		$error = "パスワードが入力されていません";
 		echo $error.$br;
+		echo $login_html+"へ";
 	}
 	//エラーなし
 	if (strlen($error)==NULL){
@@ -73,12 +77,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
-				$_SESSION["my_id"] = $usr_id;
-				$_SESSION["my_login"] = 1;
+				if($row["sex"]or$row["age"]){
+					echo "１回目のログインです.";
+					echo $regist_html+"より詳細な会員情報入力をお願いします."
+
+				}
+				//$_SESSION["my_id"] = $usr_id;
+				//$_SESSION["my_login"] = 1;
 				//------------------------------------
 				// □ クッキーを保存する
 				//------------------------------------
-				setcookie("usr_id",$usr_id);//ユーザIDを保存
+				//setcookie("usr_id",$usr_id);//ユーザIDを保存
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
