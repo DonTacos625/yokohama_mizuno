@@ -15,6 +15,8 @@ $error1 = ""; //年齢
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
+	echo $_SESSION["my_no"];
+	/*
 	$my_no = $_SESSION["my_no"];
 
 	// フォームからデータを受け取る
@@ -46,17 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		$error = "登録が完了しました.";
 	}
-}
-	//----------------------------------------	
-	// ■ エラーメッセージがあったら表示
-	//----------------------------------------	
-if (strlen($error)>0){
-	if($error != "登録が完了しました"){
-		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-	}else{
-		echo "<font size=\"6\" color=\"#da0b00\">"
-		echo "<br><center><a href=\"./top.php\">HOMEへ</a></center>";
-		exit;
-	}
+	echo $error;
+	*/
 }
 ?>
