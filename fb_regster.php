@@ -3,10 +3,11 @@
 //  ■： 会員情報登録ページ pwハッシュ化
 //======================================================================
 require_once("PostgreSQL.php");
-session_start(); //セッションスタート
+
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 
+session_start(); //セッションスタート
 //エラーメッセージ
 $error = ""; //性別
 $error1 = ""; //年齢
