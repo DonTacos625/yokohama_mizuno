@@ -77,7 +77,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			if ($row["pw"] == $usr_pw){
 				$_SESSION["my_no"] = $row["no"];
 				//echo "てすと";
-				if(!isset($row["sex"])){
+				if(isset($row["sex"])){
+					header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
+					exit;
+				}else{
 					header("Location: ./fb_regster.php");
 					exit;
 				}
@@ -90,8 +93,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 				//------------------------------------
 				// □ トップページへジャンプ
 				//------------------------------------
-				header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
-				exit;
 			}else{
 				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
