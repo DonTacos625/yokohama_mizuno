@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// フォームからデータを受け取る
 	//--------------------------------
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
-	$usr_pw = hash("sha256",htmlspecialchars($_POST["usr_pw"], ENT_QUOTES));	//パスワード
-	$usr_pw2 = hash("sha256",htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES));	//パスワード確認
+	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
+	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
 	//$sex = intval(htmlspecialchars($_POST['sex']));
 	//$age = intval(htmlspecialchars($_POST['age']));
 	// $a1 = intval(htmlspecialchars($_POST['a1']));
@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			// 名前とメッセージが入力されていればデータの追加を実行する
 			// データを追加する
+			$usr_pw = hash("sha256",$usr_pw);
 			 $sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
 		}
 		$pgsql->query($sql);
