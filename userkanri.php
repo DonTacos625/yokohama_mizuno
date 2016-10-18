@@ -89,7 +89,7 @@ while($row = $pgsql->fetch()){ //行がある限り
 	$no = $row["no"];
 	$id = $row["id"];
 	if(strlen($id)>30){
-		$id = "Facebook"
+		$id = "Facebook";
 	}
 	$sex = $row["sex"];
 	$age = $row["age"];
