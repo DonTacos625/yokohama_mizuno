@@ -48,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		$error = "登録が完了しました.";
 	}
+}else{
+	echo "不正なアクセスです。";
 }
 ?>
 <html>
