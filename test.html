@@ -41,8 +41,8 @@
       array
     ) {
 
-      var featureLayer;
-      var orignal_latlng = [139.636055, 35.450078];
+      //var featureLayer;
+      //var orignal_latlng = [139.636055, 35.450078];
 
       var map = new Map("map", {
         basemap: "streets",
@@ -54,7 +54,7 @@
     		container: "viewDiv",  // Reference to the scene div created in step 5
     		map: map,  // Reference to the map object created before the scene
     		zoom: 14,  // Sets the zoom level based on level of detail (LOD)
-   			center: orignal_latlng  // Sets the center point of view in lon/lat
+   			center: [139.636055, 35.450078] // Sets the center point of view in lon/lat
  			});
     });
 </script>
