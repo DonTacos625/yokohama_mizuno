@@ -31,14 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$a8 = intval(htmlspecialchars($_POST['a8']));
 	$a9 = intval(htmlspecialchars($_POST['a9']));
 	$a10 = intval(htmlspecialchars($_POST['a10']));
-	$a11 = intval(htmlspecialchars($_POST['a11']));
+	//$a11 = intval(htmlspecialchars($_POST['a11']));
 
 	//性別,年齢の入力がなかったらエラー出力
 	if(strlen($gender)==0 || strlen($age)==0){
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//登録クエリを送信
-		$sql = "UPDATE friendinfo SET gender='$gender', age='$age', a1='$a1', a2='$a2', a3='$a3', a4='$a4', a5='$a5', a6='$a6', a7='$a7', a8='$a8', a9='$a9', a10='$a10', a11='$a11' WHERE no='$my_no'";
+		$sql = "UPDATE friendinfo SET gender='$gender', age='$age', a1='$a1', a2='$a2', a3='$a3', a4='$a4', a5='$a5', a6='$a6', a7='$a7', a8='$a8', a9='$a9', a10='$a10' WHERE no='$my_no'";
 		$pgsql->query($sql);
 		$error = "登録が完了しました.";
 	}
@@ -233,6 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						<input type="radio" name="a10" value="5"<?php if ($a10==5){ print " checked"; }?> >5
 					</td>
 				</tr>
+				<!--
 				<tr>
 					<td align="center" bgcolor="#ffe4e1">
 						<div class="label2">嗜好情報11</div>
@@ -245,6 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						<input type="radio" name="a11" value="5"<?php if ($a11==5){ print " checked"; }?> >5
 					</td>
 				</tr>
+				-->
 				<tr><td align="center" colspan="1">
 					<input type="submit" name="Submit" value="登録する"></td></tr>
 				</table>
