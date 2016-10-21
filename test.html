@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>てすとだよーん</title>
-	<style>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Get started with MapView - Create a 2D map</title>
+<style>
   html, body, #viewDiv {
     padding: 0;
     margin: 0;
@@ -10,10 +12,10 @@
     width: 100%;
   }
 </style>
-	 <script src="https://js.arcgis.com/4.1/"></script>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
- <script>
-    var map;
+<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+<script src="https://js.arcgis.com/4.1/"></script>
+<script>
+//    var map;
     require([
       "esri/map",
       "esri/views/MapView",
@@ -49,11 +51,11 @@
       });
 
       var view = new MapView({
-    container: "viewDiv",  // Reference to the scene div created in step 5
-    map: map,  // Reference to the map object created before the scene
-    zoom: 14,  // Sets the zoom level based on level of detail (LOD)
-    center: orignal_latlng  // Sets the center point of view in lon/lat
-  });
+    		container: "viewDiv",  // Reference to the scene div created in step 5
+    		map: map,  // Reference to the map object created before the scene
+    		zoom: 14,  // Sets the zoom level based on level of detail (LOD)
+   			center: orignal_latlng  // Sets the center point of view in lon/lat
+ 			});
     });
 </script>
 </head>
