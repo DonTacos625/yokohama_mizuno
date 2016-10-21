@@ -15,24 +15,52 @@
 <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 <script src="https://js.arcgis.com/4.1/"></script>
 <script>
-require([
-  "esri/Map",
-  "esri/views/MapView",
-  "dojo/domReady!"
-], function(Map, MapView){
-  var map = new Map({
-    basemap: "streets"
-  });
-  var view = new MapView({
-    container: "viewDiv",  // Reference to the scene div created in step 5
-    map: map,  // Reference to the map object created before the scene
-    zoom: 14,  // Sets the zoom level based on level of detail (LOD)
-    center: [35.450078, 139.636055]  // Sets the center point of view in lon/lat
-  });
-});
+//    var map;
+    require([
+      "esri/map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/dijit/PopupTemplate",
+      "esri/request",
+      "esri/geometry/Point",
+      "esri/graphic",
+      "esri/geometry/webMercatorUtils",
+      "dojo/on",
+      "dojo/_base/array",
+      "dojo/domReady!"
+    ], function(
+      Map, 
+      MapView,
+      FeatureLayer, 
+      PopupTemplate,
+      esriRequest,
+      Point,
+      Graphic,
+      webMercatorUtils,
+      on,
+      array
+    ) {
+
+      var featureLayer;
+      var orignal_latlng = [139.636055, 35.450078];
+
+      var map = new Map("map", {
+        basemap: "streets",
+//        center: orignal_latlng,
+ //       zoom: 14
+      });
+
+      var view = new MapView({
+    		container: "viewDiv",  // Reference to the scene div created in step 5
+    		map: map,  // Reference to the map object created before the scene
+    		zoom: 14,  // Sets the zoom level based on level of detail (LOD)
+   			center: orignal_latlng  // Sets the center point of view in lon/lat
+ 			});
+    });
 </script>
 </head>
 <body>
-  <div id="viewDiv"></div>
+ 
+<div id="viewDiv"></div>
 </body>
 </html>
