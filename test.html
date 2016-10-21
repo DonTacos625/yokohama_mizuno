@@ -18,17 +18,22 @@
 require([
   "esri/Map",
   "esri/views/MapView",
+  "esri/layers/FeatureLayer",
   "dojo/domReady!"
-], function(Map, MapView){
+], function(Map, MapView,FeatureLayer){
   var map = new Map({
     basemap: "streets"
   });
   var view = new MapView({
     container: "viewDiv",  // Reference to the scene div created in step 5
     map: map,  // Reference to the map object created before the scene
-    zoom: 4,  // Sets the zoom level based on level of detail (LOD)
+    zoom: 14,  // Sets the zoom level based on level of detail (LOD)
     center: [139.636055, 35.450078]  // Sets the center point of view in lon/lat
   });
+  var fl = new FeatureLayer({
+    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3"
+  });
+  map.add(fl);
 });
 /*//    var map;
     require([
