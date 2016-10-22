@@ -72,7 +72,7 @@ require([
 var lyr = new FeatureLayer({
  source: features,
   fields: fields,
-  objectIdField: 1,  // field name of the Object IDs
+  objectIdField: "ObjectID",  // field name of the Object IDs
   geometryType: "point"
 });
   map.add(lyr);
