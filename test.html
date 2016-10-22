@@ -21,6 +21,7 @@
   </style>
 
   <script>
+  var location = [[139.643525,35.453596],[139.6366807,35.4552036]]
     require([
       "esri/Map",
       "esri/views/MapView",
@@ -48,11 +49,11 @@
       /**********************
        * Create a point graphic
        **********************/
-
+      for(var i=0;i<2;i++){
       // First create a point geometry (this is the location of the Titanic)
       var point = new Point({
-        longitude: 139.636055,
-        latitude: 35.450078
+        longitude: location[i][0],
+        latitude: location[i][1]
       });
 
       // Create a symbol for drawing the point
@@ -60,7 +61,7 @@
   			url: "https://webapps-cdn.esri.com/Apps/MegaMenu/img/logo.jpg",
   			width: "8px",
   			height: "8px"
-			});
+		});
 
 
       // Create a graphic and add the geometry and symbol to it
@@ -69,8 +70,9 @@
         symbol: Symbol
       });
 
-      // 地図にポイントを重ね合わせる
+      // Add the graphics to the view's graphics layer
       view.graphics.addMany([pointGraphic]);
+      }
     });
   </script>
 </head>
