@@ -18,10 +18,11 @@
 require([
   "esri/Map",
   "esri/views/MapView",
+  "esri/Graphic",
   "esri/geometry/Point"
   "esri/layers/FeatureLayer",
   "dojo/domReady!"
-], function(Map, MapView,Point,FeatureLayer){
+], function(Map, MapView,Graphic,Point,FeatureLayer){
   var map = new Map({
     basemap: "streets"
   });
