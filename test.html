@@ -30,41 +30,18 @@ require([
     zoom: 14,  // Sets the zoom level based on level of detail (LOD)
     center: [139.636055, 35.450078]  // Sets the center point of view in lon/lat
   });
-  var fl = new FeatureLayer({
-    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3"
+  // points to a hosted Feature Layer in ArcGIS Online
+var fl = new FeatureLayer({
+  portalItem: {  // autocasts as esri/portal/PortalItem
+    id: "8444e275037549c1acab02d2626daaee"
+  }
+});
+map.add(fl);  // adds the layer to the map
+/*  var fl = new FeatureLayer(featureCollection, {
+    id: 'pointLayer'
   });
   map.add(fl);
-
-  var lyr = new FeatureLayer({
-
-   // create an instance of esri/layers/support/Field for each field object
-   fields: [
-   {
-     name: "ObjectID",
-     alias: "ObjectID",
-     type: "oid"
-   }, {
-     name: "type",
-     alias: "Type",
-     type: "string"
-   }, {
-     name: "place",
-     alias: "Place",
-     type: "string"
-   }],
-   objectIdField: "ObjectID",
-   geometryType: "point",
-   spatialReference: { wkid: 4326 },
-   source: graphics,  //  an array of graphics with geometry and attributes
-                     // popupTemplate and symbol are not required in each graphic
-                     // since those are handled with the popupTemplate and
-                     // renderer properties of the layer
-   popupTemplate: pTemplate,
-   renderer: uvRenderer  // UniqueValueRenderer based on `type` attribute
-});
-map.add(lyr);
-});
-/*//    var map;
+});*//*//    var map;
     require([
       "esri/map",
       "esri/views/MapView",
