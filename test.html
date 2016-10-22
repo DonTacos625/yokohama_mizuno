@@ -21,7 +21,7 @@
   </style>
 
   <script>
-  var location = [[139.643525,35.453596],[139.6366807,35.4552036]]
+  var row = [[139.643525,35.453596],[139.6366807,35.4552036]];
     require([
       "esri/Map",
       "esri/views/MapView",
@@ -52,8 +52,8 @@
       for(var i=0;i<2;i++){
       // First create a point geometry (this is the location of the Titanic)
       var point = new Point({
-        longitude: location[i][0],
-        latitude: location[i][1]
+        longitude: row[i][0],
+        latitude: row[i][1]
       });
 
       // Create a symbol for drawing the point
