@@ -1,137 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Get started with MapView - Create a 2D map</title>
-<style>
-  html, body, #viewDiv {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-  }
-</style>
-<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-<script src="https://js.arcgis.com/4.1/"></script>
-<script>
-require([
-  "esri/Map",
-  "esri/views/MapView",
-  "esri/Graphic",
-  "esri/geometry/Point"
-  "esri/layers/FeatureLayer",
-  "dojo/domReady!"
-], function(Map, MapView,Graphic,Point,FeatureLayer){
-  var map = new Map({
-    basemap: "streets"
-  });
-  var view = new MapView({
-    container: "viewDiv",  // Reference to the scene div created in step 5
-    map: map,  // Reference to the map object created before the scene
-    zoom: 14,  // Sets the zoom level based on level of detail (LOD)
-    center: [139.636055, 35.450078]  // Sets the center point of view in lon/lat
-  });
-  //レイヤーの追加
-  var features = [
- {
-   geometry: new Point({
-     x: -100,
-     y: 38
-   }),
-   attributes: {
-     ObjectID: 1,
-     DepArpt: "KATL",
-     MsgTime: Date.now(),
-     FltId: "UAL1"
-   }
- },
- {
-   geometry: new Point({
-     x: -77,
-     y: 35
-   }),
-   attributes: {
-     ObjectID: 2,
-     DepArpt: "KZBW",
-     MsgTime: Date.now(),
-     FltId: "SW999"
-   }
- },
- {
-   geometry: new Point({
-     x: -120,
-     y: 40
-   }),
-   attributes: {
-     ObjectID: 3,
-     DepArpt: "WKRP",
-     MsgTime: Date.now(),
-     FltId: "Fever1"
-   }
- }
-];
-var lyr = new FeatureLayer({
- source: features,
-  fields: fields,
-  objectIdField: "ObjectID",  // field name of the Object IDs
-  geometryType: "point"
-});
-  map.add(lyr);
+<!--ピクチャレイヤを重ねる-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Get started with graphics - 4.1</title>
 
-/*
-  var fl = new FeatureLayer(featureCollection, {
-    id: 'pointLayer'
-  });
-  map.add(fl);
-});
-*/
-/*//    var map;
+  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.1/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <script>
     require([
-      "esri/map",
+      "esri/Map",
       "esri/views/MapView",
-      //"esri/layers/FeatureLayer",
-      //"esri/dijit/PopupTemplate",
-      //"esri/request",
-      //"esri/geometry/Point",
-      //"esri/graphic",
-      //"esri/geometry/webMercatorUtils",
-      //"dojo/on",
-      //"dojo/_base/array",
+      "esri/Graphic",
+      "esri/geometry/Point",
+      "esri/symbols/PictureMarkerSymbol",
       "dojo/domReady!"
     ], function(
-      Map,
-      MapView
-      //FeatureLayer,
-      //PopupTemplate,
-      //esriRequest,
-      //Point,
-      //Graphic,
-      //webMercatorUtils,
-      //on,
-      //array
-    ) {
-
-      //var featureLayer;
-      //var orignal_latlng = [139.636055, 35.450078];
+      Map, MapView,
+      Graphic, Point,
+      PictureMarkerSymbol
+      ) {
 
       var map = new Map({
         basemap: "streets"
-//        center: orignal_latlng,
- //       zoom: 14
       });
 
       var view = new MapView({
-    		container: "viewDiv",  // Reference to the scene div created in step 5
-    		map: map,  // Reference to the map object created before the scene
-    		zoom: 14,  // Sets the zoom level based on level of detail (LOD)
-   			center: [139.636055, 35.450078] // Sets the center point of view in lon/lat
- 			});
-    });*/
-  });
-</script>
+        center: [139.636055, 35.450078],
+        container: "viewDiv",
+        map: map,
+        zoom: 15
+      });
+
+      /**********************
+       * Create a point graphic
+       **********************/
+
+      // First create a point geometry (this is the location of the Titanic)
+      var point = new Point({
+        longitude: 139.636055,
+        latitude: 35.450078
+      });
+
+      // Create a symbol for drawing the point
+			var Symbol = new PictureMarkerSymbol({
+  			url: "https://webapps-cdn.esri.com/Apps/MegaMenu/img/logo.jpg",
+  			width: "8px",
+  			height: "8px"
+			});
+
+
+      // Create a graphic and add the geometry and symbol to it
+      var pointGraphic = new Graphic({
+        geometry: point,
+        symbol: Symbol
+      });
+
+      // 地図にポイントを重ね合わせる
+      view.graphics.addMany([pointGraphic]);
+    });
+  </script>
 </head>
+
 <body>
-<div id="viewDiv"></div>
+  <div id="viewDiv"></div>
 </body>
+
 </html>
