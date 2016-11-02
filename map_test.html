@@ -43,11 +43,13 @@
       "esri/Graphic",
       "esri/geometry/Point",
       "esri/symbols/PictureMarkerSymbol",
+      "esri/PopupTemplate",
       "dojo/domReady!"
     ], function(
       Map, MapView,
       Graphic, Point,
-      PictureMarkerSymbol
+      PictureMarkerSymbol,
+      PopupTemplate
       ) {
 
       var map = new Map({
@@ -70,6 +72,13 @@
         longitude: row[0][i],
         latitude: row[1][i]
       });
+      var lineAtt = {
+        Name: "ここで名前変わるよ",
+        url: "http://www.yahoo.co.jp/",
+        Length: "3,456 km",
+        詳細: "ここに詳細を入れる"
+      };
+
 
   // Create a symbol for drawing the point
     if(pic[i]==1){
@@ -90,6 +99,21 @@
       var pointGraphic = new Graphic({
         geometry: point,
         symbol: Symbol
+        popupTemplate: { // autocasts as new PopupTemplate()
+          title: "スポット詳細情報",
+          content: [{
+            type: "fields",
+            fieldInfos: [{
+              fieldName: "Name"
+            }, {
+              fieldName: "url"
+            }, {
+              fieldName: "Length"
+            }, {
+              fieldName: "詳細"
+            }]
+          }]
+        }
       });
 
       // Add the graphics to the view's graphics layer
