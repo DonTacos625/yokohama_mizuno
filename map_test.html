@@ -29,13 +29,16 @@
     row[i] = new Array(2);
   }
   var pic = new Array(2);
+  var s_name = new Array(2);
   //for(var i=0;i<2;i++){
     row[0][0] = 139.643525;
     row[1][0] = 35.453596;
     pic[0] = 1;
+    s_name[0] = "赤レンガパーク";
     row[0][1] = 139.6366807;
     row[1][1] = 35.4552036;
     pic[1] = 0;
+    s_name[1] = "よこはまコスモワールド";
   //}
   require([
     "esri/Map",
@@ -71,11 +74,10 @@
       var point = new Point({
         longitude: row[0][i],
         latitude: row[1][i]
-
       });
-
+      //Create contents of popup
       var lineAtt = {
-        Name: "名前変更可能",
+        Name: s_name[i],
         url: "http://www.yahoo.co.jp/",
         //Length: "3,456 km",
         詳細: "詳細挿入"
