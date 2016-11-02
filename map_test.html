@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--ピクチャレイヤを重ねる-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Get started with graphics - 4.1</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.1/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <script>
+  //row[0][i]: lng
+  //row[1][i]: lat
+  //pic[i]:写真の番号
+  var row = new Array(2);
+  for(var i = 0;i<row.length;i++){
+    row[i] = new Array(2);
+  }
+  var pic = new Array(2);
+  for(var i=0;i<2;i++){
+    row[0][i] = 139.643525;
+    row[1][i] = 35.453596;
+    pic[i] = i;
+  }
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/Graphic",
+      "esri/geometry/Point",
+      "esri/symbols/PictureMarkerSymbol",
+      "dojo/domReady!"
+    ], function(
+      Map, MapView,
+      Graphic, Point,
+      PictureMarkerSymbol
+      ) {
+
+      var map = new Map({
+        basemap: "streets"
+      });
+
+      var view = new MapView({
+        center: [139.636055, 35.450078],
+        container: "viewDiv",
+        map: map,
+        zoom: 15
+      });
+
+      /**********************
+       * Create a point graphic
+       **********************/
+      for(var i=0;i<2;i++){
+      // First create a point geometry (this is the location of the Titanic)
+      var point = new Point({
+        longitude: row[0][i],
+        latitude: row[1][i]
+      });
+
+  // Create a symbol for drawing the point
+    if(pic[i]==1){
+      var Symbol = new PictureMarkerSymbol({
+        url: "https://webapps-cdn.esri.com/Apps/MegaMenu/img/logo.jpg",
+        width: "30px",
+        height: "30px"
+		  });
+    }else{
+      var Symbol = new PictureMarkerSymbol({
+        url: "http://4.bp.blogspot.com/-N6MkN70baI0/V7kyE0lYlUI/AAAAAAAA9Ks/Kowo0Av3j6QAVT1M62fPUrd738agCY8GwCLcB/s800/message_congratulations.png",
+        width: "30px",
+        height: "30px"
+		  });
+    }
+
+      // Create a graphic and add the geometry and symbol to it
+      var pointGraphic = new Graphic({
+        geometry: point,
+        symbol: Symbol
+      });
+
+      // Add the graphics to the view's graphics layer
+      view.graphics.addMany([pointGraphic]);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
