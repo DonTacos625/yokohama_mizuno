@@ -29,11 +29,14 @@
     row[i] = new Array(2);
   }
   var pic = new Array(2);
-  for(var i=0;i<2;i++){
-    row[0][i] = 139.643525;
-    row[1][i] = 35.453596;
-    pic[i] = i;
-  }
+  //for(var i=0;i<2;i++){
+    row[0][0] = 139.643525;
+    row[1][0] = 35.453596;
+    pic[0] = 1;
+    row[0][1] = 139.6366807;
+    row[1][1] = 35.4552036;
+    pic[0] = 0;
+  //}
     require([
       "esri/Map",
       "esri/views/MapView",
