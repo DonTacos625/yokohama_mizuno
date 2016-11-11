@@ -35,34 +35,9 @@
 		if (response.status === 'connected') {
 			//document.getElementById('status').innerHTML = '認証はしたよ.';
 			// Logged into your app and Facebook.
-			//testAPI();
+			testAPI();
 			//Ajaxを使った通信
-				FB.api('/me', function(response) {
-				//console.log('Successful login for: ' + response.name);
-				userid = response.id;
-				
-				});
-			(function(){
-				$.ajax({
-				url: 'api.php',
-        type: 'post', // getかpostを指定(デフォルトは前者)
-        dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
-        data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-        u_id: userid
-        },
-        success:function(){ //facebook初回ログイン
-        	//document.getElementById('status').innerHTML = "登録できた！";
-        	//alert("しっぱい！");
-        	location.href = "./fb_regster.php"; //facebook初回ログイン登録用
-        	exit;
-        },
-        error:function(){ //2回目以降のログイン
-        	location.href = "./top.php";
-        	exit;
-        }
-      });
-		})();
-		document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
+			connection();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
