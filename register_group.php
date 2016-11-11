@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f1=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $f1)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f1=intval($f1);
 			if($f1>$no){
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f2=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $f2)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f2=intval($f2);
 			if($f2>$no){
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f3=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $f3)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f3=intval($f3);
 			if($f3>$no){
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$lo=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $lo)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$lo=intval($lo);
 			if($lo>$no){
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g11=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g11)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g11=intval($g11);
 			if($g11>$no){
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g12=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g12)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g12=intval($g12);
 			if($g12>$no){
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g13=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g13)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g13=intval($g13);
 			if($g11>$no){
@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g14=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g14)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g14=intval($g14);
 			if($g14>$no){
@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g15=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g15)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g15=intval($g15);
 			if($g15>$no){
@@ -181,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g16=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g16)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g16=intval($g16);
 			if($g16>$no){
@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g17=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g17)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g17=intval($g17);
 			if($g17>$no){
@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g18=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g18)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g18=intval($g18);
 			if($g18>$no){
@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g21=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g21)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g21=intval($g21);
 			if($g21>$no){
@@ -229,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g22=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g22)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g22=intval($g22);
 			if($g22>$no){
@@ -241,7 +241,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g23=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g23)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g23=intval($g23);
 			if($g23>$no){
@@ -253,7 +253,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g24=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g24)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g24=intval($g24);
 			if($g24>$no){
@@ -265,7 +265,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g25=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g25)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g25=intval($g25);
 			if($g25>$no){
@@ -277,7 +277,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g26=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g26)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g26=intval($g26);
 			if($g26>$no){
@@ -289,7 +289,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g27=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g27)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g27=intval($g27);
 			if($g27>$no){
@@ -301,7 +301,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g28=0;
 	}else{
 		if(!preg_match('/^([0-9]{1,3})$/', $g28)){
-			$error = "半角数字以外が存在します<br>";
+			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g28=intval($g28);
 			if($g28>$no){
@@ -447,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div class="label">友達グループ1</div>
 				</td>
 				<td>
-				<input type="text" name="g11" value="<?=$g11 ?>" size="3">
+				<input type="text" name="g11" value="<?php if($g11!=0){echo $g11} ?>" size="3">
 				<input type="text" name="g12" value="<?=$g12 ?>" size="3">
 				<input type="text" name="g13" value="<?=$g13 ?>" size="3">
 				<input type="text" name="g14" value="<?=$g14 ?>" size="3">
