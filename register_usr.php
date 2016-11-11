@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 
 	//ユーザID
-	if (!preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,30}+\z/i', $usr_id)){
+	if (!preg_match('/\A[a-z\d]{8,30}+\z/i', $usr_id)){
 		$error = "IDに誤りがあります<br>";
 	}
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
@@ -105,11 +105,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<div class="contentswrap">
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
-			<tr><div class="label" align="center">個人ステータスの登録</div></tr>
+			<tr><div class="label" align="center">会員登録</div></tr>
 
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
-			<font size="2">8〜30文字の半角英字を入力して下さい</font></td></tr>
+			<font size="2">8〜30文字の半角英数字を入力して下さい</font></td></tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
 					<div class="label">パスワード</div></td>
