@@ -102,9 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		}else{
 			echo "登録が完了しました";
-			echo "<br><center><a href=\"./top.php\">トップページへ</a></center>";
-			echo "</body>";
-			echo "</html>";
+			echo "<br><center><a href=\"./top.php\">トップページへ</a></center></body></html>";
 	}
 }
 
