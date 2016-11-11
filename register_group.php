@@ -320,13 +320,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
-		//echo floatval($rows[0]["a1"]);
+		echo floatval($rows[0][0]);
 		if($countrows>1){
 			$databox = array();
 			for($i=0;$i<$countrows;$i++){
-				for($j=0;$j<8;$j++){
 					$databox[$i][$j]=floatval($rows[$i][$j]);
-				}
 			}
 			var_dump($databox);
 		//$family=value_calcuation($databox);
