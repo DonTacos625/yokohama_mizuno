@@ -13,7 +13,7 @@ $error = ""; //性別
 $access_error = ""; //アクセスエラー
 
 function val_check($maxno,$var){
-	if (!preg_match('/^[0-9]+$/', $var)){
+	if (!preg_match('/^([0-9]{1,3})$/', $var)){
 		$error = "半角数字以外が存在します<br>";
 	}else{
 		$var=intval($var);
