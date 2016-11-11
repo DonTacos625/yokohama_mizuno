@@ -35,9 +35,13 @@
 		if (response.status === 'connected') {
 			//document.getElementById('status').innerHTML = '認証はしたよ.';
 			// Logged into your app and Facebook.
-			testAPI();
+			//testAPI();
 			//Ajaxを使った通信
 			(function(){
+				FB.api('/me', function(response) {
+				//console.log('Successful login for: ' + response.name);
+				userid = response.id;
+				});
 			$.ajax({
 				url: 'api.php',
         type: 'post', // getかpostを指定(デフォルトは前者)
