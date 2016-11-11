@@ -89,6 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 				<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 					<tr><div class="label" align="center">個人ステータスの登録</div></tr>
+					<tr>
+						<td align="center" ><div class="label">マイ番号</div></td>
+						<td><font size=5><?=$usr_no ?></font></td>
+					</tr>
 					<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
 							<input type="radio" name="gender" value="1"<?php if ($gender==1){ print " checked"; }?> >男
