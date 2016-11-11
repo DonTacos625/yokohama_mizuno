@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//-----------------------------------------------------
 		// □：友達情報テーブル(friendinfo)からデータを読む
 		//-----------------------------------------------------
-		$pgsql->query("SELECT * FROM friendinfo WHERE no=$my_no");
+		$pgsql->query("SELECT * FROM friendinfo WHERE no='$my_no'");
 		$row = $pgsql->fetch();
 		if ($row){
 			$usr_id = $row["id"];
