@@ -319,17 +319,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
-		/*for($i=0;$i<$rows;$i++){
-			$databox[$i][1]=$rows[$i]["a1"];
-			$databox[$i][2]=$rows[$i]["a2"];
-			$databox[$i][3]=$rows[$i]["a3"];
-			$databox[$i][4]=$rows[$i]["a4"];
-			$databox[$i][5]=$rows[$i]["a5"];
-			$databox[$i][6]=$rows[$i]["a6"];
-			$databox[$i][7]=$rows[$i]["a7"];
-			$databox[$i][8]=$rows[$i]["a8"];
-		}*/
-		var_dump($rows);
+		for($i=0;$i<$rows;$i++){
+			$databox[$i][1]=intval($rows[$i]["a1"]);
+			$databox[$i][2]=intval($rows[$i]["a2"]);
+			$databox[$i][3]=intval($rows[$i]["a3"]);
+			$databox[$i][4]=intval($rows[$i]["a4"]);
+			$databox[$i][5]=intval($rows[$i]["a5"]);
+			$databox[$i][6]=intval($rows[$i]["a6"]);
+			$databox[$i][7]=intval($rows[$i]["a7"]);
+			$databox[$i][8]=intval($rows[$i]["a8"]);
+		}
+		var_dump($databox);
 		//$family=value_calcuation($databox);
 		//var_dump($family);
 
