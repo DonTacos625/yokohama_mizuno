@@ -332,9 +332,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][6]=floatval($rows[$i]["a7"]);
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
-			var_dump($databox);
-		//$family=value_calcuation($databox);
-		//var_dump($family);
+		//var_dump($databox);
+		$family=value_calcuation($databox);
+		var_dump($family);
 		}
 	}
 }else{
