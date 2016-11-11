@@ -21,7 +21,6 @@ function val_check($maxno,$var){
 			$error = "登録されていない番号が入力されています<br>";
 		}
 	}
-	echo $var;
 	return $var;
 }
 
@@ -33,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$no = $row['no'];
 	}
 	$my_no = $_SESSION["my_no"];
-	echo $no;
 
 	$f1 = 0;	//家族1
 	$f2 = 0;	//家族2
@@ -80,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
-	echo "ok";
 	//有効な数字が入力されたかを確認
 	$f1 = val_check($no,$f1);
 	$f2 = val_check($no,$f2);	//家族2
@@ -144,15 +141,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if($g28==null)
 		$g28=0;
 
-	echo "ok";
-
 	if(strlen($error)==0){
 		//ここにデータベース登録
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql);
 	}
-
-
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
