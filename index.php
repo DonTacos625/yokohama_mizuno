@@ -37,13 +37,13 @@
 			// Logged into your app and Facebook.
 			//testAPI();
 			//Ajaxを使った通信
-			(function(){
 				FB.api('/me', function(response) {
 				//console.log('Successful login for: ' + response.name);
 				userid = response.id;
 				document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
 				});
-			$.ajax({
+			(function(userid){
+				$.ajax({
 				url: 'api.php',
         type: 'post', // getかpostを指定(デフォルトは前者)
         dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
@@ -61,7 +61,7 @@
         	exit;
         }
       });
-		})();
+		})(userid);
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
