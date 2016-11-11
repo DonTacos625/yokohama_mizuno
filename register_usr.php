@@ -24,20 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
 	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
 	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
-	//$gender = intval(htmlspecialchars($_POST['gender']));
-	//$age = intval(htmlspecialchars($_POST['age']));
-	// $a1 = intval(htmlspecialchars($_POST['a1']));
-	// $a2 = intval(htmlspecialchars($_POST['a2']));
-	// $a3 = intval(htmlspecialchars($_POST['a3']));
-	// $a4 = intval(htmlspecialchars($_POST['a4']));
-	// $a5 = intval(htmlspecialchars($_POST['a5']));
-	// $a6 = intval(htmlspecialchars($_POST['a6']));
-	// $a7 = intval(htmlspecialchars($_POST['a7']));
-	// $a8 = intval(htmlspecialchars($_POST['a8']));
-	// $a9 = intval(htmlspecialchars($_POST['a9']));
-	// $a10 = intval(htmlspecialchars($_POST['a10']));
-	// $a11 = intval(htmlspecialchars($_POST['a11']));
-	//$email = htmlspecialchars($_POST['email']);
+
 	//--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------

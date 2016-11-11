@@ -114,39 +114,6 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
-	// Here we run a very simple test of the Graph API after login is
-	// successful.  See statusChangeCallback() for when this call is made.
-	function testAPI() {
-		console.log('Welcome!  Fetching your information.... ');
-		FB.api('/me', function(response) {
-			console.log('Successful login for: ' + response.name);
-			userid = response.id;
-			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
-		});
-	}
-
-	//Ajax通信関数
-	function connection(){
-		$.ajax({
-			url: 'api.php',
-            type: 'post', // getかpostを指定(デフォルトは前者)
-            dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
-            data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-            	u_id: userid
-            },
-        success:function(){ //facebook初回ログイン
-        	//document.getElementById('status').innerHTML = "登録できた！";
-        	//alert("しっぱい！");
-        	location.href = "./fb_regster.php"; //facebook初回ログイン登録用
-        	exit;
-        },
-        error:function(){ //2回目以降のログイン
-        	location.href = "./top.php";
-        	exit;
-        }
-      });
-	}
-
 	/* エラー文字列の生成 */
 	function errorHandler(args) {
 		var error;
