@@ -37,9 +37,11 @@
 			// Logged into your app and Facebook.
 			//testAPI();
 			//Ajaxを使った通信
+			(function(){
 				FB.api('/me', function(response) {
 				//console.log('Successful login for: ' + response.name);
 				userid = response.id;
+				document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
 				});
 			$.ajax({
 				url: 'api.php',
@@ -59,6 +61,7 @@
         	exit;
         }
       });
+		})();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
