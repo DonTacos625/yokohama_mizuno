@@ -40,7 +40,7 @@
 				FB.api('/me', function(response) {
 				//console.log('Successful login for: ' + response.name);
 				userid = response.id;
-				document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
+				
 				});
 			(function(userid){
 				$.ajax({
@@ -61,6 +61,7 @@
         	exit;
         }
       });
+				document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
 		})(userid);
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
