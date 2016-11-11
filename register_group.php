@@ -316,6 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		require_once("calcuation.php");
 
+		//家族
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
@@ -336,6 +337,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$family=value_calcuation($databox);
 		var_dump($family);
 		}
+
+		$rows = array(); //初期化
+		var_dump($rows);
+
+		//恋人
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo)";
+		$pgsql->query($sql);
+		$rows = $pgsql->fetch_all();
+		$countrows = count($rows);
+		if($countrows>1){
+			$databox = array();
+			for($i=0;$i<$countrows;$i++){
+				$databox[$i][0]=floatval($rows[$i]["a1"]);
+				$databox[$i][1]=floatval($rows[$i]["a2"]);
+				$databox[$i][2]=floatval($rows[$i]["a3"]);
+				$databox[$i][3]=floatval($rows[$i]["a4"]);
+				$databox[$i][4]=floatval($rows[$i]["a5"]);
+				$databox[$i][5]=floatval($rows[$i]["a6"]);
+				$databox[$i][6]=floatval($rows[$i]["a7"]);
+				$databox[$i][7]=floatval($rows[$i]["a8"]);
+			}
+			//var_dump($databox);
+			$lover=value_calcuation($databox);
+		}
+
+
+
+
+
+
 	}
 }else{
 	if(isset($_SESSION["my_no"])){
