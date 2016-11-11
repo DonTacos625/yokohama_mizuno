@@ -319,10 +319,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
-		$line = $pgsql->rows();
+		$countrows = count($rows);
 		$databox = 0;
-		echo intval($rows[1]["a1"]);
-		echo strlen($line);
+		//echo intval($rows[1]["a1"]);
+		echo $countrows;
 		/*for($i=0;$i<$rows;$i++){
 			$databox[$i][1]=intval($rows[$i]["a1"]);
 			$databox[$i][2]=intval($rows[$i]["a2"]);
