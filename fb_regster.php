@@ -58,6 +58,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
+<?php
+	//-----------------------------------------------------
+	// □：登録中ではないときにテーブルを読んでデータ表示
+	//-----------------------------------------------------
+	if (!isset($_POST["submit_toroku"])){
+		//-----------------------------------------------------
+		// □：友達情報テーブル(friendinfo)からデータを読む
+		//-----------------------------------------------------
+		$pgsql->query("SELECT * FROM friendinfo WHERE no=$my_no");
+		$row = $pgsql->fetch();
+		if ($row){
+			$usr_id = $row["id"];
+			$usr_pw = $row["pw"];
+			$age = $row["age"];
+			$gender = $row["gender"];
+			$a1= $row["a1"];
+			$a2= $row["a2"];
+			$a3= $row["a3"];
+			$a4= $row["a4"];
+			$a5= $row["a5"];
+			$a6= $row["a6"];
+			$a7= $row["a7"];
+			$a8= $row["a8"];
+		}
+	}
+	//----------------------------------------	
+	// ■　ヘッダーの取り込み
+	//----------------------------------------	
+	//require_once("header.php");
+	?>
 	<?php
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
@@ -90,8 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 					<tr><div class="label" align="center">個人ステータスの登録</div></tr>
 					<tr>
-						<td align="center" ><div class="label">マイ番号</div></td>
-						<td><font size=5><?=$usr_no ?></font></td>
+						<td align="center" ><div class="label">会員番号</div></td>
+						<td><font size=5><?=$my_no ?></font></td>
 					</tr>
 					<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 						<td>
@@ -213,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						<input type="radio" name="a8" value="5"<?php if ($a8==5){ print " checked"; }?> >5
 					</td>
 				</tr>
-				<tr><td align="center" colspan="1">
+				<tr><td align="center" colspan="2">
 					<input type="submit" name="Submit" value="登録する"></td></tr>
 				</table>
 			</form>
