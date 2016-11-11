@@ -321,6 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = $pgsql->fetch_all();
 		$databox = 0;
 		echo intval($rows[1]["a1"]);
+		echo strlen($rows);
 		/*for($i=0;$i<$rows;$i++){
 			$databox[$i][1]=intval($rows[$i]["a1"]);
 			$databox[$i][2]=intval($rows[$i]["a2"]);
