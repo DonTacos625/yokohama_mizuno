@@ -31,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$a7 = intval(htmlspecialchars($_POST['a7']));
 	$a8 = intval(htmlspecialchars($_POST['a8']));
 
-	echo $a1;
-
 	//性別,年齢の入力がなかったらエラー出力
 	if(strlen($gender)==0 || strlen($age)==0){
 		$error = "年齢又は性別が未入力です.";
@@ -103,8 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if($error != "登録が完了しました."){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		}else{
-		header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
-		exit;
+			echo "登録が完了しました";
+			echo "<br><center><a href=\"./top.php\">トップページへ</a></center>";
+			echo "</body>";
+			echo "</html>";
 	}
 }
 
@@ -246,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					</td>
 				</tr>
 				<tr><td align="center" colspan="2">
-					<input type="submit" name="Submit" value="登録する"></td></tr>
+					<input type="submit" name="submit_toroku" value="登録する"></td></tr>
 				</table>
 			</form>
 		</div>

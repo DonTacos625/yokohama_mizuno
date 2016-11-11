@@ -61,6 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
 			$pgsql->query($sql);
+			$sql = "INSERT INTO relationinfo(no) VALUES('$no')";
+			$pgsql->query($sql);
+			$sql = "INSERT INTO relationval(no) VALUES('$no')";
+			$pgsql->query($sql);
 		}
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";
@@ -126,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				</td>
 			</tr>
 			<tr><td align="center" colspan="2">
-			<input type="submit" name="submit_toroku" value="登録する"></td></tr>
+			<input type="submit" name="Submit" value="登録する"></td></tr>
 			</table>
 		</form>
 		</div>

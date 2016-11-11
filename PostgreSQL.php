@@ -46,6 +46,12 @@ class PostgreSQL{
 		return pg_fetch_array($this->p_Rows);
 	}
 	//---------------------------
+	//取得されたすべての行を配列として取得
+	//---------------------------
+	function fetch_all(){
+		return pg_fetch_all($this->p_Rows);
+	}
+	//---------------------------
 	// 変更された行の数を得る
 	//---------------------------
 	function affected_rows(){
