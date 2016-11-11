@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<div id="contents">
 		<!-- #main 本文スペース -->
 		<div class="contentswrap">
-		<form action="#">
+		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
 			<tr><div class="label" align="center"><font size="4">グループの登録</font><br><font color="red">会員ナンバーを半角数字</font>で入力してください</div>
 			</tr>
@@ -222,12 +222,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<input type="text" name="g28" value="<?=$g28 ?>" size="3">
 				</td>
 			</tr>
-			<tr>
-				<td align="center" colspan="2">
-					<input type="submit" name="submit_relation" value="登録">
-				</td>
-			</tr>
-			</table>
+			<tr><td align="center" colspan="2">
+					<input type="submit" name="submit_toroku" value="登録する"></td></tr>
+				</table>
 		</form>
 		</div>
 	</div>
