@@ -342,7 +342,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		var_dump($rows);
 
 		//恋人
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo)";
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
