@@ -103,6 +103,47 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = val_check($no,$g27); //友達2-7
 	$g28 = val_check($no,$g28); //友達2-8
 
+	if($f1==null)
+		$f1=0;
+	if($f2==null)
+		$f2=0;
+	if($f3==null)
+		$f3=0;
+	if($lo==null)
+		$lo=0;
+	if($g11==null)
+		$g11=0;
+	if($g12==null)
+		$g12=0;
+	if($g13==null)
+		$g13=0;
+	if($g14==null)
+		$g14=0;
+	if($g15==null)
+		$g15=0;
+	if($g16==null)
+		$g16=0;
+	if($g17==null)
+		$g17=0;
+	if($g18==null)
+		$g18=0;
+	if($g21==null)
+		$g21=0;
+	if($g22==null)
+		$g22=0;
+	if($g23==null)
+		$g23=0;
+	if($g24==null)
+		$g24=0;
+	if($g25==null)
+		$g25=0;
+	if($g26==null)
+		$g26=0;
+	if($g27==null)
+		$g27=0;
+	if($g28==null)
+		$g28=0;
+
 	echo "ok";
 
 	if(strlen($error)==0){
