@@ -66,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
+	echo $g15;
+
 	//有効な数字が入力されたかを確認
 	if($f1==null){
 		$f1=0;
