@@ -14,7 +14,7 @@
 	function value_calcuation($datax){
 		for($i=0;$i<count($datax[0]);$i++){
 			for($j=0;$j<count($datax);$j++){
-				$x[$i][$j]=$datax[$j][$i];
+				$x[$i][$j]=(double)$datax[$j][$i];
 			}
 		}
 		$n = (double) count($x[0]); //人数

@@ -321,11 +321,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
 		$databox = array();
-		echo intval($rows[1][0]);
+		//echo (double)$rows[1][0];
 		//echo $countrows;
 		for($i=0;$i<$countrows;$i++){
-			$databox[$i][0]=intval($rows[$i]["a1"]);
-			$databox[$i][1]=intval($rows[$i]["a2"]);
+			$databox[$i][0]=(double)$rows[$i]["a1"];
+			$databox[$i][1]=(double)$rows[$i]["a2"];
 			$databox[$i][2]=intval($rows[$i]["a3"]);
 			$databox[$i][3]=intval($rows[$i]["a4"]);
 			$databox[$i][4]=intval($rows[$i]["a5"]);
