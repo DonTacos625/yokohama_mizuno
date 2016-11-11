@@ -42,7 +42,7 @@
 				userid = response.id;
 				
 				});
-			(function(userid){
+			(function(){
 				$.ajax({
 				url: 'api.php',
         type: 'post', // getかpostを指定(デフォルトは前者)
@@ -62,7 +62,7 @@
         }
       });
 				document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
-		})(userid);
+		})();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
