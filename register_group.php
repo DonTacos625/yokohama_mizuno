@@ -447,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div class="label">友達グループ1</div>
 				</td>
 				<td>
-				<input type="text" name="g11" value="<?php if($g11!=0){echo $g11} ?>" size="3">
+				<input type="text" name="g11" value="<?=$g11 ?>" size="3">
 				<input type="text" name="g12" value="<?=$g12 ?>" size="3">
 				<input type="text" name="g13" value="<?=$g13 ?>" size="3">
 				<input type="text" name="g14" value="<?=$g14 ?>" size="3">
