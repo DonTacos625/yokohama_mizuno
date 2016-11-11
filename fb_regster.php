@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$a7 = intval(htmlspecialchars($_POST['a7']));
 	$a8 = intval(htmlspecialchars($_POST['a8']));
 
+	echo $a1;
+
 	//性別,年齢の入力がなかったらエラー出力
 	if(strlen($gender)==0 || strlen($age)==0){
 		$error = "年齢又は性別が未入力です.";
