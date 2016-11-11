@@ -11,19 +11,6 @@ $pgsql = new PostgreSQL;
 //エラーメッセージ
 $error = ""; //性別
 $access_error = ""; //アクセスエラー
-$i=0;
-function val_check($maxno,$var){
-	if (!preg_match('/^([0-9]{1,3})$/', $var)){
-		$error = "半角数字以外が存在します<br>";
-	}else{
-		$var=intval($var);
-		if($var>$maxno){
-			$error = "登録されていない番号が入力されています<br>";
-		}
-	}
-	echo $error;
-	return $var;
-}
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -78,6 +65,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g26 = htmlspecialchars($_POST["g26"], ENT_QUOTES); //友達2-6
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
+
+	function val_check($maxno,$var){
+		if (!preg_match('/^([0-9]{1,3})$/', $var)){
+			$error = "半角数字以外が存在します<br>";
+		}else{
+			$var=intval($var);
+			if($var>$maxno){
+				$error = "登録されていない番号が入力されています<br>";
+			}
+		}
+		return $var;
+	}
 
 	//有効な数字が入力されたかを確認
 	$f1 = val_check($no,$f1);
