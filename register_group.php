@@ -145,6 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//ここにデータベース登録
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql);
+		$error = "登録が完了しました.";
 	}
 }else{
 	if(isset($_SESSION["my_no"])){
