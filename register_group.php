@@ -21,6 +21,7 @@ function val_check($maxno,$var){
 			$error = "登録されていない番号が入力されています<br>";
 		}
 	}
+	echo $var;
 	return $var;
 }
 
@@ -151,6 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo "<br><center><a href=\"./top.php\">トップページへ</a></center>";
 			echo "</body>";
 			echo "</html>";
+			exit;
 		}
 	}
 
