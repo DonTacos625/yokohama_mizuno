@@ -318,8 +318,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
-		$databox = $pgsql->fetch_all();
-
+		$rows = $pgsql->fetch_all();
+		for($i=0;$i<$rows;$i++){
+			for($j=0;$j<$rows[0];$j++){
+				$databox[$i][$j]=$rows[$i][$j];
+			}
+		}
 		$family=value_calcuation($databox);
 		var_dump($databox);
 		var_dump($family);
