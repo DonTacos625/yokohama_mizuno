@@ -320,10 +320,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
-		$databox = 0;
+		$databox = array();
 		echo intval($rows[1][0]);
 		//echo $countrows;
-		/*for($i=0;$i<$countrows;$i++){
+		for($i=0;$i<$countrows;$i++){
 			$databox[$i][0]=intval($rows[$i]["a1"]);
 			$databox[$i][1]=intval($rows[$i]["a2"]);
 			$databox[$i][2]=intval($rows[$i]["a3"]);
@@ -332,7 +332,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$databox[$i][5]=intval($rows[$i]["a6"]);
 			$databox[$i][6]=intval($rows[$i]["a7"]);
 			$databox[$i][7]=intval($rows[$i]["a8"]);
-		}*/
+		}
 		var_dump($databox);
 		//$family=value_calcuation($databox);
 		//var_dump($family);
