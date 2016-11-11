@@ -319,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
-		for($i=0;$i<$rows;$i++){
+		/*for($i=0;$i<$rows;$i++){
 			$databox[$i][1]=$rows[$i]["a1"];
 			$databox[$i][2]=$rows[$i]["a2"];
 			$databox[$i][3]=$rows[$i]["a3"];
@@ -328,10 +328,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$databox[$i][6]=$rows[$i]["a6"];
 			$databox[$i][7]=$rows[$i]["a7"];
 			$databox[$i][8]=$rows[$i]["a8"];
-		}
-		$family=value_calcuation($databox);
-		var_dump($databox);
-		var_dump($family);
+		}*/
+		var_dump($rows);
+		//$family=value_calcuation($databox);
+		//var_dump($family);
 
 	}
 }else{
