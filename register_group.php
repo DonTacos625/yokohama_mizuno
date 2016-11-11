@@ -320,17 +320,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
-		echo floatval($rows[0][0]);
 		if($countrows>1){
 			$databox = array();
 			for($i=0;$i<$countrows;$i++){
-					$databox[$i][$j]=floatval($rows[$i][$j]);
+				$databox[$i][0]=floatval($rows[$i]["a1"]);
+				$databox[$i][1]=floatval($rows[$i]["a2"]);
+				$databox[$i][2]=floatval($rows[$i]["a3"]);
+				$databox[$i][3]=floatval($rows[$i]["a4"]);
+				$databox[$i][4]=floatval($rows[$i]["a5"]);
+				$databox[$i][5]=floatval($rows[$i]["a6"]);
+				$databox[$i][6]=floatval($rows[$i]["a7"]);
+				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
 			var_dump($databox);
 		//$family=value_calcuation($databox);
 		//var_dump($family);
 		}
-		}
+	}
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
