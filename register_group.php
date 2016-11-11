@@ -13,7 +13,6 @@ $error = ""; //性別
 $access_error = ""; //アクセスエラー
 $i=0;
 function val_check($maxno,$var){
-	$i++;
 	if (!preg_match('/^([0-9]{1,3})$/', $var)){
 		$error = "半角数字以外が存在します<br>";
 	}else{
@@ -22,6 +21,7 @@ function val_check($maxno,$var){
 			$error = "登録されていない番号が入力されています<br>";
 		}
 	}
+	echo $var;
 	return $var;
 }
 
