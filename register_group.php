@@ -322,8 +322,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$countrows = count($rows);
 		$databox = 0;
 		//echo intval($rows[1]["a1"]);
-		echo $countrows;
-		/*for($i=0;$i<$rows;$i++){
+		//echo $countrows;
+		for($i=0;$i<$countrows;$i++){
 			$databox[$i][1]=intval($rows[$i]["a1"]);
 			$databox[$i][2]=intval($rows[$i]["a2"]);
 			$databox[$i][3]=intval($rows[$i]["a3"]);
@@ -333,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$databox[$i][7]=intval($rows[$i]["a7"]);
 			$databox[$i][8]=intval($rows[$i]["a8"]);
 		}
-		var_dump($databox);*/
+		var_dump($databox);
 		//$family=value_calcuation($databox);
 		//var_dump($family);
 
