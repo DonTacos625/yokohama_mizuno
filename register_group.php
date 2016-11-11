@@ -1,7 +1,7 @@
 <?php
 session_start(); //セッションスタート
 //======================================================================
-//  ■： 会員情報登録ページ pwハッシュ化
+//  ■： 会員関係情報登録　register_group.php
 //======================================================================
 require_once("PostgreSQL.php");
 
@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f1=intval($f1);
-			if($f1>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($f1>$no||$f1==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f2=intval($f2);
-			if($f2>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($f2>$no||$f2==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -98,8 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$f3=intval($f3);
-			if($f3>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($f3>$no||$f3==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -110,8 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$lo=intval($lo);
-			if($lo>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($lo>$no||$lo==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -122,8 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g11=intval($g11);
-			if($g11>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g11>$no||$g11==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -134,8 +134,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g12=intval($g12);
-			if($g12>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g12>$no||$g12==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -146,8 +146,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g13=intval($g13);
-			if($g11>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g11>$no||$g13==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -158,8 +158,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g14=intval($g14);
-			if($g14>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g14>$no||$g14==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -170,8 +170,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g15=intval($g15);
-			if($g15>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g15>$no||$g15==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -182,8 +182,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g16=intval($g16);
-			if($g16>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g16>$no||$g16==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -194,8 +194,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g17=intval($g17);
-			if($g17>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g17>$no||$g17==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -206,8 +206,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g18=intval($g18);
-			if($g18>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g18>$no||$g18==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -218,8 +218,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g21=intval($g21);
-			if($g21>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g21>$no||$g21==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -230,8 +230,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g22=intval($g22);
-			if($g22>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g22>$no||$g22==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -242,8 +242,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g23=intval($g23);
-			if($g23>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g23>$no||$g23==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -254,8 +254,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g24=intval($g24);
-			if($g24>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g24>$no||$g24==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -266,8 +266,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g25=intval($g25);
-			if($g25>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g25>$no||$g25==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -278,8 +278,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g26=intval($g26);
-			if($g26>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g26>$no||$g26==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -290,8 +290,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g27=intval($g27);
-			if($g27>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g27>$no||$g27==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
@@ -302,19 +302,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
 			$g28=intval($g28);
-			if($g28>$no){
-				$error = "登録されていない番号が入力されています<br>";
+			if($g28>$no||$g28==$my_no){
+				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
 
-	echo $error;
-	echo $i;
 	if(strlen($error)==0){
 		//ここにデータベース登録
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql);
 		$error = "登録が完了しました.";
+
+		require_once("calcuation.php");
+
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
+		$pgsql->query($sql);
+		$databox = $pgsql->fetch_all();
+
+		$family=value_calcuation($databox);
+		var_dump($databox);
+		var_dump($family);
+
 	}
 }else{
 	if(isset($_SESSION["my_no"])){
