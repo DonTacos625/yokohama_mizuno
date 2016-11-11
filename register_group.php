@@ -321,19 +321,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
 		if($countrows>1){
-		$databox = array();
-		//echo (double)$rows[1][0];
-		//echo $countrows;
-		for($i=0;$i<$countrows;$i++){
-			for($j=0;$j<count($rows[0]);)
-				$databox[$i][$j]=(double)$rows[$i][$j];
+			$databox = array();
+			for($i=0;$i<$countrows;$i++){
+				for($j=0;$j<count($rows[0]);$j++)
+					$databox[$i][$j]=(double)$rows[$i][$j];
 			}
-		}
-		var_dump($databox);
+			var_dump($databox);
 		//$family=value_calcuation($databox);
 		//var_dump($family);
 		}
-	}
+		}
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
