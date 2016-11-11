@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$no = $row['no'];
 	}
 	$my_no = $_SESSION["my_no"];
+	echo $no;
 
 	/// フォームからデータを受け取る
 	//--------------------------------
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
+	echo "ok";
 	//有効な数字が入力されたかを確認
 	$f1 = val_check($no,$f1);
 	$f2 = val_check($no,$f2);	//家族2
@@ -78,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g26 = val_check($no,$g26); //友達2-6
 	$g27 = val_check($no,$g27); //友達2-7
 	$g28 = val_check($no,$g28); //友達2-8
+
+	echo "ok";
 
 	if(strlen($error)==0){
 		//ここにデータベース登録
