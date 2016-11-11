@@ -103,6 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}else{
 			echo "登録が完了しました";
 			echo "<br><center><a href=\"./top.php\">トップページへ</a></center></body></html>";
+			exit;
 	}
 }
 
