@@ -21,7 +21,7 @@ function val_check($maxno,$var){
 			$error = "登録されていない番号が入力されています<br>";
 		}
 	}
-	echo $var;
+	echo $error;
 	return $var;
 }
 
@@ -242,7 +242,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			exit;
 	}
 }
-
 ?>
 <div id="page">
 	<div id="head">
