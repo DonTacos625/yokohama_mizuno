@@ -61,10 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
 			$pgsql->query($sql);
-			$sql = "INSERT INTO relationinfo(no) VALUES('$no')";
-			$pgsql->query($sql);
-			$sql = "INSERT INTO relationval(no) VALUES('$no')";
-			$pgsql->query($sql);
 		}
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";
