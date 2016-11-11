@@ -320,7 +320,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
 		$databox = 0;
-		echo $rows[$i]["a1"];
+		echo $rows[1]["a1"];
 		/*for($i=0;$i<$rows;$i++){
 			$databox[$i][1]=intval($rows[$i]["a1"]);
 			$databox[$i][2]=intval($rows[$i]["a2"]);
