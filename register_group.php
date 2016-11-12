@@ -424,7 +424,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			}
 			$group2=value_calcuation($databox);
 		}else{
-			[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+			$group2=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
 		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
