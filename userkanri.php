@@ -43,8 +43,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$sql = "DELETE FROM friends WHERE no=$no";
 		$pgsql->query($sql);
 		*/
-		//友達情報テーブル(friendinfo)から削除
+		//会員情報テーブル(friendinfo)から削除
 		$sql = "DELETE FROM friendinfo WHERE no=$no";
+		$pgsql->query($sql); //クエリの送信
+		//会員関係テーブル(relationinfo)から削除
+		$sql = "DELETE FROM relationinfo WHERE no=$no";
+		$pgsql->query($sql); //クエリの送信
+		//見解間距離均等法による会員関係の値(valueinfo)から削除
+		$sql = "DELETE FROM valueinfo WHERE no=$no";
 		$pgsql->query($sql); //クエリの送信
 
 		/*もしかしたらアンケートのcsvの行削除もするかもしれない*/
@@ -73,7 +79,7 @@ if (strlen($error)>0){
 <table border="1" cellspacing="0" cellpadding="3" width="100%" bordercolor="#666666">
 <tr bgcolor="#eee8aa">
 <td align="center"><font size="2">番号</font></td>
-<td align="center"><font size="2">名前</font></td>
+<td align="center"><font size="2">ID</font></td>
 <td align="center"><font size="2">性別</font></td>
 <td align="center"><font size="2">年代</font></td>
 </tr>
@@ -81,10 +87,13 @@ if (strlen($error)>0){
 //----------------------------------------
 // □：テーブルからデータを読む (friendinfoテーブル)
 //----------------------------------------
-$pgsql->query("SELECT * FROM friendinfo ORDER BY no ASC"); //クエリの送信
-while($row = $pgsql->fetch()){ //行がある限り
-	$no = $row["no"];
-	$id = $row["id"];
+$sql= "SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC"; //クエリの送信
+$pgsql->query($sql);
+$row = $pgsql->fetch_all(); //該当行全て取り出し
+$count = count($row);
+for($i=0;$i<$count;$i++){
+	$no = $row[$i]["no"];
+	$id = $row[$i]["id"];
 	if(strlen($id)>30){
 		$id = "Facebook";
 	}
@@ -98,16 +107,15 @@ while($row = $pgsql->fetch()){ //行がある限り
 		$gender = "未入力";
 	}
 	echo <<<EOT
-<tr>
-<td align="center">$no</td>
-<td>$id</td>
-<td>$gender</td>
-<td>$age</td>
-<td><input type="submit" name="submit_del[$no]" value="削除"></td>
-</tr>
-EOT;
+	<tr>
+	<td align="center">$no</td>
+	<td>$id</td>
+	<td>$gender</td>
+	<td>$age</td>
+	<td><input type="submit" name="submit_del[$no]" value="削除"></td>
+	</tr>
+	EOT;
 }
-//ここまでwhileループ[終了の閉じカッコ]
 ?>
 </table>
 </form>

@@ -21,28 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 	$my_no = $_SESSION["my_no"];
 
-	$f1 = 0;	//家族1
-	$f2 = 0;	//家族2
-	$f3 = 0;	//家族3
-	$lo = 0; //恋人
-	$g11 = 0; //友達1-1
-	$g12 = 0; //友達1-2
-	$g13 = 0; //友達1-3
-	$g14 = 0; //友達1-4
-	$g15 = 0; //友達1-5
-	$g16 = 0; //友達1-6
-	$g17 = 0; //友達1-7
-	$g18 = 0; //友達1-8
-	$g21 = 0; //友達2-1
-	$g22 = 0; //友達2-2
-	$g23 = 0; //友達2-3
-	$g24 = 0; //友達2-4
-	$g25 = 0; //友達2-5
-	$g26 = 0; //友達2-6
-	$g27 = 0; //友達2-7
-	$g28 = 0; //友達2-8
-
-
 	/// フォームからデータを受け取る
 	//--------------------------------
 	$f1 = htmlspecialchars($_POST["f1"], ENT_QUOTES);	//家族1
@@ -66,23 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
-
-	echo gettype($no);
-	echo gettype($my_no);
-
 	//有効な数字が入力されたかを確認
-	if($f1==null){
-		$f1=0;
+	if(!preg_match('/^([0-9]/', $f1)){
+		$error[$i] = "半角数字以外が入力されています<br>";
+	}else if($f1>$no||!preg_match('/^([0-9]{1,4})$/', $f1)){
+		if($f1==$my_no)
+			$error[$i] = "自分の番号が入力されています<br>";
+		else
+			$error[$i] = "登録されていない番号が入力されています<br>"
 	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f1)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f1=intval($f1);
-			if($f1>$no||$f1==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
+		$f1=intval($f1);
 	}
+
 	if($f2==null){
 		$f2=0;
 	}else{
