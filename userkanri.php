@@ -87,8 +87,7 @@ if (strlen($error)>0){
 //----------------------------------------
 // □：テーブルからデータを読む (friendinfoテーブル)
 //----------------------------------------
-$sql= "SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC"; //クエリの送信
-$pgsql->query($sql);
+$pgsql->query("SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC");
 $row = $pgsql->fetch_all(); //該当行全て取り出し
 $count = count($row);
 for($i=0;$i<$count;$i++){
