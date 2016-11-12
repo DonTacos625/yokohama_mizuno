@@ -309,20 +309,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 
 	if(strlen($error)==0){
-		//ここにデータベース登録
+		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
-		$pgsql->query($sql);
+		$pgsql->query($sql); //sql送信
 		$error = "登録が完了しました.";
 
-		require_once("calcuation.php");
+		require_once("calcuation.php"); //計算プログラムの読み込み
+
+		//初期化
+		$rows = array();
+		$databox = array();
+		$countrows = 0;
+		$family = array(8);
 
 		//家族
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
 		$pgsql->query($sql);
-		$rows = $pgsql->fetch_all();
-		$countrows = count($rows);
-		if($countrows>1){
-			$databox = array();
+		$rows = $pgsql->fetch_all(); //該当行全て取り出し
+		$countrows = count($rows); //行数の確認
+		if($countrows>1){ //データの挿入
 			for($i=0;$i<$countrows;$i++){
 				$databox[$i][0]=floatval($rows[$i]["a1"]);
 				$databox[$i][1]=floatval($rows[$i]["a2"]);
@@ -333,13 +338,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][6]=floatval($rows[$i]["a7"]);
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
-		//var_dump($databox);
-		$family=value_calcuation($databox);
-		var_dump($family);
+			$family=value_calcuation($databox); //見解間距離均等法を用いて評価値を計算
+		}else{
+			$family=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]; //入力がなければ0を挿入
 		}
 
-		$rows = array(); //初期化
-		var_dump($rows);
+		//初期化
+		$rows = array();
+		$databox = array();
+		$countrows = 0;
+		$lover = array(8);
 
 		//恋人
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo')";
@@ -358,20 +366,75 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][6]=floatval($rows[$i]["a7"]);
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
-			//var_dump($databox);
 			$lover=value_calcuation($databox);
+		}else{
+			$lover=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
+		//初期化
+		$rows = array();
+		$databox = array();
+		$countrows = 0;
+		$group1 = array(8);
 
+		//友達グループ1
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18')";
+		$pgsql->query($sql);
+		$rows = $pgsql->fetch_all();
+		$countrows = count($rows);
+		if($countrows>1){
+			$databox = array();
+			for($i=0;$i<$countrows;$i++){
+				$databox[$i][0]=floatval($rows[$i]["a1"]);
+				$databox[$i][1]=floatval($rows[$i]["a2"]);
+				$databox[$i][2]=floatval($rows[$i]["a3"]);
+				$databox[$i][3]=floatval($rows[$i]["a4"]);
+				$databox[$i][4]=floatval($rows[$i]["a5"]);
+				$databox[$i][5]=floatval($rows[$i]["a6"]);
+				$databox[$i][6]=floatval($rows[$i]["a7"]);
+				$databox[$i][7]=floatval($rows[$i]["a8"]);
+			}
+			$group1=value_calcuation($databox);
+		}else{
+			$group1=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+		}
 
+		//初期化
+		$rows = array();
+		$databox = array();
+		$countrows = 0;
+		$group2 = array(8);
 
+		//友達グループ1
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28')";
+		$pgsql->query($sql);
+		$rows = $pgsql->fetch_all();
+		$countrows = count($rows);
+		if($countrows>1){
+			$databox = array();
+			for($i=0;$i<$countrows;$i++){
+				$databox[$i][0]=floatval($rows[$i]["a1"]);
+				$databox[$i][1]=floatval($rows[$i]["a2"]);
+				$databox[$i][2]=floatval($rows[$i]["a3"]);
+				$databox[$i][3]=floatval($rows[$i]["a4"]);
+				$databox[$i][4]=floatval($rows[$i]["a5"]);
+				$databox[$i][5]=floatval($rows[$i]["a6"]);
+				$databox[$i][6]=floatval($rows[$i]["a7"]);
+				$databox[$i][7]=floatval($rows[$i]["a8"]);
+			}
+			$group2=value_calcuation($databox);
+		}else{
+			[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+		}
 
-
+		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
+			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 ='$famiry[0]',fa2 ='$famiry[1]',fa3 ='$famiry[2]',fa4 ='$famiry[3]',fa5 ='$famiry[4]',fa6 ='$famiry[5]',fa7 ='$famiry[6]',fa8 ='$famiry[7]',loa1 ='$lover[0]',loa2 ='$lover[1]',loa3 ='$lover[2]',loa4 ='$lover[3]',loa5 ='$lover[4]',loa6 ='$lover[5]',loa7 ='$lover[6]',loa8 ='$lover[7]',g1a1 ='$group1[0]',g1a2 ='$group1[1]',g1a3 ='$group1[2]',g1a4 ='$group1[3]',g1a5 ='$group1[4]',g1a6 ='$group1[5]',g1a7 ='$group1[6]',g1a8 ='$group1[7]',g2a1 ='$group2[0]',g2a2 ='$group2[1]',g2a3 ='$group2[2]',g2a4 ='$group2[3]',g2a5 ='$group2[4]',g2a6 ='$group2[5]',g2a7 ='$group2[6]',g2a8 ='$group2[7]'";
+			$pgsql->query($sql);
+		}
 	}
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
-//		echo "$my_no";
 	}else{
 		$access_error = "不正なアクセスです";
 	}
