@@ -96,8 +96,8 @@ for($i=0;$i<$count;$i++){
 	if(strlen($id)>30){
 		$id = "Facebook";
 	}
-	$gender = $row["gender"];
-	$age = $row["age"];
+	$gender = $row[$i]["gender"];
+	$age = $row[$i]["age"];
 	if($gender==1){
 		$gender = "男";
 	}elseif($gender==2){

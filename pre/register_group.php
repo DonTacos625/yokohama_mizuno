@@ -10,7 +10,10 @@ $pgsql = new PostgreSQL;
 
 //エラーメッセージ
 $error = "";
+$error1 = "";
+$error2 = "";
 $access_error = ""; //アクセスエラー
+
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -20,28 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$no = $row['no'];
 	}
 	$my_no = $_SESSION["my_no"];
-
-	$f1 = 0;	//家族1
-	$f2 = 0;	//家族2
-	$f3 = 0;	//家族3
-	$lo = 0; //恋人
-	$g11 = 0; //友達1-1
-	$g12 = 0; //友達1-2
-	$g13 = 0; //友達1-3
-	$g14 = 0; //友達1-4
-	$g15 = 0; //友達1-5
-	$g16 = 0; //友達1-6
-	$g17 = 0; //友達1-7
-	$g18 = 0; //友達1-8
-	$g21 = 0; //友達2-1
-	$g22 = 0; //友達2-2
-	$g23 = 0; //友達2-3
-	$g24 = 0; //友達2-4
-	$g25 = 0; //友達2-5
-	$g26 = 0; //友達2-6
-	$g27 = 0; //友達2-7
-	$g28 = 0; //友達2-8
-
 
 	/// フォームからデータを受け取る
 	//--------------------------------
@@ -67,30 +48,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
 	//有効な数字が入力されたかを確認
-	if($f1==null){
-		$f1=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f1)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f1=intval($f1);
-			if($f1>$no||$f1==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($f2==null){
-		$f2=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f2)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f2=intval($f2);
-			if($f2>$no||$f2==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
+	if($f1==NULL)
+		$f1=NULL;
+	else if(!preg_match('/^([0-9]/', $f1))
+		$error = "半角数字以外が入力されています<br>";
+	else if($f1==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($f1>$no||!preg_match('/^([0-9]{1,4})$/', $f1))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$f1=intval($f1);
+
+	if($f2==NULL)
+		$f2=NULL;
+	else if(!preg_match('/^([0-9]/', $f2))
+		$error = "半角数字以外が入力されています<br>";
+	else if($f2==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($f2>$no||!preg_match('/^([0-9]{1,4})$/', $f2))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$f2=intval($f2);
+
 	if($f3==null){
 		$f3=0;
 	}else{
@@ -301,14 +280,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if(!preg_match('/^([0-9]{1,3})$/', $g28)){
 			$error = "登録されていない番号が入力されています<br>";
 		}else{
-			$g28=intval($g28);
+			$g28=intval($g2nib8);
 			if($g28>$no||$g28==$my_no){
 				$error = "登録されていない番号又は自分の番号が入力されています<br>";
 			}
 		}
 	}
 
-	if(strlen($error)==0){
+	if(strlen($error)==0&&strlen($error1)==0&&strlen($error2)==0){
 		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql); //sql送信
@@ -405,7 +384,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$countrows = 0;
 		$group2 = array(8);
 
-		//友達グループ1
+		//友達グループ2
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
@@ -424,11 +403,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			}
 			$group2=value_calcuation($databox);
 		}else{
-			[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+			$group2=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
-		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){
-			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET fa1='$fa1',fa2='$fa2',fa3='$fa3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
+		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
+			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 ='$family[0]',fa2 ='$family[1]',fa3 ='$family[2]',fa4 ='$family[3]',fa5 ='$family[4]',fa6 ='$family[5]',fa7 ='$family[6]',fa8 ='$family[7]',loa1 ='$lover[0]',loa2 ='$lover[1]',loa3 ='$lover[2]',loa4 ='$lover[3]',loa5 ='$lover[4]',loa6 ='$lover[5]',loa7 ='$lover[6]',loa8 ='$lover[7]',g1a1 ='$group1[0]',g1a2 ='$group1[1]',g1a3 ='$group1[2]',g1a4 ='$group1[3]',g1a5 ='$group1[4]',g1a6 ='$group1[5]',g1a7 ='$group1[6]',g1a8 ='$group1[7]',g2a1 ='$group2[0]',g2a2 ='$group2[1]',g2a3 ='$group2[2]',g2a4 ='$group2[3]',g2a5 ='$group2[4]',g2a6 ='$group2[5]',g2a7 ='$group2[6]',g2a8 ='$group2[7]'";
+			$pgsql->query($sql);
+			$sql = "SELECT * FROM valueinfo";
+			$pgsql->query($sql);
+			$resultrow = $pgsql->fetch_all();
+			var_dump($resultrow);
 		}
 	}
 }else{
@@ -446,7 +430,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
-<?php
+	<?php
 	//-----------------------------------------------------
 	// □：登録中ではないときにテーブルを読んでデータ表示
 	//-----------------------------------------------------
@@ -457,46 +441,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query("SELECT * FROM relationinfo WHERE no='$my_no'");
 		$row = $pgsql->fetch();
 		if ($row){
-			if($row["f1"]!=0)
-				$f1 = $row["f1"];
-			if($row["f2"]!=0)
-				$f2 = $row["f2"];	//家族2
-			if($row["f3"]!=0)
-				$f3 = $row["f3"];	//家族3
-			if($row["lo"]!=0)
-				$lo = $row["lo"]; //恋人
-			if($row["g11"]!=0)
-				$g11 = $row["g11"]; //友達1-1
-			if($row["g12"]!=0)
-				$g12 = $row["g12"]; //友達1-2
-			if($row["g13"]!=0)
-				$g13 = $row["g13"]; //友達1-3
-			if($row["g14"]!=0)
-				$g14 = $row["g14"]; //友達1-4
-			if($row["g15"]!=0)
-				$g15 = $row["g15"]; //友達1-5
-			if($row["g16"]!=0)
-				$g16 = $row["g16"]; //友達1-6
-			if($row["g17"]!=0)
-				$g17 = $row["g17"]; //友達1-7
-			if($row["g18"]!=0)
-				$g18 = $row["g18"]; //友達1-8
-			if($row["g21"]!=0)
-				$g21 = $row["g21"]; //友達2-1
-			if($row["g22"]!=0)
-				$g22 = $row["g22"]; //友達2-2
-			if($row["g23"]!=0)
-				$g23 = $row["g23"]; //友達2-3
-			if($row["g24"]!=0)
-				$g24 = $row["g24"]; //友達2-4
-			if($row["g25"]!=0)
-				$g25 = $row["g25"]; //友達2-5
-			if($row["g26"]!=0)
-				$g26 = $row["g26"]; //友達2-6
-			if($row["g27"]!=0)
-				$g27 = $row["g27"]; //友達2-7
-			if($row["g28"]!=0)
-				$g28 = $row["g28"]; //友達2-8
+			$f1 = $row["f1"];
+			$f2 = $row["f2"];	//家族2
+			$f3 = $row["f3"];	//家族3
+			$lo = $row["lo"]; //恋人
+			$g11 = $row["g11"]; //友達1-1
+			$g12 = $row["g12"]; //友達1-2
+			$g13 = $row["g13"]; //友達1-3
+			$g14 = $row["g14"]; //友達1-4
+			$g15 = $row["g15"]; //友達1-5
+			$g16 = $row["g16"]; //友達1-6
+			$g17 = $row["g17"]; //友達1-7
+			$g18 = $row["g18"]; //友達1-8
+			$g21 = $row["g21"]; //友達2-1
+			$g22 = $row["g22"]; //友達2-2
+			$g23 = $row["g23"]; //友達2-3
+			$g24 = $row["g24"]; //友達2-4
+			$g25 = $row["g25"]; //友達2-5
+			$g26 = $row["g26"]; //友達2-6
+			$g27 = $row["g27"]; //友達2-7
+			$g28 = $row["g28"]; //友達2-8
 		}
 	}
 	//----------------------------------------	
@@ -520,76 +484,76 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo "登録が完了しました";
 			echo "<br><center><a href=\"./top.php\">トップページへ</a></center></body></html>";
 			exit;
+		}
 	}
-}
-?>
-<div id="page">
-	<div id="head">
-		<a href="./index.php">Loginページへ戻る</a>
-	</div>
-</div>
-<div id="page">
-	<div id="contents">
-		<!-- #main 本文スペース -->
-		<div class="contentswrap">
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
-			<tr><div class="label" align="center"><font size="4">グループの登録</font><br><font color="red">会員ナンバーを半角数字</font>で入力してください</div>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">家族</div>
-				</td>
-				<td>
-				<input type="text" name="f1" value="<?=$f1 ?>" size="3">
-				<input type="text" name="f2" value="<?=$f2 ?>" size="3">
-				<input type="text" name="f3" value="<?=$f3 ?>" size="3">
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">恋人</div>
-				</td>
-				<td>
-				<input type="text" name="lo" value="<?=$lo ?>" size="3">
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">友達グループ1</div>
-				</td>
-				<td>
-				<input type="text" name="g11" value="<?=$g11 ?>" size="3">
-				<input type="text" name="g12" value="<?=$g12 ?>" size="3">
-				<input type="text" name="g13" value="<?=$g13 ?>" size="3">
-				<input type="text" name="g14" value="<?=$g14 ?>" size="3">
-				<input type="text" name="g15" value="<?=$g15 ?>" size="3">
-				<input type="text" name="g16" value="<?=$g16 ?>" size="3">
-				<input type="text" name="g17" value="<?=$g17 ?>" size="3">
-				<input type="text" name="g18" value="<?=$g18 ?>" size="3">
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">友達グループ2</div>
-				</td>
-				<td>
-				<input type="text" name="g21" value="<?=$g21 ?>" size="3">
-				<input type="text" name="g22" value="<?=$g22 ?>" size="3">
-				<input type="text" name="g23" value="<?=$g23 ?>" size="3">
-				<input type="text" name="g24" value="<?=$g24 ?>" size="3">
-				<input type="text" name="g25" value="<?=$g25 ?>" size="3">
-				<input type="text" name="g26" value="<?=$g26 ?>" size="3">
-				<input type="text" name="g27" value="<?=$g27 ?>" size="3">
-				<input type="text" name="g28" value="<?=$g28 ?>" size="3">
-				</td>
-			</tr>
-			<tr><td align="center" colspan="2">
-					<input type="submit" name="submit_relation" value="登録する"></td></tr>
-				</table>
-		</form>
+	?>
+	<div id="page">
+		<div id="head">
+			<a href="./index.php">Loginページへ戻る</a>
 		</div>
 	</div>
-</div>
+	<div id="page">
+		<div id="contents">
+			<!-- #main 本文スペース -->
+			<div class="contentswrap">
+				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
+						<tr><div class="label" align="center"><font size="4">グループの登録</font><br>自分の番号を除く<font color="red">会員番号を半角数字</font>で入力してください</div>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#ffe4e1">
+								<div class="label">家族</div>
+							</td>
+							<td>
+								<input type="text" name="f1" value="<?=$f1 ?>" size="3">
+								<input type="text" name="f2" value="<?=$f2 ?>" size="3">
+								<input type="text" name="f3" value="<?=$f3 ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#ffe4e1">
+								<div class="label">恋人</div>
+							</td>
+							<td>
+								<input type="text" name="lo" value="<?=$lo ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#ffe4e1">
+								<div class="label">友達グループ1</div>
+							</td>
+							<td>
+								<input type="text" name="g11" value="<?=$g11 ?>" size="3">
+								<input type="text" name="g12" value="<?=$g12 ?>" size="3">
+								<input type="text" name="g13" value="<?=$g13 ?>" size="3">
+								<input type="text" name="g14" value="<?=$g14 ?>" size="3">
+								<input type="text" name="g15" value="<?=$g15 ?>" size="3">
+								<input type="text" name="g16" value="<?=$g16 ?>" size="3">
+								<input type="text" name="g17" value="<?=$g17 ?>" size="3">
+								<input type="text" name="g18" value="<?=$g18 ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#ffe4e1">
+								<div class="label">友達グループ2</div>
+							</td>
+							<td>
+								<input type="text" name="g21" value="<?=$g21 ?>" size="3">
+								<input type="text" name="g22" value="<?=$g22 ?>" size="3">
+								<input type="text" name="g23" value="<?=$g23 ?>" size="3">
+								<input type="text" name="g24" value="<?=$g24 ?>" size="3">
+								<input type="text" name="g25" value="<?=$g25 ?>" size="3">
+								<input type="text" name="g26" value="<?=$g26 ?>" size="3">
+								<input type="text" name="g27" value="<?=$g27 ?>" size="3">
+								<input type="text" name="g28" value="<?=$g28 ?>" size="3">
+							</td>
+						</tr>
+						<tr><td align="center" colspan="2">
+							<input type="submit" name="submit_relation" value="登録する"></td></tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
 </body>
 </html>
