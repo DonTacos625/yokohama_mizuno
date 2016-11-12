@@ -106,15 +106,13 @@ for($i=0;$i<$count;$i++){
 	}else{
 		$gender = "未入力";
 	}
-	echo <<<EOT
-	<tr>
-	<td align="center">$no</td>
-	<td>$id</td>
-	<td>$gender</td>
-	<td>$age</td>
-	<td><input type="submit" name="submit_del[$no]" value="削除"></td>
-	</tr>
-	EOT;
+	echo "<tr>";
+	echo "<td align="center">$no</td>";
+	echo "<td>$id</td>";
+	echo "<td>$gender</td>";
+	echo "<td>$age</td>";
+	echo "<td><input type="submit" name="submit_del[$no]" value="削除"></td>";
+	echo "</tr>";
 }
 ?>
 </table>
