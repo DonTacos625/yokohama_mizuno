@@ -67,7 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
 
-	echo gettype($f1);
+	echo gettype($no);
+	echo gettype($my_no);
 
 	//有効な数字が入力されたかを確認
 	if($f1==null){
