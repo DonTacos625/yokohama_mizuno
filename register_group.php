@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
 
-	echo $f1;
+	echo gettype($f1);
 
 	//有効な数字が入力されたかを確認
 	if($f1==null){
@@ -522,7 +522,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<div class="contentswrap">
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
-			<tr><div class="label" align="center"><font size="4">グループの登録</font><br><font color="red">会員ナンバーを半角数字</font>で入力してください</div>
+			<tr><div class="label" align="center"><font size="4">グループの登録</font><br>自分の番号を除く<font color="red">会員番号を半角数字</font>で入力してください</div>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
