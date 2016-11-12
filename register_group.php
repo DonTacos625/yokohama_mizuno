@@ -66,6 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
+
+	echo $f1;
+
 	//有効な数字が入力されたかを確認
 	if($f1==null){
 		$f1=0;
@@ -430,10 +433,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
 			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 ='$famiry[0]',fa2 ='$famiry[1]',fa3 ='$famiry[2]',fa4 ='$famiry[3]',fa5 ='$famiry[4]',fa6 ='$famiry[5]',fa7 ='$famiry[6]',fa8 ='$famiry[7]',loa1 ='$lover[0]',loa2 ='$lover[1]',loa3 ='$lover[2]',loa4 ='$lover[3]',loa5 ='$lover[4]',loa6 ='$lover[5]',loa7 ='$lover[6]',loa8 ='$lover[7]',g1a1 ='$group1[0]',g1a2 ='$group1[1]',g1a3 ='$group1[2]',g1a4 ='$group1[3]',g1a5 ='$group1[4]',g1a6 ='$group1[5]',g1a7 ='$group1[6]',g1a8 ='$group1[7]',g2a1 ='$group2[0]',g2a2 ='$group2[1]',g2a3 ='$group2[2]',g2a4 ='$group2[3]',g2a5 ='$group2[4]',g2a6 ='$group2[5]',g2a7 ='$group2[6]',g2a8 ='$group2[7]'";
 			$pgsql->query($sql);
-			$sql = "SELECT * FROM valueinfo where no='$my_no'";
+			$sql = "SELECT * FROM valueinfo";
 			$pgsql->query($sql);
-			$row = $pgsql->fetch();
-			var_dump($row);
+			$resultrow = $pgsql->fetch_all();
+			var_dump($resultrow);
 		}
 	}
 }else{
