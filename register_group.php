@@ -323,6 +323,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all(); //該当行全て取り出し
 		$countrows = count($rows); //行数の確認
+		echo $countrows;
 		if($countrows>1){ //データの挿入
 			for($i=0;$i<$countrows;$i++){
 				$databox[$i][0]=floatval($rows[$i]["a1"]);
