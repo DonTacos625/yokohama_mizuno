@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//有効な数字が入力されたかを確認
 	if($f1==NULL)
 		$f1=NULL;
-	else if(!preg_match('/^([0-9]/', $f1))
+	else if(!preg_match('/^([0-9])/', $f1))
 		$error = "半角数字以外が入力されています<br>";
 	else if($f1==$my_no)
 		$error1 = "自分の番号が入力されています<br>";
