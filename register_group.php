@@ -405,7 +405,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$countrows = 0;
 		$group2 = array(8);
 
-		//友達グループ1
+		//友達グループ2
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28')";
 		$pgsql->query($sql);
 		$rows = $pgsql->fetch_all();
@@ -424,11 +424,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			}
 			$group2=value_calcuation($databox);
 		}else{
-			[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+			$group2=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
-		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){
-			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET fa1='$fa1',fa2='$fa2',fa3='$fa3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
+		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
+			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 ='$family[0]',fa2 ='$family[1]',fa3 ='$family[2]',fa4 ='$family[3]',fa5 ='$family[4]',fa6 ='$family[5]',fa7 ='$family[6]',fa8 ='$family[7]',loa1 ='$lover[0]',loa2 ='$lover[1]',loa3 ='$lover[2]',loa4 ='$lover[3]',loa5 ='$lover[4]',loa6 ='$lover[5]',loa7 ='$lover[6]',loa8 ='$lover[7]',g1a1 ='$group1[0]',g1a2 ='$group1[1]',g1a3 ='$group1[2]',g1a4 ='$group1[3]',g1a5 ='$group1[4]',g1a6 ='$group1[5]',g1a7 ='$group1[6]',g1a8 ='$group1[7]',g2a1 ='$group2[0]',g2a2 ='$group2[1]',g2a3 ='$group2[2]',g2a4 ='$group2[3]',g2a5 ='$group2[4]',g2a6 ='$group2[5]',g2a7 ='$group2[6]',g2a8 ='$group2[7]'";
+			$pgsql->query($sql);
+			$sql = "SELECT * FROM valueinfo";
+			$pgsql->query($sql);
+			$resultrow = $pgsql->fetch_all();
+			var_dump($resultrow);
 		}
 	}
 }else{
