@@ -506,7 +506,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		echo "</body></html>";
 		exit;
 	}
-	if (strlen($error)>0||strlen($error1)>0)||strlen($error2)>0{
+	if (strlen($error)>0||strlen($error1)>0||strlen($error2)>0){
 		if($error != "登録が完了しました."||$error1 != "登録が完了しました."||$error2 != "登録が完了しました."){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
