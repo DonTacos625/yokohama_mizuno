@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	// フォームからデータを受け取る
 	//--------------------------------
-	$gender = intval(htmlspecialchars($_POST['gender']));
-	$age = intval(htmlspecialchars($_POST['age']));
+	$gender = htmlspecialchars($_POST['gender']);
+	$age = htmlspecialchars($_POST['age']);
 	$a1 = intval(htmlspecialchars($_POST['a1']));
 	$a2 = intval(htmlspecialchars($_POST['a2']));
 	$a3 = intval(htmlspecialchars($_POST['a3']));

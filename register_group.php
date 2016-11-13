@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f1=intval($f1);
 
 	if($f2==NULL)
-		$f2=NULL;
+		$f2=0;
 	else if(!preg_match('/^([0-9])/', $f2))
 		$error = "半角数字以外が入力されています<br>";
 	else if($f2==$my_no)
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f2=intval($f2);
 
 	if($f3==NULL)
-		$f3=NULL;
+		$f3=0;
 	else if(!preg_match('/^([0-9])/', $f3))
 		$error = "半角数字以外が入力されています<br>";
 	else if($f3==$my_no)
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$f3=intval($f3);
 
 	if($lo==NULL)
-		$lo=NULL;
+		$lo=0;
 	else if(!preg_match('/^([0-9])/', $lo))
 		$error = "半角数字以外が入力されています<br>";
 	else if($lo==$my_no)
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$lo=intval($lo);
 
 	if($g11==NULL)
-		$g11=NULL;
+		$g11=0;
 	else if(!preg_match('/^([0-9])/', $g11))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g11==$my_no)
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g11=intval($g11);
 
 	if($g12==NULL)
-		$g12=NULL;
+		$g12=0;
 	else if(!preg_match('/^([0-9])/', $g12))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g12==$my_no)
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g12=intval($g12);
 
 	if($g13==NULL)
-		$g13=NULL;
+		$g13=0;
 	else if(!preg_match('/^([0-9])/', $g13))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g13==$my_no)
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g13=intval($g13);
 
 	if($g14==NULL)
-		$g14=NULL;
+		$g14=0;
 	else if(!preg_match('/^([0-9])/', $g14))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g14==$my_no)
@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g14=intval($g14);
 
 	if($g15==NULL)
-		$g15=NULL;
+		$g15=0;
 	else if(!preg_match('/^([0-9])/', $g15))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g15==$my_no)
@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g15=intval($g15);
 
 	if($g15==NULL)
-		$g15=NULL;
+		$g15=0;
 	else if(!preg_match('/^([0-9])/', $g15))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g15==$my_no)
@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g15=intval($g15);
 
 	if($g16==NULL)
-		$g16=NULL;
+		$g16=0;
 	else if(!preg_match('/^([0-9])/', $g16))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g16==$my_no)
@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g16=intval($g16);
 
 	if($g17==NULL)
-		$g17=NULL;
+		$g17=0;
 	else if(!preg_match('/^([0-9])/', $g17))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g17==$my_no)
@@ -200,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g17=intval($g17);
 
 	if($g18==NULL)
-		$g18=NULL;
+		$g18=0;
 	else if(!preg_match('/^([0-9])/', $g18))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g18==$my_no)
@@ -211,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g18=intval($g18);
 
 	if($g21==NULL)
-		$g21=NULL;
+		$g21=0;
 	else if(!preg_match('/^([0-9])/', $g21))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g21==$my_no)
@@ -222,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g21=intval($g21);
 
 	if($g22==NULL)
-		$g22=NULL;
+		$g22=0;
 	else if(!preg_match('/^([0-9])/', $g22))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g22==$my_no)
@@ -233,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g22=intval($g22);
 
 	if($g23==NULL)
-		$g23=NULL;
+		$g23=0;
 	else if(!preg_match('/^([0-9])/', $g23))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g23==$my_no)
@@ -244,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g23=intval($g23);
 
 	if($g24==NULL)
-		$g24=NULL;
+		$g24=0;
 	else if(!preg_match('/^([0-9])/', $g24))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g24==$my_no)
@@ -255,7 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g24=intval($g24);
 
 	if($g25==NULL)
-		$g25=NULL;
+		$g25=0;
 	else if(!preg_match('/^([0-9])/', $g25))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g25==$my_no)
@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g25=intval($g25);
 
 	if($g26==NULL)
-		$g26=NULL;
+		$g26=0;
 	else if(!preg_match('/^([0-9])/', $g26))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g26==$my_no)
@@ -277,7 +277,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g26=intval($g26);
 
 	if($g27==NULL)
-		$g27=NULL;
+		$g27=0;
 	else if(!preg_match('/^([0-9])/', $g27))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g27==$my_no)
@@ -288,7 +288,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$g27=intval($g27);
 
 	if($g28==NULL)
-		$g28=NULL;
+		$g28=0;
 	else if(!preg_match('/^([0-9])/', $g28))
 		$error = "半角数字以外が入力されています<br>";
 	else if($g28==$my_no)
