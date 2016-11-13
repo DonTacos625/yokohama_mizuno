@@ -307,6 +307,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql); //sql送信
 		$error = "登録が完了しました.";
+		$error1 = "登録が完了しました.";
+		$error2 = "登録が完了しました.";
 
 		require_once("calcuation.php"); //計算プログラムの読み込み
 
@@ -504,9 +506,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		echo "</body></html>";
 		exit;
 	}
-	if (strlen($error)>0){
-		if($error != "登録が完了しました."){
+	if (strlen($error)>0||strlen($error1)>0)||strlen($error2)>0{
+		if($error != "登録が完了しました."||$error1 != "登録が完了しました."||$error2 != "登録が完了しました."){
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+			echo "<font size=\"6\" color=\"#da0b00\">{$error2}</font><p>";
 		}else{
 			echo "登録が完了しました";
 			echo "<br><center><a href=\"./top.php\">トップページへ</a></center></body></html>";
