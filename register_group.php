@@ -67,9 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
 	//有効な数字が入力されたかを確認
-	if($f1==NULL)
-		$f1=NULL;
-	else if(!preg_match('/^([0-9])/', $f1))
+	if(!preg_match('/^([0-9])/', $f1))
 		$error = "半角数字以外が入力されています<br>";
 	else if($f1==$my_no)
 		$error1 = "自分の番号が入力されています<br>";
@@ -78,234 +76,225 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	else
 		$f1=intval($f1);
 
-	if($f2==null){
-		$f2=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f2)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f2=intval($f2);
-			if($f2>$no||$f2==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($f3==null){
-		$f3=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f3)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f3=intval($f3);
-			if($f3>$no||$f3==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($lo==null){
-		$lo=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $lo)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$lo=intval($lo);
-			if($lo>$no||$lo==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g11==null){
-		$g11=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g11)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g11=intval($g11);
-			if($g11>$no||$g11==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g12==null){
-		$g12=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g12)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g12=intval($g12);
-			if($g12>$no||$g12==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g13==null){
-		$g13=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g13)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g13=intval($g13);
-			if($g11>$no||$g13==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g14==null){
-		$g14=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g14)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g14=intval($g14);
-			if($g14>$no||$g14==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g15==null){
-		$g15=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g15)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g15=intval($g15);
-			if($g15>$no||$g15==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g16==null){
-		$g16=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g16)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g16=intval($g16);
-			if($g16>$no||$g16==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g17==null){
-		$g17=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g17)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g17=intval($g17);
-			if($g17>$no||$g17==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g18==null){
-		$g18=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g18)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g18=intval($g18);
-			if($g18>$no||$g18==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g21==null){
-		$g21=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g21)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g21=intval($g21);
-			if($g21>$no||$g21==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g22==null){
-		$g22=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g22)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g22=intval($g22);
-			if($g22>$no||$g22==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g23==null){
-		$g23=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g23)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g23=intval($g23);
-			if($g23>$no||$g23==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g24==null){
-		$g24=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g24)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g24=intval($g24);
-			if($g24>$no||$g24==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g25==null){
-		$g25=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g25)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g25=intval($g25);
-			if($g25>$no||$g25==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g26==null){
-		$g26=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g26)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g26=intval($g26);
-			if($g26>$no||$g26==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g27==null){
-		$g27=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g27)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g27=intval($g27);
-			if($g27>$no||$g27==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
-	if($g28==null){
-		$g28=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $g28)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$g28=intval($g28);
-			if($g28>$no||$g28==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
+	if($f2==NULL)
+		$f2=NULL;
+	else if(!preg_match('/^([0-9])/', $f2))
+		$error = "半角数字以外が入力されています<br>";
+	else if($f2==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($f2>$no||!preg_match('/^([0-9]{1,4})$/', $f2))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$f2=intval($f2);
+
+	if($f3==NULL)
+		$f3=NULL;
+	else if(!preg_match('/^([0-9])/', $f3))
+		$error = "半角数字以外が入力されています<br>";
+	else if($f3==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($f3>$no||!preg_match('/^([0-9]{1,4})$/', $f3))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$f3=intval($f3);
+
+	if($lo==NULL)
+		$lo=NULL;
+	else if(!preg_match('/^([0-9])/', $lo))
+		$error = "半角数字以外が入力されています<br>";
+	else if($lo==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($lo>$no||!preg_match('/^([0-9]{1,4})$/', $lo))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$lo=intval($lo);
+
+	if($g11==NULL)
+		$g11=NULL;
+	else if(!preg_match('/^([0-9])/', $g11))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g11==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g11>$no||!preg_match('/^([0-9]{1,4})$/', $g11))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g11=intval($g11);
+
+	if($g12==NULL)
+		$g12=NULL;
+	else if(!preg_match('/^([0-9])/', $g12))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g12==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g12>$no||!preg_match('/^([0-9]{1,4})$/', $g12))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g12=intval($g12);
+
+	if($g13==NULL)
+		$g13=NULL;
+	else if(!preg_match('/^([0-9])/', $g13))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g13==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g13>$no||!preg_match('/^([0-9]{1,4})$/', $g13))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g13=intval($g13);
+
+	if($g14==NULL)
+		$g14=NULL;
+	else if(!preg_match('/^([0-9])/', $g14))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g14==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g14>$no||!preg_match('/^([0-9]{1,4})$/', $g14))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g14=intval($g14);
+
+	if($g15==NULL)
+		$g15=NULL;
+	else if(!preg_match('/^([0-9])/', $g15))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g15==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g15>$no||!preg_match('/^([0-9]{1,4})$/', $g15))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g15=intval($g15);
+
+	if($g15==NULL)
+		$g15=NULL;
+	else if(!preg_match('/^([0-9])/', $g15))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g15==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g15>$no||!preg_match('/^([0-9]{1,4})$/', $g15))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g15=intval($g15);
+
+	if($g16==NULL)
+		$g16=NULL;
+	else if(!preg_match('/^([0-9])/', $g16))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g16==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g16>$no||!preg_match('/^([0-9]{1,4})$/', $g16))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g16=intval($g16);
+
+	if($g17==NULL)
+		$g17=NULL;
+	else if(!preg_match('/^([0-9])/', $g17))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g17==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g17>$no||!preg_match('/^([0-9]{1,4})$/', $g17))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g17=intval($g17);
+
+	if($g18==NULL)
+		$g18=NULL;
+	else if(!preg_match('/^([0-9])/', $g18))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g18==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g18>$no||!preg_match('/^([0-9]{1,4})$/', $g18))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g18=intval($g18);
+
+	if($g21==NULL)
+		$g21=NULL;
+	else if(!preg_match('/^([0-9])/', $g21))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g21==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g21>$no||!preg_match('/^([0-9]{1,4})$/', $g21))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g21=intval($g21);
+
+	if($g22==NULL)
+		$g22=NULL;
+	else if(!preg_match('/^([0-9])/', $g22))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g22==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g22>$no||!preg_match('/^([0-9]{1,4})$/', $g22))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g22=intval($g22);
+
+	if($g23==NULL)
+		$g23=NULL;
+	else if(!preg_match('/^([0-9])/', $g23))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g23==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g23>$no||!preg_match('/^([0-9]{1,4})$/', $g23))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g23=intval($g23);
+
+	if($g24==NULL)
+		$g24=NULL;
+	else if(!preg_match('/^([0-9])/', $g24))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g24==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g24>$no||!preg_match('/^([0-9]{1,4})$/', $g24))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g24=intval($g24);
+
+	if($g25==NULL)
+		$g25=NULL;
+	else if(!preg_match('/^([0-9])/', $g25))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g25==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g25>$no||!preg_match('/^([0-9]{1,4})$/', $g25))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g25=intval($g25);
+
+	if($g26==NULL)
+		$g26=NULL;
+	else if(!preg_match('/^([0-9])/', $g26))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g26==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g26>$no||!preg_match('/^([0-9]{1,4})$/', $g26))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g26=intval($g26);
+
+	if($g27==NULL)
+		$g27=NULL;
+	else if(!preg_match('/^([0-9])/', $g27))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g27==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g27>$no||!preg_match('/^([0-9]{1,4})$/', $g27))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g27=intval($g27);
+
+	if($g28==NULL)
+		$g28=NULL;
+	else if(!preg_match('/^([0-9])/', $g28))
+		$error = "半角数字以外が入力されています<br>";
+	else if($g28==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($g28>$no||!preg_match('/^([0-9]{1,4})$/', $g28))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$g28=intval($g28);
 
 	if(strlen($error)==0){
 		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
@@ -338,8 +327,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
 			$family=value_calcuation($databox); //見解間距離均等法を用いて評価値を計算
-		}else{
-			$family=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]; //入力がなければ0を挿入
 		}
 
 		//初期化
@@ -366,8 +353,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
 			$lover=value_calcuation($databox);
-		}else{
-			$lover=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
 		//初期化
@@ -394,8 +379,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
 			$group1=value_calcuation($databox);
-		}else{
-			$group1=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
 		//初期化
@@ -422,8 +405,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				$databox[$i][7]=floatval($rows[$i]["a8"]);
 			}
 			$group2=value_calcuation($databox);
-		}else{
-			$group2=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 		}
 
 		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
