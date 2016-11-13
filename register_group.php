@@ -316,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = array();
 		$databox = array();
 		$countrows = 0;
-		$family = array(8);
+		$family = array();
 
 		//家族
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
@@ -342,7 +342,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = array();
 		$databox = array();
 		$countrows = 0;
-		$lover = array(8);
+		$lover = array();
 
 		//恋人
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo')";
@@ -368,7 +368,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = array();
 		$databox = array();
 		$countrows = 0;
-		$group1 = array(8);
+		$group1 = array();
 
 		//友達グループ1
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18')";
@@ -394,7 +394,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$rows = array();
 		$databox = array();
 		$countrows = 0;
-		$group2 = array(8);
+		$group2 = array();
 
 		//友達グループ2
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28')";
