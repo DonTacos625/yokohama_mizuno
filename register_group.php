@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
+	echo gettype($f1);
+	echo gettype($my_no);
 
-	gettype($f1);
-	gettype($my_no);
 
 	//有効な数字が入力されたかを確認
 	if($f1==NULL)
@@ -302,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	else
 		$g28=intval($g28);
 
-	if(strlen($error)==0){
+	if(strlen($error)==0&&strlen($error1)==0&&strlen($error2)==0){
 		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
 		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
 		$pgsql->query($sql); //sql送信
