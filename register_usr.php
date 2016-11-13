@@ -30,26 +30,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 
 	//パスワード
-	if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $usr_pw)){ //ここの正規表現チェック
+	if(strlen($usr_pw)==0)
+		$error1 = "パスワードが未入力です<br>";
+	else if(strlen($usr_pw)==0)
+		$error1 = "確認用パスワードが未入力です<br>";
+	else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $usr_pw))
 		$error1 = "パスワードに誤りがあります<br>";
-	}
-	if($usr_pw != $usr_pw2){
+	else if($usr_pw != $usr_pw2)
 		$error1 = "パスワードが一致しません<br>";
-	}
-	if (strlen($usr_pw)==0){$error1 = "パスワードが未入力です<br>";
-	}
+	else
+		$error1 = "";
 
 	//ユーザID
-	if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id)){
+	if (strlen($usr_id)==0)
+		$error = "ユーザIDが未入力です<br>";
+	else if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id))
 		$error = "IDに誤りがあります<br>";
+	else{
+		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
+		$row = $pgsql->fetch();
+		if ($row)
+			$error = "このユーザIDは既に使われています<br>";
 	}
-	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
-	$row = $pgsql->fetch();
-	if ($row){$error = "このユーザIDは既に使われています<br>";
-	}
-	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です<br>";
-	}
-
 	//登録
 	if (strlen($error)==0 and strlen($error1)==0){
 	//--------------------------------------------
@@ -78,20 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
-	if (strlen($error)>0){
-		if($error != "登録が完了しました"){
-			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-		}
-		if($error1 != "登録が完了しました"){
-			echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
-		}
-		if ($error == "登録が完了しました" and $error1 == "登録が完了しました") {
-			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-			echo "<br><center><a href=\"./index.php\">Login画面へ</a></center>";
-			echo "</body>";
-			echo "</html>";
-			exit;
-		}
+	if($error != "登録が完了しました"||$error1 != "登録が完了しました"){
+		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+		echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+	}else{
+		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+		echo "<br><center><a href=\"./index.php\">Login画面へ</a></center>";
+		echo "</body>";
+		echo "</html>";
+		exit;
 	}
 ?>
 <div id="page">
