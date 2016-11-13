@@ -1,6 +1,6 @@
 <?php
 //======================================================================
-//  ■： 会員情報登録ページ user情報登録は、fbと一緒に
+//  ■： 会員登録ページ register_usr.php 
 //======================================================================
 require_once("PostgreSQL.php");
 //require_once("com_require2.php");
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 
 	//ユーザID
-	if (!preg_match('/\A[a-z\d]{8,30}+\z/i', $usr_id)){
+	if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id)){
 		$error = "IDに誤りがあります<br>";
 	}
 	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
@@ -109,13 +109,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
-			<font size="2">8〜30文字の半角英数字を入力して下さい</font></td></tr>
+			<font size="2">5〜30文字の半角英数字を入力して下さい</font></td></tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
 					<div class="label">パスワード</div></td>
 				<td>
 					<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
-					<font size="2">8文字以上で半角英[小文字/大文字],数字を混在させたものを入力して下さい</font>
+					<font size="2">6文字以上で半角英[小文字/大文字],数字を混在させたものを入力して下さい</font>
 				</td>
 			</tr>
 			<tr>

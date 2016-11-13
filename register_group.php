@@ -1,7 +1,7 @@
 <?php
 session_start(); //セッションスタート
 //======================================================================
-//  ■： 会員関係情報登録　register_group.php
+//  ■： 会員関係情報登録　register_group.php　完成
 //======================================================================
 require_once("PostgreSQL.php");
 
@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g27 = htmlspecialchars($_POST["g27"], ENT_QUOTES); //友達2-7
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
-	echo gettype($f1);
-	echo gettype($my_no);
+	//echo gettype($f1); //string
+	//echo gettype($my_no); //string
 
 
 	//有効な数字が入力されたかを確認
@@ -422,14 +422,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$sql = "SELECT * FROM valueinfo";
 			$pgsql->query($sql);
 			$resultrow = $pgsql->fetch_all();
-			var_dump($resultrow);
+			//var_dump($resultrow); //array(33)
 		}
 	}
 }else{
 	if(isset($_SESSION["my_no"])){
-		$my_no = $_SESSION["my_no"];
+		$my_no = $_SESSION["my_no"]; //セッションがセットされていれば会員番号を挿入
 	}else{
-		$access_error = "不正なアクセスです";
+		$access_error = "不正なアクセスです"; //アクセスエラー
 	}
 }
 ?>
@@ -530,7 +530,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<div class="contentswrap">
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
-			<tr><div class="label" align="center"><font size="4">グループの登録</font><br><font color="red">会員ナンバーを半角数字</font>で入力してください</div>
+			<tr><div class="label" align="center"><font size="4">グループの登録</font><br><font color="red">自分の番号以外</font>の会員番号を<font color="red">半角数字</font>で入力してください</div>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
