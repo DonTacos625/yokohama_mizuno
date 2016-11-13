@@ -67,18 +67,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$g28 = htmlspecialchars($_POST["g28"], ENT_QUOTES); //友達2-8
 
 	//有効な数字が入力されたかを確認
-	if($f1==null){
-		$f1=0;
-	}else{
-		if(!preg_match('/^([0-9]{1,3})$/', $f1)){
-			$error = "登録されていない番号が入力されています<br>";
-		}else{
-			$f1=intval($f1);
-			if($f1>$no||$f1==$my_no){
-				$error = "登録されていない番号又は自分の番号が入力されています<br>";
-			}
-		}
-	}
+	if($f1==NULL)
+		$f1=NULL;
+	else if(!preg_match('/^([0-9]/', $f1))
+		$error = "半角数字以外が入力されています<br>";
+	else if($f1==$my_no)
+		$error1 = "自分の番号が入力されています<br>";
+	else if($f1>$no||!preg_match('/^([0-9]{1,4})$/', $f1))
+		$error2 = "登録されていない番号が入力されています<br>";
+	else
+		$f1=intval($f1);
+
 	if($f2==null){
 		$f2=0;
 	}else{
