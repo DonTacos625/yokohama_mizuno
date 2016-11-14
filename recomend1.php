@@ -2,6 +2,8 @@
 //観光スポット推薦システム 推薦項目ページ
 session_start();
 require_once("PostgreSQL.php");
+$pgsql = new PostgreSQL;
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
