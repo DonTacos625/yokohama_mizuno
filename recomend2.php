@@ -4,81 +4,6 @@
 require_once('PostgreSQL.php');
 // table1 観光地のみの類似度が出る
 
-$resultNum = 8;
-
-function cosSim($data1, $data2,$minArray, $maxArray){
-	// cosSim関数($data, $data, $minArray, $maxArray)
-	// $data配列[5]～[5+11]ベクトルに使用している要素  full[0-16]
-	// $minArray素性の最少ベクトルの配列番号    $maxArray素性の最大ベクトルの配列番号
-	$sum=null;
-	$sim=null;
-	$rd1=null;
-	$rd2=null;
-	$r1=0;
-	$r2=0;
-	$deff = $maxArray - $minArray;
-	for($i=0; $i < $deff; $i++){
-		$sum =  $sum + $data1[$minArray+$i]*$data2[$minArray+$i];
-		$r1 = $r1+($data1[$minArray+$i]*$data1[$minArray+$i]);
-		$r2 = $r2+($data2[$minArray+$i]*$data2[$minArray+$i]);
-	}
-	$rd1 = sqrt($r1);
-	$rd2 = sqrt($r2);
-	if(($rd1 * $rd2)==0){
-		$sim=0;
-	}else{
-	$sim = $sum / ($rd1 * $rd2);
-	}
-	return $sim;
-}//cosSim END
-
-$nameA2  = "";
-$latlng2 = "";
-$infowin2 = "";
-$typeA2 = "";
-$caA2 = "";
-function simList($data1, $data2){
-//$data1[固定] ユーザー　
-//$data2　PLACE2 次元テーブル
-//$data1のユーザーに近い場所リストをテーブルで表示 
-
-	//	echo "ユーザー情報表示<br />";
-	//	foreach ($data1 as $key => $value){
-	//		print $key.'=>'.$value.'<br />';
-	//	}
-
-$nameA = array();
-$latlng = array();
-$infowin = array();
-$typeA = array();
-$caA = array();
-//	echo $data1[1];//ユーザー名表示
-	
-	
-//	echo "<br />PlaceID =>作成した類似度 <br />";	
-	$simU_P=null;
-	$sortedPlace=null;
-	
-	// $sortedPlace[$key]->類似度　　を作成する　
-	// $sortedPlaceをユーザー情報との類似度でソートする
-	foreach ($data2 as $key => $value){//value = data2[$i]
-		
-		$simU_P = cosSim($data1,$value,11,22);
-		$sortedPlace[$key] = $simU_P;
-//		print $key.'=>'.$simU_P.'<br />';
-		
-	}
-//	echo "<br />PlaceID =>作成した類似度 （ソート後、降順） <br />";
-	
-	//ソートを実行
-	arsort( $sortedPlace);	
-
-//	echo "<TABLE  border='1' >";
-//	echo "<TR>";
-
-}//simList ＥＮＤ
-
-
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
@@ -179,36 +104,21 @@ while ($data = mysql_fetch_array($quryset)){
 //	echo cosSim($UserTable[0],$UserTable[$j],6,17);
 	$j++;
 }
-//asort($UserTable);
 
-//echo "</TABLE>";
+	for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
+		$temparray[$i][0] = $PlaceTable[$i]["spot_a1"];
+		$temparray[$i][1] = $PlaceTable[$i]["spot_a2"];
+		$temparray[$i][2] = $PlaceTable[$i]["spot_a3"];
+		$temparray[$i][3] = $PlaceTable[$i]["spot_a4"];
+		$temparray[$i][4] = $PlaceTable[$i]["spot_a5"];
+		$temparray[$i][5] = $PlaceTable[$i]["spot_a6"];
+		$temparray[$i][6] = $PlaceTable[$i]["spot_a7"];
+		$temparray[$i][7] = $PlaceTable[$i]["spot_a8"];
+	}
 
-
-/* ソート　*/
-// $UserTable[]
-// $PlaceTable[]
-
-//echo '<br />';
-//echo "Place-User 類似度<br />\n";
-
-//print_r( $UserTable[0] );
-//print_r( $UserTable[1] );
-
-//echo cosSim($PlaceTable[0],$UserTable[1]);
-$max = count($UserTable);
-$a = $usr_no - 1;
-//print_r($UserTable[$a]);
-simList($UserTable[$a],$PlaceTable);
-
-//echo $nameA2;
-//echo $latlng2;
-//$lat = $_REQUEST["lat"];
-//$lng = $_REQUEST["lng"];
+	$sortedvalue = simList($UserTable,$temparray);
+	$resultplace = sort_for_point($sortedvalue,$PlaceTable,$point,20); //$point 重視する項目
 }
-?>
-<?php
-	$lat = $_REQUEST["lat"];
-	$lng = $_REQUEST["lng"];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -160,9 +160,9 @@ function cosSim($data1, $data2){
 	$r2=0;
 	$deff = 8;
 	for($i=0; $i < $deff; $i++){
-		$sum =  $sum + $data1[$i]*$data2[8+$i];
-		$r1 = $r1+($data1[$i]*$data1[8+$i]);
-		$r2 = $r2+($data2[$i]*$data2[8+$i]);
+		$sum =  $sum + $data1[$i]*$data2[$i];
+		$r1 = $r1+($data1[$i]*$data1[$i]);
+		$r2 = $r2+($data2[$i]*$data2[$i]);
 	}
 	$rd1 = sqrt($r1);
 	$rd2 = sqrt($r2);
@@ -176,7 +176,7 @@ function cosSim($data1, $data2){
 
 function simList($data1, $data2){
 //$data1[固定] ユーザー
-//$data2      ローカル情報データ 2次元テーブル
+//$data2      ローカル情報評価値データ ２次元配列
 
 	$simU_P=array();
 	$sortedPlace=null;
