@@ -36,7 +36,7 @@ $pgsql = new PostgreSQL;
 						<?php
 						echo "<SELECT name='groupvalue'>";
 						echo "<OPTION value='0' selected>一人</OPTION>";
-							if (isset($_SESSION["my_no"])){
+							//if (isset($_SESSION["my_no"])){
 								$pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'");
 								$row = $pgsql->fetch();
 								//if($row){
@@ -49,7 +49,7 @@ $pgsql = new PostgreSQL;
 									//if($row['g21']!=0||$row['g22']!=0||$row['g23']!=0||$row['g24']!=0||$row['g25']!=0||$row['g26']!=0||$row['g27']!=0||$row['g28']!=0)
 										echo "<OPTION value='4'>友達グループ2</OPTION>";
 							//	}
-							}
+						//	}
 						echo "</SELECT>";
 							?>
 					</p>
