@@ -158,11 +158,11 @@ function cosSim($data1, $data2){
 	$rd2=null;
 	$r1=0;
 	$r2=0;
-	$deff = $maxArray - $minArray;
+	$deff = 8;
 	for($i=0; $i < $deff; $i++){
-		$sum =  $sum + $data1[$minArray+$i]*$data2[$minArray+$i];
-		$r1 = $r1+($data1[$minArray+$i]*$data1[$minArray+$i]);
-		$r2 = $r2+($data2[$minArray+$i]*$data2[$minArray+$i]);
+		$sum =  $sum + $data1[$i]*$data2[8+$i];
+		$r1 = $r1+($data1[$i]*$data1[8+$i]);
+		$r2 = $r2+($data2[$i]*$data2[8+$i]);
 	}
 	$rd1 = sqrt($r1);
 	$rd2 = sqrt($r2);
@@ -175,54 +175,40 @@ function cosSim($data1, $data2){
 }//cosSim END
 
 function simList($data1, $data2){
-//$data1[固定] ユーザー　
+//$data1[固定] ユーザー
 //$data2      ローカル情報データ 2次元テーブル
 
-$simU_P=array();
-$sortedPlace=null;
+	$simU_P=array();
+	$sortedPlace=null;
 
-for($i=0;$i<count($data2);$i++){
-	$simU_P[$i]=cosSim($data1,$data2);
-}
-
-
-
-
-
-
-/*
-	// $sortedPlace[$key]->類似度　　を作成する
-	// $sortedPlaceをユーザー情報との類似度でソートする
-	foreach ($data2 as $key => $value){//value = data2[$i]
-		
-		$simU_P = cosSim($data1,$value,11,22);
-		$sortedPlace[$key] = $simU_P;
-//		print $key.'=>'.$simU_P.'<br />';
-		
+	for($j=0;$j<count($data2);$j++){
+		$simU_P[$j]=cosSim($data1,$data2[$j]); //類似度算出
 	}
-//	echo "<br />PlaceID =>作成した類似度 （ソート後、降順） <br />";
-	
-	//ソートを実行
-	arsort( $sortedPlace);	
+	//降順にソートする
+	arsort($simU_P);
 
-//	echo "<TABLE  border='1' >";
-//	echo "<TR>";*/
+	return $simU_P;
 
 }//simList ＥＮＤ
 
+function sort_for_point($data1,$data2,$value,$num){
+	//$data1 ソートされた類似度 一次元
+	//$data2      ローカル情報データ 2次元テーブル
+	//$value 重視する項目
+	//$num 何番目までを抜き出すか
 
+	$top = array_slice($data1,0,$num,true); //上位$num番目までを抽出
 
+	$topnum = array_keys($top); //上位$num番目までのキー値つまり$data2の何番目にあるか
 
+	for($i=0;$i<count($topnum);$i++){ //上位$num位までの観光スポットデータの抜き出し
+		$tmp = $topnum[$i];
+		$spotdata[$i] = $data2[$tmp];
+	}
 
-
-
-
-
-
-
-
-
-
-
+	array_multisort(array_column($spotdata, $value),SORT_NUMERIC, SORT_DESC,$spotdata);
+	//重視する項目でソート
+	return $spotdata;
+}
 
 ?>
