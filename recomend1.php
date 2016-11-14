@@ -31,12 +31,12 @@ require_once("PostgreSQL.php");
 				<ul><h4>観光するグループをお選びください。</h4></ul>
 				<ul>
 					<p>
-						<SELECT name="groupvalue">
-							<OPTION value='0' selected>一人</OPTION>
-							<?php
+						<?php
+						echo "<SELECT name='groupvalue'>";
+						echo "<OPTION value='0' selected>一人</OPTION>";
+							
 							if (isset($_SESSION["my_no"])){
-								$sql ="SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'";
-								$pgsql->query($sql);
+								$pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'");
 								$row = $pgsql->fetch();
 								/*if($row){
 									if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)
@@ -49,8 +49,9 @@ require_once("PostgreSQL.php");
 										echo "<OPTION value='4'>友達グループ2</OPTION>";
 								}*/
 							}
+						echo "</SELECT>";
 							?>
-						</SELECT>
+						
 					</p>
 				</ul>
 				<ul><h4>カテゴリーをお選びください。</h4></ul>
