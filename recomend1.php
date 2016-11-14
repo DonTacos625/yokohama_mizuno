@@ -37,7 +37,8 @@ $pgsql = new PostgreSQL;
 						echo "<SELECT name='groupvalue'>";
 						echo "<OPTION value='0' selected>一人</OPTION>";
 							if (isset($_SESSION["my_no"])){
-								//$pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'");
+								$sql = "SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'"
+								$pgsql->query($sql);
 								//$row = $pgsql->fetch();
 								//if($row){
 									//if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)*/
