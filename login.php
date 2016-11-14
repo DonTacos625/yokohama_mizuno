@@ -35,9 +35,8 @@
 		if (response.status === 'connected') {
 			//document.getElementById('status').innerHTML = '認証はしたよ.';
 			// Logged into your app and Facebook.
-			testAPI();
 			//Ajaxを使った通信
-			connection();
+
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
@@ -54,6 +53,9 @@
 	function checkLoginState() {
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
+			if(response.status=='connected'){
+				connection(response.id);
+			}
 		});
 	}
 
@@ -103,7 +105,7 @@
 	}
 
 	//Ajax通信関数
-	function connection(){
+	function connection($userid){
 		$.ajax({
 			url: 'api.php',
             type: 'post', // getかpostを指定(デフォルトは前者)
