@@ -1,15 +1,10 @@
 ﻿<?php
 	session_start(); //セッションの開始
-	$checkbox = $_REQUEST["chk"];
-?>
-
-<?php
 
 require_once('PostgreSQL.php');
 // table1 観光地のみの類似度が出る
 
-$resultNum = 10;
-
+$resultNum = 8;
 
 function cosSim($data1, $data2,$minArray, $maxArray){
 	// cosSim関数($data, $data, $minArray, $maxArray)
@@ -81,47 +76,14 @@ $caA = array();
 //	echo "<TABLE  border='1' >";
 //	echo "<TR>";
 
-	global $resultNum, $checkbox;
-	$counter = 0;
-
-	foreach ($sortedPlace as $key => $value){
-		$temp = $data2[$key];
-//		if($counter == $resultNum){
-//			break;
-//		}
-		$counter += 1;
-		
-		$nameA[] = $temp[2];
-		$typeA[] = $temp[8];
-		$latlng[] = $temp[6]. "," .$temp[7];
-		$infowin[] = $temp[0].','.$temp[1].'," '.$temp[2].'",'.$temp[6]. ','.$temp[7]. ',"' .$temp[8].'"';
-//		echo $nameA[0];
-//		echo $latlng;
-		if($temp[8] == $checkbox[0] || $temp[8] == $checkbox[1] || $temp[8] == $checkbox[2] || $temp[8] == $checkbox[3] || $temp[8] == $checkbox[4] || $temp[8] == $checkbox[5] || $temp[8] == $checkbox[6] || $temp[8] == $checkbox[7]){
-			$caA[] = $temp[0].','.$temp[1].'," '.$temp[2].'",'.$temp[6]. ','.$temp[7]. ',"' .$temp[8].'"';
-		}
-	} 
-	global $nameA2, $latlng2, $infowin2, $typeA2, $caA2;
-	$nameA2 = '" ' . join($nameA,'"," ') . '"';
-	$latlng2 = "[" .join($latlng,"],[") . "]";
-	$infowin2 = "[" .join($infowin,"],[") . "]";
-	$typeA2 = '"' . join($typeA,'","') . '"';
-	$caA2 = "[" .join($caA,"],[") . "]";
 }//simList ＥＮＤ
 
+foreach($_POST[categorycheck] as $value)
 
-//$a = '"a","b","c","d","e"';
 
-//データベースに接続 //////////////////////////////////////
-$con = mysql_connect("mysql01.cc.uec.ac.jp", "ikeda","ikeda0801");
-/////////////////////////////////////////////////////
-
-//データベースを選択//////////////////////////////////////
-mysql_select_db("ikeda", $con);
-/////////////////////////////////////////////////////
 
 //SQL文をセット/////////////////////////////////////////
-$quryset = mysql_query("SELECT * FROM `info`;");
+$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo where spot_category in('$')";
 /////////////////////////////////////////////////////
 
 /* 						　*/
@@ -175,36 +137,24 @@ while ($data = mysql_fetch_array($quryset)){
 }
 //echo "</TABLE>";
 
-
-//データベースを選択//////////////////////////////////////
-mysql_select_db("ikeda", $con);
-/////////////////////////////////////////////////////
-
 //SQL文をセット/////////////////////////////////////////
-$quryset = mysql_query("SELECT * FROM `friendinfo` order by no;");
-/////////////////////////////////////////////////////
-/* カラムのメタデータを取得する */
-$i = 0;
-//echo "<TABLE  border='1' >";
-//echo "<TR>";
-
-while ($i < mysql_num_fields($quryset)) {
-
-	$meta = mysql_fetch_field($quryset, $i);
-	if (!$meta) {
-		echo "エラー！<br />\n";
-	}
-//	echo "<TD>$meta->name";
-//	echo "</TD>";
-
-	//echo "<pre>カラム名：$meta->name</pre>";
-	$i++;
-
+if($relation==1){
+	$sql = "SELECT fa1,fa2,fa3,fa4,fa5,fa6,fa7,fa8 FROM valueinfo where no='$my_no'";
+}else if($relation==2){
+	$sql = "SELECT loa1,loa2,loa3,loa4,loa5,loa6,loa7,loa8 FROM valueinfo where no='$my_no'";
+}else if($relation==3){
+	$sql = "SELECT g1a1,g1a2,g1a3,g1a4,g1a5,g1a6,g1a7,g1a8 FROM valueinfo where no='$my_no'";
+}else if($relation==4){
+	$sql = "SELECT g2a1,g2a2,g2a3,g2a4,g2a5,g2a6,g2a7,g2a8 FROM valueinfo where no='$my_no'";
+}else{
+	$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no='$my_no'";
 }
-//echo "</TR>";
 
-/* カラムの個々のデータを取得する */
-//１ループで１行データが取り出され、データが無くなるとループを抜けます。
+//列が存在しない時のif文を忘れずに
+
+//sql文の送信とデータの取り出し。
+$pgsql->query($sql);
+$row = $pgsql->fetch();
 
 $UserTable=null;
 $j=0;

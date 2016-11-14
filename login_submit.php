@@ -70,13 +70,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		//--------------------------------------------
 		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
-		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'");
+		$pgsql->query("SELECT no,pw,gender FROM friendinfo WHERE id='$usr_id'");
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
 				if(isset($row["gender"])){
-					header("Location: ./top.php"); //トップページへ(ゆくゆくはindex.php)
+					header("Location: ./index.php"); //トップページへ(ゆくゆくはindex.php)
 					exit;
 				}else{
 					header("Location: ./fb_regster.php");
