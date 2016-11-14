@@ -1,15 +1,23 @@
 <?php
 /*
+	計算用関数 calcuation.php
+		value_calcuation関数
+			見解間距離均等法を用いた集団意思決定分析法
+		cosSim関数
+			類似度算出
+		simList関数
+			ソート用関数
+ */
 
-	見解間距離均等法を用いた集団意思決定分析法
-
+/*
+	value_calcuation関数
+		見解間距離均等法を用いた集団意思決定分析法
 */
 
 /*データ一覧
 	$datax[0] = [0.571,0.286,0.143];
 	$datax[1] = [0.137,0.239,0.624];
 	$datax[2] = [0.163,0.540,0.297];
-//	$datax[3] = [0.0,0.0,0.0,0.0];
 */
 	function value_calcuation($datax){
 		for($i=0;$i<count($datax[0]);$i++){
@@ -139,8 +147,82 @@
 		}
 	}
 
-	return($result);
 	//集団意思
-	//var_dump($result);
+	return($result);
 }
+
+function cosSim($data1, $data2){
+	$sum=null;
+	$sim=null;
+	$rd1=null;
+	$rd2=null;
+	$r1=0;
+	$r2=0;
+	$deff = $maxArray - $minArray;
+	for($i=0; $i < $deff; $i++){
+		$sum =  $sum + $data1[$minArray+$i]*$data2[$minArray+$i];
+		$r1 = $r1+($data1[$minArray+$i]*$data1[$minArray+$i]);
+		$r2 = $r2+($data2[$minArray+$i]*$data2[$minArray+$i]);
+	}
+	$rd1 = sqrt($r1);
+	$rd2 = sqrt($r2);
+	if(($rd1 * $rd2)==0){
+		$sim=0;
+	}else{
+	$sim = $sum / ($rd1 * $rd2);
+	}
+	return $sim;
+}//cosSim END
+
+function simList($data1, $data2){
+//$data1[固定] ユーザー　
+//$data2      ローカル情報データ 2次元テーブル
+
+$simU_P=array();
+$sortedPlace=null;
+
+for($i=0;$i<count($data2);$i++){
+	$simU_P[$i]=cosSim($data1,$data2);
+}
+
+
+
+
+
+
+/*
+	// $sortedPlace[$key]->類似度　　を作成する
+	// $sortedPlaceをユーザー情報との類似度でソートする
+	foreach ($data2 as $key => $value){//value = data2[$i]
+		
+		$simU_P = cosSim($data1,$value,11,22);
+		$sortedPlace[$key] = $simU_P;
+//		print $key.'=>'.$simU_P.'<br />';
+		
+	}
+//	echo "<br />PlaceID =>作成した類似度 （ソート後、降順） <br />";
+	
+	//ソートを実行
+	arsort( $sortedPlace);	
+
+//	echo "<TABLE  border='1' >";
+//	echo "<TR>";*/
+
+}//simList ＥＮＤ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
