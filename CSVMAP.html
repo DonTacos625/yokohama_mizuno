@@ -44,7 +44,7 @@
       //esriConfig.request.corsEnabledServers.push(url);
 
       var map = new Map({
-        basemap: "gray"
+        basemap: "streets"
       });
 
       // attributes in CSV file
@@ -59,7 +59,7 @@
       var csvLayer = new CSVLayer({
         url: url,
        // copyright: "USGS Earthquakes",
-        popupTemplate: template
+        //popupTemplate: template
       });
 
       csvLayer.renderer = new SimpleRenderer({
