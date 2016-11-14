@@ -13,7 +13,7 @@
 			// □：ログインしていたらマイページへのリンクを出力
 			//-----------------------------------------------------
 
-			if (isset($_SESSION["my_id"])){
+			if (isset($_SESSION["my_no"])){
 				echo "<li><a href=\"./index.php\">トップページ</a></li>";
 				echo "<li><a href=\"./mypage.php\">マイ情報</a></li>";
 				echo "<li><a href=\"./localinfo.php\">閲覧</a></li>";
