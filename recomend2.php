@@ -78,7 +78,11 @@ $caA = array();
 
 }//simList ＥＮＤ
 
-foreach($_POST[categorycheck] as $value)
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+
+//foreach($_POST[categorycheck] as $value)
 
 
 
@@ -200,6 +204,7 @@ simList($UserTable[$a],$PlaceTable);
 //echo $latlng2;
 //$lat = $_REQUEST["lat"];
 //$lng = $_REQUEST["lng"];
+}
 ?>
 <?php
 	$lat = $_REQUEST["lat"];

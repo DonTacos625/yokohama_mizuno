@@ -118,7 +118,7 @@
         	exit;
         },
         error:function(){ //2回目以降のログイン
-        	location.href = "./top.php";
+        	location.href = "./index.php";
         	exit;
         }
       });
