@@ -106,13 +106,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
 			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
-			<font size="2">5〜30文字の半角英数字を入力して下さい</font></td></tr>
+			<font size="2">5〜30文字の半角英数字</font></td></tr>
 			<tr>
 				<td align="center" bgcolor="#ffe4e1">
 					<div class="label">パスワード</div></td>
 				<td>
 					<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
-					<font size="2">6文字以上で半角英[小文字/大文字],数字を混在させたものを入力して下さい</font>
+					<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
 				</td>
 			</tr>
 			<tr>

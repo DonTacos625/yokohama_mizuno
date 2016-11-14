@@ -1,199 +1,91 @@
 <?php
 //======================================================================
-//  ■： ログインページ login.php セッション以外完成
+//  ■：トップページ画面 index.php
 //======================================================================
-	/*
-		セッション管理
-	*/
-		/*
-		session_start();
-		if(isset($_SESSION["my_no"])){
-			header("Location:./top.php");
-			exit;
-		}
-		*/
+//----------------------------------------	
+// ■　共通　require_once
+//----------------------------------------	
+//require_once("com_require.php");
+//=====================================================================
+// ■　H T M L
+//=====================================================================
 ?>
-	<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>研究用SNSページ</title>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-	</head>
-	<body>
-		<!--JQueryの読み込み-->
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<!--fecebookを使ったログイン-->
-		<script>
-	// This is called with the results from from FB.getLoginStatus().
-	function statusChangeCallback(response) {
-		console.log('statusChangeCallback');
-		console.log(response);
-		// The response object is returned with a status field that lets the
-		// app know the current login status of the person.
-		// Full docs on the response object can be found in the documentation
-		// for FB.getLoginStatus().
-		if (response.status === 'connected') {
-			//document.getElementById('status').innerHTML = '認証はしたよ.';
-			// Logged into your app and Facebook.
-			testAPI();
-			//Ajaxを使った通信
-			connection();
-		} else if (response.status === 'not_authorized') {
-			// The person is logged into Facebook, but not your app.
-			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
-		} else {
-			// The person is not logged into Facebook, so we're not sure if
-			// they are logged into this app or not.
-			document.getElementById('status').innerHTML = 'Facebookにログインして下さい.';
-		}
-	}
 
-	// This function is called when someone finishes with the Login
-	// Button.  See the onlogin handler attached to it in the sample
-	// code below.
-	function checkLoginState() {
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		});
-	}
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '783967058409220',
-			cookie     : true,  // enable cookies to allow the server to access the session
-			xfbml      : true,  // parse social plugins on this page
-			version    : 'v2.7' // use graph api version 2.5
-		});
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="stylet.css"></link> -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>横浜みなとみらい観光推薦システム</title>
 
-	// Now that we've initialized the JavaScript SDK, we call 
-	// FB.getLoginStatus().  This function gets the state of the
-	// person visiting this page and can return one of three states to
-	// the callback you provide.  They can be:
-	//
-	// 1. Logged into your app ('connected')
-	// 2. Logged into Facebook, but not your app ('not_authorized')
-	// 3. Not logged into Facebook and can't tell if they are logged into
-	//    your app or not.
-	//
-	// These three cases are handled in the callback function.
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+</script>
+</head>
+<body>
+	<div id="page">
+		<?php
+			//----------------------------------------	
+			// ■　ヘッダーの取り込み
+			//----------------------------------------	
+		require_once("header.php");
+			//----------------------------------------	
+			// ■　エラーメッセージがあったら表示
+			//----------------------------------------	
+		?>
+		<div id="contents"> 
+			<!--<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">-->
+			<?php
+		//----------------------------------------	
+		// ■　左バーの取り込み
+		//----------------------------------------	
+		//require_once("left.php");
+		//----------------------------------------	
+		// ■　右表示エリア
+		//----------------------------------------	
+			?>
+			<div id="main">
+				<!-- #main 本文スペース -->
+				<div class="contentswrap"> 
+					<div class="title">	
+						<h1>横浜みなとみら観光支援システム</h1>
+						<p class="subh">
+							目的
+							サイトマップ
 
-	FB.getLoginStatus(function(response) {
-		statusChangeCallback(response);
-	});
-};
+							Webサイトの目的</br>
+							研究用途で構築し，目的は観光回遊行動を支援のための観光情報の共有と推薦になります。</br></br>
+							使い方</br>
+							様々な観光スポットの情報・評価を皆様には掲載していただき，観光スポットの推薦をすることがメインになります。
+							また，「知らなかった」「行きたい」ボタンの機能により，どのような情報に注目されているを判断するために利用します。
+							特に掲載する情報を持ってないというユーザは主にこの二つのボタンをクリックしていただければと思っています。</br></br>
 
-	// Load the SDK asynchronously
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-
-	// Here we run a very simple test of the Graph API after login is
-	// successful.  See statusChangeCallback() for when this call is made.
-	function testAPI() {
-		console.log('Welcome!  Fetching your information.... ');
-		FB.api('/me', function(response) {
-			console.log('Successful login for: ' + response.name);
-			userid = response.id;
-			document.getElementById('status').innerHTML = 'Facebook用ログインボタンを(もう一度)押して下さい.';
-		});
-	}
-
-	//Ajax通信関数
-	function connection(){
-		$.ajax({
-			url: 'api.php',
-            type: 'post', // getかpostを指定(デフォルトは前者)
-            dataType: 'json', // 「json」を指定するとresponseがJSONとしてパースされたオブジェクトになる
-            data: { // 送信データを指定(getの場合は自動的にurlの後ろにクエリとして付加される)
-            	u_id: userid
-            },
-        success:function(){ //facebook初回ログイン
-        	//document.getElementById('status').innerHTML = "登録できた！";
-        	//alert("しっぱい！");
-        	location.href = "./fb_regster.php"; //facebook初回ログイン登録用
-        	exit;
-        },
-        error:function(){ //2回目以降のログイン
-        	location.href = "./top.php";
-        	exit;
-        }
-      });
-	}
-
-	/* エラー文字列の生成 */
-	function errorHandler(args) {
-		var error;
-    // errorThrownはHTTP通信に成功したときだけ空文字列以外の値が定義される
-    if (args[2]) {
-    	try {
-            // JSONとしてパースが成功し、且つ {"error":"..."} という構造であったとき
-            // (undefinedが代入されるのを防ぐためにtoStringメソッドを使用)
-            error = $.parseJSON(args[0].responseText).error.toString();
-          } catch (e) {
-            // パースに失敗した、もしくは期待する構造でなかったとき
-            // (PHP側にエラーがあったときにもデバッグしやすいようにレスポンスをテキストとして返す)
-            error = 'parsererror(' + args[2] + '): ' + args[0].responseText;
-          }
-        } else {
-        // 通信に失敗したとき
-        error = args[1] + '(HTTP request failed)';
-      }
-      return error;
-    }
-
-  </script>
-  <h3>ログインページ</h3>
-	<!--
-	<?php
-//--------------------------------------------------------------------
-// ■ エラーメッセージがあったら表示
-//--------------------------------------------------------------------
-	/*	if (strlen($error)>0){
-		echo "<font size=\"2\" color=\"#da0b00\">エラー：{$error}</font><p>";
-	}
-	*/
-	?>
--->
-<table cellpadding="5">
-	<tr>
-		<td>会員ログイン</td>
-	</tr>
-	<tr>
-		<td><form action="./login_submit.php" method="POST">
-			<table border="0">
-				<tr>
-					<td align="left">ユーザID</td>
-					<td><input type="text" name="usr_id" size="25"></td>
-				</tr>
-				<tr>
-					<td align="left">パスワード</td>
-					<td><input type="password" name="usr_pw"></td></tr>
-					<tr>
-						<td align="right" colspan="4"><input type="submit" value="Submit"></td>
-					</tr>
-				</table>
-			</form></td>
-		</tr>
-		<tr>
-			<td>Facebook連帯ログイン</td>
-		</tr>
-		<tr>
-			<td>
-				<fb:login-button scope="public_profile" onlogin="checkLoginState();">
-			</fb:login-button>
-			<div id="status"></td>
-			</tr>
-		</table>
-		<br>
-		<a href="./register_usr.php"><font size = 4>新規利用登録(Sign up)</font></a>
-		<br><br>
-		<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
-		<br>
-
-	</div>
-</body>
-</html>
+							設定がわからない方は作成者（池田宰）までご連絡ください。</br>
+							下の図はサンプル情報になります。
+						</p>
+					</div>
+					<div id="map_canvas" style="width:635; height:600"></div>
+					<br/>
+					<p>マーカーの凡例
+						<table id="table5932" border="1">
+							<tr>
+								<td><img src="./marker/purple.png">飲食</td>
+								<td><img src="./marker/yellow.png">ショッピング</td>
+								<td><img src="./marker/red.png">テーマパーク・公園</td>
+							</tr>
+							<tr>
+								<td><img src="./marker/orange.png">名所・史跡</td>
+								<td><img src="./marker/ltblue.png">芸術・博物館</td>
+								<td><img src="./marker/blue.png">その他</td>
+							</tr>
+						</table>
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style><br/></p>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
