@@ -38,14 +38,16 @@ require_once("PostgreSQL.php");
 								$sql ="SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'";
 								$pgsql->query($sql);
 								$row = $pgsql->fetch();
-								if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)
-									echo  "<OPTION value='1'>家族</OPTION>";
-								if($row['lo']!=0)
-									echo "<OPTION value='2'>恋人</OPTION>";
-								if($row['g11']!=0||$row['g12']!=0||$row['g13']!=0||$row['g14']!=0||$row['g15']!=0||$row['g16']!=0||$row['g17']!=0||$row['g18']!=0)
-									echo "<OPTION value='3'>友達グループ1</OPTION>";
-								if($row['g21']!=0||$row['g22']!=0||$row['g23']!=0||$row['g24']!=0||$row['g25']!=0||$row['g26']!=0||$row['g27']!=0||$row['g28']!=0)
-									echo "<OPTION value='4'>友達グループ2</OPTION>";
+								if($row){
+									if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)
+										echo  "<OPTION value='1'>家族</OPTION>";
+									if($row['lo']!=0)
+										echo "<OPTION value='2'>恋人</OPTION>";
+									if($row['g11']!=0||$row['g12']!=0||$row['g13']!=0||$row['g14']!=0||$row['g15']!=0||$row['g16']!=0||$row['g17']!=0||$row['g18']!=0)
+										echo "<OPTION value='3'>友達グループ1</OPTION>";
+									if($row['g21']!=0||$row['g22']!=0||$row['g23']!=0||$row['g24']!=0||$row['g25']!=0||$row['g26']!=0||$row['g27']!=0||$row['g28']!=0)
+										echo "<OPTION value='4'>友達グループ2</OPTION>";
+								}
 							}
 							?>
 						</SELECT>
