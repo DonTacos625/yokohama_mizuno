@@ -31,11 +31,11 @@ session_start();
         <ul>
         <p>
           <SELECT name="groupvalue">
+          <OPTION value='0' selected>一人</OPTION>
           <?php
             if (isset($_SESSION["my_no"])){
               $pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'");
               $row = $pgsql->fetch();
-              echo "<OPTION value='0' selected>一人</OPTION>";
               if(!empty($row)){
                 if($row['f1']!=0||$row['f1']!=0||$row['f1']!=0)
                   echo  "<OPTION value='1'>家族</OPTION>";
