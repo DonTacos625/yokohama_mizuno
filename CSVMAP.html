@@ -62,6 +62,8 @@
         popupTemplate: template
       });
 
+     csvlayer.outFields = ["*"];
+
       csvLayer.renderer = new SimpleRenderer({
         symbol: new SimpleMarkerSymbol({
           size: "23px",
