@@ -180,8 +180,6 @@
   			</form>
   		</table>
   		<br><br>
-	  	<br>
-	  	<div class="label" align="center">SNS連帯</div>
   		<table>
   			<tr>
   				<td>
