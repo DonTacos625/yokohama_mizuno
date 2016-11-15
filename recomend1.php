@@ -26,7 +26,19 @@ $my_no = $_SESSION["my_no"];
 	}
 	?>
 	<div id="page">
+	<?php
+			//----------------------------------------
+			// ■ヘッダーの取り込み
+			//----------------------------------------
+			require_once("header.php");
+		?>
 		<div id="contents">
+			<?php
+				//----------------------------------------
+				// ■左バーの取り込み
+				//----------------------------------------
+				require_once("left.php");
+			?>
 			<div id ="main">
 				<div class ="contentswrap">
 					<form name="form1" method="post" action="./recomend2.php">

@@ -108,16 +108,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <div id="page">
 	<div id="head">
 		<?php
-			require_once("linkplace.php");
-			echo pwd("fb_register");
+			require_once("linkplace.php"); //現在地表示用php
+			echo pwd("fb_register"); //現在値の表示
 		?>
 	</div>
 </div>
 <div id="page">
 	<div id="contents">
-	<?php
-		require_once("left.php");
-	?>
 		<!-- #main 本文スペース -->
 		<div class="contentswrap">
 			<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
