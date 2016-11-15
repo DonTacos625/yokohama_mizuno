@@ -155,8 +155,7 @@
 	</div>
 	</div>
   <div id="page">
-  	<div id="contents">
-  		<table cellpadding="5">
+  		<table>
   			<tr>
   				<td><div class="label2" align="center">会員ログイン</div></td>
   			</tr>
@@ -200,7 +199,6 @@
   				</td>
   			</tr>
   		</table>
-  	</div>
   </div>
 </body>
 </html>
