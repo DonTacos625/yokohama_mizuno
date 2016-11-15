@@ -1,28 +1,27 @@
 <?php
-//======================================================================
-//  ■： ログインページ login.php セッション以外完成
-//======================================================================
-	/*
-		セッション管理
-	*/
-		session_start();
-		if(isset($_SESSION["my_no"])){
-			header("Location:./index.php");
-			exit;
-		}
-?>
+	//======================================================================
+	//  ■：テンプレート
+	//======================================================================
+	session_start(); //セッションスタート
+	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+	$pgsql = new PostgreSQL;
+	if(isset($_SESSION["my_no"]))
+		$my_no = $_SESSION["my_no"];
+	?>
+
+	<!DOCTYPE html>
 	<html>
 	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>研究用SNSページ</title>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>ログインページ</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+		</script>
 	</head>
 	<body>
-		<!--JQueryの読み込み-->
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<!--fecebookを使ったログイン-->
-		<script>
+		<script type="text/javascript">
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -145,43 +144,50 @@
     }
 
   </script>
-  <h3>ログインページ</h3>
-<table cellpadding="5">
-	<tr>
-		<td>会員ログイン</td>
-	</tr>
-	<tr>
-		<td><form action="./login_submit.php" method="POST">
-			<table border="0">
-				<tr>
-					<td align="left">ユーザID</td>
-					<td><input type="text" name="usr_id" size="25"></td>
-				</tr>
-				<tr>
-					<td align="left">パスワード</td>
-					<td><input type="password" name="usr_pw"></td></tr>
-					<tr>
-						<td align="right" colspan="4"><input type="submit" value="Submit"></td>
-					</tr>
-				</table>
-			</form></td>
-		</tr>
-		<tr>
-			<td>Facebook連帯ログイン</td>
-		</tr>
-		<tr>
-			<td>
-				<fb:login-button scope="public_profile" onlogin="checkLoginState();">
-			</fb:login-button>
-			<div id="status"></td>
-			</tr>
-		</table>
-		<br>
-		<a href="./register_usr.php"><font size = 4>新規利用登録(Sign up)</font></a>
-		<br><br>
-		<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
-		<br>
-
-	</div>
+  <div id="page">
+  	<div id="contents">
+  		<h3>ログインページ</h3>
+  		<table cellpadding="5">
+  			<tr>
+  				<td>会員ログイン</td>
+  			</tr>
+  			<form action="./login_submit.php" method="POST">
+  				<tr>
+  					<td>ユーザID</td>
+  					<td><input type="text" name="usr_id" size="25"></td>
+  				</tr>
+  				<tr>
+  					<td>パスワード</td>
+  					<td><input type="password" name="usr_pw"></td>
+  				</tr>
+  				<tr>
+  					<td align="right" colspan="4"><input type="submit" value="Submit"></td>
+  				</tr>
+  			</form>
+  		</table>
+  		<table>
+  			<tr>
+  				<td>Facebook連帯ログイン</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
+  					<div id="status"></div>
+  				</td>
+  			</tr>
+  		</table>
+  		<table>
+  			<tr>
+  				<td>
+  					<a href="./register_usr.php"><font size = 4>新規利用登録(Sign up)</font></a>
+  				</td>
+  				<br><br>
+  				<td>
+  					<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
+  				</td>
+  			</tr>
+  		</table>
+  	</div>
+  </div>
 </body>
 </html>
