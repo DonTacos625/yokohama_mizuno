@@ -14,7 +14,7 @@ $access_error = ""; //アクセスエラー
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$pgsql->query("SELECT MAX(no) AS no FROM friendinfo");
+	$pgsql->query("SELECT MAX(no) AS no FROM friendinfo",NULL);
 	if ($pgsql->rows()>0) {
 		$row = $pgsql->fetch();
 		$no = $row['no'];
@@ -304,8 +304,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	if(strlen($error)==0&&strlen($error1)==0&&strlen($error2)==0){
 		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
-		$sql = "INSERT INTO relationinfo VALUES ('$my_no','$f1','$f2','$f3','$lo','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28') ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1='$f1',f2='$f2',f3='$f3',lo='$lo',g11='$g11',g12='$g12',g13='$g13',g14='$g14',g15='$g15',g16='$g16',g17='$g17',g18='$g18',g21='$g21',g22='$g22',g23='$g23',g24='$g24',g25='$g25',g26='$g26',g27='$g27',g28='$g28'";
-		$pgsql->query($sql); //sql送信
+		$sql = "INSERT INTO relationinfo VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20) ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1=$2,f2=$3,f3=$4,lo=$5,g11=$6,g12=$7,g13=$8,g14=$9,g15=$10,g16=$11,g17=$12,g18=$13,g21=$14,g22=$15,g23=$16,g24=$17,g25=$18,g26=$19,g27=$20,g28=$21";
+		$array = array($my_no,$f1,$f2,$f3,$lo,$g11,$g12,$g13,$g14,$g15,$g16,$g17,$g18,$g21,$g22,$g23,$g24,$g25,$g26,$g27,$g28);
+		$pgsql->query($sql,$array); //sql送信
 		$error = "登録が完了しました.";
 		$error1 = "登録が完了しました.";
 		$error2 = "登録が完了しました.";
@@ -313,14 +314,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		require_once("calcuation.php"); //計算プログラムの読み込み
 
 		//初期化
-		$rows = array();
-		$databox = array();
+		$rows = new array();
+		$databox = new array();
 		$countrows = 0;
-		$family = array();
+		$family = new array();
+		$array = new array();
 
 		//家族
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$f1','$f2','$f3')";
-		$pgsql->query($sql);
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in($1,$2,$3,$4)";
+		$array = array($my_no,$f1,$f2,$f3);
+		$pgsql->query($sql,$array);
 		$rows = $pgsql->fetch_all(); //該当行全て取り出し
 		$countrows = count($rows); //行数の確認
 		if($countrows>1){ //データの挿入
@@ -338,14 +341,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 
 		//初期化
-		$rows = array();
-		$databox = array();
+		$rows = new array();
+		$databox = new array();
 		$countrows = 0;
-		$lover = array();
+		$lover = new array();
+		$array = new array();
 
 		//恋人
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$lo')";
-		$pgsql->query($sql);
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in($1,$2)";
+		$array = array($my_no,$lo);
+		$pgsql->query($sql,$array);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
 		if($countrows>1){
@@ -364,14 +369,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 
 		//初期化
-		$rows = array();
-		$databox = array();
+		$rows = new array();
+		$databox = new array();
 		$countrows = 0;
-		$group1 = array();
+		$group1 = new array();
+		$array = new array();
 
 		//友達グループ1
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g11','$g12','$g13','$g14','$g15','$g16','$g17','$g18')";
-		$pgsql->query($sql);
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+		$array = array($my_no,$g11,$g12,$g13,$g14,$g15,$g16,$g17,$g18);
+		$pgsql->query($sql,$array);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
 		if($countrows>1){
@@ -394,10 +401,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$databox = array();
 		$countrows = 0;
 		$group2 = array();
+		$array = new array();
 
 		//友達グループ2
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in('$my_no','$g21','$g22','$g23','$g24','$g25','$g26','$g27','$g28')";
-		$pgsql->query($sql);
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+		$array = array($my_no,$g21,$g22,$g23,$g24,$g25,$g26,$g27,$g28);
+		$pgsql->query($sql,$array);
 		$rows = $pgsql->fetch_all();
 		$countrows = count($rows);
 		if($countrows>1){
@@ -415,13 +424,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$group2=value_calcuation($databox);
 		}
 
+		$array = new array();
+
 		if(!empty($family)||!empty($lover)||!empty($group1)||!empty($group2)){ //評価値があればデータをDBに挿入
-			$sql = "INSERT INTO valueinfo VALUES ('$my_no','$family[0]','$family[1]','$family[2]','$family[3]','$family[4]','$family[5]','$family[6]','$family[7]','$lover[0]','$lover[1]','$lover[2]','$lover[3]','$lover[4]','$lover[5]','$lover[6]','$lover[7]','$group1[0]','$group1[1]','$group1[2]','$group1[3]','$group1[4]','$group1[5]','$group1[6]','$group1[7]','$group2[0]','$group2[1]','$group2[2]','$group2[3]','$group2[4]','$group2[5]','$group2[6]','$group2[7]') ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 ='$family[0]',fa2 ='$family[1]',fa3 ='$family[2]',fa4 ='$family[3]',fa5 ='$family[4]',fa6 ='$family[5]',fa7 ='$family[6]',fa8 ='$family[7]',loa1 ='$lover[0]',loa2 ='$lover[1]',loa3 ='$lover[2]',loa4 ='$lover[3]',loa5 ='$lover[4]',loa6 ='$lover[5]',loa7 ='$lover[6]',loa8 ='$lover[7]',g1a1 ='$group1[0]',g1a2 ='$group1[1]',g1a3 ='$group1[2]',g1a4 ='$group1[3]',g1a5 ='$group1[4]',g1a6 ='$group1[5]',g1a7 ='$group1[6]',g1a8 ='$group1[7]',g2a1 ='$group2[0]',g2a2 ='$group2[1]',g2a3 ='$group2[2]',g2a4 ='$group2[3]',g2a5 ='$group2[4]',g2a6 ='$group2[5]',g2a7 ='$group2[6]',g2a8 ='$group2[7]'";
-			$pgsql->query($sql);
-			$sql = "SELECT * FROM valueinfo";
-			$pgsql->query($sql);
-			$resultrow = $pgsql->fetch_all();
-			//var_dump($resultrow); //array(33)
+			$sql = "INSERT INTO valueinfo VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$30,$31,$32,$33) ON CONFLICT ON CONSTRAINT valueinfo_pkey DO UPDATE SET fa1 =$2,fa2 =$3,fa3 =$4,fa4 =$5,fa5 =$6,fa6 =$7,fa7 =$8,fa8 =$9,loa1 =$10,loa2 =$11,loa3 =$12,loa4 =$13,loa5 =$14,loa6 =$15,loa7 =$16,loa8 =$17,g1a1 =$18,g1a2 =$19,g1a3 =$20,g1a4 =$21,g1a5 =$22,g1a6 =$23,g1a7 =$24,g1a8 =$25,g2a1 =$26,g2a2 =$27,g2a3 =$28,g2a4 =$29,g2a5 =$30,g2a6 =$31,g2a7 =$32,g2a8 =$33";
+			$array = array($my_no,$family[0],$family[1],$family[2],$family[3],$family[4],$family[5],$family[6],$family[7],$lover[0],$lover[1],$lover[2],$lover[3],$lover[4],$lover[5],$lover[6],$lover[7],$group1[0],$group1[1],$group1[2],$group1[3],$group1[4],$group1[5],$group1[6],$group1[7],$group2[0],$group2[1],$group2[2],$group2[3],$group2[4],$group2[5],$group2[6],$group2[7]);
+			$pgsql->query($sql,$array);
 		}
 	}
 }else{
@@ -447,7 +455,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//-----------------------------------------------------
 		// □：友達情報テーブル(friendinfo)からデータを読む
 		//-----------------------------------------------------
-		$pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no='$my_no'");
+		$array = new array();
+		$array = array($my_no);
+		$pgsql->query("SELECT f1,f2,f3,lo,g11,g12,g13,g14,g15,g16,g17,g18,g21,g22,g23,g24,g25,g26,g27,g28 FROM relationinfo WHERE no=$1",$array);
 		$row = $pgsql->fetch();
 		if ($row){
 			if($row["f1"]!=0)
@@ -493,7 +503,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 	}
 	//----------------------------------------	
-	// ■　ヘッダーの取り込み
+	// ■ ヘッダーの取り込み
 	//----------------------------------------	
 	require_once("header.php");
 	?>

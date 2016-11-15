@@ -70,27 +70,19 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		//--------------------------------------------
 		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
-		$pgsql->query("SELECT no,pw,gender FROM friendinfo WHERE id='$usr_id'");
+		$array = array($usr_id);
+		$pgsql->query("SELECT no,pw,gender FROM friendinfo WHERE id=$1",$array);
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
 				if(isset($row["gender"])){
-					header("Location: ./index.php"); //トップページへ(ゆくゆくはindex.php)
+					header("Location: ./index.php");
 					exit;
 				}else{
 					header("Location: ./fb_regster.php");
 					exit;
 				}
-				//$_SESSION["my_id"] = $usr_id;
-				//$_SESSION["my_login"] = 1;
-				//------------------------------------
-				// □ クッキーを保存する
-				//------------------------------------
-				//setcookie("usr_id",$usr_id);//ユーザIDを保存
-				//------------------------------------
-				// □ トップページへジャンプ
-				//------------------------------------
 			}else{
 				echo "Passwordsが間違っています。".$br;
 				echo $login_html."よりログインし直して下さい。";
