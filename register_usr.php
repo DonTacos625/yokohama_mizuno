@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
 			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES($1,$2,$3)";
-			$arra = array($no,$usr_id,$usr_pw);
+			$array = array($no,$usr_id,$usr_pw);
 			$pgsql->query($sql,$array);
 		}
 		$error = "登録が完了しました";
