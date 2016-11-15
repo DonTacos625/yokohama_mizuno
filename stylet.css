@@ -143,14 +143,6 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	margin: 0px 0px 20px;
 }
 
-
-#main h4 {
-	padding: 0px;
-	margin: 0px;
-	color: #00060C;
-}
-
-
 #main h2 {
 	clear: both;
 	padding: 3px 0px 3px 5px;
@@ -160,15 +152,17 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	background-color: #F6F6F6;
 }
 
-
-
-
 #main h3 {
 	margin: 0px 0px 0.5em 3px;
 	font-size: 100%;
 	color: #336699;
 }
 
+#main h4 {
+	padding: 0px;
+	margin: 0px;
+	color: #00060C;
+}
 
 /* ========================================  menuL 左サイドメニュー */
 #menuL {
