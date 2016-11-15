@@ -18,7 +18,8 @@
 				$pgsql->query($sql,$array);
 				$row = $pgsql->fetch();
 			}else{
-				echo "不正なアクセスです";
+				echo "ログインをしてください.";
+				echo "</dvi></dvi></dvi></body></hmtl>";
 				exit;
 			}
 			?>
