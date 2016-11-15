@@ -346,7 +346,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$countrows = 0;
 		$lover = array();
 		$array = array();
-		echo $array;
+
 		//恋人
 		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no in($1,$2)";
 		$array = array($my_no,$lo);
