@@ -36,16 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//登録クエリを送信
-		if($pgsql){
-			$sql = "UPDATE friendinfo SET gender='$gender', age='$age', a1='$a1', a2='$a2', a3='$a3', a4='$a4', a5='$a5', a6='$a6', a7='$a7', a8='$a8' WHERE no='$my_no'";
-			$pgsql->query($sql);
-			$error = "登録が完了しました.";
-		}
-	}
+		$sql = "UPDATE friendinfo SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
+		$array = array($gender,$age,$a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$my_no);
+		$pgsql->query($sql,$array);
+		$error = "登録が完了しました.";
+}
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
-//		echo "$my_no";
 	}else{
 		$access_error = "不正なアクセスです";
 	}
@@ -66,11 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//-----------------------------------------------------
 		// □：友達情報テーブル(friendinfo)からデータを読む
 		//-----------------------------------------------------
-		$pgsql->query("SELECT * FROM friendinfo WHERE no='$my_no'");
+		$sql = "SELECT gender,age,a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo WHERE no=$1";
+		$array = array($my_no);
+		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();
 		if ($row){
-			$usr_id = $row["id"];
-			$usr_pw = $row["pw"];
 			$age = $row["age"];
 			$gender = $row["gender"];
 			$a1= $row["a1"];

@@ -28,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// □ 入力内容チェック
 	//--------------------------------
 	$sql="SELECT no FROM friendinfo WHERE id=$1";
-	$escaped_id = pg_escape_string($usr_id);
-	$stl = array($escaped_id);
+	$stl = array($usr_id);
 	$pgsql->query($sql,$stl); //検索
 	$row = $pgsql->fetch();
 
@@ -49,12 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
-		if (!empty($escaped_id)) {
+		if (!empty($usr_id)) {
 			// データを追加する
 			$_SESSION["my_no"] = $no;
-			$escaped_no = pg_escape_string($no);
 			$sql = "INSERT INTO friendinfo(no,id) VALUES($1,$2)";
-			$array = array($escaoed_no,$escaped_id);
+			$array = array($no,$usr_id);
 			$pgsql->query($sql,$array);
 		}
 		//$_SESSION["my_no"] = $row['no'];
