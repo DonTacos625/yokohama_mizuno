@@ -218,13 +218,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			// ■ヘッダーの取り込み
 			//----------------------------------------
 		require_once("./header.php");
-		if($error!=NULL){
+		require_once("./linkplace.php");
+		echo pwd("recomend2");
+		if(strlen($error)!=0){
 			echo $error;
 			echo "</dvi></div></body></html>";
 			exit;
 		}
-		require_once("./linkplace.php");
-		echo pwd("recomend2");
 		?>
 	</div>
 	</div>
