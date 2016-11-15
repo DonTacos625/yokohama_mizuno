@@ -7,7 +7,7 @@
 	//require_once("com_require2.php");
 	$pgsql = new PostgreSQL;
 	if(isset($_SESSION["my_no"]))
-		$my_no = $_SESSION["my_no"]);
+		$my_no = $_SESSION["my_no"];
 ?>
 
 <!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
