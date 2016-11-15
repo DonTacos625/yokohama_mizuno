@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
-	$sql="SELECT no FROM friendinfo WHERE id=$1";
+	$sql="SELECT no,age,gender FROM friendinfo WHERE id=$1";
 	$stl = array($usr_id);
 	$pgsql->query($sql,$stl); //検索
 	$row = $pgsql->fetch();
