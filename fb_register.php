@@ -99,28 +99,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo pwd("fb_register"); //現在値の表示
 			?>
 		</div>
+	</div>
+	<div id="page">
 		<div id="contents">
 			<!-- #main 本文スペース -->
 			<div class="contentswrap">
-			<?php
+				<?php
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
-			if(strlen($access_error)>0){
-				echo $access_error;
-				echo "</dvi></dvi></body></html>";
-				exit;
-			}
-			if (strlen($error)>0){
-				if($error != "登録が完了しました."){
-					echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-				}else{
-					echo "登録が完了しました";
-					echo "</dvi></div></body></html>";
+				if(strlen($access_error)>0){
+					echo $access_error;
+					echo "</dvi></dvi></body></html>";
 					exit;
 				}
-			}
-			?>
+				if (strlen($error)>0){
+					if($error != "登録が完了しました."){
+						echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+					}else{
+						echo "登録が完了しました";
+						echo "</dvi></div></body></html>";
+						exit;
+					}
+				}
+				?>
 				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 						<tr><div class="label" align="center">個人ステータスの登録</div></tr>
