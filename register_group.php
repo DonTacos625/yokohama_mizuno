@@ -530,6 +530,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	require_once("header.php");
 	require_once("linkplace.php"); //現在地表示用php
 	echo pwd("fb_register"); //現在値の表示
+	echo "<br>";
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
