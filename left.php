@@ -10,7 +10,7 @@
 				<div class="label">あなたの情報</div>
 				<ul>
 				<?php
-					if (isset($_SESSION["my_no"])&&isset($_SESSION["gender"])&&isset($_SESSION["age"])){
+					if (isset($_SESSION["my_no"])||isset($_SESSION["gender"])||isset($_SESSION["age"])){
 						$my_no = $_SESSION["my_no"];
 						$gender = $_SESSION["gender"];
 						$age = $_SESSION["age"];
