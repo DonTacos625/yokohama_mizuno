@@ -39,6 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
 
+		var_dump($PlaceTable);
 		for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
 			$temparray[$i][0] = floatval($PlaceTable[$i]["spot_a1"]);
 			$temparray[$i][1] = floatval($PlaceTable[$i]["spot_a2"]);
