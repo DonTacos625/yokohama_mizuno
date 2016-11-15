@@ -18,10 +18,10 @@
 						$my_no = $_SESSION["my_no"];
 
 						echo "会員番号：";
-						echo json_encode($my_no);
+						echo json_encode((int)$my_no);
 						echo "<br>";
 						echo "　年代　：";
-						echo json_encode($row["age"]);
+						echo json_encode((int)$row["age"]);
 						echo "代 <br>";
 						echo "　性別　：";
 						if($row["gender"]==1)
