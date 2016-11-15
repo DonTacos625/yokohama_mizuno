@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
 		$array = array($usr_id);
-		$pgsql->query("SELECT no,pw,gender FROM friendinfo WHERE id=$1",$array);
+		$pgsql->query("SELECT no,id,pw,gender FROM friendinfo WHERE id=$1",$array);
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
