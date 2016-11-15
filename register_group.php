@@ -528,17 +528,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// ■ ヘッダーの取り込み
 	//----------------------------------------	
 	require_once("header.php");
+	if(strlen($access_error)>0){
+		echo $access_error;
+		echo "</div></div></body></html>";
+		exit;
+	}
 	require_once("linkplace.php"); //現在地表示用php
 	echo pwd("fb_register"); //現在値の表示
 	echo "<br>";
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
-	if(strlen($access_error)>0){
-		echo $access_error;
-		echo "</div></div></body></html>";
-		exit;
-	}
 	if (strlen($error)>0||strlen($error1)>0||strlen($error2)>0){
 		if($error != "登録が完了しました."||$error1 != "登録が完了しました."||$error2 != "登録が完了しました."){
 			echo "<font size='6' color=\"#da0b00\">{$error}</font><p>";
