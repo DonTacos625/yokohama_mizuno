@@ -151,13 +151,6 @@
 			// ■ヘッダーの取り込み
 			//----------------------------------------
 		require_once("./header.php");
-		if(!isset($_SESSION["my_no"])){
-			echo "ログインページよりログインしてください";
-			echo "</dvi></div></body></html>";
-			exit;
-		}
-		require_once("./linkplace.php");
-		echo pwd("#現在のファイル名");
 		?>
 	</div>
 	</div>
