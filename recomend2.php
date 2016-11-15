@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			}
 		}
 
-		$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+		//$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
 		$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
@@ -68,6 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			$UserTable[$i]=floatval($row[$i]);
 		}
 
+		//類似度の算出を行なう
 		$sortedvalue = simList($UserTable,$temparray); //１次元配列
 
 		if($point==1)
@@ -89,7 +90,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		else
 			$pointval = NULL;
 
+		//重視する項目の評価値が高い順に上から20箇所抜き出す
 		$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
+		//抜き出した箇所の更に上位10位を抜き出す
 		$result10place = array_slice($resultplace,0,10);
 		var_dump($result10place);
 	}
@@ -109,107 +112,110 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<title>推薦スポット</title>
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
-  <!--
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-    }
-  </style>
+	<style>
+		html,
+		body,
+		#viewDiv {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+	</style>
 
-  <script>
-  //spot[i][0]: spot_lng
-  //spot[i][1]: spot_lat
-  //spot[i][2]: spot_category
-  //spot[i][3]: spot_pic
-  //spot[i][4]: spot_content
-  //spot[i][5]: spot_name
-  //spot[i][6]: spot_url
+	<script>
+	//spot[i][0]: spot_lng
+	//spot[i][1]: spot_lat
+	//spot[i][2]: spot_category
+	//spot[i][3]: spot_pic
+	//spot[i][4]: spot_content
+	//spot[i][5]: spot_name
+	//spot[i][6]: spot_url
 
-  var spot = new Array(10);
-  for(var i = 0;i<spot.length;i++){
-    spot[i] = new Array(15);
-  }
+	/*var spot = new Array(10);
+	for(var i = 0;i<spot.length;i++){
+		spot[i] = new Array(15);
+	}
+	*/
+	var spot = <?php echo json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
+    console.log(spot);
 
- 	require([
-    "esri/Map",
-    "esri/views/MapView",
-    "esri/Graphic",
-    "esri/geometry/Point",
-    "esri/symbols/PictureMarkerSymbol",
-    "esri/PopupTemplate",
-    "dojo/domReady!"
-    ], function(
-      Map, MapView,
-      Graphic, Point,
-      PictureMarkerSymbol,
-      PopupTemplate
-      ) {
+	// require([
+	// 	"esri/Map",
+	// 	"esri/views/MapView",
+	// 	"esri/Graphic",
+	// 	"esri/geometry/Point",
+	// 	"esri/symbols/PictureMarkerSymbol",
+	// 	"esri/PopupTemplate",
+	// 	"dojo/domReady!"
+	// 	], function(
+	// 		Map, MapView,
+	// 		Graphic, Point,
+	// 		PictureMarkerSymbol,
+	// 		PopupTemplate
+	// 		) {
 
-      var map = new Map({
-        basemap: "streets"
-      });
+	// 		var map = new Map({
+	// 			basemap: "streets"
+	// 		});
 
-      var view = new MapView({
-        center: [139.636055, 35.450078],
-        container: "viewDiv",
-        map: map,
-        zoom: 15
-      });
+	// 		var view = new MapView({
+	// 			center: [139.636055, 35.450078],
+	// 			container: "viewDiv",
+	// 			map: map,
+	// 			zoom: 15
+	// 		});
 
-      /**********************
-       * Create a point graphic
-       **********************/
-       for(var i=0;i<10;i++){
-      // First create a point geometry (this is the location of the Titanic)
-      var point = new Point({
-        longitude: row[0][i],
-        latitude: row[1][i]
-      });
-      //Create contents of popup
-      var lineAtt = {
-        Name: s_name[i],
-        url: "http://www.yahoo.co.jp/",
-        //Length: "3,456 km",
-        詳細: "詳細挿入"
-      };
+	// 		/**********************
+	// 		 * Create a point graphic
+	// 		**********************/
+	// 		for(var i=0;i<spot.length;i++){
+	// 		 // First create a point geometry (this is the location of the Titanic)
+	// 			var point = new Point({
+	// 				longitude: spot[i][0],
+	// 				latitude: spot[i][1]
+	// 			});
+	// 		//Create contents of popup
+	// 		var lineAtt = {
+	// 			Name: s_name[i],
+	// 			url: "http://www.yahoo.co.jp/",
+	// 			//Length: "3,456 km",
+	// 			詳細: "詳細挿入"
+	// 		};
 
-  // Create a symbol for drawing the point
-    var Symbol = new PictureMarkerSymbol({
-      url: spot[i],
-      width: "30px",
-      height: "30px"
-    });
+	// // Create a symbol for drawing the point
+	// 	var Symbol = new PictureMarkerSymbol({
+	// 		url: spot[i],
+	// 		width: "30px",
+	// 		height: "30px"
+	// 	});
 
-      // Create a graphic and add the geometry and symbol to it
-      var pointGraphic = new Graphic({
-        geometry: point,
-        symbol: Symbol,
-        attributes: lineAtt,
-        popupTemplate: { // autocasts as new PopupTemplate()
-          title: "スポット詳細情報",
-          content: [{
-            type: "fields",
-            fieldInfos: [{
-              fieldName: "Name"
-            }, {
-              fieldName: "url"
-            }, {
-              fieldName: "詳細"
-            }]
-          }]
-        }
-      });
+	// 		// Create a graphic and add the geometry and symbol to it
+	// 		var pointGraphic = new Graphic({
+	// 			geometry: point,
+	// 			symbol: Symbol,
+	// 			attributes: lineAtt,
+	// 			popupTemplate: { // autocasts as new PopupTemplate()
+	// 				title: "スポット詳細情報",
+	// 				content: [{
+	// 					type: "fields",
+	// 					fieldInfos: [{
+	// 						fieldName: "Name"
+	// 					}, {
+	// 						fieldName: "url"
+	// 					}, {
+	// 						fieldName: "詳細"
+	// 					}]
+	// 				}]
+	// 			}
+	// 		});
 
-      // Add the graphics to the view's graphics layer
-      view.graphics.addMany([pointGraphic]);
-    }
-  });
-</script>-->
+	// 		// Add the graphics to the view's graphics layer
+	// 		view.graphics.addMany([pointGraphic]);
+	// 	}
+	// });
+
+</script>
 </head>
 <body>
 	<div id="page">
@@ -234,7 +240,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
-					<!-- チェックボックスに応じてMarkerが表示/非表示 -->
 					<div class="title1">
 						<h3>あなたに推薦する観光スポットは</h3>
 					</div>
