@@ -72,7 +72,6 @@ ul,ol,dl{
 	color: #666666;
 }
 
-
 /* ========================================  #menu 上部メニュー */
 #menu {
 	border-right: 1px solid #CCCCCC;
@@ -217,6 +216,17 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	color: #336699;
 	text-decoration: none;
 }
+
+
+/* ========================================  地図について */
+
+#viewDiv {
+			padding: 0;
+			margin: 0;
+			width:600px;
+			height:400px
+		}
+
 
 
 /* ========================================  そのほか個別設定 */

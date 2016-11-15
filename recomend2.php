@@ -111,14 +111,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<title>推薦スポット</title>
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
-	<style>
-		html,
-		body,
-		#viewDiv {
-			width:600px;
-			height:400px
-		}
-	</style>
 
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
@@ -260,7 +252,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </head>
 <body>
 	<div id="page">
-	<div id= "header">
 		<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
@@ -268,13 +259,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		require_once("./header.php");
 		if(strlen($error)!=0){
 			echo $error;
-			echo "</div></div></body></html>";
+			echo "</div></body></html>";
 			exit;
 		}
 		require_once("./linkplace.php");
 		echo pwd("recomend2");
 		?>
-	</div>
 	</div>
 	<div id="page">
 		<div id="contents">
