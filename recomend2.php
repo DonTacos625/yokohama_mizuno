@@ -126,15 +126,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//spot[i]["spot_lng"]: spot_lng
 	//spot[i]["spot_lat"]: spot_lat
 	//spot[i]["spot_category"]: spot_category
-	//spot[i][3]: spot_pic
-	//spot[i][4]: spot_content
-	//spot[i][5]: spot_name
-	//spot[i][6]: spot_url
+	//spot[i]["spot_pic"]: spot_pic
+	//spot[i]["spot_content"]: spot_content
+	//spot[i]["spot_name"]: spot_name
+	//spot[i]["spot_url"]: spot_url
 
 	var spot = <?php echo json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
     console.log(spot);
     console.log(spot[1]["spot_name"]);
-
+  var urlhttp = "http://";
  require([
  	"esri/Map",
  	"esri/views/MapView",
@@ -167,22 +167,37 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  		for(var i=0;i<spot.length;i++){
  		 // First create a point geometry (this is the location of the Titanic)
  			var point = new Point({
- 				longitude: spot[i][0],
- 				latitude: spot[i][1]
+ 				longitude: spot[i]["spot_lng"],
+ 				latitude: spot[i]["spot_lat"]
  			});
  //	Create contents of popup
  		var lineAtt = {
- 			Name: s_name[i],
- 			url: "http://www.yahoo.co.jp/",
- 		Length: "3,456 km",
- 			詳細: "詳細挿入"
+ 			分類: spot[i]["spot_category"],
+ 			名前: spot[i]["spot_name"],
+ 			コメント: spot[i]["spot_content"],
+ 			if(spot["spot_url"]==NULL){
+ 				URL: "なし"
+	 		}else{
+	 			URL: urlhttp+spot["spot_url"],
+	 		}
+ 			評価: "評価urlつくるぞ"
  		};
 
  // Create a symbol for drawing the point
  	var Symbol = new PictureMarkerSymbol({
- 		url: spot[i],
- 		width: "30px",
- 		height: "30px"
+ 		if(spot[i]["spot_category"]==1){
+ 			url: "./marker/purple.png",
+ 		}else if(spot[i]["spot_category"]==2){
+ 			url: "./marker/yellow.png",
+ 		}else if(spot[i]["spot_category"]==3){
+ 			url: "./marker/red.png",
+ 		}else if(spot[i]["spot_category"]==4){
+ 			url: "./marker/orange.png",
+	 	}else if(spot[i]["spot_category"]==5){
+	 		url: "./marker/ltblue.png",
+	 	}else{
+	 		url: "./marker/blue.png",
+	 	}
  	});
 
  	// Create a graphic and add the geometry and symbol to it
@@ -195,11 +210,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  				content: [{
  					type: "fields",
  					fieldInfos: [{
- 						fieldName: "Name"
+ 						fieldName: "分類"
+ 					},{
+ 						fieldName: "名前"
+ 					},{
+ 						fieldName: "コメント"
  					}, {
- 						fieldName: "url"
+ 						fieldName: "URL"
  					}, {
- 						fieldName: "詳細"
+ 						fieldName: "評価"
  					}]
  				}]
  			}
