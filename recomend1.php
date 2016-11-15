@@ -25,7 +25,7 @@ $my_no = $_SESSION["my_no"];
 			exit;
 		}
 		require_once("./linkplace.php");
-		echo pwd("mypage");
+		echo pwd("recomend1");
 		?>
 	</div>
 	<div id="page">

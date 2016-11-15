@@ -91,6 +91,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
 	$result10place = array_slice($resultplace,0,10);
+	var_dump($result10place);
 
 }else{
 	if(!isset($_SESSION["my_no"])){
@@ -110,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
   <script src="https://js.arcgis.com/4.1/"></script>
-
+  <!--
   <style>
     html,
     body,
@@ -130,7 +131,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   for(var i = 0;i<spot.length;i++){
     spot[i] = new Array(15);
   }
- 	spot = <?php echo json_encode($)
 
  	require([
     "esri/Map",
@@ -206,7 +206,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       view.graphics.addMany([pointGraphic]);
     }
   });
-</script>
+</script>-->
 </head>
 <body onload="initialize()">
 	<div id="page">
