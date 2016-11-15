@@ -175,17 +175,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  			分類: spot[i]["spot_category"],
  			名前: spot[i]["spot_name"],
  			コメント: spot[i]["spot_content"],
- 			if(spot["spot_url"]==NULL){
+ 			/*if(spot["spot_url"]==NULL){
  				URL: "なし"
 	 		}else{
 	 			URL: urlhttp+spot["spot_url"],
-	 		}
+	 		}*/
  			評価: "評価urlつくるぞ"
  		};
 
  // Create a symbol for drawing the point
  	var Symbol = new PictureMarkerSymbol({
- 		if(spot[i]["spot_category"]==1){
+ 		/*if(spot[i]["spot_category"]==1){
  			url: "./marker/purple.png",
  		}else if(spot[i]["spot_category"]==2){
  			url: "./marker/yellow.png",
@@ -195,9 +195,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  			url: "./marker/orange.png",
 	 	}else if(spot[i]["spot_category"]==5){
 	 		url: "./marker/ltblue.png",
-	 	}else{
+	 	}else{*/
 	 		url: "./marker/blue.png",
-	 	}
+	 //	}
+	 	width: "30px",
+    height: "30px"
  	});
 
  	// Create a graphic and add the geometry and symbol to it
@@ -215,9 +217,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  						fieldName: "名前"
  					},{
  						fieldName: "コメント"
- 					}, {
+ 					},
+ 					/* {
  						fieldName: "URL"
- 					}, {
+ 					},*/
+ 					 {
  						fieldName: "評価"
  					}]
  				}]
