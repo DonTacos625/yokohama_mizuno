@@ -467,6 +467,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
+<div id="page">
+	<div id="head">
 <?php
 	//-----------------------------------------------------
 	// □：登録中ではないときにテーブルを読んでデータ表示
@@ -526,14 +528,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// ■ ヘッダーの取り込み
 	//----------------------------------------	
 	require_once("header.php");
-	?>
-	<?php
+	require_once("linkplace.php"); //現在地表示用php
+	echo pwd("fb_register"); //現在値の表示
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 	if(strlen($access_error)>0){
 		echo $access_error;
-		echo "</body></html>";
+		echo "</div></div></body></html>";
 		exit;
 	}
 	if (strlen($error)>0||strlen($error1)>0||strlen($error2)>0){
@@ -543,18 +545,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error2}</font><p>";
 		}else{
 			echo "登録が完了しました";
-			echo "<br><center><a href=\"./mypage.php\">マイページへ</a></center></body></html>";
-			exit;
 	}
-}
+	}
 ?>
-<div id="page">
-	<div id="head">
-			<?php
-			require_once("linkplace.php"); //現在地表示用php
-			echo pwd("fb_register"); //現在値の表示
-			?>
-	</div>
+</div>
 </div>
 <div id="page">
 	<div id="contents">
