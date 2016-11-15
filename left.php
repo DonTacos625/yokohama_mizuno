@@ -1,14 +1,3 @@
-<?php
-			//-----------------------------------------------------
-			// □：友達情報テーブル(friendinfo)からデータを読む
-			//-----------------------------------------------------
-				if (isset($_SESSION["my_no"])){
-					
-				}else{
-					echo "ログインをしてください.";
-				}
-				?>
-
 <html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
