@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 	// ■　ヘッダーの取り込み
 	//----------------------------------------	
-	//require_once("header.php");
+	require_once("header.php");
 	?>
 	<?php
 	//----------------------------------------	
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 		}else{
 			echo "登録が完了しました";
-			echo "<br><center><a href=\"./top.php\">トップページへ</a></center></body></html>";
+			echo "</body></html>";
 			exit;
 	}
 }
