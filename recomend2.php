@@ -214,8 +214,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					fieldInfos: [{
 						fieldName: "分類"
 					},{
-						fieldName: "名前"
-					},{
 						fieldName: "コメント"
 					},{
 						fieldName: "URL"
@@ -260,6 +258,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						<h3>あなたに推薦する観光スポットは</h3>
 					</div>
 					<div id="viewDiv"></div>
+					<br>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
