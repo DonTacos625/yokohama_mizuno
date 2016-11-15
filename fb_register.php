@@ -113,11 +113,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		?>
 	</div>
 </div>
-<?php
-	require_once("left.php");
-?>
 <div id="page">
 	<div id="contents">
+	<?php
+		require_once("left.php");
+	?>
 		<!-- #main 本文スペース -->
 		<div class="contentswrap">
 			<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
