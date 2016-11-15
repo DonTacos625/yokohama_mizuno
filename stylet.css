@@ -123,7 +123,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #D3FBFE;
 	color: #FFFFFF;
-	background-color: #1FFFFFF;
+	background-color: #FFFFFF;
 }
 
 
@@ -143,13 +143,13 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	margin: 0px 0px 20px;
 }
 
-
+/*
 #main h1 {
 	padding: 0px;
 	margin: 0px;
 	color: #00060C;
 }
-
+*/
 
 #main h2 {
 	clear: both;

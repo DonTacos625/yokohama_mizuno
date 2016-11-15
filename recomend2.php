@@ -125,6 +125,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var urlhttp = "http://";
 	var pointpic = "";
 	var cat_name = "";
+	var spoturl = "";
 	require([
 		"esri/Map",
 		"esri/views/MapView",
@@ -161,12 +162,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	latitude: spot[i]["spot_lat"]
 		 });
 
-		 if(spot[i]["spot_url"]==""){
-		 	spot[i]["spot_url"]="なし";
-		 }else{
-		 	spot[i]["spot_url"]= urlhttp+spot[i]["spot_url"];
-		 }
-
 		 if(spot[i]["spot_category"]==1){
 		 	cat_name = "飲食";
 		 	pointpic = "./marker/purple.png";
@@ -188,12 +183,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 }
 
 		 //	Create contents of popup
+		 if(spot[i]["spot_url"]==""){
 		 	var lineAtt = {
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
-		 		URL: spot[i]["spot_url"],
+		 		URL: "なし",
 		 		評価: "評価値挿入"
 		 	};
+		 }else{
+		 	var lineAtt = {
+		 		分類: cat_name,
+		 		コメント: spot[i]["spot_content"],
+		 		URL: urlhttp+spot[i]["spot_url"],
+		 		評価: "評価値挿入"
+		 	};
+		 }
 
 	 // Create a symbol for drawing the point
 	 	var Symbol = new PictureMarkerSymbol({
