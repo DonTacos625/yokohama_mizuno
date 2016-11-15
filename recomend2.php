@@ -176,8 +176,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 		分類: spot[i]["spot_category"],
 		 		名前: spot[i]["spot_name"],
 		 		コメント: spot[i]["spot_content"],
-		 		URL: "なし"
-		 		評価: "評価urlつくるぞ"
+		 		URL: "なし",
+		 		評価: "評価値挿入"
 		 	};
 		 }else{
 		 	var lineAtt = {
@@ -185,7 +185,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 		名前: spot[i]["spot_name"],
 		 		コメント: spot[i]["spot_content"],
 		 		URL: urlhttp+spot[i]["spot_url"],
-		 		評価: "評価urlつくるぞ"
+		 		評価: "評価値挿入"
 		 	};
 		 }
 
