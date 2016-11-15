@@ -96,7 +96,6 @@ $my_no = $_SESSION["my_no"];
 							</p>
 						</ul>
 					</form>
-
 				</div>
 			</div>
 		</div>
