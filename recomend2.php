@@ -13,6 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$relation = intval(htmlspecialchars($_POST["groupvalue"]));
 	$c_check = $_POST["categorycheck"];
 	$point = intval(htmlspecialchars($_POST["pointvalue"]));
+	var_dump($_POST["categorycheck"]);
 
 	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
