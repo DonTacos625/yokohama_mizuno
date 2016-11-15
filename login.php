@@ -38,11 +38,11 @@
 			connection();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
-			document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
+			//document.getElementById('status').innerHTML = 'アプリを認証して下さい.';
 		} else {
 			// The person is not logged into Facebook, so we're not sure if
 			// they are logged into this app or not.
-			document.getElementById('status').innerHTML = 'Facebookにログインして下さい.';
+			//document.getElementById('status').innerHTML = 'Facebookにログインして下さい.';
 		}
 	}
 
@@ -160,6 +160,7 @@
   			<tr>
   				<td>会員ログイン</td>
   			</tr>
+  			<br>
   			<form action="./login_submit.php" method="POST">
   				<tr>
   					<td>ユーザID</td>
@@ -174,6 +175,7 @@
   				</tr>
   			</form>
   		</table>
+  		<br><br>
   		<table>
   			<tr>
   				<td>Facebook連帯ログイン</td>
