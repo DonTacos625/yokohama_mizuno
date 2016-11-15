@@ -20,6 +20,7 @@
 				echo "<li><a href=\"./recomend1.php\">観光スポット推薦</a></li>";
 				echo "<li><a href=\"./logout.php\">ログアウト</a></li>";
 			}else{
+				echo "<li><a href=\"./index.php\">トップページ</a></li>";
 				echo "<li><a href=\"./login.php\">ログイン</a></li>";
 			}
 			?>
