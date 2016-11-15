@@ -40,7 +40,7 @@
 				<!-- #main 本文スペース -->
 				<div class="contentswrap"> 
 					<div class="title">	
-						<h1>横浜みなとみらい観光支援システム</h1>
+						<h2>横浜みなとみらい観光支援システム</h2>
 						目的
 						サイトマップ
 
