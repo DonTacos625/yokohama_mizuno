@@ -158,7 +158,7 @@
   	<div id="contents">
   		<table cellpadding="5">
   			<tr>
-  				<td>会員ログイン</td>
+  				<td><div class="label2" align="center">会員ログイン</div></td>
   			</tr>
   			<br>
   			<form action="./login_submit.php" method="POST">
@@ -178,7 +178,7 @@
   		<br><br>
   		<table>
   			<tr>
-  				<td>Facebook連帯ログイン</td>
+  				<td><div class="label2" align="center">Facebook</div></td>
   			</tr>
   			<tr>
   				<td>
