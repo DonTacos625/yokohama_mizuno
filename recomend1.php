@@ -19,18 +19,22 @@ $my_no = $_SESSION["my_no"];
 			// ■ヘッダーの取り込み
 			//----------------------------------------
 		require_once("header.php");
+		if(!isset($_SESSION["my_no"])){
+			echo "ログインページよりログインしてください";
+			echo "</div></body></html>";
+			exit;
+		}
+		require_once("./linkplace.php");
+		echo pwd("mypage");
 		?>
+	</div>
+	<div id="page">
 		<div id="contents">
 			<?php
 				//----------------------------------------
 				// ■左バーの取り込み
 				//----------------------------------------
-				require_once("left.php");
-				if(!isset($_SESSION["my_no"])){ //ログインしていない場合はログインページに誘導
-					echo "<a href = './login.php'>ログインページ</a>よりログインしてください。";
-					echo "</dvi></dvi></body></html>";
-					exit;
-				}
+			require_once("left.php");
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
