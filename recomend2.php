@@ -183,6 +183,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  			評価: "評価urlつくるぞ"
  		};
 
+ 		console.log(spot[i]["spot_name"]);
+
  // Create a symbol for drawing the point
  	var Symbol = new PictureMarkerSymbol({
  		/*if(spot[i]["spot_category"]==1){
