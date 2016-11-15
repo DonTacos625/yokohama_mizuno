@@ -262,6 +262,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </head>
 <body>
 	<div id="page">
+	<div id= "header">
 		<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
@@ -275,6 +276,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		require_once("./linkplace.php");
 		echo pwd("recomend2");
 		?>
+	</div>
 	</div>
 	<div id="page">
 		<div id="contents">
