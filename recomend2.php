@@ -94,7 +94,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
 		//抜き出した箇所の更に上位10位を抜き出す
 		$result10place = array_slice($resultplace,0,10);
-		var_dump($result10place);
 	}
 }else{
 	if(!isset($_SESSION["my_no"])){
@@ -247,7 +246,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<div id="map_canvas" style="width:600px; height:400px"></div>
 					<br/>
 					<p><img src="./mkhan.jpg" width="600" height="150"  hspace="5" vspace="5" align="left" alt="トップロゴ"><br/></p>
+
 				</div>
+				<p>マーカーの凡例
+						<table id="table5932" border="1">
+							<tr>
+								<td><img src="./marker/purple.png">飲食</td>
+								<td><img src="./marker/yellow.png">ショッピング</td>
+								<td><img src="./marker/red.png">テーマパーク・公園</td>
+							</tr>
+							<tr>
+								<td><img src="./marker/orange.png">名所・史跡</td>
+								<td><img src="./marker/ltblue.png">芸術・博物館</td>
+								<td><img src="./marker/blue.png">その他</td>
+							</tr>
+						</table>
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
+						<br>
+					</p>
 			</div>
 		</div>
 	</div>
