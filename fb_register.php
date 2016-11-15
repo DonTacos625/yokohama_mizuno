@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 			if(strlen($access_error)>0){
 				echo $access_error;
-				echo "</dvi></body></html>";
+				echo "</dvi></dvi></body></html>";
 				exit;
 			}
 			if (strlen($error)>0){

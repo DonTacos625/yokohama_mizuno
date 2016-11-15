@@ -28,8 +28,6 @@
 	}
 ?>
 メニューを選んでください。
-	<a href="./fb_register.php">個人情報編集</a>
-	<a href="./register_group.php">グループ編集</a>
-	<a href="./changepw.php">パスワード変更</a>
+	<form action="" onsubmit="with(this)for(i=0;i&lt;s.length;i++)if(s[i].checked)location.href=s[i].value;return!1"><b><label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label><br><br><label><input type="radio" name="s" value="./register_group.php">グループ編集</label><br><br><label><input type="radio" name="s" value="./changepw.php">パスワード変更</label><br><br><input type="submit" value="送信" style="font-weight:bold"></b></form>
 </body>
 </html>
