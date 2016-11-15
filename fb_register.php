@@ -40,10 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$array = array($gender,$age,$a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$my_no);
 		$pgsql->query($sql,$array);
 		$error = "登録が完了しました.";
-}
+
+		//Sessionの登録
+		$_SESSION["gender"] = json_encode((int)$gender);
+		$_SESSION["age"] = json_encode((int)$age);
+	}
 }else{
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
+		$gender = $_SESSION["gender"];
+		$age = $_SESSION["age"];
 	}else{
 		$access_error = "不正なアクセスです";
 	}
