@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
 	}else{
 		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-		echo "<br><center><a href=\"./index.php\">Login画面へ</a></center>";
+		echo "<br><center><a href=\"./login.php\">Login画面へ</a></center>";
 		echo "</body>";
 		echo "</html>";
 		exit;
