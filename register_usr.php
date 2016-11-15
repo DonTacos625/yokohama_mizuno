@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	else if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id))
 		$error = "IDに誤りがあります<br>";
 	else{
-		$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
+		$array = array($usr_id);
+		$pgsql->query("SELECT * FROM friendinfo WHERE id=$1",$array); //検索
 		$row = $pgsql->fetch();
 		if ($row)
 			$error = "このユーザIDは既に使われています<br>";
@@ -61,8 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
-			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES('$no','$usr_id','$usr_pw')";
-			$pgsql->query($sql);
+			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES($1,$2,$3)";
+			$arra = array($no,$usr_id,$usr_pw);
+			$pgsql->query($sql,$array);
 		}
 		$error = "登録が完了しました";
 		$error1 = "登録が完了しました";

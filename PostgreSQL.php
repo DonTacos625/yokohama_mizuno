@@ -39,6 +39,13 @@ class PostgreSQL{
 		}
 		return $this->p_Rows;
 	}
+	function query_null($sql){
+		$this->p_Rows = pg_query($this->link, $sql);
+		if (!$this->p_Rows){
+			 die("PostgreSQLでエラーが発生しました。<br><b>{$sql}</b><br>" .pg_last_error());
+		}
+		return $this->p_Rows;
+	}
 	//---------------------------
 	// 検索結果をfetch
 	//---------------------------

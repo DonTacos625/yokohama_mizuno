@@ -39,19 +39,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	//--------------------------------
 	if (isset($_POST["submit_del"])){
 		$no = key($_POST["submit_del"]);		//押下したボタン番号を取得
-		/*友達テーブル(friends)から削除
-		$sql = "DELETE FROM friends WHERE no=$no";
-		$pgsql->query($sql);
-		*/
+		$array = array($no);
+
 		//会員情報テーブル(friendinfo)から削除
-		$sql = "DELETE FROM friendinfo WHERE no=$no";
-		$pgsql->query($sql); //クエリの送信
+		$sql = "DELETE FROM friendinfo WHERE no=$1";
+		$pgsql->query($sql,$array); //クエリの送信
 		//会員関係テーブル(relationinfo)から削除
-		$sql = "DELETE FROM relationinfo WHERE no=$no";
-		$pgsql->query($sql); //クエリの送信
+		$sql = "DELETE FROM relationinfo WHERE no=$1";
+		$pgsql->query($sql,$array); //クエリの送信
 		//見解間距離均等法による会員関係の値(valueinfo)から削除
-		$sql = "DELETE FROM valueinfo WHERE no=$no";
-		$pgsql->query($sql); //クエリの送信
+		$sql = "DELETE FROM valueinfo WHERE no=$1";
+		$pgsql->query($sql,$array); //クエリの送信
 
 		/*もしかしたらアンケートのcsvの行削除もするかもしれない*/
 
@@ -87,7 +85,7 @@ if (strlen($error)>0){
 //----------------------------------------
 // □：テーブルからデータを読む (friendinfoテーブル)
 //----------------------------------------
-$pgsql->query("SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC");
+$pgsql->query_null("SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC");
 $row = $pgsql->fetch_all(); //該当行全て取り出し
 $count = count($row);
 for($i=0;$i<$count;$i++){

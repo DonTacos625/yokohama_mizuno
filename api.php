@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
 		//ユーザナンバーの最大値を取得
-		$pgsql->query("SELECT MAX(no) AS no FROM friendinfo",NULL);
+		$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
 		if ($pgsql->rows()>0) {
 			$row = $pgsql->fetch();
 			$no = $row['no'];

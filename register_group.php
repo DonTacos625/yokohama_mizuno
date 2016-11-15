@@ -14,7 +14,7 @@ $access_error = ""; //アクセスエラー
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$pgsql->query("SELECT MAX(no) AS no FROM friendinfo",NULL);
+	$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
 	if ($pgsql->rows()>0) {
 		$row = $pgsql->fetch();
 		$no = $row['no'];

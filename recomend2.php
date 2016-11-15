@@ -10,9 +10,9 @@ $my_no = $_SESSION["my_no"];
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	//Postされた値
-	$relation = intval($_POST["groupvalue"]);
+	$relation = intval(htmlspecialchars($_POST["groupvalue"]));
 	$c_check = $_POST["categorycheck"];
-	$point = intval($_POST["pointvalue"]);
+	$point = intval(htmlspecialchars($_POST["pointvalue"]));
 
 	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		exit;
 	}
 	for($i=0;$i<$c_checknum;$i++){
-		$categorycheck[$i] = intval($c_check[$i]);
+		$categorycheck[$i] = intval(htmlspecialchars($c_check[$i]));
 	}
 	if($c_checkknum<6){
 		for($i=$c_checknum;$i<6;$i++){
@@ -30,8 +30,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		}
 	}
 
-	$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
-	$pgsql->query($sql);
+	$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+	$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
+	$pgsql->query($sql,$array);
 	$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
 
 	for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
@@ -46,20 +47,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	}
 
 	//グループの関係性の評価値(valueinfo)から抜き出し
+	$array = array($my_no);
 	if($relation==1){
-		$sql = "SELECT fa1,fa2,fa3,fa4,fa5,fa6,fa7,fa8 FROM valueinfo where no='$my_no'";
+		$sql = "SELECT fa1,fa2,fa3,fa4,fa5,fa6,fa7,fa8 FROM valueinfo where no=$1";
 	}else if($relation==2){
-		$sql = "SELECT loa1,loa2,loa3,loa4,loa5,loa6,loa7,loa8 FROM valueinfo where no='$my_no'";
+		$sql = "SELECT loa1,loa2,loa3,loa4,loa5,loa6,loa7,loa8 FROM valueinfo where no=$1";
 	}else if($relation==3){
-		$sql = "SELECT g1a1,g1a2,g1a3,g1a4,g1a5,g1a6,g1a7,g1a8 FROM valueinfo where no='$my_no'";
+		$sql = "SELECT g1a1,g1a2,g1a3,g1a4,g1a5,g1a6,g1a7,g1a8 FROM valueinfo where no=$1";
 	}else if($relation==4){
-		$sql = "SELECT g2a1,g2a2,g2a3,g2a4,g2a5,g2a6,g2a7,g2a8 FROM valueinfo where no='$my_no'";
+		$sql = "SELECT g2a1,g2a2,g2a3,g2a4,g2a5,g2a6,g2a7,g2a8 FROM valueinfo where no=$1";
 	}else{
-		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no='$my_no'";
+		$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no=$1";
 	}
 
 	//sql文の送信とデータの取り出し
-	$pgsql->query($sql);
+	$pgsql->query($sql,$array);
 	$row = $pgsql->fetch();
 
 	for($i=0;$i<8;$i++){ //キャスト
@@ -104,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="stylet.css"></link>
+  <link rel="stylesheet" type="text/css" href="stylet.css">
   <title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
   <script src="https://js.arcgis.com/4.1/"></script>
@@ -124,23 +126,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   //row[0][i]: lng
   //row[1][i]: lat
   //pic[i]:写真の番号
-  var row = new Array(2);
-  for(var i = 0;i<row.length;i++){
-    row[i] = new Array(2);
+  var spot = new Array(10);
+  for(var i = 0;i<spot.length;i++){
+    spot[i] = new Array(15);
   }
-  var pic = new Array(2);
-  var s_name = new Array(2);
-  //for(var i=0;i<2;i++){
-    row[0][0] = 139.643525;
-    row[1][0] = 35.453596;
-    pic[0] = 1;
-    s_name[0] = "赤レンガパーク";
-    row[0][1] = 139.6366807;
-    row[1][1] = 35.4552036;
-    pic[1] = 0;
-    s_name[1] = "よこはまコスモワールド";
-  //}
-  require([
+ 	spot = <?php echo json_encode($)
+
+ 	require([
     "esri/Map",
     "esri/views/MapView",
     "esri/Graphic",
@@ -169,7 +161,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       /**********************
        * Create a point graphic
        **********************/
-       for(var i=0;i<2;i++){
+       for(var i=0;i<10;i++){
       // First create a point geometry (this is the location of the Titanic)
       var point = new Point({
         longitude: row[0][i],
@@ -184,19 +176,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       };
 
   // Create a symbol for drawing the point
-  if(pic[i]==1){
     var Symbol = new PictureMarkerSymbol({
-      url: "https://webapps-cdn.esri.com/Apps/MegaMenu/img/logo.jpg",
+      url: spot[i],
       width: "30px",
       height: "30px"
     });
-  }else{
-    var Symbol = new PictureMarkerSymbol({
-      url: "http://4.bp.blogspot.com/-N6MkN70baI0/V7kyE0lYlUI/AAAAAAAA9Ks/Kowo0Av3j6QAVT1M62fPUrd738agCY8GwCLcB/s800/message_congratulations.png",
-      width: "30px",
-      height: "30px"
-    });
-  }
 
       // Create a graphic and add the geometry and symbol to it
       var pointGraphic = new Graphic({
