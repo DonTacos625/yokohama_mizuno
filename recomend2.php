@@ -132,108 +132,131 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//spot[i]["spot_url"]: spot_url
 
 	var spot = <?php echo json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
-    console.log(spot);
-    console.log(spot[1]["spot_name"]);
-  var urlhttp = "http://";
- require([
- 	"esri/Map",
- 	"esri/views/MapView",
- 	"esri/Graphic",
- 	"esri/geometry/Point",
- 	"esri/symbols/PictureMarkerSymbol",
- 	"esri/PopupTemplate",
- 	"dojo/domReady!"
- 	], function(
- 		Map, MapView,
- 		Graphic, Point,
- 		PictureMarkerSymbol,
- 		PopupTemplate
- 		) {
+	console.log(spot);
+	console.log(spot[1]["spot_name"]);
+	var urlhttp = "http://";
+	require([
+		"esri/Map",
+		"esri/views/MapView",
+		"esri/Graphic",
+		"esri/geometry/Point",
+		"esri/symbols/PictureMarkerSymbol",
+		"esri/PopupTemplate",
+		"dojo/domReady!"
+		], function(
+			Map, MapView,
+			Graphic, Point,
+			PictureMarkerSymbol,
+			PopupTemplate
+			) {
 
- 		var map = new Map({
- 			basemap: "streets"
- 		});
+			var map = new Map({
+				basemap: "streets"
+			});
 
- 		var view = new MapView({
- 			center: [139.636055, 35.450078],
- 			container: "viewDiv",
- 			map: map,
- 			zoom: 15
- 		});
+			var view = new MapView({
+				center: [139.636055, 35.450078],
+				container: "viewDiv",
+				map: map,
+				zoom: 15
+			});
 
- 		/**********************
- 		 * Create a point graphic
- 		**********************/
- 		for(var i=0;i<spot.length;i++){
- 		 // First create a point geometry (this is the location of the Titanic)
- 			var point = new Point({
- 				longitude: spot[i]["spot_lng"],
- 				latitude: spot[i]["spot_lat"]
- 			});
- //	Create contents of popup
- 		var lineAtt = {
- 			分類: spot[i]["spot_category"],
- 			名前: spot[i]["spot_name"],
- 			コメント: spot[i]["spot_content"],
- 			/*if(spot["spot_url"]==NULL){
- 				URL: "なし"
-	 		}else{
-	 			URL: urlhttp+spot["spot_url"],
-	 		}*/
- 			評価: "評価urlつくるぞ"
- 		};
+		/**********************
+		 * Create a point graphic
+		 **********************/
+		 for(var i=0;i<spot.length;i++){
+		 // First create a point geometry (this is the location of the Titanic)
+		 var point = new Point({
+		 	longitude: spot[i]["spot_lng"],
+		 	latitude: spot[i]["spot_lat"]
+		 });
+		 //	Create contents of popup
+		 if(spot["spot_url"]==NULL){
+		 	var lineAtt = {
+		 		分類: spot[i]["spot_category"],
+		 		名前: spot[i]["spot_name"],
+		 		コメント: spot[i]["spot_content"],
+		 		URL: "なし"
+		 		評価: "評価urlつくるぞ"
+		 	};
+		 }else{
+		 	var lineAtt = {
+		 		分類: spot[i]["spot_category"],
+		 		名前: spot[i]["spot_name"],
+		 		コメント: spot[i]["spot_content"],
+		 		URL: urlhttp+spot[i]["spot_url"],
+		 		評価: "評価urlつくるぞ"
+		 	};
+		 }
 
- 		console.log(spot[i]["spot_name"]);
+		 console.log(lineAtt);
 
- // Create a symbol for drawing the point
- 	var Symbol = new PictureMarkerSymbol({
- 		/*if(spot[i]["spot_category"]==1){
- 			url: "./marker/purple.png",
- 		}else if(spot[i]["spot_category"]==2){
- 			url: "./marker/yellow.png",
- 		}else if(spot[i]["spot_category"]==3){
- 			url: "./marker/red.png",
- 		}else if(spot[i]["spot_category"]==4){
- 			url: "./marker/orange.png",
-	 	}else if(spot[i]["spot_category"]==5){
+	 // Create a symbol for drawing the point
+	 if(spot[i]["spot_category"]==1){
+	 	var Symbol = new PictureMarkerSymbol({
+	 		url: "./marker/purple.png",
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }else if(spot[i]["spot_category"]==2){
+	 	var Symbol = new PictureMarkerSymbol({
+	 		url: "./marker/yellow.png",
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }else if(spot[i]["spot_category"]==3){
+	 	var Symbol = new PictureMarkerSymbol({
+	 		url: "./marker/red.png",
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }else if(spot[i]["spot_category"]==4){
+	 	var Symbol = new PictureMarkerSymbol({
+	 		url: "./marker/orange.png",
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }else if(spot[i]["spot_category"]==5){
+	 	var Symbol = new PictureMarkerSymbol({
 	 		url: "./marker/ltblue.png",
-	 	}else{*/
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }else{
+	 	var Symbol = new PictureMarkerSymbol({
 	 		url: "./marker/blue.png",
-	 //	}
-	 	width: "30px",
-    height: "30px"
- 	});
+	 		width: "30px",
+	 		height: "30px"
+	 	});
+	 }
+	// Create a graphic and add the geometry and symbol to it
+	var pointGraphic = new Graphic({
+		geometry: point,
+		symbol: Symbol,
+		attributes: lineAtt,
+			popupTemplate: { // autocasts as new PopupTemplate()
+				title: "スポット詳細情報",
+				content: [{
+					type: "fields",
+					fieldInfos: [{
+						fieldName: "分類"
+					},{
+						fieldName: "名前"
+					},{
+						fieldName: "コメント"
+					},{
+						fieldName: "URL"
+					},{
+						fieldName: "評価"
+					}]
+				}]
+			}
+		});
 
- 	// Create a graphic and add the geometry and symbol to it
- 		var pointGraphic = new Graphic({
- 			geometry: point,
- 			symbol: Symbol,
- 			attributes: lineAtt,
- 			popupTemplate: { // autocasts as new PopupTemplate()
- 				title: "スポット詳細情報",
- 				content: [{
- 					type: "fields",
- 					fieldInfos: [{
- 						fieldName: "分類"
- 					},{
- 						fieldName: "名前"
- 					},{
- 						fieldName: "コメント"
- 					},
- 					/* {
- 						fieldName: "URL"
- 					},*/
- 					 {
- 						fieldName: "評価"
- 					}]
- 				}]
- 			}
- 		});
-
- 	// Add the graphics to the view's graphics layer
- 		view.graphics.addMany([pointGraphic]);
- 	}
- });
+	// Add the graphics to the view's graphics layer
+	view.graphics.addMany([pointGraphic]);
+}
+});
 
 </script>
 </head>
