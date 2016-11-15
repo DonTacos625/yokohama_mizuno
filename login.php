@@ -156,7 +156,13 @@
 	</div>
   <div id="page">
   	<div id="contents">
-  	<div class="label1" align="center">会員ログイン</div>
+  	<table>
+  		<tr>
+	  		<td>
+	  			<div class="label1" align="center">会員ログイン</div>
+	  		</td>
+	  	</tr>
+	  </table>
   	<br>
   		<table cellpadding="5">
   			<form action="./login_submit.php" method="POST">
@@ -176,7 +182,13 @@
   		<br><br>
 	  	<br>
   		<table>
-  		<tr><div class="label1" align="center">SNS連帯</div></tr>
+  			<tr>
+  				<td>
+  					<div class="label1" align="center">SNS連帯</div>
+  				</td>
+  			</tr>
+  			</table>
+  			<table>
   			<tr>
   				<td>
   					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
