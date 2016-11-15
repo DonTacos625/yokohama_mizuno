@@ -257,9 +257,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<div class="title1">
 						<h3>あなたに推薦する観光スポットは</h3>
 					</div>
-					<ul id="checkboxlist"></ul>
-					<div id="map_canvas" style="width:600px; height:400px"></div>
-					<br/>
+					<div id="viewDiv"></div>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
