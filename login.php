@@ -145,8 +145,24 @@
 
   </script>
   <div id="page">
+	<div id="header">
+		<?php
+			//----------------------------------------
+			// ■ヘッダーの取り込み
+			//----------------------------------------
+		require_once("./header.php");
+		if(!isset($_SESSION["my_no"])){
+			echo "ログインページよりログインしてください";
+			echo "</dvi></div></body></html>";
+			exit;
+		}
+		require_once("./linkplace.php");
+		echo pwd("#現在のファイル名");
+		?>
+	</div>
+	</div>
+  <div id="page">
   	<div id="contents">
-  		<h3>ログインページ</h3>
   		<table cellpadding="5">
   			<tr>
   				<td>会員ログイン</td>
@@ -181,7 +197,9 @@
   				<td>
   					<a href="./register_usr.php"><font size = 4>新規利用登録(Sign up)</font></a>
   				</td>
+  			</tr>
   				<br><br>
+  				<tr>
   				<td>
   					<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
   				</td>
