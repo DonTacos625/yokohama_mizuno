@@ -174,9 +174,9 @@
   			</form>
   		</table>
   		<br><br>
-	  	<div class="label1" align="center">Facebook</div>
 	  	<br>
   		<table>
+  		<tr><div class="label1" align="center">SNS連帯</div></tr>
   			<tr>
   				<td>
   					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
