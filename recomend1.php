@@ -42,7 +42,7 @@ $my_no = $_SESSION["my_no"];
 									$pgsql->query($sql,$array);
 									$row = $pgsql->fetch();
 									if($row){
-										if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)*/
+										if($row['f1']!=0||$row['f2']!=0||$row['f3']!=0)
 											echo  "<OPTION value='1'>家族</OPTION>";
 										if($row['lo']!=0)
 											echo "<OPTION value='2'>恋人</OPTION>";
