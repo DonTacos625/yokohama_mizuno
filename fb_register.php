@@ -91,13 +91,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// ■ヘッダーの取り込み
 	//----------------------------------------	
 	require_once("header.php");
-
+?>
+<div id="page">
+	<div id="head">
+		<?php
+			require_once("linkplace.php"); //現在地表示用php
+			echo pwd("fb_register"); //現在値の表示
+		?>
+	</div>
+<?php
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 	if(strlen($access_error)>0){
 		echo $access_error;
-		echo "</body></html>";
+		echo "</dvi></body></html>";
 		exit;
 	}
 	if (strlen($error)>0){
@@ -109,15 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			exit;
 	}
 }
-
 ?>
-<div id="page">
-	<div id="head">
-		<?php
-			require_once("linkplace.php"); //現在地表示用php
-			echo pwd("fb_register"); //現在値の表示
-		?>
-	</div>
 </div>
 <div id="page">
 	<div id="contents">

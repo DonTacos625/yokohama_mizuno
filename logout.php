@@ -27,9 +27,7 @@
 				<div id="main">
 					<!-- #main 本文スペース -->
 					<div class="contentswrap"> 
-						<div class="title">	
 							みなとみらい観光支援サイトからログアウトしました。
-						</div>
 					</div>
 				</div>
 			</div>
