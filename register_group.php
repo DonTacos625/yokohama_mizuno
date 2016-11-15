@@ -323,6 +323,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$g27=0;
 		if($g28==NULL)
 			$g28=0;
+
 		//relationinfoテーブルに会員番号を入力するsql文 テーブルにmy番号がなければ新しくカラムをつくり、あれば更新する
 		$sql = "INSERT INTO relationinfo VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20) ON CONFLICT ON CONSTRAINT relationinfo_pkey DO UPDATE SET f1=$2,f2=$3,f3=$4,lo=$5,g11=$6,g12=$7,g13=$8,g14=$9,g15=$10,g16=$11,g17=$12,g18=$13,g21=$14,g22=$15,g23=$16,g24=$17,g25=$18,g26=$19,g27=$20,g28=$21";
 		$array = array($my_no,$f1,$f2,$f3,$lo,$g11,$g12,$g13,$g14,$g15,$g16,$g17,$g18,$g21,$g22,$g23,$g24,$g25,$g26,$g27,$g28);

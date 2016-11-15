@@ -1,5 +1,5 @@
 ﻿<?php
-//観光スポット推薦システム 推薦項目ページ
+//観光スポット推薦システム 推薦項目ページ recomand2.php
 session_start();
 require_once("PostgreSQL.php");
 require_once("calcuation.php"); //計算プログラムの読み込み
@@ -35,7 +35,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
 
-		var_dump($PlaceTable);
 		for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
 			$temparray[$i][0] = floatval($PlaceTable[$i]["spot_a1"]);
 			$temparray[$i][1] = floatval($PlaceTable[$i]["spot_a2"]);
@@ -69,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			$UserTable[$i]=floatval($row[$i]);
 		}
 
-		$sortedvalue = simList($UserTable,$temparray);
+		$sortedvalue = simList($UserTable,$temparray); //１次元配列
 
 		if($point==1)
 			$pointval = "spot_a1";
@@ -123,9 +122,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   </style>
 
   <script>
-  //row[0][i]: lng
-  //row[1][i]: lat
-  //pic[i]:写真の番号
+  //spot[i][0]: spot_lng
+  //spot[i][1]: spot_lat
+  //spot[i][2]: spot_category
+  //spot[i][3]: spot_pic
+  //spot[i][4]: spot_content
+  //spot[i][5]: spot_name
+  //spot[i][6]: spot_url
+
   var spot = new Array(10);
   for(var i = 0;i<spot.length;i++){
     spot[i] = new Array(15);
