@@ -10,7 +10,7 @@ body {
 	color: #333;
 	text-align: center;
 	background-color: #FDFDFD;
-	background-image: url(img/back01.jpg);
+	/*background-image: url(img/back01.jpg);*/
 	background-position: top;
 	background-repeat: repeat-x;
 }

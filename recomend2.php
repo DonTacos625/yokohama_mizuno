@@ -122,9 +122,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//spot[i]["spot_url"]: spot_url
 
 	var spot = <?php echo json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
-	console.log(spot);
-	console.log(spot[1]["spot_name"]);
 	var urlhttp = "http://";
+	var pointpic = "";
+	var cat_name = "";
 	require([
 		"esri/Map",
 		"esri/views/MapView",
@@ -160,72 +160,55 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	longitude: spot[i]["spot_lng"],
 		 	latitude: spot[i]["spot_lat"]
 		 });
-		 //	Create contents of popup
+
 		 if(spot[i]["spot_url"]==""){
-		 	var lineAtt = {
-		 		分類: spot[i]["spot_category"],
-		 		名前: spot[i]["spot_name"],
-		 		コメント: spot[i]["spot_content"],
-		 		URL: "なし",
-		 		評価: "評価値挿入"
-		 	};
+		 	spot[i]["spot_url"]="なし";
 		 }else{
-		 	var lineAtt = {
-		 		分類: spot[i]["spot_category"],
-		 		名前: spot[i]["spot_name"],
-		 		コメント: spot[i]["spot_content"],
-		 		URL: urlhttp+spot[i]["spot_url"],
-		 		評価: "評価値挿入"
-		 	};
+		 	spot[i]["spot_url"]= urlhttp+spot[i]["spot_url"];
 		 }
 
-		 console.log(lineAtt);
+		 if(spot[i]["spot_category"]==1){
+		 	cat_name = "飲食";
+		 	pointpic = "./marker/purple.png";
+		 }else if(spot[i]["spot_category"]==2){
+		 	cat_name = "ショッピング";
+		 	pointpic = "./marker/yellow.png";
+		 }else if(spot[i]["spot_category"]==3){
+		 	cat_name = "テーマパーク・公園";
+		 	pointpic = "./marker/red.png";
+		 }else if(spot[i]["spot_category"]==4){
+		 	cat_name = "名所・史跡";
+		 	pointpic = "./marker/orange.png";
+		 }else if(spot[i]["spot_category"]==5){
+		 	cat_name = "芸術・博物館";
+		 	pointpic = "./marker/ltblue.png";
+		 }else{
+		 	cat_name = "その他";
+		 	pointpic = "./marker/blue.png";
+		 }
+
+		 //	Create contents of popup
+		 	var lineAtt = {
+		 		分類: cat_name,
+		 		コメント: spot[i]["spot_content"],
+		 		URL: spot[i]["spot_url"],
+		 		評価: "評価値挿入"
+		 	};
 
 	 // Create a symbol for drawing the point
-	 if(spot[i]["spot_category"]==1){
 	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/purple.png",
+	 		url: pointpic,
 	 		width: "30px",
 	 		height: "30px"
 	 	});
-	 }else if(spot[i]["spot_category"]==2){
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/yellow.png",
-	 		width: "30px",
-	 		height: "30px"
-	 	});
-	 }else if(spot[i]["spot_category"]==3){
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/red.png",
-	 		width: "30px",
-	 		height: "30px"
-	 	});
-	 }else if(spot[i]["spot_category"]==4){
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/orange.png",
-	 		width: "30px",
-	 		height: "30px"
-	 	});
-	 }else if(spot[i]["spot_category"]==5){
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/ltblue.png",
-	 		width: "30px",
-	 		height: "30px"
-	 	});
-	 }else{
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: "./marker/blue.png",
-	 		width: "30px",
-	 		height: "30px"
-	 	});
-	 }
+
 	// Create a graphic and add the geometry and symbol to it
 	var pointGraphic = new Graphic({
 		geometry: point,
 		symbol: Symbol,
 		attributes: lineAtt,
 			popupTemplate: { // autocasts as new PopupTemplate()
-				title: "スポット詳細情報",
+				title: spot[i]["spot_name"],
 				content: [{
 					type: "fields",
 					fieldInfos: [{
