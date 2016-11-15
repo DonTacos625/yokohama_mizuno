@@ -159,7 +159,7 @@
   	<table>
   		<tr>
 	  		<td>
-	  			<div class="label1" align="center">会員ログイン</div>
+	  			<div class="label" align="center">会員ログイン</div>
 	  		</td>
 	  	</tr>
 	  </table>
@@ -184,7 +184,7 @@
   		<table>
   			<tr>
   				<td>
-  					<div class="label1" align="center">SNS連帯</div>
+  					<div class="label" align="center">SNS連帯</div>
   				</td>
   			</tr>
   			</table>
