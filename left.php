@@ -19,8 +19,12 @@
 						echo (int)$my_no;
 						echo "<br>";
 						echo "年　　代：";
-						echo $age;
-						echo "代 <br>";
+						if($age == NULL)
+							echo "未記入<br>";
+						else{
+							echo $age;
+							echo "代 <br>";
+						}
 						echo "性　　別：";
 						if($gender==1)
 							echo "男性";
