@@ -8,25 +8,14 @@ header("Content-type: text/html; charset=utf-8"); //文字形式をUTF-8に
 //----------------------------------------	
 require_once("PostgreSQL.php");
 //----------------------------------------	
-// □：MYSQLクラスインスタンスの作成
+// □：PostgreSQLクラスインスタンスの作成
 //----------------------------------------	
 $pgsql = new PostgreSQL;
-//----------------------------------------	
-// ■ 外部ファイルの取り込み
-//----------------------------------------	
-//require_once("com_define.php");		//定数
-//require_once("com_function.php");	//関数
-//----------------------------------------	
-// ■ HOSTの取得
-//----------------------------------------	
-//$host = get_host();
 //----------------------------------------	
 // ■ SESSION設定
 //----------------------------------------	
 session_start();		//セッション開始
 $_SESSION["my_no"] = 0;		//自分の番号
-//$_SESSION["my_id"] = "";	//自分のID
-//$_SESSION["my_login"] = 0;	//ログイン
 
 //----------------------------------------	
 // ■ 変数初期化
@@ -38,7 +27,7 @@ $usr_pw = "";
 //タグ出力用
 $regist_url = './fb_regster.php';
 $regist_html = '<a href="'.$regist_url.'">会員情報登録ページ</a>';
-$login_url = './index.php';
+$login_url = './login.php';
 $login_html = '<a href="'.$login_url.'">ログインページ</a>';
 $signup_url = './register_usr.php';
 $signup_html = '<a href="'.$signup_url.'">利用登録ページ</a>';

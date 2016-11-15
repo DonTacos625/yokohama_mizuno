@@ -82,11 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 	}
 	//----------------------------------------	
-	// ■　ヘッダーの取り込み
+	// ■ヘッダーの取り込み
 	//----------------------------------------	
 	require_once("header.php");
-	?>
-	<?php
+
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
@@ -108,7 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 <div id="page">
 	<div id="head">
-		<a href="./index.php">Loginページへ戻る</a>
+		<?php
+			require_once("linkplace.php");
+			echo pwd("fb_register",NULL);
+		?>
 	</div>
 </div>
 <div id="page">
