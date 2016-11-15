@@ -115,8 +115,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		html,
 		body,
 		#viewDiv {
-			padding: 0;
-			margin: 0;
 			width:600px;
 			height:400px
 		}
@@ -270,7 +268,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		require_once("./header.php");
 		if(strlen($error)!=0){
 			echo $error;
-			echo "</div></body></html>";
+			echo "</div></div></body></html>";
 			exit;
 		}
 		require_once("./linkplace.php");
