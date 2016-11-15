@@ -1,24 +1,20 @@
 <?php
-//======================================================================
-//  ■：トップページ画面 index.php
-//======================================================================
+	//======================================================================
+	//  ■：トップページ画面 index.php
+	//======================================================================
 	session_start(); //セッションスタート
-	require_once("PostgreSQL.php");
-	//require_once("com_require2.php");
+	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 	$pgsql = new PostgreSQL;
 	if(isset($_SESSION["my_no"]))
 		$my_no = $_SESSION["my_no"];
 ?>
 
-<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html>
 <head>
-	<!-- <link rel="stylesheet" type="text/css" href="stylet.css"></link> -->
+	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>横浜みなとみらい観光推薦システム</title>
-
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
@@ -27,25 +23,19 @@
 <body>
 	<div id="page">
 		<?php
-			//----------------------------------------	
-			// ■　ヘッダーの取り込み
-			//----------------------------------------	
-		require_once("header.php");
-			//----------------------------------------	
-			// ■　エラーメッセージがあったら表示
-			//----------------------------------------	
+			//----------------------------------------
+			// ■ヘッダーの取り込み
+			//----------------------------------------
+			require_once("header.php");
 		?>
-		<div id="contents"> 
-			<!--<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">-->
+		<div id="contents">
 			<?php
-		//----------------------------------------	
-		// ■　左バーの取り込み
-		//----------------------------------------	
-			require_once("left.php");
-		//----------------------------------------	
-		// ■　右表示エリア
-		//----------------------------------------	
+				//----------------------------------------
+				// ■左バーの取り込み
+				//----------------------------------------
+				require_once("left.php");
 			?>
+		  <!-- ■右表示エリア-->
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap"> 
@@ -65,7 +55,7 @@
 						下の図はサンプル情報になります。
 					</div>
 					<div id="map_canvas" style="width:635; height:600"></div>
-					<br/>
+					<br>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
@@ -79,10 +69,12 @@
 								<td><img src="./marker/blue.png">その他</td>
 							</tr>
 						</table>
-						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style><br/></p>
-					</div> 
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
+						<br>
+					</p>
 				</div>
 			</div>
 		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>

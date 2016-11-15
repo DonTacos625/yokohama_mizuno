@@ -20,10 +20,10 @@
 						echo "会員番号：";
 						echo json_encode((int)$my_no);
 						echo "<br>";
-						echo "　年代　：";
+						echo "年　　代：";
 						echo json_encode((int)$row["age"]);
 						echo "代 <br>";
-						echo "　性別　：";
+						echo "性　　別：";
 						if($row["gender"]==1)
 							echo "男性";
 						else if($row["gender"]==2)
