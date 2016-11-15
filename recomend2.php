@@ -19,7 +19,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
-	if($c_checknum==0){
+
+	var_dump($c_check);
+	if($c_checknum==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
 		for($i=0;$i<$c_checknum;$i++){
@@ -30,6 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				$categorycheck[$i]=0;
 			}
 		}
+		var_dump($categorycheck);
 
 		$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
 		$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
