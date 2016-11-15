@@ -14,8 +14,9 @@
 			//-----------------------------------------------------
 			if (isset($_SESSION["my_no"])){
 				echo "<li><a href=\"./index.php\">トップページ</a></li>";
-				echo "<li><a href=\"./mypage.php\">マイ情報</a></li>";
-				echo "<li><a href=\"./localinfo.php\">閲覧</a></li>";
+				echo "<li><a href=\"./mypage.php\">マイページ</a></li>";
+				echo "<li><a href=\"./localinfo.php\">観光スポット閲覧</a></li>";
+				echo "<li><a href=\"./local_evaluation.php\">観光スポット評価</a></li>";
 				echo "<li><a href=\"./recomend1.php\">観光スポット推薦</a></li>";
 				echo "<li><a href=\"./logout.php\">ログアウト</a></li>";
 			}else{

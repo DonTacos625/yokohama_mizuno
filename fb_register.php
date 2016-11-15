@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<div id="head">
 		<?php
 			require_once("linkplace.php");
-			echo pwd("fb_register",NULL);
+			echo pwd("fb_register");
 		?>
 	</div>
 </div>
