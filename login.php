@@ -155,11 +155,10 @@
 	</div>
 	</div>
   <div id="page">
-  		<table>
-  			<tr>
-  				<td><div class="label2" align="center">会員ログイン</div></td>
-  			</tr>
-  			<br>
+  	<div id="contents">
+  	<div class="label1" align="center">会員ログイン</div>
+  	<br>
+  		<table cellpadding="5">
   			<form action="./login_submit.php" method="POST">
   				<tr>
   					<td>ユーザID</td>
@@ -175,10 +174,9 @@
   			</form>
   		</table>
   		<br><br>
+	  	<div class="label1" align="center">Facebook</div>
+	  	<br>
   		<table>
-  			<tr>
-  				<td><div class="label2" align="center">Facebook</div></td>
-  			</tr>
   			<tr>
   				<td>
   					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
@@ -199,6 +197,7 @@
   				</td>
   			</tr>
   		</table>
+  	</div>
   </div>
 </body>
 </html>
