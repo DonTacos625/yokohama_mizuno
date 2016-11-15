@@ -171,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	latitude: spot[i]["spot_lat"]
 		 });
 		 //	Create contents of popup
-		 if(spot["spot_url"]==NULL){
+		 if(spot[i]["spot_url"]==NULL){
 		 	var lineAtt = {
 		 		分類: spot[i]["spot_category"],
 		 		名前: spot[i]["spot_name"],
