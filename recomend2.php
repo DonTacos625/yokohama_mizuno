@@ -117,8 +117,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		#viewDiv {
 			padding: 0;
 			margin: 0;
-			height: 100%;
-			width: 100%;
+			width:600px;
+			height:400px
 		}
 	</style>
 
