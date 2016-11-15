@@ -2,6 +2,7 @@
 //観光スポット推薦システム 推薦項目ページ
 session_start();
 require_once("PostgreSQL.php");
+require_once("calcuation.php"); //計算プログラムの読み込み
 $pgsql = new PostgreSQL;
 $my_no = $_SESSION["my_no"];
 ?>
