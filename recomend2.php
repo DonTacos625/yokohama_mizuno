@@ -123,96 +123,92 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	</style>
 
 	<script>
-	//spot[i][0]: spot_lng
-	//spot[i][1]: spot_lat
-	//spot[i][2]: spot_category
+	//spot[i]["spot_lng"]: spot_lng
+	//spot[i]["spot_lat"]: spot_lat
+	//spot[i]["spot_category"]: spot_category
 	//spot[i][3]: spot_pic
 	//spot[i][4]: spot_content
 	//spot[i][5]: spot_name
 	//spot[i][6]: spot_url
 
-	/*var spot = new Array(10);
-	for(var i = 0;i<spot.length;i++){
-		spot[i] = new Array(15);
-	}
-	*/
 	var spot = <?php echo json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
     console.log(spot);
+    console.log(spot[1]["spot_name"]);
 
-	// require([
-	// 	"esri/Map",
-	// 	"esri/views/MapView",
-	// 	"esri/Graphic",
-	// 	"esri/geometry/Point",
-	// 	"esri/symbols/PictureMarkerSymbol",
-	// 	"esri/PopupTemplate",
-	// 	"dojo/domReady!"
-	// 	], function(
-	// 		Map, MapView,
-	// 		Graphic, Point,
-	// 		PictureMarkerSymbol,
-	// 		PopupTemplate
-	// 		) {
+ require([
+ 	"esri/Map",
+ 	"esri/views/MapView",
+ 	"esri/Graphic",
+ 	"esri/geometry/Point",
+ 	"esri/symbols/PictureMarkerSymbol",
+ 	"esri/PopupTemplate",
+ 	"dojo/domReady!"
+ 	], function(
+ 		Map, MapView,
+ 		Graphic, Point,
+ 		PictureMarkerSymbol,
+ 		PopupTemplate
+ 		) {
 
-	// 		var map = new Map({
-	// 			basemap: "streets"
-	// 		});
+ 		var map = new Map({
+ 			basemap: "streets"
+ 		});
 
-	// 		var view = new MapView({
-	// 			center: [139.636055, 35.450078],
-	// 			container: "viewDiv",
-	// 			map: map,
-	// 			zoom: 15
-	// 		});
+ 		var view = new MapView({
+ 			center: [139.636055, 35.450078],
+ 			container: "viewDiv",
+ 			map: map,
+ 			zoom: 15
+ 		});
 
-	// 		/**********************
-	// 		 * Create a point graphic
-	// 		**********************/
-	// 		for(var i=0;i<spot.length;i++){
-	// 		 // First create a point geometry (this is the location of the Titanic)
-	// 			var point = new Point({
-	// 				longitude: spot[i][0],
-	// 				latitude: spot[i][1]
-	// 			});
-	// 		//Create contents of popup
-	// 		var lineAtt = {
-	// 			Name: s_name[i],
-	// 			url: "http://www.yahoo.co.jp/",
-	// 			//Length: "3,456 km",
-	// 			詳細: "詳細挿入"
-	// 		};
+ 		/**********************
+ 		 * Create a point graphic
+ 		**********************/
+ 		for(var i=0;i<spot.length;i++){
+ 		 // First create a point geometry (this is the location of the Titanic)
+ 			var point = new Point({
+ 				longitude: spot[i][0],
+ 				latitude: spot[i][1]
+ 			});
+ //	Create contents of popup
+ 		var lineAtt = {
+ 			Name: s_name[i],
+ 			url: "http://www.yahoo.co.jp/",
+ 		Length: "3,456 km",
+ 			詳細: "詳細挿入"
+ 		};
 
-	// // Create a symbol for drawing the point
-	// 	var Symbol = new PictureMarkerSymbol({
-	// 		url: spot[i],
-	// 		width: "30px",
-	// 		height: "30px"
-	// 	});
+ // Create a symbol for drawing the point
+ 	var Symbol = new PictureMarkerSymbol({
+ 		url: spot[i],
+ 		width: "30px",
+ 		height: "30px"
+ 	});
 
-	// 		// Create a graphic and add the geometry and symbol to it
-	// 		var pointGraphic = new Graphic({
-	// 			geometry: point,
-	// 			symbol: Symbol,
-	// 			attributes: lineAtt,
-	// 			popupTemplate: { // autocasts as new PopupTemplate()
-	// 				title: "スポット詳細情報",
-	// 				content: [{
-	// 					type: "fields",
-	// 					fieldInfos: [{
-	// 						fieldName: "Name"
-	// 					}, {
-	// 						fieldName: "url"
-	// 					}, {
-	// 						fieldName: "詳細"
-	// 					}]
-	// 				}]
-	// 			}
-	// 		});
+ 	// Create a graphic and add the geometry and symbol to it
+ 		var pointGraphic = new Graphic({
+ 			geometry: point,
+ 			symbol: Symbol,
+ 			attributes: lineAtt,
+ 			popupTemplate: { // autocasts as new PopupTemplate()
+ 				title: "スポット詳細情報",
+ 				content: [{
+ 					type: "fields",
+ 					fieldInfos: [{
+ 						fieldName: "Name"
+ 					}, {
+ 						fieldName: "url"
+ 					}, {
+ 						fieldName: "詳細"
+ 					}]
+ 				}]
+ 			}
+ 		});
 
-	// 		// Add the graphics to the view's graphics layer
-	// 		view.graphics.addMany([pointGraphic]);
-	// 	}
-	// });
+ 	// Add the graphics to the view's graphics layer
+ 		view.graphics.addMany([pointGraphic]);
+ 	}
+ });
 
 </script>
 </head>
@@ -235,7 +231,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<div id="page">
 		<div id="contents">
 			<?php
-			//require_once('left.php');
+			require_once('left.php');
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
@@ -245,10 +241,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<ul id="checkboxlist"></ul>
 					<div id="map_canvas" style="width:600px; height:400px"></div>
 					<br/>
-					<p><img src="./mkhan.jpg" width="600" height="150"  hspace="5" vspace="5" align="left" alt="トップロゴ"><br/></p>
-
-				</div>
-				<p>マーカーの凡例
+					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
 								<td><img src="./marker/purple.png">飲食</td>
@@ -264,6 +257,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
 						<br>
 					</p>
+				</div>
 			</div>
 		</div>
 	</div>
