@@ -19,7 +19,7 @@
 						echo (int)$my_no;
 						echo "<br>";
 						echo "年　　代：";
-						echo (int)$row["age"];
+						echo $age;
 						echo "代 <br>";
 						echo "性　　別：";
 						if($gender==1)
