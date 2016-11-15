@@ -113,6 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		?>
 	</div>
 </div>
+<?php
+	require_once("left.php");
+?>
 <div id="page">
 	<div id="contents">
 		<!-- #main 本文スペース -->
