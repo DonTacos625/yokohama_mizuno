@@ -45,13 +45,25 @@
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
-					<table>
+					<table align="center" border="0" cellspacing="3" cellpadding="3">
 						<tr>
-							<td align="center" bgcolor="#ffe4e1">
-								<div class="label2">メニューを選んでください。</div>
-							</td>
+							<div class="label2" align="center">メニューを選んでください</div>
 						</tr>
-					<form action="" onsubmit="with(this)for(i=0;i&lt;s.length;i++)if(s[i].checked)location.href=s[i].value;return!1"><b><label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label><br><br><label><input type="radio" name="s" value="./register_group.php">グループ編集</label><br><br><label><input type="radio" name="s" value="./changepw.php">パスワード変更</label><br><br><input type="submit" value="送信" style="font-weight:bold"></b></form>
+					<tr>
+						<td>
+							<form action="" onsubmit="with(this)for(i=0;i&lt;s.length;i++)if(s[i].checked)location.href=s[i].value;return!1">
+							<b>
+								<label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label>
+								<br><br>
+								<label><input type="radio" name="s" value="./register_group.php">グループ編集</label>
+								<br><br>
+								<label><input type="radio" name="s" value="./changepw.php">パスワード変更</label>
+								<br><br>
+								<input type="submit" value="送信" style="font-weight:bold">
+							</b>
+							</form>
+					</td>
+					</tr>
 					</table>
 				</div>
 			</div>
