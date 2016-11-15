@@ -7,14 +7,30 @@
 //----------------------------------------	
 	session_start();		//セッション開始
 	unset($_SESSION["my_no"]);		//Sessionの初期化
+	unset($_SESSION["gender"]);
+	unset($_SESSION["age"]);
 ?>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<title>ログアウト</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>ログアウト</title>
 </head>
 <body>
-<h3>みなとみらい観光支援サイトからログアウトしました</h3>
-<a href="./login.php">ログイン</a>はこちらから
+	<div id="page">
+		<div id="contents">
+			<!-- ■右表示エリア-->
+			<div id="main">
+				<!-- #main 本文スペース -->
+				<div class="contentswrap"> 
+					<div class="title">	
+						<?php
+						require_once("header.php");
+						?>
+						<h3>みなとみらい観光支援サイトからログアウトしました。</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

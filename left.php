@@ -10,23 +10,21 @@
 				<div class="label">あなたの情報</div>
 				<ul>
 				<?php
-					if (isset($_SESSION["my_no"])){
-						$sql = "SELECT gender,age FROM friendinfo WHERE no=$1";
-						$array = array($_SESSION["my_no"]);
-						$pgsql->query($sql,$array);
-						$row = $pgsql->fetch();
+					if (isset($_SESSION["my_no"])&&isset($_SESSION["gender"])$$isset($_SESSION["age"])){
 						$my_no = $_SESSION["my_no"];
+						$gender = $_SESSION["gender"];
+						$age = $_SESSION["age"];
 
 						echo "会員番号：";
-						echo json_encode((int)$my_no);
+						echo (int)$my_no;
 						echo "<br>";
 						echo "年　　代：";
-						echo json_encode((int)$row["age"]);
+						echo (int)$row["age"];
 						echo "代 <br>";
 						echo "性　　別：";
-						if($row["gender"]==1)
+						if($gender==1)
 							echo "男性";
-						else if($row["gender"]==2)
+						else if($gender==2)
 							echo "女性";
 						else
 							echo "未記入";
