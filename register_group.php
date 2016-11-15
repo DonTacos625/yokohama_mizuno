@@ -436,7 +436,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"]; //セッションがセットされていれば会員番号を挿入
 	}else{
-		$access_error = "不正なアクセスです"; //アクセスエラー
+		$access_error = "ログインをお願いします"; //アクセスエラー
 	}
 }
 ?>
@@ -530,7 +530,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 <div id="page">
 	<div id="head">
-		<a href="./index.php">Loginページへ戻る</a>
+			<?php
+			require_once("linkplace.php"); //現在地表示用php
+			echo pwd("fb_register"); //現在値の表示
+			?>
 	</div>
 </div>
 <div id="page">

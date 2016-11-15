@@ -14,7 +14,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>マイページ</title>
+	<title>#ここにタイトル</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
@@ -33,7 +33,7 @@
 			exit;
 		}
 		require_once("./linkplace.php");
-		echo pwd("mypage");
+		echo pwd("#現在のファイル名")
 		?>
 	</div>
 	<div id="page">
@@ -45,8 +45,7 @@
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
-					メニューを選んでください。
-	<form action="" onsubmit="with(this)for(i=0;i&lt;s.length;i++)if(s[i].checked)location.href=s[i].value;return!1"><b><label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label><br><br><label><input type="radio" name="s" value="./register_group.php">グループ編集</label><br><br><label><input type="radio" name="s" value="./changepw.php">パスワード変更</label><br><br><input type="submit" value="送信" style="font-weight:bold"></b></form>
+					#ここに文章
 				</div>
 			</div>
 		</div>

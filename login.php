@@ -5,19 +5,18 @@
 	/*
 		セッション管理
 	*/
-		/*
 		session_start();
 		if(isset($_SESSION["my_no"])){
 			header("Location:./top.php");
 			exit;
 		}
-		*/
 ?>
 	<html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>研究用SNSページ</title>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	</head>
 	<body>
 		<!--JQueryの読み込み-->
@@ -147,17 +146,6 @@
 
   </script>
   <h3>ログインページ</h3>
-	<!--
-	<?php
-//--------------------------------------------------------------------
-// ■ エラーメッセージがあったら表示
-//--------------------------------------------------------------------
-	/*	if (strlen($error)>0){
-		echo "<font size=\"2\" color=\"#da0b00\">エラー：{$error}</font><p>";
-	}
-	*/
-	?>
--->
 <table cellpadding="5">
 	<tr>
 		<td>会員ログイン</td>
