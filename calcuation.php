@@ -7,6 +7,8 @@
 			類似度算出
 		simList関数
 			ソート用関数
+		sort_for_point関数
+			上位n位の任意のカラムによるソート
  */
 
 /*
@@ -206,8 +208,10 @@ function sort_for_point($data1,$data2,$value,$num){
 		$spotdata[$i] = $data2[$tmp];
 	}
 
-	array_multisort(array_column($spotdata, $value),SORT_NUMERIC, SORT_DESC,$spotdata);
-	//重視する項目でソート
+	if($value!=NULL)//何も重視しない以外
+		array_multisort(array_column($spotdata, $value),SORT_NUMERIC, SORT_DESC,$spotdata);
+		//重視する項目でソート
+
 	return $spotdata;
 }
 

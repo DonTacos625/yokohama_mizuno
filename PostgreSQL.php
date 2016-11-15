@@ -32,8 +32,8 @@ class PostgreSQL{
 	//---------------------------
 	// SQLクエリの処理
 	//---------------------------
-	function query($sql){
-		$this->p_Rows = pg_query($this->link, $sql);
+	function query($sql,$array){
+		$this->p_Rows = pg_query_params($this->link, $sql,$array);
 		if (!$this->p_Rows){
 			 die("PostgreSQLでエラーが発生しました。<br><b>{$sql}</b><br>" .pg_last_error());
 		}

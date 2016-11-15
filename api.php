@@ -27,7 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
-	$pgsql->query("SELECT * FROM friendinfo WHERE id='$usr_id'"); //検索
+	$sql="SELECT no FROM friendinfo WHERE id=$1";
+	$escaped_id = pg_escape_string($usr_id);
+	$stl = array($escaped_id);
+	$pgsql->query($sql,$stl); //検索
 	$row = $pgsql->fetch();
 
 	if(isset($row['no'])){
@@ -37,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
 		//ユーザナンバーの最大値を取得
-		$pgsql->query("SELECT MAX(no) AS no FROM friendinfo");
+		$pgsql->query("SELECT MAX(no) AS no FROM friendinfo",NULL);
 		if ($pgsql->rows()>0) {
 			$row = $pgsql->fetch();
 			$no = $row['no'];
@@ -46,11 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------------------
 	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
-		if (!empty($usr_id)) {
+		if (!empty($escaped_id)) {
 			// データを追加する
 			$_SESSION["my_no"] = $no;
-			$sql = "INSERT INTO friendinfo(no,id) VALUES('$no','$usr_id')";
-			$pgsql->query($sql);
+			$escaped_no = pg_escape_string($no);
+			$sql = "INSERT INTO friendinfo(no,id) VALUES($1,$2)";
+			$array = array($escaoed_no,$escaped_id);
+			$pgsql->query($sql,$array);
 		}
 		//$_SESSION["my_no"] = $row['no'];
 		$msg = "登録が完了しました.";
