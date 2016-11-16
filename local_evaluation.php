@@ -101,16 +101,16 @@
 		?>
 		<div id="main">
 			<div class="contentswrap">
-				<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" enctype="multipart/form-data">
+				<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
 				<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 				<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 				<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 				<td align="center" bgcolor="#fof8ff">
 				<font size="4"><b>スポット名</b></font></td>
-				<td><input type="text" name="info_title" size="40"></td>
+				<td><?php echo json_encode($name)  ?></td>
 				<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 				<td>
-				&nbsp;<select name="type">
+				<select name="type">
 				<option value="名所・旧跡"<?if ($type=="1"){echo " selected";}?>>名所・旧跡</option>
 				<option value="風景"<?if ($type=="2"){echo " selected";}?>>風景</option>
 				<option value="テーマパーク・公園"<?if ($type=="3"){echo " selected";}?>>テーマパーク・公園</option>
@@ -233,8 +233,6 @@
 				<tr><td align="center" colspan="2">
 				<input type="reset" name="submit_reset" value="リセット">
 				<input type="submit" name="submit_toko" value="投稿する" onClick="return confirm('この内容で投稿しますか？')">
-				<input type="hidden" id="show_x" name="show_x">
-				<input type="hidden" id="show_y" name="show_y">
 				</form>
 			</div>
 		</div>
