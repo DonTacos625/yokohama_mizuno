@@ -14,8 +14,8 @@ echo "おｋだよ";
 
 $helper = $fb->getRedirectLoginHelper();
 
-$permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
+//$permissions = ['email']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php');
 
 echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
 ?>
