@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
 $fb = new Facebook\Facebook([
   'app_id' => 'ID', // Replace {app-id} with your app id
   'app_secret' => 'SECRET',
