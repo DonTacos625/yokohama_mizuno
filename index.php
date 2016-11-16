@@ -2,11 +2,11 @@
 	//======================================================================
 	//  ■：トップページ画面 index.php
 	//======================================================================
-	session_start(); //セッションスタート
-	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
-	$pgsql = new PostgreSQL;
-	if(isset($_SESSION["my_no"]))
-		$my_no = $_SESSION["my_no"];
+session_start(); //セッションスタート
+require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+$pgsql = new PostgreSQL;
+if(isset($_SESSION["my_no"]))
+	$my_no = $_SESSION["my_no"];
 ?>
 
 <!DOCTYPE html>
@@ -22,20 +22,24 @@
 </head>
 <body>
 	<div id="page">
-		<?php
+		<div id = "head">
+			<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
 			//----------------------------------------
 			require_once("header.php");
-		?>
+			?>
+		</div>
+	</div>
+	<div id="page">
 		<div id="contents">
 			<?php
 				//----------------------------------------
 				// ■左バーの取り込み
 				//----------------------------------------
-				require_once("left.php");
+			require_once("left.php");
 			?>
-		  <!-- ■右表示エリア-->
+			<!-- ■右表示エリア-->
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap"> 
