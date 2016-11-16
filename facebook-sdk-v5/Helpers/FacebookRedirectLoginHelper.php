@@ -152,6 +152,7 @@ class FacebookRedirectLoginHelper
     {
         echo "mkurl";
         $state = $this->pseudoRandomStringGenerator->getPseudoRandomString(static::CSRF_LENGTH);
+        echo "state";
         $this->persistentDataHandler->set('state', $state);
         echo "ok";
         return $this->oAuth2Client->getAuthorizationUrl($redirectUrl, $state, $scope, $params, $separator);
