@@ -153,7 +153,7 @@ class FacebookRedirectLoginHelper
         echo "mkurl";
         $tmp = $this->pseudoRandomStringGenerator;
         echo "tmp";
-        $state = $tmp->getPseudoRandomString(static::CSRF_LENGTH);
+        $state = $tmp->getPseudoRandomString(static:CSRF_LENGTH);
         echo "state";
         $this->persistentDataHandler->set('state', $state);
         echo "ok";
