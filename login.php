@@ -2,27 +2,17 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $fb = new Facebook\Facebook([
-  'app_id' => 'ID',
+  'app_id' => 'ID', // Replace {app-id} with your app id
   'app_secret' => 'SECRET',
   'default_graph_version' => 'v2.2',
   ]);
 
-try {
-  // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,name', '{access-token}');
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-  echo 'Graph returned an error: ' . $e->getMessage();
-  exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
-}
+$helper = $fb->getRedirectLoginHelper();
 
-$user = $response->getGraphUser();
+$permissions = ['email']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('https://example.com/fb-callback.php', $permissions);
 
-echo 'Name: ' . $user['name'];
-// OR
-// echo 'Name: ' . $user->getName();
+echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
 	?>
 
 	<!DOCTYPE html>
