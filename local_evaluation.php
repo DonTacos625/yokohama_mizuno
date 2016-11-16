@@ -1,65 +1,28 @@
 <?php
-	require_once('com_require.php');
+	session_start();
+	require_once('PostgreSQL.php');
+	$pgsql = new PostgreSQL;
 //	mysql_select_db('SET NAMES utf8',$sql);
 	//mysql_query("set names sgis");
 	// print_r($_FILES);
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		// POSTされたデータを取得
-		@$usr_id = htmlspecialchars($_POST['usr_id'], ENT_QUOTES);	// ID
-		@$num = $_POST['num'];
-		$info_title = htmlspecialchars($_POST['info_title'], ENT_QUOTES);
-		$info_content = htmlspecialchars($_POST['info_content'], ENT_QUOTES);
-		$lat = $_POST['show_x'];
-		$lng = $_POST['show_y'];
-		$good = null;
-		$type = htmlspecialchars($_POST['type'], ENT_QUOTES);
-		// 画像用変換
-		$pic_name = $_FILES['pic']['name']; 				// ローカルファイル名
-		$pic_tmp = $_FILES['pic']['tmp_name']; 				// テンポラリファイルの名前
-		$pic_type = $_FILES['pic']['type']; 				// 画像タイプ
-		$pic_size = $_FILES['pic']['size']; 				// 画像サイズ
-		$chk_del = 0;										// 画像削除フラグ(変更時のみ)
-		if (isset($_POST['chk_pic'])) {$chk_del = 1;}
-		$upd_pic = '';										// 初期画像名(変更時のみ)
-		if (isset($_POST['upd_pic'])) {$upd_pic = $_POST['upd_pic'];}
-		if (strlen($info_title) == 0) {$error = "タイトルが未入力です";}
-		if (strlen($info_content) == 0) {$error = "本文が未入力です";}
-		//if (strlen($lat) == 0) {$error = "位置情報が未入力です";}
-		// ファイル
-		if (strlen($pic_name)>0) {
-			if (is_uploaded_file($pic_tmp)) {
-				if ($pic_size == 0) {$error = "画像が不正です。";}
-				if ($pic_size>5000000) {$error = "画像のサイズが大きすぎます。({$pic_size}バイト)";;}
-				if ($pic_type == "image/gif") {$kaku = "gif";}
-				if ($pic_type == "image_png" || $pic_type == "image/x-png") {$kaku = "png";}
-				if ($pic_type == "image/jpeg" || $pic_type == "image/pjpeg") {$kaku = "jpg";}
-				if ($kaku == "") {$error ="画像種類に誤りがあります。";}
+		$sql = "SELECT eval_user FROM localinfo WHERE pk=$1";
+		$array = array()
+		$pgsql->query_null($sql);
+
+
+
+
+	}else{
+		if(isset($_SESSION["my_no"])){
+			$my_no = $_SESSION["my_no"];
+			if($_GET['pk']!=NULL){
+				$pk = $_GET['pk'];
+			}else{
+				$error = "観光スポットが指定されていません";
 			}
-		}
-		if (strlen($error) == 0) {
-		// 登録ボタンが押された時
-			if(isset($_POST["submit_toko"])) {			
-				// ログの最大値を取得
-				$log_no = 0;
-				$mysql->query("SELECT MAX(info_logno) AS maxno FROM info");
-				if ($mysql->rows()>0) {
-					$row = $mysql->fetch();
-					$log_no = $row['maxno'];
-				}
-				$log_no++;
-				if (strlen($pic_name)>0) {
-					// 画像の移動
-					$ymdhis = date("YmdHis");
-					$pic_name = "{$my_no}-{$log_no}-{$ymdhis}.{$kaku}";
-					move_uploaded_file($pic_tmp, "$pic_path/$pic_name");
-				}
-					//mysql_query('SET NAMES utf8',$sql);
-					//mysql_set_charset('utf8');
-					$sql = "INSERT INTO info VALUES(";
-					$sql.= "$my_no,$log_no,'$info_title','$info_content','$pic_name',now(),'$lat','$lng','$type','$good','$good1')";
-					$mysql->query($sql);
-					$error = "登録が完了しました";
-			}
+		}else{
+			$error = "ログインをお願いします";
 		}
 	}
 ?>
@@ -70,30 +33,25 @@
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
 <title>地域情報</title>
-<script type="text/javascript"src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<!--	<script src="http://serverapi.arcgisonline.com/jsapi/gmaps/?v=1.4" type="text/javascript" ></script> -->
-<script type="text/javascript">
-	var map;          // GoogleMapオブジェクトの変数宣言
-	var markers = new google.maps.MVCArray; // マーカー保存配列 
-</script>
-<script	type="text/javascript" src="mapcode.js"></script>
 <link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 
-<body onload="initialize();">
+<body>
 <div id="page">
 	<?php
 		require_once('header.php');
-		if (strlen($error)>0) {
-			// エラーメッセージがあったら表示
-			echo "<center><font size=\"4\">{$error}</font></center><p>";
-			if ($error == "登録が完了しました" || $error == "変更が完了しました") {
-				echo "<br><center><a href=\"./mypage.php\">マイページへ</a></center>\n";
-				echo "</body>\n";
-				echo "</html>";
-				exit;
-			}
+		if(strlen($error)!=0){
+			echo $error;
+			echo "</div></body></html>";
+			exit;
 		}
+		if(isset($_SESSION["my_no"])&&!empty($pk)){
+			$sql = "SELECT spot_visited,spot_category,spot_name FROM localinfo WHERE pk=$1";
+			$array = array($pk);
+		}
+
+
+
 	?>
 	<div id="contents">
 		<?php
@@ -102,6 +60,7 @@
 		<div id="main">
 			<div class="contentswrap">
 				<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+				<input type="hidden"  name="aaaa" value= >
 				<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 				<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 				<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
@@ -190,7 +149,6 @@
 						</td>
 			</tr>
 				</table>
-				<div id="map" style="width: 600px; height:400px;"></div>
 				<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 				<tr><td align="center" colspan="2">
 				<input type="reset" name="submit_reset" value="リセット">

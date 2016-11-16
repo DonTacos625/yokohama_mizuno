@@ -151,8 +151,9 @@ class FacebookRedirectLoginHelper
     private function makeUrl($redirectUrl, array $scope, array $params = [], $separator = '&')
     {
         echo "mkurl";
-        $tmp = pseudoRandomStringGenerator->getPseudoRandomString(static::CSRF_LENGTH);
-        $state = $this->$tmp;
+        $tmp = $this->pseudoRandomStringGenerator;
+        echo "tmp";
+        $state = $tmp->getPseudoRandomString(static::CSRF_LENGTH);
         echo "state";
         $this->persistentDataHandler->set('state', $state);
         echo "ok";

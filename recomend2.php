@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			}
 		}
 
-		$sql = "SELECT spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
 		$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
@@ -94,6 +94,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
 		//抜き出した箇所の更に上位10位を抜き出す
 		$result10place = array_slice($resultplace,0,10);
+
 	}
 }else{
 	if(!isset($_SESSION["my_no"])){
@@ -126,6 +127,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var pointpic = "";
 	var cat_name = "";
 	var spoturl = "";
+	var valurl = "./local_evaluation.php?pk=";
 	require([
 		"esri/Map",
 		"esri/views/MapView",
@@ -188,14 +190,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
 		 		URL: "なし",
-		 		評価: "評価値挿入"
+		 		評価: valurl+spot[i]["pk"]
 		 	};
 		 }else{
 		 	var lineAtt = {
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
 		 		URL: urlhttp+spot[i]["spot_url"],
-		 		評価: "評価値挿入"
+		 		評価: valurl+spot[i]["pk"]
 		 	};
 		 }
 
