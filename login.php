@@ -1,12 +1,28 @@
 <?php
-	//======================================================================
-	//  ■：テンプレート
-	//======================================================================
-	session_start(); //セッションスタート
-	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
-	$pgsql = new PostgreSQL;
-	if(isset($_SESSION["my_no"]))
-		$my_no = $_SESSION["my_no"];
+require_once __DIR__ . '/vendor/autoload.php';
+
+$fb = new Facebook\Facebook([
+  'app_id' => 'ID',
+  'app_secret' => 'SECRET',
+  'default_graph_version' => 'v2.2',
+  ]);
+
+try {
+  // Returns a `Facebook\FacebookResponse` object
+  $response = $fb->get('/me?fields=id,name', '{access-token}');
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$user = $response->getGraphUser();
+
+echo 'Name: ' . $user['name'];
+// OR
+// echo 'Name: ' . $user->getName();
 	?>
 
 	<!DOCTYPE html>
@@ -21,7 +37,7 @@
 		</script>
 	</head>
 	<body>
-		<script type="text/javascript">
+<!--		<script type="text/javascript">
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -144,6 +160,7 @@
     }
 
   </script>
+  -->
   <div id="page">
 	<div id="header">
 		<?php
