@@ -12,13 +12,8 @@ $fb = new Facebook\Facebook([
 
 echo "おｋだよ";
 
-//$helper = $fb->getRedirectLoginHelper();
-
 $helper = $fb->getCanvasHelper();
 
-echo "おｋ";
-
-/*
 try {
   $accessToken = $helper->getAccessToken();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -42,15 +37,4 @@ var_dump($helper->getSignedRequest());
 
 echo '<h3>Access Token</h3>';
 var_dump($accessToken->getValue());
-*/
-/*
-
-
-
-
-
-$permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
-
-echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';*/
 ?>
