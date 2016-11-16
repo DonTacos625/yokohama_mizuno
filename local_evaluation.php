@@ -189,19 +189,10 @@
 							<input type="radio" name="a1" value="5"> 5
 						</td>
 			</tr>
-
-				<tr><td align="center" bgcolor="#fof8ff" colspan="2">
-				<font size="4"><b>場所をクリックしてください</b></font></td></tr>
 				</table>
 				<div id="map" style="width: 600px; height:400px;"></div>
 				<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 				<tr><td align="center" colspan="2">
 				<input type="reset" name="submit_reset" value="リセット">
 				<input type="submit" name="submit_toko" value="投稿する" onClick="return confirm('この内容で投稿しますか？')">
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
+			</td></tr></table></form></div></div></div></div></body></html>

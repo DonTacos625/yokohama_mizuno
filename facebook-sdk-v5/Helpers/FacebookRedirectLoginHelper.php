@@ -150,9 +150,10 @@ class FacebookRedirectLoginHelper
      */
     private function makeUrl($redirectUrl, array $scope, array $params = [], $separator = '&')
     {
+        echo "mkurl";
         $state = $this->pseudoRandomStringGenerator->getPseudoRandomString(static::CSRF_LENGTH);
         $this->persistentDataHandler->set('state', $state);
-
+        echo "ok";
         return $this->oAuth2Client->getAuthorizationUrl($redirectUrl, $state, $scope, $params, $separator);
     }
 
@@ -167,6 +168,7 @@ class FacebookRedirectLoginHelper
      */
     public function getLoginUrl($redirectUrl, array $scope = [], $separator = '&')
     {
+        echo "ok";
         return $this->makeUrl($redirectUrl, $scope, [], $separator);
     }
 
