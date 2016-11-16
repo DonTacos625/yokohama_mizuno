@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
-
+session_start();
 echo "1";
 
 $fb = new Facebook\Facebook([

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
+session_start();
 
 $fb = new Facebook\Facebook([
   'app_id' => 'ID', // Replace {app-id} with your app id
