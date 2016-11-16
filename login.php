@@ -10,6 +10,8 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.7',
   ]);
 
+echo "おｋ";
+
 //$helper = $fb->getRedirectLoginHelper();
 
 $helper = $fb->getCanvasHelper();
