@@ -16,10 +16,11 @@ $helper = $fb->getRedirectLoginHelper();
 
 echo "3";
 
-$permissions = ['email', 'user_likes']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php',$permissions,'&');
+$permissions = ""; // Optional permissions
+echo "4";
+$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php',$permissions);
 
-echo "3";
+echo "5";
 ?>
 <!DOCTYPE html>
 <html>
