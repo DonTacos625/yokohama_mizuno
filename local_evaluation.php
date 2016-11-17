@@ -104,11 +104,14 @@ private function toPhpArray($data)
 					$array = array($pk);
 					$pgsql -> query($sql,$array);
 					$row = $pgsql->fetch();
+					$spot_name=json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+					$spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+					$spot_eval=json_encode($row["spot_eval"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 					if($row){
-						$spot_eval = toPhpArray($row["spot_eval"]);
-						$spot_eval_count = count($spot_eval);
-						for($i=0;$i<$spot_eval_count;$i++){
-							if($spot_eval[$i]==$my_no){
+						$eval = toPhpArray($spot_eval);
+						$eval_count = count($eval);
+						for($i=0;$i<$eval_count;$i++){
+							if($eval[$i]==$my_no){
 								$error = "評価済みです";
 							}
 						}
@@ -153,13 +156,12 @@ private function toPhpArray($data)
 		<div id="main">
 			<div class="contentswrap">
 				<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-				<input type="hidden"  name="aaaa" value= >
 				<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 				<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 				<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 				<td align="center" bgcolor="#fof8ff">
 				<font size="4"><b>スポット名</b></font></td>
-				<td><?php echo json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></td>
+				<td><?php echo  ?></td>
 				<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 				<td>
 					<?php $spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
