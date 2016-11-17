@@ -123,6 +123,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$spot_name= $row["spot_name"];
 				$spot_category= $row["spot_category"];
 				$spot_eval=$row["spot_eval"];
+				var_dump($row["spot_eval"]);
+				var_dump($spot_eval);
 				$spot_pic=$row["spot_pic"];
 				$spot_visited = $row["spot_visited"];
 				if($row){
@@ -182,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 								<td align="center" bgcolor="#fof8ff">
 									<font size="4"><b>スポット名</b></font></td>
-									<td><?php echo  $spot_name?><?php echo $pk?></td>
+									<td><?php echo  $spot_name?></td>
 									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 										<td>
 											<?php
@@ -202,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr><?echo $spot_pic?><?echo $spot_visited?></tr>
+									<tr><?echo $spot_pic?></tr>
 									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 										<td>1:低/少  <------>  5:高/多</td>
 									</tr>
