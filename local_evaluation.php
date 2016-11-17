@@ -28,11 +28,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$a6 = intval(htmlspecialchars($_POST['a6']));
 	$a7 = intval(htmlspecialchars($_POST['a7']));
 	$a8 = intval(htmlspecialchars($_POST['a8']));
+	$pk = intval(htmlspecialchars($_POST['pk']));
+	$visited = intval(htmlspecialchars($_POST['spot_visited']));
+	$my_no = $_SESSION["my_no"];
 
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
 		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE pk = $1";
 		$array = array($pk);
-		var_dump($pk);
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch();
 
@@ -104,7 +106,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			$my_no = $_SESSION["my_no"];
 			if($_GET['pk']!=NULL){
 				$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
-				var_dump($pk);
 				if(preg_match('/^([0-9])/', $pk)){
 					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval,spot_pic FROM localinfo WHERE pk=$1";
 					$array = array($pk);
@@ -165,9 +166,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				<div id="main">
 					<div class="contentswrap">
 						<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-						<input type="hidden" name="spot_name" value="<?php echo $spot_name?>">
 						<input type="hidden" name="spot_visited" value="<?php echo $spot_visited?>">
-						
+						<input type="hidden" name="pk" value="<?php echo $pk?>">
 							<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 								<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 									<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 												?>
 											</td>
 										</tr>
-										<tr><?echo $spot_pic?></tr>
+										<tr><?echo $spot_pic?><?echo $spot_visited?></tr>
 										<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 											<td>1:低/少  <------>  5:高/多</td>
 										</tr>
