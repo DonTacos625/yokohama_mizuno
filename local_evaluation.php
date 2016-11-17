@@ -113,10 +113,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
 		if($_GET['pk']!=NULL){
-			$pk=json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-			echo $pk;
+			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 			if(preg_match('/^([0-9])/', $pk)){
-				$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval,spot_pic FROM localinfo WHERE pk=$1";
+				$sql = "SELECT spot_visited,spot_category,spot_name,spot_pic,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch();
