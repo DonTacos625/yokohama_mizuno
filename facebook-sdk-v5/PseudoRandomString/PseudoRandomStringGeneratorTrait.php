@@ -54,8 +54,8 @@ trait PseudoRandomStringGeneratorTrait
     public function binToHex($binaryData, $length)
     {
         echo "この関数なんだけど";
-        $str = "あいう";
-        echo mb_substr($str,0,1,"utf-8");
+        $str = "12345";
+        echo substr($str,0,1);
         var_dump(mb_substr(bin2hex($binaryData)),0,$length);
         var_dump(mb_substr(bin2hex($binaryData), 0, $length));
         return mb_substr(bin2hex($binaryData), 0, $length);
