@@ -142,8 +142,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					var_dump($eval);
 					$eval_count = count($eval);
 					var_dump($eval_count);
+					var_dump($my_no);
 					for($i=0;$i<$evalcount;$i++){
-						if((int)$eval[$i]==$my_no){
+						if($eval[$i]==$my_no){
 							$error = "評価済みです";
 						}
 					}
