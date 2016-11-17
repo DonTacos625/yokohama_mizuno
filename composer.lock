@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d824a22418b90bdbfc90d680c7156b62",
-    "content-hash": "ad9b01d4b93072f609ef67d1f4f7461c",
+    "hash": "bfa1d05b2143e4eb0b6840eaae1689f9",
+    "content-hash": "4804628d99723171977fd0ab31e06635",
     "packages": [
         {
             "name": "fuelphp/upload",
-            "version": "2.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fuelphp/upload.git",
-                "reference": "68bfab6f732af326ff0b364b996b15c250014a8b"
+                "reference": "6310108de98ffdbf1083612db5b15411fc140c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuelphp/upload/zipball/68bfab6f732af326ff0b364b996b15c250014a8b",
-                "reference": "68bfab6f732af326ff0b364b996b15c250014a8b",
+                "url": "https://api.github.com/repos/fuelphp/upload/zipball/6310108de98ffdbf1083612db5b15411fc140c90",
+                "reference": "6310108de98ffdbf1083612db5b15411fc140c90",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "file uploads",
                 "upload"
             ],
-            "time": "2013-08-15 21:55:11"
+            "time": "2013-10-11 21:42:58"
         },
         {
             "name": "monolog/monolog",
@@ -168,7 +168,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "ext-mbstring": "*"
     },
     "platform-dev": []
 }
