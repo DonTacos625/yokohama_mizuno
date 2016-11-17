@@ -43,64 +43,80 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch_all();
 
+		$data[0][0] = $a1;
+		$data[0][1] = $a2;
+		$data[0][2] = $a3;
+		$data[0][3] = $a4;
+		$data[0][4] = $a5;
+		$data[0][5] = $a6;
+		$data[0][6] = $a7;
+		$data[0][7] = $a8;
+
 		if($row[0]["spot_a1"]==0){
-			$data[0][0]= $a1;
+			$data[1][0]= $a1;
 		}else{
-			$data[0][0]= floatval($row[0]["spot_a1"]);
+			$data[1][0]= floatval($row[0]["spot_a1"]);
 		}
 		if($row[0]["spot_a2"]==0){
-			$data[0][1]= $a2;
+			$data[1][1]= $a2;
 		}else{
-			$data[0][1]= floatval($row[0]["spot_a2"]);
+			$data[1][1]= floatval($row[0]["spot_a2"]);
 		}
 		if($row[0]["spot_a3"]==0){
-			$data[0][2]= $a3;
+			$data[1][2]= $a3;
 		}else{
-			$data[0][2]= floatval($row[0]["spot_a3"]);
+			$data[1][2]= floatval($row[0]["spot_a3"]);
 		}
 		if($row[0]["spot_a4"]==0){
-			$data[0][3]= $a4;
+			$data[1][3]= $a4;
 		}else{
-			$data[0][3]= floatval($row[0]["spot_a4"]);
+			$data[1][3]= floatval($row[0]["spot_a4"]);
 		}
 		if($row[0]["spot_a5"]==0){
-			$data[0][4]= $a5;
+			$data[1][4]= $a5;
 		}else{
-			$data[0][4]= floatval($row[0]["spot_a5"]);
+			$data[1][4]= floatval($row[0]["spot_a5"]);
 		}
 		if($row[0]["spot_a6"]==0){
-			$data[0][5]= $a6;
+			$data[1][5]= $a6;
 		}else{
-			$data[0][5]= floatval($row[0]["spot_a6"]);
+			$data[1][5]= floatval($row[0]["spot_a6"]);
 		}
 		if($row[0]["spot_a7"]==0){
-			$data[0][6]= $a7;
+			$data[1][6]= $a7;
 		}else{
-			$data[0][6]= floatval($row[0]["spot_a7"]);
+			$data[1][6]= floatval($row[0]["spot_a7"]);
 		}
 		if($row[0]["spot_a8"]==0){
-			$data[0][7]= $a8;
+			$data[1][7]= $a8;
 		}else{
-			$data[0][7]= floatval($row[0]["spot_a8"]);
+			$data[1][7]= floatval($row[0]["spot_a8"]);
 		}
 
-		$data[1][0] = $a1;
-		$data[1][1] = $a2;
-		$data[1][2] = $a3;
-		$data[1][3] = $a4;
-		$data[1][4] = $a5;
-		$data[1][5] = $a6;
-		$data[1][6] = $a7;
-		$data[1][7] = $a8;
-
 		$visited = $row[0]["spot_visited"];
-		for($i=0;$i<$visited;$i){
+
+		/*for($i=0;$i<$visited-1;$i){
 			for ($j=0; $j < 8; $j++) {
 				$data[$i+2][$j] = $data[0][$j];
 			}
 		}
+	*/
+		//$resultval = value_calcuation($data); //データの計算
 
-		$resultval = value_calcuation($data); //データの計算
+		$sum = "";
+		for($i=0;$i<2;$i++){
+			for($j=0;$j<8){
+				$sum[$j] = $sum[$j]+$data[$i][$j];
+			}
+		}
+
+		for($i=0;$i<$visited;$i++){
+			for($j=0;$j<8;$j++){
+				$sum[$j] = $data[$i+2][$j];
+			}
+		}
+
+
 
 		$visited++; //訪問者を一人増やす
 
