@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
-		if(count($eval)<=1){
+		if($eval[0]==""){
 			$evaled_people = array($my_no);
 		}else{
 			$evaled_people = array_push($eval,$my_no);
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					$eval_count = count($eval);
 					var_dump($eval_count);
 					for($i=0;$i<$evalcount;$i++){
-						if($eval[$i]==$my_no){
+						if((int)$eval[$i]==$my_no){
 							$error = "評価済みです";
 						}
 					}
