@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
-				$spot_name= json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+				$spot_name= $row["spot_name"];
 				$spot_category = $row["spot_category"];
 				$spot_eval = $row["spot_eval"];
 				var_dump($row["spot_eval"]);
@@ -201,7 +201,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr><?echo $spot_pic?></tr>
+									<tr><td>写真</td><td><?echo $spot_pic?></td></tr>
 									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 										<td>1:低/少  <------>  5:高/多</td>
 									</tr>
