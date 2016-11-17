@@ -86,14 +86,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		$visited = $row[0]["spot_visited"];
 		//for($i=1;$i<=$visited;$i)
-		$data[1][0] = floatval($row[0]["spot_a1"]);
-		$data[1][1] = floatval($row[0]["spot_a2"]);
-		$data[1][2] = floatval($row[0]["spot_a3"]);
-		$data[1][3] = floatval($row[0]["spot_a4"]);
-		$data[1][4] = floatval($row[0]["spot_a5"]);
-		$data[1][5] = floatval($row[0]["spot_a6"]);
-		$data[1][6] = floatval($row[0]["spot_a7"]);
-		$data[1][7] = floatval($row[0]["spot_a8"]);
+		$data[1][0] = $a1;
+		$data[1][1] = $a2;
+		$data[1][2] = $a3;
+		$data[1][3] = $a4;
+		$data[1][4] = $a5;
+		$data[1][5] = $a6;
+		$data[1][6] = $a7;
+		$data[1][7] = $a8;
 
 		$resultval = value_calcuation($data); //データの計算
 

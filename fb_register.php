@@ -141,9 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 								<div class="label">年代</div>
 							</td>
 							<td>
-								<input type="radio" name="age" value="10"<?php if ($age==10){ print " checked"; }?> >10
+								<input type="radio" name="age" value="10"<?php if ($age!=20&&$age!=30&&$age!=40&&$age!=50&$age!=60){ print " checked"; }?> >10
 								<input type="radio" name="age" value="20"<?php if ($age==20){ print " checked"; }?> >20
-								<input type="radio" name="age" value="30"<?php if ($age!=10&&$age!=20&&$age!=40&&$age!=50&$age!=60){ print " checked"; }?> >30
+								<input type="radio" name="age" value="30"<?php if ($age==30){ print " checked"; }?> >30
 								<input type="radio" name="age" value="40"<?php if ($age==40){ print " checked"; }?> >40
 								<input type="radio" name="age" value="50"<?php if ($age==50){ print " checked"; }?> >50
 								<input type="radio" name="age" value="60"<?php if ($age==60){ print " checked"; }?> >60以上

@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!empty($usr_id)) {
 			// データを追加する
 			$_SESSION["my_no"] = $no;
+			$_SESSION["fb"] = 1;
 			$sql = "INSERT INTO friendinfo(no,id) VALUES($1,$2)";
 			$array = array($no,$usr_id);
 			$pgsql->query($sql,$array);
