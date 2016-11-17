@@ -96,15 +96,19 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		//var_dump($data);
 		echo "\n";
 		$resultval = value_calcuation($data); //データの計算
-		var_dump($resultval);
+		//var_dump($resultval);
 		echo "\n";
 		$visited = $row[0]["spot_visited"]+1; //訪問者を一人増やす
 		$eval=toPhpArray($row[0]["spot_eval"]);
-		var_dump($visited);
+		//var_dump($visited);
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
-		$evaled_people = array_push($eval,$my_no);
+		if(count($eval))<=1){
+			$evaled_people = array_push($eval,$my_no);
+		}else{
+			$evaled_people = array($my_no);
+		}
 		var_dump($evaled_people);
 		echo "\n";
 		$evaled = toPostgreSqlArray($evaled_people);
