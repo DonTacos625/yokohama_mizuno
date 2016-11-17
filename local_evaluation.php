@@ -114,19 +114,20 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$my_no = $_SESSION["my_no"];
 		if($_GET['pk']!=NULL){
 			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
+			var_dump($pk);
 			if(preg_match('/^([0-9])/', $pk)){
 				$sql = "SELECT spot_visited,spot_category,spot_name,spot_pic,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
-				$row = $pgsql->fetch();
+				$row = $pgsql->fetch_all();
 				var_dump($row);
 				$spot_name= json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-				$spot_category= $spot_row["spot_category"];
-				$spot_eval=$spot_row["spot_eval"];
-				var_dump($spot_row["spot_eval"]);
+				$spot_category = $row["spot_category"];
+				$spot_eval = $row["spot_eval"];
+				var_dump($row["spot_eval"]);
 				var_dump($spot_eval);
-				$spot_pic=$spot_row["spot_pic"];
-				$spot_visited = $spot_row["spot_visited"];
+				$spot_pic = $row["spot_pic"];
+				$spot_visited = $row["spot_visited"];
 				if($spot_row){
 					$eval = toPhpArray($spot_eval);
 					$eval_count = count($eval);
