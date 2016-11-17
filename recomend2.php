@@ -164,6 +164,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	latitude: spot[i]["spot_lat"]
 		 });
 
+		 var pk = Number(spot[i]["spot_pk"]);
+
 		 if(spot[i]["spot_category"]==1){
 		 	cat_name = "飲食";
 		 	pointpic = "./marker/purple.png";
@@ -184,22 +186,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	pointpic = "./marker/blue.png";
 		 }
 
-		 //	Create contents of popup
 		 if(spot[i]["spot_url"]==""){
-		 	var lineAtt = {
-		 		分類: cat_name,
-		 		コメント: spot[i]["spot_content"],
-		 		URL: "なし",
-		 		評価: valurl+spot[i]["pk"]
-		 	};
+		 	spot_url = "なし";
 		 }else{
-		 	var lineAtt = {
+		 	spot_url = urlhttp+spot[i]["spot_url"];
+		 }
+
+		 //	Create contents of popup
+		 var lineAtt = {
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
-		 		URL: urlhttp+spot[i]["spot_url"],
-		 		評価: valurl+spot[i]["pk"]
+		 		URL: spot_url,
+		 		評価: valurl+pk
 		 	};
-		 }
+
 
 	 // Create a symbol for drawing the point
 	 	var Symbol = new PictureMarkerSymbol({
