@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				}else if($i==1){
 					$sum[$j] = $sum[$j]+$data[$i][$j];
 				}else{
-					$sum[$j] =$sum[$j]+ $data[0][$j];
+					$sum[$j] =$sum[$j]+ $data[1][$j];
 				}
 			}
 		}
