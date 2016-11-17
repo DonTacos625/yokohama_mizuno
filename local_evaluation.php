@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$array = array($pk);
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch();
-
+		var_dump($row);
 		if($row["spot_a1"]==0){
 			$data[0][0]= $a1;
 		}else{
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$sql = "SELECT spot_visited,spot_category,spot_name,spot_pic,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
-				$row = $pgsql->fetch();
+				$row = $pgsql->fetch_all();
 				var_dump($row);
 				$spot_row = json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 				var_dump($spot_spot_row);
