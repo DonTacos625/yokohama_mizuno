@@ -104,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
-		if($eval[0]==""){
-			$evaled_people = array($my_no);
-		}else{
-			$evaled_people = array_push($eval,$my_no);
-		}
+		//if($eval[0]==""){
+		//	$evaled_people = array($my_no);
+		//}else{
+			$evaled_people[] = $my_no;
+		//}
 		var_dump($evaled_people);
 		echo "\n";
 		$evaled = toPostgreSqlArray($evaled_people);
@@ -126,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$my_no = $_SESSION["my_no"];
 		if($_GET['pk']!=NULL){
 			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
-			var_dump($pk);
 			if(preg_match('/^([0-9])/', $pk)){
 				$sql = "SELECT spot_visited,spot_category,spot_name,spot_pic,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
@@ -137,13 +136,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					$spot_category = $row[0]["spot_category"];
 					$spot_pic = $row[0]["spot_pic"];
 					$spot_visited = $row[0]["spot_visited"];
-					var_dump($spot_visited);
 					$eval = toPhpArray($row[0]["spot_eval"]);
 					var_dump($eval);
 					$eval_count = count($eval);
-					var_dump($eval_count);
-					var_dump($my_no);
 					for($i=0;$i<$evalcount;$i++){
+						echo $i;
 						if($eval[$i]==$my_no){
 							$error = "評価済みです";
 						}
