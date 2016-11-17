@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$row = json_decode(json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 				$spot_name= $row["spot_name"];
 				$spot_category= $row["spot_category"];
-				$spot_eval=toPhpArray($row["spot_eval"]);
+				$spot_eval=$row["spot_eval"];
 				$spot_pic=$row["spot_pic"];
 				$spot_visited = $row["spot_visited"];
 				if($row){

@@ -195,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
 		 		URL: spot_url,
-		 		評価: valurl+spot[i]["spot_pk"]
+		 		評価: valurl+spot[i]["pk"]
 		 	};
 
 
