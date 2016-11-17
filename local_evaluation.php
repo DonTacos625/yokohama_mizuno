@@ -100,13 +100,14 @@ private function toPhpArray($data)
 			if($_GET['pk']!=NULL){
 				$pk=json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 				if(preg_match('/^([0-9])/', $pk)){
-					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval FROM localinfo WHERE pk=$1";
+					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval,spot_pic FROM localinfo WHERE pk=$1";
 					$array = array($pk);
 					$pgsql -> query($sql,$array);
 					$row = $pgsql->fetch();
 					$spot_name=json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 					$spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 					$spot_eval=json_encode($row["spot_eval"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+					$spot_pic=json_encode($row["spot_pic"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 					if($row){
 						$eval = toPhpArray($spot_eval);
 						$eval_count = count($eval);
@@ -161,10 +162,10 @@ private function toPhpArray($data)
 				<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 				<td align="center" bgcolor="#fof8ff">
 				<font size="4"><b>スポット名</b></font></td>
-				<td><?php echo  ?></td>
+				<td><?php echo  $spot_name?></td>
 				<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 				<td>
-					<?php $spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
+					<?php
 					if($spot_category==1){
 						echo "飲食";
 					}else if($spot_category==2){
@@ -181,7 +182,7 @@ private function toPhpArray($data)
 					?>
 				</td>
 				</tr>
-				<tr><?echo $pic?></tr>
+				<tr><?echo $spot_pic?></tr>
 			<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 			<td>1:低/少  <------>  5:高/多</td>
 			</tr>
