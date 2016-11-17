@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$a8 = intval(htmlspecialchars($_POST['a8']));
 
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
-		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8,spot_visited FROM localinfo WHERE pk = $1";
+		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE pk = $1";
 		$array = array($pk);
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch();
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$data[1][7] = $a8;
 
 			$resultval = value_calcuation($data); //データの計算
-			$visited = intval($row["spot_visited"])+1; //訪問者を一人増やす
+			$visited = $spot_visited+1; //訪問者を一人増やす
 			$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9 WHERE pk=$10";
 			$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$pk);
 			$pgsql->query($sql,$array);
@@ -98,17 +98,19 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		if(isset($_SESSION["my_no"])){
 			$my_no = $_SESSION["my_no"];
 			if($_GET['pk']!=NULL){
-				$pk=json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+				$pk=intval(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT));
 				echo $pk;
 				if(preg_match('/^([0-9])/', $pk)){
 					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval,spot_pic FROM localinfo WHERE pk=$1";
 					$array = array($pk);
 					$pgsql -> query($sql,$array);
 					$row = $pgsql->fetch();
-					$spot_name=json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-					$spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-					$spot_eval=json_encode($row["spot_eval"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-					$spot_pic=json_encode($row["spot_pic"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+					$row = json_decode(json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
+					$spot_name= $row["spot_name"];
+					$spot_category= $row["spot_category"];
+					$spot_eval=$row["spot_eval"];
+					$spot_pic=$row["spot_pic"];
+					$spot_visited = $row["spot_visited"];
 					if($row){
 						$eval = toPhpArray($spot_eval);
 						$eval_count = count($eval);
