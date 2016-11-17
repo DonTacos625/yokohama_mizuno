@@ -6,9 +6,9 @@ $pgsql = new PostgreSQL;
 
 // phpの配列をpostgresqlの配列に変換
 function toPostgreSqlArray($data)
-{   
+{
 	return '{' . implode(',', $data) . '}';
-}   
+}
 
 // postgresの配列をphpの配列に変換
 function toPhpArray($data)
@@ -86,33 +86,29 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		$visited = $row[0]["spot_visited"];
 		//for($i=1;$i<=$visited;$i)
-		$data[1][0] = $a1;
-		$data[1][1] = $a2;
-		$data[1][2] = $a3;
-		$data[1][3] = $a4;
-		$data[1][4] = $a5;
-		$data[1][5] = $a6;
-		$data[1][6] = $a7;
-		$data[1][7] = $a8;
+		$data[1][0] = floatval($row[0]["spot_a1"]);
+		$data[1][1] = floatval($row[0]["spot_a2"]);
+		$data[1][2] = floatval($row[0]["spot_a3"]);
+		$data[1][3] = floatval($row[0]["spot_a4"]);
+		$data[1][4] = floatval($row[0]["spot_a5"]);
+		$data[1][5] = floatval($row[0]["spot_a6"]);
+		$data[1][6] = floatval($row[0]["spot_a7"]);
+		$data[1][7] = floatval($row[0]["spot_a8"]);
 
 		$resultval = value_calcuation($data); //データの計算
-		echo "\n";
+
 		$visited++; //訪問者を一人増やす
-		$eval=toPhpArray($row[0]["spot_eval"]);
-		//var_dump($visited);
-		echo "\n";
-		var_dump($eval);
-		echo "\n";
+
+		$eval=toPhpArray($row[0]["spot_eval"]); //PHPの配列へ
+
 		if($eval[0]==""){
-			$eval = array($my_no);
+			$eval = array($my_no); //初めて評価されるとき
 		}else{
-			$eval[] = $my_no;
+			$eval[] = $my_no; //前に評価した人がいるとき
 		}
-		var_dump($eval);
-		echo "\n";
-		$evaled = toPostgreSqlArray($eval);
-		var_dump($evaled);
-		echo "\n";
+
+		$evaled = toPostgreSqlArray($eval); //posgres用の配列へ
+
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
 		$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
 		$pgsql->query($sql,$array);
@@ -136,10 +132,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					$spot_pic = $row[0]["spot_pic"];
 					$spot_visited = $row[0]["spot_visited"];
 					$eval = toPhpArray($row[0]["spot_eval"]);
-					var_dump($eval);
 					$eval_count = count($eval);
 					for($i=0;$i<$eval_count;$i++){
-						echo $i;
 						if($eval[$i]==$my_no){
 							$error = "評価済みです";
 						}
