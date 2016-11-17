@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		$resultval = value_calcuation($data); //データの計算
 		var_dump($resultbal);
-		$visited = $spot_visited+1; //訪問者を一人増やす
+		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
 		$evaled_people = array_push($evaled_people,$my_no);
 		$evaled = toPostgreSqlArray($evaled_people);
