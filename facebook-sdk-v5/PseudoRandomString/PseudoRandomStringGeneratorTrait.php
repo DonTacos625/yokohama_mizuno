@@ -53,6 +53,8 @@ trait PseudoRandomStringGeneratorTrait
      */
     public function binToHex($binaryData, $length)
     {
+        echo "この関数なんだけど";
+        echo mb_substr(bin2hex($binaryData), 0, $length);
         return mb_substr(bin2hex($binaryData), 0, $length);
     }
 }
