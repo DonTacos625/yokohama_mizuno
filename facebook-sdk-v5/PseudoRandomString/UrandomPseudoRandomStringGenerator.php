@@ -60,7 +60,6 @@ class UrandomPseudoRandomStringGenerator implements PseudoRandomStringGeneratorI
      */
     public function getPseudoRandomString($length)
     {
-        echo "ここ";
         $this->validateLength($length);
 
         $stream = fopen('/dev/urandom', 'rb');

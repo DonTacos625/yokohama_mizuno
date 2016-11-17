@@ -49,7 +49,6 @@ class OpenSslPseudoRandomStringGenerator implements PseudoRandomStringGeneratorI
      */
     public function getPseudoRandomString($length)
     {
-        echo "よんだ";
         $this->validateLength($length);
 
         $wasCryptographicallyStrong = false;
