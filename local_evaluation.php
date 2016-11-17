@@ -33,8 +33,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$eval = $_POST['eval'];
 	$my_no = $_SESSION["my_no"];
 
-	for($i=9;$i<count($eval);$i++){
-		$spot_eval[$i] = intval(htmlspecialchars($eval[$i]));
+	if($eval != null){
+		for($i=9;$i<count($eval);$i++){
+			$spot_eval[$i] = intval(htmlspecialchars($eval[$i]));
+		}
 	}
 
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
@@ -120,12 +122,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
-				var_dump($row);
 				$spot_name= $row[0]["spot_name"];
 				$spot_category = $row[0]["spot_category"];
 				$spot_eval = $row[0]["spot_eval"];
-				var_dump($row[0]["spot_eval"]);
-				var_dump($spot_name);
+				var_dump($spot_eval);
 				$spot_pic = $row[0]["spot_pic"];
 				$spot_visited = $row[0]["spot_visited"];
 				if($row){
