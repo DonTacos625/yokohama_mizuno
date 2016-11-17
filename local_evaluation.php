@@ -104,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
-		//if($eval[0]==""){
-		//	$evaled_people = array($my_no);
-		//}else{
+		if($eval[0]==""){
+			$eval = array($my_no);
+		}else{
 			$eval[] = $my_no;
-		//}
+		}
 		var_dump($eval);
 		echo "\n";
 		$evaled = toPostgreSqlArray($eval);
