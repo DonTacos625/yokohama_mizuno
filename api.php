@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["my_no"] = $row['no'];
 		$_SESSION["gender"] = $row['gender'];
 		$_SESSION["age"] = $row['age'];
+		$_SESSION["fb"] = 1;
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){

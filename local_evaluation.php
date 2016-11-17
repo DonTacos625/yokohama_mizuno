@@ -119,15 +119,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch();
-				$row = json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-				$spot_name= $row["spot_name"];
-				$spot_category= $row["spot_category"];
-				$spot_eval=$row["spot_eval"];
-				var_dump($row["spot_eval"]);
+				var_dump($row);
+				$spot_row = json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+				var_dump($spot_spot_row);
+				$spot_name= $spot_row["spot_name"];
+				$spot_category= $spot_row["spot_category"];
+				$spot_eval=$spot_row["spot_eval"];
+				var_dump($spot_row["spot_eval"]);
 				var_dump($spot_eval);
-				$spot_pic=$row["spot_pic"];
-				$spot_visited = $row["spot_visited"];
-				if($row){
+				$spot_pic=$spot_row["spot_pic"];
+				$spot_visited = $spot_row["spot_visited"];
+				if($spot_row){
 					$eval = toPhpArray($spot_eval);
 					$eval_count = count($eval);
 					for($i=0;$i<$evalcount;$i++){

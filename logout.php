@@ -9,6 +9,8 @@
 	unset($_SESSION["my_no"]);		//Sessionの初期化
 	unset($_SESSION["gender"]);
 	unset($_SESSION["age"]);
+	if(isset($_SESSION["fb"]))
+		unset($_SESSION["fb"]);
 	?>
 	<html>
 	<head>

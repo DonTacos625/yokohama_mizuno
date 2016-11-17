@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>パスワード変更</title>
+	<!-- style.cssの読み込み -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<center>
+		<h1>パスワード変更</h1>
+		<form action ="./changepw.php" method="POST">
+			<table border="0">
+				<tr>
+					<td>ID</td>
+					<td><input type ="text" name="id"></td>
+				</tr>
+				<tr>
+					<td>古いパスワード</td>
+					<td><input type="text" name="pw"></td>
+				</tr>
+				<tr>
+					<td>新しいパスワード</td>
+					<td><input type="text" name="pw2"></td>
+				</tr>
+				<tr>
+					<td>新しいパスワード(確認用)</td>
+					<td><input type="text" name="pw3"></td>
+				</tr>
+			</table>
+			<input type="submit" value="submit">
+		</form>
+	</center>
+</body>
+</html>
