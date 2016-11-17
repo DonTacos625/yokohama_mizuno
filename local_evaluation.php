@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
-		if(count($eval))<=1){
+		if(count($eval)<=1){
 			$evaled_people = array_push($eval,$my_no);
 		}else{
 			$evaled_people = array($my_no);
