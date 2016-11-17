@@ -2,14 +2,23 @@
 	session_start();
 	require_once('PostgreSQL.php');
 	$pgsql = new PostgreSQL;
-//	mysql_select_db('SET NAMES utf8',$sql);
-	//mysql_query("set names sgis");
-	// print_r($_FILES);
-	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		$sql = "SELECT eval_user FROM localinfo WHERE pk=$1";
-		$array = array()
-		$pgsql->query_null($sql);
 
+// pphpの配列をpostgresqlの配列に変換
+private function toPostgreSqlArray($data)
+{   
+    return '{' . implode(',', $data) . '}';
+}   
+
+// postgresの配列をphpの配列に変換
+private function toPhpArray($data)
+{
+    $data       = str_replace('{', '', $data);
+    $data       = str_replace('}', '', $data);
+    $array_data = explode(',', $data);
+
+    return $array_data;
+}
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 
@@ -17,7 +26,26 @@
 		if(isset($_SESSION["my_no"])){
 			$my_no = $_SESSION["my_no"];
 			if($_GET['pk']!=NULL){
-				$pk = $_GET['pk'];
+				$pk=json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+				if(preg_match('/^([0-9])/', $pk)){
+					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval FROM localinfo WHERE pk=$1";
+					$array = array($pk);
+					$pgsql -> query($sql,$array);
+					$row = $pgsql->fetch();
+					if($row){
+						$spot_eval = toPhpArray($row["spot_eval"]);
+						$spot_eval_count = count($spot_eval);
+						for($i=0;$i<$spot_eval_count;$i++){
+							if($spot_eval[$i]==$my_no){
+								$error = "評価済みです";
+							}
+						}
+					}else{
+						$error = "存在しない観光スポット番号が入力されています";
+					}
+				}else{
+					$error = "不正なアクセスです";
+				}
 			}else{
 				$error = "観光スポットが指定されていません";
 			}
@@ -45,13 +73,6 @@
 			echo "</div></body></html>";
 			exit;
 		}
-		if(isset($_SESSION["my_no"])&&!empty($pk)){
-			$sql = "SELECT spot_visited,spot_category,spot_name FROM localinfo WHERE pk=$1";
-			$array = array($pk);
-		}
-
-
-
 	?>
 	<div id="contents">
 		<?php
@@ -66,10 +87,24 @@
 				<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 				<td align="center" bgcolor="#fof8ff">
 				<font size="4"><b>スポット名</b></font></td>
-				<td><?php echo json_encode($name)  ?></td>
+				<td><?php echo json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></td>
 				<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 				<td>
-					<?php echo json_encode($category)?>
+					<?php $spot_category=json_encode($row["spot_category"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
+					if($spot_category==1){
+						echo "飲食";
+					}else if($spot_category==2){
+						echo "";
+					}else if($spot_category==3){
+						echo "";
+					}else if($spot_category==4){
+						echo "";
+					}else if($spot_category==5){
+						echo "";
+					}else{
+						echo "そのた";
+					}
+					?>
 				</td>
 				</tr>
 				<tr><?echo $pic?></tr>

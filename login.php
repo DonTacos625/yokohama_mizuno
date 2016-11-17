@@ -9,7 +9,7 @@ $fb = new Facebook\Facebook([
   ]);
 $helper = $fb->getRedirectLoginHelper();
 
-$per = null; // Optional permissions
+$permissions = array(); // Optional permissions
 
 $loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $per);
 //$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php',$permissions);
