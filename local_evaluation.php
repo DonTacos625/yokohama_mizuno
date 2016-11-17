@@ -103,20 +103,19 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	*/
 		//$resultval = value_calcuation($data); //データの計算
 
-		$sum = "";
-		for($i=0;$i<2;$i++){
-			for($j=0;$j<8;$j++){
-				$sum[$j] = $sum[$j]+$data[$i][$j];
-			}
-		}
-
-		for($i=0;$i<$visited-1;$i++){
-			for($j=0;$j<8;$j++){
-				$sum[$j] = $data[$i+2][$j];
-			}
-		}
-
 		$visited++; //訪問者を一人増やす
+
+		for($i=0;$i<$visited;$i++){
+			for($j=0;$j<8;$j++){
+				if($i==0){
+					$sum[$j] = $data[$i][$j];
+				}else if($i==1){
+					$sum[$j] = $sum[$j]+$data[$i][$j];
+				}else{
+					$sum[$j] =$sum[$j]+ $data[0][$j];
+				}
+			}
+		}
 
 		for($i=0;$i<8;$i++){
 			$resultval[$i]=$sum[$i]/(float)$visited;
