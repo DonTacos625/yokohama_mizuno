@@ -86,7 +86,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$data[1][7] = $a8;
 
 			$resultval = value_calcuation($data); //データの計算
+			var_dump($resultbal);
 			$visited = $spot_visited+1; //訪問者を一人増やす
+			var_dump($visited);
 			$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9 WHERE pk=$10";
 			$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$pk);
 			$pgsql->query($sql,$array);
