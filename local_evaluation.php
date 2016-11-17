@@ -110,15 +110,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			}
 		}
 
-		for($i=0;$i<$visited;$i++){
+		for($i=0;$i<$visited-1;$i++){
 			for($j=0;$j<8;$j++){
 				$sum[$j] = $data[$i+2][$j];
 			}
 		}
 
-
-
 		$visited++; //訪問者を一人増やす
+
+		for($i=0;$i<8;$i++){
+			$resultval[$i]=$sum[$i]/(float)$visited;
+		}
 
 		$eval=toPhpArray($row[0]["spot_eval"]); //PHPの配列へ
 
