@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$a7 = floatval(htmlspecialchars($_POST['a7']));
 	$a8 = floatval(htmlspecialchars($_POST['a8']));
 	$pk = floatval(htmlspecialchars($_POST['pk']));
-	$visited = intval(htmlspecialchars($_POST['spot_visited']));
 	$my_no = $_SESSION["my_no"];
 
 	if($eval != null){
@@ -39,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	}
 
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
-		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8,spot_eval FROM localinfo WHERE pk = $1";
+		$sql = "SELECT spot_visited,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8,spot_eval FROM localinfo WHERE pk = $1";
 		$array = array($pk);
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch_all();
@@ -99,18 +98,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$resultval = value_calcuation($data); //データの計算
 		var_dump($resultval);
 		echo "\n";
-		var_dump($visited);
-		$visited = $visited+1; //訪問者を一人増やす
+		$visited = $row[0]["spot_visited"]+1; //訪問者を一人増やす
 		$eval=toPhpArray($row[0]["spot_eval"]);
 		var_dump($visited);
 		echo "\n";
 		var_dump($eval);
 		echo "\n";
 		$evaled_people = array_push($eval,$my_no);
-		//var_dump($evaled_people);
+		var_dump($evaled_people);
 		echo "\n";
 		$evaled = toPostgreSqlArray($evaled_people);
-		//var_dump($evaled);
+		var_dump($evaled);
 		echo "\n";
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
 		$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
@@ -186,7 +184,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			<div id="main">
 				<div class="contentswrap">
 					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-					<input type="hidden" name="visited" value="<?echo $spot_visited;?>">
 					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
 							<tr><td align="center" bgcolor="#fof8ff" colspan="2">
