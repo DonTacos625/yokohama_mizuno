@@ -120,12 +120,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
-				var_dump($row);
 				$spot_name= json_encode($row["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 				$spot_category = $row["spot_category"];
 				$spot_eval = $row["spot_eval"];
 				var_dump($row["spot_eval"]);
-				var_dump($spot_eval);
+				var_dump($spot_name);
 				$spot_pic = $row["spot_pic"];
 				$spot_visited = $row["spot_visited"];
 				if($row){
@@ -177,10 +176,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			<div id="main">
 				<div class="contentswrap">
 					<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-						<input type="hidden" name="spot_visited" value="<?php echo $spot_visited?>">
-						<input type="hidden" name="pk" value="<?php echo $pk?>">
-						<input type="hidden" name="eval" value="<?php echo $eval?>">
-						<table border="0" cellspacing="3" cellpadding="3" width="600"  >
+						<table border="0" cellspacing="3" cellpadding="3" width="600">
 							<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 								<td align="center" bgcolor="#fof8ff">
