@@ -120,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
+				var_dump($row);
 				$spot_name= $row["spot_name"];
 				$spot_category = $row["spot_category"];
 				$spot_eval = $row["spot_eval"];
