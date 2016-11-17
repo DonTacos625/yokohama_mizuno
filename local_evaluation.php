@@ -20,21 +20,23 @@ function toPhpArray($data)
 	return $array_data;
 }
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
-	$a1 = intval(htmlspecialchars($_POST['a1']));
-	$a2 = intval(htmlspecialchars($_POST['a2']));
-	$a3 = intval(htmlspecialchars($_POST['a3']));
-	$a4 = intval(htmlspecialchars($_POST['a4']));
-	$a5 = intval(htmlspecialchars($_POST['a5']));
-	$a6 = intval(htmlspecialchars($_POST['a6']));
-	$a7 = intval(htmlspecialchars($_POST['a7']));
-	$a8 = intval(htmlspecialchars($_POST['a8']));
-	$pk = intval(htmlspecialchars($_POST['pk']));
+	$a1 = floatval(htmlspecialchars($_POST['a1']));
+	$a2 = floatval(htmlspecialchars($_POST['a2']));
+	$a3 = floatval(htmlspecialchars($_POST['a3']));
+	$a4 = floatval(htmlspecialchars($_POST['a4']));
+	$a5 = floatval(htmlspecialchars($_POST['a5']));
+	$a6 = floatval(htmlspecialchars($_POST['a6']));
+	$a7 = floatval(htmlspecialchars($_POST['a7']));
+	$a8 = floatval(htmlspecialchars($_POST['a8']));
+	$pk = floatval(htmlspecialchars($_POST['pk']));
 	$visited = intval(htmlspecialchars($_POST['spot_visited']));
 	$eval = $_POST['eval'];
 	$my_no = $_SESSION["my_no"];
 
+	var_dump($eval);
+
 	if($eval != null){
-		for($i=9;$i<count($eval);$i++){
+		for($i=0;$i<count($eval);$i++){
 			$spot_eval[$i] = intval(htmlspecialchars($eval[$i]));
 		}
 	}
@@ -48,42 +50,42 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		if($row[0]["spot_a1"]==0){
 			$data[0][0]= $a1;
 		}else{
-			$data[0][0]= intval($row[0]["spot_a1"]);
+			$data[0][0]= floatval($row[0]["spot_a1"]);
 		}
 		if($row[0]["spot_a2"]==0){
 			$data[0][1]= $a2;
 		}else{
-			$data[0][1]= intval($row[0]["spot_a2"]);
+			$data[0][1]= floatval($row[0]["spot_a2"]);
 		}
 		if($row[0]["spot_a3"]==0){
 			$data[0][2]= $a3;
 		}else{
-			$data[0][2]= intval($row[0]["spot_a3"]);
+			$data[0][2]= floatval($row[0]["spot_a3"]);
 		}
 		if($row[0]["spot_a4"]==0){
 			$data[0][3]= $a4;
 		}else{
-			$data[0][3]= intval($row[0]["spot_a4"]);
+			$data[0][3]= floatval($row[0]["spot_a4"]);
 		}
 		if($row[0]["spot_a5"]==0){
 			$data[0][4]= $a5;
 		}else{
-			$data[0][4]= intval($row[0]["spot_a5"]);
+			$data[0][4]= floatval($row[0]["spot_a5"]);
 		}
 		if($row[0]["spot_a6"]==0){
 			$data[0][5]= $a6;
 		}else{
-			$data[0][5]= intval($row[0]["spot_a6"]);
+			$data[0][5]= floatval($row[0]["spot_a6"]);
 		}
 		if($row[0]["spot_a7"]==0){
 			$data[0][6]= $a7;
 		}else{
-			$data[0][6]= intval($row[0]["spot_a7"]);
+			$data[0][6]= floatval($row[0]["spot_a7"]);
 		}
 		if($row[0]["spot_a8"]==0){
 			$data[0][7]= $a8;
 		}else{
-			$data[0][7]= intval($row[0]["spot_a8"]);
+			$data[0][7]= floatval($row[0]["spot_a8"]);
 		}
 
 		$data[1][0] = $a1;
@@ -100,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		var_dump($resultval);
 		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
-		$evaled_people = array_push($eval,$my_no);
+		$evaled_people = array_push($spot_eval,$my_no);
 		var_dump($evaled_people);
 		$evaled = toPostgreSqlArray($evaled_people);
 		var_dump($evaled);
