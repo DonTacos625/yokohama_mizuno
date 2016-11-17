@@ -94,15 +94,15 @@ private function toPhpArray($data)
 					if($spot_category==1){
 						echo "飲食";
 					}else if($spot_category==2){
-						echo "";
+						echo "ショッピング";
 					}else if($spot_category==3){
-						echo "";
+						echo "テーマパーク・公園";
 					}else if($spot_category==4){
-						echo "";
+						echo "名所・史跡";
 					}else if($spot_category==5){
-						echo "";
+						echo "芸術・博物館";
 					}else{
-						echo "そのた";
+						echo "その他";
 					}
 					?>
 				</td>
