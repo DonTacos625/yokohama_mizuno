@@ -28,43 +28,35 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	//パスワード
 	if(strlen($oldpw)!=0)
-		$error1 = "旧パスワードが未入力です<br>";
+		$error = "旧パスワードが未入力です<br>";
+	else if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $oldpw))
+		$error ="旧パスワードに誤りがあります<br>";
 	else if(strlen($newpw)==0)
-		$error1 = "新パスワードが未入力です<br>";
+		$error = "新パスワードが未入力です<br>";
 	else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $newpw))
-		$error1 = " 新パスワードに誤りがあります<br>";
+		$error = " 新パスワードに誤りがあります<br>";
 	else if($newpw != $newpw2)
-		$error1 = "パスワードが一致しません<br>";
-	else
-		$error1 = "";
-
-	//ユーザID
-	if (strlen($usr_id)==0)
-		$error = "ユーザIDが未入力です<br>";
-	else if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id))
-		$error = "IDに誤りがあります<br>";
+		$error = "新パスワードが確認用パスワードと一致しません<br>";
 	else{
-		$array = array($usr_id);
-		$pgsql->query("SELECT * FROM friendinfo WHERE id=$1",$array); //検索
+		$sql = "SELECT no,pw FROM friendinfo WHERE no=$1";
+		$array = array($my_no);
+		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();
-		if ($row)
-			$error = "このユーザIDは既に使われています<br>";
-	}
-	//登録
-	if (strlen($error)==0 and strlen($error1)==0){
-	//--------------------------------------------
-	// □ 会員情報テーブル(friendinfo)に登録
-	//--------------------------------------------
-		if (!empty($usr_id) and !empty($usr_pw)) {
-			//hash化
-			$usr_pw = hash("sha256",$usr_pw);
-			// データを追加する
-			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES($1,$2,$3)";
-			$array = array($no,$usr_id,$usr_pw);
+		if($row["pw"]==hash("sha256",$oldpw)){
+			$newpw =hash("sha256",$newpw);
+			$sql = "UPDATE friendinfo SET pw=$1 WHERE no=$2";
+			$array = array($newpw,$my_no);
 			$pgsql->query($sql,$array);
+			$error = "登録が完了しました<br>";
+		}else{
+			$error = "旧パスワードが一致しません<br>";
 		}
-		$error = "登録が完了しました";
-		$error1 = "登録が完了しました";
+	}
+}else{
+	if(isset($_SESSION["my_no"])){
+		$my_no = $_SESSION["my_no"];
+	}else{
+		$access_error = "不正なアクセスです";
 	}
 }
 ?>
