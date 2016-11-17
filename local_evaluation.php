@@ -37,8 +37,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$spot_eval[$i] = intval(htmlspecialchars($eval[$i]));
 	}
 
-	echo $pk;
-	echo $visited;
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
 		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE pk = $1";
 		$array = array($pk);
@@ -101,7 +99,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
 		$evaled_people = array_push($spot_eval,$my_no);
+		var_dump($evaled_people);
 		$evaled = toPostgreSqlArray($evaled_people);
+		var_dump($evaled);
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
 		$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
 		$pgsql->query($sql,$array);
