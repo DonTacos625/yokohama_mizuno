@@ -164,8 +164,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	latitude: spot[i]["spot_lat"]
 		 });
 
-		 var pk = Number(spot[i]["spot_pk"]);
-
 		 if(spot[i]["spot_category"]==1){
 		 	cat_name = "飲食";
 		 	pointpic = "./marker/purple.png";
@@ -197,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 		分類: cat_name,
 		 		コメント: spot[i]["spot_content"],
 		 		URL: spot_url,
-		 		評価: valurl+pk
+		 		評価: valurl+spot[i]["spot_pk"]
 		 	};
 
 

@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		var_dump($data);
 		$resultval = value_calcuation($data); //データの計算
-		var_dump($resultbal);
+		var_dump($resultval);
 		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
 		$evaled_people = array_push($spot_eval,$my_no);
