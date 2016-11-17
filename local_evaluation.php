@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 									<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
 									<td align="center" bgcolor="#fof8ff">
 										<font size="4"><b>スポット名</b></font></td>
-										<td><?php echo  $spot_name?></td>
+										<td><?php echo  $spot_name?><?php echo $pk?></td>
 										<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
 											<td>
 												<?php
