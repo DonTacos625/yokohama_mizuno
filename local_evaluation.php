@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		$sum = "";
 		for($i=0;$i<2;$i++){
-			for($j=0;$j<8){
+			for($j=0;$j<8;$j++){
 				$sum[$j] = $sum[$j]+$data[$i][$j];
 			}
 		}
