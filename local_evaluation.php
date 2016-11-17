@@ -135,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					$spot_category = $row[0]["spot_category"];
 					$spot_pic = $row[0]["spot_pic"];
 					$spot_visited = $row[0]["spot_visited"];
+					var_dump($spot_visited);
 					$eval = toPhpArray($row[0]["spot_eval"]);
 					var_dump($eval);
 					$eval_count = count($eval);
