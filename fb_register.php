@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						</tr>
 						<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
 							<td>
-								<input type="radio" name="gender" value="1"<?php if ($gender==1){ print " checked"; }?> >男
+								<input type="radio" name="gender" value="1"<?php if ($gender!=2){ print " checked"; }?> >男
 								<input type="radio" name="gender" value="2"<?php if ($gender==2){ print " checked"; }?> >女
 							</td>
 						</tr>
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 								<div class="label">年代</div>
 							</td>
 							<td>
-								<input type="radio" name="age" value="10"<?php if ($age==10){ print " checked"; }?> >10
+								<input type="radio" name="age" value="10"<?php if ($age!=20&&$age!=30&&$age!=40&&$age!=50&$age!=60){ print " checked"; }?> >10
 								<input type="radio" name="age" value="20"<?php if ($age==20){ print " checked"; }?> >20
 								<input type="radio" name="age" value="30"<?php if ($age==30){ print " checked"; }?> >30
 								<input type="radio" name="age" value="40"<?php if ($age==40){ print " checked"; }?> >40
@@ -159,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">満足度</div>
 						</td>
 						<td>
-							<input type="radio" name="a1" value="1"<?php if ($a1==1){ print " checked"; }?> >1
+							<input type="radio" name="a1" value="1"<?php if ($a1!=2&&$a1!=3&&$a1!=4&&$a1!=5){ print " checked"; }?> >1
 							<input type="radio" name="a1" value="2"<?php if ($a1==2){ print " checked"; }?> >2
 							<input type="radio" name="a1" value="3"<?php if ($a1==3){ print " checked"; }?> >3
 							<input type="radio" name="a1" value="4"<?php if ($a1==4){ print " checked"; }?> >4
@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">アクセス</div>
 						</td>
 						<td>
-							<input type="radio" name="a2" value="1"<?php if ($a2==1){ print " checked"; }?> >1
+							<input type="radio" name="a2" value="1"<?php if ($a2!=2&&$a2!=3&&$a2!=4&&$a2!=5){ print " checked"; }?> >1
 							<input type="radio" name="a2" value="2"<?php if ($a2==2){ print " checked"; }?> >2
 							<input type="radio" name="a2" value="3"<?php if ($a2==3){ print " checked"; }?> >3
 							<input type="radio" name="a2" value="4"<?php if ($a2==4){ print " checked"; }?> >4
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">人混みの少なさ</div>
 						</td>
 						<td>
-							<input type="radio" name="a3" value="1"<?php if ($a3==1){ print " checked"; }?> >1
+							<input type="radio" name="a3" value="1"<?php if ($a3!=2&&$a3!=3&&$a3!=4&&$a3!=5){ print " checked"; }?> >1
 							<input type="radio" name="a3" value="2"<?php if ($a3==2){ print " checked"; }?> >2
 							<input type="radio" name="a3" value="3"<?php if ($a3==3){ print " checked"; }?> >3
 							<input type="radio" name="a3" value="4"<?php if ($a3==4){ print " checked"; }?> >4
@@ -195,7 +195,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">バリアフリー</div>
 						</td>
 						<td>
-							<input type="radio" name="a4" value="1"<?php if ($a4==1){ print " checked"; }?> >1
+							<input type="radio" name="a4" value="1"<?php if ($a4!=2&&$a4!=3&&$a4!=4&&$a4!=5){ print " checked"; }?> >1
 							<input type="radio" name="a4" value="2"<?php if ($a4==2){ print " checked"; }?> >2
 							<input type="radio" name="a4" value="3"<?php if ($a4==3){ print " checked"; }?> >3
 							<input type="radio" name="a4" value="4"<?php if ($a4==4){ print " checked"; }?> >4
@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">コストパフォーマンス</div>
 						</td>
 						<td>
-							<input type="radio" name="a5" value="1"<?php if ($a5==1){ print " checked"; }?> >1
+							<input type="radio" name="a5" value="1"<?php if ($a5!=2&&$a5!=3&&$a5!=4&&$a5!=5){ print " checked"; }?> >1
 							<input type="radio" name="a5" value="2"<?php if ($a5==2){ print " checked"; }?> >2
 							<input type="radio" name="a5" value="3"<?php if ($a5==3){ print " checked"; }?> >3
 							<input type="radio" name="a5" value="4"<?php if ($a5==4){ print " checked"; }?> >4
@@ -219,7 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">雰囲気</div>
 						</td>
 						<td>
-							<input type="radio" name="a6" value="1"<?php if ($a6==1){ print " checked"; }?> >1
+							<input type="radio" name="a6" value="1"<?php if ($a6!=2&&$a6!=3&&$a6!=4&&$a6!=5){ print " checked"; }?> >1
 							<input type="radio" name="a6" value="2"<?php if ($a6==2){ print " checked"; }?> >2
 							<input type="radio" name="a6" value="3"<?php if ($a6==3){ print " checked"; }?> >3
 							<input type="radio" name="a6" value="4"<?php if ($a6==4){ print " checked"; }?> >4
@@ -231,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">快適度/サービスの良さ</div>
 						</td>
 						<td>
-							<input type="radio" name="a7" value="1"<?php if ($a7==1){ print " checked"; }?> >1
+							<input type="radio" name="a7" value="1"<?php if ($a7!=2&&$a7!=3&&$a7!=4&&$a7!=5){ print " checked"; }?> >1
 							<input type="radio" name="a7" value="2"<?php if ($a7==2){ print " checked"; }?> >2
 							<input type="radio" name="a7" value="3"<?php if ($a7==3){ print " checked"; }?> >3
 							<input type="radio" name="a7" value="4"<?php if ($a7==4){ print " checked"; }?> >4
@@ -243,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<div class="label2">おすすめ度</div>
 						</td>
 						<td>
-							<input type="radio" name="a8" value="1"<?php if ($a8==1){ print " checked"; }?> >1
+							<input type="radio" name="a8" value="1"<?php if ($a8!=2&&$a8!=3&&$a8!=4&&$a8!=5){ print " checked"; }?> >1
 							<input type="radio" name="a8" value="2"<?php if ($a8==2){ print " checked"; }?> >2
 							<input type="radio" name="a8" value="3"<?php if ($a8==3){ print " checked"; }?> >3
 							<input type="radio" name="a8" value="4"<?php if ($a8==4){ print " checked"; }?> >4
