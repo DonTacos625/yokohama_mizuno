@@ -107,11 +107,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		//if($eval[0]==""){
 		//	$evaled_people = array($my_no);
 		//}else{
-			$evaled_people[] = $my_no;
+			$eval[] = $my_no;
 		//}
-		var_dump($evaled_people);
+		var_dump($eval);
 		echo "\n";
-		$evaled = toPostgreSqlArray($evaled_people);
+		$evaled = toPostgreSqlArray($eval);
 		var_dump($evaled);
 		echo "\n";
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					$eval = toPhpArray($row[0]["spot_eval"]);
 					var_dump($eval);
 					$eval_count = count($eval);
-					for($i=0;$i<$evalcount;$i++){
+					for($i=0;$i<$eval_count;$i++){
 						echo $i;
 						if($eval[$i]==$my_no){
 							$error = "評価済みです";
