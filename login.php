@@ -8,10 +8,10 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
   ]);
 $helper = $fb->getRedirectLoginHelper();
-
-$permissions = ['email', 'user_likes']; // Optional permissions
-
+$permissions = ['email', 'user_likes']; // optional
 $loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
+
+//$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
 //$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php',$permissions);
 
 echo "5";
