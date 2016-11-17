@@ -177,6 +177,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			<div id="main">
 				<div class="contentswrap">
 					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<input type="hidden" name="eval[]" value="<?echo $eval;?>">
+					<input type="hidden" name="visited" value="<?echo $spot_visited;?>">
+					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
 							<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
@@ -216,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 										</td>
 									</tr>
 									<tr><td align="center" bgcolor="#fof8ff"><b>アクセス</b></td>
-										<<td>
+										<td>
 										<input type="radio" name="a2" value="1" checked> 1
 										<input type="radio" name="a2" value="2"> 2
 										<input type="radio" name="a2" value="3"> 3
