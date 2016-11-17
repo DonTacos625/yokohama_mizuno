@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once('PostgreSQL.php');
+	require_once('calcuation.php');
 	$pgsql = new PostgreSQL;
 
 // pphpの配列をpostgresqlの配列に変換
@@ -19,9 +20,80 @@ private function toPhpArray($data)
     return $array_data;
 }
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		$a1 = intval(htmlspecialchars($_POST['a1']));
+		$a2 = intval(htmlspecialchars($_POST['a2']));
+		$a3 = intval(htmlspecialchars($_POST['a3']));
+		$a4 = intval(htmlspecialchars($_POST['a4']));
+		$a5 = intval(htmlspecialchars($_POST['a5']));
+		$a6 = intval(htmlspecialchars($_POST['a6']));
+		$a7 = intval(htmlspecialchars($_POST['a7']));
+		$a8 = intval(htmlspecialchars($_POST['a8']));
 
+		if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
+			$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8,spot_visited FROM localinfo WHERE pk = $1";
+			$array = array($pk);
+			$pgsql -> query($sql,$array);
+			$row = $pgsql->fetch();
 
+			if($row["spot_a1"]==0){
+				$data[0][0]= $a1;
+			}else{
+				$data[0][0]= intval($row["spot_a1"]);
+			}
+			if($row["spot_a2"]==0){
+				$data[0][1]= $a2;
+			}else{
+				$data[0][1]= intval($row["spot_a2"]);
+			}
+			if($row["spot_a3"]==0){
+				$data[0][2]= $a3;
+			}else{
+				$data[0][2]= intval($row["spot_a3"]);
+			}
+			if($row["spot_a4"]==0){
+				$data[0][3]= $a4;
+			}else{
+				$data[0][3]= intval($row["spot_a4"]);
+			}
+			if($row["spot_a5"]==0){
+				$data[0][4]= $a5;
+			}else{
+				$data[0][4]= intval($row["spot_a5"]);
+			}
+			if($row["spot_a6"]==0){
+				$data[0][5]= $a6;
+			}else{
+				$data[0][5]= intval($row["spot_a6"]);
+			}
+			if($row["spot_a7"]==0){
+				$data[0][6]= $a7;
+			}else{
+				$data[0][6]= intval($row["spot_a7"]);
+			}
+			if($row["spot_a8"]==0){
+				$data[0][7]= $a8;
+			}else{
+				$data[0][7]= intval($row["spot_a8"]);
+			}
 
+			$data[1][0] = $a1;
+			$data[1][1] = $a2;
+			$data[1][2] = $a3;
+			$data[1][3] = $a4;
+			$data[1][4] = $a5;
+			$data[1][5] = $a6;
+			$data[1][6] = $a7;
+			$data[1][7] = $a8;
+
+			$resultval = value_calcuation($data); //データの計算
+			$visited = intval($row["spot_visited"])+1; //訪問者を一人増やす
+			$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9 WHERE pk=$10";
+			$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$pk);
+			$pgsql->query($sql,$array);
+			$error = "登録が完了しました";
+		}else{
+			$error= "不正な文字が入力されています";
+		}
 	}else{
 		if(isset($_SESSION["my_no"])){
 			$my_no = $_SESSION["my_no"];
