@@ -53,7 +53,6 @@ class McryptPseudoRandomStringGenerator implements PseudoRandomStringGeneratorIn
     public function getPseudoRandomString($length)
     {
         $this->validateLength($length);
-        echo "ここだよ";
         $binaryString = mcrypt_create_iv($length, MCRYPT_DEV_URANDOM);
         if ($binaryString === false) {
             throw new FacebookSDKException(
@@ -61,7 +60,6 @@ class McryptPseudoRandomStringGenerator implements PseudoRandomStringGeneratorIn
                 'mcrypt_create_iv() returned an error.'
             );
         }
-        echo "あとちょと";
         return $this->binToHex($binaryString, $length);
     }
 }
