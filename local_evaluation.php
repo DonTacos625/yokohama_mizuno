@@ -4,7 +4,7 @@ require_once('PostgreSQL.php');
 require_once('calcuation.php');
 $pgsql = new PostgreSQL;
 
-// pphpの配列をpostgresqlの配列に変換
+// phpの配列をpostgresqlの配列に変換
 function toPostgreSqlArray($data)
 {   
 	return '{' . implode(',', $data) . '}';
@@ -30,7 +30,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$a8 = intval(htmlspecialchars($_POST['a8']));
 	$pk = intval(htmlspecialchars($_POST['pk']));
 	$visited = intval(htmlspecialchars($_POST['spot_visited']));
+	$eval = $_POST['eval'];
 	$my_no = $_SESSION["my_no"];
+
+	for($i=9;$i<count($eval);$i++){
+		$spot_eval[$i] = intval(htmlspecialchars($eval[$i]));
+	}
 
 	echo $pk;
 	echo $visited;
@@ -90,11 +95,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$data[1][6] = $a7;
 		$data[1][7] = $a8;
 
+		var_dump($data);
 		$resultval = value_calcuation($data); //データの計算
 		var_dump($resultbal);
 		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
-		$evaled_people = array_push($evaled_people,$my_no);
+		$evaled_people = array_push($spot_eval,$my_no);
 		$evaled = toPostgreSqlArray($evaled_people);
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
 		$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
@@ -116,13 +122,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$row = json_decode(json_encode($row, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 				$spot_name= $row["spot_name"];
 				$spot_category= $row["spot_category"];
-				$spot_eval=$row["spot_eval"];
+				$spot_eval=toPhpArray($row["spot_eval"]);
 				$spot_pic=$row["spot_pic"];
 				$spot_visited = $row["spot_visited"];
 				if($row){
 					$eval = toPhpArray($spot_eval);
 					$eval_count = count($eval);
-					for($i=0;$i<$eval_count;$i++){
+					for($i=0;$i<$evalcount;$i++){
 						if($eval[$i]==$my_no){
 							$error = "評価済みです";
 						}
@@ -170,6 +176,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
 						<input type="hidden" name="spot_visited" value="<?php echo $spot_visited?>">
 						<input type="hidden" name="pk" value="<?php echo $pk?>">
+						<input type="hidden" name="eval" value="<?php echo $eval?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 							<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
