@@ -130,7 +130,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$spot_visited = $row[0]["spot_visited"];
 				if($row){
 					$eval = toPhpArray($spot_eval);
+					var_dump($eval);
 					$eval_count = count($eval);
+					var_dump($eval_count);
 					for($i=0;$i<$evalcount;$i++){
 						if($eval[$i]==$my_no){
 							$error = "評価済みです";
