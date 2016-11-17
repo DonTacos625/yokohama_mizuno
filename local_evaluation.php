@@ -99,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			$my_no = $_SESSION["my_no"];
 			if($_GET['pk']!=NULL){
 				$pk=json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+				echo $pk;
 				if(preg_match('/^([0-9])/', $pk)){
 					$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval,spot_pic FROM localinfo WHERE pk=$1";
 					$array = array($pk);
