@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	if($a1<6&&$a2<6&&$a3<6&&$a4<6&&$a5<6&&$a6<6&&$a7<6&&$a8<6){
 		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE pk = $1";
 		$array = array($pk);
+		var_dump($pk);
 		$pgsql -> query($sql,$array);
 		$row = $pgsql->fetch();
 
@@ -89,8 +90,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			var_dump($resultbal);
 			$visited = $spot_visited+1; //訪問者を一人増やす
 			var_dump($visited);
-			$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9 WHERE pk=$10";
-			$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$pk);
+			$evaled_people = array_push($evaled_people,$my_no);
+			$evaled = toPostgreSqlArray($evaled_people);
+			$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
+			$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
 			$pgsql->query($sql,$array);
 			$error = "登録が完了しました";
 		}else{
@@ -162,6 +165,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				<div id="main">
 					<div class="contentswrap">
 						<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+						<input type="hidden" name="spot_name" value="<?php echo $spot_name?>">
+						<input type="hidden" name="spot_visited" value="<?php echo $spot_visited?>">
+						
 							<table border="0" cellspacing="3" cellpadding="3" width="600"  >
 								<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 									<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
