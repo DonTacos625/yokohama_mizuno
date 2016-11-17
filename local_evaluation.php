@@ -121,13 +121,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
 				var_dump($row);
-				$spot_name= $row["spot_name"];
-				$spot_category = $row["spot_category"];
-				$spot_eval = $row["spot_eval"];
-				var_dump($row["spot_eval"]);
+				$spot_name= $row[0]["spot_name"];
+				$spot_category = $row[0]["spot_category"];
+				$spot_eval = $row[0]["spot_eval"];
+				var_dump($row[0]["spot_eval"]);
 				var_dump($spot_name);
-				$spot_pic = $row["spot_pic"];
-				$spot_visited = $row["spot_visited"];
+				$spot_pic = $row[0]["spot_pic"];
+				$spot_visited = $row[0]["spot_visited"];
 				if($row){
 					$eval = toPhpArray($spot_eval);
 					$eval_count = count($eval);
@@ -176,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			?>
 			<div id="main">
 				<div class="contentswrap">
-					<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
 							<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
