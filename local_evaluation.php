@@ -41,47 +41,47 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$sql = "SELECT spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE pk = $1";
 		$array = array($pk);
 		$pgsql -> query($sql,$array);
-		$row = $pgsql->fetch();
+		$row = $pgsql->fetch_all();
 		var_dump($row);
-		if($row["spot_a1"]==0){
+		if($row[0]["spot_a1"]==0){
 			$data[0][0]= $a1;
 		}else{
-			$data[0][0]= intval($row["spot_a1"]);
+			$data[0][0]= intval($row[0]["spot_a1"]);
 		}
-		if($row["spot_a2"]==0){
+		if($row[0]["spot_a2"]==0){
 			$data[0][1]= $a2;
 		}else{
-			$data[0][1]= intval($row["spot_a2"]);
+			$data[0][1]= intval($row[0]["spot_a2"]);
 		}
-		if($row["spot_a3"]==0){
+		if($row[0]["spot_a3"]==0){
 			$data[0][2]= $a3;
 		}else{
-			$data[0][2]= intval($row["spot_a3"]);
+			$data[0][2]= intval($row[0]["spot_a3"]);
 		}
-		if($row["spot_a4"]==0){
+		if($row[0]["spot_a4"]==0){
 			$data[0][3]= $a4;
 		}else{
-			$data[0][3]= intval($row["spot_a4"]);
+			$data[0][3]= intval($row[0]["spot_a4"]);
 		}
-		if($row["spot_a5"]==0){
+		if($row[0]["spot_a5"]==0){
 			$data[0][4]= $a5;
 		}else{
-			$data[0][4]= intval($row["spot_a5"]);
+			$data[0][4]= intval($row[0]["spot_a5"]);
 		}
-		if($row["spot_a6"]==0){
+		if($row[0]["spot_a6"]==0){
 			$data[0][5]= $a6;
 		}else{
-			$data[0][5]= intval($row["spot_a6"]);
+			$data[0][5]= intval($row[0]["spot_a6"]);
 		}
-		if($row["spot_a7"]==0){
+		if($row[0]["spot_a7"]==0){
 			$data[0][6]= $a7;
 		}else{
-			$data[0][6]= intval($row["spot_a7"]);
+			$data[0][6]= intval($row[0]["spot_a7"]);
 		}
-		if($row["spot_a8"]==0){
+		if($row[0]["spot_a8"]==0){
 			$data[0][7]= $a8;
 		}else{
-			$data[0][7]= intval($row["spot_a8"]);
+			$data[0][7]= intval($row[0]["spot_a8"]);
 		}
 
 		$data[1][0] = $a1;
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		var_dump($resultval);
 		$visited = $visited+1; //訪問者を一人増やす
 		var_dump($visited);
-		$evaled_people = array_push($spot_eval,$my_no);
+		$evaled_people = array_push($eval,$my_no);
 		var_dump($evaled_people);
 		$evaled = toPostgreSqlArray($evaled_people);
 		var_dump($evaled);
@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr><td>写真</td><td><?echo $spot_pic?></td></tr>
+									<tr><td align="center" bgcolor="#fof8ff">写真</td><td><?echo $spot_pic?></td></tr>
 									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 										<td>1:低/少  <------>  5:高/多</td>
 									</tr>
