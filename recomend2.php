@@ -261,8 +261,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<div class="title1">
 						<h3>あなたに推薦する観光スポットは</h3>
 					</div>
+					</div>
+					</div>
+					</div>
+					</div>
 					<div id="viewDiv"></div>
 					<br>
+					<div id="page">
+		<div id="contents">
+			<div id ="main">
+				<div class ="contentswrap">
+					<div class="title1">
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>

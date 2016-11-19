@@ -105,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 		$visited++; //訪問者を一人増やす
 
+		//平均値を出す
 		for($i=0;$i<$visited;$i++){
 			for($j=0;$j<8;$j++){
 				if($i==0){
