@@ -192,19 +192,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 		 //	Create contents of popup
 		 var lineAtt = {
-		 		分類: cat_name,
-		 		コメント: spot[i]["spot_content"],
-		 		URL: spot_url,
-		 		評価: valurl+spot[i]["pk"]
-		 	};
+		 	分類: cat_name,
+		 	コメント: spot[i]["spot_content"],
+		 	URL: spot_url,
+		 	評価: valurl+spot[i]["pk"]
+		 };
 
 
 	 // Create a symbol for drawing the point
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: pointpic,
-	 		width: "30px",
-	 		height: "30px"
-	 	});
+	 var Symbol = new PictureMarkerSymbol({
+	 	url: pointpic,
+	 	width: "30px",
+	 	height: "30px"
+	 });
 
 	// Create a graphic and add the geometry and symbol to it
 	var pointGraphic = new Graphic({
@@ -258,20 +258,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
-					<div class="title1">
-						<h3>あなたに推薦する観光スポットは</h3>
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
-					<div id="viewDiv"></div>
-					<br>
-					<div id="page">
+					<h3>あなたに推薦する観光スポットは</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="viewDiv"></div>
+	<br>
+	<div id="page">
 		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
-					<div class="title1">
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
@@ -289,8 +286,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						<br>
 					</p>
 				</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>
