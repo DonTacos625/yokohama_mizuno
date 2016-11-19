@@ -260,8 +260,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
 				</div>
-				<div id="viewDiv"></div>
 			</div>
+		<div id="viewDiv"></div>
 		</div>
 	</div>
 	<br>

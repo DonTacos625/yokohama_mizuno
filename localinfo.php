@@ -42,12 +42,12 @@ $my_no = $_SESSION["my_no"];
 						<ul><h4>カテゴリーをお選びください。</h4></ul>
 						<ul>
 							<p>
-								<input type="checkbox" name="categorycheck[]" value="1"> 飲食<br>
-								<input type="checkbox" name="categorycheck[]" value="2"> ショッピング<br>
-								<input type="checkbox" name="categorycheck[]" value="3"> テーマパーク・公園<br>
-								<input type="checkbox" name="categorycheck[]" value="4"> 名所・史跡<br>
-								<input type="checkbox" name="categorycheck[]" value="5"> 芸術・博物館<br>
-								<input type="checkbox" name="categorycheck[]" value="6"> その他<br>
+								<input type="radio" name="cate" value="1" checked> 飲食<br>
+								<input type="radio" name="cate" value="2"> ショッピング<br>
+								<input type="radio" name="cate" value="3"> テーマパーク・公園<br>
+								<input type="radio" name="cate" value="4"> 名所・史跡<br>
+								<input type="radio" name="cate" value="5"> 芸術・博物館<br>
+								<input type="radio" name="cate" value="6"> その他<br>
 							</p>
 						</ul>
 					</form>
