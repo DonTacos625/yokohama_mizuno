@@ -259,11 +259,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div id ="main">
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
+					<div id="viewDiv"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="viewDiv"></div>
+	
 	<br>
 	<div id="page">
 		<div id="contents">
@@ -285,7 +286,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
 						<br>
 					</p>
-				</div>
 				</div>
 			</div>
 		</div>
