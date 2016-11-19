@@ -50,6 +50,11 @@ $my_no = $_SESSION["my_no"];
 								<input type="radio" name="cate" value="6"> その他<br>
 							</p>
 						</ul>
+						<ul>
+						<p>
+								<input type="submit" name="Submit" value=" 送信 ">
+						</p>
+						</ul>
 					</form>
 				</div>
 			</div>
