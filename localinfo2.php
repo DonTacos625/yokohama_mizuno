@@ -8,7 +8,7 @@ $error="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	//Postされた値
-	$c_check = json_decode(json_encode($_POST['check'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
+	$c_check = json_encode($_POST['cate'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
 	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	if($c_checknum==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
-		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name,spot_url FROM localinfo WHERE spot_category in ($1) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name FROM localinfo WHERE spot_category in ($1) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
 		$array = array($c_check);
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
@@ -52,6 +52,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var cat_name = "";
 	var spoturl = "";
 	var valurl = "https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
+
 	require([
 		"esri/Map",
 		"esri/views/MapView",
@@ -116,18 +117,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 		 //	Create contents of popup
 		 var lineAtt = {
-		 		分類: cat_name,
-		 		URL: spot_url,
-		 		詳細: valurl+spot[i]["pk"]
-		 	};
+		 	分類: cat_name,
+		 	詳細: valurl+spot[i]["pk"]
+		 };
 
 
 	 // Create a symbol for drawing the point
-	 	var Symbol = new PictureMarkerSymbol({
-	 		url: pointpic,
-	 		width: "30px",
-	 		height: "30px"
-	 	});
+	 var Symbol = new PictureMarkerSymbol({
+	 	url: pointpic,
+	 	width: "30px",
+	 	height: "30px"
+	 });
 
 	// Create a graphic and add the geometry and symbol to it
 	var pointGraphic = new Graphic({
@@ -140,8 +140,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					type: "fields",
 					fieldInfos: [{
 						fieldName: "分類"
-					},{
-						fieldName: "URL"
 					},{
 						fieldName: "詳細"
 					}]
@@ -177,12 +175,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<?php
 			require_once('left.php');
 			?>
+		</div>
+	</div>
+	<div id="viewDiv"></div> <!--地図の表示-->
+	<div id="page">
+		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
-					<div class="title1">
-						<h3></h3>
-					</div>
-					<div id="viewDiv"></div>
 					<br>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
