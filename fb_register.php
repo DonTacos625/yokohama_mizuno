@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$my_no = $_SESSION["my_no"];
 	$access_error = ""; //アクセスエラー
-
+	echo "test";
 	// フォームからデータを受け取る
 	//--------------------------------
 	$gender = htmlspecialchars($_POST['gender']);

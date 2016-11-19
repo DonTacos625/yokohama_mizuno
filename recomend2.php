@@ -184,17 +184,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	pointpic = "./marker/blue.png";
 		 }
 
-		 if(spot[i]["spot_url"]==""){
+		/* if(spot[i]["spot_url"]==""){
 		 	spot_url = "なし";
 		 }else{
 		 	spot_url = urlhttp+spot[i]["spot_url"];
 		 }
-
+*/
 		 //	Create contents of popup
 		 var lineAtt = {
 		 	分類: cat_name,
-		 	コメント: spot[i]["spot_content"],
-		 	URL: spot_url,
+		 	//コメント: spot[i]["spot_content"],
+		 	//URL: spot_url,
 		 	評価: valurl+spot[i]["pk"]
 		 };
 
@@ -218,11 +218,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					fieldInfos: [{
 						fieldName: "分類"
 					},{
-						fieldName: "コメント"
-					},{
-						fieldName: "URL"
-					},{
-						fieldName: "評価"
+					//	fieldName: "コメント"
+					//},{
+				//		fieldName: "URL"
+				//	},{
+						fieldName: "詳細"
 					}]
 				}]
 			}

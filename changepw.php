@@ -64,32 +64,72 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="ja">
 <head>
 	<meta charset="utf-8"><head>
-	<title>管理人パスワード変更完了</title>
+	<title>パスワード変更</title>
 	<!-- style.cssの読み込み -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h1>パスワード変更</h1>
-		<form action ="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<table border="0">
-				<tr>
-					<td>ID</td>
-					<td><input type ="text" name="usr_id"></td>
-				</tr>
-				<tr>
-					<td>古いパスワード</td>
-					<td><input type="text" name="oldpw"></td>
-				</tr>
-				<tr>
-					<td>新しいパスワード</td>
-					<td><input type="text" name="newpw"></td>
-				</tr>
-				<tr>
-					<td>新しいパスワード(確認用)</td>
-					<td><input type="text" name="newpw2"></td>
-				</tr>
-			</table>
-			<input type="submit" value="submit">
-		</form>
+	<?php
+	//----------------------------------------	
+	// ■ヘッダーの取り込み
+	//----------------------------------------	
+	require_once("header.php");
+	?>
+	<div id="page">
+		<div id="head">
+			<?php
+			require_once("linkplace.php"); //現在地表示用php
+			echo pwd("fb_register"); //現在値の表示
+			?>
+		</div>
+	</div>
+	<div id="page">
+		<div id="contents">
+			<!-- #main 本文スペース -->
+			<div class="contentswrap">
+				<?php
+	//----------------------------------------	
+	// ■ エラーメッセージがあったら表示
+	//----------------------------------------	
+				if(strlen($access_error)>0){
+					echo $access_error;
+					echo "</dvi></dvi></body></html>";
+					exit;
+				}
+				if (strlen($error)>0){
+					if($error != "登録が完了しました."){
+						echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+					}else{
+						echo "登録が完了しました";
+						echo "</dvi></div></body></html>";
+						exit;
+					}
+				}
+				?>
+				<h1>パスワード変更</h1>
+				<form action ="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<table border="0">
+						<tr>
+							<td>ID</td>
+							<td><input type ="text" name="usr_id"></td>
+						</tr>
+						<tr>
+							<td>古いパスワード</td>
+							<td><input type="text" name="oldpw"></td>
+						</tr>
+						<tr>
+							<td>新しいパスワード</td>
+							<td><input type="text" name="newpw"></td>
+						</tr>
+						<tr>
+							<td>新しいパスワード(確認用)</td>
+							<td><input type="text" name="newpw2"></td>
+						</tr>
+					</table>
+					<input type="submit" value="submit">
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

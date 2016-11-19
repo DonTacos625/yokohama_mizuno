@@ -10,7 +10,7 @@ $error="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	//Postされた値
-	$c_check = json_encode($_POST['cate'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+	$c_check = json_encode($_POST['cate'], JSON_NUMERIC_CHECK|JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
 	echo $c_check;
 
