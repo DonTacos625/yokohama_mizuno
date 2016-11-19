@@ -262,9 +262,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				</div>
 			</div>
 		</div>
-		<div id="viewDiv"></div><br>
 	</div>
-	
+	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
 			<div id ="main">

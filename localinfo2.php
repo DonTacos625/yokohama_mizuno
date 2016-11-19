@@ -109,12 +109,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	pointpic = "./marker/blue.png";
 		 }
 
-		 if(spot[i]["spot_url"]==""){
-		 	spot_url = "なし";
-		 }else{
-		 	spot_url = urlhttp+spot[i]["spot_url"];
-		 }
-
 		 //	Create contents of popup
 		 var lineAtt = {
 		 	分類: cat_name,
@@ -182,7 +176,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
-					<br>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
