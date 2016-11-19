@@ -1,6 +1,8 @@
 <?php
 //観光スポット推薦システム カテゴリー別観光スポット表示ページ localinfo2.php
 session_start();
+require_once("PostgreSQL.php");
+$pgsql = new PostgreSQL;
 $my_no = $_SESSION["my_no"];
 ?>
 <?php
@@ -10,8 +12,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//Postされた値
 	$c_check = json_encode($_POST['cate'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
+	echo $c_check;
+
 	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
+
+	echo $c_checkknum;
 
 	if($c_checknum==NULL){
 		$error = "カテゴリーが選択されていません";
