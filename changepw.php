@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8"><head>
+	<meta charset="utf-8">
 	<title>パスワード変更</title>
 	<!-- style.cssの読み込み -->
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
@@ -80,14 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<?php
 			require_once("linkplace.php"); //現在地表示用php
 			echo pwd("changepw"); //現在値の表示
-			?>
-		</div>
-	</div>
-	<div id="page">
-		<div id="contents">
-			<!-- #main 本文スペース -->
-			<div class="contentswrap">
-				<?php
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
@@ -106,7 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					}
 				}
 				?>
-		<!-- #main 本文スペース -->
+		</div>
+	</div>
+<div id="page">
+	<div id="contents">
+		<div class="contentswrap">
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 			<tr><div class="label" align="center">パスワード変更</div></tr>
@@ -135,8 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<input type="submit" name="Submit" value="変更する"></td></tr>
 			</table>
 		</form>
-		</div>
-	</div>
+</div>
+</div>
 </div>
 </body>
 </html>

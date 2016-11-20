@@ -162,7 +162,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			exit;
 		}
 		require_once("./linkplace.php");
-		echo pwd("localinfo2");
+		if($c_check==1)
+			$urlname="localinfo21";
+		else if($c_check==2)
+			$urlname="localinfo22";
+		else if($c_check==3)
+			$urlname="localinfo23";
+		else if($c_check==4)
+			$urlname="localinfo24";
+		else if($c_check==5)
+			$urlname="localinfo25";
+		else
+			$urlname="localinfo26";
+
+		echo pwd($urlname);
 		?>
 	</div>
 	<div id="page">
