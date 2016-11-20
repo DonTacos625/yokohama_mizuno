@@ -267,11 +267,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						}
 						?>
 					</table>
+					<div id="viewDiv"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-<div id="viewDiv"></div>
+
 	<div id="page">
 		<div id="contents">
 			<div id ="main">
