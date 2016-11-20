@@ -49,15 +49,14 @@ if(isset($_SESSION["my_no"]))
 						研究用途で構築しました。<br>
 						目的は観光回遊行動を支援のための観光情報の共有と推薦になります。</br></br>
 						使い方</br>
-						皆様には様々な観光スポットの情報・評価を掲載していただき，観光スポットの推薦をすることがメインになります。<br>
+						皆様には様々な観光スポットの情報・評価を掲載していただき，<br>
+						観光スポットの推薦をすることがメインになります。<br>
 						訪れたことのある観光スポットについては評価をして頂けると幸甚です。<br>
 
 						設定がわからない方は作成者（水谷）までご連絡ください。</br>
-						下の図はサンプル情報になります。
 					</div>
-					<div id="map_canvas" style="width:635; height:600"></div>
 					<br>
-					<p>マーカーの凡例
+					<!--<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
 								<td><img src="./marker/purple.png">飲食</td>
@@ -70,9 +69,9 @@ if(isset($_SESSION["my_no"]))
 								<td><img src="./marker/blue.png">その他</td>
 							</tr>
 						</table>
-						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} </style>
 						<br>
-					</p>
+					</p>-->
 				</div>
 			</div>
 		</div>

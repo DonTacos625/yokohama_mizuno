@@ -1,5 +1,5 @@
 ﻿<?php
-//観光スポット推薦システム 推薦項目ページ recomand2.php
+//観光スポット推薦システム 推薦項目表示ページ recomand2.php
 session_start();
 require_once("PostgreSQL.php");
 require_once("calcuation.php"); //計算プログラムの読み込み
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			}
 		}
 
-		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_pic,spot_content,spot_name,spot_url,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
 		$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
 		$pgsql->query($sql,$array);
 		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
@@ -127,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var pointpic = "";
 	var cat_name = "";
 	var spoturl = "";
-	var valurl = "https://websitetest1234.herokuapp.com/local_evaluation.php?pk=";
+	var valurl = "https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
 	require([
 		"esri/Map",
 		"esri/views/MapView",
@@ -195,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 	分類: cat_name,
 		 	//コメント: spot[i]["spot_content"],
 		 	//URL: spot_url,
-		 	評価: valurl+spot[i]["pk"]
+		 	詳細: valurl+spot[i]["pk"]
 		 };
 
 

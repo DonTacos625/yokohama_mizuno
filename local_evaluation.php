@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		if($_GET['pk']!=NULL){
 			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 			if(preg_match('/^([0-9])/', $pk)){
-				$sql = "SELECT spot_visited,spot_category,spot_name,spot_pic,spot_eval FROM localinfo WHERE pk=$1";
+				$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
 				$row = $pgsql->fetch_all();
@@ -228,7 +228,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr><td align="center" bgcolor="#fof8ff">写真</td><td><?echo $spot_pic?></td></tr>
 									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 										<td>1:低/少  <------>  5:高/多</td>
 									</tr>

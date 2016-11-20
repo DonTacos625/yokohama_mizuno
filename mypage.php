@@ -56,8 +56,7 @@
 								<label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label>
 								<br><br>
 								<label><input type="radio" name="s" value="./register_group.php">グループ編集</label>
-								<br><br>
-								<?php if(!isset($_SESSION["fb"])){echo "<label><input type='radio' name='s' value='./changepw.php'>パスワード変更</label>";}?>
+								<?php if(!isset($_SESSION["fb"])){echo "<br><br><label><input type='radio' name='s' value='./changepw.php'>パスワード変更</label>";}?>
 								<br><br>
 								<input type="submit" value="送信" style="font-weight:bold">
 							</b>
