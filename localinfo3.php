@@ -34,7 +34,7 @@ if(isset($_SESSION["my_no"])){
 				$spot_category = $row[0]["spot_category"];
 				$spot_pic = $row[0]["spot_pic"];
 				$spot_visited = $row[0]["spot_visited"];
-				$spot_url = $row[0]["spot_url"]
+				$spot_url = $row[0]["spot_url"];
 				$spot_content = $row[0]["spot_content"];
 				$eval = toPhpArray($row[0]["spot_eval"]);
 				$eval_count = count($eval);
@@ -87,10 +87,10 @@ if(isset($_SESSION["my_no"])){
 						<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>観光スポット詳細情報</b></font></td></tr>
 						<tr>
 							<?php
-							if($spot_pic!=NULL)
-								//echo "<img src='$spot_pic' alt='観光スポット写真'>";
+							/*if($spot_pic!=NULL)
+								echo "<img src='$spot_pic' alt='観光スポット写真'>";
 							else
-								echo "No image";
+								echo "No image";*/
 							?>
 						</tr>
 						<tr>

@@ -260,11 +260,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
 					<?php
-						$name = json_encode($result10place, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-						for($i=0;$i<5;$i++){
+					for($i=0;$i<10;$i++){
+						$name[$i] = json_encode($result10place[$i]["spot_name"], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+					}
+					for($i=0;$i<5;$i++){
 							echo "<tr><td>".$name[$i]."</td>";
 							echo "<td>".$name[$i+5]."</td></tr>";
-						}
+					}
 					?>
 				</div>
 			</div>
