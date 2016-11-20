@@ -189,7 +189,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 }else{
 		 	spot_url = urlhttp+spot[i]["spot_url"];
 		 }
-*/
+		 */
 		 //	Create contents of popup
 		 var lineAtt = {
 		 	分類: cat_name,
@@ -222,11 +222,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					//},{
 				//		fieldName: "URL"
 				//	},{
-						fieldName: "詳細"
-					}]
+					fieldName: "詳細"
 				}]
-			}
-		});
+			}]
+		}
+	});
 
 	// Add the graphics to the view's graphics layer
 	view.graphics.addMany([pointGraphic]);
@@ -259,13 +259,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div id ="main">
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
-					<table><?php
-					for($i=0;$i<5;$i++){
-							echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
-							echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
-					}
-					?></table>
-					<div id="viewDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div id="viewDiv"></div>
+		<table>
+			<?php
+			for($i=0;$i<5;$i++){
+				echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
+				echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
+			}
+			?>
+		</table>
+		<div id="contents">
+			<div id ="main">
+				<div class ="contentswrap">
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
@@ -285,5 +293,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				</div>
 			</div>
 		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>

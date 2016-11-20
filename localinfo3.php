@@ -124,9 +124,12 @@ if(isset($_SESSION["my_no"])){
 							<td align="center" bgcolor="#fof8ff"><font size="4"><b>参考URL</b></font></td>
 							<td>
 								<?php
-								echo $spot_url;
-								$url = "http://".$spot_url;
-								echo "<a href='".$url."'>リンク</a>"
+									if($spot_url!=NULL){
+										$url = "http://".$spot_url;
+										echo "<a href='".$url."'>リンク</a>";
+									}else{
+										echo "なし";
+									}
 								?>
 							</td>
 						</tr>
