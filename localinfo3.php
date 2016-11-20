@@ -40,7 +40,7 @@ if(isset($_SESSION["my_no"])){
 				$eval_count = count($eval);
 				for($i=0;$i<$eval_count;$i++){
 					if($eval[$i]==$my_no){
-						$error = "評価済みです";
+						$evalued = "評価済みです";
 					}
 				}
 			}else{
@@ -131,6 +131,19 @@ if(isset($_SESSION["my_no"])){
 										echo "<a href='".$url."'>リンク</a>";
 									}else{
 										echo "なし";
+									}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
+							<td>
+								<?php
+									if($evalued != NULL){
+										$valurl = "https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk;
+										echo "<a href='".$valurl."'>評価をする</a>";
+									}else{
+										echo $evalued;
 									}
 								?>
 							</td>

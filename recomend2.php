@@ -253,41 +253,42 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	</div>
 	<div id="page">
 		<div id="contents">
-				<div class ="contentswrap">
-					<h3>あなたに推薦する観光スポットは</h3>
-					</div>
-				</div>
+			<div class ="contentswrap">
+				<h3>あなたに推薦する観光スポットは</h3>
 			</div>
+		</div>
+	</div>
 	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
-				<div class ="contentswrap">
+			<div class ="contentswrap">
 				<table>
-						<?php
-						for($i=0;$i<5;$i++){
-							echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
-							echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
-						}
-						?>
+					<?php
+					for($i=0;$i<5;$i++){
+						echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
+						echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
+					}
+					?>
+				</table>
+				<br>
+				<p>マーカーの凡例
+					<table id="table5932" border="1">
+						<tr>
+							<td><img src="./marker/purple.png">飲食</td>
+							<td><img src="./marker/yellow.png">ショッピング</td>
+							<td><img src="./marker/red.png">テーマパーク・公園</td>
+						</tr>
+						<tr>
+							<td><img src="./marker/orange.png">名所・史跡</td>
+							<td><img src="./marker/ltblue.png">芸術・博物館</td>
+							<td><img src="./marker/blue.png">その他</td>
+						</tr>
 					</table>
-					<p>マーカーの凡例
-						<table id="table5932" border="1">
-							<tr>
-								<td><img src="./marker/purple.png">飲食</td>
-								<td><img src="./marker/yellow.png">ショッピング</td>
-								<td><img src="./marker/red.png">テーマパーク・公園</td>
-							</tr>
-							<tr>
-								<td><img src="./marker/orange.png">名所・史跡</td>
-								<td><img src="./marker/ltblue.png">芸術・博物館</td>
-								<td><img src="./marker/blue.png">その他</td>
-							</tr>
-						</table>
-						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
-						<br>
-					</p>
-				</div>
+					<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
+					<br>
+				</p>
 			</div>
 		</div>
+	</div>
 </body>
 </html>

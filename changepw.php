@@ -1,7 +1,7 @@
 <?php
 session_start();
 //======================================================================
-//  ■： 会員登録ページ register_usr.php 
+//  ■： 会員登録ページ パスワード変更
 //======================================================================
 require_once("PostgreSQL.php");
 //require_once("com_require2.php");
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	// フォームからデータを受け取る
 	//--------------------------------
-	$oldpw = htmlspecialchars($_POST["oldpw"], ENT_QUOTES) //旧パスワード
+	$oldpw = htmlspecialchars($_POST["oldpw"], ENT_QUOTES); //旧パスワード
 	$newpw = htmlspecialchars($_POST["newpw"], ENT_QUOTES);	//新パスワード
 	$newpw2 = htmlspecialchars($_POST["newpw2"], ENT_QUOTES);	//新パスワード確認
 
@@ -109,10 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<h1>パスワード変更</h1>
 				<form action ="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table border="0">
-						<tr>
-							<td>ID</td>
-							<td><input type ="text" name="usr_id"></td>
-						</tr>
 						<tr>
 							<td>古いパスワード</td>
 							<td><input type="text" name="oldpw"></td>
