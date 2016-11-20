@@ -200,7 +200,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					$num = count($PlaceTable);
 					$detailurl ="https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
 					for($i=0;$i<$num;$i=$i+3){
-							echo "<tr>"
+							echo "<tr>";
 							$spot_pk = $PlaceTable[$i]['pk'];
 							echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i]['spot_name']."</a></td>";
 							if($PlaceTable[$i+1]["spot_name"]!=NULL)
