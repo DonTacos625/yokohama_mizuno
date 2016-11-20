@@ -216,8 +216,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 /* ========================================  地図について */
 
 #viewDiv {
-			padding: 0;
-			margin: 10px;
+
 			width: 50%;
 			height:50%;
 		}
