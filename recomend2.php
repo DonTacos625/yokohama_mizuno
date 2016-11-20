@@ -253,20 +253,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	</div>
 	<div id="page">
 		<div id="contents">
-			<?php
-			require_once('left.php');
-			?>
-			<div id ="main">
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
 					</div>
-					</div>
-					</div>
-					</div>
-					<div id="viewDiv"></div>
+				</div>
+			</div>
+	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
-			<div id ="main">
 				<div class ="contentswrap">
 				<table>
 						<?php
@@ -295,6 +289,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>
