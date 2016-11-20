@@ -37,7 +37,7 @@ if(isset($_SESSION["my_no"])){
 				$spot_url = $row[0]["spot_url"];
 				$spot_content = $row[0]["spot_content"];
 				$eval = toPhpArray($row[0]["spot_eval"]);
-				echo count($eval)
+				echo count($eval);
 				$eval_count = count($eval);
 				for($i=0;$i<$eval_count;$i++){
 					if($eval[$i]==$my_no){
