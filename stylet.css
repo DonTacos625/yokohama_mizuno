@@ -217,7 +217,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 
 #viewDiv {
 			padding: 30px 20px;
-			margin: 0 auto;
+			margin: 0;
 			width: 50%;
 			height:50%;
 		}
