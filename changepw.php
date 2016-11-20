@@ -89,14 +89,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
-				if (strlen($error)>0){
-					if($error != "登録が完了しました."){
-						echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-					}else{
-						echo "<br>登録が完了しました";
-						echo "</dvi></div></body></html>";
-						exit();
-					}
+				if($error != "登録が完了しました."){
+					echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+				}else{
+					echo "<br>登録が完了しました";
+					echo "</dvi></dvi></div></body></html>";
+					exit;
 				}
 				?>
 		</div>
