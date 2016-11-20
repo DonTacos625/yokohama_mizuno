@@ -107,7 +107,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
@@ -193,8 +192,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 //	Create contents of popup
 		 var lineAtt = {
 		 	分類: cat_name,
-		 	//コメント: spot[i]["spot_content"],
-		 	//URL: spot_url,
 		 	詳細: valurl+spot[i]["pk"]
 		 };
 
@@ -218,10 +215,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					fieldInfos: [{
 						fieldName: "分類"
 					},{
-					//	fieldName: "コメント"
-					//},{
-				//		fieldName: "URL"
-				//	},{
 					fieldName: "詳細"
 				}]
 			}]
@@ -250,18 +243,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		require_once("./linkplace.php");
 		echo pwd("recomend2");
 		?>
-	</div>
-	<div id="page">
 		<div id="contents">
+		<?php
+			require_once('left.php');
+			?>
+			<div id ="main">
 			<div class ="contentswrap">
 				<h3>あなたに推薦する観光スポットは</h3>
 			</div>
 		</div>
-		
 	</div>
-	<?php require_once("./usertest/map_test.html");?>
+	</div>
+	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
+		<div id ="main">
 			<div class ="contentswrap">
 				<table>
 					<?php
@@ -290,6 +286,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				</p>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
