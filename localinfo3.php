@@ -38,6 +38,7 @@ if(isset($_SESSION["my_no"])){
 				$spot_content = $row[0]["spot_content"];
 				$eval = toPhpArray($row[0]["spot_eval"]);
 				echo count($eval);
+				echo $eval;
 				$eval_count = count($eval);
 				for($i=0;$i<$eval_count;$i++){
 					if($eval[$i]==$my_no){
@@ -140,7 +141,7 @@ if(isset($_SESSION["my_no"])){
 							<td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
 							<td>
 								<?php
-									if($evalued != NULL){
+									if($evalued == NULL){
 										$valurl = "https://websitetest1234.herokuapp.com/local_evaluation.php?pk=".$pk;
 										echo "<a href='".$valurl."'>評価をする</a>";
 									}else{

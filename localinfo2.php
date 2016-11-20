@@ -195,12 +195,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
-				<table>
+				<table id="table5932" border="1">
 					<?php
 					$num = count($PlaceTable);
-					for($i=0;$i<($num/2);$i++){
-						echo "<tr><td>".$PlaceTable[$i]["spot_name"]."</td>";
-						echo "<td>".$PlaceTable[$i+($num/2)]["spot_name"]."</td></tr>";
+					$detailurl ="https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
+					for($i=0;$i<$num;$i=$i+3){
+							echo "<tr>"
+							$spot_pk = $PlaceTable[$i]['pk'];
+							echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i]['spot_name']."</a></td>";
+							if($PlaceTable[$i+1]["spot_name"]!=NULL)
+								$spot_pk = $PlaceTable[$i+1]['pk'];
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+1]['spot_name']."</a></td>";
+							if($PlaceTable[$i+2]["spot_name"]!=NULL)
+								$spot_pk = $PlaceTable[$i+2]['pk'];
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+2]['spot_name']."</a></td>";
+							echo "</tr>";
 					}
 					?>
 				</table>
