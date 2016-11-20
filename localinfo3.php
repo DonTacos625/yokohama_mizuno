@@ -86,12 +86,14 @@ if(isset($_SESSION["my_no"])){
 						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
+							<td align='center' colspan='2'>
 							<?php
 							if($spot_pic!=NULL)
 								echo "<img src='".$spot_pic."' alt='観光スポット写真'>";
 							else
 								echo "No image";
 							?>
+							</td>
 						</tr>
 						<tr>
 							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>スポット名</b></font></td>
