@@ -141,7 +141,7 @@ if(isset($_SESSION["my_no"])){
 								<?php
 									if($evalued == NULL){
 										$valurl = "https://websitetest1234.herokuapp.com/local_evaluation.php?pk=".$pk;
-										echo "<a href='".$valurl."'>評価をする</a>";
+										echo "<a href='".$valurl." target='_blank'>評価をする</a>";
 									}else{
 										echo $evalued;
 									}

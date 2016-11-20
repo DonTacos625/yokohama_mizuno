@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					}else{
 						echo "登録が完了しました";
 						echo "</dvi></dvi></div></body></html>";
-						exit;
+						exit();
 					}
 				}
 				?>

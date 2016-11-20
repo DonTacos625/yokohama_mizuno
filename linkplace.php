@@ -14,9 +14,21 @@
 		$localinfoname = "観光スポットカテゴリー選択";
 		$localinfotag = '<a href="'.$localinfo.'.php">観光スポットカテゴリー選択</a>';
 
-		$localinfo2 ="localinfo2";
-		$localinfo2name = "観光スポット閲覧";
-		$localinfo2tag = '<a href="'.$localinfo.'.php">観光スポット閲覧</a>';
+		$localinfo21 ="localinfo21";
+		$localinfo21name = "飲食";
+		$localinfo21tag = '<a href="'.$localinfo2.'.php">飲食</a>';
+
+		$localinfo21 ="localinfo21";
+		$localinfo21name = "観光スポット閲覧";
+		$localinfo21tag = '<a href="'.$localinfo.'.php">観光スポット閲覧</a>';
+
+
+
+
+
+
+
+
 
 		$recomend1 ="recomend1";
 		$recomend1name ="観光スポット推薦";
@@ -45,7 +57,7 @@
 		if($url == $localinfo2)
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo2name;
 		if($url == $changepw)
-			return $toppagetag.$arrow.$mypagename.$arrow.$changepwname;
+			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname;
 	}
 
 ?>
