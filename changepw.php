@@ -84,16 +84,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
 				if(strlen($access_error)>0){
+					echo "<br>";
 					echo $access_error;
 					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
 				if (strlen($error)>0){
 					if($error != "登録が完了しました."){
-						echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+						echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 					}else{
-						echo "登録が完了しました";
-						echo "</dvi></dvi></div></body></html>";
+						echo "<br>登録が完了しました";
+						echo "</dvi></div></body></html>";
 						exit();
 					}
 				}
