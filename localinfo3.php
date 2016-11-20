@@ -94,7 +94,7 @@ if(isset($_SESSION["my_no"])){
 							?>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff"><font size="4"><b>スポット名</b></font></td>
+							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>スポット名</b></font></td>
 							<td><?php echo  $spot_name?></td>
 						</tr>
 						<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>
@@ -124,8 +124,9 @@ if(isset($_SESSION["my_no"])){
 							<td align="center" bgcolor="#fof8ff"><font size="4"><b>参考URL</b></font></td>
 							<td>
 								<?php
+								echo $spot_url;
 								$url = "http://".$spot_url;
-								echo "<a href='".$spot_url."'>リンク</a>"
+								echo "<a href='".$url."'>リンク</a>"
 								?>
 							</td>
 						</tr>
