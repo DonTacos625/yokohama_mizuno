@@ -265,15 +265,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
 					}
 					?></table>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="viewDiv"></div>
-	<div id="page">
-		<div id="contents">
-			<div id ="main">
-				<div class ="contentswrap">
+					<div id="viewDiv"></div>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
