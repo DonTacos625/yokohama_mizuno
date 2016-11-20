@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //観光スポット推薦システム 推薦項目表示ページ recomand2.php
 session_start();
 require_once("PostgreSQL.php");
@@ -112,8 +112,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
   <script src="https://js.arcgis.com/4.1/"></script>
-
-
 
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
@@ -258,19 +256,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div class ="contentswrap">
 				<h3>あなたに推薦する観光スポットは</h3>
 			</div>
-		</div> 
-		<style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      width:600px;
-      height:400px;
-    }
-  </style>
-		<div id="viewDiv"></div>
+		</div>
+		
 	</div>
+	<?php require_once("./usertest/map_test.html");?>
 	<div id="page">
 		<div id="contents">
 			<div class ="contentswrap">

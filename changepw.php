@@ -106,26 +106,37 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					}
 				}
 				?>
-				<div class="label" align="center">パスワード変更</div>
-				<form action ="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-					<table border="0">
-						<tr>
-							<td align="center"><div class="label">古いパスワード</div></td>
-							<td><input type="password" name="oldpw"></td>
-						</tr>
-						<tr>
-							<td align="center"><div class="label">新しいパスワード</div></td>
-							<td><input type="password" name="newpw"></td>
-						</tr>
-						<tr>
-							<td align="center"><div class="label">新しいパスワード(確認用)</div></td>
-							<td><input type="password" name="newpw2"></td>
-						</tr>
-					</table>
-					<input type="submit" value="submit">
-				</form>
-			</div>
+		<!-- #main 本文スペース -->
+		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
+			<tr><div class="label" align="center">パスワード変更</div></tr>
+			<tr>
+				<td align="center" bgcolor="#ffe4e1">
+					<div class="label">旧パスワード</div></td>
+				<td>
+					<input type="password" name="oldpw" value="<?=$pw ?>"><br>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#ffe4e1">
+					<div class="label">新パスワード</div></td>
+				<td>
+					<input type="password" name="newpw2" value="<?=$newpw ?>"><br>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#ffe4e1">
+					<div class="label">新パスワード(確認用)</div></td>
+				<td>
+					<input type="password" name="newpw2" value="<?=$newpw2 ?>"><br>
+				</td>
+			</tr>
+			<tr><td align="center" colspan="2">
+			<input type="submit" name="Submit" value="変更する"></td></tr>
+			</table>
+		</form>
 		</div>
 	</div>
+</div>
 </body>
 </html>
