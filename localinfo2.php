@@ -170,12 +170,41 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			require_once('left.php');
 			?>
 		</div>
+		<div class ="contentswrap">
+		<div id ="main">
+			<h3>
+			<?php
+				if($c_check==1)
+					echo "飲食";
+				else if($c_check==2)
+					echo "ショッピング";
+				else if($c_check==3)
+					echo "テーマパーク・公園";
+				else if($c_check==4)
+					echo "名所・史跡";
+				else if($c_check==5)
+					echo "芸術・博物館";
+				else
+					echo "その他";
+			?>　スポット一覧</h3>
+	</div>
+	</div>
 	</div>
 	<div id="viewDiv"></div> <!--地図の表示-->
 	<div id="page">
 		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
+				<table>
+					<?php
+					$num = count($PlaceTable);
+					for($i=0;$i<($num/2);$i++){
+						echo "<tr><td>".$PlaceTable[$i]["spot_name"]."</td>";
+						echo "<td>".$PlaceTable[$i+($num/2)]["spot_name"]."</td></tr>";
+					}
+					?>
+				</table>
+				<br>
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
