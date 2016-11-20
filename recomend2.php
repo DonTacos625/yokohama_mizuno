@@ -259,7 +259,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div id ="main">
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
-					<table>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div id="viewDiv"></div>
+	<div id="page">
+		<div id="contents">
+			<div id ="main">
+				<div class ="contentswrap">
+				<table>
 						<?php
 						for($i=0;$i<5;$i++){
 							echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
@@ -267,16 +276,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						}
 						?>
 					</table>
-					<div id="viewDiv"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="page">
-		<div id="contents">
-			<div id ="main">
-				<div class ="contentswrap">
 					<p>マーカーの凡例
 						<table id="table5932" border="1">
 							<tr>
