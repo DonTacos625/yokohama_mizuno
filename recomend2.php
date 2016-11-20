@@ -259,18 +259,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div id ="main">
 				<div class ="contentswrap">
 					<h3>あなたに推薦する観光スポットは</h3>
+					<table>
+						<?php
+						for($i=0;$i<5;$i++){
+							echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
+							echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
+						}
+						?>
+					</table>
 				</div>
 			</div>
 		</div>
-		<div id="viewDiv"></div>
-		<table>
-			<?php
-			for($i=0;$i<5;$i++){
-				echo "<tr><td>".$result10place[$i]["spot_name"]."</td>";
-				echo "<td>".$result10place[$i+5]["spot_name"]."</td></tr>";
-			}
-			?>
-		</table>
+	</div>
+<div id="viewDiv"></div>
+	<div id="page">
 		<div id="contents">
 			<div id ="main">
 				<div class ="contentswrap">
