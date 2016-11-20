@@ -110,8 +110,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<title>推薦スポット</title>
-	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-	<script src="https://js.arcgis.com/4.1/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.1/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      width:600px;
+      height:400px;
+    }
+  </style>
 
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
@@ -257,8 +268,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				<h3>あなたに推薦する観光スポットは</h3>
 			</div>
 		</div>
+		<div id="viewDiv"></div>
 	</div>
-	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
 			<div class ="contentswrap">

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//--------------------------------
 
 	//パスワード
-	if(strlen($oldpw)!=0)
+	if(strlen($oldpw)==0)
 		$error = "旧パスワードが未入力です<br>";
 	else if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $oldpw))
 		$error ="旧パスワードに誤りがあります<br>";
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<div id="head">
 			<?php
 			require_once("linkplace.php"); //現在地表示用php
-			echo pwd("fb_register"); //現在値の表示
+			echo pwd("changepw"); //現在値の表示
 			?>
 		</div>
 	</div>
@@ -106,20 +106,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					}
 				}
 				?>
-				<h1>パスワード変更</h1>
+				<div class="label" align="center">パスワード変更</div>
 				<form action ="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table border="0">
 						<tr>
-							<td>古いパスワード</td>
-							<td><input type="text" name="oldpw"></td>
+							<td align="center"><div class="label">古いパスワード</div></td>
+							<td><input type="password" name="oldpw"></td>
 						</tr>
 						<tr>
-							<td>新しいパスワード</td>
-							<td><input type="text" name="newpw"></td>
+							<td align="center"><div class="label">新しいパスワード</div></td>
+							<td><input type="password" name="newpw"></td>
 						</tr>
 						<tr>
-							<td>新しいパスワード(確認用)</td>
-							<td><input type="text" name="newpw2"></td>
+							<td align="center"><div class="label">新しいパスワード(確認用)</div></td>
+							<td><input type="password" name="newpw2"></td>
 						</tr>
 					</table>
 					<input type="submit" value="submit">

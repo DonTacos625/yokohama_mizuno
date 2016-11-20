@@ -26,6 +26,9 @@
 		$recomend2name = "推薦スポット表示";
 		$recomend2tag = '<a href="'.$recomend2.'.php">推薦スポット表示</a>';
 
+		$changepqw = "changepqw";
+		$changepqwname = "パスワード変更";
+
 		$br = '<br>';
 		$arrow = ' > ';
 
@@ -41,6 +44,8 @@
 			return $toppagetag.$arrow.$localinfoname;
 		if($url == $localinfo2)
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo2name;
+		if($url == $changepqw)
+			return $toppagetag.$arrow.$mypagename.$arrow.$changepqwname;
 	}
 
 ?>
