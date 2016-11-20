@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<td align="center" bgcolor="#ffe4e1">
 					<div class="label">旧パスワード</div></td>
 				<td>
-					<input type="password" name="oldpw" value="<?=$pw ?>"><br>
+					<input type="password" name="oldpw" value="<?=$oldpw ?>"><br>
 				</td>
 			</tr>
 			<tr>
