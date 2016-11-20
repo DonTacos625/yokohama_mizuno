@@ -82,21 +82,19 @@ if(isset($_SESSION["my_no"])){
 			?>
 			<div id="main">
 				<div class="contentswrap">
-					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 					<table border="0" cellspacing="3" cellpadding="3" width="600">
-						<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>観光スポット詳細情報</b></font></td></tr>
+						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
+								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<?php
-							/*if($spot_pic!=NULL)
-								echo "<img src='$spot_pic' alt='観光スポット写真'>";
+							if($spot_pic!=NULL)
+								echo "<img src='".$spot_pic."' alt='観光スポット写真'>";
 							else
-								echo "No image";*/
+								echo "No image";
 							?>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff">
-								<font size="4"><b>スポット名</b></font>
-							</td>
+							<td align="center" bgcolor="#fof8ff"><font size="4"><b>スポット名</b></font></td>
 							<td><?php echo  $spot_name?></td>
 						</tr>
 						<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>カテゴリー</b></font></td>

@@ -12,14 +12,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//Postされた値
 	$c_check = json_encode($_POST['cate'], JSON_NUMERIC_CHECK|JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
-	echo $c_check;
 
-	//観光スポットデータのカテゴリーを便宜上埋める
-	$c_checknum =count($c_check);
-
-	echo $c_checkknum;
-
-	if($c_checknum==NULL){
+	if($c_check==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
 		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name FROM localinfo WHERE spot_category in ($1) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
