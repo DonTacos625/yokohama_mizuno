@@ -113,16 +113,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
   <script src="https://js.arcgis.com/4.1/"></script>
 
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      width:600px;
-      height:400px;
-    }
-  </style>
+
 
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
@@ -267,7 +258,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div class ="contentswrap">
 				<h3>あなたに推薦する観光スポットは</h3>
 			</div>
-		</div>
+		</div> 
+		<style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      width:600px;
+      height:400px;
+    }
+  </style>
 		<div id="viewDiv"></div>
 	</div>
 	<div id="page">
