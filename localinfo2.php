@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
-
+<!--
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
 	//spot[i]["spot_lat"]: spot_lat
@@ -147,6 +147,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 });
 
 </script>
+-->
 </head>
 <body>
 	<div id="page">
@@ -187,14 +188,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				else
 					echo "その他";
 			?>　スポット一覧</h3>
+<!--	</div>
 	</div>
 	</div>
-	</div>
-	<div id="viewDiv"></div> <!--地図の表示-->
+	<div id="viewDiv"></div>
 	<div id="page">
 		<div id="contents">
 			<div id ="main">
-				<div class ="contentswrap">
+				<div class ="contentswrap">-->
 				<table id="table5932" border="1">
 					<?php
 					$num = count($PlaceTable);
