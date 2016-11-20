@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<meta charset="utf-8"><head>
 	<title>パスワード変更</title>
 	<!-- style.cssの読み込み -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
 	<?php
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 				if(strlen($access_error)>0){
 					echo $access_error;
-					echo "</dvi></dvi></body></html>";
+					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
 				if (strlen($error)>0){
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 					}else{
 						echo "登録が完了しました";
-						echo "</dvi></div></body></html>";
+						echo "</dvi></dvi></div></body></html>";
 						exit;
 					}
 				}
