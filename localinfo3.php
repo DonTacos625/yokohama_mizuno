@@ -88,7 +88,7 @@ if(isset($_SESSION["my_no"])){
 						<tr>
 							<?php
 							if($spot_pic!=NULL)
-								echo "<img src='$spot_pic' alt='観光スポット写真'>";
+								//echo "<img src='$spot_pic' alt='観光スポット写真'>";
 							else
 								echo "No image";
 							?>
@@ -127,7 +127,8 @@ if(isset($_SESSION["my_no"])){
 							<td>
 								<?php
 								$url = "http://".$spot_url;
-								echo "<a href='$spot_url'>リンク</a>"?>
+								echo "<a href='".$spot_url."'>リンク</a>"
+								?>
 							</td>
 						</tr>
 					</table>

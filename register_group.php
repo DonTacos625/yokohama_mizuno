@@ -10,6 +10,9 @@ $pgsql = new PostgreSQL;
 
 //エラーメッセージ
 $error = "";
+$error1 = "";
+$error2 = "";
+$error3 = "";
 $access_error = ""; //アクセスエラー
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
@@ -282,7 +285,175 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$g28=intval($g28);
 	}
 
-	if(strlen($error)==0&&strlen($error1)==0&&strlen($error2)==0){
+	if($f1!=NULL){
+		if($f2!=NULL&&$f1==$f2)
+			$error3 = "同じ番号が入力されています<br>";
+		if($f3!=NULL&&$f1==$f3)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+	if($f2!=NULL&&$f3!=NULL&&$f2==$f3)
+		$error3 = "同じ番号が入力されています<br>";
+
+	if($g11!=NULL){
+		if($g12!=NULL&&$g11==$g12)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g13!=NULL&&$g11==$g13)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g14!=NULL&&$g11==$g14)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g15!=NULL&&$g11==$g15)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g16!=NULL&&$g11==$g16)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g17!=NULL&&$g11==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g11==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g12!=NULL){
+		if($g13!=NULL&&$g12==$g13)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g14!=NULL&&$g12==$g14)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g15!=NULL&&$g12==$g15)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g16!=NULL&&$g12==$g16)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g17!=NULL&&$g12==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g12==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g13!=NULL){
+		if($g14!=NULL&&$g13==$g14)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g15!=NULL&&$g13==$g15)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g16!=NULL&&$g13==$g16)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g17!=NULL&&$g13==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g13==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g14!=NULL){
+		if($g15!=NULL&&$g14==$g15)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g16!=NULL&&$g14==$g16)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g17!=NULL&&$g14==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g14==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g15!=NULL){
+		if($g16!=NULL&&$g15==$g16)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g17!=NULL&&$g15==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g15==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g16!=NULL){
+		if($g17!=NULL&&$g16==$g17)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g18!=NULL&&$g16==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g17!=NULL&&$g18!=NULL&&$g17==$g18)
+			$error3 = "同じ番号が入力されています<br>";
+
+	if($f1!=NULL){
+		if($f2!=NULL&&$f1==$f2)
+			$error3 = "同じ番号が入力されています<br>";
+		if($f3!=NULL&&$f1==$f3)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+	if($f2!=NULL&&$f3!=NULL&&$f2==$f3)
+		$error3 = "同じ番号が入力されています<br>";
+
+	if($g21!=NULL){
+		if($g22!=NULL&&$g21==$g22)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g23!=NULL&&$g21==$g23)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g24!=NULL&&$g21==$g24)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g25!=NULL&&$g21==$g25)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g26!=NULL&&$g21==$g26)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g27!=NULL&&$g21==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g21==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g22!=NULL){
+		if($g23!=NULL&&$g22==$g23)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g24!=NULL&&$g22==$g24)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g25!=NULL&&$g22==$g25)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g26!=NULL&&$g22==$g26)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g27!=NULL&&$g22==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g22==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g23!=NULL){
+		if($g24!=NULL&&$g23==$g24)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g25!=NULL&&$g23==$g25)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g26!=NULL&&$g23==$g26)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g27!=NULL&&$g23==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g23==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g24!=NULL){
+		if($g25!=NULL&&$g24==$g25)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g26!=NULL&&$g24==$g26)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g27!=NULL&&$g24==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g24==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g25!=NULL){
+		if($g26!=NULL&&$g25==$g26)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g27!=NULL&&$g25==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g25==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g26!=NULL){
+		if($g27!=NULL&&$g26==$g27)
+			$error3 = "同じ番号が入力されています<br>";
+		if($g28!=NULL&&$g26==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+	}
+
+	if($g27!=NULL&&$g28!=NULL&&$g27==$g28)
+			$error3 = "同じ番号が入力されています<br>";
+
+	if(strlen($error)==0&&strlen($error1)==0&&strlen($error2)==0&&strlen($error3)==0){
 		if($f1==NULL)
 			$f1=0;
 		if($f2==NULL)
