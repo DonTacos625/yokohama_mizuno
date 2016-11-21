@@ -59,13 +59,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
 		$array = array($usr_id);
-		$pgsql->query("SELECT no,id,pw,gender,age FROM friendinfo WHERE id=$1",$array);
+		$pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$array);
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
 				$_SESSION["my_no"] = $row["no"];
 				$_SESSION["gender"] = $row["gender"];
 				$_SESSION["age"] = $row["age"];
+				$_SESSION["anq"] = $row["anq"];
 				if(isset($row["gender"])){
 					header("Location: ./index.php");
 					exit;
