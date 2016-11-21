@@ -126,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var pointpic = "";
 	var cat_name = "";
 	var spoturl = "";
-	var valurl = "https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
+	var valurl = "https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
 	require([
 		"esri/Map",
 		"esri/views/MapView",

@@ -62,7 +62,7 @@ if(isset($_SESSION["my_no"])){
 
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
-	<title><?php echo $spot_name?>詳細情報</title>
+	<title><?php echo $spot_name?> 詳細情報</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 
@@ -140,7 +140,7 @@ if(isset($_SESSION["my_no"])){
 							<td>
 								<?php
 									if($evalued == NULL){
-										$valurl = "https://websitetest1234.herokuapp.com/local_evaluation.php?pk=".$pk;
+										$valurl = "https://study-yokohama-sightseeing.herokuapp.com/local_evaluation.php?pk=".$pk;
 										echo "<a href='".$valurl."'>評価をする</a>";
 									}else{
 										echo $evalued;

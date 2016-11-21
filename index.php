@@ -21,6 +21,7 @@ if(isset($_SESSION["my_no"]))
 	</script>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<div id = "head">
 			<?php

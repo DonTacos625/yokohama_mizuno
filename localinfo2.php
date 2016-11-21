@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	var pointpic = "";
 	var cat_name = "";
 	var spoturl = "";
-	var valurl = "https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
+	var valurl = "https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
 
 	require([
 		"esri/Map",
@@ -226,7 +226,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				<table id="table5932" border="1">
 					<?php
 					$num = count($PlaceTable);
-					$detailurl ="https://websitetest1234.herokuapp.com/localinfo3.php?pk=";
+					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
 					for($i=0;$i<$num;$i=$i+3){
 							echo "<tr>";
 							$spot_pk = $PlaceTable[$i]['pk'];

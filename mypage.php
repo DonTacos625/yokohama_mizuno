@@ -10,15 +10,15 @@
 		$menu = htmlspecialchars($_POST["menu"], ENT_QUOTES);	//menu番号
 
 		if($menu==1){
-			header('Location: https://websitetest1234.herokuapp.com/fb_register.php');
+			header('Location: https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
 			exit;
 		}
 		if($menu==2){
-			header('Location: https://websitetest1234.herokuapp.com/register_group.php');
+			header('Location: https://study-yokohama-sightseeing.herokuapp.com/register_group.php');
 			exit;
 		}
 		if($menu==3){
-			header('Location: https://websitetest1234.herokuapp.com/changepw.php');
+			header('Location: https://study-yokohama-sightseeing.herokuapp.com/changepw.php');
 			exit;
 		}
 		if($menu==4){
@@ -28,7 +28,7 @@
 				$pgsql -> query($sql,$array);
 				$_SESSION["anq"]=1;
 				if($_SESSION["anq"]==1){
-					header('Location: https://websitetest1234.herokuapp.com/changepw.php');
+					header('Location: https://study-yokohama-sightseeing.herokuapp.com/changepw.php');
 					exit;
 				}
 			}

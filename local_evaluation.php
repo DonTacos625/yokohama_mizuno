@@ -197,7 +197,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		}
 		if($error=="評価完了"){
 			echo "<br>評価が正常に送信されました。<br>";
-			echo "<a href='https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
+			echo "<a href='https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
 			echo "</div></body></html>";
 			exit;
 		}
