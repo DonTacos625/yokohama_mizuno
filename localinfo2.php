@@ -33,15 +33,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
 	<meta charset="utf-8">
 	<title><?php
-		if($spot_category == 1)
+		if($c_check == 1)
 			echo "飲食 スポット一覧";
-		else if($spot_category == 2)
+		else if($c_check == 2)
 			echo "ショッピング スポット一覧";
-		else if($spot_category == 3)
+		else if($c_check == 3)
 			echo "テーマパーク・公園 スポット一覧";
-		else if($spot_category == 4)
+		else if($c_check == 4)
 			echo "名所・史跡 スポット一覧";
-		else if($spot_category == 5)
+		else if($c_check == 5)
 			echo  "芸術・博物館スポット一覧";
 		else
 			echo "その他";
