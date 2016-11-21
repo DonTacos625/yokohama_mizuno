@@ -75,6 +75,8 @@ if(isset($_SESSION["my_no"])){
 			echo "</div></body></html>";
 			exit;
 		}
+		require_once('linkplace.php');
+		echo pwd_spot($spot_category,$spot_name);
 		?>
 		<div id="contents">
 			<?php
@@ -90,8 +92,6 @@ if(isset($_SESSION["my_no"])){
 							<?php
 							if($spot_pic!=NULL)
 								echo "<img src='".$spot_pic."' alt='観光スポット写真'>";
-							else
-								echo "No image";
 							?>
 							</td>
 						</tr>

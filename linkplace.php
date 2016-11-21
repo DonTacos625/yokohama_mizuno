@@ -71,5 +71,27 @@
 		if($url == $changepw)
 			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname;
 	}
+	function pwd_spot($category,$name){
+		$arrow = ' > ';
+		
+		$toppagetag = "<a href='./index.php'>トップページ</a>";
 
+		$localinfo ="localinfo";
+		$localinfotag = '<a href="'.$localinfo.'.php">観光スポットカテゴリー選択</a>';
+
+		if($category == 1)
+			$category_name ="飲食";
+		else if($category == 2)
+			$category_name ="ショッピング";
+		else if($category == 3)
+			$category_name ="テーマパーク・公園";
+		else if($category == 4)
+			$category_name ="名所・史跡";
+		else if($category == 5)
+			$category_name = "芸術・博物館";
+		else
+			$category_name ="その他";
+
+		return $toppagetag.$arrow.$localinfotag.$arrow.$category_name.$arrow.$name;
+	}
 ?>

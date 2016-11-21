@@ -190,7 +190,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		<?php
 		require_once('header.php');
 		require_once('linkplace.php');
-		echo pwd("local_evaluation");
+		echo pwd_spot($spot_category,$spot_name);
 		if(strlen($error)!=0&&$error!="評価完了"){
 			echo "<br>";
 			echo $error;
