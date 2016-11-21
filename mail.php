@@ -36,7 +36,7 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 $site_top = "https://websitetest1234.herokuapp.com/";
 
 // 管理者メールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
-$to = getenv("MAIL_ADDRESS");
+$to = "yuu1214.uec@gmail.coom";
 
 //フォームのメールアドレス入力箇所のname属性の値（name="○○"　の○○部分）
 $Email = "Email";
@@ -61,7 +61,7 @@ $Referer_check_domain = "websitetest1234.herokuapp.com";
 // 管理者宛のメールで差出人を送信者のメールアドレスにする(する=1, しない=0)
 // する場合は、メール入力欄のname属性の値を「$Email」で指定した値にしてください。
 //メーラーなどで返信する場合に便利なので「する」がおすすめです。
-$userMail = 1;
+$userMail = 0;
 
 // Bccで送るメールアドレス(複数指定する場合は「,」で区切ってください 例 $BccMail = "aa@aa.aa,bb@bb.bb";)
 $BccMail = "";
