@@ -58,7 +58,7 @@ if(isset($_SESSION["my_no"]))
 						</p>
 						<p>設定がわからない方は下記メールアドレスにご連絡ください。<br>
 						作成者 水谷<br>
-						y.mizutani[アットマーク]uec.ac.jp
+						y.mizutani[アットマーク]uec.ac.jp<br>
 						[アットマーク]を@へ置換してご利用ください。
 						</p>
 					</div>

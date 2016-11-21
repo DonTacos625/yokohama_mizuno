@@ -91,7 +91,7 @@
 								if(!isset($_SESSION["fb"]))
 									echo "<br><br><label><input type='radio' name='menu' value='3'>パスワード変更</label>";
 								if($_SESSION["anq"]==0)
-									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える</label>";
+									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える(推薦システムを1度以上利用してからお答えください)</label>";
 								?>
 								<br><br>
 								<input type="submit" value="送信">
