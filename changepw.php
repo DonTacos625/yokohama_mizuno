@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	else if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $oldpw))
 		$error ="旧パスワードに誤りがあります<br>";
 	else if(strlen($newpw)==0)
-		$error = "新パスワードが未入力です<br>";
+		$error1 = "新パスワードが未入力です<br>";
 	else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $newpw))
-		$error = " 新パスワードに誤りがあります<br>";
+		$error1 = " 新パスワードに誤りがあります<br>";
 	else if($newpw != $newpw2)
-		$error = "新パスワードが確認用パスワードと一致しません<br>";
+		$error2 = "新パスワードと確認用パスワードが一致しません<br>";
 	else{
 		$sql = "SELECT no,pw FROM friendinfo WHERE no=$1";
 		$array = array($my_no);
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$pgsql->query($sql,$array);
 			$error = "登録完了";
 		}else{
-			$error = "旧パスワードが一致しません<br>";
+			$error = "旧パスワードに誤りがあります<br>";
 		}
 	}
 }else{
@@ -89,8 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
-				if(strlen($error)>0&&$error!="登録完了"){
+				if(strlen($error)>0||strlen($error1)>0||strlen($error2)>0&&$error!="登録完了"){
 					echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+					echo "<br><font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+					echo "<br><font size=\"6\" color=\"#da0b00\">{$error2}</font><p>";
 				}
 				if($error=="登録完了"){
 					echo "<br><font size=\"6\" color=\"#da0b00\">変更が完了しました</font><p>";
