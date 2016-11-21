@@ -116,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div class="label">新パスワード</div></td>
 				<td>
 					<input type="password" name="newpw" value="<?=$newpw ?>"><br>
+					<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
 				</td>
 			</tr>
 			<tr>
@@ -123,6 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div class="label">新パスワード(確認用)</div></td>
 				<td>
 					<input type="password" name="newpw2" value="<?=$newpw2 ?>"><br>
+					<font size="2">もう一度入力をお願いします</font>
 				</td>
 			</tr>
 			<tr><td align="center" colspan="2">
