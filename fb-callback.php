@@ -4,8 +4,8 @@ require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
 session_start();
 
 $fb = new Facebook\Facebook([
-  'app_id' => 'ID', // Replace {app-id} with your app id
-  'app_secret' => 'SECRET',
+  'app_id' => getenv("ID"), // Replace {app-id} with your app id
+  'app_secret' => getenv('SECRET'),
   'default_graph_version' => 'v2.5',
   ]);
 
@@ -52,7 +52,7 @@ echo '<h3>Metadata</h3>';
 var_dump($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
-$tokenMetadata->validateAppId('ID'); // Replace {app-id} with your app id
+$tokenMetadata->validateAppId(getenv("ID")); // Replace {app-id} with your app id
 // If you know the user ID this access token belongs to, you can validate it here
 //$tokenMetadata->validateUserId('123');
 $tokenMetadata->validateExpiration();
