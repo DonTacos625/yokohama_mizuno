@@ -195,16 +195,16 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			echo "</div></body></html>";
 			exit;
 		}
-		if($error=="評価完了"){
-			echo "評価が正常に送信されました。";
-			echo "<a href='https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
-			echo "</div></body></html>";
-			exit;
-		}
 		?>
 		<div id="contents">
 			<?php
 			require_once('left.php');
+			if($error=="評価完了"){
+				echo "評価が正常に送信されました。<br>";
+				echo "<a href='https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
+				echo "</div></body></html>";
+				exit;
+			}
 			?>
 			<div id="main">
 				<div class="contentswrap">
