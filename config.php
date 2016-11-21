@@ -1,5 +1,5 @@
 <?php
-require_once("Facebook/autoload.php");
+require_once("./Facebook/autoload.php");
 
 $fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace {app-id} with your app id
