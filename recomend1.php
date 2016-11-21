@@ -9,7 +9,7 @@ $my_no = $_SESSION["my_no"];
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>スポット推薦</title>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>

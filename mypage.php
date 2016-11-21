@@ -47,7 +47,7 @@
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>マイページ</title>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 	</script>
