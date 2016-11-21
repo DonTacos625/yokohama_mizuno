@@ -62,7 +62,7 @@ if(isset($_SESSION["my_no"])){
 
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
-	<title>地域情報</title>
+	<title><?php echo $spot_name?>詳細情報</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 

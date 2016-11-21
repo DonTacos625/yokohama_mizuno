@@ -32,6 +32,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
+	<title><?php
+		if($spot_category == 1)
+			echo "飲食 スポット一覧";
+		else if($spot_category == 2)
+			echo "ショッピング スポット一覧";
+		else if($spot_category == 3)
+			echo "テーマパーク・公園 スポット一覧";
+		else if($spot_category == 4)
+			echo "名所・史跡 スポット一覧";
+		else if($spot_category == 5)
+			echo  "芸術・博物館スポット一覧";
+		else
+			echo "その他";
+		?></title>
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">

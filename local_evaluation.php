@@ -189,8 +189,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	<div id="page">
 		<?php
 		require_once('header.php');
-		require_once('linkplace.php');
-		echo pwd_spot($spot_category,$spot_name);
 		if(strlen($error)!=0&&$error!="評価完了"){
 			echo "<br>";
 			echo $error;
@@ -203,6 +201,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			echo "</div></body></html>";
 			exit;
 		}
+		require_once('linkplace.php');
+		echo pwd_spot($spot_category,$spot_name);
 		?>
 		<div id="contents">
 			<?php
