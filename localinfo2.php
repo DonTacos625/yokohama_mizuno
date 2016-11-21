@@ -12,14 +12,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//Postされた値
 	$c_check = json_encode($_POST['cate'], JSON_NUMERIC_CHECK|JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
-
 	if($c_check==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
-		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name FROM localinfo WHERE spot_category in ($1) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
-		$array = array($c_check);
-		$pgsql->query($sql,$array);
-		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
+		$url = "https://study-yokohama-sightseeing.herokuapp.com/localinfo.json";
+		$json = file_get_contents($url);
+		$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+		$arr = json_decode($json,true);
+
+		if ($arr === NULL) {
+   		return;
+		}else{
+      $json_count = count($arr["items"]);
+      $spot_pk = array();
+      $spot_category = array();
+      $spot_name = array();
+      for($i=$json_count-1;$i>=0;$i--){
+          $spot_pk[] = $arr["items"][$i]["pk"];
+          $spot_category[] = $arr["items"][$i]["spot_category"];
+          $spot_name[] = $arr["items"][$i]["spot_name"];
+      }
+		}
 	}
 }else{
 	if(!isset($_SESSION["my_no"])){
@@ -225,9 +238,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				<div class ="contentswrap">-->
 				<table id="table5932" border="1">
 					<?php
-					$num = count($PlaceTable);
+					//$num = count($PlaceTable);
 					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
-					for($i=0;$i<$num;$i=$i+3){
+					/*for($i=0;$i<$num;$i=$i+3){
 							echo "<tr>";
 							$spot_pk = $PlaceTable[$i]['pk'];
 							echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i]['spot_name']."</a></td>";
@@ -238,11 +251,37 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								$spot_pk = $PlaceTable[$i+2]['pk'];
 								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
+					}*/
+					$j=0;
+					for($i=0;$i<$json_count;$i++){
+						if($c_check==$spot_category[$i]){
+							$PlaceTable[$j]["spot_pk"] = $spot_pk[$i];
+							$PlaceTable[$j]["spot_name"] = $spot_name[$i];
+							$j++;
+						}
 					}
+					$num = count($PlaceTable);
+					for($i=0;$i<$num;$i=$i+3){
+						echo "<tr>";
+						$spot_pk = $PlaceTable[$i]['pk'];
+						echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i]['spot_name']."</a></td>";
+							if($PlaceTable[$i+1]["spot_name"]!=NULL)
+								$spot_pk = $PlaceTable[$i+1]['pk'];
+								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+1]['spot_name']."</a></td>";
+							if($PlaceTable[$i+2]["spot_name"]!=NULL)
+								$spot_pk = $PlaceTable[$i+2]['pk'];
+								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
+							echo "</tr>";
+					}
+
+
+
+
+
 					?>
 				</table>
 				<br>
-					<p>マーカーの凡例
+					<!--<p>マーカーの凡例-
 						<table id="table5932" border="1">
 							<tr>
 								<td><img src="./marker/purple.png">飲食</td>
@@ -255,9 +294,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								<td><img src="./marker/blue.png">その他</td>
 							</tr>
 						</table>
-						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --><!--</style>
 						<br>
-					</p>
+					</p>-->
 				</div>
 			</div>
 		</div>
