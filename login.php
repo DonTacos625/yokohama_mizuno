@@ -5,7 +5,7 @@ session_start();
 $fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace {app-id} with your app id
   'app_secret' => getenv('SECRET'),
-  'default_graph_version' => 'v2.5',
+  'default_graph_version' => 'v2.7',
   ]);
 $helper = $fb->getRedirectLoginHelper();
 
