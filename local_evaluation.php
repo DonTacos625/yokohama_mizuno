@@ -145,6 +145,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		if($_GET['pk']!=NULL){
 			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 			if(preg_match('/^([0-9])/', $pk)){
+				echo $pk;
 				$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);

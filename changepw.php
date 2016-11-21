@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$sql = "UPDATE friendinfo SET pw=$1 WHERE no=$2";
 			$array = array($newpw,$my_no);
 			$pgsql->query($sql,$array);
-			$error = "登録が完了しました<br>";
 		}else{
 			$error = "旧パスワードが一致しません<br>";
 		}
@@ -89,10 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
-				if($error != "登録が完了しました."){
+				if(strlen($error)>0){
 					echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 				}else{
-					echo "<br>登録が完了しました";
+					echo "<br><font size=\"6\" color=\"#da0b00\">変更が完了しました</font><p>";
 					echo "</dvi></dvi></div></body></html>";
 					exit;
 				}
