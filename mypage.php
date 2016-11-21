@@ -1,12 +1,44 @@
 <?php
 	//======================================================================
-	//  ■：テンプレート
+	//  ■：マイページ mypage.php
 	//======================================================================
 	session_start(); //セッションスタート
 	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 	$pgsql = new PostgreSQL;
-	if(isset($_SESSION["my_no"]))
-		$my_no = $_SESSION["my_no"];
+
+	if ($_SERVER["REQUEST_METHOD"]=="POST"){
+		$menu = htmlspecialchars($_POST["menu"], ENT_QUOTES);	//menu番号
+
+		if($menu==1){
+			header('Location: https://websitetest1234.herokuapp.com/fb_register.php');
+			exit;
+		}
+		if($menu==2){
+			header('Location: https://websitetest1234.herokuapp.com/register_group.php');
+			exit;
+		}
+		if($menu==3){
+			header('Location: https://websitetest1234.herokuapp.com/changepw.php');
+			exit;
+		}
+		if($menu==4){
+			if(isset($_SESSION["my_no"])&&$_SESSION["anq"]==0){
+				$sql="UPDATE friendinfo SET anq=$1 WHERE no=$2";
+				$array = array(1,$_SESSION["my_no"]);
+				$pgsql -> query($sql,$array);
+				$_SESSION["anq"]=1;
+				if($_SESSION["anq"]==1){
+					header('Location: https://websitetest1234.herokuapp.com/changepw.php');
+					exit;
+				}
+			}
+		}
+	}else{
+		if(isset($_SESSION["my_no"]))
+			$my_no = $_SESSION["my_no"];
+	}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,17 +78,36 @@
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
 					<table align="center" border="0" cellspacing="3" cellpadding="3">
+					<form method="post" action="<?=$_SERVER["PHP_SELF"]?>">
 						<tr>
 							<div class="label2" align="center">メニューを選んでください</div>
 						</tr>
 					<tr>
-						<td>
-							<form action="" onsubmit="with(this)for(i=0;i&lt;s.length;i++)if(s[i].checked)location.href=s[i].value;return!1">
+							<p>
+								<input type="radio" name="cate" value="1" checked> 飲食<br>
+								<input type="radio" name="cate" value="2"> ショッピング<br>
+								<input type="radio" name="cate" value="3"> テーマパーク・公園<br>
+								<input type="radio" name="cate" value="4"> 名所・史跡<br>
+								<input type="radio" name="cate" value="5"> 芸術・博物館<br>
+								<input type="radio" name="cate" value="6"> その他<br>
+							</p>
+						</ul>
+						<ul>
+						<p>
+								<input type="submit" name="Submit" value=" 送信 ">
+						</p>
+						</ul>
+					</form>
 							<b>
-								<label><input type="radio" name="s" value="./fb_register.php">個人情報編集</label>
+								<label><input type="radio" name="menu" value="1" checked>個人情報編集</label>
 								<br><br>
-								<label><input type="radio" name="s" value="./register_group.php">グループ編集</label>
-								<?php if(!isset($_SESSION["fb"])){echo "<br><br><label><input type='radio' name='s' value='./changepw.php'>パスワード変更</label>";}?>
+								<label><input type="radio" name="menu" value="2">グループ編集</label>
+								<?php
+								if(!isset($_SESSION["fb"]))
+									echo "<br><br><label><input type='radio' name='menu' value='3'>パスワード変更</label>";
+								if($_SESSION["anq"]==0)
+									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える</label>";
+								?>
 								<br><br>
 								<input type="submit" value="送信" style="font-weight:bold">
 							</b>

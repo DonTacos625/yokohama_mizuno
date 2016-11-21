@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //--------------------------------
 	// □ 入力内容チェック
 	//--------------------------------
-	$sql="SELECT no,age,gender FROM friendinfo WHERE id=$1";
+	$sql="SELECT no,age,gender,anq FROM friendinfo WHERE id=$1";
 	$stl = array($usr_id);
 	$pgsql->query($sql,$stl); //検索
 	$row = $pgsql->fetch();
@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["gender"] = $row['gender'];
 		$_SESSION["age"] = $row['age'];
 		$_SESSION["fb"] = 1;
+		$_SESSION["anq"] = $row['anq'];
 	}
 	if (strlen($usr_id)==0){$error = "ユーザIDが未入力です";}
 	if (strlen($error)==0){
@@ -55,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			// データを追加する
 			$_SESSION["my_no"] = $no;
 			$_SESSION["fb"] = 1;
-			$sql = "INSERT INTO friendinfo(no,id) VALUES($1,$2)";
-			$array = array($no,$usr_id);
+			$sql = "INSERT INTO friendinfo(no,id,anq) VALUES($1,$2,$3)";
+			$array = array($no,$usr_id,0);
 			$pgsql->query($sql,$array);
 		}
 		//$_SESSION["my_no"] = $row['no'];

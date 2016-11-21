@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
-			$sql = "INSERT INTO friendinfo(no,id,pw) VALUES($1,$2,$3)";
-			$array = array($no,$usr_id,$usr_pw);
+			$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
+			$array = array($no,$usr_id,$usr_pw,0);
 			$pgsql->query($sql,$array);
 		}
 		$error = "登録が完了しました";
@@ -122,6 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div class="label">確認用パスワード</div></td>
 				<td>
 					<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
+					<font size="2">もう一度入力をお願いします</font>
 				</td>
 			</tr>
 			<tr><td align="center" colspan="2">

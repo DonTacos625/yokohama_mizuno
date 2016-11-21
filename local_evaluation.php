@@ -145,7 +145,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		if($_GET['pk']!=NULL){
 			$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 			if(preg_match('/^([0-9])/', $pk)){
-				echo $pk;
 				$sql = "SELECT spot_visited,spot_category,spot_name,spot_eval FROM localinfo WHERE pk=$1";
 				$array = array($pk);
 				$pgsql -> query($sql,$array);
@@ -190,13 +189,16 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	<div id="page">
 		<?php
 		require_once('header.php');
+		require_once('linkplace.php');
+		echo pwd("local_evaluation");
 		if(strlen($error)!=0&&$error!="評価完了"){
+			echo "<br>";
 			echo $error;
 			echo "</div></body></html>";
 			exit;
 		}
 		if($error=="評価完了"){
-			echo "評価が正常に送信されました。";
+			echo "<br>評価が正常に送信されました。<br>";
 			echo "<a href='https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
 			echo "</div></body></html>";
 			exit;

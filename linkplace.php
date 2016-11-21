@@ -58,15 +58,15 @@
 			return $toppagetag.$arrow.$localinfoname;
 		if($url == $localinfo21) //飲食
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo21name;
-		if($url == $localinfo22) //飲食
+		if($url == $localinfo22) //ショッピング
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo22name;
-		if($url == $localinfo23) //飲食
+		if($url == $localinfo23) //テーマパーク・公園
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo23name;
-		if($url == $localinfo24) //飲食
+		if($url == $localinfo24) //名所・史跡
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo24name;
-		if($url == $localinfo25) //飲食
+		if($url == $localinfo25) //芸術・博物館
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo25name;
-		if($url == $localinfo26) //飲食
+		if($url == $localinfo26) //その他
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo26name;
 		if($url == $changepw)
 			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname;
