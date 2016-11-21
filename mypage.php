@@ -82,22 +82,7 @@
 						<tr>
 							<div class="label2" align="center">メニューを選んでください</div>
 						</tr>
-					<tr>
-							<p>
-								<input type="radio" name="cate" value="1" checked> 飲食<br>
-								<input type="radio" name="cate" value="2"> ショッピング<br>
-								<input type="radio" name="cate" value="3"> テーマパーク・公園<br>
-								<input type="radio" name="cate" value="4"> 名所・史跡<br>
-								<input type="radio" name="cate" value="5"> 芸術・博物館<br>
-								<input type="radio" name="cate" value="6"> その他<br>
-							</p>
-						</ul>
-						<ul>
-						<p>
-								<input type="submit" name="Submit" value=" 送信 ">
-						</p>
-						</ul>
-					</form>
+						<tr>
 							<b>
 								<label><input type="radio" name="menu" value="1" checked>個人情報編集</label>
 								<br><br>
@@ -109,11 +94,10 @@
 									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える</label>";
 								?>
 								<br><br>
-								<input type="submit" value="送信" style="font-weight:bold">
+								<input type="submit" value="送信">
 							</b>
-							</form>
-					</td>
-					</tr>
+						</tr>
+					</form>
 					</table>
 				</div>
 			</div>
