@@ -135,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		$sql = "UPDATE localinfo SET spot_a1=$1,spot_a2=$2,spot_a3=$3,spot_a4=$4,spot_a5=$5,spot_a6=$6,spot_a7=$7,spot_a8=$8,spot_visited=$9,spot_eval=$10 WHERE pk=$11";
 		$array = array($resultval[0],$resultval[1],$resultval[2],$resultval[3],$resultval[4],$resultval[5],$resultval[6],$resultval[7],$visited,$evaled,$pk);
 		$pgsql->query($sql,$array);
+		$error = "評価完了";
 	}else{
 		$error= "不正な文字が入力されています";
 	}
@@ -189,13 +190,15 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	<div id="page">
 		<?php
 		require_once('header.php');
-		if(strlen($error)!=0){
+		if(strlen($error)!=0&&$error!="評価完了"){
 			echo $error;
 			echo "</div></body></html>";
 			exit;
-		}else{
+		}
+		if($error=="評価完了"){
 			echo "評価が正常に送信されました。";
 			echo "<a href='https://websitetest1234.herokuapp.com/localinfo3.php?pk=".$pk."'>観光スポット詳細ページへ戻る</a>";
+			echo "</div></body></html>";
 			exit;
 		}
 		?>
