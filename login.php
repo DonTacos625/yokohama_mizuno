@@ -5,11 +5,11 @@ session_start();
 $fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace {app-id} with your app id
   'app_secret' => getenv('SECRET'),
-  'default_graph_version' => 'v2.5',
+  'default_graph_version' => 'v2.7',
   ]);
 $helper = $fb->getRedirectLoginHelper();
 
-$permissions = NULL; // Optional permissions
+$permissions = ['email']; // Optional permissions
 
 $loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php', $permissions);
 //$loginUrl = $helper->getLoginUrl('https://websitetest1234.herokuapp.com/fb-callback.php',$permissions);
