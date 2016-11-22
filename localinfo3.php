@@ -64,9 +64,20 @@ if(isset($_SESSION["my_no"])){
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
 	<title><?php echo $spot_name?> 詳細情報</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="myThumbnail.js"></script>
 </head>
 
 <body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".thumbnails img").MyThumbnail({ 
+		thumbWidth:100, 
+		thumbHeight:100,
+		bShowPointerCursor:true 
+	}); 
+});
+</script>
 	<div id="page">
 		<?php
 		require_once('header.php');
@@ -89,12 +100,11 @@ if(isset($_SESSION["my_no"])){
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
-							<?php
+							<div class="thumbnails"><?php
 							if($spot_pic!=NULL){
-								require_once('thumbnail.php');
-								echo "<img src='".thumbnail($spot_pic)."' alt='観光スポット写真'>";
+								echo "<img src=".$spot_pic." alt='観光スポットの画像'>";
 							}
-							?>
+							?></div>
 							</td>
 						</tr>
 						<tr>
