@@ -97,7 +97,10 @@ if(isset($_SESSION["my_no"])){
 								$original_file = "https://study-yokohama-sightseeing.herokuapp.com/".$spot_pic;
 								echo $original_file;
 								// getimagesize関数 オリジナル画像の横幅・高さを取得
-								list($original_width, $original_height) = getimagesize($original_file);
+								$original = getimagesize($original_file);
+								$original_width = $original[0];
+								$original_height = $original[1];
+								//list($original_width, $original_height) = getimagesize($original_file);
 
 								// サムネイルの横幅を指定
 								$thumb_width = 200;
