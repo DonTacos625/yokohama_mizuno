@@ -47,20 +47,26 @@ $(function(){
 <div class="subinfo">
 <div class="label"><h2 id="index">目次</h2></div>
 <ul>
-	<li><a href="#1">ユーザー登録</a></li>
-	<li><a href="#2">ユーザ詳細情報入力</a></li>
+	<li><a href="#1">ユーザ登録</a></li>
+	<ul>
+		<li><a href="#11">SNSを使わずに登録</a></li>
+		<li><a href="#12">マイページ</a></li>
+	</ul>
+	<li><a href="#2"></a></li>
 	<li><a href="#3"></a></li>
-	<li><a href="#4">section4</a></li>
-	<li><a href="#5">section5</a></li>
-	<li><a href="#6">section6</a></li>
+	<li><a href="#4"></a></li>
+	<li><a href="#5">section4</a></li>
+	<li><a href="#6">section5</a></li>
+	<li><a href="#7">section6</a></li>
 </ul>
 </div>
 </div>
 <div id="main">
-<p>当サイトの使い方</p>
+<h1>当サイトの使い方</h1>
 <div id="1">
 	<h2>ユーザ登録</h2>
 	方法は２通りあります。<br>
+	<div id="11">
 	<h3>SNSを使わずに登録</h3>
 	<ol>
 	<li>ページ上部のログインボタンを押下</li>
@@ -75,6 +81,8 @@ $(function(){
 	<li>「登録が完了しました」で登録が完了です。<br>再度ログイン画面よりログインをお願いします。</li>
 	<li>なお、初回ログイン時は自動的に<a href="#2">会員詳細情報登録</a>ページに遷移します。</li>
 	</ol>
+	</div>
+	<div id="12">
 	<h3>SNSをつかって登録する</h3>
 	<ol>
 	<li>Facebookを使ったユーザ登録となります。</li>
@@ -85,7 +93,7 @@ $(function(){
 	</ol>
 	<a class="button" href="#index">▲ 目次に戻る</a>
 </div>
-
+</div>
 <div id="2">
 	<h2>ユーザ詳細情報入力ページ</h2>
 	<h3>個人ステータスの登録</h3>
