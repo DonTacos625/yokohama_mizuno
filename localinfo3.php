@@ -119,10 +119,6 @@ if(isset($_SESSION["my_no"])){
 
 								// サムネイル画像の出力
 								imagejpeg($thumb_image);
-
-								// 画像リソースを破棄
-								imagedestroy($original_image);
-								imagedestroy($thumb_image);
 							}
 							?></div>
 							</td>
