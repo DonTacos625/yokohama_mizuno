@@ -92,7 +92,7 @@ if(isset($_SESSION["my_no"])){
 						<tr>
 							<td align='center' colspan='2'>
 							<?php
-							if($spot_pic!=NULL){
+							if($spot_pic!=NULL){/*
 								// オリジナル画像のファイルパスを指定
 								$original_file = "https://study-yokohama-sightseeing.herokuapp.com/".$spot_pic;
 								echo $original_file;
@@ -121,7 +121,7 @@ if(isset($_SESSION["my_no"])){
 								                 $original_width, $original_height);
 								echo "ok3";
 								// サムネイル画像の出力
-								imagejpeg($thumb_image);
+								imagejpeg($thumb_image);*/
 							}
 							?>
 							</td>

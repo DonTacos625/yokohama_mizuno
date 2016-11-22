@@ -5,7 +5,7 @@
 </head>
 <body>
 <div id="page">
-	<div class = label3><a href="./mypage_s.php">スマートフォン用ページ</a></div>
+	<!--<div class = label3><a href="./mypage_s.php">スマートフォン用ページ</a></div>-->
 	<div id="menu">
 			<ul class="menu_f02">
 			<?php
