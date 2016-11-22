@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       $spot_name = array();
       for($i=$json_count-1;$i>=0;$i--){
           $spot_pk[] = $arr["items"][$i]["pk"];
-          $spot_category[] = $arr["items"][$i]["spot_category"];
+          $spot_category[] = intval($arr["items"][$i]["spot_category"]);
           $spot_name[] = $arr["items"][$i]["spot_name"];
       }
 		}
