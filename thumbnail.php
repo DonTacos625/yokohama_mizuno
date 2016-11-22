@@ -1,6 +1,7 @@
 <?php
 // コンテンツがjpeg画像であることをブラウザにお知らせ 
 function thumbnail($image){
+header ('Content-Type: image/jpeg');
 
 // オリジナル画像のファイルパスを指定
 $original_file = $image;
@@ -25,10 +26,11 @@ imagecopyresized($thumb_image, $original_image, 0, 0, 0, 0,
                  $thumb_width, $thumb_height,
                  $original_width, $original_height);
 
+// サムネイル画像の出力
+imagejpeg($thumb_image);
+
 // 画像リソースを破棄
 imagedestroy($original_image);
-
-// サムネイル画像の出力
-return imagejpeg($thumb_image);
+imagedestroy($thumb_image);
 }
 ?>
