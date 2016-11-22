@@ -251,7 +251,6 @@ $error="";
 								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
 					}*/
-					var_dump($PlaceTable);
 					$num = count($PlaceTable);
 					for($i=0;$i<$num;$i=$i+3){
 						echo "<tr>";

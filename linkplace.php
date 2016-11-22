@@ -79,19 +79,31 @@
 		$localinfo ="localinfo";
 		$localinfotag = '<a href="'.$localinfo.'.php">観光スポットカテゴリー選択</a>';
 
-		if($category == 1)
+		if($category == 1){
 			$category_name ="飲食";
-		else if($category == 2)
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=1">'.$category_name.'</a>';
+		}
+		else if($category == 2){
 			$category_name ="ショッピング";
-		else if($category == 3)
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=2">'.$category_name.'</a>';
+		}
+		else if($category == 3){
 			$category_name ="テーマパーク・公園";
-		else if($category == 4)
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=3">'.$category_name.'</a>';
+		}
+		else if($category == 4){
 			$category_name ="名所・史跡";
-		else if($category == 5)
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=4">'.$category_name.'</a>';
+		}
+		else if($category == 5){
 			$category_name = "芸術・博物館";
-		else
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=5">'.$category_name.'</a>';
+		}
+		else{
 			$category_name ="その他";
+			$category_tag ='<a href=https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=6">'.$category_name.'</a>';
+		}
 
-		return $toppagetag.$arrow.$localinfotag.$arrow.$category_name.$arrow.$name;
+		return $toppagetag.$arrow.$localinfotag.$arrow.$category_tag.$arrow.$name;
 	}
 ?>
