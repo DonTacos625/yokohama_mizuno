@@ -253,7 +253,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							echo "</tr>";
 					}*/
 					$j=0;
-
+					echo count($spot_pk);
+					var_dump($spot_pk);
 					for($i=0;$i<count($spot_pk);$i++){
 						if($c_check==$spot_category[$i]){
 							$PlaceTable[$j]["spot_pk"] = $spot_pk[$i];
