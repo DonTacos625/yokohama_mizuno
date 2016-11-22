@@ -263,7 +263,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<?php
 					for($i=0;$i<5;$i++){
 						echo "<tr><td>".$i.")".$result10place[$i]["spot_name"]."</td>";
-						echo "<td>".$i+5.")".$result10place[$i+5]["spot_name"]."</td></tr>";
+						$num=$i+5;
+						echo "<td>".$num.")".$result10place[$i+5]["spot_name"]."</td></tr>";
 					}
 					?>
 				</table>
