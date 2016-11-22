@@ -117,7 +117,7 @@ if(isset($_SESSION["my_no"])){
 								                 $original_width, $original_height);
 								echo "ok3";
 								// サムネイル画像の出力
-								echo imagejpeg($thumb_image);
+								imagejpeg($thumb_image);
 							}
 							?>
 							</td>
