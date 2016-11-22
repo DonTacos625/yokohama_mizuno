@@ -98,6 +98,7 @@ if(isset($_SESSION["my_no"])){
 								echo $original_file;
 								// getimagesize関数 オリジナル画像の横幅・高さを取得
 								$original = getimagesize($original_file);
+								var_dump($original);
 								$original_width = $original[0];
 								$original_height = $original[1];
 								//list($original_width, $original_height) = getimagesize($original_file);

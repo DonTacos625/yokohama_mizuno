@@ -43,39 +43,46 @@
 		$changepw = "changepw";
 		$changepwname = "パスワード変更";
 
+		$howtouse = "$howtouse";
+		$howtousename = "使い方";
+		$howtousetag = '<a href="https://study-yokohama-sightseeing.herokuapp.com/howtouse.php">使い方はこちら</a>';
+
 		$br = '<br>';
 		$arrow = ' > ';
 
 		if($url == $mypage) //マイページ
 			return $toppagetag.$arrow.$mypagename;
 		if($url == $fbregister) //利用者詳細情報
-			return $toppagetag.$arrow.$mypagetag.$arrow.$fbregistername;
+			return $toppagetag.$arrow.$mypagetag.$arrow.$fbregistername.$br.$howtousetag;
 		if($url == $recomend1) //推薦項目選択
-			return $toppagetag.$arrow.$recomend1name;
+			return $toppagetag.$arrow.$recomend1name.$br.$howtousetag;
 		if($url == $recomend2) //推薦一覧
-			return $toppagetag.$arrow.$recomend1tag.$arrow.$recomend2name;
+			return $toppagetag.$arrow.$recomend1tag.$arrow.$recomend2name.$br.$howtousetag;
 		if($url == $localinfo) //カテゴリー選択
-			return $toppagetag.$arrow.$localinfoname;
+			return $toppagetag.$arrow.$localinfoname.$br.$howtousetag;
 		if($url == $localinfo21) //飲食
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo21name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo21name.$br.$howtousetag;
 		if($url == $localinfo22) //ショッピング
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo22name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo22name.$br.$howtousetag;
 		if($url == $localinfo23) //テーマパーク・公園
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo23name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo23name.$br.$howtousetag;
 		if($url == $localinfo24) //名所・史跡
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo24name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo24name.$br.$howtousetag;
 		if($url == $localinfo25) //芸術・博物館
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo25name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo25name.$br.$howtousetag;
 		if($url == $localinfo26) //その他
-			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo26name;
+			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo26name.$br.$howtousetag;
 		if($url == $changepw)
-			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname;
+			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname.$br.$howtousetag;
+		if($url == $howtouse)
+			return $toppagetag.$arrow.$howtousename;
 	}
 	function pwd_spot($category,$name){
 		$arrow = ' > ';
+		$br = '<br>';
 		
 		$toppagetag = "<a href='./index.php'>トップページ</a>";
-
+		$howtousetag = '<a href="https://study-yokohama-sightseeing.herokuapp.com/howtouse.php">使い方はこちら</a>';
 		$localinfo ="localinfo";
 		$localinfotag = '<a href="'.$localinfo.'.php">観光スポットカテゴリー選択</a>';
 
@@ -104,6 +111,6 @@
 			$category_tag ='<a href="https://study-yokohama-sightseeing.herokuapp.com/localinfo2.php?c_check=6">'.$category_name.'</a>';
 		}
 
-		return $toppagetag.$arrow.$localinfotag.$arrow.$category_tag.$arrow.$name;
+		return $toppagetag.$arrow.$localinfotag.$arrow.$category_tag.$arrow.$name.$br.$howtousetag;
 	}
 ?>

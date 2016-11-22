@@ -163,7 +163,7 @@
 	  		</td>
 	  	</tr>
 	  </table>
-  	<br>
+  	
   		<table cellpadding="5">
   			<form action="./login_submit.php" method="POST">
   				<tr>
@@ -181,6 +181,23 @@
   		</table>
   		<br><br>
   		<table>
+  		<tr>
+	  		<td>
+	  			<div class="label" align="center">新規利用登録</div>
+	  		</td>
+	  	</tr>
+	  	</table>
+	  	<table>
+  			<tr>
+  				<td>
+  					<a href="./register_usr.php"><font size = 4>登録はこちらから</font></a>
+  				</td>
+  			</tr>
+  		</table>
+  		<br><br>
+	  	<table>
+	  	<tr><td>
+  		<table>
   			<tr>
   				<td>
   					<div class="label" align="center">SNS連帯</div>
@@ -195,19 +212,7 @@
   				</td>
   			</tr>
   		</table>
-  		<table>
-  			<tr>
-  				<td>
-  					<a href="./register_usr.php"><font size = 4>新規利用登録(Sign up)</font></a>
-  				</td>
-  			</tr>
-  				<br><br>
-  				<tr>
-  				<td>
-  					<a href="./setsumei.pdf"><font size = 4>利用方法の説明はこちら(How to use)</font></a>
-  				</td>
-  			</tr>
-  		</table>
+
   	</div>
   </div>
 </body>
