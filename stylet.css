@@ -5,15 +5,15 @@ padding:0;
 }
 
 
-body, /*{
+body {
 	margin: 0;
 	color: #333;
-	text-align: center;
+	/*text-align: center;*/
 	background-color: #FDFDFD;
-	background-image: url(img/back01.jpg);
+	/*background-image: url(img/back01.jpg);*/
 	background-position: top;
 	background-repeat: repeat-x;
-}*/
+}
 
 
 /* 文字サイズ */
@@ -49,7 +49,7 @@ ul,ol,dl{
 
 /* ========================================  #page ページ外枠 */
 #page {
-/*	width: 950px;*/
+	width: 950px;
 	margin: 0px auto;
 	text-align: left;
 }
@@ -218,8 +218,8 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 #viewDiv {
 			padding: 0;
 			margin: 0;
-			width: 30%;
-			height:30%;
+			width: 50%;
+			height:400px;
 		}
 
 
