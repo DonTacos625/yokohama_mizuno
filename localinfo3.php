@@ -71,7 +71,7 @@ if(isset($_SESSION["my_no"])){
 <body>
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".thumbnails img").MyThumbnail({ 
+	$(".thumbnails img").myThumbnail({ 
 		thumbWidth:100, 
 		thumbHeight:100,
 		bShowPointerCursor:true 
