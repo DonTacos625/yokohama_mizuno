@@ -95,7 +95,7 @@ if(isset($_SESSION["my_no"])){
 							<?php
 							if($spot_pic!=NULL){
 								//echo "<img src='".$spot_pic."' alt='".$spot_name."' width='300' height='200'>";
-								echo "<img src='http://farm6.staticflickr.com/5460/7060782675_f127143c3a_n.jpg' width='320' height='239' alt='Untitled'>";
+								echo "<img src='".$spot_pic."' alt='Untitled'>";
 							}
 							?></div>
 							</td>
