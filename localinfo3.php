@@ -91,11 +91,11 @@ if(isset($_SESSION["my_no"])){
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
-							<div class="thumbnails"><?php
+							<?php
 							if($spot_pic!=NULL){
-								echo "<img src=".$spot_pic.">";
+								echo "<img src='".$spot_pic."' alt='".$spot_name."' width='300' height='200'>";
 							}
-							?></div>
+							?>
 							</td>
 						</tr>
 						<tr>
