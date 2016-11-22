@@ -91,7 +91,6 @@ if(isset($_SESSION["my_no"])){
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
-							<div class="thumbnails">
 							<?php
 							if($spot_pic!=NULL){
 								// オリジナル画像のファイルパスを指定
@@ -118,9 +117,9 @@ if(isset($_SESSION["my_no"])){
 								                 $original_width, $original_height);
 
 								// サムネイル画像の出力
-								imagejpeg($thumb_image);
+								echo "<img src='".imagejpeg($thumb_image)."' alt='観光スポット'>";
 							}
-							?></div>
+							?>
 							</td>
 						</tr>
 						<tr>
