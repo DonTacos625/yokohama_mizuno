@@ -18,9 +18,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$url = "./localinfo.json";
 		$json = file_get_contents($url);
 		$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-		echo $json;
 		$arr = json_decode($json,true);
-		var_dump($arr);
 
 		if ($arr == NULL) {
    		echo "なにもないよ！";
@@ -262,6 +260,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							$j++;
 						}
 					}
+					var_dump($PlaceTable);
 					$num = count($PlaceTable);
 					for($i=0;$i<$num;$i=$i+3){
 						echo "<tr>";
