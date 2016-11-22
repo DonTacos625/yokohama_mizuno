@@ -93,7 +93,7 @@ if(isset($_SESSION["my_no"])){
 							<td align='center' colspan='2'>
 							<div class="thumbnails"><?php
 							if($spot_pic!=NULL){
-								echo "<img src=".$spot_pic." alt='観光スポットの画像'>";
+								echo "<img src=".$spot_pic.">";
 							}
 							?></div>
 							</td>
