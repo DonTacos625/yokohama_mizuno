@@ -151,6 +151,8 @@
 			// ■ヘッダーの取り込み
 			//----------------------------------------
 		require_once("./header.php");
+		require_once("./linkplace.php");
+		echo pwd("login");
 		?>
 	</div>
 	</div>

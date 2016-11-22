@@ -43,7 +43,10 @@
 		$changepw = "changepw";
 		$changepwname = "パスワード変更";
 
-		$howtouse = "$howtouse";
+		$login = "login";
+		$loginname = 'ログインページ';
+
+		$howtouse = "howtouse";
 		$howtousename = "使い方";
 		$howtousetag = '<a href="https://study-yokohama-sightseeing.herokuapp.com/howtouse.php">使い方はこちら</a>';
 
@@ -74,13 +77,15 @@
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo26name.$br.$howtousetag;
 		if($url == $changepw)
 			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname.$br.$howtousetag;
-		if($url == $howtouse)
+		if($url == $howtouse) //使い方
 			return $toppagetag.$arrow.$howtousename;
+		if($url == $login) //
+			return $toppagetag.$arrow.$loginname;
 	}
 	function pwd_spot($category,$name){
 		$arrow = ' > ';
 		$br = '<br>';
-		
+
 		$toppagetag = "<a href='./index.php'>トップページ</a>";
 		$howtousetag = '<a href="https://study-yokohama-sightseeing.herokuapp.com/howtouse.php">使い方はこちら</a>';
 		$localinfo ="localinfo";
