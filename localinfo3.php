@@ -94,7 +94,7 @@ if(isset($_SESSION["my_no"])){
 							<?php
 							if($spot_pic!=NULL){
 								// オリジナル画像のファイルパスを指定
-								$original_file = $spot_pic;
+								$original_file = "https://study-yokohama-sightseeing.herokuapp.com/".$spot_pic;
 								echo $original_file;
 								// getimagesize関数 オリジナル画像の横幅・高さを取得
 								list($original_width, $original_height) = getimagesize($original_file);
