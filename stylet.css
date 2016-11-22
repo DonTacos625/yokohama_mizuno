@@ -5,15 +5,15 @@ padding:0;
 }
 
 
-body {
+body, /*{
 	margin: 0;
 	color: #333;
-	/*text-align: center;*/
+	text-align: center;
 	background-color: #FDFDFD;
-	/*background-image: url(img/back01.jpg);*/
+	background-image: url(img/back01.jpg);
 	background-position: top;
 	background-repeat: repeat-x;
-}
+}*/
 
 
 /* 文字サイズ */
