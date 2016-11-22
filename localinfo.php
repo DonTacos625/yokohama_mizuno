@@ -38,16 +38,16 @@ $my_no = $_SESSION["my_no"];
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
-					<form name="category" method="post" action="./localinfo2.php">
+					<form name="category" method="get" action="./localinfo2.php">
 						<ul><h4>カテゴリーをお選びください。</h4></ul>
 						<ul>
 							<p>
-								<input type="radio" name="cate" value="1" checked> 飲食<br>
-								<input type="radio" name="cate" value="2"> ショッピング<br>
-								<input type="radio" name="cate" value="3"> テーマパーク・公園<br>
-								<input type="radio" name="cate" value="4"> 名所・史跡<br>
-								<input type="radio" name="cate" value="5"> 芸術・博物館<br>
-								<input type="radio" name="cate" value="6"> その他<br>
+								<input type="radio" name="c_check" value="1" checked> 飲食<br>
+								<input type="radio" name="c_check" value="2"> ショッピング<br>
+								<input type="radio" name="c_check" value="3"> テーマパーク・公園<br>
+								<input type="radio" name="c_check" value="4"> 名所・史跡<br>
+								<input type="radio" name="c_check" value="5"> 芸術・博物館<br>
+								<input type="radio" name="c_check" value="6"> その他<br>
 							</p>
 						</ul>
 						<ul>

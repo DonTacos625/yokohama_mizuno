@@ -7,39 +7,38 @@ $my_no = $_SESSION["my_no"];
 ?>
 <?php
 $error="";
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-
 	//Postされた値
-	$c_check = json_encode($_POST['cate'], JSON_NUMERIC_CHECK|JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+	if(isset($_SESSION["my_no"])){
+		$c_check=json_decode(json_encode($_GET['c_check'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
+		if($_GET['pk']!=NULL){
+			if(preg_match('/^([1-6])/', $c_check)){
+				$url = "./localinfo.json";
+				$json = file_get_contents($url);
+				$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+				$arr = json_decode($json,true);
 
-	if($c_check==NULL){
-		$error = "カテゴリーが選択されていません";
-	}else{
-		$url = "./localinfo.json";
-		$json = file_get_contents($url);
-		$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-		$arr = json_decode($json,true);
-
-		if ($arr == NULL) {
-   		echo "なにもないよ！";
+				if ($arr == NULL) {
+	   			echo "なにもないよ！";
+				}else{
+	     		$json_count = count($arr["items"]);
+	     		$PlaceTable = array();
+	     		$j=0;
+	      	for($i=0;$i<$json_count;$i++){
+	        	if($c_check==$arr["items"][$i]["spot_category"]){
+	        		$PlaceTable[$j]["pk"] = $arr["items"][$i]["pk"];
+		         	$PlaceTable[$j]["spot_name"] = $arr["items"][$i]["spot_name"];
+		         	$j++;
+		         }
+		      }
+		    }
+			}else{
+				$error = "不正なアクセスです";
+			}
 		}else{
-      $json_count = count($arr["items"]);
-      $spot_pk = array();
-      $spot_category = array();
-      $spot_name = array();
-      for($i=$json_count-1;$i>=0;$i--){
-          $spot_pk[] = $arr["items"][$i]["pk"];
-          $spot_category[] = $arr["items"][$i]["spot_category"];
-          $spot_name[] = $arr["items"][$i]["spot_name"];
-      }
-		}
+		$error = "カテゴリーが選択されていません";
 	}
 }else{
-	if(!isset($_SESSION["my_no"])){
-		$error="ログインページよりログインしてください";
-	}else{
-		$error="カテゴリーの選択をお願いします";
-	}
+	$error = "ログインをお願いします";
 }
 ?>
 <!DOCTYPE html>
@@ -252,16 +251,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
 					}*/
-					$j=0;
-					echo count($spot_pk);
-					var_dump($spot_pk);
-					for($i=0;$i<count($spot_pk);$i++){
-						if($c_check==$spot_category[$i]){
-							$PlaceTable[$j]["spot_pk"] = $spot_pk[$i];
-							$PlaceTable[$j]["spot_name"] = $spot_name[$i];
-							$j++;
-						}
-					}
 					var_dump($PlaceTable);
 					$num = count($PlaceTable);
 					for($i=0;$i<$num;$i=$i+3){
@@ -276,12 +265,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
 					}
-
-
-
-
-
-					?>
+				?>
 				</table>
 				<br>
 					<!--<p>マーカーの凡例-
@@ -296,10 +280,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								<td><img src="./marker/ltblue.png">芸術・博物館</td>
 								<td><img src="./marker/blue.png">その他</td>
 							</tr>
-						</table>
-						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --><!--</style>
+							</table>
+							</p>
+						</table>-->
+						<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
 						<br>
-					</p>-->
 				</div>
 			</div>
 		</div>
