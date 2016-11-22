@@ -12,8 +12,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	//Postされた値
 	$c_check = json_encode($_POST['cate'], JSON_NUMERIC_CHECK|JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
-	var_dump($c_check);
-
 	if($c_check==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
@@ -31,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       $spot_name = array();
       for($i=$json_count-1;$i>=0;$i--){
           $spot_pk[] = $arr["items"][$i]["pk"];
-          $spot_category[] = intval($arr["items"][$i]["spot_category"]);
+          $spot_category[] = $arr["items"][$i]["spot_category"];
           $spot_name[] = $arr["items"][$i]["spot_name"];
       }
 		}
@@ -255,8 +253,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							echo "</tr>";
 					}*/
 					$j=0;
-					echo $json_count;
-					for($i=0;$i<$json_count;$i++){
+
+					for($i=0;$i<count($spot_pk);$i++){
 						if($c_check==$spot_category[$i]){
 							$PlaceTable[$j]["spot_pk"] = $spot_pk[$i];
 							$PlaceTable[$j]["spot_name"] = $spot_name[$i];
