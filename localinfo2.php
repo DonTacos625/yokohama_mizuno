@@ -58,7 +58,7 @@ $error="";
 		else
 			echo "その他";
 		?></title>
-	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+	
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
