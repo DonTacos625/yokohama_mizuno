@@ -10,7 +10,7 @@ $error="";
 	//Postされた値
 	if(isset($_SESSION["my_no"])){
 		$c_check=json_decode(json_encode($_GET['c_check'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
-		if($_GET['pk']!=NULL){
+		if($_GET['c_check']!=NULL){
 			if(preg_match('/^([1-6])/', $c_check)){
 				$url = "./localinfo.json";
 				$json = file_get_contents($url);

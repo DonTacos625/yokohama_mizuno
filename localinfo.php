@@ -52,7 +52,7 @@ $my_no = $_SESSION["my_no"];
 						</ul>
 						<ul>
 						<p>
-								<input type="submit" name="Submit" value=" 送信 ">
+								<input type="submit" name="submit" value="送信">
 						</p>
 						</ul>
 					</form>
