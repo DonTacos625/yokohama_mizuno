@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$arr = json_decode($json,true);
 
 		if ($arr === NULL) {
-   		return;
+   		echo "なにもないよ！";
 		}else{
       $json_count = count($arr["items"]);
       $spot_pk = array();
