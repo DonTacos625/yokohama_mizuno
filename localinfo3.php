@@ -112,7 +112,7 @@ if(isset($_SESSION["my_no"])){
 								$thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
 								echo "ok2";
 								// サムネイル画像の作成
-								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,å
+								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,
 								                 $thumb_width, $thumb_height,
 								                 $original_width, $original_height);
 								echo "ok3";
