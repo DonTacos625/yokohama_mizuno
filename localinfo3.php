@@ -107,16 +107,17 @@ if(isset($_SESSION["my_no"])){
 
 								// オリジナルファイルの画像リソース
 								$original_image = imagecreatefromjpeg($original_file);
-
+								echo "ok";
 								// サムネイルの画像リソース
 								$thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
-
+								echo "ok2";
 								// サムネイル画像の作成
-								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,
+								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,å
 								                 $thumb_width, $thumb_height,
 								                 $original_width, $original_height);
+								echo "ok3";
 								// サムネイル画像の出力
-								imagejpeg($thumb_image);
+								echo imagejpeg($thumb_image);
 							}
 							?>
 							</td>
