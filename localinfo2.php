@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	if($c_check==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
-		$url = "https://study-yokohama-sightseeing.herokuapp.com/localinfo.json";
+		$url = "./localinfo.json";
 		$json = file_get_contents($url);
 		$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 		$arr = json_decode($json,true);
