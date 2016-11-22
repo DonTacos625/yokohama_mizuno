@@ -95,7 +95,7 @@ if(isset($_SESSION["my_no"])){
 							if($spot_pic!=NULL){
 								// オリジナル画像のファイルパスを指定
 								$original_file = $spot_pic;
-
+								echo $original_file;
 								// getimagesize関数 オリジナル画像の横幅・高さを取得
 								list($original_width, $original_height) = getimagesize($original_file);
 
@@ -112,11 +112,11 @@ if(isset($_SESSION["my_no"])){
 								$thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
 
 								// サムネイル画像の作成
-								imagecopyresized($thumb_image, $original_image, 0, 0, 0, 0,
+								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,
 								                 $thumb_width, $thumb_height,
 								                 $original_width, $original_height);
 								// サムネイル画像の出力
-								echo imagejpeg($thumb_image);
+								imagejpeg($thumb_image);
 							}
 							?>
 							</td>
