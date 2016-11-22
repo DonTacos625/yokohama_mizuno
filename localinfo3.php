@@ -115,9 +115,8 @@ if(isset($_SESSION["my_no"])){
 								imagecopyresized($thumb_image, $original_image, 0, 0, 0, 0,
 								                 $thumb_width, $thumb_height,
 								                 $original_width, $original_height);
-
 								// サムネイル画像の出力
-								echo "<img src='".imagejpeg($thumb_image)."' alt='観光スポット'>";
+								echo imagejpeg($thumb_image);
 							}
 							?>
 							</td>
