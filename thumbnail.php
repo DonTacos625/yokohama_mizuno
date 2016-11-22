@@ -1,9 +1,10 @@
 <?php
-// コンテンツがPNG画像であることをブラウザにお知らせ 
-header ('Content-Type: image/png');
+// コンテンツがjpeg画像であることをブラウザにお知らせ 
+function thumbnail($image){
+header ('Content-Type: image/jpeg');
 
 // オリジナル画像のファイルパスを指定
-$original_file = 'images/sakura.png';
+$original_file = $image;
 
 // getimagesize関数 オリジナル画像の横幅・高さを取得
 list($original_width, $original_height) = getimagesize($original_file);
@@ -15,7 +16,7 @@ $thumb_width = 200;
 $thumb_height = round( $original_height * $thumb_width / $original_width );
 
 // オリジナルファイルの画像リソース
-$original_image = imagecreatefrompng($original_file);
+$original_image = imagecreatefromjpeg($original_file);
 
 // サムネイルの画像リソース
 $thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
@@ -25,10 +26,10 @@ imagecopyresized($thumb_image, $original_image, 0, 0, 0, 0,
                  $thumb_width, $thumb_height,
                  $original_width, $original_height);
 
-// サムネイル画像の出力
-return imagepng($thumb_image);
-
 // 画像リソースを破棄
 imagedestroy($original_image);
-imagedestroy($thumb_image);
+
+// サムネイル画像の出力
+return imagejpeg($thumb_image);
+}
 ?>

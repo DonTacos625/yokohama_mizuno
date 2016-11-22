@@ -90,8 +90,11 @@ if(isset($_SESSION["my_no"])){
 						<tr>
 							<td align='center' colspan='2'>
 							<?php
-							if($spot_pic!=NULL)
-								echo "<img src='".$spot_pic."' alt='観光スポット写真'>";
+							if($spot_pic!=NULL){
+								require_once('thumbnail.php');
+								$picture = thumbnail($spot_pic);
+								echo "<img src='".$picture."' alt='観光スポット写真'>";
+							}
 							?>
 							</td>
 						</tr>
