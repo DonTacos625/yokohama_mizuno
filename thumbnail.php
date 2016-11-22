@@ -1,7 +1,6 @@
 <?php
 // コンテンツがjpeg画像であることをブラウザにお知らせ 
 function thumbnail($image){
-header ('Content-Type: image/jpg');
 
 // オリジナル画像のファイルパスを指定
 $original_file = $image;
