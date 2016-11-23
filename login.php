@@ -5,6 +5,8 @@
 	session_start(); //セッションスタート
 	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 	$pgsql = new PostgreSQL;
+	echo "工事中です";
+	exit();
 	if(isset($_SESSION["my_no"]))
 		$my_no = $_SESSION["my_no"];
 	?>
@@ -165,7 +167,6 @@
 	  		</td>
 	  	</tr>
 	  </table>
-  	
   		<table cellpadding="5">
   			<form action="./login_submit.php" method="POST">
   				<tr>
