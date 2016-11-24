@@ -11,7 +11,7 @@ body {
 	/*text-align: center;*/
 	background-color: #FDFDFD;
 	/*background-image: url(img/back01.jpg);*/
-	background-position: top;
+	/*background-position: top;*/
 /*	background-repeat: repeat-x;*/
 }
 
@@ -59,7 +59,7 @@ ul,ol,dl{
 /* ========================================  #header 画面上部 */
 #header {
 	width: auto;
-	height: 100px;
+	height: 120px;
 	margin: 0px;
 	border-top: 1px solid #FFFFFF;
 	color: #FFFFFF;
@@ -67,12 +67,13 @@ ul,ol,dl{
 
 #pwd{
 	font-size: 13px;
+	margin: 0px 10px;
 	color: black;
 }
 
 #sitename {
 	margin: 30px 0px 0px;
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
 	color: #666666;
 }
@@ -128,7 +129,6 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #D3FBFE;
 	color: #FFFFFF;
-	background-color: #1FFFFFF;
 }
 
 
