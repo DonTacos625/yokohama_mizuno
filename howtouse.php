@@ -37,7 +37,6 @@
 		//----------------------------------------
 		require_once("./header.php");
 		?>
-		</div>
 		<?php require_once("./linkplace.php");
 		echo pwd("howtouse");
 		?>
