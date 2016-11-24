@@ -11,8 +11,8 @@ body {
 	/*text-align: center;*/
 	background-color: #FDFDFD;
 	/*background-image: url(img/back01.jpg);*/
-	/*background-position: top;
-	background-repeat: repeat-x;*/
+	background-position: top;
+	background-repeat: repeat-x;
 }
 
 
@@ -49,8 +49,8 @@ ul,ol,dl{
 
 /* ========================================  #page ページ外枠 */
 #page {
-/*	width: 950px;*/
-	margin: 0px 10px;
+	width: 950px;
+	margin: 0px auto;
 	text-align: left;
 }
 
@@ -59,20 +59,15 @@ ul,ol,dl{
 /* ========================================  #header 画面上部 */
 #header {
 	width: auto;
-	height: auto;
-	margin: 0px 10px;
+	height: 100px;
+	margin: 0px;
 	border-top: 1px solid #FFFFFF;
 	color: #FFFFFF;
-}
-#pwd{
-	color: black;
-	margin: 0px 10px;
-	font-size: 14px;
 }
 
 #sitename {
 	margin: 30px 0px 0px;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #666666;
 }
@@ -107,7 +102,7 @@ ul.menu_f02 li a{
 	width: 150px;
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #F4CC0B;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
@@ -128,6 +123,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #D3FBFE;
 	color: #FFFFFF;
+	background-color: #1FFFFFF;
 }
 
 
@@ -135,17 +131,16 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 
 /* ======================================== #contents 画面中央部 #mainとサイドメニューの外枠 */
 #contents{
-	padding: 20px 0px 20px;
-	margin: 0px 10px;
+	padding: 30px 0px 20px;
+	margin: 0px;
 }
 
 
 /* ========================================  #main ページの本文 */
 #main {
-	float: left;
-/*	width: 630px;*/
+	float: right;
+	width: 630px;
 	margin: 0px 0px 20px;
-	padding: 0px 10px;
 }
 
 #main h2 {
@@ -224,7 +219,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 			padding: 0;
 			margin: 0;
 			width: 50%;
-			height: 400px;
+			height:400px;
 		}
 
 

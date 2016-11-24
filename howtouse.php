@@ -5,7 +5,12 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+		<link href="stylephone.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 0px) and (max-width: 480px)" >
+<link href="styletablet.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 481px) and (max-width: 859px)" >
+<link href="stylet.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 860px)" >
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>使い方</title>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>

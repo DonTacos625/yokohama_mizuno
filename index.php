@@ -12,7 +12,12 @@ if(isset($_SESSION["my_no"]))
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+	<link href="stylephone.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 0px) and (max-width: 480px)" >
+<link href="styletablet.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 481px) and (max-width: 800px)" >
+<link href="stylet.css" rel="stylesheet" type="text/css"
+ media="screen and (min-width: 801px)" >
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>横浜みなとみらい観光推薦システム（工事中）</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
