@@ -159,8 +159,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		 for(var i=0;i<spot.length;i++){
 		 // First create a point geometry (this is the location of the Titanic)
 		 var point = new Point({
-		 	longitude: spot[i]["spot_lng"],
-		 	latitude: spot[i]["spot_lat"]
+		 	longitude: parseFloat(spot[i]["spot_lng"]),
+		 	latitude: parseFloat(spot[i]["spot_lat"])
 		 });
 
 		 if(spot[i]["spot_category"]==1){

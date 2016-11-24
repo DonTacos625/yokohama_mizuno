@@ -98,10 +98,10 @@ if(isset($_SESSION["my_no"])){
 			});
 
 			var view = new MapView({
-				center: [139.636055, 35.450078],
+				center: [spot_lat, spot_lng],
 				container: "viewDiv2",
 				map: map,
-				zoom: 13
+				zoom: 15
 			});
 
 		/**********************
