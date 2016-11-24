@@ -3,9 +3,8 @@
 	//  ■：トップページ画面 index.php
 	//======================================================================
 session_start(); //セッションスタート
-require_once __DIR__ . '/vendor/autoload.php';
-require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
-$pgsql = new PostgreSQL;
+//require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+//$pgsql = new PostgreSQL;
 if(isset($_SESSION["my_no"]))
 	$my_no = $_SESSION["my_no"];
 ?>
@@ -21,9 +20,9 @@ if(isset($_SESSION["my_no"]))
 	</script>
 </head>
 <body>
-<?php include_once("analyticstracking.php") ?>
+<?php //include_once("analyticstracking.php"); ?>
 	<div id="page">
-		<div id = "head">
+		<div id = "header">
 			<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
@@ -31,8 +30,6 @@ if(isset($_SESSION["my_no"]))
 			require_once("header.php");
 			?>
 		</div>
-	</div>
-	<div id="page">
 		<div id="contents">
 			<?php
 				//----------------------------------------

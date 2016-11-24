@@ -49,8 +49,8 @@ ul,ol,dl{
 
 /* ========================================  #page ページ外枠 */
 #page {
-	width: 950px;
-	margin: 0px auto;
+/*	width: 950px;*/
+	margin: 0px 10px;
 	text-align: left;
 }
 
@@ -59,10 +59,13 @@ ul,ol,dl{
 /* ========================================  #header 画面上部 */
 #header {
 	width: auto;
-	height: 100px;
-	margin: 0px;
+	height: auto;
+	margin: 0px 10px;
 	border-top: 1px solid #FFFFFF;
 	color: #FFFFFF;
+}
+#pwd{
+	color: black;
 }
 
 #sitename {
@@ -132,15 +135,16 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 /* ======================================== #contents 画面中央部 #mainとサイドメニューの外枠 */
 #contents{
 	padding: 30px 0px 20px;
-	margin: 0px;
+	margin: 0px 10px;
 }
 
 
 /* ========================================  #main ページの本文 */
 #main {
-	float: right;
-	width: 630px;
+	float: left;
+/*	width: 630px;*/
 	margin: 0px 0px 20px;
+	padding: 0px 10px;
 }
 
 #main h2 {

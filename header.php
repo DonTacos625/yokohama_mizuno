@@ -1,10 +1,4 @@
-<html>
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="./stylet.css"></link>
-</head>
-<body>
-<div id="page">
+
 	<div id="sitename">横浜みなとみらい観光推薦システム</div>
 	<!--<div class = label3><a href="./mypage_s.php">スマートフォン用ページ</a></div>-->
 	<div id="menu">
@@ -28,6 +22,3 @@
 			?>
 			</ul>
 	</div>
-</div>
-</body>
-</html>
