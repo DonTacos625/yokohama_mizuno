@@ -99,7 +99,7 @@ if(isset($_SESSION["my_no"])){
 
 			var view = new MapView({
 				center: [139.636055, 35.450078],
-				container: "viewDiv",
+				container: "viewDiv2",
 				map: map,
 				zoom: 13
 			});
@@ -176,7 +176,7 @@ if(isset($_SESSION["my_no"])){
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
-							<div id="viewDiv"></div>
+							<div id="viewDiv2"></div>
 							<?php
 							if($spot_pic!=NULL){/*
 								// オリジナル画像のファイルパスを指定
@@ -208,6 +208,7 @@ if(isset($_SESSION["my_no"])){
 								echo "ok3";
 								// サムネイル画像の出力
 								imagejpeg($thumb_image);*/
+								echo "<img src='".$spot_pic."' alt='観光スポットの写真'>";
 							}
 							?>
 							</td>
