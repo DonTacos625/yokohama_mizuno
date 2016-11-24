@@ -25,11 +25,13 @@ if(isset($_SESSION["my_no"])){
 	if($_GET['pk']!=NULL){
 		$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
 		if(preg_match('/^([0-9])/', $pk)){
-			$sql = "SELECT spot_name,spot_category,spot_pic,spot_visited,spot_url,spot_content,spot_eval FROM localinfo WHERE pk=$1";
+			$sql = "SELECT spot_lng,spot_lat,spot_name,spot_category,spot_pic,spot_visited,spot_url,spot_content,spot_eval FROM localinfo WHERE pk=$1";
 			$array = array($pk);
 			$pgsql -> query($sql,$array);
 			$row = $pgsql->fetch_all();
 			if($row){
+				$spot_lng = (float)$row[0]["spot_lng"];
+				$spot_lat = (float)$row[0]["spot_lat"];
 				$spot_name= $row[0]["spot_name"];
 				$spot_category = $row[0]["spot_category"];
 				$spot_pic = $row[0]["spot_pic"];
@@ -65,7 +67,90 @@ if(isset($_SESSION["my_no"])){
 	<title><?php echo $spot_name?> 詳細情報</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="myThumbnail.js"></script>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.1/"></script>
+
+	<script>
+	var spot_lng = <? echo $spot_lng?>;
+	var spot_lat = <? echo $spot_lat?>;
+	var spot_category =<? echo $spot_category?>;
+	var urlhttp = "http://";
+	var pointpic = "";
+	var cat_name = "";
+	var spoturl = "";
+	var valurl = "https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
+	require([
+		"esri/Map",
+		"esri/views/MapView",
+		"esri/Graphic",
+		"esri/geometry/Point",
+		"esri/symbols/PictureMarkerSymbol",
+		"dojo/domReady!"
+		], function(
+			Map, MapView,
+			Graphic, Point,
+			PictureMarkerSymbol,
+			PopupTemplate
+			) {
+
+			var map = new Map({
+				basemap: "streets"
+			});
+
+			var view = new MapView({
+				center: [139.636055, 35.450078],
+				container: "viewDiv",
+				map: map,
+				zoom: 13
+			});
+
+		/**********************
+		 * Create a point graphic
+		 **********************/
+		 // First create a point geometry (this is the location of the Titanic)
+		 var point = new Point({
+		 	longitude: spot_lng,
+		 	latitude: spot_lat
+		 });
+
+		 if(spot_category==1){
+		 	cat_name = "飲食";
+		 	pointpic = "./marker/purple.png";
+		 }else if(spot_category==2){
+		 	cat_name = "ショッピング";
+		 	pointpic = "./marker/yellow.png";
+		 }else if(spot_category==3){
+		 	cat_name = "テーマパーク・公園";
+		 	pointpic = "./marker/red.png";
+		 }else if(spot_category==4){
+		 	cat_name = "名所・史跡";
+		 	pointpic = "./marker/orange.png";
+		 }else if(spot_category==5){
+		 	cat_name = "芸術・博物館";
+		 	pointpic = "./marker/ltblue.png";
+		 }else{
+		 	cat_name = "その他";
+		 	pointpic = "./marker/blue.png";
+		 }
+
+	 // Create a symbol for drawing the point
+	 var Symbol = new PictureMarkerSymbol({
+	 	url: pointpic,
+	 	width: "30px",
+	 	height: "30px"
+	 });
+
+	// Create a graphic and add the geometry and symbol to it
+	var pointGraphic = new Graphic({
+		geometry: point,
+		symbol: Symbol,
+	});
+
+	// Add the graphics to the view's graphics layer
+	view.graphics.addMany([pointGraphic]);
+});
+
+</script>
 </head>
 
 <body>
@@ -91,6 +176,7 @@ if(isset($_SESSION["my_no"])){
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
+							<div id="viewDiv"></div>
 							<?php
 							if($spot_pic!=NULL){/*
 								// オリジナル画像のファイルパスを指定
