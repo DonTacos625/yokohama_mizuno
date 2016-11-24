@@ -3,8 +3,9 @@
 	//  ■：トップページ画面 index.php
 	//======================================================================
 session_start(); //セッションスタート
-//require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
-//$pgsql = new PostgreSQL;
+require_once __DIR__ . '/vendor/autoload.php';
+require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+$pgsql = new PostgreSQL;
 if(isset($_SESSION["my_no"]))
 	$my_no = $_SESSION["my_no"];
 ?>
@@ -12,20 +13,14 @@ if(isset($_SESSION["my_no"]))
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="stylephone.css" rel="stylesheet" type="text/css"
- media="screen and (min-width: 0px) and (max-width: 480px)" >
-<link href="styletablet.css" rel="stylesheet" type="text/css"
- media="screen and (min-width: 481px) and (max-width: 800px)" >
-<link href="stylet.css" rel="stylesheet" type="text/css"
- media="screen and (min-width: 801px)" >
+	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>横浜みなとみらい観光推薦システム（工事中）</title>
+	<title>横浜みなとみらい観光推薦システム</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 	</script>
 </head>
 <body>
-<?php //include_once("analyticstracking.php"); ?>
 	<div id="page">
 		<div id = "header">
 			<?php
@@ -35,6 +30,8 @@ if(isset($_SESSION["my_no"]))
 			require_once("header.php");
 			?>
 		</div>
+	</div>
+	<div id="page">
 		<div id="contents">
 			<?php
 				//----------------------------------------
