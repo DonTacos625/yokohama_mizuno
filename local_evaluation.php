@@ -238,8 +238,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr><td align="center" bgcolor="#fof8ff"><font size="4"><b>評価</b></font></td>
-										<td>1:低/少  <------>  5:高/多</td>
+									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>評価</b></font></td>
+									</tr>
+									<tr>
+										<td align="center" bgcolor="#ffffff" colspan="2">1:低/少  <------>  5:高/多</td>
 									</tr>
 									<tr><td align="center" bgcolor="#fof8ff"><b>満足度</b></td>
 										<td>
