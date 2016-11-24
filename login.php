@@ -147,7 +147,6 @@
 
   </script>
   <div id="page">
-	<div id="header">
 		<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
@@ -156,7 +155,6 @@
 		require_once("./linkplace.php");
 		echo pwd("login");
 		?>
-	</div>
 	</div>
   <div id="page">
   	<div id="contents">
