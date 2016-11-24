@@ -4,9 +4,10 @@ function thumbnail($image){
 header ('Content-Type: image/jpeg');
 
 // オリジナル画像のファイルパスを指定
+$original_file = "uploaded_pic/1-1-20130829221323.jpg";
 
 // getimagesize関数 オリジナル画像の横幅・高さを取得
-list($original_width, $original_height) = getimagesize($image);
+list($original_width, $original_height) = getimagesize($original_file);
 
 // サムネイルの横幅を指定
 $thumb_width = 200;
@@ -15,7 +16,7 @@ $thumb_width = 200;
 $thumb_height = round( $original_height * $thumb_width / $original_width );
 
 // オリジナルファイルの画像リソース
-$original_image = imagecreatefromjpeg($image);
+$original_image = imagecreatefromjpeg($original_file);
 
 // サムネイルの画像リソース
 $thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
