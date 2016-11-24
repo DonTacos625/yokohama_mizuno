@@ -150,7 +150,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				center: [139.636055, 35.450078],
 				container: "viewDiv",
 				map: map,
-				zoom: 15
+				zoom: 13
 			});
 
 		/**********************

@@ -181,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
-	<title>地域情報</title>
+	<title>観光スポットの評価</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 
@@ -246,72 +246,72 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 									</tr>
 									<tr><td align="center" bgcolor="#fof8ff"><b>満足度</b></td>
 										<td>
-											<input type="radio" name="a1" value="1" checked> 1
+											<input type="radio" name="a1" value="1"> 1
 											<input type="radio" name="a1" value="2"> 2
-											<input type="radio" name="a1" value="3"> 3
+											<input type="radio" name="a1" value="3" checked> 3
 											<input type="radio" name="a1" value="4"> 4
 											<input type="radio" name="a1" value="5"> 5
 										</td>
 									</tr>
 									<tr><td align="center" bgcolor="#fof8ff"><b>アクセス</b></td>
 										<td>
-										<input type="radio" name="a2" value="1" checked> 1
+										<input type="radio" name="a2" value="1"> 1
 										<input type="radio" name="a2" value="2"> 2
-										<input type="radio" name="a2" value="3"> 3
+										<input type="radio" name="a2" value="3" checked> 3
 										<input type="radio" name="a2" value="4"> 4
 										<input type="radio" name="a2" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>人ごみの少なさ</b></td>
 									<td>
-										<input type="radio" name="a3" value="1" checked> 1
+										<input type="radio" name="a3" value="1"> 1
 										<input type="radio" name="a3" value="2"> 2
-										<input type="radio" name="a3" value="3"> 3
+										<input type="radio" name="a3" value="3" checked> 3
 										<input type="radio" name="a3" value="4"> 4
 										<input type="radio" name="a3" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>バリアフリー</b></td>
 									<td>
-										<input type="radio" name="a4" value="1" checked> 1
+										<input type="radio" name="a4" value="1"> 1
 										<input type="radio" name="a4" value="2"> 2
-										<input type="radio" name="a4" value="3"> 3
+										<input type="radio" name="a4" value="3" checked> 3
 										<input type="radio" name="a4" value="4"> 4
 										<input type="radio" name="a4" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>コストパフォーマンス</b></td>
 									<td>
-										<input type="radio" name="a5" value="1" checked> 1
+										<input type="radio" name="a5" value="1"> 1
 										<input type="radio" name="a5" value="2"> 2
-										<input type="radio" name="a5" value="3"> 3
+										<input type="radio" name="a5" value="3" checked> 3
 										<input type="radio" name="a5" value="4"> 4
 										<input type="radio" name="a5" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>雰囲気</b></td>
 									<td>
-										<input type="radio" name="a6" value="1" checked> 1
+										<input type="radio" name="a6" value="1"> 1
 										<input type="radio" name="a6" value="2"> 2
-										<input type="radio" name="a6" value="3"> 3
+										<input type="radio" name="a6" value="3" checked> 3
 										<input type="radio" name="a6" value="4"> 4
 										<input type="radio" name="a6" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>快適度/サービスの良さ</b></td>
 									<td>
-										<input type="radio" name="a7" value="1" checked> 1
+										<input type="radio" name="a7" value="1"> 1
 										<input type="radio" name="a7" value="2"> 2
-										<input type="radio" name="a7" value="3"> 3
+										<input type="radio" name="a7" value="3" checked> 3
 										<input type="radio" name="a7" value="4"> 4
 										<input type="radio" name="a7" value="5"> 5
 									</td>
 								</tr>
 								<tr><td align="center" bgcolor="#fof8ff"><b>おすすめ度</b></td>
 									<td>
-										<input type="radio" name="a8" value="1" checked> 1
+										<input type="radio" name="a8" value="1"> 1
 										<input type="radio" name="a8" value="2"> 2
-										<input type="radio" name="a8" value="3"> 3
+										<input type="radio" name="a8" value="3" checked> 3
 										<input type="radio" name="a8" value="4"> 4
 										<input type="radio" name="a8" value="5"> 5
 									</td>
