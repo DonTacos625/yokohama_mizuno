@@ -2,6 +2,7 @@
 session_start();
 require_once('PostgreSQL.php');
 require_once('calcuation.php');
+require_once('thumbnail.php');
 $pgsql = new PostgreSQL;
 
 // phpの配列をpostgresqlの配列に変換
@@ -175,41 +176,14 @@ if(isset($_SESSION["my_no"])){
 						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
-							<td align='center'>
+							<td align='center' colspan="2">
 							<div id="viewDiv2"></div></td>
-							<td align='center'>
+							</tr>
+							<tr>
+							<td align='center' colspan="2">
 							<?php
-							if($spot_pic!=NULL){/*
-								// オリジナル画像のファイルパスを指定
-								$original_file = "https://study-yokohama-sightseeing.herokuapp.com/".$spot_pic;
-								echo $original_file;
-								// getimagesize関数 オリジナル画像の横幅・高さを取得
-								$original = getimagesize($original_file);
-								var_dump($original);
-								$original_width = $original[0];
-								$original_height = $original[1];
-								//list($original_width, $original_height) = getimagesize($original_file);
-
-								// サムネイルの横幅を指定
-								$thumb_width = 200;
-
-								// サムネイルの高さを算出 round関数で四捨五入
-								$thumb_height = round( $original_height * $thumb_width / $original_width );
-
-								// オリジナルファイルの画像リソース
-								$original_image = imagecreatefromjpeg($original_file);
-								echo "ok";
-								// サムネイルの画像リソース
-								$thumb_image = imagecreatetruecolor($thumb_width, $thumb_height);
-								echo "ok2";
-								// サムネイル画像の作成
-								imagecopyresampled($thumb_image, $original_image, 0, 0, 0, 0,
-								                 $thumb_width, $thumb_height,
-								                 $original_width, $original_height);
-								echo "ok3";
-								// サムネイル画像の出力
-								imagejpeg($thumb_image);*/
-								echo "<img src='".$spot_pic."' alt='観光スポットの写真'>";
+							if($spot_pic!=NULL){
+								echo "<img src='". thumbnail($spot_pic)."' alt='観光スポットの写真'>";
 							}
 							?>
 							</td>
