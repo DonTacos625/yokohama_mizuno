@@ -98,7 +98,7 @@ if(isset($_SESSION["my_no"])){
 			});
 
 			var view = new MapView({
-				center: [spot_lat, spot_lng],
+				center: [spot_lng, spot_lat],
 				container: "viewDiv2",
 				map: map,
 				zoom: 15
