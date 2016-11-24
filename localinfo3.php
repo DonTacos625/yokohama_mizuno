@@ -127,10 +127,10 @@ if(isset($_SESSION["my_no"])){
 							</td>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>スポット名</b></font></td>
+							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>スポット名</b></font></td>
 							<td><?php echo  $spot_name?></td>
 						</tr>
-						<tr><td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>カテゴリー</b></font></td>
+						<tr><td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>カテゴリー</b></font></td>
 							<td>
 								<?php
 								if($spot_category==1){
@@ -150,11 +150,11 @@ if(isset($_SESSION["my_no"])){
 							</td>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>紹介文</b></font></td>
+							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>紹介文</b></font></td>
 							<td><?php echo "$spot_content"?></td>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>参考URL</b></font></td>
+							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>参考URL</b></font></td>
 							<td>
 								<?php
 									if($spot_url!=NULL){
@@ -167,7 +167,7 @@ if(isset($_SESSION["my_no"])){
 							</td>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff" size="10"><font size="4"><b>評価</b></font></td>
+							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>評価</b></font></td>
 							<td>
 								<?php
 									if($evalued == NULL){
