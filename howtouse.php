@@ -31,14 +31,15 @@
 </head>
 <body>
 	<div id="page">
-		<div id="header"><?php
+		<div id="header">
+		<?php
 		//----------------------------------------
 		// ■ヘッダーの取り込み
 		//----------------------------------------
 		require_once("./header.php");
 		?>
 		<div id="pwd">
-	<?php require_once("./linkplace.php");
+		<?php require_once("./linkplace.php");
 		echo pwd("howtouse");
 		?>
 		</div>

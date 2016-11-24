@@ -66,11 +66,13 @@ ul,ol,dl{
 }
 #pwd{
 	color: black;
+	margin: 0px 10px;
+	font-size: 14px;
 }
 
 #sitename {
 	margin: 30px 0px 0px;
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
 	color: #666666;
 }
@@ -105,7 +107,7 @@ ul.menu_f02 li a{
 	width: 150px;
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #F4CC0B;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
@@ -126,7 +128,6 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	padding: 10px 0px 0px;
 	border-bottom: 5px solid #D3FBFE;
 	color: #FFFFFF;
-	background-color: #1FFFFFF;
 }
 
 
@@ -134,7 +135,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 
 /* ======================================== #contents 画面中央部 #mainとサイドメニューの外枠 */
 #contents{
-	padding: 30px 0px 20px;
+	padding: 20px 0px 20px;
 	margin: 0px 10px;
 }
 
