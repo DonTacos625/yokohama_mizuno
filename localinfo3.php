@@ -175,8 +175,9 @@ if(isset($_SESSION["my_no"])){
 						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
-							<td align='center' colspan='2'>
-							<div id="viewDiv2"></div>
+							<td align='center'>
+							<div id="viewDiv2"></div></td>
+							<td align='center'>
 							<?php
 							if($spot_pic!=NULL){/*
 								// オリジナル画像のファイルパスを指定
