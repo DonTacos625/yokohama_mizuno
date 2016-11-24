@@ -38,11 +38,11 @@
 		//----------------------------------------
 		require_once("./header.php");
 		?>
+		</div>
 		<div id="pwd">
 		<?php require_once("./linkplace.php");
 		echo pwd("howtouse");
 		?>
-		</div>
 		</div>
 		<div id="contents">
 			<div id="menuL">
