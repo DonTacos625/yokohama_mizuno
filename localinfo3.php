@@ -87,7 +87,7 @@ if(isset($_SESSION["my_no"])){
 			<div id="main">
 				<div class="contentswrap">
 					<table border="0" cellspacing="3" cellpadding="3" width="600">
-						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
+						<tr><td align="center" bgcolor="#fof8ff" colspan="2" width="200">
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
 							<td align='center' colspan='2'>
