@@ -261,14 +261,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div class ="contentswrap">
 				<table id="table5932" border="1">
 					<?php
-					for($i=0;$i<5;$i++){
-						$num = $i+1;
-						echo "<tr><td> ".$num.")".$result10place[$i]["spot_name"]."</td>";
-						$num=$num+5;
-						if($num>=10)
-							echo "<td>".$num.")".$result10place[$i+5]["spot_name"]."</td></tr>";
-						else
-							echo "<td> ".$num.")".$result10place[$i+5]["spot_name"]."</td></tr>";
+					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
+					for($i=0;$i<10;$i=$i+2){
+						echo "<tr>";
+						$spot_pk = $result10place[$i]['pk'];
+						echo "<td><a href=".$detailurl.$spot_pk.">".$result10place[$i]['spot_name']."</a></td>";
+							if($result10place[$i+1]["spot_name"]!=NULL)
+								$spot_pk = $result10place[$i+1]['pk'];
+								echo "<td><a href=".$detailurl.$spot_pk.">".$result10place[$i+1]['spot_name']."</a></td>";
+						echo "</tr>";
+					}
+				?>
 					}
 					?>
 				</table>
