@@ -175,14 +175,12 @@ if(isset($_SESSION["my_no"])){
 						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
 								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
-							<td align='center' colspan="2">
+							<td align='center' width="300">
 							<div id="viewDiv2"></div></td>
-							</tr>
-							<tr>
-							<td align='center' colspan="2">
+							<td align='center' width="300">
 							<?php
 							if($spot_pic!=NULL){
-								echo "<img src='thumbnail.php?url=".$spot_pic."&width=200'>";
+								echo "<img src='thumbnail.php?url=".$spot_pic."&width=300'>";
 							}
 							?>
 							</td>
