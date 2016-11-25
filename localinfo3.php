@@ -183,7 +183,7 @@ if(isset($_SESSION["my_no"])){
 							<td align='center' colspan="2">
 							<?php
 							if($spot_pic!=NULL){
-								echo "<img src='". thumbnail($spot_pic)."' alt='観光スポットの写真'>";
+								echo "<img src='thumbnail?url=".$spot_pic."&width=200'>";
 							}
 							?>
 							</td>
