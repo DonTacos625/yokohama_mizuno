@@ -265,15 +265,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					for($i=0;$i<10;$i=$i+2){
 						echo "<tr>";
 						$spot_pk = $result10place[$i]['pk'];
-						echo "<td><a href=".$detailurl.$spot_pk.">".$result10place[$i]['spot_name']."</a></td>";
+						echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i]['spot_name']."</a></td>";
 							if($result10place[$i+1]["spot_name"]!=NULL)
 								$spot_pk = $result10place[$i+1]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk.">".$result10place[$i+1]['spot_name']."</a></td>";
+								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i+1]['spot_name']."</a></td>";
 						echo "</tr>";
 					}
 				?>
-					}
-					?>
 				</table>
 				<br>
 				<p>マーカーの凡例
