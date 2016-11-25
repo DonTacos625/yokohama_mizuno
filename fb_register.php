@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 </head>
 <body>
+	<div id="page">
 	<?php
 	//-----------------------------------------------------
 	// □：登録中ではないときにテーブルを読んでデータ表示
@@ -91,15 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//----------------------------------------	
 	require_once("header.php");
 	?>
-	<div id="page">
-		<div id="head">
 			<?php
 			require_once("linkplace.php"); //現在地表示用php
 			echo pwd("fb_register"); //現在値の表示
 			?>
-		</div>
-	</div>
-	<div id="page">
 		<div id="contents">
 			<!-- #main 本文スペース -->
 			<div class="contentswrap">
