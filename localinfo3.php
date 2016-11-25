@@ -180,7 +180,9 @@ if(isset($_SESSION["my_no"])){
 							<td align='center' width="300">
 							<?php
 							if($spot_pic!=NULL){
-								echo "<img src='thumbnail.php?url=".$spot_pic."&width=300'>";
+								echo "<img src='thumbnail.php?url=".$spot_pic."&width=300' alt='".$spot_name."'>";
+							}else{
+								echo "<img src='./uploaded_pic/no_image.jpg' alt='写真なし'>";
 							}
 							?>
 							</td>
