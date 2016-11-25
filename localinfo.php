@@ -50,7 +50,7 @@ $my_no = $_SESSION["my_no"];
 			?>
 			<div id ="main">
 				<div class ="contentswrap">
-					<form name="category" method="get" action="./localinfo2.php">
+					<!--<form name="category" method="get" action="./localinfo2.php">
 						<ul><h4>カテゴリーをお選びください。</h4></ul>
 						<ul>
 							<p>
@@ -68,6 +68,15 @@ $my_no = $_SESSION["my_no"];
 						</p>
 						</ul>
 					</form>
+					-->
+					<ul>
+						<li><a href="./localinfo2.php?c_check=1">飲食</a></li>
+						<li><a href="./localinfo2.php?c_check=2">ショッピング</a></li>
+						<li><a href="./localinfo2.php?c_check=3">テーマパーク・公園</a></li>
+						<li><a href="./localinfo2.php?c_check=4">名所・史跡</a></li>
+						<li><a href="./localinfo2.php?c_check=5">芸術・博物館</a></li>
+						<li><a href="./localinfo2.php?c_check=6">その他</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
