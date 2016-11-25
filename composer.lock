@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bfa1d05b2143e4eb0b6840eaae1689f9",
-    "content-hash": "4804628d99723171977fd0ab31e06635",
+    "hash": "cc36ee2d61d22cd12ce2390a51e5d252",
+    "content-hash": "876b966858fbd7b021f15aa5994c989b",
     "packages": [
         {
             "name": "fuelphp/upload",
@@ -169,7 +169,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "ext-gd": "*"
     },
     "platform-dev": []
 }
