@@ -242,26 +242,26 @@ $error="";
 					/*for($i=0;$i<$num;$i=$i+3){
 							echo "<tr>";
 							$spot_pk = $PlaceTable[$i]['pk'];
-							echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i]['spot_name']."</a></td>";
+							echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i]['spot_name']."</a></td>";
 							if($PlaceTable[$i+1]["spot_name"]!=NULL)
 								$spot_pk = $PlaceTable[$i+1]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+1]['spot_name']."</a></td>";
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+1]['spot_name']."</a></td>";
 							if($PlaceTable[$i+2]["spot_name"]!=NULL)
 								$spot_pk = $PlaceTable[$i+2]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
 					}*/
 					$num = count($PlaceTable);
 					for($i=0;$i<$num;$i=$i+3){
 						echo "<tr>";
 						$spot_pk = $PlaceTable[$i]['pk'];
-						echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i]['spot_name']."</a></td>";
+						echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i]['spot_name']."</a></td>";
 							if($PlaceTable[$i+1]["spot_name"]!=NULL)
 								$spot_pk = $PlaceTable[$i+1]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+1]['spot_name']."</a></td>";
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+1]['spot_name']."</a></td>";
 							if($PlaceTable[$i+2]["spot_name"]!=NULL)
 								$spot_pk = $PlaceTable[$i+2]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$PlaceTable[$i+2]['spot_name']."</a></td>";
+								echo "<td><a href=".$detailurl.$spot_pk.">".$PlaceTable[$i+2]['spot_name']."</a></td>";
 							echo "</tr>";
 					}
 				?>

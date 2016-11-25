@@ -35,7 +35,7 @@
 		//----------------------------------------
 		// ■ヘッダーの取り込み
 		//----------------------------------------
-		require_once("./header.php");
+		require_once("./header_use.php");
 		?>
 		<?php require_once("./linkplace.php");
 		echo pwd("howtouse");
