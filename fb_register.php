@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						</td>
 					</tr>
 					<tr><td align="center" colspan="2">
-						<input type="submit" name="submit_toroku" value="登録する"></td></tr>
+						<input type="submit" name="submit_toroku" value="登録する" ></td></tr>
 					</table>
 				</form>
 			</div>
