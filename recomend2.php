@@ -266,7 +266,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						$num = $i+1;
 						echo "<tr><td> ".$num.")<a href='".$url.$result10place[$i]["pk"]"'>".$result10place[$i]["spot_name"]."</a></td>";
 						$num=$num+5;
-						if($num=>10)
+						if($num>=10)
 							echo "<td>".$num.")<a href='".$url.$result10place[$i+5]["pk"]"'>".$result10place[$i+5]["spot_name"]."</td></tr>";
 						else
 							echo "<td> ".$num.")<a href='".$url.$result10place[$i+5]["pk"]"'>".$result10place[$i+5]["spot_name"]."</td></tr>";
