@@ -2,7 +2,6 @@
 session_start();
 require_once('PostgreSQL.php');
 require_once('calcuation.php');
-require_once('thumbnail.php');
 $pgsql = new PostgreSQL;
 
 // phpの配列をpostgresqlの配列に変換
@@ -183,7 +182,7 @@ if(isset($_SESSION["my_no"])){
 							<td align='center' colspan="2">
 							<?php
 							if($spot_pic!=NULL){
-								echo "<img src='thumbnail?url=".$spot_pic."&width=200'>";
+								echo "<img src='thumbnail.php?url=".$spot_pic."&width=200'>";
 							}
 							?>
 							</td>
