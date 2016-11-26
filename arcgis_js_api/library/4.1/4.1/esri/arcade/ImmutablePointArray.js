@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../core/tsSupport/extendsHelper","./ImmutableArray","../geometry/Point","../kernel"],function(t,e,i,s,h,n){var r=0===n.version.indexOf("4."),a=function(t){function e(e,i,s,h,n,r){t.call(this,e),this._lazyPt=[],this._hasZ=!1,this._hasM=!1,this._spRef=i,this._hasZ=s,this._hasM=h,this._cacheId=n,this._partId=r}return i(e,t),e.prototype.get=function(t){if(void 0===this._lazyPt[t]){var e=this._elements[t];if(void 0===e)return;var i=this._hasZ,s=this._hasM,n=null;n=i&&!s?new h(e[0],e[1],e[2],void 0,this._spRef):s&&i?new h(e[0],e[1],void 0,e[2],this._spRef):i&&s?new h(e[0],e[1],e[2],e[3],this._spRef):new h(e[0],e[1],this._spRef),r?n.cache._arcadeCacheId=this._cacheId.toString()+"-"+this._partId.toString()+"-"+t.toString():n.setCacheValue("_arcadeCacheId",this._cacheId.toString()+"-"+this._partId.toString()+"-"+t.toString()),this._lazyPt[t]=n}return this._lazyPt[t]},e.prototype.equalityTest=function(t){return t===this?!0:null===t?!1:t instanceof e==!1?!1:t.getUniqueHash()===this.getUniqueHash()},e.prototype.getUniqueHash=function(){return this._cacheId.toString()+"-"+this._partId.toString()},e}(s);return a});
+//>>built
+define("require exports ../core/tsSupport/extendsHelper ./ImmutableArray ../geometry/Point ../kernel".split(" "),function(n,p,h,k,d,l){var m=0===l.version.indexOf("4.");return function(g){function c(b,a,c,f,e,d){g.call(this,b);this._lazyPt=[];this._hasM=this._hasZ=!1;this._spRef=a;this._hasZ=c;this._hasM=f;this._cacheId=e;this._partId=d}h(c,g);c.prototype.get=function(b){if(void 0===this._lazyPt[b]){var a=this._elements[b];if(void 0===a)return;var c=this._hasZ,f=this._hasM,e=null,e=c&&!f?new d(a[0],
+a[1],a[2],void 0,this._spRef):f&&c?new d(a[0],a[1],void 0,a[2],this._spRef):c&&f?new d(a[0],a[1],a[2],a[3],this._spRef):new d(a[0],a[1],this._spRef);m?e.cache._arcadeCacheId=this._cacheId.toString()+"-"+this._partId.toString()+"-"+b.toString():e.setCacheValue("_arcadeCacheId",this._cacheId.toString()+"-"+this._partId.toString()+"-"+b.toString());this._lazyPt[b]=e}return this._lazyPt[b]};c.prototype.equalityTest=function(b){return b===this?!0:null===b||!1===b instanceof c?!1:b.getUniqueHash()===this.getUniqueHash()};
+c.prototype.getUniqueHash=function(){return this._cacheId.toString()+"-"+this._partId.toString()};return c}(k)});

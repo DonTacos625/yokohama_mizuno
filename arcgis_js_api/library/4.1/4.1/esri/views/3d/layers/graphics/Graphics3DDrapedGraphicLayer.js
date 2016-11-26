@@ -1,25 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../../core/declare","../../webgl-engine/Stage","../../webgl-engine/lib/Util","../../support/aaBoundingRect","../../support/aaBoundingBox"],function(e,t,i,s,n){var r=i.assert,u=e(null,{constructor:function(e,t,i,s,n){this.graphics3DSymbolLayer=e,this.renderGeometries=t,this.uniqueMaterials=i,this.uniqueTextures=s,this.boundingBox=n,this.stage=null,this._visibilityFlags={},this._shown=!1},initialize:function(e,i){this.stage=i;var s;if(this.uniqueMaterials)for(s=0;s<this.uniqueMaterials.length;s++)i.add(t.ModelContentType.MATERIAL,this.uniqueMaterials[s]);if(this.uniqueTextures)for(s=0;s<this.uniqueTextures.length;s++)i.add(t.ModelContentType.TEXTURE,this.uniqueTextures[s])},isDraped:function(){return!0},areVisibilityFlagsSet:function(e,t){for(var i=!0,s=Object.keys(this._visibilityFlags),n=0;n<s.length;n++){var r=s[n];if(r!==t){if(r===e)return this._visibilityFlags[r];i=i&&this._visibilityFlags[r]}}return i},setVisibilityFlag:function(e,t){return this._visibilityFlags[e]=t,this._calcAndSetVisibility()},_calcAndSetVisibility:function(){var e=this.areVisibilityFlagsSet();return this._shown!=e?(this._shown=e,r(this.stage,"Graphics3DDrapedGraphicLayer must be initialized first"),this._shown?this.stage.getTextureGraphicsRenderer().addRenderGeometries(this.renderGeometries):this.stage.getTextureGraphicsRenderer().removeRenderGeometries(this.renderGeometries),!0):!1},destroy:function(){if(this.stage){var e,i=this.stage;if(this._shown&&i.getTextureGraphicsRenderer().removeRenderGeometries(this.renderGeometries),this._shown=!1,this.uniqueMaterials)for(e=0;e<this.uniqueMaterials.length;e++)i.remove(t.ModelContentType.MATERIAL,this.uniqueMaterials[e].getId());if(this.uniqueTextures)for(e=0;e<this.uniqueTextures.length;e++)i.remove(t.ModelContentType.TEXTURE,this.uniqueTextures[e].getId());this.stage=null}},mustAlignToTerrain:function(){return!1},alignWithElevation:function(){},setDrawOrder:function(e,t,i){this.uniqueMaterials&&this.uniqueMaterials.forEach(function(i){i.setRenderPriority(e),this._shown&&(t[i.getId()]=!0)}.bind(this))},getBSRadius:function(){var e=0;return this.renderGeometries.forEach(function(t){e=Math.max(e,t.bsRadius)}),e},getCenterObjectSpace:function(){return[0,0,0]},getProjectedBoundingBox:function(e,t){n.set(t,n.NEGATIVE_INFINITY);for(var i=0;i<this.renderGeometries.length;i++){var s=this.renderGeometries[i];this._getRenderGeometryProjectedBoundingRect(s,a,e),n.expand(t,a)}return t},_getRenderGeometryProjectedBoundingRect:function(e,t,i){if(this.boundingBox)n.set(o,this.boundingBox);else{var s=e.center,r=e.bsRadius;o[0]=s[0]-r,o[1]=s[1]-r,o[2]=s[2]-r,o[3]=s[0]+r,o[4]=s[1]+r,o[5]=s[2]+r}return i(o,0,2),n.toRect(o,t)}}),a=s.create(),o=[0,0,0,0,0,0];return u});
+//>>built
+define(["../../../../core/declare","../../webgl-engine/Stage","../../webgl-engine/lib/Util","../../support/aaBoundingRect","../../support/aaBoundingBox"],function(h,g,l,m,f){var n=l.assert;h=h(null,{constructor:function(a,c,b,e,d){this.graphics3DSymbolLayer=a;this.renderGeometries=c;this.uniqueMaterials=b;this.uniqueTextures=e;this.boundingBox=d;this.stage=null;this._visibilityFlags={};this._shown=!1},initialize:function(a,c){this.stage=c;var b;if(this.uniqueMaterials)for(b=0;b<this.uniqueMaterials.length;b++)c.add(g.ModelContentType.MATERIAL,
+this.uniqueMaterials[b]);if(this.uniqueTextures)for(b=0;b<this.uniqueTextures.length;b++)c.add(g.ModelContentType.TEXTURE,this.uniqueTextures[b])},isDraped:function(){return!0},areVisibilityFlagsSet:function(a,c){for(var b=!0,e=Object.keys(this._visibilityFlags),d=0;d<e.length;d++){var f=e[d];if(f!==c){if(f===a)return this._visibilityFlags[f];b=b&&this._visibilityFlags[f]}}return b},setVisibilityFlag:function(a,c){this._visibilityFlags[a]=c;return this._calcAndSetVisibility()},_calcAndSetVisibility:function(){var a=
+this.areVisibilityFlagsSet();return this._shown!=a?(this._shown=a,n(this.stage,"Graphics3DDrapedGraphicLayer must be initialized first"),this._shown?this.stage.getTextureGraphicsRenderer().addRenderGeometries(this.renderGeometries):this.stage.getTextureGraphicsRenderer().removeRenderGeometries(this.renderGeometries),!0):!1},destroy:function(){if(this.stage){var a,c=this.stage;this._shown&&c.getTextureGraphicsRenderer().removeRenderGeometries(this.renderGeometries);this._shown=!1;if(this.uniqueMaterials)for(a=
+0;a<this.uniqueMaterials.length;a++)c.remove(g.ModelContentType.MATERIAL,this.uniqueMaterials[a].getId());if(this.uniqueTextures)for(a=0;a<this.uniqueTextures.length;a++)c.remove(g.ModelContentType.TEXTURE,this.uniqueTextures[a].getId());this.stage=null}},mustAlignToTerrain:function(){return!1},alignWithElevation:function(){},setDrawOrder:function(a,c,b){this.uniqueMaterials&&this.uniqueMaterials.forEach(function(b){b.setRenderPriority(a);this._shown&&(c[b.getId()]=!0)}.bind(this))},getBSRadius:function(){var a=
+0;this.renderGeometries.forEach(function(c){a=Math.max(a,c.bsRadius)});return a},getCenterObjectSpace:function(){return[0,0,0]},getProjectedBoundingBox:function(a,c){f.set(c,f.NEGATIVE_INFINITY);for(var b=0;b<this.renderGeometries.length;b++)this._getRenderGeometryProjectedBoundingRect(this.renderGeometries[b],k,a),f.expand(c,k);return c},_getRenderGeometryProjectedBoundingRect:function(a,c,b){if(this.boundingBox)f.set(d,this.boundingBox);else{var e=a.center;a=a.bsRadius;d[0]=e[0]-a;d[1]=e[1]-a;d[2]=
+e[2]-a;d[3]=e[0]+a;d[4]=e[1]+a;d[5]=e[2]+a}b(d,0,2);return f.toRect(d,c)}});var k=m.create(),d=[0,0,0,0,0,0];return h});

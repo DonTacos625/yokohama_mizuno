@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({addTags:"Теги",noTagsFound:"Нет совпадающих тегов.",required:"Требуется один или несколько тегов."});
+//>>built
+define({addTags:"\u0422\u0435\u0433\u0438",noTagsFound:"\u041d\u0435\u0442 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0449\u0438\u0445 \u0442\u0435\u0433\u043e\u0432.",required:"\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043e\u0434\u0438\u043d \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0442\u0435\u0433\u043e\u0432."});

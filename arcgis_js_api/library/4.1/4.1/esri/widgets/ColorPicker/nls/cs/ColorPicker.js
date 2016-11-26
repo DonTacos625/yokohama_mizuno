@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"Průhlednost",suggested:"Doporučené",recent:"Poslední",more:"Více",moreColorsTooltip:"Umožňuje zobrazit další barvy.",paletteTooltip:"Vyberte barvu.",noColorTooltip:"Žádná barva",hexInputTooltip:"Vlastní barva v hexadecimálním zápisu (#FFFF00)."});
+//>>built
+define({transparency:"Pr\u016fhlednost",suggested:"Doporu\u010den\u00e9",recent:"Posledn\u00ed",more:"V\u00edce",moreColorsTooltip:"Umo\u017e\u0148uje zobrazit dal\u0161\u00ed barvy.",paletteTooltip:"Vyberte barvu.",noColorTooltip:"\u017d\u00e1dn\u00e1 barva",hexInputTooltip:"Vlastn\u00ed barva v hexadecim\u00e1ln\u00edm z\u00e1pisu (#FFFF00)."});

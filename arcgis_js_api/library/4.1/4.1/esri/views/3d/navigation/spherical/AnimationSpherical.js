@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../mixins/AnimationMixin","../../lib/glMatrix","../../support/mathUtils"],function(e,n,t){function r(e,n){var t=n[0]-e[0],r=n[1]-e[1],i=n[2]-e[2],a=n[3]-e[3];return t*t+r*r+i*i+a*a}function i(e,n){return Math.sqrt(r(e,n))}function a(e){this.interpolate=function(e,n,r){var i=Math.min(9*r,.3);t.slerpOrLerp(e.center,n.center,i,e.center,s),t.slerpOrLerp(e.eye,n.eye,i,e.eye,s),t.slerp(e.up,n.up,i),e.fov=t.lerp(e.fov,n.fov,i),e.padding=c.lerp(e.padding,n.padding,i,u),e.computeUpOnSphere()}}function p(e,n,r){n=n||250,r=r||n;var a=0,p=0,f=0,l=0,d=function(t,i,a,p,o){return e.easeInOutInterpLinear(r,n,t,i,a,p,o)},v=function(e,i,a,p){var c=o.dist(e,i);if(.1>c)return o.set(i,e),0;var u=Math.min(Math.sqrt(c*r),n);p=Math.min(p+r*a,u);var f=Math.min(p/c*a,1);return t.slerpOrLerp(e,i,f,e,s),p};this.interpolate=function(e,n,r){a=v(e.eye,n.eye,r,a),p=v(e.center,n.center,r,p),l=v(e.padding,n.padding,r,l,{dist:i,lerp:function(e,n,t){return c.lerp(e,n,t,u)},set:function(n){e.padding=n}}),f=d(e.fov,n.fov,r,f,{dist:function(e,n){return Math.abs(n-e)},lerp:t.lerp,set:function(n){e.fov=n}}),e.computeUpOnSphere()}}var o=n.vec3d,c=n.vec4d,u=c.create(),s=1e-4,f=e.createSubclass({declaredClass:"esri.views.3d.navigation.spherical.AnimationSpherical",constructor:function(){this.interpolationTypes={linear:a,easeInOut:p}}});return f});
+//>>built
+define(["../mixins/AnimationMixin","../../lib/glMatrix","../../support/mathUtils"],function(u,h,d){function v(e,a){var c=a[0]-e[0],b=a[1]-e[1],d=a[2]-e[2],l=a[3]-e[3];return c*c+b*b+d*d+l*l}function w(d,a){return Math.sqrt(v(d,a))}function x(e){this.interpolate=function(a,c,b){b=Math.min(9*b,0.3);d.slerpOrLerp(a.center,c.center,b,a.center,n);d.slerpOrLerp(a.eye,c.eye,b,a.eye,n);d.slerp(a.up,c.up,b);a.fov=d.lerp(a.fov,c.fov,b);a.padding=p.lerp(a.padding,c.padding,b,r);a.computeUpOnSphere()}}function y(e,
+a,c){a=a||250;c=c||a;var b=0,h=0,l=0,s=0,q=function(b,g,f,m){var e=t.dist(b,g);if(0.1>e)return t.set(g,b),0;var h=Math.min(Math.sqrt(e*c),a);m=Math.min(m+c*f,h);f=Math.min(m/e*f,1);d.slerpOrLerp(b,g,f,b,n);return m};this.interpolate=function(k,g,f){b=q(k.eye,g.eye,f,b);h=q(k.center,g.center,f,h);s=q(k.padding,g.padding,f,s,{dist:w,lerp:function(a,b,c){return p.lerp(a,b,c,r)},set:function(a){k.padding=a}});l=e.easeInOutInterpLinear(c,a,k.fov,g.fov,f,l,{dist:function(a,b){return Math.abs(b-a)},lerp:d.lerp,
+set:function(a){k.fov=a}});k.computeUpOnSphere()}}var t=h.vec3d,p=h.vec4d,r=p.create(),n=1E-4;return u.createSubclass({declaredClass:"esri.views.3d.navigation.spherical.AnimationSpherical",constructor:function(){this.interpolationTypes={linear:x,easeInOut:y}}})});

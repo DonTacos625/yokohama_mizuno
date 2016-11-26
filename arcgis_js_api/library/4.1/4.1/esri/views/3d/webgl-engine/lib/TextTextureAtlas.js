@@ -1,25 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./Texture","./ModelContentType","../../../webgl/Texture","../../../webgl/enums"],function(t,e,r,i,u,s){var n=512,a=function(){function t(t){this.textTextures={},this.id=r.idGen.gen(t)}return t.prototype.getId=function(){return this.id},t.prototype.dispose=function(){},t.prototype.deferredLoading=function(){return!1},t.prototype.getWidth=function(){return n},t.prototype.getHeight=function(){return n},t.prototype.initializeThroughRender=function(e,r){var i=t._create2Dcanvas(),s=i.getContext("2d");s.save(),s.clearRect(0,0,n,n),r.wrapMode=33071,r.samplingMode=9729,r.flipped=!0;for(var a in this.textTextures){var h=this.textTextures[a];h.textTexture.renderText(1,h.placement.width,h.placement.height,s,h.placement.atlasOffX,h.placement.atlasOffY)}var c=new u(e,r,i);return s.restore(),c},t.prototype.setUnloadFunc=function(t){this._unloadFunc=t},t.prototype.unload=function(){null!=this._unloadFunc&&(this._unloadFunc(this.id),this._unloadFunc=null)},t._create2Dcanvas=function(){return t._textCanvas2D||(t._textCanvas2D=document.createElement("canvas"),t._textCanvas2D.setAttribute("id","canvas2d"),t._textCanvas2D.setAttribute("width",n.toString()),t._textCanvas2D.setAttribute("height",n.toString()),t._textCanvas2D.setAttribute("style","display:none")),t._textCanvas2D},t}(),h=function(){function t(t,e){this._textureAtlasSubtextures=[],this._curX=0,this._curY=0,this._curLineHeight=0,this._idHint=t,this._stage=e}return t.prototype.dispose=function(){for(var t=0;t<this._textureAtlasSubtextures.length;t++)this._stage.remove(i.TEXTURE,this._textureAtlasSubtextures[t].getId());this._textureAtlasSubtextures=[]},t.prototype.addTextTexture=function(t){for(var e=JSON.stringify(t.getParams())+"_"+t.getString(),r=0;r<this._textureAtlasSubtextures.length;r++){var u=this._textureAtlasSubtextures[r].textTextures[e];if(null!=u)return u.placement}var s=null;0===this._textureAtlasSubtextures.length&&(s=new a(this._idHint),this._textureAtlasSubtextures.push(s));var h,c,o=t.getTextWidth(),_=t.getTextHeight();this._curLineHeight=Math.max(this._curLineHeight,_),this._curX+o<n&&this._curY+this._curLineHeight<n?(h=this._curX,c=this._curY,this._curX+=o):this._curY+this._curLineHeight+_<n?(this._curX=0,this._curY+=this._curLineHeight,this._curLineHeight=_,h=this._curX,c=this._curY,this._curX+=o):(s=new a(this._idHint),this._textureAtlasSubtextures.push(s),this._curX=0,this._curY=0,this._curLineHeight=_,h=this._curX,c=this._curY,this._curX+=o),null!=s&&this._stage.add(i.TEXTURE,s);var x=this._textureAtlasSubtextures[this._textureAtlasSubtextures.length-1],l={uvMinMax:[h/n,1-(c+_)/n,(h+o)/n,1-c/n],atlasOffX:h,atlasOffY:c,width:o,height:_,texture:x};return x.textTextures[e]={placement:l,textTexture:t},l},t}();return h});
+//>>built
+define("require exports ./Texture ./ModelContentType ../../../webgl/Texture ../../../webgl/enums".split(" "),function(p,q,l,h,m,r){var k=function(){function a(a){this.textTextures={};this.id=l.idGen.gen(a)}a.prototype.getId=function(){return this.id};a.prototype.dispose=function(){};a.prototype.deferredLoading=function(){return!1};a.prototype.getWidth=function(){return 512};a.prototype.getHeight=function(){return 512};a.prototype.initializeThroughRender=function(n,f){var b=a._create2Dcanvas(),c=b.getContext("2d");
+c.save();c.clearRect(0,0,512,512);f.wrapMode=33071;f.samplingMode=9729;f.flipped=!0;for(var d in this.textTextures){var e=this.textTextures[d];e.textTexture.renderText(1,e.placement.width,e.placement.height,c,e.placement.atlasOffX,e.placement.atlasOffY)}b=new m(n,f,b);c.restore();return b};a.prototype.setUnloadFunc=function(a){this._unloadFunc=a};a.prototype.unload=function(){null!=this._unloadFunc&&(this._unloadFunc(this.id),this._unloadFunc=null)};a._create2Dcanvas=function(){a._textCanvas2D||(a._textCanvas2D=
+document.createElement("canvas"),a._textCanvas2D.setAttribute("id","canvas2d"),a._textCanvas2D.setAttribute("width",(512).toString()),a._textCanvas2D.setAttribute("height",(512).toString()),a._textCanvas2D.setAttribute("style","display:none"));return a._textCanvas2D};return a}();return function(){function a(a,f){this._textureAtlasSubtextures=[];this._curLineHeight=this._curY=this._curX=0;this._idHint=a;this._stage=f}a.prototype.dispose=function(){for(var a=0;a<this._textureAtlasSubtextures.length;a++)this._stage.remove(h.TEXTURE,
+this._textureAtlasSubtextures[a].getId());this._textureAtlasSubtextures=[]};a.prototype.addTextTexture=function(a){for(var f=JSON.stringify(a.getParams())+"_"+a.getString(),b=0;b<this._textureAtlasSubtextures.length;b++){var c=this._textureAtlasSubtextures[b].textTextures[f];if(null!=c)return c.placement}var d=null;0===this._textureAtlasSubtextures.length&&(d=new k(this._idHint),this._textureAtlasSubtextures.push(d));var b=a.getTextWidth(),c=a.getTextHeight(),e,g;this._curLineHeight=Math.max(this._curLineHeight,
+c);512>this._curX+b&&512>this._curY+this._curLineHeight||(512>this._curY+this._curLineHeight+c?(this._curX=0,this._curY+=this._curLineHeight):(d=new k(this._idHint),this._textureAtlasSubtextures.push(d),this._curY=this._curX=0),this._curLineHeight=c);e=this._curX;g=this._curY;this._curX+=b;null!=d&&this._stage.add(h.TEXTURE,d);d=this._textureAtlasSubtextures[this._textureAtlasSubtextures.length-1];b={uvMinMax:[e/512,1-(g+c)/512,(e+b)/512,1-g/512],atlasOffX:e,atlasOffY:g,width:b,height:c,texture:d};
+d.textTextures[f]={placement:b,textTexture:a};return b};return a}()});

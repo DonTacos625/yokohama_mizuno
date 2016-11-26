@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Lagret ${name} har inga fält som kan användas för filtrering.",addToViewer:"Lägg till lager på karta",noItemsToDisplay:"Det finns inga objekt att visa.",searchFor:"Sök efter",searching:"Söker",items:{organizationLabel:"Min organisation",onlineLabel:"ArcGIS Online",contentLabel:"Mitt innehåll",favoritesLabel:"Mina favoriter"},title:"Välj webbkarta",searchTitle:"Sök",ok:"OK",cancel:"Avbryt",placeholder:"Ange sökterm",instructionsLeft:"Vad vill du göra?",instructionsRight:"Välj en konfigurerbar app.",go:"Kör",selectDetails:"VÄLJ",configure:"Skapa",close:"Stäng",learnMoreConfigurableApps:"Läs mer om konfigurerbara appar"});
+//>>built
+define({noFilterFields:"Lagret ${name} har inga f\u00e4lt som kan anv\u00e4ndas f\u00f6r filtrering.",addToViewer:"L\u00e4gg till lager p\u00e5 karta",noItemsToDisplay:"Det finns inga objekt att visa.",searchFor:"S\u00f6k efter",searching:"S\u00f6ker",items:{organizationLabel:"Min organisation",onlineLabel:"ArcGIS Online",contentLabel:"Mitt inneh\u00e5ll",favoritesLabel:"Mina favoriter"},title:"V\u00e4lj webbkarta",searchTitle:"S\u00f6k",ok:"OK",cancel:"Avbryt",placeholder:"Ange s\u00f6kterm",instructionsLeft:"Vad vill du g\u00f6ra?",
+instructionsRight:"V\u00e4lj en konfigurerbar app.",go:"K\u00f6r",selectDetails:"V\u00c4LJ",configure:"Skapa",close:"St\u00e4ng",learnMoreConfigurableApps:"L\u00e4s mer om konfigurerbara appar"});

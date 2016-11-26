@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"Độ trong suốt",suggested:"Gợi ý",recent:"Gần dây",more:"Khác",moreColorsTooltip:"Xem thêm màu khác.",paletteTooltip:"Chọn màu sắc.",noColorTooltip:"Không có màu nào",hexInputTooltip:"Màu sắc tùy chỉnh trong ký hiệu thập lục phân (#FFFF00)."});
+//>>built
+define({transparency:"\u0110\u1ed9 trong su\u1ed1t",suggested:"G\u1ee3i \u00fd",recent:"G\u1ea7n d\u00e2y",more:"Kh\u00e1c",moreColorsTooltip:"Xem th\u00eam m\u00e0u kh\u00e1c.",paletteTooltip:"Ch\u1ecdn m\u00e0u s\u1eafc.",noColorTooltip:"Kh\u00f4ng c\u00f3 m\u00e0u n\u00e0o",hexInputTooltip:"M\u00e0u s\u1eafc t\u00f9y ch\u1ec9nh trong k\u00fd hi\u1ec7u th\u1eadp l\u1ee5c ph\u00e2n (#FFFF00)."});

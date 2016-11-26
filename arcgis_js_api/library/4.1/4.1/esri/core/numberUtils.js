@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["dojo/number","dojo/i18n!dojo/cldr/nls/number"],function(e,r){var n=function(e,r){return e-r},t={_reNumber:/^-?(\d+)(\.(\d+))?$/i,getDigits:function(e){var r=String(e),n=r.match(t._reNumber),l={integer:0,fractional:0};if(n&&n[1])l.integer=n[1].split("").length,l.fractional=n[3]?n[3].split("").length:0;else if(r.toLowerCase().indexOf("e")>-1){var i,a,o=r.split("e"),u=o[0],g=o[1];u&&g&&(u=Number(u),g=Number(g),a=g>0,a||(g=Math.abs(g)),i=t.getDigits(u),a?(i.integer+=g,g>i.fractional?i.fractional=0:i.fractional-=g):(i.fractional+=g,g>i.integer?i.integer=1:i.integer-=g),l=i)}return l},getFixedNumbers:function(e,r){var n,t;return n=Number(e.toFixed(r)),e>n?t=n+1/Math.pow(10,r):(t=n,n-=1/Math.pow(10,r)),n=Number(n.toFixed(r)),t=Number(t.toFixed(r)),[n,t]},getPctChange:function(e,r,n,t){var l,i,a,o={prev:null,next:null};return null!=n&&(l=e-n,i=r-n,a=i-l,o.prev=Math.floor(Math.abs(100*a/l))),null!=t&&(l=t-e,i=t-r,a=i-l,o.next=Math.floor(Math.abs(100*a/l))),o},round:function(e,r){var l,i,a,o,u,g,s,c,f,d,h,m=e.slice(0),p=r&&null!=r.tolerance?r.tolerance:2,b=r&&r.indexes,x=r&&null!=r.strictBounds?r.strictBounds:!1;if(b)b.sort(n);else for(b=[],c=0;c<m.length;c++)b.push(c);for(c=0;c<b.length;c++)if(h=b[c],l=m[h],i=0===h?null:m[h-1],a=h===m.length-1?null:m[h+1],o=t.getDigits(l),u=o.fractional){for(f=0,d=!1;u>=f&&!d;)s=t.getFixedNumbers(l,f),g=x&&0===c?s[1]:s[0],d=t.hasMinimalChange(l,g,i,a,p),f++;d&&(m[h]=g)}return m},hasMinimalChange:function(e,r,n,l,i){var a,o,u,g=t.getPctChange(e,r,n,l);return a=null==g.prev||g.prev<=i,o=null==g.next||g.next<=i,u=a&&o||g.prev+g.next<=2*i},_reAllZeros:new RegExp("\\"+r.decimal+"0+$","g"),_reSomeZeros:new RegExp("(\\d)0*$","g"),format:function(r,n){n=n||{places:20,round:-1};var l=e.format(r,n);return l&&(l=l.replace(t._reSomeZeros,"$1").replace(t._reAllZeros,"")),l}};return t});
+//>>built
+define(["dojo/number","dojo/i18n!dojo/cldr/nls/number"],function(q,r){var t=function(c,b){return c-b},d={_reNumber:/^-?(\d+)(\.(\d+))?$/i,getDigits:function(c){var b=String(c),a=b.match(d._reNumber);c={integer:0,fractional:0};a&&a[1]?(c.integer=a[1].split("").length,c.fractional=a[3]?a[3].split("").length:0):-1<b.toLowerCase().indexOf("e")&&(a=b.split("e"),b=a[0],a=a[1],b&&a&&(b=Number(b),a=Number(a),(c=0<a)||(a=Math.abs(a)),b=d.getDigits(b),c?(b.integer+=a,b.fractional=a>b.fractional?0:b.fractional-
+a):(b.fractional+=a,b.integer=a>b.integer?1:b.integer-a),c=b));return c},getFixedNumbers:function(c,b){var a,e;a=Number(c.toFixed(b));a<c?e=a+1/Math.pow(10,b):(e=a,a-=1/Math.pow(10,b));a=Number(a.toFixed(b));e=Number(e.toFixed(b));return[a,e]},getPctChange:function(c,b,a,e){var f={prev:null,next:null},d;null!=a&&(d=c-a,a=b-a-d,f.prev=Math.floor(Math.abs(100*a/d)));null!=e&&(d=e-c,a=e-b-d,f.next=Math.floor(Math.abs(100*a/d)));return f},round:function(c,b){var a=c.slice(0),e,f,s,m,k,g,n,p,h,q=!b||null==
+b.tolerance?2:b.tolerance,l=b&&b.indexes,r=!b||null==b.strictBounds?!1:b.strictBounds;if(l)l.sort(t);else{l=[];for(g=0;g<a.length;g++)l.push(g)}for(g=0;g<l.length;g++)if(h=l[g],e=a[h],f=0===h?null:a[h-1],s=h===a.length-1?null:a[h+1],m=d.getDigits(e),m=m.fractional){n=0;for(p=!1;n<=m&&!p;)k=d.getFixedNumbers(e,n),k=r&&0===g?k[1]:k[0],p=d.hasMinimalChange(e,k,f,s,q),n++;p&&(a[h]=k)}return a},hasMinimalChange:function(c,b,a,e,f){c=d.getPctChange(c,b,a,e);b=null==c.prev||c.prev<=f;a=null==c.next||c.next<=
+f;return b&&a||c.prev+c.next<=2*f},_reAllZeros:RegExp("\\"+r.decimal+"0+$","g"),_reSomeZeros:/(\d)0*$/g,format:function(c,b){b=b||{places:20,round:-1};var a=q.format(c,b);a&&(a=a.replace(d._reSomeZeros,"$1").replace(d._reAllZeros,""));return a}};return d});

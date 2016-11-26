@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({streets:"Đường phố",satellite:"Dữ liệu hình ảnh",hybrid:"Hình ảnh có Dán nhãn",terrain:"Địa hình có Dán nhãn",topo:"Địa hình",gray:"Bức vẽ xám nhạt","dark-gray":"Bức vẽ xám đậm",oceans:"Đại dương","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"Bản đồ Đường phố Thế giới (Ban đêm)","streets-relief-vector":"Bản đồ Đường phố Thế giới (có Địa hình)","streets-navigation-vector":"Bản đồ Điều hướng Thế giới"});
+//>>built
+define({streets:"\u0110\u01b0\u1eddng ph\u1ed1",satellite:"D\u1eef li\u1ec7u h\u00ecnh \u1ea3nh",hybrid:"H\u00ecnh \u1ea3nh c\u00f3 D\u00e1n nh\u00e3n",terrain:"\u0110\u1ecba h\u00ecnh c\u00f3 D\u00e1n nh\u00e3n",topo:"\u0110\u1ecba h\u00ecnh",gray:"B\u1ee9c v\u1ebd x\u00e1m nh\u1ea1t","dark-gray":"B\u1ee9c v\u1ebd x\u00e1m \u0111\u1eadm",oceans:"\u0110\u1ea1i d\u01b0\u01a1ng","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"B\u1ea3n \u0111\u1ed3 \u0110\u01b0\u1eddng ph\u1ed1 Th\u1ebf gi\u1edbi (Ban \u0111\u00eam)",
+"streets-relief-vector":"B\u1ea3n \u0111\u1ed3 \u0110\u01b0\u1eddng ph\u1ed1 Th\u1ebf gi\u1edbi (c\u00f3 \u0110\u1ecba h\u00ecnh)","streets-navigation-vector":"B\u1ea3n \u0111\u1ed3 \u0110i\u1ec1u h\u01b0\u1edbng Th\u1ebf gi\u1edbi"});

@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/declare","dojo/_base/lang","dojo/_base/array","../../core/Accessoire","../../layers/support/layerUtils","../../geometry/support/jsonUtils","../../geometry/support/scaleUtils"],function(e,i,t,s,r,a,n){var l={LAYER_OPTION_TOP:"top",LAYER_OPTION_VISIBLE:"visible",LAYER_OPTION_ALL:"all"},o=e(s,{declaredClass:"esri.tasks.support.IdentifyParameters",geometry:null,dpi:96,dynamicLayerInfos:null,height:400,layerDefinitions:null,layerIds:null,layerOption:l.LAYER_OPTION_TOP,layerTimeOptions:null,mapExtent:null,geometryPrecision:null,maxAllowableOffset:null,returnGeometry:!1,spatialReference:null,timeExtent:null,tolerance:null,width:400,toJSON:function(e){var i=e&&e.geometry||this.geometry,s=this.mapExtent,l=this.spatialReference,o=this.layerIds,y={tolerance:this.tolerance,returnGeometry:this.returnGeometry,imageDisplay:this.width+","+this.height+","+this.dpi,maxAllowableOffset:this.maxAllowableOffset,geometryPrecision:this.geometryPrecision};if(i){var f=i.toJSON();delete f.spatialReference,y.geometry=JSON.stringify(f),y.geometryType=a.getJsonType(i)}l?y.sr=l.wkid||JSON.stringify(l.toJSON()):i&&i.spatialReference?y.sr=i.spatialReference.wkid||JSON.stringify(i.spatialReference.toJSON()):s&&s.spatialReference&&(y.sr=s.spatialReference.wkid||JSON.stringify(s.spatialReference.toJSON())),s&&(y.mapExtent=s.xmin+","+s.ymin+","+s.xmax+","+s.ymax),y.layers=this.layerOption,o&&(y.layers+=":"+o.join(",")),y.layerDefs=r._serializeLayerDefinitions(this.layerDefinitions);var m=this.timeExtent;if(y.time=m?m.toJSON().join(","):null,y.layerTimeOptions=r._serializeTimeOptions(this.layerTimeOptions),this.dynamicLayerInfos&&this.dynamicLayerInfos.length>0){var h,p={extent:s,width:this.width,spatialReference:s.spatialReference},c=n.getScale(p),O=r._getLayersForScale(c,this.dynamicLayerInfos),d=[];t.forEach(this.dynamicLayerInfos,function(e){if(!e.subLayerIds){var i=e.id;if((!this.layerIds||this.layerIds&&-1!==t.indexOf(this.layerIds,i))&&-1!==t.indexOf(O,i)){var s={id:i};s.source=e.source&&e.source.toJSON();var r;this.layerDefinitions&&this.layerDefinitions[i]&&(r=this.layerDefinitions[i]),r&&(s.definitionExpression=r);var a;this.layerTimeOptions&&this.layerTimeOptions[i]&&(a=this.layerTimeOptions[i]),a&&(s.layerTimeOptions=a.toJSON()),d.push(s)}}},this),h=JSON.stringify(d),"[]"===h&&(h="[{}]"),y.dynamicLayers=h}return y}});return i.mixin(o,l),o});
+//>>built
+define("../../core/declare dojo/_base/lang dojo/_base/array ../../core/Accessoire ../../layers/support/layerUtils ../../geometry/support/jsonUtils ../../geometry/support/scaleUtils".split(" "),function(d,f,g,m,h,n,p){var e={LAYER_OPTION_TOP:"top",LAYER_OPTION_VISIBLE:"visible",LAYER_OPTION_ALL:"all"};d=d(m,{declaredClass:"esri.tasks.support.IdentifyParameters",geometry:null,dpi:96,dynamicLayerInfos:null,height:400,layerDefinitions:null,layerIds:null,layerOption:e.LAYER_OPTION_TOP,layerTimeOptions:null,
+mapExtent:null,geometryPrecision:null,maxAllowableOffset:null,returnGeometry:!1,spatialReference:null,timeExtent:null,tolerance:null,width:400,toJSON:function(b){var c=b&&b.geometry||this.geometry,a=this.mapExtent,d=this.spatialReference,e=this.layerIds;b={tolerance:this.tolerance,returnGeometry:this.returnGeometry,imageDisplay:this.width+","+this.height+","+this.dpi,maxAllowableOffset:this.maxAllowableOffset,geometryPrecision:this.geometryPrecision};if(c){var k=c.toJSON();delete k.spatialReference;
+b.geometry=JSON.stringify(k);b.geometryType=n.getJsonType(c)}d?b.sr=d.wkid||JSON.stringify(d.toJSON()):c&&c.spatialReference?b.sr=c.spatialReference.wkid||JSON.stringify(c.spatialReference.toJSON()):a&&a.spatialReference&&(b.sr=a.spatialReference.wkid||JSON.stringify(a.spatialReference.toJSON()));a&&(b.mapExtent=a.xmin+","+a.ymin+","+a.xmax+","+a.ymax);b.layers=this.layerOption;e&&(b.layers+=":"+e.join(","));b.layerDefs=h._serializeLayerDefinitions(this.layerDefinitions);c=this.timeExtent;b.time=
+c?c.toJSON().join(","):null;b.layerTimeOptions=h._serializeTimeOptions(this.layerTimeOptions);if(this.dynamicLayerInfos&&0<this.dynamicLayerInfos.length){var a=p.getScale({extent:a,width:this.width,spatialReference:a.spatialReference}),f=h._getLayersForScale(a,this.dynamicLayerInfos),l=[];g.forEach(this.dynamicLayerInfos,function(b){if(!b.subLayerIds){var a=b.id;if((!this.layerIds||this.layerIds&&-1!==g.indexOf(this.layerIds,a))&&-1!==g.indexOf(f,a)){var c={id:a};c.source=b.source&&b.source.toJSON();
+var d;this.layerDefinitions&&this.layerDefinitions[a]&&(d=this.layerDefinitions[a]);d&&(c.definitionExpression=d);var e;this.layerTimeOptions&&this.layerTimeOptions[a]&&(e=this.layerTimeOptions[a]);e&&(c.layerTimeOptions=e.toJSON());l.push(c)}}},this);a=JSON.stringify(l);"[]"===a&&(a="[{}]");b.dynamicLayers=a}return b}});f.mixin(d,e);return d});

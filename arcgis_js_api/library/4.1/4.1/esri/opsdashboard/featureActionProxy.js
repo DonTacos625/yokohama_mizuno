@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../core/tsSupport/extendsHelper","../core/tsSupport/decorateHelper","../core/typescript","./core/ExtensionBase","../tasks/support/FeatureSet"],function(e,t,r,o,n,c,s){var u=function(e){function t(){e.call(this)}return r(t,e),t.prototype._messageReceived=function(e){var t=this;"execute"===e.functionName.toLowerCase()&&this.getDataSourceProxy(e.args.dataSourceId).then(function(r){t._execute(r,new s(e.args.featureSet),e.args.configuration||e.args.config)})},t.prototype._execute=function(e,t,r){this.emit("execute",{dataSourceProxy:e,features:t,config:r})},t=o([n.subclass()],t)}(c),a=new u;return a});
+//>>built
+define("require exports ../core/tsSupport/extendsHelper ../core/tsSupport/decorateHelper ../core/typescript ./core/ExtensionBase ../tasks/support/FeatureSet".split(" "),function(l,m,e,f,g,h,k){return new (function(c){function a(){c.call(this)}e(a,c);a.prototype._messageReceived=function(b){var a=this;"execute"===b.functionName.toLowerCase()&&this.getDataSourceProxy(b.args.dataSourceId).then(function(d){a._execute(d,new k(b.args.featureSet),b.args.configuration||b.args.config)})};a.prototype._execute=
+function(a,c,d){this.emit("execute",{dataSourceProxy:a,features:c,config:d})};return a=f([g.subclass()],a)}(h))});

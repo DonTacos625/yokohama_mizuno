@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({zoom:"Приблизить к",next:"Следующий объект",previous:"Предыдущий объект",close:"Закрыть",dock:"Пристань",undock:"Открепить",menu:"Меню",untitled:"Без имени",pageText:"{index} из {total}",noFeaturesFound:"Не найдены объекты",selectedFeature:"Выбранный объект",selectedFeatures:"{total} результатов",loading:"Загрузка"});
+//>>built
+define({zoom:"\u041f\u0440\u0438\u0431\u043b\u0438\u0437\u0438\u0442\u044c \u043a",next:"\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u043e\u0431\u044a\u0435\u043a\u0442",previous:"\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439 \u043e\u0431\u044a\u0435\u043a\u0442",close:"\u0417\u0430\u043a\u0440\u044b\u0442\u044c",dock:"\u041f\u0440\u0438\u0441\u0442\u0430\u043d\u044c",undock:"\u041e\u0442\u043a\u0440\u0435\u043f\u0438\u0442\u044c",menu:"\u041c\u0435\u043d\u044e",untitled:"\u0411\u0435\u0437 \u0438\u043c\u0435\u043d\u0438",
+pageText:"{index} \u0438\u0437 {total}",noFeaturesFound:"\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u044b \u043e\u0431\u044a\u0435\u043a\u0442\u044b",selectedFeature:"\u0412\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0439 \u043e\u0431\u044a\u0435\u043a\u0442",selectedFeatures:"{total} \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432",loading:"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430"});

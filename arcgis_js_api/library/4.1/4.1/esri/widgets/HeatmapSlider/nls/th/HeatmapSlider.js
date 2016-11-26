@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"ค่าเฉลี่ย : ${avg}",count:"จำนวน : ${count}",percent:"${num}%",high:"สูง",low:"ต่ำ",color:{changeMinMaxToolTIp:"พิมพ์ด้วยค่า",handleToolTip:"เชื่อมค่าของข้อมูลไปยังสี",maxValueToolTip:"พิมพ์ค่าข้อมูลที่มากที่สุด",minValueToolTip:"พิมพ์ค่าข้อมูลที่น้อยที่สุด",changeSymbol:"เปลี่ยนสัญลักษณ์"},size:{handleToolTip:"เชื่อมค่าของข้อมูลกับขนาดสัญลักษณ์",sizeInputBoxLines:"ตั้งค่าความหนาของเส้นจาก 0 ถึง 18 พิกเซล",sizeInputBoxPoints:"ตั้งค่าขนาดของสัญลักษณ์จาก 1 ถึง 120 พิกเซล"}});
+//>>built
+define({statsAvg:"\u0e04\u0e48\u0e32\u0e40\u0e09\u0e25\u0e35\u0e48\u0e22 : ${avg}",count:"\u0e08\u0e33\u0e19\u0e27\u0e19 : ${count}",percent:"${num}%",high:"\u0e2a\u0e39\u0e07",low:"\u0e15\u0e48\u0e33",color:{changeMinMaxToolTIp:"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e14\u0e49\u0e27\u0e22\u0e04\u0e48\u0e32",handleToolTip:"\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e04\u0e48\u0e32\u0e02\u0e2d\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e44\u0e1b\u0e22\u0e31\u0e07\u0e2a\u0e35",maxValueToolTip:"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e04\u0e48\u0e32\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e17\u0e35\u0e48\u0e21\u0e32\u0e01\u0e17\u0e35\u0e48\u0e2a\u0e38\u0e14",
+minValueToolTip:"\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e04\u0e48\u0e32\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e17\u0e35\u0e48\u0e19\u0e49\u0e2d\u0e22\u0e17\u0e35\u0e48\u0e2a\u0e38\u0e14",changeSymbol:"\u0e40\u0e1b\u0e25\u0e35\u0e48\u0e22\u0e19\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c"},size:{handleToolTip:"\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e04\u0e48\u0e32\u0e02\u0e2d\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e31\u0e1a\u0e02\u0e19\u0e32\u0e14\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c",
+sizeInputBoxLines:"\u0e15\u0e31\u0e49\u0e07\u0e04\u0e48\u0e32\u0e04\u0e27\u0e32\u0e21\u0e2b\u0e19\u0e32\u0e02\u0e2d\u0e07\u0e40\u0e2a\u0e49\u0e19\u0e08\u0e32\u0e01 0 \u0e16\u0e36\u0e07 18 \u0e1e\u0e34\u0e01\u0e40\u0e0b\u0e25",sizeInputBoxPoints:"\u0e15\u0e31\u0e49\u0e07\u0e04\u0e48\u0e32\u0e02\u0e19\u0e32\u0e14\u0e02\u0e2d\u0e07\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c\u0e08\u0e32\u0e01 1 \u0e16\u0e36\u0e07 120 \u0e1e\u0e34\u0e01\u0e40\u0e0b\u0e25"}});

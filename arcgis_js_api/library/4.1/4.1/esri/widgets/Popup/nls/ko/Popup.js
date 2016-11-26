@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({zoom:"확대",next:"다음 피처",previous:"이전 피처",close:"닫기",dock:"고정",undock:"고정 해제",menu:"메뉴",untitled:"제목 없음",pageText:"{index}/{total}",noFeaturesFound:"피처를 찾을 수 없음",selectedFeature:"선택한 피처",selectedFeatures:"{total}개 결과",loading:"불러오는 중"});
+//>>built
+define({zoom:"\ud655\ub300",next:"\ub2e4\uc74c \ud53c\ucc98",previous:"\uc774\uc804 \ud53c\ucc98",close:"\ub2eb\uae30",dock:"\uace0\uc815",undock:"\uace0\uc815 \ud574\uc81c",menu:"\uba54\ub274",untitled:"\uc81c\ubaa9 \uc5c6\uc74c",pageText:"{index}/{total}",noFeaturesFound:"\ud53c\ucc98\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc74c",selectedFeature:"\uc120\ud0dd\ud55c \ud53c\ucc98",selectedFeatures:"{total}\uac1c \uacb0\uacfc",loading:"\ubd88\ub7ec\uc624\ub294 \uc911"});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"關於",add:"新增",all:"全部",apply:"應用",auth:{logOut:"登出",signIn:"登入"},back:"上一步",cancel:"取消",change:"變更",clear:"清除",close:"關閉",configure:"配置",control:{pause:"暫停",play:"播放",resume:"恢復",stop:"停止"},copy:"複製",create:"建立",cut:"剪下","delete":"刪除",details:"詳細資訊",edit:"編輯",error:"錯誤",esri:"Esri",exit:"退出",fieldsSummary:"屬性和值的清單",find:"尋找",form:{no:"否",ok:"確定",password:"密碼",submit:"提交",username:"使用者名稱",yes:"是"},help:"說明",home:"首頁",info:"資訊",information:"資訊",layer:"圖層",loading:"正在載入",maximize:"最大化",menu:"功能表",more:"更多資訊",none:"無",open:"開啟",pagination:{first:"第一頁",last:"最後一頁",next:"下一步",page:"頁",pageText:"{index}/{total}",previous:"上一個"},paste:"貼上",preview:"預覽",print:"列印",publish:"發佈",redo:"恢復",refresh:"重新整理",remove:"移除",rename:"重新命名",reset:"重設",restore:"復原",save:"儲存",search:"搜尋",searching:"正在搜尋",select:"選擇",settings:"設定",sort:"排序",share:"分享",title:"標題",untitled:"無標題",upload:"上傳",undo:"撤消",view:"視圖",visibility:{hide:"隱藏(H)",show:"顯示",toggle:"切換"},warning:"警告"});
+//>>built
+define({about:"\u95dc\u65bc",add:"\u65b0\u589e",all:"\u5168\u90e8",apply:"\u61c9\u7528",auth:{logOut:"\u767b\u51fa",signIn:"\u767b\u5165"},back:"\u4e0a\u4e00\u6b65",cancel:"\u53d6\u6d88",change:"\u8b8a\u66f4",clear:"\u6e05\u9664",close:"\u95dc\u9589",configure:"\u914d\u7f6e",control:{pause:"\u66ab\u505c",play:"\u64ad\u653e",resume:"\u6062\u5fa9",stop:"\u505c\u6b62"},copy:"\u8907\u88fd",create:"\u5efa\u7acb",cut:"\u526a\u4e0b","delete":"\u522a\u9664",details:"\u8a73\u7d30\u8cc7\u8a0a",edit:"\u7de8\u8f2f",
+error:"\u932f\u8aa4",esri:"Esri",exit:"\u9000\u51fa",fieldsSummary:"\u5c6c\u6027\u548c\u503c\u7684\u6e05\u55ae",find:"\u5c0b\u627e",form:{no:"\u5426",ok:"\u78ba\u5b9a",password:"\u5bc6\u78bc",submit:"\u63d0\u4ea4",username:"\u4f7f\u7528\u8005\u540d\u7a31",yes:"\u662f"},help:"\u8aaa\u660e",home:"\u9996\u9801",info:"\u8cc7\u8a0a",information:"\u8cc7\u8a0a",layer:"\u5716\u5c64",loading:"\u6b63\u5728\u8f09\u5165",maximize:"\u6700\u5927\u5316",menu:"\u529f\u80fd\u8868",more:"\u66f4\u591a\u8cc7\u8a0a",
+none:"\u7121",open:"\u958b\u555f",pagination:{first:"\u7b2c\u4e00\u9801",last:"\u6700\u5f8c\u4e00\u9801",next:"\u4e0b\u4e00\u6b65",page:"\u9801",pageText:"{index}/{total}",previous:"\u4e0a\u4e00\u500b"},paste:"\u8cbc\u4e0a",preview:"\u9810\u89bd",print:"\u5217\u5370",publish:"\u767c\u4f48",redo:"\u6062\u5fa9",refresh:"\u91cd\u65b0\u6574\u7406",remove:"\u79fb\u9664",rename:"\u91cd\u65b0\u547d\u540d",reset:"\u91cd\u8a2d",restore:"\u5fa9\u539f",save:"\u5132\u5b58",search:"\u641c\u5c0b",searching:"\u6b63\u5728\u641c\u5c0b",
+select:"\u9078\u64c7",settings:"\u8a2d\u5b9a",sort:"\u6392\u5e8f",share:"\u5206\u4eab",title:"\u6a19\u984c",untitled:"\u7121\u6a19\u984c",upload:"\u4e0a\u50b3",undo:"\u64a4\u6d88",view:"\u8996\u5716",visibility:{hide:"\u96b1\u85cf(H)",show:"\u986f\u793a",toggle:"\u5207\u63db"},warning:"\u8b66\u544a"});

@@ -1,39 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-// Copyright 2011 The Closure Library Authors. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS-IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-define([],function(){var t={};return function(){function t(t){var e=typeof t;if("object"==e){if(!t)return"null";if(t instanceof Array)return"array";if(t instanceof Object)return e;var r=Object.prototype.toString.call(t);if("[object Window]"==r)return"object";if("[object Array]"==r||"number"==typeof t.length&&"undefined"!=typeof t.splice&&"undefined"!=typeof t.propertyIsEnumerable&&!t.propertyIsEnumerable("splice"))return"array";if("[object Function]"==r||"undefined"!=typeof t.call&&"undefined"!=typeof t.propertyIsEnumerable&&!t.propertyIsEnumerable("call"))return"function"}else if("function"==e&&"undefined"==typeof t.call)return"object";return e}function e(t,e){var r=t.split("."),o=p;r[0]in o||!o.execScript||o.execScript("var "+r[0]);for(var n;r.length&&(n=r.shift());)r.length||void 0===e?o=o[n]?o[n]:o[n]={}:o[n]=e}function r(t,e){this.d=t,this.b=e}function o(e){if("array"!=t(e))for(var r=e.length-1;r>=0;r--)delete e[r];e.length=0}function n(t){if(this.a=[],t)t:{var e,o;if(t instanceof n){e=t.a,o=[];for(var u=e.length,p=0;u>p;p++)o.push(e[p].getKey());e=o,o=t.a;for(var u=[],p=o.length,f=0;p>f;f++)u.push(o[f].b);if(o=u,0>=t.a.length){for(t=this.a,u=0;u<e.length;u++)t.push(new r(e[u],o[u]));break t}}else{e=[],u=0;for(p in t)e[u++]=p;u=[],p=0;for(o in t)u[p++]=t[o];o=u}for(u=0;u<e.length;u++)i(this,e[u],o[u])}}function i(t,e,o){var n=t.a;for(n.push(new r(e,o)),e=n.length-1,t=t.a,o=t[e];e>0&&(n=e-1>>1,t[n].getKey()>o.getKey());)t[e]=t[n],e=n;t[e]=o}function u(){n.call(this)}var p=this;r.prototype.getKey=function(){return this.d},r.prototype.c=function(){return new r(this.d,this.b)},n.prototype.remove=function(){var t=this.a,e=t.length,r=t[0];if(!(0>=e)){if(1==e)o(t);else{t[0]=t.pop();for(var t=0,e=this.a,n=e.length,i=e[t];n>>1>t;){var u=2*t+1,p=2*t+2,u=n>p&&e[p].getKey()<e[u].getKey()?p:u;if(e[u].getKey()>i.getKey())break;e[t]=e[u],t=u}e[t]=i}return r.b}},n.prototype.c=function(){return new n(this)},n.prototype.g=function(){return this.a.length},n.prototype.h=function(){return 0==this.a.length},n.prototype.clear=function(){o(this.a)},function(){function t(){}var e=n;t.prototype=e.prototype,u.i=e.prototype,u.prototype=new t}(),u.prototype.f=function(t,e){i(this,t,e)},u.prototype.e=function(){return this.remove()},e("goog.structs.PriorityQueue",u),e("goog.structs.PriorityQueue.prototype.enqueue",u.prototype.f),e("goog.structs.PriorityQueue.prototype.dequeue",u.prototype.e),e("goog.structs.PriorityQueue.prototype.isEmpty",u.prototype.h),e("goog.structs.PriorityQueue.prototype.clear",u.prototype.clear),e("goog.structs.PriorityQueue.prototype.clone",u.prototype.c),e("goog.structs.PriorityQueue.prototype.getCount",u.prototype.g)}.bind(t)(),t});
+//>>built
+define([],function(){var l={};(function(){function l(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var d=Object.prototype.toString.call(a);if("[object Window]"==d)return"object";if("[object Array]"==d||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==d||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&
+!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b}function h(a,b){var d=a.split("."),c=p;d[0]in c||!c.execScript||c.execScript("var "+d[0]);for(var f;d.length&&(f=d.shift());)d.length||void 0===b?c=c[f]?c[f]:c[f]={}:c[f]=b}function k(a,b){this.d=a;this.b=b}function m(a){if("array"!=l(a))for(var b=a.length-1;0<=b;b--)delete a[b];a.length=0}function g(a){this.a=[];if(a)a:{var b,d;if(a instanceof g){b=a.a;d=[];
+for(var c=b.length,f=0;f<c;f++)d.push(b[f].getKey());b=d;d=a.a;for(var c=[],f=d.length,e=0;e<f;e++)c.push(d[e].b);d=c;if(0>=a.a.length){a=this.a;for(c=0;c<b.length;c++)a.push(new k(b[c],d[c]));break a}}else{b=[];c=0;for(f in a)b[c++]=f;c=[];f=0;for(d in a)c[f++]=a[d];d=c}for(c=0;c<b.length;c++)n(this,b[c],d[c])}}function n(a,b,d){var c=a.a;c.push(new k(b,d));b=c.length-1;a=a.a;for(d=a[b];0<b;)if(c=b-1>>1,a[c].getKey()>d.getKey())a[b]=a[c],b=c;else break;a[b]=d}function e(){g.call(this)}var p=this;
+k.prototype.getKey=function(){return this.d};k.prototype.c=function(){return new k(this.d,this.b)};g.prototype.remove=function(){var a=this.a,b=a.length,d=a[0];if(!(0>=b)){if(1==b)m(a);else{a[0]=a.pop();for(var a=0,b=this.a,c=b.length,f=b[a];a<c>>1;){var e=2*a+1,g=2*a+2,e=g<c&&b[g].getKey()<b[e].getKey()?g:e;if(b[e].getKey()>f.getKey())break;b[a]=b[e];a=e}b[a]=f}return d.b}};g.prototype.c=function(){return new g(this)};g.prototype.g=function(){return this.a.length};g.prototype.h=function(){return 0==
+this.a.length};g.prototype.clear=function(){m(this.a)};(function(){function a(){}var b=g;a.prototype=b.prototype;e.i=b.prototype;e.prototype=new a})();e.prototype.f=function(a,b){n(this,a,b)};e.prototype.e=function(){return this.remove()};h("goog.structs.PriorityQueue",e);h("goog.structs.PriorityQueue.prototype.enqueue",e.prototype.f);h("goog.structs.PriorityQueue.prototype.dequeue",e.prototype.e);h("goog.structs.PriorityQueue.prototype.isEmpty",e.prototype.h);h("goog.structs.PriorityQueue.prototype.clear",
+e.prototype.clear);h("goog.structs.PriorityQueue.prototype.clone",e.prototype.c);h("goog.structs.PriorityQueue.prototype.getCount",e.prototype.g)}).call(l);return l});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({zoom:"ขยายไป",next:"ฟีเจอร์ต่อไป",previous:"ฟีเจอร์ก่อนหน้า",close:"ปิด",dock:"เรือ",undock:"ปลด",menu:"เมนู",untitled:"ไม่มีหัวเรื่อง",pageText:"{index} ของ {total}",noFeaturesFound:"ไม่พบฟีเจอร์ที่ค้นหา",selectedFeature:"ฟีเจอร์ที่เลือก",selectedFeatures:"{total} ผลลัพธ์",loading:"กำลังโหลด"});
+//>>built
+define({zoom:"\u0e02\u0e22\u0e32\u0e22\u0e44\u0e1b",next:"\u0e1f\u0e35\u0e40\u0e08\u0e2d\u0e23\u0e4c\u0e15\u0e48\u0e2d\u0e44\u0e1b",previous:"\u0e1f\u0e35\u0e40\u0e08\u0e2d\u0e23\u0e4c\u0e01\u0e48\u0e2d\u0e19\u0e2b\u0e19\u0e49\u0e32",close:"\u0e1b\u0e34\u0e14",dock:"\u0e40\u0e23\u0e37\u0e2d",undock:"\u0e1b\u0e25\u0e14",menu:"\u0e40\u0e21\u0e19\u0e39",untitled:"\u0e44\u0e21\u0e48\u0e21\u0e35\u0e2b\u0e31\u0e27\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07",pageText:"{index} \u0e02\u0e2d\u0e07 {total}",noFeaturesFound:"\u0e44\u0e21\u0e48\u0e1e\u0e1a\u0e1f\u0e35\u0e40\u0e08\u0e2d\u0e23\u0e4c\u0e17\u0e35\u0e48\u0e04\u0e49\u0e19\u0e2b\u0e32",
+selectedFeature:"\u0e1f\u0e35\u0e40\u0e08\u0e2d\u0e23\u0e4c\u0e17\u0e35\u0e48\u0e40\u0e25\u0e37\u0e2d\u0e01",selectedFeatures:"{total} \u0e1c\u0e25\u0e25\u0e31\u0e1e\u0e18\u0e4c",loading:"\u0e01\u0e33\u0e25\u0e31\u0e07\u0e42\u0e2b\u0e25\u0e14"});

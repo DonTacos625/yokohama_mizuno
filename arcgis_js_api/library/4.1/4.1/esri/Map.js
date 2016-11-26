@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./core/tsSupport/declareExtendsHelper","./core/tsSupport/decorateHelper","./core/Accessor","./core/CollectionFlattener","./core/Evented","./support/LayersMixin","./Ground","./support/basemapUtils","./support/groundUtils","./core/accessorSupport/decorators"],function(e,r,t,o,a,s,n,p,c,u,l,i){function y(){return a}var d=function(e){function r(r){e.call(this),this.basemap=null,this.ground=new c,this._basemapCache=u.createCache()}return t(r,e),Object.defineProperty(r.prototype,"allLayers",{get:function(){return new s({root:this,rootCollectionNames:["basemap.baseLayers","ground.layers","layers","basemap.referenceLayers"],getChildrenFunction:function(e){return e.layers}})},enumerable:!0,configurable:!0}),r.prototype.castBasemap=function(e){return u.ensureType(e,this._basemapCache)},o([i.property({readOnly:!0})],r.prototype,"allLayers",null),o([i.property()],r.prototype,"basemap",void 0),o([i.cast("basemap")],r.prototype,"castBasemap",null),o([i.property(),i.cast(l.ensureType)],r.prototype,"ground",void 0),r=o([i.subclass("esri.Map")],r)}(i.declared(y(),n,p));return d});
+//>>built
+define("require exports ./core/tsSupport/declareExtendsHelper ./core/tsSupport/decorateHelper ./core/Accessor ./core/CollectionFlattener ./core/Evented ./support/LayersMixin ./Ground ./support/basemapUtils ./support/groundUtils ./core/accessorSupport/decorators".split(" "),function(p,q,f,c,g,h,k,l,m,d,n,b){return function(e){function a(a){e.call(this);this.basemap=null;this.ground=new m;this._basemapCache=d.createCache()}f(a,e);Object.defineProperty(a.prototype,"allLayers",{get:function(){return new h({root:this,
+rootCollectionNames:["basemap.baseLayers","ground.layers","layers","basemap.referenceLayers"],getChildrenFunction:function(a){return a.layers}})},enumerable:!0,configurable:!0});a.prototype.castBasemap=function(a){return d.ensureType(a,this._basemapCache)};c([b.property({readOnly:!0})],a.prototype,"allLayers",null);c([b.property()],a.prototype,"basemap",void 0);c([b.cast("basemap")],a.prototype,"castBasemap",null);c([b.property(),b.cast(n.ensureType)],a.prototype,"ground",void 0);return a=c([b.subclass("esri.Map")],
+a)}(b.declared(g,k,l))});

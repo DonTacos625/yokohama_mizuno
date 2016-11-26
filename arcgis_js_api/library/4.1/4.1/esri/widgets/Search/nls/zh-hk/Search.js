@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({searchButtonTitle:"搜尋",clearButtonTitle:"清除搜尋",placeholder:"尋找位址或地點",searchIn:"搜尋範圍",lonlat:"經度、緯度",reverseLonLatHeader:"您的意思是?",all:"全部",allPlaceholder:"尋找位址或地點",emptyValue:"請輸入搜尋名詞。",untitledResult:"無標題",untitledSource:"無標題來源",noResults:"無任何結果",noResultsFound:"找不到 {value} 的任何結果。",showMoreResults:"顯示更多結果",hideMoreResults:"隱藏(H)",searchResult:"搜尋結果",moreResultsHeader:"更多結果",esriLocatorName:"Esri World Geocoder"});
+//>>built
+define({searchButtonTitle:"\u641c\u5c0b",clearButtonTitle:"\u6e05\u9664\u641c\u5c0b",placeholder:"\u5c0b\u627e\u4f4d\u5740\u6216\u5730\u9ede",searchIn:"\u641c\u5c0b\u7bc4\u570d",lonlat:"\u7d93\u5ea6\u3001\u7def\u5ea6",reverseLonLatHeader:"\u60a8\u7684\u610f\u601d\u662f?",all:"\u5168\u90e8",allPlaceholder:"\u5c0b\u627e\u4f4d\u5740\u6216\u5730\u9ede",emptyValue:"\u8acb\u8f38\u5165\u641c\u5c0b\u540d\u8a5e\u3002",untitledResult:"\u7121\u6a19\u984c",untitledSource:"\u7121\u6a19\u984c\u4f86\u6e90",noResults:"\u7121\u4efb\u4f55\u7d50\u679c",
+noResultsFound:"\u627e\u4e0d\u5230 {value} \u7684\u4efb\u4f55\u7d50\u679c\u3002",showMoreResults:"\u986f\u793a\u66f4\u591a\u7d50\u679c",hideMoreResults:"\u96b1\u85cf(H)",searchResult:"\u641c\u5c0b\u7d50\u679c",moreResultsHeader:"\u66f4\u591a\u7d50\u679c",esriLocatorName:"Esri World Geocoder"});

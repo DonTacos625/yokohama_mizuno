@@ -1,25 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"אודות",add:"הוסף",all:"הכל",apply:"בצע",auth:{logOut:"התנתק",signIn:"היכנס לחשבון"},back:"חזור",cancel:"בטל",change:"שנה",clear:"נקה",close:"סגור",configure:"קבע תצורה",control:{pause:"השהה",play:"נגן",resume:"התחל מחדש",stop:"עצור"},copy:"העתק",create:"צור",cut:"גזור","delete":"מחק",details:"פרטים",edit:"עורך",error:"שגיאה",esri:"Esri",exit:"יציאה",fieldsSummary:"רשימת מאפיינים וערכים",find:"מצא",form:{no:"לא",ok:"אישור",password:"סיסמה",submit:"שלח",username:"שם משתמש",yes:"כן"},help:"עזרה",home:"דף הבית",info:"מידע",information:"מידע",layer:"שכבה",loading:"טעינה",maximize:"הגדל למקסימום",menu:"תפריט",more:"עוד",none:"ללא",open:"פתח",pagination:{first:"ראשון",last:"אחרון",next:"הבא",page:"עמוד",pageText:"{index} מתוך {total}",previous:"קודם"},paste:"הדבק",preview:"תצוגה מקדימה",print:"הדפס",publish:"פרסם",redo:"בצע מחדש",refresh:"רענן",remove:"הסר",rename:"שנה שם",reset:"אפס",restore:"שחזר",save:"שמירה",search:"חפש",searching:"מחפש",select:"בחר",settings:"הגדרות",sort:"מיון",share:"שתף",title:"כותרת",untitled:"ללא כותרת",upload:"העלאה",undo:"בטל שינויים",view:"תצוגה",visibility:{hide:"הסתר",show:"הצג",toggle:"החלף"},warning:"אזהרה"});
+//>>built
+define({about:"\u05d0\u05d5\u05d3\u05d5\u05ea",add:"\u05d4\u05d5\u05e1\u05e3",all:"\u05d4\u05db\u05dc",apply:"\u05d1\u05e6\u05e2",auth:{logOut:"\u05d4\u05ea\u05e0\u05ea\u05e7",signIn:"\u05d4\u05d9\u05db\u05e0\u05e1 \u05dc\u05d7\u05e9\u05d1\u05d5\u05df"},back:"\u05d7\u05d6\u05d5\u05e8",cancel:"\u05d1\u05d8\u05dc",change:"\u05e9\u05e0\u05d4",clear:"\u05e0\u05e7\u05d4",close:"\u05e1\u05d2\u05d5\u05e8",configure:"\u05e7\u05d1\u05e2 \u05ea\u05e6\u05d5\u05e8\u05d4",control:{pause:"\u05d4\u05e9\u05d4\u05d4",
+play:"\u05e0\u05d2\u05df",resume:"\u05d4\u05ea\u05d7\u05dc \u05de\u05d7\u05d3\u05e9",stop:"\u05e2\u05e6\u05d5\u05e8"},copy:"\u05d4\u05e2\u05ea\u05e7",create:"\u05e6\u05d5\u05e8",cut:"\u05d2\u05d6\u05d5\u05e8","delete":"\u05de\u05d7\u05e7",details:"\u05e4\u05e8\u05d8\u05d9\u05dd",edit:"\u05e2\u05d5\u05e8\u05da",error:"\u05e9\u05d2\u05d9\u05d0\u05d4",esri:"Esri",exit:"\u05d9\u05e6\u05d9\u05d0\u05d4",fieldsSummary:"\u05e8\u05e9\u05d9\u05de\u05ea \u05de\u05d0\u05e4\u05d9\u05d9\u05e0\u05d9\u05dd \u05d5\u05e2\u05e8\u05db\u05d9\u05dd",
+find:"\u05de\u05e6\u05d0",form:{no:"\u05dc\u05d0",ok:"\u05d0\u05d9\u05e9\u05d5\u05e8",password:"\u05e1\u05d9\u05e1\u05de\u05d4",submit:"\u05e9\u05dc\u05d7",username:"\u05e9\u05dd \u05de\u05e9\u05ea\u05de\u05e9",yes:"\u05db\u05df"},help:"\u05e2\u05d6\u05e8\u05d4",home:"\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea",info:"\u05de\u05d9\u05d3\u05e2",information:"\u05de\u05d9\u05d3\u05e2",layer:"\u05e9\u05db\u05d1\u05d4",loading:"\u05d8\u05e2\u05d9\u05e0\u05d4",maximize:"\u05d4\u05d2\u05d3\u05dc \u05dc\u05de\u05e7\u05e1\u05d9\u05de\u05d5\u05dd",
+menu:"\u05ea\u05e4\u05e8\u05d9\u05d8",more:"\u05e2\u05d5\u05d3",none:"\u05dc\u05dc\u05d0",open:"\u05e4\u05ea\u05d7",pagination:{first:"\u05e8\u05d0\u05e9\u05d5\u05df",last:"\u05d0\u05d7\u05e8\u05d5\u05df",next:"\u05d4\u05d1\u05d0",page:"\u05e2\u05de\u05d5\u05d3",pageText:"{index} \u05de\u05ea\u05d5\u05da {total}",previous:"\u05e7\u05d5\u05d3\u05dd"},paste:"\u05d4\u05d3\u05d1\u05e7",preview:"\u05ea\u05e6\u05d5\u05d2\u05d4 \u05de\u05e7\u05d3\u05d9\u05de\u05d4",print:"\u05d4\u05d3\u05e4\u05e1",publish:"\u05e4\u05e8\u05e1\u05dd",
+redo:"\u05d1\u05e6\u05e2 \u05de\u05d7\u05d3\u05e9",refresh:"\u05e8\u05e2\u05e0\u05df",remove:"\u05d4\u05e1\u05e8",rename:"\u05e9\u05e0\u05d4 \u05e9\u05dd",reset:"\u05d0\u05e4\u05e1",restore:"\u05e9\u05d7\u05d6\u05e8",save:"\u05e9\u05de\u05d9\u05e8\u05d4",search:"\u05d7\u05e4\u05e9",searching:"\u05de\u05d7\u05e4\u05e9",select:"\u05d1\u05d7\u05e8",settings:"\u05d4\u05d2\u05d3\u05e8\u05d5\u05ea",sort:"\u05de\u05d9\u05d5\u05df",share:"\u05e9\u05ea\u05e3",title:"\u05db\u05d5\u05ea\u05e8\u05ea",untitled:"\u05dc\u05dc\u05d0 \u05db\u05d5\u05ea\u05e8\u05ea",
+upload:"\u05d4\u05e2\u05dc\u05d0\u05d4",undo:"\u05d1\u05d8\u05dc \u05e9\u05d9\u05e0\u05d5\u05d9\u05d9\u05dd",view:"\u05ea\u05e6\u05d5\u05d2\u05d4",visibility:{hide:"\u05d4\u05e1\u05ea\u05e8",show:"\u05d4\u05e6\u05d2",toggle:"\u05d4\u05d7\u05dc\u05e3"},warning:"\u05d0\u05d6\u05d4\u05e8\u05d4"});

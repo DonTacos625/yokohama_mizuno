@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"Transparency",suggested:"Ehdotettu",recent:"Äskettäinen",more:"Lisää",moreColorsTooltip:"Lisää värejä.",paletteTooltip:"Valitse väri.",noColorTooltip:"Ei väriä",hexInputTooltip:"Mukautettu väri heksadesimaalimuodossa (#FFFF00)."});
+//>>built
+define({transparency:"Transparency",suggested:"Ehdotettu",recent:"\u00c4skett\u00e4inen",more:"Lis\u00e4\u00e4",moreColorsTooltip:"Lis\u00e4\u00e4 v\u00e4rej\u00e4.",paletteTooltip:"Valitse v\u00e4ri.",noColorTooltip:"Ei v\u00e4ri\u00e4",hexInputTooltip:"Mukautettu v\u00e4ri heksadesimaalimuodossa (#FFFF00)."});

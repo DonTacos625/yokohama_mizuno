@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({points:"Σημεία",lines:"Γραμμές",polygons:"Πολύγωνα",creatingLegend:"Δημιουργία υπομνήματος",noLegend:"Χωρίς υπόμνημα",dotValue:"1 κουκκίδα = {value} {unit}",currentObservations:"Τρέχουσες παρατηρήσεις",previousObservations:"Προηγούμενες παρατηρήσεις",high:"Υψηλό",low:"Χαμηλό",esriMetersPerSecond:"μ./δευτ.",esriKilometersPerHour:"χλμ/ώρα",esriKnots:"κόμβοι",esriFeetPerSecond:"πόδ./δευτ.",esriMilesPerHour:"μίλ./ώρα",showField:"{field}",showNormField:"{field} διαιρούμενο με {normField}",showNormPct:"{field} ως ποσοστό του συνόλου",showRatio:"Λόγος του {field} προς {normField}",showRatioPercent:"{field} ως ποσοστό του {normField}",showRatioPercentTotal:"{field} ως ποσοστό του {field} και του {normField}"});
+//>>built
+define({points:"\u03a3\u03b7\u03bc\u03b5\u03af\u03b1",lines:"\u0393\u03c1\u03b1\u03bc\u03bc\u03ad\u03c2",polygons:"\u03a0\u03bf\u03bb\u03cd\u03b3\u03c9\u03bd\u03b1",creatingLegend:"\u0394\u03b7\u03bc\u03b9\u03bf\u03c5\u03c1\u03b3\u03af\u03b1 \u03c5\u03c0\u03bf\u03bc\u03bd\u03ae\u03bc\u03b1\u03c4\u03bf\u03c2",noLegend:"\u03a7\u03c9\u03c1\u03af\u03c2 \u03c5\u03c0\u03cc\u03bc\u03bd\u03b7\u03bc\u03b1",dotValue:"1 \u03ba\u03bf\u03c5\u03ba\u03ba\u03af\u03b4\u03b1 \x3d {value} {unit}",currentObservations:"\u03a4\u03c1\u03ad\u03c7\u03bf\u03c5\u03c3\u03b5\u03c2 \u03c0\u03b1\u03c1\u03b1\u03c4\u03b7\u03c1\u03ae\u03c3\u03b5\u03b9\u03c2",
+previousObservations:"\u03a0\u03c1\u03bf\u03b7\u03b3\u03bf\u03cd\u03bc\u03b5\u03bd\u03b5\u03c2 \u03c0\u03b1\u03c1\u03b1\u03c4\u03b7\u03c1\u03ae\u03c3\u03b5\u03b9\u03c2",high:"\u03a5\u03c8\u03b7\u03bb\u03cc",low:"\u03a7\u03b1\u03bc\u03b7\u03bb\u03cc",esriMetersPerSecond:"\u03bc./\u03b4\u03b5\u03c5\u03c4.",esriKilometersPerHour:"\u03c7\u03bb\u03bc/\u03ce\u03c1\u03b1",esriKnots:"\u03ba\u03cc\u03bc\u03b2\u03bf\u03b9",esriFeetPerSecond:"\u03c0\u03cc\u03b4./\u03b4\u03b5\u03c5\u03c4.",esriMilesPerHour:"\u03bc\u03af\u03bb./\u03ce\u03c1\u03b1",
+showField:"{field}",showNormField:"{field} \u03b4\u03b9\u03b1\u03b9\u03c1\u03bf\u03cd\u03bc\u03b5\u03bd\u03bf \u03bc\u03b5 {normField}",showNormPct:"{field} \u03c9\u03c2 \u03c0\u03bf\u03c3\u03bf\u03c3\u03c4\u03cc \u03c4\u03bf\u03c5 \u03c3\u03c5\u03bd\u03cc\u03bb\u03bf\u03c5",showRatio:"\u039b\u03cc\u03b3\u03bf\u03c2 \u03c4\u03bf\u03c5 {field} \u03c0\u03c1\u03bf\u03c2 {normField}",showRatioPercent:"{field} \u03c9\u03c2 \u03c0\u03bf\u03c3\u03bf\u03c3\u03c4\u03cc \u03c4\u03bf\u03c5 {normField}",showRatioPercentTotal:"{field} \u03c9\u03c2 \u03c0\u03bf\u03c3\u03bf\u03c3\u03c4\u03cc \u03c4\u03bf\u03c5 {field} \u03ba\u03b1\u03b9 \u03c4\u03bf\u03c5 {normField}"});

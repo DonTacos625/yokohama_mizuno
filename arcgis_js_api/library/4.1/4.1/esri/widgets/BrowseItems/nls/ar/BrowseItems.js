@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"لا تحتوي الطبقة ${name} على حقول يمكن استخدامها للتنقية.",addToViewer:"إضافة الطبقة إلى الخريطة",noItemsToDisplay:"لا توجد عناصر متاحة للعرض في الوقت الحالي.",searchFor:"البحث عن",searching:"يتم البحث الآن",items:{organizationLabel:"المنظمة",onlineLabel:"ArcGIS Online",contentLabel:"الخاص",favoritesLabel:"المفضلات"},title:"تحديد خريطة الويب",searchTitle:"بحث",ok:"موافق",cancel:"إلغاء الأمر",placeholder:"أدخل عنصر البحث",instructionsLeft:"ما الذي تود فعله؟",instructionsRight:"تحديد التطبيق القابل للتكوين.",go:"ذهاب",selectDetails:"تحديد",configure:"إنشاء",close:"إغلاق",learnMoreConfigurableApps:"تعرف على المزيد عن التطبيقات التي يمكن تكوينها"});
+//>>built
+define({noFilterFields:"\u0644\u0627 \u062a\u062d\u062a\u0648\u064a \u0627\u0644\u0637\u0628\u0642\u0629 ${name} \u0639\u0644\u0649 \u062d\u0642\u0648\u0644 \u064a\u0645\u0643\u0646 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647\u0627 \u0644\u0644\u062a\u0646\u0642\u064a\u0629.",addToViewer:"\u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u0637\u0628\u0642\u0629 \u0625\u0644\u0649 \u0627\u0644\u062e\u0631\u064a\u0637\u0629",noItemsToDisplay:"\u0644\u0627 \u062a\u0648\u062c\u062f \u0639\u0646\u0627\u0635\u0631 \u0645\u062a\u0627\u062d\u0629 \u0644\u0644\u0639\u0631\u0636 \u0641\u064a \u0627\u0644\u0648\u0642\u062a \u0627\u0644\u062d\u0627\u0644\u064a.",
+searchFor:"\u0627\u0644\u0628\u062d\u062b \u0639\u0646",searching:"\u064a\u062a\u0645 \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u0622\u0646",items:{organizationLabel:"\u0627\u0644\u0645\u0646\u0638\u0645\u0629",onlineLabel:"ArcGIS Online",contentLabel:"\u0627\u0644\u062e\u0627\u0635",favoritesLabel:"\u0627\u0644\u0645\u0641\u0636\u0644\u0627\u062a"},title:"\u062a\u062d\u062f\u064a\u062f \u062e\u0631\u064a\u0637\u0629 \u0627\u0644\u0648\u064a\u0628",searchTitle:"\u0628\u062d\u062b",ok:"\u0645\u0648\u0627\u0641\u0642",
+cancel:"\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0623\u0645\u0631",placeholder:"\u0623\u062f\u062e\u0644 \u0639\u0646\u0635\u0631 \u0627\u0644\u0628\u062d\u062b",instructionsLeft:"\u0645\u0627 \u0627\u0644\u0630\u064a \u062a\u0648\u062f \u0641\u0639\u0644\u0647\u061f",instructionsRight:"\u062a\u062d\u062f\u064a\u062f \u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0642\u0627\u0628\u0644 \u0644\u0644\u062a\u0643\u0648\u064a\u0646.",go:"\u0630\u0647\u0627\u0628",selectDetails:"\u062a\u062d\u062f\u064a\u062f",
+configure:"\u0625\u0646\u0634\u0627\u0621",close:"\u0625\u063a\u0644\u0627\u0642",learnMoreConfigurableApps:"\u062a\u0639\u0631\u0641 \u0639\u0644\u0649 \u0627\u0644\u0645\u0632\u064a\u062f \u0639\u0646 \u0627\u0644\u062a\u0637\u0628\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u064a\u0645\u0643\u0646 \u062a\u0643\u0648\u064a\u0646\u0647\u0627"});

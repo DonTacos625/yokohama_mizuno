@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({toggle:"تبديل للتحريك أو الاستدارة بأبعاد ثلاثية"});
+//>>built
+define({toggle:"\u062a\u0628\u062f\u064a\u0644 \u0644\u0644\u062a\u062d\u0631\u064a\u0643 \u0623\u0648 \u0627\u0644\u0627\u0633\u062a\u062f\u0627\u0631\u0629 \u0628\u0623\u0628\u0639\u0627\u062f \u062b\u0644\u0627\u062b\u064a\u0629"});

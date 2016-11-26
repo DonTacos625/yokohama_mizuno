@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"element",title:"Zaloguj się",info:"Zaloguj się, aby uzyskać dostęp do elementu na serwerze {server} {resource}",oAuthInfo:"Zaloguj się, aby kontynuować.",lblUser:"Nazwa użytkownika:",lblPwd:"Hasło:",lblOk:"OK",lblSigning:"Logowanie...",lblCancel:"Anuluj",errorMsg:"Nieprawidłowa nazwa użytkownika/hasło. Spróbuj jeszcze raz.",invalidUser:"Wprowadzone hasło lub nazwa użytkownika są nieprawidłowe.",forbidden:"Nazwa użytkownika i hasło są prawidłowe, jednak nie masz dostępu do tego zasobu.",noAuthService:"Nie można uzyskać dostępu do usługi uwierzytelniania."});
+//>>built
+define({lblItem:"element",title:"Zaloguj si\u0119",info:"Zaloguj si\u0119, aby uzyska\u0107 dost\u0119p do elementu na serwerze {server} {resource}",oAuthInfo:"Zaloguj si\u0119, aby kontynuowa\u0107.",lblUser:"Nazwa u\u017cytkownika:",lblPwd:"Has\u0142o:",lblOk:"OK",lblSigning:"Logowanie...",lblCancel:"Anuluj",errorMsg:"Nieprawid\u0142owa nazwa u\u017cytkownika/has\u0142o. Spr\u00f3buj jeszcze raz.",invalidUser:"Wprowadzone has\u0142o lub nazwa u\u017cytkownika s\u0105 nieprawid\u0142owe.",forbidden:"Nazwa u\u017cytkownika i has\u0142o s\u0105 prawid\u0142owe, jednak nie masz dost\u0119pu do tego zasobu.",
+noAuthService:"Nie mo\u017cna uzyska\u0107 dost\u0119pu do us\u0142ugi uwierzytelniania."});

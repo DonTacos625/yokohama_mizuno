@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({points:"ポイント",lines:"ライン",polygons:"ポリゴン",creatingLegend:"凡例の作成",noLegend:"凡例がありません",dotValue:"1 ドット = {value} {unit}",currentObservations:"現在の観測データ",previousObservations:"前の観測データ",high:"高",low:"低",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"ノット",esriFeetPerSecond:"ft/sec",esriMilesPerHour:"mph",showField:"{field}",showNormField:"{field} を {normField} で割る",showNormPct:"合計に占める割合としての {field}",showRatio:"{normField} に対する {field} の比率",showRatioPercent:"{normField} に占める割合としての {field}",showRatioPercentTotal:"{field} および {normField} に占める割合としての {field}"});
+//>>built
+define({points:"\u30dd\u30a4\u30f3\u30c8",lines:"\u30e9\u30a4\u30f3",polygons:"\u30dd\u30ea\u30b4\u30f3",creatingLegend:"\u51e1\u4f8b\u306e\u4f5c\u6210",noLegend:"\u51e1\u4f8b\u304c\u3042\u308a\u307e\u305b\u3093",dotValue:"1 \u30c9\u30c3\u30c8 \x3d {value} {unit}",currentObservations:"\u73fe\u5728\u306e\u89b3\u6e2c\u30c7\u30fc\u30bf",previousObservations:"\u524d\u306e\u89b3\u6e2c\u30c7\u30fc\u30bf",high:"\u9ad8",low:"\u4f4e",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"\u30ce\u30c3\u30c8",
+esriFeetPerSecond:"ft/sec",esriMilesPerHour:"mph",showField:"{field}",showNormField:"{field} \u3092 {normField} \u3067\u5272\u308b",showNormPct:"\u5408\u8a08\u306b\u5360\u3081\u308b\u5272\u5408\u3068\u3057\u3066\u306e {field}",showRatio:"{normField} \u306b\u5bfe\u3059\u308b {field} \u306e\u6bd4\u7387",showRatioPercent:"{normField} \u306b\u5360\u3081\u308b\u5272\u5408\u3068\u3057\u3066\u306e {field}",showRatioPercentTotal:"{field} \u304a\u3088\u3073 {normField} \u306b\u5360\u3081\u308b\u5272\u5408\u3068\u3057\u3066\u306e {field}"});

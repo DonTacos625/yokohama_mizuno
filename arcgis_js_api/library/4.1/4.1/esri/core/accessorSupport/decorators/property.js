@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../../lang","../metadata"],function(r,t,e,o){function n(r){return void 0===r&&(r={}),function(t,n){var i=t.constructor.prototype,a=Object.getOwnPropertyDescriptor(t,n);a&&(a.get||a.set)&&(r=e.clone(r),a.set&&(r.set=a.set),a.get&&(r.get=a.get));var s=o.getPropertyMetadata(i,n);for(var c in r){var g=r[c];Array.isArray(g)?s[c]=(s[c]||[]).concat(g):s[c]=g}}}function i(r,t,e){var n=o.getPropertyMetadata(r.constructor.prototype,e);n.json||(n.json={});var i=n.json;return void 0!==t&&(i.origins||(i.origins={}),i.origins[t]||(i.origins[t]={}),i=i.origins[t]),i}t.property=n,t.propertyJSONMeta=i});
+//>>built
+define(["require","exports","../../lang","../metadata"],function(l,g,k,h){g.property=function(a){void 0===a&&(a={});return function(c,f){var d=c.constructor.prototype,b=Object.getOwnPropertyDescriptor(c,f);if(b&&(b.get||b.set))a=k.clone(a),b.set&&(a.set=b.set),b.get&&(a.get=b.get);var d=h.getPropertyMetadata(d,f),e;for(e in a)b=a[e],Array.isArray(b)?d[e]=(d[e]||[]).concat(b):d[e]=b}};g.propertyJSONMeta=function(a,c,f){a=h.getPropertyMetadata(a.constructor.prototype,f);a.json||(a.json={});a=a.json;
+void 0!==c&&(a.origins||(a.origins={}),a.origins[c]||(a.origins[c]={}),a=a.origins[c]);return a}});

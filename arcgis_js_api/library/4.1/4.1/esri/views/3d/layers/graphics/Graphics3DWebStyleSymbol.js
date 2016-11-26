@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../../../../core/tsSupport/extendsHelper","../../support/PromiseLightweight"],function(t,r,e,i){var o=function(t){function r(r,e){var i=this;t.call(this),this.symbol=null,this.graphics3DSymbol=null,this.symbol=r,r.fetchSymbol().then(function(t){if(i.isRejected())throw new Error;i.graphics3DSymbol=e(t)}).then(function(){if(i.isRejected())throw new Error;i.graphics3DSymbol.then(function(){i.isRejected()||i.resolve()},function(t){throw t})}).otherwise(function(t){i.isRejected()||i.reject(t)})}return e(r,t),r.prototype.createGraphics3DGraphic=function(t,r){return this.graphics3DSymbol.createGraphics3DGraphic(t,r,this)},r.prototype.layerPropertyChanged=function(t,r){return this.graphics3DSymbol.layerPropertyChanged(t,r)},r.prototype.setDrawOrder=function(t,r){return this.graphics3DSymbol.setDrawOrder(t,r)},r.prototype.destroy=function(){this.isFulfilled()||this.reject(),this.graphics3DSymbol&&this.graphics3DSymbol.destroy()},r}(i.Promise);return o});
+//>>built
+define(["require","exports","../../../../core/tsSupport/extendsHelper","../../support/PromiseLightweight"],function(h,k,f,g){return function(e){function d(a,c){var b=this;e.call(this);this.graphics3DSymbol=this.symbol=null;this.symbol=a;a.fetchSymbol().then(function(a){if(b.isRejected())throw Error();b.graphics3DSymbol=c(a)}).then(function(){if(b.isRejected())throw Error();b.graphics3DSymbol.then(function(){b.isRejected()||b.resolve()},function(a){throw a;})}).otherwise(function(a){b.isRejected()||
+b.reject(a)})}f(d,e);d.prototype.createGraphics3DGraphic=function(a,c){return this.graphics3DSymbol.createGraphics3DGraphic(a,c,this)};d.prototype.layerPropertyChanged=function(a,c){return this.graphics3DSymbol.layerPropertyChanged(a,c)};d.prototype.setDrawOrder=function(a,c){return this.graphics3DSymbol.setDrawOrder(a,c)};d.prototype.destroy=function(){this.isFulfilled()||this.reject();this.graphics3DSymbol&&this.graphics3DSymbol.destroy()};return d}(g.Promise)});

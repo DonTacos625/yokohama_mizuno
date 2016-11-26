@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({addTags:"Thêm (các) từ khóa",noTagsFound:"Không trùng với từ khóa nào hiện có.",required:"Yêu cầu một hoặc nhiều thẻ."});
+//>>built
+define({addTags:"Th\u00eam (c\u00e1c) t\u1eeb kh\u00f3a",noTagsFound:"Kh\u00f4ng tr\u00f9ng v\u1edbi t\u1eeb kh\u00f3a n\u00e0o hi\u1ec7n c\u00f3.",required:"Y\u00eau c\u1ea7u m\u1ed9t ho\u1eb7c nhi\u1ec1u th\u1ebb."});

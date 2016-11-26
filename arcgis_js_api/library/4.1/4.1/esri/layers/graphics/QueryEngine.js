@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["dojo/_base/declare","dojo/_base/lang","dojo/Deferred","../../core/promiseUtils","../../core/Error","../../geometry/support/graphicsUtils"],function(e,t,r,n,i,u){var s="QueryEngine",o=e(null,{constructor:function(e){t.mixin(this,e)},features:null,objectIdField:null,queryFeatures:function(e){var t;if(this.features)if(e)if(this._isSupportedQuery(e)){var r=this._createFilters(e);t=r.length?this._executeQuery(e,r):this._rejectQuery("Invalid query")}else t=this._rejectQuery("Unsupported query");else t=this._returnAllFeatures();else t=this._rejectQuery("Engine not initialized");return t},queryObjectIds:function(e){return this.objectIdField?this.queryFeatures(e).then(this._getObjectIds.bind(this)):this._rejectQuery("Unsupported query")},queryFeatureCount:function(e){return this.queryFeatures(e).then(function(e){return e.length}.bind(this))},queryExtent:function(e){return this.queryFeatures(e).then(function(e){return{count:e.length,extent:this._getExtent(e)}}.bind(this))},_returnAllFeatures:function(){return n.resolve(this.features.toArray())},_executeQuery:function(e,t){var n,i=new r;return n=this.features.filter(function(r){return t.every(function(t){return t.call(this,r,e)},this)},this),i.resolve(n.toArray()),i.promise},_isSupportedQuery:function(e){var t;return t=null!=e.distance||null!=e.geometryPrecision||e.groupByFieldsForStatistics&&e.groupByFieldsForStatistics.length||null!=e.maxAllowableOffset||e.multipatchOption||null!=e.num||e.orderByFields&&e.orderByFields.length||e.outFields&&e.outFields.length||e.outSpatialReference||e.outStatistics&&e.outStatistics.length||e.pixelSize||e.quantizationParameters||e.relationParam||e.returnDistinctValues||null!=e.start||e.text||e.timeExtent||e.where||e.objectIds&&e.objectIds.length&&!this.objectIdField?!1:!0},_createFilters:function(e){var t=[];return e.objectIds&&e.objectIds.length&&t.push(this._createObjectIdFilter()),e.geometry&&"extent"===e.geometry.type&&"intersects"===e.spatialRelationship&&t.push(this._createExtentFilter()),t},_createExtentFilter:function(){return function(e,t){var r=e.geometry,n=t.geometry;return r&&n.intersects(r)}},_createObjectIdFilter:function(){return function(e,t){var r=e.attributes,n=r&&r[this.objectIdField];return t.objectIds.indexOf(n)>-1}},_rejectQuery:function(e){return n.reject(new i(s,e))},_getObjectIds:function(e){var t=this.objectIdField,r=[];return e.forEach(function(e){var n=e.attributes,i=n&&n[t];null!=i&&r.push(i)}),r},_getExtent:function(e){return e.length?u.graphicsExtent(e):null}});return o});
+//>>built
+define("dojo/_base/declare dojo/_base/lang dojo/Deferred ../../core/promiseUtils ../../core/Error ../../geometry/support/graphicsUtils".split(" "),function(f,g,h,e,k,l){return f(null,{constructor:function(a){g.mixin(this,a)},features:null,objectIdField:null,queryFeatures:function(a){if(this.features)if(a)if(this._isSupportedQuery(a)){var b=this._createFilters(a);a=b.length?this._executeQuery(a,b):this._rejectQuery("Invalid query")}else a=this._rejectQuery("Unsupported query");else a=this._returnAllFeatures();
+else a=this._rejectQuery("Engine not initialized");return a},queryObjectIds:function(a){return this.objectIdField?this.queryFeatures(a).then(this._getObjectIds.bind(this)):this._rejectQuery("Unsupported query")},queryFeatureCount:function(a){return this.queryFeatures(a).then(function(a){return a.length}.bind(this))},queryExtent:function(a){return this.queryFeatures(a).then(function(a){return{count:a.length,extent:this._getExtent(a)}}.bind(this))},_returnAllFeatures:function(){return e.resolve(this.features.toArray())},
+_executeQuery:function(a,b){var c=new h,d;d=this.features.filter(function(c){return b.every(function(b){return b.call(this,c,a)},this)},this);c.resolve(d.toArray());return c.promise},_isSupportedQuery:function(a){return null!=a.distance||null!=a.geometryPrecision||a.groupByFieldsForStatistics&&a.groupByFieldsForStatistics.length||null!=a.maxAllowableOffset||a.multipatchOption||null!=a.num||a.orderByFields&&a.orderByFields.length||a.outFields&&a.outFields.length||a.outSpatialReference||a.outStatistics&&
+a.outStatistics.length||a.pixelSize||a.quantizationParameters||a.relationParam||a.returnDistinctValues||null!=a.start||a.text||a.timeExtent||a.where||a.objectIds&&a.objectIds.length&&!this.objectIdField?!1:!0},_createFilters:function(a){var b=[];a.objectIds&&a.objectIds.length&&b.push(this._createObjectIdFilter());a.geometry&&("extent"===a.geometry.type&&"intersects"===a.spatialRelationship)&&b.push(this._createExtentFilter());return b},_createExtentFilter:function(){return function(a,b){var c=a.geometry,
+d=b.geometry;return c&&d.intersects(c)}},_createObjectIdFilter:function(){return function(a,b){var c=a.attributes;return-1<b.objectIds.indexOf(c&&c[this.objectIdField])}},_rejectQuery:function(a){return e.reject(new k("QueryEngine",a))},_getObjectIds:function(a){var b=this.objectIdField,c=[];a.forEach(function(a){a=(a=a.attributes)&&a[b];null!=a&&c.push(a)});return c},_getExtent:function(a){return a.length?l.graphicsExtent(a):null}})});

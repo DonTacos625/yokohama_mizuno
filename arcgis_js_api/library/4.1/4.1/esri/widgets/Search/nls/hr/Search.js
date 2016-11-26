@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({searchButtonTitle:"Pretraži",clearButtonTitle:"Očisti pretragu",placeholder:"Pronađi adresu ili mjesto",searchIn:"Traži u",lonlat:"Geografska dužina, geografska širina",reverseLonLatHeader:"Jeste li mislili?",all:"Sve",allPlaceholder:"Pronađi adresu ili mjesto",emptyValue:"Unesite termin za pretraživanje.",untitledResult:"Neimenovano",untitledSource:"Neimenovani izvor",noResults:"Nema rezultata",noResultsFound:"Nema pronađenih rezultata za {value}.",showMoreResults:"Prikaži još rezultata",hideMoreResults:"Sakrij",searchResult:"Rezultat pretraživanja",moreResultsHeader:"Više rezultata",esriLocatorName:"Svjetski geokoder Esrija"});
+//>>built
+define({searchButtonTitle:"Pretra\u017ei",clearButtonTitle:"O\u010disti pretragu",placeholder:"Prona\u0111i adresu ili mjesto",searchIn:"Tra\u017ei u",lonlat:"Geografska du\u017eina, geografska \u0161irina",reverseLonLatHeader:"Jeste li mislili?",all:"Sve",allPlaceholder:"Prona\u0111i adresu ili mjesto",emptyValue:"Unesite termin za pretra\u017eivanje.",untitledResult:"Neimenovano",untitledSource:"Neimenovani izvor",noResults:"Nema rezultata",noResultsFound:"Nema prona\u0111enih rezultata za {value}.",
+showMoreResults:"Prika\u017ei jo\u0161 rezultata",hideMoreResults:"Sakrij",searchResult:"Rezultat pretra\u017eivanja",moreResultsHeader:"Vi\u0161e rezultata",esriLocatorName:"Svjetski geokoder Esrija"});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"objekt",title:"Logga in",info:"Logga in för att komma åt objektet på {server} {resource}",oAuthInfo:"Logga in för att fortsätta.",lblUser:"Användarnamn:",lblPwd:"Lösenord:",lblOk:"OK",lblSigning:"Loggar in...",lblCancel:"Avbryt",errorMsg:"Ogiltigt användarnamn/lösenord. Försök igen.",invalidUser:"Det användarnamn eller lösenord du har angett är felaktigt.",forbidden:"Användarnamnet och lösenordet är giltiga, men du har inte behörighet till den här resursen.",noAuthService:"Det gick inte att komma åt autentiseringstjänsten."});
+//>>built
+define({lblItem:"objekt",title:"Logga in",info:"Logga in f\u00f6r att komma \u00e5t objektet p\u00e5 {server} {resource}",oAuthInfo:"Logga in f\u00f6r att forts\u00e4tta.",lblUser:"Anv\u00e4ndarnamn:",lblPwd:"L\u00f6senord:",lblOk:"OK",lblSigning:"Loggar in...",lblCancel:"Avbryt",errorMsg:"Ogiltigt anv\u00e4ndarnamn/l\u00f6senord. F\u00f6rs\u00f6k igen.",invalidUser:"Det anv\u00e4ndarnamn eller l\u00f6senord du har angett \u00e4r felaktigt.",forbidden:"Anv\u00e4ndarnamnet och l\u00f6senordet \u00e4r giltiga, men du har inte beh\u00f6righet till den h\u00e4r resursen.",
+noAuthService:"Det gick inte att komma \u00e5t autentiseringstj\u00e4nsten."});

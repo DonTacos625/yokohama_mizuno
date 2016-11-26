@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({searchButtonTitle:"Meklēšana",clearButtonTitle:"Notīrīt meklēšanas gadījumu",placeholder:"Atrast adresi vai vietu",searchIn:"Meklēt šeit:",lonlat:"Garums, platums",reverseLonLatHeader:"Vai jūs domājāt šo?",all:"Visi",allPlaceholder:"Atrast adresi vai vietu",emptyValue:"Ievadiet meklēšanas kritēriju.",untitledResult:"Bez virsraksta",untitledSource:"Avots bez nosaukuma",noResults:"Bez rezultātiem",noResultsFound:"Vērtībai {value} nav atrasts neviens rezultāts.",showMoreResults:"Rādīt vairāk rezultātu",hideMoreResults:"Paslēpt",searchResult:"Meklēšanas rezultāts",moreResultsHeader:"Vairāk rezultātu",esriLocatorName:"Pasaules Esri ģeokoderis"});
+//>>built
+define({searchButtonTitle:"Mekl\u0113\u0161ana",clearButtonTitle:"Not\u012br\u012bt mekl\u0113\u0161anas gad\u012bjumu",placeholder:"Atrast adresi vai vietu",searchIn:"Mekl\u0113t \u0161eit:",lonlat:"Garums, platums",reverseLonLatHeader:"Vai j\u016bs dom\u0101j\u0101t \u0161o?",all:"Visi",allPlaceholder:"Atrast adresi vai vietu",emptyValue:"Ievadiet mekl\u0113\u0161anas krit\u0113riju.",untitledResult:"Bez virsraksta",untitledSource:"Avots bez nosaukuma",noResults:"Bez rezult\u0101tiem",noResultsFound:"V\u0113rt\u012bbai {value} nav atrasts neviens rezult\u0101ts.",
+showMoreResults:"R\u0101d\u012bt vair\u0101k rezult\u0101tu",hideMoreResults:"Pasl\u0113pt",searchResult:"Mekl\u0113\u0161anas rezult\u0101ts",moreResultsHeader:"Vair\u0101k rezult\u0101tu",esriLocatorName:"Pasaules Esri \u0123eokoderis"});

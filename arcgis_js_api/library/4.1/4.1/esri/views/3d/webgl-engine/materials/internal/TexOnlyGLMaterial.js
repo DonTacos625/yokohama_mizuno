@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","dojo/text!./TexOnlyGLMaterial.xml","./MaterialUtil","../../lib/RenderSlot","../../lib/gl-matrix","../../../../webgl/Program","../../../../webgl/enums","../../lib/DefaultVertexAttributeLocations"],function(t,e,r,o,i,n,a,s,l){var d=n.vec4d,p=d.createFrom(1,1,1,1),h=function(){function t(t,e,r,i,n){this.id=o.__GLMaterial_id++,this.program=t.get("texOnly"),this.color=r,this.depthFunc=n,this.blend=i,this.texGLName=e}return t.prototype.getId=function(){return this.id},t.prototype.beginSlot=function(t){return t===i.INTERNAL_MATERIAL},t.prototype.getProgram=function(){return this.program},t.prototype.setColor=function(t){this.color=t},t.prototype.bind=function(t,e){t.bindProgram(this.program),this.program.setUniformMatrix4fv("model",o.IDENTITY),this.program.setUniformMatrix4fv("proj",e.proj),this.program.setUniform4fv("color",void 0!==this.color?this.color:p),this.program.setUniform1i("tex",0),t.bindTexture(this.texGLName,0),this.blend&&t.setBlendingEnabled(!0),void 0!==this.depthFunc&&t.setDepthFunction(this.depthFunc)},t.prototype.release=function(t){void 0!==this.depthFunc&&t.setDepthFunction(513),this.blend&&t.setBlendingEnabled(!1)},t.prototype.bindView=function(t,e){o.bindView(e.origin,e.view,this.program)},t.prototype.bindInstance=function(t,e){this.program.setUniformMatrix4fv("model",e.transformation)},t.prototype.getDrawMode=function(t){var e=t.gl;return e.TRIANGLES},t.loadShaders=function(t,e,o,i){t._parse(r);var n=new a(i,t.vertexShaderTexOnly,t.fragmentShaderTexOnly,l.Default3D);o.add("texOnly",n)},t}();return h});
+//>>built
+require({cache:{"url:esri/views/3d/webgl-engine/materials/internal/TexOnlyGLMaterial.xml":'\x3c?xml version\x3d"1.0" encoding\x3d"UTF-8"?\x3e\r\n\r\n\x3csnippets\x3e\r\n\r\n\x3csnippet name\x3d"vertexShaderTexOnly"\x3e\x3c![CDATA[\r\n\tuniform mat4 proj;\r\n\tuniform mat4 view;\r\n\tuniform mat4 model;\r\n\tattribute vec3 $position;\r\n\tattribute vec2 $uv0;\r\n\tvarying vec2 vtc;\r\n\r\n\tvoid main(void) {\r\n\t\tgl_Position \x3d proj * view * vec4((model * vec4(position, 1.0)).xyz, 1.0);\r\n\t\tvtc \x3d $uv0;\r\n\t}\r\n]]\x3e\x3c/snippet\x3e\r\n\r\n\x3csnippet name\x3d"fragmentShaderTexOnly"\x3e\x3c![CDATA[\r\n\tprecision mediump float;\r\n\r\n\tuniform sampler2D tex;\r\n\tuniform vec4 color;\r\n\tvarying vec2 vtc;\r\n\r\n\tvoid main() {\r\n\t\tvec4 texColor \x3d texture2D(tex, vtc);\r\n\t\tgl_FragColor \x3d texColor * color;\r\n\t}\r\n]]\x3e\x3c/snippet\x3e\r\n\r\n\x3c/snippets\x3e'}});
+define("require exports dojo/text!./TexOnlyGLMaterial.xml ./MaterialUtil ../../lib/RenderSlot ../../lib/gl-matrix ../../../../webgl/Program ../../../../webgl/enums ../../lib/DefaultVertexAttributeLocations".split(" "),function(n,p,d,c,f,g,h,q,k){var l=g.vec4d.createFrom(1,1,1,1);return function(){function b(a,b,m,e,d){this.id=c.__GLMaterial_id++;this.program=a.get("texOnly");this.color=m;this.depthFunc=d;this.blend=e;this.texGLName=b}b.prototype.getId=function(){return this.id};b.prototype.beginSlot=
+function(a){return a===f.INTERNAL_MATERIAL};b.prototype.getProgram=function(){return this.program};b.prototype.setColor=function(a){this.color=a};b.prototype.bind=function(a,b){a.bindProgram(this.program);this.program.setUniformMatrix4fv("model",c.IDENTITY);this.program.setUniformMatrix4fv("proj",b.proj);this.program.setUniform4fv("color",void 0!==this.color?this.color:l);this.program.setUniform1i("tex",0);a.bindTexture(this.texGLName,0);this.blend&&a.setBlendingEnabled(!0);void 0!==this.depthFunc&&
+a.setDepthFunction(this.depthFunc)};b.prototype.release=function(a){void 0!==this.depthFunc&&a.setDepthFunction(513);this.blend&&a.setBlendingEnabled(!1)};b.prototype.bindView=function(a,b){c.bindView(b.origin,b.view,this.program)};b.prototype.bindInstance=function(a,b){this.program.setUniformMatrix4fv("model",b.transformation)};b.prototype.getDrawMode=function(a){return a.gl.TRIANGLES};b.loadShaders=function(a,b,c,e){a._parse(d);a=new h(e,a.vertexShaderTexOnly,a.fragmentShaderTexOnly,k.Default3D);
+c.add("texOnly",a)};return b}()});

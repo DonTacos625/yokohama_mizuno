@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../core/declare","dojo/_base/xhr","../config","./WorkerClient"],function(e,r,n,t){function s(e,r){var n=new o;if(n.addWorkerCallback(e,r),i.unshift({id:r?e+"::"+r:e,client:n}),i.length>u){var t=i.pop();t.client.terminate()}return n}var o=e([t],{declaredClass:"esri.workers.RequestClient",constructor:function(){this.setWorker(["./mutableWorker","./requestWorker"],function(){})},get:function(e){return this._send("GET",e)},post:function(e){return this._send("POST",e)},_send:function(e,n){var t=r._ioSetArgs(n);t.xhr=null;var s=t.ioArgs,o=s.url;return delete s.url,delete s.args,this.postMessage({method:e,url:o,options:s}).then(this._getSuccessHandler(t),this._getErrorHandler(t),this._getProgressHandler(t)),t},_addHeaderFunctions:function(e){return e.getResponseHeader=function(r){var n,t=e.headers;return Object.keys(t).forEach(function(e){return e.toLowerCase()==r.toLowerCase()?(n=t[e],!1):void 0}),n},e.getAllResponseHeaders=function(){var r=[],n=e.headers;return Object.keys(n).forEach(function(e){r.push(e+": "+n[e])}),r=r.join("\n")},e},_getSuccessHandler:function(e){var r=this,n=e.ioArgs;return function(t){e.xhr=r._addHeaderFunctions(t);var s=e.xhr.getResponseHeader("content-type");("xml"==n.handleAs||s.indexOf("xml")>-1)&&"string"==typeof e.xhr.response&&(e.xhr.response=(new DOMParser).parseFromString(e.xhr.response,"text/xml")),e.resolve(e.xhr.response,e.xhr)}},_getErrorHandler:function(e){return function(r){e.reject(r)}},_getProgressHandler:function(e){return function(r){e.progress(r)}}}),i=[],u=n.request.maxWorkers,a=new o;return o.getClient=function(e,r){if(e){var n;return i.some(function(t){return t.id==(r?e+"::"+r:e)&&(n=t.client),!0}),n||s(e,r)}return a},o.setLimit=function(e){u=n.request.maxWorkers=e},o});
+//>>built
+define(["../core/declare","dojo/_base/xhr","../config","./WorkerClient"],function(k,l,g,m){function n(a,b){var c=new e;c.addWorkerCallback(a,b);f.unshift({id:b?a+"::"+b:a,client:c});f.length>h&&f.pop().client.terminate();return c}var e=k([m],{declaredClass:"esri.workers.RequestClient",constructor:function(){this.setWorker(["./mutableWorker","./requestWorker"],function(){})},get:function(a){return this._send("GET",a)},post:function(a){return this._send("POST",a)},_send:function(a,b){var c=l._ioSetArgs(b);
+c.xhr=null;var d=c.ioArgs,e=d.url;delete d.url;delete d.args;this.postMessage({method:a,url:e,options:d}).then(this._getSuccessHandler(c),this._getErrorHandler(c),this._getProgressHandler(c));return c},_addHeaderFunctions:function(a){a.getResponseHeader=function(b){var c,d=a.headers;Object.keys(d).forEach(function(a){if(a.toLowerCase()==b.toLowerCase())return c=d[a],!1});return c};a.getAllResponseHeaders=function(){var b=[],c=a.headers;Object.keys(c).forEach(function(a){b.push(a+": "+c[a])});return b=
+b.join("\n")};return a},_getSuccessHandler:function(a){var b=this,c=a.ioArgs;return function(d){a.xhr=b._addHeaderFunctions(d);d=a.xhr.getResponseHeader("content-type");if(("xml"==c.handleAs||-1<d.indexOf("xml"))&&"string"==typeof a.xhr.response)a.xhr.response=(new DOMParser).parseFromString(a.xhr.response,"text/xml");a.resolve(a.xhr.response,a.xhr)}},_getErrorHandler:function(a){return function(b){a.reject(b)}},_getProgressHandler:function(a){return function(b){a.progress(b)}}}),f=[],h=g.request.maxWorkers,
+p=new e;e.getClient=function(a,b){if(a){var c;f.some(function(d){if(d.id==(b?a+"::"+b:a))c=d.client;return!0});return c||n(a,b)}return p};e.setLimit=function(a){h=g.request.maxWorkers=a};return e});

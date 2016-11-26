@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({zoom:"Phóng tới",next:"Tính năng tiếp",previous:"Tính năng trước",close:"Đóng",dock:"Bến tàu",undock:"Bỏ gắn",menu:"Menu",untitled:"Chưa có tiêu đề",pageText:"{index} trên {total}",noFeaturesFound:"Không tìm thấy đối tượng",selectedFeature:"Đối tượng được chọn",selectedFeatures:"{total} kết quả",loading:"Đang tải"});
+//>>built
+define({zoom:"Ph\u00f3ng t\u1edbi",next:"T\u00ednh n\u0103ng ti\u1ebfp",previous:"T\u00ednh n\u0103ng tr\u01b0\u1edbc",close:"\u0110\u00f3ng",dock:"B\u1ebfn t\u00e0u",undock:"Bo\u0309 g\u0103\u0301n",menu:"Menu",untitled:"Ch\u01b0a c\u00f3 ti\u00eau \u0111\u1ec1",pageText:"{index} tr\u00ean {total}",noFeaturesFound:"Kh\u00f4ng t\u00ecm th\u1ea5y \u0111\u1ed1i t\u01b0\u1ee3ng",selectedFeature:"\u0110\u1ed1i t\u01b0\u1ee3ng \u0111\u01b0\u1ee3c ch\u1ecdn",selectedFeatures:"{total} k\u1ebft qu\u1ea3",
+loading:"\u0110ang t\u1ea3i"});

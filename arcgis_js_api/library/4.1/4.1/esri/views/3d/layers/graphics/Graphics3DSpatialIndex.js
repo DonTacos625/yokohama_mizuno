@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../../../../processors/SpatialIndex","../../../../geometry/SpatialReference","../../../../geometry/support/webMercatorUtils"],function(e,t,i,a,r){function n(e){return e.wkid===a.WGS84.wkid}var s=function(){function e(){this.spatialIndex=new i,this.spatialIndexNumGraphics=0,this.spatialIndexNumPendingQueries=0,this.layerView=null,this.layer=null,this.viewSR=null,this.graphicsCore=null}return e.prototype.initialize=function(e,t,i,a){this.layerView=e,this.layer=t,this.viewSR=i,this.graphicsCore=a},e.prototype.destroy=function(){this.spatialIndex&&(this.spatialIndex.destroy(),this.spatialIndex=null),this.viewSR=null,this.layerView=null,this.graphicsCore=null},e.prototype.numNodesUpdating=function(){return 0},e.prototype.isUpdating=function(){return this.spatialIndexNumPendingQueries>0},e.prototype.hasGraphics=function(){return this.spatialIndexNumGraphics>0},e.prototype.intersects=function(e,t,i){var a=this;this.hasGraphics()&&(this.spatialIndexNumPendingQueries++,this.spatialIndex.intersects(e,void 0,void 0,!0).then(function(e){a.spatialIndexNumPendingQueries--,i(e.results,e.results.length),a.layerView._evaluateUpdatingState()}))},e.prototype.shouldAddToSpatialIndex=function(e,t,i){return i||t.mustAlignToTerrain()},e.prototype.addGraphicsToSpatialIndex=function(e){if(this.layerView.loadedGraphics)for(var t=this.layerView.loadedGraphics.toArray(),i=t.length,a=0;i>a;a++){var r=t[a],n=this.graphicsCore.getGraphics3DGraphicById(r.uid);n&&!n.addedToSpatialIndex&&this.shouldAddToSpatialIndex(r,n,e)&&this.addGraphicToSpatialIndex(r,n)}},e.prototype.addGraphicToSpatialIndex=function(e,t){var i=e.geometry.spatialReference,a=this.viewSR,s={id:e.uid,geometry:null};if(i.equals(a))s.geometry=e.geometry.toJSON();else{var o=void 0;if(n(i)&&a.isWebMercator)o=r.geographicToWebMercator(e.geometry);else{if(!i.isWebMercator||!n(a))return console.warn("Cannot convert graphic geometry to map spatial reference, elevation and scale updates are disabled"),!1;o=r.webMercatorToGeographic(e.geometry)}s.geometry=o.toJSON()}return this.spatialIndexNumGraphics++,this.spatialIndex.runProcess([s],this.layer.id),t.addedToSpatialIndex=!0,!0},e}();return s});
+//>>built
+define(["require","exports","../../../../processors/SpatialIndex","../../../../geometry/SpatialReference","../../../../geometry/support/webMercatorUtils"],function(m,n,k,g,h){return function(){function a(){this.spatialIndex=new k;this.spatialIndexNumPendingQueries=this.spatialIndexNumGraphics=0;this.graphicsCore=this.viewSR=this.layer=this.layerView=null}a.prototype.initialize=function(l,a,c,b){this.layerView=l;this.layer=a;this.viewSR=c;this.graphicsCore=b};a.prototype.destroy=function(){this.spatialIndex&&
+(this.spatialIndex.destroy(),this.spatialIndex=null);this.graphicsCore=this.layerView=this.viewSR=null};a.prototype.numNodesUpdating=function(){return 0};a.prototype.isUpdating=function(){return 0<this.spatialIndexNumPendingQueries};a.prototype.hasGraphics=function(){return 0<this.spatialIndexNumGraphics};a.prototype.intersects=function(a,e,c){var b=this;this.hasGraphics()&&(this.spatialIndexNumPendingQueries++,this.spatialIndex.intersects(a,void 0,void 0,!0).then(function(a){b.spatialIndexNumPendingQueries--;
+c(a.results,a.results.length);b.layerView._evaluateUpdatingState()}))};a.prototype.shouldAddToSpatialIndex=function(a,e,c){return c||e.mustAlignToTerrain()};a.prototype.addGraphicsToSpatialIndex=function(a){if(this.layerView.loadedGraphics)for(var e=this.layerView.loadedGraphics.toArray(),c=e.length,b=0;b<c;b++){var f=e[b],d=this.graphicsCore.getGraphics3DGraphicById(f.uid);d&&!d.addedToSpatialIndex&&this.shouldAddToSpatialIndex(f,d,a)&&this.addGraphicToSpatialIndex(f,d)}};a.prototype.addGraphicToSpatialIndex=
+function(a,e){var c=a.geometry.spatialReference,b=this.viewSR,f={id:a.uid,geometry:null};if(c.equals(b))f.geometry=a.geometry.toJSON();else{var d=void 0;if(c.wkid===g.WGS84.wkid&&b.isWebMercator)d=h.geographicToWebMercator(a.geometry);else if(c.isWebMercator&&b.wkid===g.WGS84.wkid)d=h.webMercatorToGeographic(a.geometry);else return console.warn("Cannot convert graphic geometry to map spatial reference, elevation and scale updates are disabled"),!1;f.geometry=d.toJSON()}this.spatialIndexNumGraphics++;
+this.spatialIndex.runProcess([f],this.layer.id);return e.addedToSpatialIndex=!0};return a}()});

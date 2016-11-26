@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"Vidutiniškai : ${avg}",count:"Skaičius: ${count}",percent:"${num} %",high:"Aukštas",low:"Žemas",color:{changeMinMaxToolTIp:"Įvesti reikšmę.",handleToolTip:"Pritaikyti duomenų reikšmes spalvoms.",maxValueToolTip:"Įvesti didžiausią numatomą duomenų reikšmę.",minValueToolTip:"Įvesti mažiausią numatomą duomenų reikšmę.",changeSymbol:"Keisti simbolį"},size:{handleToolTip:"Pritaikyti duomenų reikšmes simbolių dydžiui.",sizeInputBoxLines:"Nustatykite linijos storį nuo 0 iki 18 pikselių.",sizeInputBoxPoints:"Nustatykite simbolio dydį nuo 1 iki 120 pikselių."}});
+//>>built
+define({statsAvg:"Vidutini\u0161kai : ${avg}",count:"Skai\u010dius: ${count}",percent:"${num} %",high:"Auk\u0161tas",low:"\u017demas",color:{changeMinMaxToolTIp:"\u012evesti reik\u0161m\u0119.",handleToolTip:"Pritaikyti duomen\u0173 reik\u0161mes spalvoms.",maxValueToolTip:"\u012evesti did\u017eiausi\u0105 numatom\u0105 duomen\u0173 reik\u0161m\u0119.",minValueToolTip:"\u012evesti ma\u017eiausi\u0105 numatom\u0105 duomen\u0173 reik\u0161m\u0119.",changeSymbol:"Keisti simbol\u012f"},size:{handleToolTip:"Pritaikyti duomen\u0173 reik\u0161mes simboli\u0173 dyd\u017eiui.",
+sizeInputBoxLines:"Nustatykite linijos stor\u012f nuo 0 iki 18 pikseli\u0173.",sizeInputBoxPoints:"Nustatykite simbolio dyd\u012f nuo 1 iki 120 pikseli\u0173."}});

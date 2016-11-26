@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","dojo/text!./SimpleGLMaterial.xml","./MaterialUtil","../../lib/RenderSlot","../../../../webgl/Program","../../../../webgl/enums","../../lib/DefaultVertexAttributeLocations"],function(t,e,r,i,o,n,a,p){var d=function(){function t(t,e,r,o){void 0===o&&(o=4),this.id=i.__GLMaterial_id++,this.program=t.get("simple"),this.color=e,this.depthFunc=r,this.drawMode=o}return t.prototype.getId=function(){return this.id},t.prototype.beginSlot=function(t){return t===o.INTERNAL_MATERIAL},t.prototype.getProgram=function(){return this.program},t.prototype.bind=function(t,e){t.bindProgram(this.program),this.program.setUniformMatrix4fv("model",i.IDENTITY),this.program.setUniformMatrix4fv("proj",e.proj),this.program.setUniform4fv("color",this.color),t.setBlendingEnabled(!0),void 0!==this.depthFunc&&t.setDepthFunction(this.depthFunc)},t.prototype.release=function(t){void 0!==this.depthFunc&&t.setDepthFunction(513),t.setBlendingEnabled(!1)},t.prototype.bindView=function(t,e){i.bindView(e.origin,e.view,this.program)},t.prototype.bindInstance=function(t,e){this.program.setUniformMatrix4fv("model",e.transformation)},t.prototype.getDrawMode=function(t){return this.drawMode},t.loadShaders=function(t,e,i,o){t._parse(r);var a=new n(o,t.vertexShaderSimple,t.fragmentShaderSimple,p.Default3D);i.add("simple",a)},t}();return d});
+//>>built
+require({cache:{"url:esri/views/3d/webgl-engine/materials/internal/SimpleGLMaterial.xml":'\x3c?xml version\x3d"1.0" encoding\x3d"UTF-8"?\x3e\r\n\r\n\x3csnippets\x3e\r\n\r\n\x3csnippet name\x3d"vertexShaderSimple"\x3e\x3c![CDATA[\r\n\tuniform mat4 proj;\r\n\tuniform mat4 view;\r\n\tuniform mat4 model;\r\n\tattribute vec3 $position;\r\n\r\n\tvoid main(void) {\r\n\t\tgl_Position \x3d proj * view * vec4((model * vec4($position, 1.0)).xyz, 1.0);\r\n\t}\r\n]]\x3e\x3c/snippet\x3e\r\n\r\n\x3csnippet name\x3d"fragmentShaderSimple"\x3e\x3c![CDATA[\r\n\tprecision mediump float;\r\n\r\n\tuniform vec4 color;\r\n\r\n\tvoid main() {\r\n\t\tgl_FragColor \x3d color;\r\n\t}\r\n]]\x3e\x3c/snippet\x3e\r\n\x3c/snippets\x3e'}});
+define("require exports dojo/text!./SimpleGLMaterial.xml ./MaterialUtil ../../lib/RenderSlot ../../../../webgl/Program ../../../../webgl/enums ../../lib/DefaultVertexAttributeLocations".split(" "),function(l,m,f,d,g,h,n,k){return function(){function a(b,a,e,c){void 0===c&&(c=4);this.id=d.__GLMaterial_id++;this.program=b.get("simple");this.color=a;this.depthFunc=e;this.drawMode=c}a.prototype.getId=function(){return this.id};a.prototype.beginSlot=function(b){return b===g.INTERNAL_MATERIAL};a.prototype.getProgram=
+function(){return this.program};a.prototype.bind=function(b,a){b.bindProgram(this.program);this.program.setUniformMatrix4fv("model",d.IDENTITY);this.program.setUniformMatrix4fv("proj",a.proj);this.program.setUniform4fv("color",this.color);b.setBlendingEnabled(!0);void 0!==this.depthFunc&&b.setDepthFunction(this.depthFunc)};a.prototype.release=function(b){void 0!==this.depthFunc&&b.setDepthFunction(513);b.setBlendingEnabled(!1)};a.prototype.bindView=function(b,a){d.bindView(a.origin,a.view,this.program)};
+a.prototype.bindInstance=function(b,a){this.program.setUniformMatrix4fv("model",a.transformation)};a.prototype.getDrawMode=function(a){return this.drawMode};a.loadShaders=function(a,d,e,c){a._parse(f);a=new h(c,a.vertexShaderSimple,a.fragmentShaderSimple,k.Default3D);e.add("simple",a)};return a}()});

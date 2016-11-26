@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"kohde",title:"Kirjaudu sisään",info:"Kirjaudu sisään käyttääksesi kohdetta kohteessa {server} {resource}",oAuthInfo:"Jatka kirjautumalla sisään.",lblUser:"Käyttäjätunnus:",lblPwd:"Salasana:",lblOk:"OK",lblSigning:"Kirjaudutaan sisään...",lblCancel:"Peruuta",errorMsg:"Virheellinen käyttäjätunnus tai salasana. Yritä uudelleen.",invalidUser:"Antamasi käyttäjätunnus tai salasana on virheellinen.",forbidden:"Antamasi käyttäjätunnus ja salasana ovat voimassa, mutta sinulla ei ole tämän resurssin käyttöoikeutta.",noAuthService:"Todennuspalvelua ei voi käyttää."});
+//>>built
+define({lblItem:"kohde",title:"Kirjaudu sis\u00e4\u00e4n",info:"Kirjaudu sis\u00e4\u00e4n k\u00e4ytt\u00e4\u00e4ksesi kohdetta kohteessa {server} {resource}",oAuthInfo:"Jatka kirjautumalla sis\u00e4\u00e4n.",lblUser:"K\u00e4ytt\u00e4j\u00e4tunnus:",lblPwd:"Salasana:",lblOk:"OK",lblSigning:"Kirjaudutaan sis\u00e4\u00e4n...",lblCancel:"Peruuta",errorMsg:"Virheellinen k\u00e4ytt\u00e4j\u00e4tunnus tai salasana. Yrit\u00e4 uudelleen.",invalidUser:"Antamasi k\u00e4ytt\u00e4j\u00e4tunnus tai salasana on virheellinen.",
+forbidden:"Antamasi k\u00e4ytt\u00e4j\u00e4tunnus ja salasana ovat voimassa, mutta sinulla ei ole t\u00e4m\u00e4n resurssin k\u00e4ytt\u00f6oikeutta.",noAuthService:"Todennuspalvelua ei voi k\u00e4ytt\u00e4\u00e4."});

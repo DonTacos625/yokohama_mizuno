@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"Về",add:"Thêm",all:"Tất cả",apply:"Áp dụng",auth:{logOut:"Đăng xuất",signIn:"Đăng nhập"},back:"Quay lại",cancel:"Hủy",change:"Thay đổi",clear:"Xóa",close:"Đóng",configure:"Cấu hình",control:{pause:"Tạm dừng",play:"Phát",resume:"Tiếp tục",stop:"Dừng"},copy:"Sao chép",create:"Tạo",cut:"Cắt","delete":"Xóa",details:"Chi tiết",edit:"Chỉnh sửa",error:"Lỗi",esri:"Esri",exit:"Thoát",fieldsSummary:"Danh sách các thuộc tính và giá trị",find:"Tìm",form:{no:"Không",ok:"OK",password:"Mật khẩu",submit:"Đệ trình",username:"Tên đăng nhập",yes:"Có"},help:"Trợ giúp",home:"Trang chủ",info:"Thông tin",information:"Thông tin",layer:"Lớp",loading:"Đang tải",maximize:"Phóng đại",menu:"Menu",more:"Khác",none:"Không có",open:"Mở",pagination:{first:"Đầu tiên",last:"Cuối cùng",next:"Tiếp",page:"Trang",pageText:"{index} trên {total}",previous:"Trước"},paste:"Dán",preview:"Xem trước",print:"In",publish:"Xuất bản",redo:"Làm lại",refresh:"Làm mới",remove:"Gỡ",rename:"Đổi tên",reset:"Thiết lập lại",restore:"Khôi phục",save:"Lưu",search:"Tìm kiếm",searching:"Đang tìm kiếm",select:"Chọn",settings:"Thiết lập",sort:"Sắp xếp",share:"Chia sẻ",title:"Tiêu đề",untitled:"Chưa có tiêu đề",upload:"Tải lên",undo:"Hoàn tác",view:"Xem",visibility:{hide:"Ẩn",show:"Hiển thị",toggle:"Chuyển đổi"},warning:"Cảnh báo"});
+//>>built
+define({about:"V\u1ec1",add:"Th\u00eam",all:"T\u1ea5t c\u1ea3",apply:"\u00c1p d\u1ee5ng",auth:{logOut:"\u0110\u0103ng xu\u1ea5t",signIn:"\u0110\u0103ng nh\u1eadp"},back:"Quay l\u1ea1i",cancel:"H\u1ee7y",change:"Thay \u0111\u1ed5i",clear:"X\u00f3a",close:"\u0110\u00f3ng",configure:"C\u1ea5u h\u00ecnh",control:{pause:"T\u1ea1m d\u1eebng",play:"Ph\u00e1t",resume:"Ti\u1ebfp t\u1ee5c",stop:"D\u1eebng"},copy:"Sao ch\u00e9p",create:"T\u1ea1o",cut:"C\u1eaft","delete":"X\u00f3a",details:"Chi ti\u1ebft",edit:"Ch\u1ec9nh s\u1eeda",
+error:"L\u1ed7i",esri:"Esri",exit:"Thoa\u0301t",fieldsSummary:"Danh s\u00e1ch c\u00e1c thu\u1ed9c t\u00ednh v\u00e0 gi\u00e1 tr\u1ecb",find:"T\u00ecm",form:{no:"Kh\u00f4ng",ok:"OK",password:"M\u1eadt kh\u1ea9u",submit:"\u0110\u1ec7 tr\u00ecnh",username:"T\u00ean \u0111\u0103ng nh\u1eadp",yes:"C\u00f3"},help:"Tr\u1ee3 gi\u00fap",home:"Trang ch\u1ee7",info:"Th\u00f4ng tin",information:"Th\u00f4ng tin",layer:"L\u1edbp",loading:"\u0110ang t\u1ea3i",maximize:"Ph\u00f3ng \u0111\u1ea1i",menu:"Menu",more:"Kh\u00e1c",
+none:"Kh\u00f4ng c\u00f3",open:"M\u1edf",pagination:{first:"\u0110\u1ea7u ti\u00ean",last:"Cu\u1ed1i c\u00f9ng",next:"Ti\u1ebfp",page:"Trang",pageText:"{index} tr\u00ean {total}",previous:"Tr\u01b0\u1edbc"},paste:"D\u00e1n",preview:"Xem tr\u01b0\u1edbc",print:"In",publish:"Xu\u1ea5t b\u1ea3n",redo:"L\u00e0m l\u1ea1i",refresh:"L\u00e0m m\u1edbi",remove:"G\u1ee1",rename:"\u0110\u1ed5i t\u00ean",reset:"Thi\u1ebft l\u1eadp l\u1ea1i",restore:"Kh\u00f4i ph\u1ee5c",save:"L\u01b0u",search:"T\u00ecm ki\u1ebfm",
+searching:"\u0110ang t\u00ecm ki\u1ebfm",select:"Ch\u1ecdn",settings:"Thi\u1ebft l\u1eadp",sort:"S\u1eafp x\u1ebfp",share:"Chia s\u1ebb",title:"Ti\u00eau \u0111\u1ec1",untitled:"Ch\u01b0a c\u00f3 ti\u00eau \u0111\u1ec1",upload:"T\u1ea3i l\u00ean",undo:"Ho\u00e0n t\u00e1c",view:"Xem",visibility:{hide:"\u1ea8n",show:"Hi\u1ec3n th\u1ecb",toggle:"Chuy\u1ec3n \u0111\u1ed5i"},warning:"C\u1ea3nh b\u00e1o"});

@@ -1,36 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-//  copyright
-
-/**
-             * The copyright text as defined by the map service.
-             *
-             * @name copyright
-             * @memberof module:esri/layers/mixins/ArcGISMapService
-             *
-             * @type {string}
-             */
-
-define(["require","exports","../../core/tsSupport/declareExtendsHelper","../../core/tsSupport/decorateHelper","../../core/accessorSupport/decorators","./ArcGISService","./ScaleRangeLayer","../../geometry/Extent","../../geometry/SpatialReference"],function(e,r,t,o,p,n,i,a,l){function s(){return n}var d=function(e){function r(){e.apply(this,arguments),this.copyright=null,this.fullExtent=null,this.spatialReference=null,this.version=null}return t(r,e),r.prototype.readCapabilities=function(e,r){return e&&e.split(",").map(function(e){return e.trim()})},r.prototype.readCopyright=function(e,r){return r.copyrightText},r.prototype.readLegendEnabled=function(e,r){return r.showLegend},r.prototype.readPopupEnabled=function(e,r){return!r.disablePopup},r.prototype.readVersion=function(e,r){var t=r.currentVersion;return t||(t=r.hasOwnProperty("capabilities")||r.hasOwnProperty("tables")?10:r.hasOwnProperty("supportedImageFormatTypes")?9.31:9.3),t},o([p.property()],r.prototype,"capabilities",void 0),o([p.read("service","capabilities")],r.prototype,"readCapabilities",null),o([p.property()],r.prototype,"copyright",void 0),o([p.read("copyright",["copyrightText"])],r.prototype,"readCopyright",null),o([p.property({type:a})],r.prototype,"fullExtent",void 0),o([p.property({json:{origins:{service:{readable:!1}}}})],r.prototype,"id",void 0),o([p.property()],r.prototype,"legendEnabled",void 0),o([p.read("legendEnabled",["showLegend"])],r.prototype,"readLegendEnabled",null),o([p.read("popupEnabled",["disablePopup"])],r.prototype,"readPopupEnabled",null),o([p.property({type:l})],r.prototype,"spatialReference",void 0),o([p.property()],r.prototype,"version",void 0),o([p.read("version",["currentVersion","capabilities","tables","supportedImageFormatTypes"])],r.prototype,"readVersion",null),r=o([p.subclass("esri.layers.mixins.ArcGISMapService")],r)}(p.declared(s(),i));return d});
+//>>built
+define("require exports ../../core/tsSupport/declareExtendsHelper ../../core/tsSupport/decorateHelper ../../core/accessorSupport/decorators ./ArcGISService ./ScaleRangeLayer ../../geometry/Extent ../../geometry/SpatialReference".split(" "),function(l,m,e,c,b,f,g,h,k){return function(d){function a(){d.apply(this,arguments);this.version=this.spatialReference=this.fullExtent=this.copyright=null}e(a,d);a.prototype.readCapabilities=function(a,b){return a&&a.split(",").map(function(a){return a.trim()})};
+a.prototype.readCopyright=function(a,b){return b.copyrightText};a.prototype.readLegendEnabled=function(a,b){return b.showLegend};a.prototype.readPopupEnabled=function(a,b){return!b.disablePopup};a.prototype.readVersion=function(a,b){var c=b.currentVersion;c||(c=b.hasOwnProperty("capabilities")||b.hasOwnProperty("tables")?10:b.hasOwnProperty("supportedImageFormatTypes")?9.31:9.3);return c};c([b.property()],a.prototype,"capabilities",void 0);c([b.read("service","capabilities")],a.prototype,"readCapabilities",
+null);c([b.property()],a.prototype,"copyright",void 0);c([b.read("copyright",["copyrightText"])],a.prototype,"readCopyright",null);c([b.property({type:h})],a.prototype,"fullExtent",void 0);c([b.property({json:{origins:{service:{readable:!1}}}})],a.prototype,"id",void 0);c([b.property()],a.prototype,"legendEnabled",void 0);c([b.read("legendEnabled",["showLegend"])],a.prototype,"readLegendEnabled",null);c([b.read("popupEnabled",["disablePopup"])],a.prototype,"readPopupEnabled",null);c([b.property({type:k})],
+a.prototype,"spatialReference",void 0);c([b.property()],a.prototype,"version",void 0);c([b.read("version",["currentVersion","capabilities","tables","supportedImageFormatTypes"])],a.prototype,"readVersion",null);return a=c([b.subclass("esri.layers.mixins.ArcGISMapService")],a)}(b.declared(f,g))});

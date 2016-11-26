@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"položka",title:"Přihlásit",info:"Chcete-li získat přístup k položce na serveru {server} {resource}, přihlaste se.",oAuthInfo:"Aby bylo možné pokračovat, je nutné se přihlásit.",lblUser:"Uživatelské jméno:",lblPwd:"Heslo:",lblOk:"OK",lblSigning:"Přihlašování…",lblCancel:"Storno",errorMsg:"Neplatné uživatelské jméno či heslo. Opakujte akci.",invalidUser:"Zadané uživatelské jméno nebo heslo je nesprávné.",forbidden:"Uživatelské jméno a heslo jsou platné, ale nemáte přístup k tomuto zdroji.",noAuthService:"Nezdařil se přístup k ověřovací službě."});
+//>>built
+define({lblItem:"polo\u017eka",title:"P\u0159ihl\u00e1sit",info:"Chcete-li z\u00edskat p\u0159\u00edstup k polo\u017ece na serveru {server} {resource}, p\u0159ihlaste se.",oAuthInfo:"Aby bylo mo\u017en\u00e9 pokra\u010dovat, je nutn\u00e9 se p\u0159ihl\u00e1sit.",lblUser:"U\u017eivatelsk\u00e9 jm\u00e9no:",lblPwd:"Heslo:",lblOk:"OK",lblSigning:"P\u0159ihla\u0161ov\u00e1n\u00ed\u2026",lblCancel:"Storno",errorMsg:"Neplatn\u00e9 u\u017eivatelsk\u00e9 jm\u00e9no \u010di heslo. Opakujte akci.",invalidUser:"Zadan\u00e9 u\u017eivatelsk\u00e9 jm\u00e9no nebo heslo je nespr\u00e1vn\u00e9.",
+forbidden:"U\u017eivatelsk\u00e9 jm\u00e9no a heslo jsou platn\u00e9, ale nem\u00e1te p\u0159\u00edstup k tomuto zdroji.",noAuthService:"Nezda\u0159il se p\u0159\u00edstup k ov\u011b\u0159ovac\u00ed slu\u017eb\u011b."});

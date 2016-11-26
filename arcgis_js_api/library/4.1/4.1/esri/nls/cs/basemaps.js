@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({streets:"Ulice",satellite:"Snímky",hybrid:"Snímky s popisky",terrain:"Terén s popisky",topo:"Topografická",gray:"Světle šedý podklad","dark-gray":"Tmavě šedý podklad",oceans:"Oceány","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"Mapa světa s uliční sítí (noc)","streets-relief-vector":"Mapa světa s uliční sítí (s reliéfem)","streets-navigation-vector":"Navigační mapa světa"});
+//>>built
+define({streets:"Ulice",satellite:"Sn\u00edmky",hybrid:"Sn\u00edmky s popisky",terrain:"Ter\u00e9n s popisky",topo:"Topografick\u00e1",gray:"Sv\u011btle \u0161ed\u00fd podklad","dark-gray":"Tmav\u011b \u0161ed\u00fd podklad",oceans:"Oce\u00e1ny","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"Mapa sv\u011bta s uli\u010dn\u00ed s\u00edt\u00ed (noc)","streets-relief-vector":"Mapa sv\u011bta s uli\u010dn\u00ed s\u00edt\u00ed (s reli\u00e9fem)","streets-navigation-vector":"Naviga\u010dn\u00ed mapa sv\u011bta"});

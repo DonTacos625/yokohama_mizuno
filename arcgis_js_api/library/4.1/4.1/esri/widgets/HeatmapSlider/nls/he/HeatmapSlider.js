@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"ממוצע: ${avg}",count:"כמות : ${count}",percent:"${num}%",high:"גבוה",low:"נמוך",color:{changeMinMaxToolTIp:"הקלד ערך.",handleToolTip:"התאם ערכי נתונים לצבעים.",maxValueToolTip:"הקלד את ערך הנתונים הגבוה ביותר הצפוי.",minValueToolTip:"הקלד את ערך הנתונים הנמוך ביותר הצפוי.",changeSymbol:"שנה סמל"},size:{handleToolTip:"התאם את ערכי הנתונים לגודל הסמל.",sizeInputBoxLines:"קבע את עובי הקו בין 0 ל-18 פיקסלים.",sizeInputBoxPoints:"קבע את גודל הסמל בין 1 ל-120 פיקסלים."}});
+//>>built
+define({statsAvg:"\u05de\u05de\u05d5\u05e6\u05e2: ${avg}",count:"\u05db\u05de\u05d5\u05ea\u00a0: ${count}",percent:"${num}%",high:"\u05d2\u05d1\u05d5\u05d4",low:"\u05e0\u05de\u05d5\u05da",color:{changeMinMaxToolTIp:"\u05d4\u05e7\u05dc\u05d3 \u05e2\u05e8\u05da.",handleToolTip:"\u05d4\u05ea\u05d0\u05dd \u05e2\u05e8\u05db\u05d9 \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05dc\u05e6\u05d1\u05e2\u05d9\u05dd.",maxValueToolTip:"\u05d4\u05e7\u05dc\u05d3 \u05d0\u05ea \u05e2\u05e8\u05da \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d4\u05e6\u05e4\u05d5\u05d9.",
+minValueToolTip:"\u05d4\u05e7\u05dc\u05d3 \u05d0\u05ea \u05e2\u05e8\u05da \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d4\u05e0\u05de\u05d5\u05da \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d4\u05e6\u05e4\u05d5\u05d9.",changeSymbol:"\u05e9\u05e0\u05d4 \u05e1\u05de\u05dc"},size:{handleToolTip:"\u05d4\u05ea\u05d0\u05dd \u05d0\u05ea \u05e2\u05e8\u05db\u05d9 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05dc\u05d2\u05d5\u05d3\u05dc \u05d4\u05e1\u05de\u05dc.",sizeInputBoxLines:"\u05e7\u05d1\u05e2 \u05d0\u05ea \u05e2\u05d5\u05d1\u05d9 \u05d4\u05e7\u05d5 \u05d1\u05d9\u05df 0 \u05dc-18 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd.",
+sizeInputBoxPoints:"\u05e7\u05d1\u05e2 \u05d0\u05ea \u05d2\u05d5\u05d3\u05dc \u05d4\u05e1\u05de\u05dc \u05d1\u05d9\u05df 1 \u05dc-120 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd."}});

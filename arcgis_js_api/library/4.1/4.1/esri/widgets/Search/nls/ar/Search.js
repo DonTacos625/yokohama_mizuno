@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({searchButtonTitle:"بحث",clearButtonTitle:"مسح البحث",placeholder:"إيجاد العنوان أو المكان",searchIn:"البحث في",lonlat:"خط الطول، وخط العرض",reverseLonLatHeader:"هل تعني؟",all:"جميع",allPlaceholder:"إيجاد العنوان أو المكان",emptyValue:"الرجاء إدخال مصطلح بحث.",untitledResult:"بلا عنوان",untitledSource:"مصدر بدون عنوان",noResults:"بدون نتائج",noResultsFound:"لم يتم العثور على نتائج لـ {value}.",showMoreResults:"إظهار المزيد من النتائج",hideMoreResults:"إخفاء",searchResult:"البحث عن النتائج",moreResultsHeader:"المزيد من النتائج",esriLocatorName:"الترميز الجغرافي لـ Esri World"});
+//>>built
+define({searchButtonTitle:"\u0628\u062d\u062b",clearButtonTitle:"\u0645\u0633\u062d \u0627\u0644\u0628\u062d\u062b",placeholder:"\u0625\u064a\u062c\u0627\u062f \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0623\u0648 \u0627\u0644\u0645\u0643\u0627\u0646",searchIn:"\u0627\u0644\u0628\u062d\u062b \u0641\u064a",lonlat:"\u062e\u0637 \u0627\u0644\u0637\u0648\u0644\u060c \u0648\u062e\u0637 \u0627\u0644\u0639\u0631\u0636",reverseLonLatHeader:"\u0647\u0644 \u062a\u0639\u0646\u064a\u061f",all:"\u062c\u0645\u064a\u0639",
+allPlaceholder:"\u0625\u064a\u062c\u0627\u062f \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0623\u0648 \u0627\u0644\u0645\u0643\u0627\u0646",emptyValue:"\u0627\u0644\u0631\u062c\u0627\u0621 \u0625\u062f\u062e\u0627\u0644 \u0645\u0635\u0637\u0644\u062d \u0628\u062d\u062b.",untitledResult:"\u0628\u0644\u0627 \u0639\u0646\u0648\u0627\u0646",untitledSource:"\u0645\u0635\u062f\u0631 \u0628\u062f\u0648\u0646 \u0639\u0646\u0648\u0627\u0646",noResults:"\u0628\u062f\u0648\u0646 \u0646\u062a\u0627\u0626\u062c",
+noResultsFound:"\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0646\u062a\u0627\u0626\u062c \u0644\u0640 {value}.",showMoreResults:"\u0625\u0638\u0647\u0627\u0631 \u0627\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u0627\u0644\u0646\u062a\u0627\u0626\u062c",hideMoreResults:"\u0625\u062e\u0641\u0627\u0621",searchResult:"\u0627\u0644\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0646\u062a\u0627\u0626\u062c",moreResultsHeader:"\u0627\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u0627\u0644\u0646\u062a\u0627\u0626\u062c",
+esriLocatorName:"\u0627\u0644\u062a\u0631\u0645\u064a\u0632 \u0627\u0644\u062c\u063a\u0631\u0627\u0641\u064a \u0644\u0640 Esri World"});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../core/tsSupport/declareExtendsHelper","../core/tsSupport/decorateHelper","../core/kebabDictionary","../core/screenUtils","../core/urlUtils","./Symbol3DLayer","./support/Symbol3DOutline","./support/Symbol3DResource","../core/accessorSupport/decorators"],function(t,e,r,o,i,p,n,s,a,l,c){var u=i({topLeft:"top-left",topRight:"top-right",bottomLeft:"bottom-left",bottomRight:"bottom-right"}),h=function(t){function e(){t.apply(this,arguments)}return r(e,t),e.prototype.readHref=function(t,e,r){return t?n.read(t,r):e.dataURI},e.prototype.writeHref=function(t,e,r){t&&(n.isDataProtocol(t)?e.dataURI=t:e.href=n.write(t,r))},e.prototype.clone=function(){return new e({href:this.href,primitive:this.primitive})},o([c.property({json:{writable:!0,readFrom:["href","dataURI"]}})],e.prototype,"href",void 0),o([c.read("href")],e.prototype,"readHref",null),o([c.write("href")],e.prototype,"writeHref",null),e=o([c.subclass("esri.symbols.support.IconSymbol3DLayerResource")],e)}(c.declared(l["default"])),y=function(t){function e(e){t.call(this),this.material=null,this.resource=null,this.type="Icon",this.size=void 0,this.anchor=void 0,this.outline=void 0}return r(e,t),e.prototype.readAnchor=function(t){return u.fromJSON(t)},e.prototype.writeAnchor=function(t,e){e.anchor=u.toJSON(t)},e.prototype.clone=function(){return new e({anchor:this.anchor,enabled:this.enabled,material:this.material&&this.material.clone(),outline:this.outline&&this.outline.clone(),resource:this.resource&&this.resource.clone(),size:this.size})},o([c.property()],e.prototype,"material",void 0),o([c.property({type:h,json:{writable:!0}})],e.prototype,"resource",void 0),o([c.property()],e.prototype,"type",void 0),o([c.property({json:{writable:!0}}),c.cast(p.toPt)],e.prototype,"size",void 0),o([c.property({type:String})],e.prototype,"anchor",void 0),o([c.read("anchor")],e.prototype,"readAnchor",null),o([c.write("anchor")],e.prototype,"writeAnchor",null),o([c.property({type:a["default"],json:{writable:!0}})],e.prototype,"outline",void 0),e=o([c.subclass("esri.symbols.IconSymbol3DLayer")],e)}(c.declared(s));return y});
+//>>built
+define("require exports ../core/tsSupport/declareExtendsHelper ../core/tsSupport/decorateHelper ../core/kebabDictionary ../core/screenUtils ../core/urlUtils ./Symbol3DLayer ./support/Symbol3DOutline ./support/Symbol3DResource ../core/accessorSupport/decorators".split(" "),function(q,r,f,c,h,k,e,l,m,n,b){var g=h({topLeft:"top-left",topRight:"top-right",bottomLeft:"bottom-left",bottomRight:"bottom-right"}),p=function(d){function a(){d.apply(this,arguments)}f(a,d);a.prototype.readHref=function(a,b,c){return a?
+e.read(a,c):b.dataURI};a.prototype.writeHref=function(a,b,c){a&&(e.isDataProtocol(a)?b.dataURI=a:b.href=e.write(a,c))};a.prototype.clone=function(){return new a({href:this.href,primitive:this.primitive})};c([b.property({json:{writable:!0,readFrom:["href","dataURI"]}})],a.prototype,"href",void 0);c([b.read("href")],a.prototype,"readHref",null);c([b.write("href")],a.prototype,"writeHref",null);return a=c([b.subclass("esri.symbols.support.IconSymbol3DLayerResource")],a)}(b.declared(n.default));return function(d){function a(a){d.call(this);
+this.resource=this.material=null;this.type="Icon";this.outline=this.anchor=this.size=void 0}f(a,d);a.prototype.readAnchor=function(a){return g.fromJSON(a)};a.prototype.writeAnchor=function(a,b){b.anchor=g.toJSON(a)};a.prototype.clone=function(){return new a({anchor:this.anchor,enabled:this.enabled,material:this.material&&this.material.clone(),outline:this.outline&&this.outline.clone(),resource:this.resource&&this.resource.clone(),size:this.size})};c([b.property()],a.prototype,"material",void 0);c([b.property({type:p,
+json:{writable:!0}})],a.prototype,"resource",void 0);c([b.property()],a.prototype,"type",void 0);c([b.property({json:{writable:!0}}),b.cast(k.toPt)],a.prototype,"size",void 0);c([b.property({type:String})],a.prototype,"anchor",void 0);c([b.read("anchor")],a.prototype,"readAnchor",null);c([b.write("anchor")],a.prototype,"writeAnchor",null);c([b.property({type:m.default,json:{writable:!0}})],a.prototype,"outline",void 0);return a=c([b.subclass("esri.symbols.IconSymbol3DLayer")],a)}(b.declared(l))});

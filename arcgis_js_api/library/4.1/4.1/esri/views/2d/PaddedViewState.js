@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["./viewpointUtils","./ViewState","./math/vec2","./math/mat2d","./math/common","../../core/Accessoire"],function(t,e,n,i,r,a){var o=a.createSubclass({classMetadata:{properties:{left:{},top:{},right:{},bottom:{}}},left:0,top:0,right:0,bottom:0});o.copy=function(t,e){t.left=e.left,t.top=e.top,t.right=e.right,t.bottom=e.bottom};var d=e.createSubclass({declaredClass:"esri.views.2d.PaddedViewState",classMetadata:{properties:{padding:{type:o,copy:o.copy},transform:{dependsOn:["padding"]},paddedScreenCenter:{dependsOn:["size","padding"],readOnly:!0,copy:n.copy},clipRect:{dependsOn:["worldScreenWidth","rotation","paddedScreenCenter","screenCenter"],readOnly:!0,copy:function(t,e){t.top=e.top,t.left=e.left,t.right=e.right,t.bottom=e.bottom}}}},getDefaults:function(){return{content:new e,padding:new o,size:n.fromValues(0,0)}},_clipRectGetter:function(){var t=n.create(),e=i.create();return function(a){var o=this.worldScreenWidth;if(!o)return null;var d=r.toRadian(this.rotation),s=Math.abs(Math.cos(d)),c=Math.abs(Math.sin(d)),p=this.width*s+this.height*c;return o>p?null:(n.copy(t,this.screenCenter),i.fromTranslation(e,t),i.rotate(e,e,d),n.negate(t,t),i.translate(e,e,t),n.transformMat2d(t,this.paddedScreenCenter,e),a||(a={}),a.top=-Math.round(p),a.left=Math.round(t[0]-.5*o),a.right=Math.round(t[0]+.5*o),a.bottom=+Math.round(p),a)}}(),_padding:null,_paddingSetter:function(t){return this._padding=t||new o,this._updateContent(),t},_size:null,_sizeSetter:function(t){return this._size=t,this._updateContent(),t},_paddedScreenCenterGetter:function(t){var e=this.content.size,i=this.padding;return t||(t=n.create()),n.scale(t,e,.5),t[0]=t[0]+i.left,t[1]=t[1]+i.top,t},viewpoint:null,_viewpointSetter:function(){var e;return function(n,i){return e||(e=n.clone()),this.content.viewpoint=n,t.addPadding(e,n,this._size,this._padding),i?t.addPadding(i,n,this._size,this._padding):t.addPadding(e.clone(),n,this._size,this._padding)}}(),_updateContent:function(){var t=n.create();return function(){var e=this._size,i=this._padding;if(e&&i){var r=this.content;n.set(t,i.left+i.right,i.top+i.bottom),n.subtract(t,e,t),r.size=t;var a=r.viewpoint;a&&(this.viewpoint=a)}}}()});return d});
+//>>built
+define("./viewpointUtils ./ViewState ./math/vec2 ./math/mat2d ./math/common ../../core/Accessoire".split(" "),function(f,l,e,h,m,n){var d=n.createSubclass({classMetadata:{properties:{left:{},top:{},right:{},bottom:{}}},left:0,top:0,right:0,bottom:0});d.copy=function(a,b){a.left=b.left;a.top=b.top;a.right=b.right;a.bottom=b.bottom};return l.createSubclass({declaredClass:"esri.views.2d.PaddedViewState",classMetadata:{properties:{padding:{type:d,copy:d.copy},transform:{dependsOn:["padding"]},paddedScreenCenter:{dependsOn:["size",
+"padding"],readOnly:!0,copy:e.copy},clipRect:{dependsOn:["worldScreenWidth","rotation","paddedScreenCenter","screenCenter"],readOnly:!0,copy:function(a,b){a.top=b.top;a.left=b.left;a.right=b.right;a.bottom=b.bottom}}}},getDefaults:function(){return{content:new l,padding:new d,size:e.fromValues(0,0)}},_clipRectGetter:function(){var a=e.create(),b=h.create();return function(c){var k=this.worldScreenWidth;if(!k)return null;var d=m.toRadian(this.rotation),g=Math.abs(Math.cos(d)),f=Math.abs(Math.sin(d)),
+g=this.width*g+this.height*f;if(k>g)return null;e.copy(a,this.screenCenter);h.fromTranslation(b,a);h.rotate(b,b,d);e.negate(a,a);h.translate(b,b,a);e.transformMat2d(a,this.paddedScreenCenter,b);c||(c={});c.top=-Math.round(g);c.left=Math.round(a[0]-0.5*k);c.right=Math.round(a[0]+0.5*k);c.bottom=+Math.round(g);return c}}(),_padding:null,_paddingSetter:function(a){this._padding=a||new d;this._updateContent();return a},_size:null,_sizeSetter:function(a){this._size=a;this._updateContent();return a},_paddedScreenCenterGetter:function(a){var b=
+this.content.size,c=this.padding;a||(a=e.create());e.scale(a,b,0.5);a[0]+=c.left;a[1]+=c.top;return a},viewpoint:null,_viewpointSetter:function(){var a;return function(b,c){a||(a=b.clone());this.content.viewpoint=b;f.addPadding(a,b,this._size,this._padding);return!c?f.addPadding(a.clone(),b,this._size,this._padding):f.addPadding(c,b,this._size,this._padding)}}(),_updateContent:function(){var a=e.create();return function(){var b=this._size,c=this._padding;if(b&&c){var d=this.content;e.set(a,c.left+
+c.right,c.top+c.bottom);e.subtract(a,b,a);d.size=a;if(b=d.viewpoint)this.viewpoint=b}}}()})});

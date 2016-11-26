@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/declare","./LayerView"],function(e,r){var i=e(r,{declaredClass:"esri.views.layers.GraphicsLayerView",constructor:function(e){},getRenderer:function(e){if(!e||e.symbol)return null;var r=this._rndForScale||this.layer.get("renderer");return e&&r&&r.getObservationRenderer&&(r=r.getObservationRenderer(e)),r},getSymbol:function(e){if(e.symbol)return e.symbol;var r=this.getRenderer(e);return r&&r.getSymbol(e)},getRenderingInfo:function(e){var r,i,t=this.getRenderer(e),a=this.getSymbol(e);if(!a)return null;if(r={renderer:t,symbol:a},t&&(t.colorInfo&&(r.color=t.getColor(e)),t.sizeInfo&&(i=t.getSize(e),r.size=[i,i,i]),t.visualVariables)){var n=t.getVisualVariableValues(e);i=["proportional","proportional","proportional"];for(var o=0;o<n.length;o++){var l=n[o];if("outline"!==l.variable.target){var s=l.variable.type;if("color"===s)r.color=l.value;else if("size"===s){var u=l.variable.axis,v=l.variable.useSymbolValue?"symbolValue":l.value;"width"===u?i[0]=v:"depth"===u?i[1]=v:"height"===u?i[2]=v:"width-and-depth"===u?i[0]=i[1]=v:i[0]=i[1]=i[2]=v}else"opacity"===s?r.opacity=l.value:"rotation"===s&&(r.rotationAngle=l.value)}}(isFinite(i[0])||isFinite(i[1])||isFinite(i[2]))&&(r.size=i)}return r},_evalSDRenderer:function(){}});return i});
+//>>built
+define(["../../core/declare","./LayerView"],function(g,h){return g(h,{declaredClass:"esri.views.layers.GraphicsLayerView",constructor:function(b){},getRenderer:function(b){if(!b||b.symbol)return null;var a=this._rndForScale||this.layer.get("renderer");b&&(a&&a.getObservationRenderer)&&(a=a.getObservationRenderer(b));return a},getSymbol:function(b){if(b.symbol)return b.symbol;var a=this.getRenderer(b);return a&&a.getSymbol(b)},getRenderingInfo:function(b){var a=this.getRenderer(b),e=this.getSymbol(b),
+c;if(!e)return null;e={renderer:a,symbol:e};if(a&&(a.colorInfo&&(e.color=a.getColor(b)),a.sizeInfo&&(c=a.getSize(b),e.size=[c,c,c]),a.visualVariables)){b=a.getVisualVariableValues(b);c=["proportional","proportional","proportional"];for(a=0;a<b.length;a++){var d=b[a];if("outline"!==d.variable.target){var f=d.variable.type;"color"===f?e.color=d.value:"size"===f?(f=d.variable.axis,d=d.variable.useSymbolValue?"symbolValue":d.value,"width"===f?c[0]=d:"depth"===f?c[1]=d:"height"===f?c[2]=d:c[0]="width-and-depth"===
+f?c[1]=d:c[1]=c[2]=d):"opacity"===f?e.opacity=d.value:"rotation"===f&&(e.rotationAngle=d.value)}}if(isFinite(c[0])||isFinite(c[1])||isFinite(c[2]))e.size=c}return e},_evalSDRenderer:function(){}})});

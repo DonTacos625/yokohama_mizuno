@@ -1,25 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["./Widget","dojo/_base/lang","dojo/date/locale","dojo/sniff","dojo/keys","../renderers/support/utils","dijit/form/_DateTimeTextBox","dijit/form/ValidationTextBox"],function(t,e,i,a,s,n,o,r){var d=t.createSubclass([r],{declaredClass:"esri.dijit.DateTimeTextBox",properties:{visible:!0,value:null,date:null},_timeSeparator:", ",_dateFormatOptions:{dateOptions:{formatLength:"short",selector:"date",fullYear:!0},timeOptions:{formatLength:"short",selector:"time"}},constructor:function(t,i){this._getValidDateTimeRE=e.hitch(this,this._getValidDateTimeRE),this.set("pattern",this._getValidDateTimeRE),this.set("invalidMessage",this._getInvalidMessage())},postCreate:function(){this.inherited(arguments),this.set("value",this.date),this.own(this.watch("date",e.hitch(this,this._dateChangeHandler)),this.on("change",e.hitch(this,this._valueChangeHandler)),this.on("keydown",e.hitch(this,this._keydownHandler)))},format:function(t){var e=this._formatDate(t);return e},parse:function(t,e){var i=this._parseDateString(t,e);return i.isValid?new Date(i.value):void 0},compare:o.prototype.compare,_isInvalidDate:o.prototype._isInvalidDate,_dateChangeHandler:function(t,e,i){this.date!==this.value&&this.set("value",i)},_valueChangeHandler:function(t){this.isValid()&&this.set("date",t)},_keydownHandler:function(t){t.keyCode===s.ENTER&&this._commitValueToDate()},_commitValueToDate:function(){var t=this._parseDateString(this.textbox.value);t.isValid&&this.set("value",new Date(t.value))},_formatDate:function(t){var e="";if(t instanceof Date&&(t=t.getTime()),"number"==typeof t&&!isNaN(t)){var i=n.formatDate(t,{selector:"date",dateOptions:this._dateFormatOptions.dateOptions}),a=n.formatDate(t,{selector:"time",timeOptions:this._dateFormatOptions.timeOptions});e=this._mergeDateTime(i,a)}return e},_parseDateString:function(t,e){t=t||"",e=e||{};var a=t.split(this._timeSeparator),s=a[0],n=a[1],o=i.parse(s,this._dateFormatOptions.dateOptions),r=i.parse(n,this._dateFormatOptions.timeOptions),d=!1,h=e.min,m=e.max,l=o&&o.getTime();if("number"!=typeof l||isNaN(l))l=null;else if(r){var u=r&&r.getTime();"number"!=typeof u||isNaN(u)||(u-=60*r.getTimezoneOffset()*1e3,l+=u,d=!0)}else d=!n;return d&&(h=h&&h.getTime(),m=m&&m.getTime(),"number"!=typeof h||isNaN(h)||h>l&&(d=!1),"number"!=typeof m||isNaN(m)||l>m&&(d=!1)),{isValid:d,value:l}},_getValidDateTimeRE:function(){var t=i.regexp(this._dateFormatOptions.dateOptions),e=i.regexp(this._dateFormatOptions.timeOptions),a=t+"(,\\s"+e+")?";return a},_getInvalidMessage:function(){return this._formatDate(new Date(0))},_mergeDateTime:function(t,e){return t+(e?this._timeSeparator+e:"")}});return d});
+//>>built
+define("./Widget dojo/_base/lang dojo/date/locale dojo/sniff dojo/keys ../renderers/support/utils dijit/form/_DateTimeTextBox dijit/form/ValidationTextBox".split(" "),function(p,k,l,s,q,m,n,r){return p.createSubclass([r],{declaredClass:"esri.dijit.DateTimeTextBox",properties:{visible:!0,value:null,date:null},_timeSeparator:", ",_dateFormatOptions:{dateOptions:{formatLength:"short",selector:"date",fullYear:!0},timeOptions:{formatLength:"short",selector:"time"}},constructor:function(a,b){this._getValidDateTimeRE=
+k.hitch(this,this._getValidDateTimeRE);this.set("pattern",this._getValidDateTimeRE);this.set("invalidMessage",this._getInvalidMessage())},postCreate:function(){this.inherited(arguments);this.set("value",this.date);this.own(this.watch("date",k.hitch(this,this._dateChangeHandler)),this.on("change",k.hitch(this,this._valueChangeHandler)),this.on("keydown",k.hitch(this,this._keydownHandler)))},format:function(a){return this._formatDate(a)},parse:function(a,b){var c=this._parseDateString(a,b);return c.isValid?
+new Date(c.value):void 0},compare:n.prototype.compare,_isInvalidDate:n.prototype._isInvalidDate,_dateChangeHandler:function(a,b,c){this.date!==this.value&&this.set("value",c)},_valueChangeHandler:function(a){this.isValid()&&this.set("date",a)},_keydownHandler:function(a){a.keyCode===q.ENTER&&this._commitValueToDate()},_commitValueToDate:function(){var a=this._parseDateString(this.textbox.value);a.isValid&&this.set("value",new Date(a.value))},_formatDate:function(a){var b="";a instanceof Date&&(a=
+a.getTime());"number"===typeof a&&!isNaN(a)&&(b=m.formatDate(a,{selector:"date",dateOptions:this._dateFormatOptions.dateOptions}),a=m.formatDate(a,{selector:"time",timeOptions:this._dateFormatOptions.timeOptions}),b=this._mergeDateTime(b,a));return b},_parseDateString:function(a,b){b=b||{};var c=(a||"").split(this._timeSeparator),e=c[1],d=l.parse(c[0],this._dateFormatOptions.dateOptions),c=l.parse(e,this._dateFormatOptions.timeOptions),f=!1,g=b.min,h=b.max,d=d&&d.getTime();"number"===typeof d&&!isNaN(d)?
+c?(e=c&&c.getTime(),"number"===typeof e&&!isNaN(e)&&(e-=6E4*c.getTimezoneOffset(),d+=e,f=!0)):f=!e:d=null;f&&(g=g&&g.getTime(),h=h&&h.getTime(),"number"===typeof g&&!isNaN(g)&&d<g&&(f=!1),"number"===typeof h&&!isNaN(h)&&d>h&&(f=!1));return{isValid:f,value:d}},_getValidDateTimeRE:function(){var a=l.regexp(this._dateFormatOptions.dateOptions),b=l.regexp(this._dateFormatOptions.timeOptions);return a+"(,\\s"+b+")?"},_getInvalidMessage:function(){return this._formatDate(new Date(0))},_mergeDateTime:function(a,
+b){return a+(b?this._timeSeparator+b:"")}})});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({searchButtonTitle:"Etsi",clearButtonTitle:"Tyhjennä haku",placeholder:"Etsi osoite tai paikka",searchIn:"Hae kohteesta",lonlat:"Pituusaste, leveysaste",reverseLonLatHeader:"Tarkoititko?",all:"Kaikki",allPlaceholder:"Etsi osoite tai paikka",emptyValue:"Anna hakutermi.",untitledResult:"Nimetön",untitledSource:"Nimetön lähde",noResults:"Ei tuloksia",noResultsFound:"Kohteelle {value} ei löytynyt tuloksia.",showMoreResults:"Näytä lisää tuloksia",hideMoreResults:"Hide",searchResult:"Hakutulos",moreResultsHeader:"Lisää tuloksia",esriLocatorName:"Esri World Geocoder"});
+//>>built
+define({searchButtonTitle:"Etsi",clearButtonTitle:"Tyhjenn\u00e4 haku",placeholder:"Etsi osoite tai paikka",searchIn:"Hae kohteesta",lonlat:"Pituusaste, leveysaste",reverseLonLatHeader:"Tarkoititko?",all:"Kaikki",allPlaceholder:"Etsi osoite tai paikka",emptyValue:"Anna hakutermi.",untitledResult:"Nimet\u00f6n",untitledSource:"Nimet\u00f6n l\u00e4hde",noResults:"Ei tuloksia",noResultsFound:"Kohteelle {value} ei l\u00f6ytynyt tuloksia.",showMoreResults:"N\u00e4yt\u00e4 lis\u00e4\u00e4 tuloksia",hideMoreResults:"Hide",
+searchResult:"Hakutulos",moreResultsHeader:"Lis\u00e4\u00e4 tuloksia",esriLocatorName:"Esri World Geocoder"});

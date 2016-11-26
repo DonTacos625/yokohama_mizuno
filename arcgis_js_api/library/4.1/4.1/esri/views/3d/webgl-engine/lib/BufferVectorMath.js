@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports"],function(n,t){var c;!function(n){function t(n,t){var c=n[t],o=n[t+1],i=n[t+2];return Math.sqrt(c*c+o*o+i*i)}function c(n,t){var c=n[t],o=n[t+1],i=n[t+2],r=1/Math.sqrt(c*c+o*o+i*i);n[t]*=r,n[t+1]*=r,n[t+2]*=r}function o(n,t,c){n[t]*=c,n[t+1]*=c,n[t+2]*=c}function i(n,t,c,o,i,r){void 0===r&&(r=t),i=i||n,i[r]=n[t]+c[o],i[r+1]=n[t+1]+c[o+1],i[r+2]=n[t+2]+c[o+2]}function r(n,t,c,o,i,r){void 0===r&&(r=t),i=i||n,i[r]=n[t]-c[o],i[r+1]=n[t+1]-c[o+1],i[r+2]=n[t+2]-c[o+2]}n.length=t,n.normalize=c,n.scale=o,n.add=i,n.subtract=r}(c=t.Vec3Compact||(t.Vec3Compact={}))});
+//>>built
+define(["require","exports"],function(k,h){(function(g){g.length=function(a,b){var c=a[b],e=a[b+1],d=a[b+2];return Math.sqrt(c*c+e*e+d*d)};g.normalize=function(a,b){var c=a[b],e=a[b+1],d=a[b+2],c=1/Math.sqrt(c*c+e*e+d*d);a[b]*=c;a[b+1]*=c;a[b+2]*=c};g.scale=function(a,b,c){a[b]*=c;a[b+1]*=c;a[b+2]*=c};g.add=function(a,b,c,e,d,f){void 0===f&&(f=b);d=d||a;d[f]=a[b]+c[e];d[f+1]=a[b+1]+c[e+1];d[f+2]=a[b+2]+c[e+2]};g.subtract=function(a,b,c,e,d,f){void 0===f&&(f=b);d=d||a;d[f]=a[b]-c[e];d[f+1]=a[b+1]-
+c[e+1];d[f+2]=a[b+2]-c[e+2]}})(h.Vec3Compact||(h.Vec3Compact={}))});

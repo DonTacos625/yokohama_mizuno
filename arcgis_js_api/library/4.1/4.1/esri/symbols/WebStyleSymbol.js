@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../core/tsSupport/extendsHelper","../core/tsSupport/decorateHelper","../core/accessorSupport/decorators","../core/urlUtils","./Symbol","../portal/Portal","./support/symbolUtils"],function(t,e,r,o,l,p,y,n,i){var s=function(t){function e(e){t.call(this,e),this.styleName=null,this.portal=null,this.styleUrl=null,this.name=null,this.type="web-style-symbol"}return r(e,t),e.prototype._readStyleUrl=function(t,e,r){var o=r&&r.url&&r.url.path;return p.normalize(p.makeAbsolute(t,o))},e.prototype._writeStyleUrl=function(t,e,r){var o=r&&r.url&&r.url.path;e.styleUrl=p.makeRelative(t,o)},e.prototype._writeType=function(t,e,r){e.type="styleSymbolReference"},e.prototype.read=function(t,e){return this.portal=e?e.portal:void 0,this.inherited(arguments,[t,e]),this},e.prototype.clone=function(){return new e({name:this.name,styleUrl:this.styleUrl,styleName:this.styleName,portal:this.portal})},e.prototype.fetchSymbol=function(){var t=this;return i.fetchStyle(this,{portal:this.portal}).then(function(e){return i.fetchSymbolFromStyle(e,t.name)})},o([l.property({json:{writable:!1}})],e.prototype,"color",void 0),o([l.property({type:String,json:{writable:!0}})],e.prototype,"styleName",void 0),o([l.property({type:n,json:{writable:!1}})],e.prototype,"portal",void 0),o([l.property({type:String,json:{writable:!0}})],e.prototype,"styleUrl",void 0),o([l.read("styleUrl")],e.prototype,"_readStyleUrl",null),o([l.write("styleUrl")],e.prototype,"_writeStyleUrl",null),o([l.property({type:String,json:{writable:!0}})],e.prototype,"name",void 0),o([l.property({type:String,readOnly:!0,json:{readable:!1}})],e.prototype,"type",void 0),o([l.write("type")],e.prototype,"_writeType",null),e=o([l.subclass("esri.symbols.WebStyleSymbol")],e)}(l.declared(y));return s});
+//>>built
+define("require exports ../core/tsSupport/extendsHelper ../core/tsSupport/decorateHelper ../core/accessorSupport/decorators ../core/urlUtils ./Symbol ../portal/Portal ./support/symbolUtils".split(" "),function(l,m,g,b,c,d,h,k,e){return function(f){function a(a){f.call(this,a);this.name=this.styleUrl=this.portal=this.styleName=null;this.type="web-style-symbol"}g(a,f);a.prototype._readStyleUrl=function(a,c,b){return d.normalize(d.makeAbsolute(a,b&&b.url&&b.url.path))};a.prototype._writeStyleUrl=function(a,
+b,c){b.styleUrl=d.makeRelative(a,c&&c.url&&c.url.path)};a.prototype._writeType=function(a,b,c){b.type="styleSymbolReference"};a.prototype.read=function(a,b){this.portal=b?b.portal:void 0;this.inherited(arguments,[a,b]);return this};a.prototype.clone=function(){return new a({name:this.name,styleUrl:this.styleUrl,styleName:this.styleName,portal:this.portal})};a.prototype.fetchSymbol=function(){var a=this;return e.fetchStyle(this,{portal:this.portal}).then(function(b){return e.fetchSymbolFromStyle(b,
+a.name)})};b([c.property({json:{writable:!1}})],a.prototype,"color",void 0);b([c.property({type:String,json:{writable:!0}})],a.prototype,"styleName",void 0);b([c.property({type:k,json:{writable:!1}})],a.prototype,"portal",void 0);b([c.property({type:String,json:{writable:!0}})],a.prototype,"styleUrl",void 0);b([c.read("styleUrl")],a.prototype,"_readStyleUrl",null);b([c.write("styleUrl")],a.prototype,"_writeStyleUrl",null);b([c.property({type:String,json:{writable:!0}})],a.prototype,"name",void 0);
+b([c.property({type:String,readOnly:!0,json:{readable:!1}})],a.prototype,"type",void 0);b([c.write("type")],a.prototype,"_writeType",null);return a=b([c.subclass("esri.symbols.WebStyleSymbol")],a)}(c.declared(h))});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/declare","../../core/Accessoire","../../core/Scheduler","../../core/now","../ViewAnimation","./unitBezier","./viewpointUtils"],function(t,i,e,s,n,a,o){var r=function(t,i,e,s){var n=t.targetGeometry,o=i.targetGeometry;s?"string"==typeof s&&(s=a.parse(s)||a.ease):s=a.ease,this.easing=s,this.duration=e,this.sCenterX=n.x,this.sCenterY=n.y,this.sScale=t.scale,this.sRotation=t.rotation,this.tCenterX=o.x,this.tCenterY=o.y,this.tScale=i.scale,this.tRotation=i.rotation,this.dCenterX=this.tCenterX-this.sCenterX,this.dCenterY=this.tCenterY-this.sCenterY,this.dScale=this.tScale-this.sScale,this.dRotation=this.tRotation-this.sRotation,this.dRotation>180?this.dRotation-=360:this.dRotation<-180&&(this.dRotation+=360)};r.prototype.applyRatio=function(t,i){var e,s,n,a,o=this.easing(i);i>=1?(e=this.tCenterX,s=this.tCenterY,n=this.tRotation,a=this.tScale):(e=this.sCenterX+o*this.dCenterX,s=this.sCenterY+o*this.dCenterY,n=this.sRotation+o*this.dRotation,a=this.sScale+o*this.dScale),t.targetGeometry.x=e,t.targetGeometry.y=s,t.scale=a,t.rotation=n};var h=t(i,{constructor:function(){this._updateTask=e.addFrameTask({postRender:this._postRender.bind(this)}),this._updateTask.pause()},getDefaults:function(){return{viewpoint:o.create()}},duration:200,transition:null,easing:a.ease,animateTo:function(t,i,e){var a=this.viewpoint;o.copy(a,i),this.transition=new r(this.viewpoint,t,e&&e.duration||this.duration,e&&e.easing||this.easing),this.animation&&(this.animation.stop(),this.animation=null);var h=this.animation=new n({target:t.clone()});return h.always(function(){this._updateTask&&(this._updateTask.pause(),this.animation=null)}.bind(this)),this._startTime=s(),this._updateTask.resume(),h},_postRender:function(t){var i=this.animation;if(!i||i.state===n.STOPPED)return void this._updateTask.pause();var e=s()-this._startTime,a=e/this.transition.duration,o=a>=1;this.transition.applyRatio(this.viewpoint,a),this.animation._dfd.progress(this.viewpoint),o&&this.animation.finish()}});return h});
+//>>built
+define("../../core/declare ../../core/Accessoire ../../core/Scheduler ../../core/now ../ViewAnimation ./unitBezier ./viewpointUtils".split(" "),function(n,p,q,h,k,g,l){var m=function(a,c,b,d){var e=a.targetGeometry,f=c.targetGeometry;d?"string"===typeof d&&(d=g.parse(d)||g.ease):d=g.ease;this.easing=d;this.duration=b;this.sCenterX=e.x;this.sCenterY=e.y;this.sScale=a.scale;this.sRotation=a.rotation;this.tCenterX=f.x;this.tCenterY=f.y;this.tScale=c.scale;this.tRotation=c.rotation;this.dCenterX=this.tCenterX-
+this.sCenterX;this.dCenterY=this.tCenterY-this.sCenterY;this.dScale=this.tScale-this.sScale;this.dRotation=this.tRotation-this.sRotation;180<this.dRotation?this.dRotation-=360:-180>this.dRotation&&(this.dRotation+=360)};m.prototype.applyRatio=function(a,c){var b=this.easing(c),d,e,f;1<=c?(d=this.tCenterX,e=this.tCenterY,f=this.tRotation,b=this.tScale):(d=this.sCenterX+b*this.dCenterX,e=this.sCenterY+b*this.dCenterY,f=this.sRotation+b*this.dRotation,b=this.sScale+b*this.dScale);a.targetGeometry.x=
+d;a.targetGeometry.y=e;a.scale=b;a.rotation=f};return n(p,{constructor:function(){this._updateTask=q.addFrameTask({postRender:this._postRender.bind(this)});this._updateTask.pause()},getDefaults:function(){return{viewpoint:l.create()}},duration:200,transition:null,easing:g.ease,animateTo:function(a,c,b){l.copy(this.viewpoint,c);this.transition=new m(this.viewpoint,a,b&&b.duration||this.duration,b&&b.easing||this.easing);this.animation&&(this.animation.stop(),this.animation=null);a=this.animation=new k({target:a.clone()});
+a.always(function(){this._updateTask&&(this._updateTask.pause(),this.animation=null)}.bind(this));this._startTime=h();this._updateTask.resume();return a},_postRender:function(a){a=this.animation;if(!a||a.state===k.STOPPED)this._updateTask.pause();else{a=(h()-this._startTime)/this.transition.duration;var c=1<=a;this.transition.applyRatio(this.viewpoint,a);this.animation._dfd.progress(this.viewpoint);c&&this.animation.finish()}}})});

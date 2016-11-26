@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"عنصر",title:"تسجيل الدخول",info:"الرجاء تسجيل الدخول للوصول إلى العنصر على {server} {resource}",oAuthInfo:"برجاء تسجيل الدخول للمتابعة.",lblUser:"اسم المستخدم:",lblPwd:"كلمة المرور:",lblOk:"موافق",lblSigning:"جار تسجيل الدخول",lblCancel:"إلغاء",errorMsg:"اسم المستخدم/كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى",invalidUser:"اسم المستخدم أو كلمة المرور اللذان أدخلتهما غير صحيح.",forbidden:"اسم المستخدم وكلمة المرور صحيحين، ولكن لا يمكنك الوصول  إلى هذا المورد.",noAuthService:"يتعذر الوصول إلى خدمة المصادقة."});
+//>>built
+define({lblItem:"\u0639\u0646\u0635\u0631",title:"\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",info:"\u0627\u0644\u0631\u062c\u0627\u0621 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 \u0627\u0644\u0639\u0646\u0635\u0631 \u0639\u0644\u0649 {server} {resource}",oAuthInfo:"\u0628\u0631\u062c\u0627\u0621 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0645\u062a\u0627\u0628\u0639\u0629.",
+lblUser:"\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645:",lblPwd:"\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631:",lblOk:"\u0645\u0648\u0627\u0641\u0642",lblSigning:"\u062c\u0627\u0631 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",lblCancel:"\u0625\u0644\u063a\u0627\u0621",errorMsg:"\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645/\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629. \u064a\u0631\u062c\u0649 \u0627\u0644\u0645\u062d\u0627\u0648\u0644\u0629 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649",
+invalidUser:"\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0623\u0648 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u0644\u0630\u0627\u0646 \u0623\u062f\u062e\u0644\u062a\u0647\u0645\u0627 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d.",forbidden:"\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0635\u062d\u064a\u062d\u064a\u0646\u060c \u0648\u0644\u0643\u0646 \u0644\u0627 \u064a\u0645\u0643\u0646\u0643 \u0627\u0644\u0648\u0635\u0648\u0644  \u0625\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u0645\u0648\u0631\u062f.",
+noAuthService:"\u064a\u062a\u0639\u0630\u0631 \u0627\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 \u062e\u062f\u0645\u0629 \u0627\u0644\u0645\u0635\u0627\u062f\u0642\u0629."});

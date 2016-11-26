@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../Navigation","./ConstraintsPlanar","./AnimationPlanar","./actions/PanPlanar","./actions/RotatePlanar","./actions/ZoomPlanar","../../webgl-engine/lib/Camera","../../lib/glMatrix"],function(t,e,a,i,n,r,s,o){var c=o.vec3d,l=c.create(),g=c.create(),u=c.create(),d=c.create(),m=t.createSubclass([e,a],{declaredClass:"esri.views.3d.navigation.planar.NavigationPlanar",initialize:function(){this.pan=new i({navigation:this}),this.zoom=new r({navigation:this}),this.rotate=new n({navigation:this})},getInitialCamera:function(){return new s(c.createFrom(0,0,100),c.createFrom(0,0,0),c.createFrom(0,1,0))},fixTargetUpVector:function(){var t=this.renderCoordsHelper.worldUp,e=this.cameras.target;c.direction(e.center,e.eye,d);var a=c.dot(d,t);Math.abs(a)<=.9999&&(c.scale(d,a,d),c.subtract(t,d,e.up),c.normalize(e.up))},setPoiAuto:function(t,e){var a=this.picker.pickAlongRay(this.cameras.target.eye,this.cameras.target.center,null,t);if(a.getMinResult().getIntersectionPoint(l)&&a.getMaxResult().getIntersectionPoint(g)){var i=5/this.renderUnitInMeters,n=a.getMinResult().dist-i,r=a.getMaxResult().dist+i,s=c.dist(this.cameras.target.eye,this.cameras.target.center);if(n>=s||s>=r){if(a.getMinResult().object){if(a.getMaxResult().dist=void 0,a.intersectObject(a.getMinResult().object),void 0===a.getMaxResult().dist)return void console.error("[NavigationPlanar.setPoiAuto] Did not obtain maximum intersection distance");a.getMaxResult().getIntersectionPoint(g),c.lerp(l,g,.5,u)}else c.set(l,u);this.setCameraFromEyeAndCenter(this.cameras.target.eye,u,{animate:!1})}}}});return m});
+//>>built
+define("../Navigation ./ConstraintsPlanar ./AnimationPlanar ./actions/PanPlanar ./actions/RotatePlanar ./actions/ZoomPlanar ../../webgl-engine/lib/Camera ../../lib/glMatrix".split(" "),function(f,n,p,q,r,s,t,u){var a=u.vec3d,g=a.create(),h=a.create(),k=a.create(),c=a.create();return f.createSubclass([n,p],{declaredClass:"esri.views.3d.navigation.planar.NavigationPlanar",initialize:function(){this.pan=new q({navigation:this});this.zoom=new s({navigation:this});this.rotate=new r({navigation:this})},
+getInitialCamera:function(){return new t(a.createFrom(0,0,100),a.createFrom(0,0,0),a.createFrom(0,1,0))},fixTargetUpVector:function(){var l=this.renderCoordsHelper.worldUp,d=this.cameras.target;a.direction(d.center,d.eye,c);var b=a.dot(c,l);0.9999>=Math.abs(b)&&(a.scale(c,b,c),a.subtract(l,c,d.up),a.normalize(d.up))},setPoiAuto:function(c,d){var b=this.picker.pickAlongRay(this.cameras.target.eye,this.cameras.target.center,null,c);if(b.getMinResult().getIntersectionPoint(g)&&b.getMaxResult().getIntersectionPoint(h)){var e=
+5/this.renderUnitInMeters,f=b.getMinResult().dist-e,e=b.getMaxResult().dist+e,m=a.dist(this.cameras.target.eye,this.cameras.target.center);if(m<=f||m>=e){if(b.getMinResult().object){b.getMaxResult().dist=void 0;b.intersectObject(b.getMinResult().object);if(void 0===b.getMaxResult().dist){console.error("[NavigationPlanar.setPoiAuto] Did not obtain maximum intersection distance");return}b.getMaxResult().getIntersectionPoint(h);a.lerp(g,h,0.5,k)}else a.set(g,k);this.setCameraFromEyeAndCenter(this.cameras.target.eye,
+k,{animate:!1})}}}})});

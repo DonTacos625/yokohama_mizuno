@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"평균: ${avg}",count:"개수: ${count}",percent:"${num}%",high:"높음",low:"낮음",color:{changeMinMaxToolTIp:"값을 입력합니다.",handleToolTip:"데이터 값을 색상에 일치시킵니다.",maxValueToolTip:"최대 예상 데이터 값을 입력합니다.",minValueToolTip:"최소 예상 데이터 값을 입력합니다.",changeSymbol:"심볼 변경"},size:{handleToolTip:"데이터 값을 심볼 크기에 일치시킵니다.",sizeInputBoxLines:"라인 두께를 0에서 18픽셀 사이로 설정합니다.",sizeInputBoxPoints:"심볼 크기를 1에서 120픽셀 사이로 설정합니다."}});
+//>>built
+define({statsAvg:"\ud3c9\uade0: ${avg}",count:"\uac1c\uc218: ${count}",percent:"${num}%",high:"\ub192\uc74c",low:"\ub0ae\uc74c",color:{changeMinMaxToolTIp:"\uac12\uc744 \uc785\ub825\ud569\ub2c8\ub2e4.",handleToolTip:"\ub370\uc774\ud130 \uac12\uc744 \uc0c9\uc0c1\uc5d0 \uc77c\uce58\uc2dc\ud0b5\ub2c8\ub2e4.",maxValueToolTip:"\ucd5c\ub300 \uc608\uc0c1 \ub370\uc774\ud130 \uac12\uc744 \uc785\ub825\ud569\ub2c8\ub2e4.",minValueToolTip:"\ucd5c\uc18c \uc608\uc0c1 \ub370\uc774\ud130 \uac12\uc744 \uc785\ub825\ud569\ub2c8\ub2e4.",
+changeSymbol:"\uc2ec\ubcfc \ubcc0\uacbd"},size:{handleToolTip:"\ub370\uc774\ud130 \uac12\uc744 \uc2ec\ubcfc \ud06c\uae30\uc5d0 \uc77c\uce58\uc2dc\ud0b5\ub2c8\ub2e4.",sizeInputBoxLines:"\ub77c\uc778 \ub450\uaed8\ub97c 0\uc5d0\uc11c 18\ud53d\uc140 \uc0ac\uc774\ub85c \uc124\uc815\ud569\ub2c8\ub2e4.",sizeInputBoxPoints:"\uc2ec\ubcfc \ud06c\uae30\ub97c 1\uc5d0\uc11c 120\ud53d\uc140 \uc0ac\uc774\ub85c \uc124\uc815\ud569\ub2c8\ub2e4."}});

@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["./DisplayObject","./bitFlagUtil"],function(i,t){var e=i.createSubclass({declaredClass:"esri.views.2D.engine.Container","-chains-":{childAdded:"after",childRemoved:"after"},constructor:function(){this.children=[],this.trash={children:[],ids:{}}},tag:"inherit",_stageSetter:function(i){var t,e,n,h=this._get("stage"),s=this.children;if(this.inherited(arguments),h!==i){if(s)for(e=0,n=s.length;n>e;e++)t=s[e],t.stage=i;return this._set("stage",i)}},_numChildrenGetter:function(){return this.children.length},addChild:function(i){return this.addChildAt(i,this.children.length)},addChildAt:function(i,t){var e;return this.contains(i)?i:(e=i.parent,e&&e.removeChild(i),t=Math.min(this.children.length,t),this.children.splice(t,0,i),this.trash.ids[i.id]&&(this.trash.ids[i.id]=null,this.trash.children.splice(this.trash.children.indexOf(i),1)),this.childAdded(i,t),this.notifyChange("numChildren"),i)},childAdded:function(i,t){i.set({parent:this,stage:this.stage}),this.requestRender()},removeAllChildren:function(){for(var i=this.numChildren;i--;)this.removeChildAt(0)},removeChild:function(i){var t=this.children.indexOf(i);return t>-1?this.removeChildAt(t):i},removeChildAt:function(i){var t;return 0>i||i>=this.children.length?null:(t=this.children.splice(i,1)[0],this.trash.ids[t.id]=t,this.trash.children.push(t),this.childRemoved(t),this.notifyChange("numChildren"),t)},childRemoved:function(i){i.parent=null,i.stage=null,this.requestRender()},contains:function(i){return this.getChildIndex(i)>-1},getChildIndex:function(i){return this.children.indexOf(i)},getChildAt:function(i){return 0>i||i>this.children.length?null:this.children[i]},setChildIndex:function(i,t){var e=this.getChildIndex(i);e>-1&&(this.children.splice(e,1),this.children.splice(t,0,i),this.requestRender())},requestChildRender:function(i){i&&i.parent===this&&this.requestRender()},reflow:function(i){var t,e=this.children,n=e.length;for(i.emptyTrash(this),i.pushParent(this),t=0;n>t;t++)i.reflowChild(e[t],t);i.popParent()},render:function(e){var n=this._flags;this._renderFlag=!1,this._flags=0,n&&(t.isSet(n,i.SIZE)&&e.setSize(this.width,this.height),t.isSet(n,i.VISIBLE)&&e.setVisibility(this.visible),t.isSet(n,i.BLENDMODE)&&e.setBlendMode(this.blendMode),t.isSet(n,i.OPACITY)&&e.setOpacity(this.opacity));var h,s=this.children,r=s&&s.length||0;for(e.pushParent(this),h=0;r>h;h++)e.pushMatrix(),e.renderChild(s[h]),e.popMatrix();e.popParent()}});return e});
+//>>built
+define(["./DisplayObject","./bitFlagUtil"],function(e,f){return e.createSubclass({declaredClass:"esri.views.2D.engine.Container","-chains-":{childAdded:"after",childRemoved:"after"},constructor:function(){this.children=[];this.trash={children:[],ids:{}}},tag:"inherit",_stageSetter:function(a){var b=this._get("stage"),d=this.children,c,e;this.inherited(arguments);if(b!==a){if(d){c=0;for(e=d.length;c<e;c++)b=d[c],b.stage=a}return this._set("stage",a)}},_numChildrenGetter:function(){return this.children.length},
+addChild:function(a){return this.addChildAt(a,this.children.length)},addChildAt:function(a,b){var d;if(this.contains(a))return a;(d=a.parent)&&d.removeChild(a);b=Math.min(this.children.length,b);this.children.splice(b,0,a);this.trash.ids[a.id]&&(this.trash.ids[a.id]=null,this.trash.children.splice(this.trash.children.indexOf(a),1));this.childAdded(a,b);this.notifyChange("numChildren");return a},childAdded:function(a,b){a.set({parent:this,stage:this.stage});this.requestRender()},removeAllChildren:function(){for(var a=
+this.numChildren;a--;)this.removeChildAt(0)},removeChild:function(a){var b=this.children.indexOf(a);return-1<b?this.removeChildAt(b):a},removeChildAt:function(a){if(0>a||a>=this.children.length)return null;a=this.children.splice(a,1)[0];this.trash.ids[a.id]=a;this.trash.children.push(a);this.childRemoved(a);this.notifyChange("numChildren");return a},childRemoved:function(a){a.parent=null;a.stage=null;this.requestRender()},contains:function(a){return-1<this.getChildIndex(a)},getChildIndex:function(a){return this.children.indexOf(a)},
+getChildAt:function(a){return 0>a||a>this.children.length?null:this.children[a]},setChildIndex:function(a,b){var d=this.getChildIndex(a);-1<d&&(this.children.splice(d,1),this.children.splice(b,0,a),this.requestRender())},requestChildRender:function(a){a&&a.parent===this&&this.requestRender()},reflow:function(a){var b=this.children,d=b.length,c;a.emptyTrash(this);a.pushParent(this);for(c=0;c<d;c++)a.reflowChild(b[c],c);a.popParent()},render:function(a){var b=this._flags;this._renderFlag=!1;this._flags=
+0;b&&(f.isSet(b,e.SIZE)&&a.setSize(this.width,this.height),f.isSet(b,e.VISIBLE)&&a.setVisibility(this.visible),f.isSet(b,e.BLENDMODE)&&a.setBlendMode(this.blendMode),f.isSet(b,e.OPACITY)&&a.setOpacity(this.opacity));var d=(b=this.children)&&b.length||0,c;a.pushParent(this);for(c=0;c<d;c++)a.pushMatrix(),a.renderChild(b[c]),a.popMatrix();a.popParent()}})});

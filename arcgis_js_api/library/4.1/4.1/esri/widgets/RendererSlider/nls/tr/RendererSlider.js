@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"Ortalama: ${avg}",count:"Sayı: ${count}",percent:"%${num}",high:"Yüksek",low:"Düşük",color:{changeMinMaxToolTIp:"Değer girin.",handleToolTip:"Veri değerlerini renklerle eşleştirin.",maxValueToolTip:"Beklenen en büyük veri değerini girin.",minValueToolTip:"Beklenen en küçük veri değerini girin.",changeSymbol:"Simge değiştir"},size:{handleToolTip:"Veri değerlerini simge boyutuna eşleştirin.",sizeInputBoxLines:"Çizgi kalınlığını 0 - 18 piksel arasında ayarlayın.",sizeInputBoxPoints:"Simge boyutunu 1 - 120 piksel arasında ayarla"}});
+//>>built
+define({statsAvg:"Ortalama: ${avg}",count:"Say\u0131: ${count}",percent:"%${num}",high:"Y\u00fcksek",low:"D\u00fc\u015f\u00fck",color:{changeMinMaxToolTIp:"De\u011fer girin.",handleToolTip:"Veri de\u011ferlerini renklerle e\u015fle\u015ftirin.",maxValueToolTip:"Beklenen en b\u00fcy\u00fck veri de\u011ferini girin.",minValueToolTip:"Beklenen en k\u00fc\u00e7\u00fck veri de\u011ferini girin.",changeSymbol:"Simge de\u011fi\u015ftir"},size:{handleToolTip:"Veri de\u011ferlerini simge boyutuna e\u015fle\u015ftirin.",
+sizeInputBoxLines:"\u00c7izgi kal\u0131nl\u0131\u011f\u0131n\u0131 0 - 18 piksel aras\u0131nda ayarlay\u0131n.",sizeInputBoxPoints:"Simge boyutunu 1 - 120 piksel aras\u0131nda ayarla"}});

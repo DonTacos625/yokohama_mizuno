@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({streets:"도로",satellite:"이미지",hybrid:"이미지(레이블 포함)",terrain:"터레인(레이블 포함)",topo:"지형",gray:"연한 회색 캔버스","dark-gray":"진한 회색 캔버스",oceans:"해양","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"도로 맵(야간)","streets-relief-vector":"도로 맵(릴리프 포함)","streets-navigation-vector":"내비게이션 맵"});
+//>>built
+define({streets:"\ub3c4\ub85c",satellite:"\uc774\ubbf8\uc9c0",hybrid:"\uc774\ubbf8\uc9c0(\ub808\uc774\ube14 \ud3ec\ud568)",terrain:"\ud130\ub808\uc778(\ub808\uc774\ube14 \ud3ec\ud568)",topo:"\uc9c0\ud615",gray:"\uc5f0\ud55c \ud68c\uc0c9 \uce94\ubc84\uc2a4","dark-gray":"\uc9c4\ud55c \ud68c\uc0c9 \uce94\ubc84\uc2a4",oceans:"\ud574\uc591","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"\ub3c4\ub85c \ub9f5(\uc57c\uac04)","streets-relief-vector":"\ub3c4\ub85c \ub9f5(\ub9b4\ub9ac\ud504 \ud3ec\ud568)",
+"streets-navigation-vector":"\ub0b4\ube44\uac8c\uc774\uc158 \ub9f5"});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/Accessoire"],function(t){var e=t.createSubclass({classMetadata:{properties:{indexById:{dependsOn:["graphics","objectIdField"]}}},destroy:function(){this.removeAll()},graphics:null,objectIdField:null,indexById:null,_indexByIdGetter:function(){return this._createIndexById(this.graphics&&this.graphics.toArray(),this.objectIdField)},_oldIndex:null,beginUpdate:function(){this._oldIndex=this.indexById,this.indexById=null},add:function(t){if(t&&t.length){this.indexById=this.indexById||{};var e=this._updateAndExtractNew(t,this.indexById,this._oldIndex);this.graphics.addMany(e)}},revertUpdate:function(){var t=this._extractLeftOnly(this.indexById,this._oldIndex);this.indexById=this._oldIndex,this._oldIndex=null,this.graphics.removeMany(t)},endUpdate:function(){var t=this._extractLeftOnly(this._oldIndex,this.indexById);this._oldIndex=null,this.graphics.removeMany(t)},find:function(t){return null!=t&&this.indexById&&this.indexById[t]},removeAll:function(){this.indexById=this._oldIndex=null,this.graphics.removeAll()},_createIndexById:function(t,e){var i;if(t&&t.length&&e){var n,d,r;for(i={},n=0;d=t[n];n++)r=d.attributes&&d.attributes[e],null!=r&&(i[r]=d)}return i},_updateAndExtractNew:function(t,e,i){var n,d,r,s,l=[],a=t?t.length:0,h=this.objectIdField;for(n=0;a>n;n++)d=t[n],r=d.attributes&&d.attributes[h],null!=r?(s=i&&i[r],s?(e[r]=s,s.geometry=d.geometry,s.attributes=d.attributes):(e[r]=d,l.push(d))):l.push(d);return l},_extractLeftOnly:function(t,e){var i,n,d=[];for(i in t)n=t[i],!n||e&&e[i]||d.push(n);return d}});return e});
+//>>built
+define(["../../core/Accessoire"],function(h){return h.createSubclass({classMetadata:{properties:{indexById:{dependsOn:["graphics","objectIdField"]}}},destroy:function(){this.removeAll()},graphics:null,objectIdField:null,indexById:null,_indexByIdGetter:function(){return this._createIndexById(this.graphics&&this.graphics.toArray(),this.objectIdField)},_oldIndex:null,beginUpdate:function(){this._oldIndex=this.indexById;this.indexById=null},add:function(a){a&&a.length&&(this.indexById=this.indexById||
+{},a=this._updateAndExtractNew(a,this.indexById,this._oldIndex),this.graphics.addMany(a))},revertUpdate:function(){var a=this._extractLeftOnly(this.indexById,this._oldIndex);this.indexById=this._oldIndex;this._oldIndex=null;this.graphics.removeMany(a)},endUpdate:function(){var a=this._extractLeftOnly(this._oldIndex,this.indexById);this._oldIndex=null;this.graphics.removeMany(a)},find:function(a){return null!=a&&this.indexById&&this.indexById[a]},removeAll:function(){this.indexById=this._oldIndex=
+null;this.graphics.removeAll()},_createIndexById:function(a,f){var d;if(a&&a.length&&f){var c,b,e;d={};for(c=0;b=a[c];c++)e=b.attributes&&b.attributes[f],null!=e&&(d[e]=b)}return d},_updateAndExtractNew:function(a,f,d){var c,b,e,g,k=[],h=a?a.length:0,l=this.objectIdField;for(c=0;c<h;c++)b=a[c],e=b.attributes&&b.attributes[l],null!=e?(g=d&&d[e])?(f[e]=g,g.geometry=b.geometry,g.attributes=b.attributes):(f[e]=b,k.push(b)):k.push(b);return k},_extractLeftOnly:function(a,f){var d,c,b=[];for(d in a)(c=
+a[d])&&(!f||!f[d])&&b.push(c);return b}})});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({points:"Punkti",lines:"Līnijas",polygons:"Daudzstūri",creatingLegend:"Izveido leģendu",noLegend:"Nav leģendas",dotValue:"1 punkts = {value} {unit}",currentObservations:"Pašreizējie novērojumi",previousObservations:"Iepriekšējie novērojumi",high:"Augsts",low:"Zems",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"mezgli",esriFeetPerSecond:"pēdas/s",esriMilesPerHour:"jūdzes/h",showField:"{field}",showNormField:"{field}, dalīts ar {normField}",showNormPct:"{field} kā procentuālā daļa no visa",showRatio:"{field} attiecība pret {normField}",showRatioPercent:"{field} kā procentuālā daļa no {normField}",showRatioPercentTotal:"{field} kā procentuālā daļa no {field} un {normField}"});
+//>>built
+define({points:"Punkti",lines:"L\u012bnijas",polygons:"Daudzst\u016bri",creatingLegend:"Izveido le\u0123endu",noLegend:"Nav le\u0123endas",dotValue:"1 punkts \x3d {value} {unit}",currentObservations:"Pa\u0161reiz\u0113jie nov\u0113rojumi",previousObservations:"Iepriek\u0161\u0113jie nov\u0113rojumi",high:"Augsts",low:"Zems",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"mezgli",esriFeetPerSecond:"p\u0113das/s",esriMilesPerHour:"j\u016bdzes/h",showField:"{field}",showNormField:"{field}, dal\u012bts ar\u00a0{normField}",
+showNormPct:"{field} k\u0101 procentu\u0101l\u0101 da\u013ca no visa",showRatio:"{field} attiec\u012bba pret {normField}",showRatioPercent:"{field} k\u0101 procentu\u0101l\u0101 da\u013ca no {normField}",showRatioPercentTotal:"{field} k\u0101 procentu\u0101l\u0101 da\u013ca no {field} un {normField}"});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"Apie",add:"Pridėti",all:"Viskas",apply:"Taikyti",auth:{logOut:"Atsijungti",signIn:"Prisijunkite"},back:"Grįžti",cancel:"Atšaukti",change:"Pakeisti",clear:"Valyti",close:"Užverti",configure:"Konfigūruoti",control:{pause:"Pristabdyti",play:"Leisti",resume:"Tęsti",stop:"Stabdyti"},copy:"Kopijuoti",create:"Sukurti",cut:"Kirpti","delete":"Pašalinti",details:"Išsamiau",edit:"Redaguoti",error:"Klaida",esri:"Esri",exit:"Uždaryti",fieldsSummary:"Atributų ir reikšmių sąrašas",find:"Ieškoti",form:{no:"Ne",ok:"Gerai",password:"Slaptažodis",submit:"Pateikti",username:"Vartotojo vardas",yes:"Taip"},help:"Pagalba",home:"Pradžia",info:"Informacija",information:"Informacija",layer:"Sluoksnis",loading:"Kraunama",maximize:"Išdidinti",menu:"Meniu",more:"Daugiau",none:"Nėra",open:"Atverti",pagination:{first:"Pirmas",last:"Paskutinis",next:"Sekantis",page:"Puslapis",pageText:"{index} iš {total}",previous:"Ankstesnis"},paste:"Įdėti",preview:"Peržiūra",print:"Spausdinti",publish:"Publikuoti",redo:"Grąžinti",refresh:"Atnaujinti",remove:"Pašalinti",rename:"Pervardinti",reset:"Atkurti",restore:"Grąžinti",save:"Įrašyti",search:"Ieškoti",searching:"Ieškoma",select:"Pasirinkite",settings:"Nustatymai",sort:"Rūšiuoti",share:"Bendrinti",title:"Pavadinimas",untitled:"Bevardis",upload:"Nusiųsti",undo:"Atšaukti",view:"Peržiūrėti",visibility:{hide:"Slėpti",show:"Rodyti",toggle:"Perjungti"},warning:"Įspėjimas"});
+//>>built
+define({about:"Apie",add:"Prid\u0117ti",all:"Viskas",apply:"Taikyti",auth:{logOut:"Atsijungti",signIn:"Prisijunkite"},back:"Gr\u012f\u017eti",cancel:"At\u0161aukti",change:"Pakeisti",clear:"Valyti",close:"U\u017everti",configure:"Konfig\u016bruoti",control:{pause:"Pristabdyti",play:"Leisti",resume:"T\u0119sti",stop:"Stabdyti"},copy:"Kopijuoti",create:"Sukurti",cut:"Kirpti","delete":"Pa\u0161alinti",details:"I\u0161samiau",edit:"Redaguoti",error:"Klaida",esri:"Esri",exit:"U\u017edaryti",fieldsSummary:"Atribut\u0173 ir reik\u0161mi\u0173 s\u0105ra\u0161as",
+find:"Ie\u0161koti",form:{no:"Ne",ok:"Gerai",password:"Slapta\u017eodis",submit:"Pateikti",username:"Vartotojo vardas",yes:"Taip"},help:"Pagalba",home:"Prad\u017eia",info:"Informacija",information:"Informacija",layer:"Sluoksnis",loading:"Kraunama",maximize:"I\u0161didinti",menu:"Meniu",more:"Daugiau",none:"N\u0117ra",open:"Atverti",pagination:{first:"Pirmas",last:"Paskutinis",next:"Sekantis",page:"Puslapis",pageText:"{index}\u00a0i\u0161 {total}",previous:"Ankstesnis"},paste:"\u012ed\u0117ti",preview:"Per\u017ei\u016bra",
+print:"Spausdinti",publish:"Publikuoti",redo:"Gr\u0105\u017einti",refresh:"Atnaujinti",remove:"Pa\u0161alinti",rename:"Pervardinti",reset:"Atkurti",restore:"Gr\u0105\u017einti",save:"\u012era\u0161yti",search:"Ie\u0161koti",searching:"Ie\u0161koma",select:"Pasirinkite",settings:"Nustatymai",sort:"R\u016b\u0161iuoti",share:"Bendrinti",title:"Pavadinimas",untitled:"Bevardis",upload:"Nusi\u0173sti",undo:"At\u0161aukti",view:"Per\u017ei\u016br\u0117ti",visibility:{hide:"Sl\u0117pti",show:"Rodyti",toggle:"Perjungti"},
+warning:"\u012esp\u0117jimas"});

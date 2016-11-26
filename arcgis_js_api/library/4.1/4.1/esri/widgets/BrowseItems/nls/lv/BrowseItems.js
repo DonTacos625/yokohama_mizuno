@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Slānim ${name} nav lauku, kurus var izmantot filtrēšanai.",addToViewer:"Pievienot slāni kartei",noItemsToDisplay:"Nav vienību, ko pašlaik iespējams parādīt.",searchFor:"Meklēt šādu vienību",searching:"Meklē",items:{organizationLabel:"Mana organizācija",onlineLabel:"ArcGIS Online",contentLabel:"Mans Saturs",favoritesLabel:"Mani favorīti"},title:"Izvēlieties tīmekļa karti",searchTitle:"Meklēt",ok:"Labi",cancel:"Atcelt",placeholder:"Ievadiet meklēšanas terminu",instructionsLeft:"Ko vēlaties darīt?",instructionsRight:"Izvēlieties konfigurējamu lietotni.",go:"Doties",selectDetails:"IZVĒLĒTIES",configure:"Izveidot",close:"Aizvērt",learnMoreConfigurableApps:"Papildinformācija par konfigurējamām lietotnēm"});
+//>>built
+define({noFilterFields:"Sl\u0101nim ${name} nav lauku, kurus var izmantot filtr\u0113\u0161anai.",addToViewer:"Pievienot sl\u0101ni kartei",noItemsToDisplay:"Nav vien\u012bbu, ko pa\u0161laik iesp\u0113jams par\u0101d\u012bt.",searchFor:"Mekl\u0113t \u0161\u0101du vien\u012bbu",searching:"Mekl\u0113",items:{organizationLabel:"Mana organiz\u0101cija",onlineLabel:"ArcGIS Online",contentLabel:"Mans Saturs",favoritesLabel:"Mani favor\u012bti"},title:"Izv\u0113lieties t\u012bmek\u013ca karti",searchTitle:"Mekl\u0113t",
+ok:"Labi",cancel:"Atcelt",placeholder:"Ievadiet mekl\u0113\u0161anas terminu",instructionsLeft:"Ko v\u0113laties dar\u012bt?",instructionsRight:"Izv\u0113lieties konfigur\u0113jamu lietotni.",go:"Doties",selectDetails:"IZV\u0112L\u0112TIES",configure:"Izveidot",close:"Aizv\u0113rt",learnMoreConfigurableApps:"Papildinform\u0101cija par konfigur\u0113jam\u0101m lietotn\u0113m"});

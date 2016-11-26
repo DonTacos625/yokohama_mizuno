@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./Util","../../../webgl/FramebufferObject","../../../webgl/enums"],function(t,e,i,r,o){var s=function(){function t(t){this.rctx=t,this.normalFBO=void 0,this.viewportToRestore=null,this.width=null,this.height=null}return t.prototype.setEnableState=function(t){t!==this.getEnableState()&&(t?this.enable():this.disable())},t.prototype.getEnableState=function(){return void 0!==this.normalFBO},t.prototype.getNormalFBO=function(){return this.normalFBO},t.prototype.enable=function(){i.assert(!this.getEnableState()),this.normalFBO=r.createWithAttachments(this.rctx,{target:3553,pixelFormat:6408,dataType:5121,samplingMode:9728,wrapMode:33071,width:0,height:0},{colorTarget:0,depthStencilTarget:1})},t.prototype.disable=function(){i.assert(this.getEnableState()),this.normalFBO.dispose(),this.normalFBO=void 0},t.prototype.setupFBOs=function(t){i.assert(this.getEnableState());var e=t.viewport;this.viewportToRestore=e,this.width=e[2],this.height=e[3],this.rctx.setViewport(0,0,this.width,this.height)},t.prototype.prepareNormalPass=function(){i.assert(this.getEnableState());var t=this.rctx,e=t.gl;this.normalFBO.resize(this.width,this.height),t.bindFramebuffer(this.normalFBO),t.setClearColor(0,0,0,0),t.clear(e.COLOR_BUFFER_BIT|e.DEPTH_BUFFER_BIT)},t.prototype.finish=function(t){var e=this.rctx;e.bindFramebuffer(t),e.setViewport(this.viewportToRestore[0],this.viewportToRestore[1],this.viewportToRestore[2],this.viewportToRestore[3])},t}();return s});
+//>>built
+define(["require","exports","./Util","../../../webgl/FramebufferObject","../../../webgl/enums"],function(e,f,c,d,g){return function(){function b(a){this.rctx=a;this.normalFBO=void 0;this.height=this.width=this.viewportToRestore=null}b.prototype.setEnableState=function(a){a!==this.getEnableState()&&(a?this.enable():this.disable())};b.prototype.getEnableState=function(){return void 0!==this.normalFBO};b.prototype.getNormalFBO=function(){return this.normalFBO};b.prototype.enable=function(){c.assert(!this.getEnableState());
+this.normalFBO=d.createWithAttachments(this.rctx,{target:3553,pixelFormat:6408,dataType:5121,samplingMode:9728,wrapMode:33071,width:0,height:0},{colorTarget:0,depthStencilTarget:1})};b.prototype.disable=function(){c.assert(this.getEnableState());this.normalFBO.dispose();this.normalFBO=void 0};b.prototype.setupFBOs=function(a){c.assert(this.getEnableState());this.viewportToRestore=a=a.viewport;this.width=a[2];this.height=a[3];this.rctx.setViewport(0,0,this.width,this.height)};b.prototype.prepareNormalPass=
+function(){c.assert(this.getEnableState());var a=this.rctx,b=a.gl;this.normalFBO.resize(this.width,this.height);a.bindFramebuffer(this.normalFBO);a.setClearColor(0,0,0,0);a.clear(b.COLOR_BUFFER_BIT|b.DEPTH_BUFFER_BIT)};b.prototype.finish=function(a){var b=this.rctx;b.bindFramebuffer(a);b.setViewport(this.viewportToRestore[0],this.viewportToRestore[1],this.viewportToRestore[2],this.viewportToRestore[3])};return b}()});

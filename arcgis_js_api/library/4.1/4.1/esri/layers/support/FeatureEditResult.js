@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/declare","dojo/_base/lang"],function(e,r){var s=e(null,{declaredClass:"esri.layers.support.FeatureEditResult",constructor:function(e){if(e&&r.isObject(e)&&(this.objectId=e.objectId,this.success=e.success,!e.success)){var s=e.error;this.error=new Error,this.error.code=s.code,this.error.message=s.description}}});return s});
+//>>built
+define(["../../core/declare","dojo/_base/lang"],function(b,c){return b(null,{declaredClass:"esri.layers.support.FeatureEditResult",constructor:function(a){a&&c.isObject(a)&&(this.objectId=a.objectId,this.success=a.success,a.success||(a=a.error,this.error=Error(),this.error.code=a.code,this.error.message=a.description))}})});

@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/Accessoire","../../geometry/Polyline"],function(r,t){var n=function(r,t,n){var o,e,s;return t[0]===n[0]?s=Math.abs(r[0]-t[0]):(o=(n[1]-t[1])/(n[0]-t[0]),e=t[1]-o*t[0],s=Math.abs(o*r[0]-r[1]+e)/Math.sqrt(o*o+1)),s},o=function(r,t){var e,s,i=r.length,f=r[0],a=r[i-1],c=0,u=0;for(e=1;i-1>e;e++)s=n(r[e],f,a),s>c&&(u=e,c=s);var h;if(c>t){var m=o(r.slice(0,u+1),t),l=o(r.slice(u),t);h=m.concat(l)}else h=[f,a];return h},e=r.createSubclass({_transformSetter:function(r){return this._transformers=[],r},toScreenPoint:function(r,t,n){var o=this.getTransformer(t);return n||(n={x:0,y:0}),o.transformPoint(r.x,r.y,function(r,t){n.x=r,n.y=t}),n},toScreenPath:function(r,n){var e,s,i=r instanceof t,f=i?r.paths:r.rings,a=this.getTransformer(n),c=[],u=function(r,t){c.push(r+","+t)};if(f)for(e=0,s=f.length;s>e;e++)c.push("M"),a.forEach(o(f[e],this.resolution),u),i||c.push("Z");return c},getTransformer:function(r){if(!this._transformers[r]){var t,n,o=this.transform,e=o[0],s=o[1],i=o[2],f=o[3],a=o[4]+r,c=o[5],u=0!==s&&0!==i,h=Math.round;this._transformers[r]={transformPoint:function(){return u?function(r,t,n){n(h(e*r+i*t+a),h(s*r+f*t+c))}:function(r,t,n){n(h(e*r+a),h(f*t+c))}}(),forEach:function(r,o){for(t=0,n=r.length;n>t;t++)this.transformPoint(r[t][0],r[t][1],o)}}}return this._transformers[r]}});return e});
+//>>built
+define(["../../core/Accessoire","../../geometry/Polyline"],function(r,s){var p=function(a,b){var c=a.length,l=a[0],m=a[c-1],g=0,d=0,h,k;for(h=1;h<c-1;h++){k=a[h];var e=l,n=m,f=void 0,q=void 0,f=void 0;e[0]===n[0]?f=Math.abs(k[0]-e[0]):(f=(n[1]-e[1])/(n[0]-e[0]),q=e[1]-f*e[0],f=Math.abs(f*k[0]-k[1]+q)/Math.sqrt(f*f+1));k=f;k>g&&(d=h,g=k)}g>b?(c=p(a.slice(0,d+1),b),d=p(a.slice(d),b),d=c.concat(d)):d=[l,m];return d};return r.createSubclass({_transformSetter:function(a){this._transformers=[];return a},
+toScreenPoint:function(a,b,c){b=this.getTransformer(b);c||(c={x:0,y:0});b.transformPoint(a.x,a.y,function(a,b){c.x=a;c.y=b});return c},toScreenPath:function(a,b){var c=a instanceof s,l=c?a.paths:a.rings,m=this.getTransformer(b),g=[],d,h,k=function(a,b){g.push(a+","+b)};if(l){d=0;for(h=l.length;d<h;d++)g.push("M"),m.forEach(p(l[d],this.resolution),k),c||g.push("Z")}return g},getTransformer:function(a){if(!this._transformers[a]){var b=this.transform,c=b[0],l=b[1],m=b[2],g=b[3],d=b[4]+a,h=b[5],k=0!==
+l&&0!==m,e,n,f=Math.round;this._transformers[a]={transformPoint:function(){return k?function(a,b,e){e(f(c*a+m*b+d),f(l*a+g*b+h))}:function(a,b,e){e(f(c*a+d),f(g*b+h))}}(),forEach:function(a,b){e=0;for(n=a.length;e<n;e++)this.transformPoint(a[e][0],a[e][1],b)}}}return this._transformers[a]}})});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"element",title:"Autentificare",info:"Vă rugăm să vă autentificaţi pentru a accesa elementul din {server} {resource}",oAuthInfo:"Autentificaţi-vă pentru a continua.",lblUser:"Nume de utilizator:",lblPwd:"Parolă:",lblOk:"OK",lblSigning:"Autentificare...",lblCancel:"Anulare",errorMsg:"Nume de utilizator/Parolă nevalidă. Încercaţi din nou.",invalidUser:"Numele de utilizator sau parola introdusă este incorectă.",forbidden:"Numele de utilizator şi parola sunt valide, însă nu aveţi acces la această resursă.",noAuthService:"Nu se poate accesa serviciul de autentificare."});
+//>>built
+define({lblItem:"element",title:"Autentificare",info:"V\u0103 rug\u0103m s\u0103 v\u0103 autentifica\u0163i pentru a accesa elementul din {server} {resource}",oAuthInfo:"Autentifica\u0163i-v\u0103 pentru a continua.",lblUser:"Nume de utilizator:",lblPwd:"Parol\u0103:",lblOk:"OK",lblSigning:"Autentificare...",lblCancel:"Anulare",errorMsg:"Nume de utilizator/Parol\u0103 nevalid\u0103. \u00cencerca\u0163i din nou.",invalidUser:"Numele de utilizator sau parola introdus\u0103 este incorect\u0103.",forbidden:"Numele de utilizator \u015fi parola sunt valide, \u00eens\u0103 nu ave\u0163i acces la aceast\u0103 resurs\u0103.",
+noAuthService:"Nu se poate accesa serviciul de autentificare."});

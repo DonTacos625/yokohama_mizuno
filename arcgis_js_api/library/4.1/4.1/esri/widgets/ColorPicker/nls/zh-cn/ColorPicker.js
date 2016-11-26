@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"透明度",suggested:"建议",recent:"最近",more:"更多信息",moreColorsTooltip:"查看更多颜色。",paletteTooltip:"选择颜色。",noColorTooltip:"无颜色",hexInputTooltip:"以十六进制记数法表示的自定义颜色 (#FFFF00)。"});
+//>>built
+define({transparency:"\u900f\u660e\u5ea6",suggested:"\u5efa\u8bae",recent:"\u6700\u8fd1",more:"\u66f4\u591a\u4fe1\u606f",moreColorsTooltip:"\u67e5\u770b\u66f4\u591a\u989c\u8272\u3002",paletteTooltip:"\u9009\u62e9\u989c\u8272\u3002",noColorTooltip:"\u65e0\u989c\u8272",hexInputTooltip:"\u4ee5\u5341\u516d\u8fdb\u5236\u8bb0\u6570\u6cd5\u8868\u793a\u7684\u81ea\u5b9a\u4e49\u989c\u8272 (#FFFF00)\u3002"});

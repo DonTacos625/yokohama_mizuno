@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"Caurspīdīgums",suggested:"Ieteiktais",recent:"Pēdējais",more:"Vairāk",moreColorsTooltip:"Skatīt vairāk krāsu.",paletteTooltip:"Izvēlieties krāsu.",noColorTooltip:"Bez krāsas",hexInputTooltip:"Pielāgota krāsa heksadecimālā apzīmējumā (#FFFF00)."});
+//>>built
+define({transparency:"Caursp\u012bd\u012bgums",suggested:"Ieteiktais",recent:"P\u0113d\u0113jais",more:"Vair\u0101k",moreColorsTooltip:"Skat\u012bt vair\u0101k kr\u0101su.",paletteTooltip:"Izv\u0113lieties kr\u0101su.",noColorTooltip:"Bez kr\u0101sas",hexInputTooltip:"Piel\u0101gota kr\u0101sa heksadecim\u0101l\u0101 apz\u012bm\u0113jum\u0101 (#FFFF00)."});

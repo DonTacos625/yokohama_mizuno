@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./gl-matrix"],function(i,t,r){var s=r.vec3d,n=function(){function i(i,t){this._origins=[],this._boxSize=i,this._maxNumOrigins=t}return i.prototype.getOrigin=function(t){for(var r,n=this._origins.length,h=!1,o=Number.MAX_VALUE,a=0;n>a;a++){var _=this._origins[a],g=_.vec3;s.subtract(t,g,e),e[0]=Math.abs(e[0]),e[1]=Math.abs(e[1]),e[2]=Math.abs(e[2]);var u=e[0]+e[1]+e[2];o>u&&(r=_,o=u,h=e[0]<this._boxSize&&e[1]<this._boxSize&&e[2]<this._boxSize)}if(!h&&(!r||null==this._maxNumOrigins||this._origins.length<this._maxNumOrigins)){var b=i.OFFSET;r={vec3:[t[0]+b,t[1]+b,t[2]+b],id:i.ORIGIN_PREFIX+this._origins.length},this._origins.push(r)}return r},i.OFFSET=1.11,i.ORIGIN_PREFIX="fb_",i}(),e=s.create();return n});
+//>>built
+define(["require","exports","./gl-matrix"],function(d,p,n){var h=n.vec3d;d=function(){function c(a,b){this._origins=[];this._boxSize=a;this._maxNumOrigins=b}c.prototype.getOrigin=function(f){for(var b=this._origins.length,e,d=!1,k=Number.MAX_VALUE,g=0;g<b;g++){var l=this._origins[g];h.subtract(f,l.vec3,a);a[0]=Math.abs(a[0]);a[1]=Math.abs(a[1]);a[2]=Math.abs(a[2]);var m=a[0]+a[1]+a[2];m<k&&(e=l,k=m,d=a[0]<this._boxSize&&a[1]<this._boxSize&&a[2]<this._boxSize)}if(!d&&(!e||null==this._maxNumOrigins||
+this._origins.length<this._maxNumOrigins))b=c.OFFSET,e={vec3:[f[0]+b,f[1]+b,f[2]+b],id:c.ORIGIN_PREFIX+this._origins.length},this._origins.push(e);return e};c.OFFSET=1.11;c.ORIGIN_PREFIX="fb_";return c}();var a=h.create();return d});

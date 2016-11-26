@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./Octree","./gl-matrix"],function(e,n,t,r){function s(e){var n={numNodes:0,numObjects:0,numTerminals:0,numResidents:0,numOutsiders:0,numInnerNodes:0,numTerminalNodes:0,maximumDepth:0,maxNumTerminals:0,maxNumResidents:0,maxNumObjects:0};return n.numOutsiders=e.outsiders.length,e.forEachNode(function(t,r,s){null===t.residents?n.numInnerNodes++:n.numTerminalNodes++,n.numTerminals+=t.terminals.length,n.maxNumTerminals=Math.max(t.terminals.length,n.maxNumTerminals);var i=t.terminals.length;null!==t.residents&&(n.numResidents+=t.residents.length,n.maxNumResidents=Math.max(t.residents.length,n.maxNumResidents),i+=t.residents.length),n.maxNumObjects=Math.max(i,n.maxNumObjects);var a=Math.round(Math.log(e.size/s)*Math.LOG2E);return n.maximumDepth=Math.max(n.maximumDepth,a),!0}),n.numObjects=n.numOutsiders+n.numTerminals+n.numResidents,n.numNodes=n.numInnerNodes+n.numTerminalNodes,n}function i(e,n){void 0===n&&(n=!1);var r,s=e instanceof t?e.root:e;return r={},e instanceof t&&(n&&(r.center=o.create(e.center),r.size=e.size),0!==e.outsiders.length&&(r.outsiders=e.outsiders.map(function(e){return e.getId()}))),s.terminals.length>0&&(r.terminals=s.terminals.map(function(e){return e.getId()})),null!==s.residents&&s.residents.length>0&&(r.residents=s.residents.map(function(e){return e.getId()})),null===s.residents&&s.children.forEach(function(e,n){e&&(r["child"+n]=i(e))}),r}function a(e){return e.forEachNode(function(n,t,r){var s=u(t,-r/2,o.create()),i=u(t,r/2,o.create());if(n.terminals.forEach(function(e){return m(e,s,i,!0)}),null!==n.residents){if(n.residents.length>e.maximumObjectsPerNode)throw new Error("[Octree Validation] Number of objects "+n.residents.length+" exceeds maximum allowed ("+e.maximumObjectsPerNode+")");n.residents.forEach(function(e){return m(e,s,i,!1)})}var a=!1;if(n.children.forEach(function(e){if(e&&(a=!0,null!==n.residents))throw new Error("[Octree Validation] Node has residents and children")}),!a&&(null===n.residents||0===n.residents.length)&&0===n.terminals.length)throw new Error("[Octree Validation] dangling empty node");return!0}),!0}function m(e,n,t,r){for(var s=e.getCenter(),i=0;3>i;i++)if(s[i]<n[i]||s[i]>t[i])throw new Error("[Octree Validation] Object is not within node bounds");var a=.25*(t[0]-n[0]),m=e.getBSRadius();if(r&&a>m)throw new Error("[Octree Validation] Object is too small to be a terminal");if(!r&&m>a)throw new Error("[Octree Validation] Object is too large to be a resident")}function u(e,n,t){return t=t||e,t[0]=e[0]+n,t[1]=e[1]+n,t[2]=e[2]+n,t}var o=r.vec3d;n.stats=s,n.debugDump=i,n.assert=a});
+//>>built
+define(["require","exports","./Octree","./gl-matrix"],function(q,g,k,p){function l(c,a){void 0===a&&(a=!1);var b=c instanceof k?c.root:c,d;d={};c instanceof k&&(a&&(d.center=h.create(c.center),d.size=c.size),0!==c.outsiders.length&&(d.outsiders=c.outsiders.map(function(a){return a.getId()})));0<b.terminals.length&&(d.terminals=b.terminals.map(function(a){return a.getId()}));null!==b.residents&&0<b.residents.length&&(d.residents=b.residents.map(function(a){return a.getId()}));null===b.residents&&b.children.forEach(function(a,
+b){a&&(d["child"+b]=l(a))});return d}function m(c,a,b,d){for(var f=c.getCenter(),e=0;3>e;e++)if(f[e]<a[e]||f[e]>b[e])throw Error("[Octree Validation] Object is not within node bounds");a=0.25*(b[0]-a[0]);c=c.getBSRadius();if(d&&c<a)throw Error("[Octree Validation] Object is too small to be a terminal");if(!d&&c>a)throw Error("[Octree Validation] Object is too large to be a resident");}function n(c,a,b){b=b||c;b[0]=c[0]+a;b[1]=c[1]+a;b[2]=c[2]+a;return b}var h=p.vec3d;g.stats=function(c){var a={numNodes:0,
+numObjects:0,numTerminals:0,numResidents:0,numOutsiders:0,numInnerNodes:0,numTerminalNodes:0,maximumDepth:0,maxNumTerminals:0,maxNumResidents:0,maxNumObjects:0};a.numOutsiders=c.outsiders.length;c.forEachNode(function(b,d,f){null===b.residents?a.numInnerNodes++:a.numTerminalNodes++;a.numTerminals+=b.terminals.length;a.maxNumTerminals=Math.max(b.terminals.length,a.maxNumTerminals);d=b.terminals.length;null!==b.residents&&(a.numResidents+=b.residents.length,a.maxNumResidents=Math.max(b.residents.length,
+a.maxNumResidents),d+=b.residents.length);a.maxNumObjects=Math.max(d,a.maxNumObjects);b=Math.round(Math.log(c.size/f)*Math.LOG2E);a.maximumDepth=Math.max(a.maximumDepth,b);return!0});a.numObjects=a.numOutsiders+a.numTerminals+a.numResidents;a.numNodes=a.numInnerNodes+a.numTerminalNodes;return a};g.debugDump=l;g.assert=function(c){c.forEachNode(function(a,b,d){var f=n(b,-d/2,h.create()),e=n(b,d/2,h.create());a.terminals.forEach(function(a){return m(a,f,e,!0)});if(null!==a.residents){if(a.residents.length>
+c.maximumObjectsPerNode)throw Error("[Octree Validation] Number of objects "+a.residents.length+" exceeds maximum allowed ("+c.maximumObjectsPerNode+")");a.residents.forEach(function(a){return m(a,f,e,!1)})}var g=!1;a.children.forEach(function(b){if(b&&(g=!0,null!==a.residents))throw Error("[Octree Validation] Node has residents and children");});if(!g&&(null===a.residents||0===a.residents.length)&&0===a.terminals.length)throw Error("[Octree Validation] dangling empty node");return!0});return!0}});

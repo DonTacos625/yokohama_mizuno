@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../core/Collection"],function(t){var e=t.createSubclass({constructor:function(){this._itemById={},this._itemToKeys={},this._keyToItem={}},add:function(t,e){var i=this.hash(t),s=this.hash(e),h=this._itemToKeys[s];e=this._itemById[s]?this._itemById[s]:e,this._keyToItem[i]=e,h||(this._itemById[s]=e,this._itemToKeys[s]=h=[],this.getInherited(arguments).call(this,e)),h.push(i)},remove:function(t){return this.removeMany([t])},removeMany:function(t){if(!t||!t.length)return null;var e,i,s,h,n,r=[];for(e=t.length-1;e>=0;e--)i=this.hash(t[e]),s=this.getItem(i),s&&(delete this._keyToItem[i],h=this.hash(s),n=this._itemToKeys[h],n.splice(n.indexOf(i),1),n.length||(delete this._itemToKeys[h],delete this._itemById[h],r.push(s)));return this.getInherited(arguments).call(this,r),r},getItem:function(t){return this._keyToItem[this.hash(t)]},contains:function(t){return null!=this.getItem(t)},hash:function(t){return t&&t.id?t.id:t}});return e});
+//>>built
+define(["../../../core/Collection"],function(h){return h.createSubclass({constructor:function(){this._itemById={};this._itemToKeys={};this._keyToItem={}},add:function(a,b){var e=this.hash(a),c=this.hash(b),d=this._itemToKeys[c];b=this._itemById[c]?this._itemById[c]:b;this._keyToItem[e]=b;d||(this._itemById[c]=b,this._itemToKeys[c]=d=[],this.getInherited(arguments).call(this,b));d.push(e)},remove:function(a){return this.removeMany([a])},removeMany:function(a){if(!a||!a.length)return null;var b,e,c,
+d,f,g=[];for(b=a.length-1;0<=b;b--)if(e=this.hash(a[b]),c=this.getItem(e))delete this._keyToItem[e],d=this.hash(c),f=this._itemToKeys[d],f.splice(f.indexOf(e),1),f.length||(delete this._itemToKeys[d],delete this._itemById[d],g.push(c));this.getInherited(arguments).call(this,g);return g},getItem:function(a){return this._keyToItem[this.hash(a)]},contains:function(a){return null!=this.getItem(a)},hash:function(a){return a&&a.id?a.id:a}})});

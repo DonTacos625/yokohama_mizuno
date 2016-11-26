@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"소개",add:"추가",all:"모두",apply:"적용",auth:{logOut:"로그아웃",signIn:"로그인"},back:"뒤로",cancel:"취소",change:"변경",clear:"지우기",close:"닫기",configure:"구성",control:{pause:"일시 중지",play:"재생",resume:"계속",stop:"중지"},copy:"복사",create:"생성",cut:"잘라내기","delete":"삭제",details:"세부정보",edit:"편집",error:"오류",esri:"Esri",exit:"종료",fieldsSummary:"속성 및 값 목록",find:"찾기",form:{no:"아니요",ok:"확인",password:"비밀번호",submit:"제출",username:"사용자 이름",yes:"예"},help:"도움말",home:"홈",info:"정보",information:"정보",layer:"레이어",loading:"불러오는 중",maximize:"최대",menu:"메뉴",more:"더 보기",none:"없음",open:"열기",pagination:{first:"처음",last:"마지막",next:"다음",page:"페이지",pageText:"{index}/{total}",previous:"이전"},paste:"붙여넣기",preview:"미리 보기",print:"인쇄",publish:"발행",redo:"다시 실행",refresh:"새로고침",remove:"제거",rename:"이름 바꾸기",reset:"재설정",restore:"복구",save:"저장",search:"검색",searching:"검색 중",select:"선택",settings:"설정",sort:"정렬",share:"공유",title:"제목",untitled:"제목 없음",upload:"업로드",undo:"실행 취소",view:"보기",visibility:{hide:"숨기기",show:"보기",toggle:"전환"},warning:"경고"});
+//>>built
+define({about:"\uc18c\uac1c",add:"\ucd94\uac00",all:"\ubaa8\ub450",apply:"\uc801\uc6a9",auth:{logOut:"\ub85c\uadf8\uc544\uc6c3",signIn:"\ub85c\uadf8\uc778"},back:"\ub4a4\ub85c",cancel:"\ucde8\uc18c",change:"\ubcc0\uacbd",clear:"\uc9c0\uc6b0\uae30",close:"\ub2eb\uae30",configure:"\uad6c\uc131",control:{pause:"\uc77c\uc2dc \uc911\uc9c0",play:"\uc7ac\uc0dd",resume:"\uacc4\uc18d",stop:"\uc911\uc9c0"},copy:"\ubcf5\uc0ac",create:"\uc0dd\uc131",cut:"\uc798\ub77c\ub0b4\uae30","delete":"\uc0ad\uc81c",details:"\uc138\ubd80\uc815\ubcf4",
+edit:"\ud3b8\uc9d1",error:"\uc624\ub958",esri:"Esri",exit:"\uc885\ub8cc",fieldsSummary:"\uc18d\uc131 \ubc0f \uac12 \ubaa9\ub85d",find:"\ucc3e\uae30",form:{no:"\uc544\ub2c8\uc694",ok:"\ud655\uc778",password:"\ube44\ubc00\ubc88\ud638",submit:"\uc81c\ucd9c",username:"\uc0ac\uc6a9\uc790 \uc774\ub984",yes:"\uc608"},help:"\ub3c4\uc6c0\ub9d0",home:"\ud648",info:"\uc815\ubcf4",information:"\uc815\ubcf4",layer:"\ub808\uc774\uc5b4",loading:"\ubd88\ub7ec\uc624\ub294 \uc911",maximize:"\ucd5c\ub300",menu:"\uba54\ub274",
+more:"\ub354 \ubcf4\uae30",none:"\uc5c6\uc74c",open:"\uc5f4\uae30",pagination:{first:"\ucc98\uc74c",last:"\ub9c8\uc9c0\ub9c9",next:"\ub2e4\uc74c",page:"\ud398\uc774\uc9c0",pageText:"{index}/{total}",previous:"\uc774\uc804"},paste:"\ubd99\uc5ec\ub123\uae30",preview:"\ubbf8\ub9ac \ubcf4\uae30",print:"\uc778\uc1c4",publish:"\ubc1c\ud589",redo:"\ub2e4\uc2dc \uc2e4\ud589",refresh:"\uc0c8\ub85c\uace0\uce68",remove:"\uc81c\uac70",rename:"\uc774\ub984 \ubc14\uafb8\uae30",reset:"\uc7ac\uc124\uc815",restore:"\ubcf5\uad6c",
+save:"\uc800\uc7a5",search:"\uac80\uc0c9",searching:"\uac80\uc0c9 \uc911",select:"\uc120\ud0dd",settings:"\uc124\uc815",sort:"\uc815\ub82c",share:"\uacf5\uc720",title:"\uc81c\ubaa9",untitled:"\uc81c\ubaa9 \uc5c6\uc74c",upload:"\uc5c5\ub85c\ub4dc",undo:"\uc2e4\ud589 \ucde8\uc18c",view:"\ubcf4\uae30",visibility:{hide:"\uc228\uae30\uae30",show:"\ubcf4\uae30",toggle:"\uc804\ud658"},warning:"\uacbd\uace0"});

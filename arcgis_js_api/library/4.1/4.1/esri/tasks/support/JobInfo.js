@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/declare","../../core/kebabDictionary","../../core/JSONSupporter","./GPMessage","dojo/_base/array","dojo/_base/lang"],function(e,o,i,r,b,s){var t=o({esriJobCancelled:"job-cancelled",esriJobCancelling:"job-cancelling",esriJobDeleted:"job-deleted",esriJobDeleting:"job-deleting",esriJobTimedOut:"job-timed-out",esriJobExecuting:"job-executing",esriJobFailed:"job-failed",esriJobNew:"job-new",esriJobSubmitted:"job-submitted",esriJobSucceeded:"job-succeeded",esriJobWaiting:"job-waiting"}),a=e(i,{declaredClass:"esri.tasks.support.JobInfo",jobId:"",jobStatus:"",_jobStatusReader:t.fromJSON,messages:[],_messagesReader:function(e){return b.map(e,function(e){return r.fromJSON(e)})}});return a});
+//>>built
+define("../../core/declare ../../core/kebabDictionary ../../core/JSONSupporter ./GPMessage dojo/_base/array dojo/_base/lang".split(" "),function(b,a,c,d,e,f){a=a({esriJobCancelled:"job-cancelled",esriJobCancelling:"job-cancelling",esriJobDeleted:"job-deleted",esriJobDeleting:"job-deleting",esriJobTimedOut:"job-timed-out",esriJobExecuting:"job-executing",esriJobFailed:"job-failed",esriJobNew:"job-new",esriJobSubmitted:"job-submitted",esriJobSucceeded:"job-succeeded",esriJobWaiting:"job-waiting"});
+return b(c,{declaredClass:"esri.tasks.support.JobInfo",jobId:"",jobStatus:"",_jobStatusReader:a.fromJSON,messages:[],_messagesReader:function(a){return e.map(a,function(a){return d.fromJSON(a)})}})});

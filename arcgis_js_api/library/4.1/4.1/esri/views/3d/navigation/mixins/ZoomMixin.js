@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../../core/declare","../../lib/glMatrix"],function(i,t){var n=t.vec2d,e=t.vec3d,o=e.create(),r=!0,a=!1,s=.6,h=i([],{declaredClass:"esri.views.3d.navigation.mixins.ZoomMixin",type:"zoom",constructor:function(){this.normalizedAnchorPoint=n.create()},begin:function(i){this.navigation.begin(this),n.set(i,this._dragBeginPoint),this.normalizeCoordinate(i,this.normalizedAnchorPoint);var t=this._toYDownCoord(this._dragBeginPoint);this.active=!0,this.emit("begin",t[0],t[1])},update:function(i){},end:function(i){this.active=!1;var t=this._toYDownCoord(this._dragBeginPoint);this.emit("end",t[0],t[1]),this.navigation.end(this)},stepScreen:function(i,t){this.active||(e.set(this.currentCamera.center,o),(r&&i>0||a&&0>i)&&(this.pickPointInScreen(t,o)||"local"!==this.navigation.view.viewingMode||this.pickFreePointInScreen(t,o)),this.step(Math.pow(s,i),o,t))},step:function(i,t,n){if(!this.active){this.navigation.begin(this),this.targetCamera.copyFrom(this.currentCamera);var o=e.dist(t,this.targetCamera.center)>1e-6;this.stepAtPoint(i,t,n,o),this.navigation.end(this)}},stepAtPoint:function(i,t,n,e){},_toYDownCoord:function(i){return[i[0],this.currentCamera.height-i[1]]}});return h});
+//>>built
+define(["../../../../core/declare","../../lib/glMatrix"],function(g,d){var f=d.vec2d,e=d.vec3d,b=e.create();return g([],{declaredClass:"esri.views.3d.navigation.mixins.ZoomMixin",type:"zoom",constructor:function(){this.normalizedAnchorPoint=f.create()},begin:function(a){this.navigation.begin(this);f.set(a,this._dragBeginPoint);this.normalizeCoordinate(a,this.normalizedAnchorPoint);a=this._toYDownCoord(this._dragBeginPoint);this.active=!0;this.emit("begin",a[0],a[1])},update:function(a){},end:function(a){this.active=
+!1;a=this._toYDownCoord(this._dragBeginPoint);this.emit("end",a[0],a[1]);this.navigation.end(this)},stepScreen:function(a,c){this.active||(e.set(this.currentCamera.center,b),0<a&&!this.pickPointInScreen(c,b)&&"local"===this.navigation.view.viewingMode&&this.pickFreePointInScreen(c,b),this.step(Math.pow(0.6,a),b,c))},step:function(a,c,b){if(!this.active){this.navigation.begin(this);this.targetCamera.copyFrom(this.currentCamera);var d=1E-6<e.dist(c,this.targetCamera.center);this.stepAtPoint(a,c,b,d);
+this.navigation.end(this)}},stepAtPoint:function(a,c,b,d){},_toYDownCoord:function(a){return[a[0],this.currentCamera.height-a[1]]}})});

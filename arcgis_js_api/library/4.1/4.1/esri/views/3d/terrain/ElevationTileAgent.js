@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["./TileAgentBase","./TerrainConst","./UpsampleInfo","../support/ObjectPool"],function(e,t,i,l){var a=4,r=function(){e.apply(this,arguments)};return r.prototype=new e,r.prototype.constructor=r,r.prototype.dataArrived=function(e){e!==this.tile?this._setUpsamplingTile(e):this.updateGeometry(),this._dataRequested=null,this._requestNext()},r.prototype.updateGeometry=function(){this._tileLayerInfo.pendingUpdates|=t.TileUpdateTypes.UPDATE_GEOMETRY,this.tile.updateGeometry()},r.prototype._findAncestorWithData=function(){for(var e,l=this.layerClass,a=this.layerIdx,r=this.tile,s=r.vlevel;r&&!(r.layerInfo[l][a].data&&(e=r,s-r.lij[0]>=t.ELEVATION_DESIRED_RESOLUTION_LEVEL));)r=r.parent;if(e){var n=i.Pool.acquire();return n.init(e,0,0,1),n}return null},r.prototype._findNextDownload=function(){var e,i=this.layerIdx,l=this.layerClass,r=this.tile.parentSurface.layerViewByIndex(i,l),s=r.minDataLevel,n=r.maxDataLevel,o=t.ELEVATION_DESIRED_RESOLUTION_LEVEL-(this.tile.vlevel-this.tile.lij[0]),p=a+o;if(this._tileLayerInfo.data||this.tile.lij[0]<s)e=null;else{for(var u=this.tile,h=u.lij[0],y=0,f=this._tileLayerInfo.upsampleFromTile?this._tileLayerInfo.upsampleFromTile.tile.lij[0]:-1,m=this.tile.parentSurface,d=m.getTilemapTile(u),_=m.tilemapStats,I=!1;u&&p>=y&&u.lij[0]>=s;){if(u.layerInfo[this.layerClass][this.layerIdx].data&&h-u.lij[0]>=o){u.lij[0]>f&&this._setUpsamplingTile(u);break}d&&!d.tileDataAvailable(u,i,l)?(I=!0,e=null):u.lij[0]<=n&&(e=u),u=u.parent,d=d?d.parent:null,y++}e&&h-e.lij[0]<o&&this._tileLayerInfo.upsampleFromTile&&(e=null),!e&&I&&_.tilesNotPresent++}return e},r.prototype._setUpsamplingTile=function(e){this._tileLayerInfo.upsampleFromTile&&i.Pool.release(this._tileLayerInfo.upsampleFromTile);var t=i.Pool.acquire();t.init(e,0,0,1),this._tileLayerInfo.upsampleFromTile=t,this.updateGeometry()},l.on(r,400),r});
+//>>built
+define(["./TileAgentBase","./TerrainConst","./UpsampleInfo","../support/ObjectPool"],function(k,m,e,n){var a=function(){k.apply(this,arguments)};a.prototype=new k;a.prototype.constructor=a;a.prototype.dataArrived=function(b){b!==this.tile?this._setUpsamplingTile(b):this.updateGeometry();this._dataRequested=null;this._requestNext()};a.prototype.updateGeometry=function(){this._tileLayerInfo.pendingUpdates|=m.TileUpdateTypes.UPDATE_GEOMETRY;this.tile.updateGeometry()};a.prototype._findAncestorWithData=
+function(){for(var b=this.layerClass,a=this.layerIdx,d=this.tile,f=d.vlevel,g;d&&(!d.layerInfo[b][a].data||!(g=d,f-d.lij[0]>=m.ELEVATION_DESIRED_RESOLUTION_LEVEL));)d=d.parent;return g?(b=e.Pool.acquire(),b.init(g,0,0,1),b):null};a.prototype._findNextDownload=function(){var b,a=this.layerIdx,d=this.layerClass,f=this.tile.parentSurface.layerViewByIndex(a,d),g=f.minDataLevel,f=f.maxDataLevel,e=m.ELEVATION_DESIRED_RESOLUTION_LEVEL-(this.tile.vlevel-this.tile.lij[0]),k=4+e;if(this._tileLayerInfo.data||
+this.tile.lij[0]<g)b=null;else{for(var c=this.tile,p=c.lij[0],q=0,n=this._tileLayerInfo.upsampleFromTile?this._tileLayerInfo.upsampleFromTile.tile.lij[0]:-1,l=this.tile.parentSurface,h=l.getTilemapTile(c),l=l.tilemapStats,r=!1;c&&q<=k&&c.lij[0]>=g;){if(c.layerInfo[this.layerClass][this.layerIdx].data&&p-c.lij[0]>=e){c.lij[0]>n&&this._setUpsamplingTile(c);break}h&&!h.tileDataAvailable(c,a,d)?(r=!0,b=null):c.lij[0]<=f&&(b=c);c=c.parent;h=h?h.parent:null;q++}b&&(p-b.lij[0]<e&&this._tileLayerInfo.upsampleFromTile)&&
+(b=null);!b&&r&&l.tilesNotPresent++}return b};a.prototype._setUpsamplingTile=function(b){this._tileLayerInfo.upsampleFromTile&&e.Pool.release(this._tileLayerInfo.upsampleFromTile);var a=e.Pool.acquire();a.init(b,0,0,1);this._tileLayerInfo.upsampleFromTile=a;this.updateGeometry()};n.on(a,400);return a});

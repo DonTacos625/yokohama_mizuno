@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"öğe",title:"Oturum Aç",info:"{server} {resource} üzerindeki öğeye erişmek için oturum açın",oAuthInfo:"Devam etmek için oturum açın.",lblUser:"Kullanıcı adı:",lblPwd:"Parola:",lblOk:"Tamam",lblSigning:"Oturum açılıyor...",lblCancel:"İptal",errorMsg:"Geçersiz kullanıcı adı/parola. Tekrar deneyin.",invalidUser:"Girdiğiniz kullanıcı adı veya parola doğru değil.",forbidden:"Kullanıcı adı ve parola geçerli, ancak bu kaynağa erişiminiz yok.",noAuthService:"Kimlik doğrulama servisine erişilemiyor."});
+//>>built
+define({lblItem:"\u00f6\u011fe",title:"Oturum A\u00e7",info:"{server} {resource} \u00fczerindeki \u00f6\u011feye eri\u015fmek i\u00e7in oturum a\u00e7\u0131n",oAuthInfo:"Devam etmek i\u00e7in oturum a\u00e7\u0131n.",lblUser:"Kullan\u0131c\u0131 ad\u0131:",lblPwd:"Parola:",lblOk:"Tamam",lblSigning:"Oturum a\u00e7\u0131l\u0131yor...",lblCancel:"\u0130ptal",errorMsg:"Ge\u00e7ersiz kullan\u0131c\u0131 ad\u0131/parola. Tekrar deneyin.",invalidUser:"Girdi\u011finiz kullan\u0131c\u0131 ad\u0131 veya parola do\u011fru de\u011fil.",
+forbidden:"Kullan\u0131c\u0131 ad\u0131 ve parola ge\u00e7erli, ancak bu kayna\u011fa eri\u015fiminiz yok.",noAuthService:"Kimlik do\u011frulama servisine eri\u015filemiyor."});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["./math/vec2","./Tile"],function(t,r){var i=function(r,i,o){this.z=i.level,this.scale=i.scale;var e=r.spatialReference._getInfo(),s=t.fromValues(r.origin.x,r.origin.y),n=t.fromValues(r.size[0]*i.resolution,r.size[1]*i.resolution),h=t.fromValues(-(1/0),-(1/0)),l=t.fromValues(+(1/0),+(1/0)),a=t.fromValues(+(1/0),+(1/0));o&&(t.set(h,Math.max(0,Math.floor((o.xmin-s[0])/n[0])),Math.max(0,Math.floor((s[1]-o.ymax)/n[1]))),t.set(l,Math.max(0,Math.floor((o.xmax-s[0])/n[0])),Math.max(0,Math.floor((s[1]-o.ymin)/n[1]))),t.set(a,l[0]-h[0]+1,l[1]-h[1]+1)),this.origin=s,this.norm=n,this.start=h,this.end=l,this.size=a,this.resolution=i.resolution,e?(this.worldSize=t.set(t.create(),Math.ceil(Math.round(2*e.origin[1]/i.resolution)/r.size[0]),a[1]),this.worldStart=t.set(t.create(),Math.floor((e.origin[0]-s[0])/n[0]),h[1]),this.worldEnd=t.set(t.create(),this.worldSize[0]-this.worldStart[0]-1,l[1]),this.wrap=!0):(this.worldStart=h,this.wldEnd=l,this.worldSize=a,this.wrap=!1)};return i.prototype={normalizeX:function(t){if(!this.wrap)return t;var r=this.worldSize[0];return 0>t?r-1-Math.abs((t+1)%r):t%r},getXForWorld:function(t,r){return this.wrap?this.worldSize[0]*r+t:t},getWorldForX:function(t){return this.wrap?Math.floor(t/this.worldSize[0]):t},getWorldStartCol:function(t){return t*this.worldSize[0]+this.start[0]},getWorldEndCol:function(t){return t*this.worldSize[0]+this.start[0]+this.size[0]-1},toGridCol:function(t){return(t-this.origin[0])/this.norm[0]},toGridRow:function(t){return(this.origin[1]-t)/this.norm[1]},getTileOrigin:function(r,i){var o=this.origin,e=this.norm;return t.set(r,o[0]+this.getXForWorld(i[0],i[3])*e[0],o[1]-i[1]*e[1])},getIntersectingTile:function(t){var i=this.resolution,o=t.lodInfo.resolution,e=t.world;if(t.coords[2]<this.z)return null;var s=[Math.floor(t.coords[0]*o/i+.01),Math.floor(t.row*o/i+.01),this.z,0];return s[3]=this.getXForWorld(s[0],e),new r(s,this)}},i});
+//>>built
+define(["./math/vec2","./Tile"],function(c,n){var m=function(a,b,d){this.z=b.level;this.scale=b.scale;var e=a.spatialReference._getInfo(),f=c.fromValues(a.origin.x,a.origin.y),g=c.fromValues(a.size[0]*b.resolution,a.size[1]*b.resolution),h=c.fromValues(-Infinity,-Infinity),k=c.fromValues(Infinity,Infinity),l=c.fromValues(Infinity,Infinity);d&&(c.set(h,Math.max(0,Math.floor((d.xmin-f[0])/g[0])),Math.max(0,Math.floor((f[1]-d.ymax)/g[1]))),c.set(k,Math.max(0,Math.floor((d.xmax-f[0])/g[0])),Math.max(0,
+Math.floor((f[1]-d.ymin)/g[1]))),c.set(l,k[0]-h[0]+1,k[1]-h[1]+1));this.origin=f;this.norm=g;this.start=h;this.end=k;this.size=l;this.resolution=b.resolution;e?(this.worldSize=c.set(c.create(),Math.ceil(Math.round(2*e.origin[1]/b.resolution)/a.size[0]),l[1]),this.worldStart=c.set(c.create(),Math.floor((e.origin[0]-f[0])/g[0]),h[1]),this.worldEnd=c.set(c.create(),this.worldSize[0]-this.worldStart[0]-1,k[1]),this.wrap=!0):(this.worldStart=h,this.wldEnd=k,this.worldSize=l,this.wrap=!1)};m.prototype=
+{normalizeX:function(a){if(!this.wrap)return a;var b=this.worldSize[0];return 0>a?b-1-Math.abs((a+1)%b):a%b},getXForWorld:function(a,b){return!this.wrap?a:this.worldSize[0]*b+a},getWorldForX:function(a){return!this.wrap?a:Math.floor(a/this.worldSize[0])},getWorldStartCol:function(a){return a*this.worldSize[0]+this.start[0]},getWorldEndCol:function(a){return a*this.worldSize[0]+this.start[0]+this.size[0]-1},toGridCol:function(a){return(a-this.origin[0])/this.norm[0]},toGridRow:function(a){return(this.origin[1]-
+a)/this.norm[1]},getTileOrigin:function(a,b){var d=this.origin,e=this.norm;return c.set(a,d[0]+this.getXForWorld(b[0],b[3])*e[0],d[1]-b[1]*e[1])},getIntersectingTile:function(a){var b=this.resolution,c=a.lodInfo.resolution;if(a.coords[2]<this.z)return null;b=[Math.floor(a.coords[0]*c/b+0.01),Math.floor(a.row*c/b+0.01),this.z,0];b[3]=this.getXForWorld(b[0],a.world);return new n(b,this)}};return m});

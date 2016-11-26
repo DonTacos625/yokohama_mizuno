@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","./basemapDefinitions","../core/accessorSupport/ensureType","../core/urlUtils","../layers/TiledLayer","../Basemap"],function(e,r,n,t,a,s,u){function l(){return{}}function i(e,r){var a;if("string"==typeof e){if(!(e in n)){var s=Object.keys(n).map(function(e){return'"'+e+'"'}).join(", ");return console.warn("Unable to find basemap definition for: "+e+". Try one of these: "+s),null}r&&(a=r[e]),a||(a=u.fromId(e),r&&(r[e]=a))}else a=t["default"](u,e);return a}function o(e,r){void 0===r&&(r=null);var n=i(e);if(!n)return null;var t=new u({id:n.id,title:n.title,baseLayers:n.baseLayers.slice(),referenceLayers:n.referenceLayers.slice()});return r&&(t.baseLayers=L(t.baseLayers,r.baseLayers),t.referenceLayers=L(t.referenceLayers,r.referenceLayers)),t}function f(e,r){return null!=e!=(null!=r)?!1:e===r?!0:e.baseLayers.length!==r.baseLayers.length||e.referenceLayers.length!==r.referenceLayers.length?!1:c(e.baseLayers,r.baseLayers)&&c(e.referenceLayers,r.referenceLayers)}function c(e,r){return!e.some(function(e,n){return!y(e,r.getItemAt(n))})}function y(e,r){if(e.constructor!==r.constructor)return!1;var n=e;if(n.isInstanceOf(s)){if(null!=e.url!=(null!=r.url))return!1;if(null!=e.url)return a.normalize(e.url).toLowerCase()===a.normalize(r.url).toLowerCase();if(null!=e.urlTemplate&&null!=r.urlTemplate)return a.normalize(e.urlTemplate).toLowerCase()===a.normalize(r.urlTemplate).toLowerCase()}return!1}function L(e,r){return e.map(function(e){var n=r.find(function(r){return y(e,r)});return n||e})}r.createCache=l,r.ensureType=i,r.clonePreservingTiledLayers=o,r.contentEquals=f});
+//>>built
+define("require exports ./basemapDefinitions ../core/accessorSupport/ensureType ../core/urlUtils ../layers/TiledLayer ../Basemap".split(" "),function(q,d,g,n,e,p,f){function h(a,b){var c;if("string"===typeof a){if(!(a in g))return c=Object.keys(g).map(function(a){return'"'+a+'"'}).join(", "),console.warn("Unable to find basemap definition for: "+a+". Try one of these: "+c),null;b&&(c=b[a]);c||(c=f.fromId(a),b&&(b[a]=c))}else c=n.default(f,a);return c}function k(a,b){return!a.some(function(a,d){return!l(a,
+b.getItemAt(d))})}function l(a,b){if(a.constructor!==b.constructor)return!1;if(a.isInstanceOf(p)){if(null!=a.url!==(null!=b.url))return!1;if(null!=a.url)return e.normalize(a.url).toLowerCase()===e.normalize(b.url).toLowerCase();if(null!=a.urlTemplate&&null!=b.urlTemplate)return e.normalize(a.urlTemplate).toLowerCase()===e.normalize(b.urlTemplate).toLowerCase()}return!1}function m(a,b){return a.map(function(a){return b.find(function(b){return l(a,b)})||a})}d.createCache=function(){return{}};d.ensureType=
+h;d.clonePreservingTiledLayers=function(a,b){void 0===b&&(b=null);var c=h(a);if(!c)return null;c=new f({id:c.id,title:c.title,baseLayers:c.baseLayers.slice(),referenceLayers:c.referenceLayers.slice()});b&&(c.baseLayers=m(c.baseLayers,b.baseLayers),c.referenceLayers=m(c.referenceLayers,b.referenceLayers));return c};d.contentEquals=function(a,b){return null!=a!==(null!=b)?!1:a===b?!0:a.baseLayers.length!==b.baseLayers.length||a.referenceLayers.length!==b.referenceLayers.length?!1:k(a.baseLayers,b.baseLayers)&&
+k(a.referenceLayers,b.referenceLayers)}});

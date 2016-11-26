@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Der Layer ${name} verfügt über keine Felder, die gefiltert werden können.",addToViewer:"Layer zur Karte hinzufügen",noItemsToDisplay:"Zurzeit stehen keine Elemente zur Anzeige zur Verfügung.",searchFor:"Suchen nach",searching:"Suchen",items:{organizationLabel:"Meine Organisation",onlineLabel:"ArcGIS Online",contentLabel:"Eigene Inhalte",favoritesLabel:"Eigene Favoriten"},title:"Webkarte auswählen",searchTitle:"Suchen",ok:"OK",cancel:"Abbrechen",placeholder:"Suchbegriff eingeben",instructionsLeft:"Was möchten Sie tun?",instructionsRight:"Wählen Sie eine konfigurierbare App aus.",go:"Los",selectDetails:"AUSWÄHLEN",configure:"Erstellen",close:"Schließen",learnMoreConfigurableApps:"Weitere Informationen zu konfigurierbaren Apps"});
+//>>built
+define({noFilterFields:"Der Layer ${name} verf\u00fcgt \u00fcber keine Felder, die gefiltert werden k\u00f6nnen.",addToViewer:"Layer zur Karte hinzuf\u00fcgen",noItemsToDisplay:"Zurzeit stehen keine Elemente zur Anzeige zur Verf\u00fcgung.",searchFor:"Suchen nach",searching:"Suchen",items:{organizationLabel:"Meine Organisation",onlineLabel:"ArcGIS Online",contentLabel:"Eigene Inhalte",favoritesLabel:"Eigene Favoriten"},title:"Webkarte ausw\u00e4hlen",searchTitle:"Suchen",ok:"OK",cancel:"Abbrechen",
+placeholder:"Suchbegriff eingeben",instructionsLeft:"Was m\u00f6chten Sie tun?",instructionsRight:"W\u00e4hlen Sie eine konfigurierbare App aus.",go:"Los",selectDetails:"AUSW\u00c4HLEN",configure:"Erstellen",close:"Schlie\u00dfen",learnMoreConfigurableApps:"Weitere Informationen zu konfigurierbaren Apps"});

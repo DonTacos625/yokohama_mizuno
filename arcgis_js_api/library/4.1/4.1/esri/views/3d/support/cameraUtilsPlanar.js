@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../geometry/Extent","./mathUtils","./projectionUtils","../lib/glMatrix","./cameraUtilsInternal"],function(e,t,r,i,n){function a(e,r,i){var n=p.create(),a=p.create();return m.identity(y),m.rotateZ(y,-t.deg2rad(r)),m.rotateX(y,t.deg2rad(i)),m.multiplyVec3(y,g,n),p.scale(n,-1),m.multiplyVec3(y,f,a),{direction:n,up:a}}function o(e,t,r,i){return n.directionToHeadingTilt(t,r,i,g,f)}function c(e,t,r,i){var n=a(e,r,i),o=p.add(p.scale(n.direction,-t,p.create()),e);return{up:n.up,eye:o,heading:r,tilt:i}}function l(e,r,i){return t.rad2deg(i)}function d(e,r,i){return t.deg2rad(i)}function u(t,i,n,a,o){var c=t.renderSpatialReference,l=t.map&&t.spatialReference||i.spatialReference;return r.pointToVector(i,s,c),r.pointToVector(i,v,c),s[0]-=n/2,v[0]+=n/2,s[1]-=a/2,v[1]+=a/2,r.vectorToVector(s,c,s,l),r.vectorToVector(v,c,v,l),o?(o.xmin=s[0],o.ymin=s[1],o.xmax=v[0],o.ymax=v[1],o.spatialReference=l):o=new e(s[0],s[1],v[0],v[1],l),o}var T={headingTiltToDirectionUp:a,directionToHeadingTilt:o,eyeForCenterWithHeadingTilt:c,lookAtTiltToEyeTilt:l,eyeTiltToLookAtTilt:d,toExtent:u},p=i.vec3d,m=i.mat4d,f=p.createFrom(0,1,0),g=p.createFrom(0,0,1),y=m.create(),s=p.create(),v=p.create();return T});
+//>>built
+define(["../../../geometry/Extent","./mathUtils","./projectionUtils","../lib/glMatrix","./cameraUtilsInternal"],function(q,g,k,l,r){function m(a,b,s){a=d.create();var c=d.create();e.identity(h);e.rotateZ(h,-g.deg2rad(b));e.rotateX(h,g.deg2rad(s));e.multiplyVec3(h,n,a);d.scale(a,-1);e.multiplyVec3(h,p,c);return{direction:a,up:c}}var t={headingTiltToDirectionUp:m,directionToHeadingTilt:function(a,c,b,d){return r.directionToHeadingTilt(c,b,d,n,p)},eyeForCenterWithHeadingTilt:function(a,c,b,e){var f=
+m(a,b,e);a=d.add(d.scale(f.direction,-c,d.create()),a);return{up:f.up,eye:a,heading:b,tilt:e}},lookAtTiltToEyeTilt:function(a,b,c){return g.rad2deg(c)},eyeTiltToLookAtTilt:function(a,c,b){return g.deg2rad(b)},toExtent:function(a,d,e,h,f){var g=a.renderSpatialReference;a=a.map&&a.spatialReference||d.spatialReference;k.pointToVector(d,b,g);k.pointToVector(d,c,g);b[0]-=e/2;c[0]+=e/2;b[1]-=h/2;c[1]+=h/2;k.vectorToVector(b,g,b,a);k.vectorToVector(c,g,c,a);f?(f.xmin=b[0],f.ymin=b[1],f.xmax=c[0],f.ymax=
+c[1],f.spatialReference=a):f=new q(b[0],b[1],c[0],c[1],a);return f}},d=l.vec3d,e=l.mat4d,p=d.createFrom(0,1,0),n=d.createFrom(0,0,1),h=e.create(),b=d.create(),c=d.create();return t});

@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../SpatialReference"],function(e,n,t){function r(e){return e*h}function i(e){return e*x}function o(e){return null!=e.wkid}function a(e,n,t,r,i){if(e=e,"point"===e.type)x=n(e.x,e.y,r,d),i.x=x[0],i.y=x[1];else if("extent"===e.type)M=n(e.xmin,e.ymin,r,d),i.xmin=M[0],i.ymin=M[1],g=n(e.xmax,e.ymax,r,d),i.xmax=g[0],i.ymax=g[1];else if("polyline"===e.type||"polygon"===e.type){for(var o="polyline"===e.type,a=o?e.paths:e.rings,c=[],l=void 0,u=0,p=a.length;p>u;u++){var f=a[u];l=[],c.push(l);for(var s=0,v=f.length;v>s;s++)l.push(n(f[s][0],f[s][1],r))}o?i.paths=c:i.rings=c}else if("multipoint"===e.type){for(var y=e.points,h=[],u=0,p=y.length;p>u;u++)h[u]=n(y[u][0],y[u][1],r);i.points=h}return i.spatialReference=t,i;var x,M,g}function c(e,n){var t=e&&(o(e)?e:e.spatialReference),r=n&&(o(n)?n:n.spatialReference);return t&&r?r.equals(t)?!0:r.isWebMercator&&4326===t.wkid||t.isWebMercator&&4326===r.wkid:!1}function l(e,n){var r=e&&e.spatialReference,i=n&&(o(n)?n:n.spatialReference);return c(r,i)?r.equals(i)?e.clone():i.isWebMercator?a(e,u,t.WebMercator,!1,e.clone()):4326===i.wkid?a(e,p,t.WGS84,!1,e.clone()):null:null}function u(e,n,t,r){void 0===r&&(r=[0,0]),n>89.99999?n=89.99999:-89.99999>n&&(n=-89.99999);var o=i(n);return r[0]=i(e)*v,r[1]=.5*v*Math.log((1+Math.sin(o))/(1-Math.sin(o))),r}function p(e,n,t,i){void 0===t&&(t=!1),void 0===i&&(i=[0,0]);var o=r(e/v);return i[0]=t?o:o-360*Math.floor((o+180)/360),i[1]=r(y/2-2*Math.atan(Math.exp(-1*n/v))),i}function f(e,n,r){return void 0===n&&(n=!1),void 0===r&&(r=e.clone()),a(e,u,t.WebMercator,n,r)}function s(e,n,r){return void 0===n&&(n=!1),void 0===r&&(r=e.clone()),a(e,p,t.WGS84,n,r)}var v=6378137,y=3.141592653589793,h=57.29577951308232,x=.017453292519943,d=[0,0];n.canProject=c,n.project=l,n.lngLatToXY=u,n.xyToLngLat=p,n.geographicToWebMercator=f,n.webMercatorToGeographic=s});
+//>>built
+define(["require","exports","../SpatialReference"],function(w,e,g){function h(a,b,d,c,f){if("point"===a.type)b=b(a.x,a.y,c,q),f.x=b[0],f.y=b[1];else if("extent"===a.type)l=b(a.xmin,a.ymin,c,q),f.xmin=l[0],f.ymin=l[1],b=b(a.xmax,a.ymax,c,q),f.xmax=b[0],f.ymax=b[1];else if("polyline"===a.type||"polygon"===a.type){var e="polyline"===a.type,m=e?a.paths:a.rings,g=[],h=void 0;a=0;for(l=m.length;a<l;a++){var k=m[a],h=[];g.push(h);for(var p=0,n=k.length;p<n;p++)h.push(b(k[p][0],k[p][1],c))}e?f.paths=g:f.rings=
+g}else if("multipoint"===a.type){e=a.points;m=[];a=0;for(l=e.length;a<l;a++)m[a]=b(e[a][0],e[a][1],c);f.points=m}f.spatialReference=d;return f;var l}function s(a,b){var d=a&&(null!=a.wkid?a:a.spatialReference),c=b&&(null!=b.wkid?b:b.spatialReference);return!d||!c?!1:c.equals(d)?!0:c.isWebMercator&&4326===d.wkid||d.isWebMercator&&4326===c.wkid}function n(a,b,d,c){void 0===c&&(c=[0,0]);89.99999<b?b=89.99999:-89.99999>b&&(b=-89.99999);b*=t;c[0]=a*t*k;c[1]=0.5*k*Math.log((1+Math.sin(b))/(1-Math.sin(b)));
+return c}function r(a,b,d,c){void 0===d&&(d=!1);void 0===c&&(c=[0,0]);a=a/k*u;c[0]=d?a:a-360*Math.floor((a+180)/360);d=c;b=v/2-2*Math.atan(Math.exp(-1*b/k));d[1]=b*u;return c}var k=6378137,v=3.141592653589793,u=57.29577951308232,t=0.017453292519943,q=[0,0];e.canProject=s;e.project=function(a,b){var d=a&&a.spatialReference,c=b&&(null!=b.wkid?b:b.spatialReference);return!s(d,c)?null:d.equals(c)?a.clone():c.isWebMercator?h(a,n,g.WebMercator,!1,a.clone()):4326===c.wkid?h(a,r,g.WGS84,!1,a.clone()):null};
+e.lngLatToXY=n;e.xyToLngLat=r;e.geographicToWebMercator=function(a,b,d){void 0===b&&(b=!1);void 0===d&&(d=a.clone());return h(a,n,g.WebMercator,b,d)};e.webMercatorToGeographic=function(a,b,d){void 0===b&&(b=!1);void 0===d&&(d=a.clone());return h(a,r,g.WGS84,b,d)}});

@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../core/Collection","../../../core/Promise","../../../core/promiseUtils","../../../core/Error","../../../tasks/support/FeatureSet","../../../Graphic","../QueryEngine"],function(e,r,t,n,u,i,s){var y="MemorySource",o="Not ready to execute query",c=e.ofType(i).createSubclass([r],{properties:{layer:{value:null},_queryEngine:{value:null,dependsOn:["layer.loaded"],get:function(){return this.get("layer.loaded")?new s({features:this,objectIdField:this.layer.objectIdField}):null}}},queryFeatures:function(e){return this._queryEngine?this._queryEngine.queryFeatures(e).then(function(e){var r=new u;return r.features=e,r}):this._rejectQuery(o)},queryObjectIds:function(e){return this._queryEngine?this._queryEngine.queryObjectIds(e):this._rejectQuery(o)},queryFeatureCount:function(e){return this._queryEngine?this._queryEngine.queryFeatureCount(e):this._rejectQuery(o)},queryExtent:function(e){return this._queryEngine?this._queryEngine.queryExtent(e):this._rejectQuery(o)},_rejectQuery:function(e){return t.reject(new n(y,e))}});return c});
+//>>built
+define("../../../core/Collection ../../../core/Promise ../../../core/promiseUtils ../../../core/Error ../../../tasks/support/FeatureSet ../../../Graphic ../QueryEngine".split(" "),function(c,d,e,f,g,h,k){return c.ofType(h).createSubclass([d],{properties:{layer:{value:null},_queryEngine:{value:null,dependsOn:["layer.loaded"],get:function(){return this.get("layer.loaded")?new k({features:this,objectIdField:this.layer.objectIdField}):null}}},queryFeatures:function(a){return this._queryEngine?this._queryEngine.queryFeatures(a).then(function(a){var b=
+new g;b.features=a;return b}):this._rejectQuery("Not ready to execute query")},queryObjectIds:function(a){return this._queryEngine?this._queryEngine.queryObjectIds(a):this._rejectQuery("Not ready to execute query")},queryFeatureCount:function(a){return this._queryEngine?this._queryEngine.queryFeatureCount(a):this._rejectQuery("Not ready to execute query")},queryExtent:function(a){return this._queryEngine?this._queryEngine.queryExtent(a):this._rejectQuery("Not ready to execute query")},_rejectQuery:function(a){return e.reject(new f("MemorySource",
+a))}})});

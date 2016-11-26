@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["dojo/_base/array","dojo/Deferred","dojo/when"],function(e,r,n){"use strict";var o=e.forEach;return function(e){function t(e,r){f[r]=e,c.progress([e,r]),0===--l&&c.resolve(f)}var a,s;e instanceof Array?s=e:e&&"object"==typeof e&&(a=e);var f,i=[];if(a){s=[];for(var u in a)Object.hasOwnProperty.call(a,u)&&(i.push(u),s.push(a[u]));f={}}else s&&(f=[]);if(!s||!s.length)return(new r).resolve(f);var c=new r;c.promise.always(function(){f=i=null});var l=s.length;return o(s,function(e,r){a||i.push(r),n(e,function(e){t(e,i[r])},function(e){t(e,i[r])})}),c.promise}});
+//>>built
+define(["dojo/_base/array","dojo/Deferred","dojo/when"],function(g,k,m){var n=g.forEach;return function(d){function l(a,c){b[c]=a;f.progress([a,c]);0===--g&&f.resolve(b)}var c,a;d instanceof Array?a=d:d&&"object"===typeof d&&(c=d);var b,e=[];if(c){a=[];for(var h in c)Object.hasOwnProperty.call(c,h)&&(e.push(h),a.push(c[h]));b={}}else a&&(b=[]);if(!a||!a.length)return(new k).resolve(b);var f=new k;f.promise.always(function(){b=e=null});var g=a.length;n(a,function(a,b){c||e.push(b);m(a,function(a){l(a,
+e[b])},function(a){l(a,e[b])})});return f.promise}});

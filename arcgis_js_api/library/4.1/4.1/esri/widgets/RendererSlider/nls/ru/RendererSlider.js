@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"Среднее : ${avg}",count:"Число : ${count}",percent:"${num}%",high:"Высокий",low:"Низкий",color:{changeMinMaxToolTIp:"Введите значение.",handleToolTip:"Установите соответствие значений для цветов.",maxValueToolTip:"Введите самое большое ожидаемое значение.",minValueToolTip:"Введите самое малое ожидаемое значение.",changeSymbol:"Изменить символ"},size:{handleToolTip:"Укажите соответствие значений для размера символов.",sizeInputBoxLines:"Задайте толщину линии от 0 до 18 пикселов.",sizeInputBoxPoints:"Задайте размер символа от 1 до 120 пикселов"}});
+//>>built
+define({statsAvg:"\u0421\u0440\u0435\u0434\u043d\u0435\u0435 : ${avg}",count:"\u0427\u0438\u0441\u043b\u043e : ${count}",percent:"${num}%",high:"\u0412\u044b\u0441\u043e\u043a\u0438\u0439",low:"\u041d\u0438\u0437\u043a\u0438\u0439",color:{changeMinMaxToolTIp:"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435.",handleToolTip:"\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u0435 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0446\u0432\u0435\u0442\u043e\u0432.",
+maxValueToolTip:"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0430\u043c\u043e\u0435 \u0431\u043e\u043b\u044c\u0448\u043e\u0435 \u043e\u0436\u0438\u0434\u0430\u0435\u043c\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435.",minValueToolTip:"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0430\u043c\u043e\u0435 \u043c\u0430\u043b\u043e\u0435 \u043e\u0436\u0438\u0434\u0430\u0435\u043c\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435.",changeSymbol:"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0441\u0438\u043c\u0432\u043e\u043b"},
+size:{handleToolTip:"\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432.",sizeInputBoxLines:"\u0417\u0430\u0434\u0430\u0439\u0442\u0435 \u0442\u043e\u043b\u0449\u0438\u043d\u0443 \u043b\u0438\u043d\u0438\u0438 \u043e\u0442 0 \u0434\u043e 18 \u043f\u0438\u043a\u0441\u0435\u043b\u043e\u0432.",
+sizeInputBoxPoints:"\u0417\u0430\u0434\u0430\u0439\u0442\u0435 \u0440\u0430\u0437\u043c\u0435\u0440 \u0441\u0438\u043c\u0432\u043e\u043b\u0430 \u043e\u0442 1 \u0434\u043e 120 \u043f\u0438\u043a\u0441\u0435\u043b\u043e\u0432"}});

@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["dijit/registry","dojo/_base/lang","dojo/dom","dojo/dom-construct","dojox/widget/Standby","require"],function(o,a,r,t,e,n){var d={_defaultStandbyParams:{image:n.toUrl("../images/loading-throb.gif"),color:"#fff",opacity:.75,duration:200},create:function(o){var a;return(o=this._normalizeParams(o))?(a=new e(d._toStandbyParams(o)),t.place(a.domNode,document.body),d._createHandle(a)):void 0},_normalizeParams:function(a){var t;if(a){if(a.target)return a;if("string"==typeof a){var e=o.byId(a);t=e?e.domNode:r.byId(a)}else t=a.domNode?a.domNode:r.byId(a);if(t)return{target:t}}},_toStandbyParams:function(o){return o.imageUrl&&(o.image=o.imageUrl),o.backgroundColor&&(o.color=o.backgroundColor),o.backgroundOpacity&&(o.opacity=o.backgroundOpacity),o.fadeDuration&&(o.duration=o.fadeDuration),a.mixin({},d._defaultStandbyParams,o)},_createHandle:function(o){return{show:function(){o&&o.show()},hide:function(){o&&o.hide()},destroy:function(){o&&(o.destroy(),o=null)}}}};return d});
+//>>built
+define("dijit/registry dojo/_base/lang dojo/dom dojo/dom-construct dojox/widget/Standby require".split(" "),function(d,e,c,f,g,h){var b={_defaultStandbyParams:{image:h.toUrl("../images/loading-throb.gif"),color:"#fff",opacity:0.75,duration:200},create:function(a){if(a=this._normalizeParams(a))return a=new g(b._toStandbyParams(a)),f.place(a.domNode,document.body),b._createHandle(a)},_normalizeParams:function(a){if(a){if(a.target)return a;if("string"===typeof a){var b=d.byId(a);a=b?b.domNode:c.byId(a)}else a=
+a.domNode?a.domNode:c.byId(a);if(a)return{target:a}}},_toStandbyParams:function(a){a.imageUrl&&(a.image=a.imageUrl);a.backgroundColor&&(a.color=a.backgroundColor);a.backgroundOpacity&&(a.opacity=a.backgroundOpacity);a.fadeDuration&&(a.duration=a.fadeDuration);return e.mixin({},b._defaultStandbyParams,a)},_createHandle:function(a){return{show:function(){a&&a.show()},hide:function(){a&&a.hide()},destroy:function(){a&&(a.destroy(),a=null)}}}};return b});

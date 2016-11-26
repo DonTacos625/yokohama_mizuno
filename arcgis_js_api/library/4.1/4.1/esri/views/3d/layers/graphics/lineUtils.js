@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../../webgl-engine/materials/RibbonLineMaterial","../../webgl-engine/materials/NativeLineMaterial","../../webgl-engine/lib/GeometryData","../../webgl-engine/lib/Util"],function(e,n,t,r,i,a){function o(e){var n={width:e.width,color:e.color,miterLimit:e.miterLimit,polygonOffset:!0};return"miter"===e.join||"bevel"===e.join?n.join=e.join:(n.join="miter",e.join&&console.warn("unsupported join type for line symbol: "+e.join)),new t(n,e.idHint+"_ribbonlinemat")}function l(e){return new r(e.width,e.color,e.idHint+"_nativelinemat")}function s(e,n){for(var t,r=0;r<n.length;r++)for(var i=e[r],a=0;a<n[r].length;a++){for(var o=n[r][a],l=[],s=o[0];s<o[1];s++)l.push(i[s]);l.length>0&&t.push(l)}return t}function g(e){var n=e.length;return e[0]===e[n-3]&&e[1]===e[n-2]&&e[2]===e[n-1]}function v(e,n,t,r,a,o){var l,s,v,m;if(t=t&&!g(e)){for(var u=new Float32Array(e.length+3),w=0;w<e.length;w++)u[w]=e[w];var c=u.length;u[c-3]=e[0],u[c-2]=e[1],u[c-1]=e[2],s=u,l=e.length/3+1,v=new Uint32Array(2*(l-1)),m=new Uint32Array(2*(l-1))}else l=e.length/3,v=new Uint32Array(2*(l-1)),m=new Uint32Array(2*(l-1)),s=e;var d=new Float32Array(1);d[0]=a;for(var y=0,b=0,h=0;l-1>h;h++)v[y++]=h,v[y++]=h+1,m[b++]=0,m[b++]=0;var O={},p={};O[f.POSITION]=v,O[f.COLOR]=m,O[f.SIZE]=m,p[f.POSITION]={size:3,data:s},p[f.COLOR]={size:4,data:r},p[f.SIZE]={size:1,data:d},n&&(O.mapPos=v,p.mapPos={size:3,data:n});var I=[{type:"line",indices:O,positionKey:f.POSITION}];if(o){var j={faces:I[0],vertexAttr:p,id:i.getNewId().toString()};return j}return new i(I,p)}var f=a.VertexAttrConstants;n.createRibbonMaterial=o,n.createNativeMaterial=l,n.createOutlineGeometryFromSegments=s,n.isClosed=g,n.createPolylineGeometry=v});
+//>>built
+define("require exports ../../webgl-engine/materials/RibbonLineMaterial ../../webgl-engine/materials/NativeLineMaterial ../../webgl-engine/lib/GeometryData ../../webgl-engine/lib/Util".split(" "),function(t,g,m,r,n,s){function p(a){var c=a.length;return a[0]===a[c-3]&&a[1]===a[c-2]&&a[2]===a[c-1]}var h=s.VertexAttrConstants;g.createRibbonMaterial=function(a){var c={width:a.width,color:a.color,miterLimit:a.miterLimit,polygonOffset:!0};"miter"===a.join||"bevel"===a.join?c.join=a.join:(c.join="miter",
+a.join&&console.warn("unsupported join type for line symbol: "+a.join));return new m(c,a.idHint+"_ribbonlinemat")};g.createNativeMaterial=function(a){return new r(a.width,a.color,a.idHint+"_nativelinemat")};g.createOutlineGeometryFromSegments=function(a,c){for(var e=0;e<c.length;e++)for(var h=a[e],f=0;f<c[e].length;f++){for(var g=c[e][f],d=[],b=g[0];b<g[1];b++)d.push(h[b]);0<d.length&&(void 0).push(d)}};g.isClosed=p;g.createPolylineGeometry=function(a,c,e,g,f,m){var d,b,k;if(e=e&&!p(a)){e=new Float32Array(a.length+
+3);for(b=0;b<a.length;b++)e[b]=a[b];b=e.length;e[b-3]=a[0];e[b-2]=a[1];e[b-1]=a[2];d=a.length/3+1;b=new Uint32Array(2*(d-1));k=new Uint32Array(2*(d-1))}else d=a.length/3,b=new Uint32Array(2*(d-1)),k=new Uint32Array(2*(d-1)),e=a;a=new Float32Array(1);a[0]=f;for(var q=f=0,l=0;l<d-1;l++)b[f++]=l,b[f++]=l+1,k[q++]=0,k[q++]=0;d={};f={};d[h.POSITION]=b;d[h.COLOR]=k;d[h.SIZE]=k;f[h.POSITION]={size:3,data:e};f[h.COLOR]={size:4,data:g};f[h.SIZE]={size:1,data:a};c&&(d.mapPos=b,f.mapPos={size:3,data:c});c=[{type:"line",
+indices:d,positionKey:h.POSITION}];return m?{faces:c[0],vertexAttr:f,id:n.getNewId().toString()}:new n(c,f)}});

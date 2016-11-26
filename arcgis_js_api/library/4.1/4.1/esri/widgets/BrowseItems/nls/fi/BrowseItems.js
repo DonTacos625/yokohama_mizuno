@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Karttatasolla ${name} ei ole suodatukseen soveltuvia kenttiä.",addToViewer:"Lisää karttataso karttaan",noItemsToDisplay:"Tällä hetkellä näytettävissä olevia kohteita ei ole.",searchFor:"Etsi",searching:"Etsitään…",items:{organizationLabel:"Oma organisaatio",onlineLabel:"ArcGIS Online",contentLabel:"Oma sisältö",favoritesLabel:"Omat suosikit"},title:"Valitse Web-kartta",searchTitle:"Etsi",ok:"OK",cancel:"Peruuta",placeholder:"Anna hakuehto",instructionsLeft:"Mitä haluat tehdä?",instructionsRight:"Valitse muunneltavissa oleva sovellus.",go:"Siirry",selectDetails:"VALITSE",configure:"Luo",close:"Sulje",learnMoreConfigurableApps:"Lisätietoja muunneltavissa olevista sovelluksista"});
+//>>built
+define({noFilterFields:"Karttatasolla ${name} ei ole suodatukseen soveltuvia kentti\u00e4.",addToViewer:"Lis\u00e4\u00e4 karttataso karttaan",noItemsToDisplay:"T\u00e4ll\u00e4 hetkell\u00e4 n\u00e4ytett\u00e4viss\u00e4 olevia kohteita ei ole.",searchFor:"Etsi",searching:"Etsit\u00e4\u00e4n\u2026",items:{organizationLabel:"Oma organisaatio",onlineLabel:"ArcGIS Online",contentLabel:"Oma sis\u00e4lt\u00f6",favoritesLabel:"Omat suosikit"},title:"Valitse Web-kartta",searchTitle:"Etsi",ok:"OK",cancel:"Peruuta",
+placeholder:"Anna hakuehto",instructionsLeft:"Mit\u00e4 haluat tehd\u00e4?",instructionsRight:"Valitse muunneltavissa oleva sovellus.",go:"Siirry",selectDetails:"VALITSE",configure:"Luo",close:"Sulje",learnMoreConfigurableApps:"Lis\u00e4tietoja muunneltavissa olevista sovelluksista"});

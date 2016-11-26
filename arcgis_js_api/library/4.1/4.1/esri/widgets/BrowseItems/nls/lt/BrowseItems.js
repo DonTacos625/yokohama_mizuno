@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Sluoksnis ${name} neturi laukų, kurie gali būti naudojami filtravimui.",addToViewer:"Pridėti sluoksnį į žemėlapį",noItemsToDisplay:"Šiuo metu nėra kriterijus atitinkančių elementų.",searchFor:"Ieškoti ko",searching:"Ieškoma",items:{organizationLabel:"Organizacija",onlineLabel:"ArcGIS Online",contentLabel:"Mano turinys",favoritesLabel:"Mėgstamiausi"},title:"Pasirinkti internetinį žemėlapį",searchTitle:"Ieškoti",ok:"Gerai",cancel:"Atšaukti",placeholder:"Įveskite paieškos frazę",instructionsLeft:"Ką norite daryti?",instructionsRight:"Pasirinkti konfigūruojamą aplikaciją.",go:"Vykdyti",selectDetails:"PASIRINKTI",configure:"Kurti",close:"Uždaryti",learnMoreConfigurableApps:"Sužinokite daugiau apie konfigūruojamas aplikacijas"});
+//>>built
+define({noFilterFields:"Sluoksnis ${name} neturi lauk\u0173, kurie gali b\u016bti naudojami filtravimui.",addToViewer:"Prid\u0117ti sluoksn\u012f \u012f \u017eem\u0117lap\u012f",noItemsToDisplay:"\u0160iuo metu n\u0117ra kriterijus atitinkan\u010di\u0173 element\u0173.",searchFor:"Ie\u0161koti ko",searching:"Ie\u0161koma",items:{organizationLabel:"Organizacija",onlineLabel:"ArcGIS Online",contentLabel:"Mano turinys",favoritesLabel:"M\u0117gstamiausi"},title:"Pasirinkti internetin\u012f \u017eem\u0117lap\u012f",
+searchTitle:"Ie\u0161koti",ok:"Gerai",cancel:"At\u0161aukti",placeholder:"\u012eveskite paie\u0161kos fraz\u0119",instructionsLeft:"K\u0105 norite daryti?",instructionsRight:"Pasirinkti konfig\u016bruojam\u0105 aplikacij\u0105.",go:"Vykdyti",selectDetails:"PASIRINKTI",configure:"Kurti",close:"U\u017edaryti",learnMoreConfigurableApps:"Su\u017einokite daugiau apie konfig\u016bruojamas aplikacijas"});

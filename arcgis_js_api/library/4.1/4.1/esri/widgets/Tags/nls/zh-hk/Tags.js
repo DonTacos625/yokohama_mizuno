@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({addTags:"增加標記",noTagsFound:"目前無相符的標記。",required:"需要一個或多個標記。"});
+//>>built
+define({addTags:"\u589e\u52a0\u6a19\u8a18",noTagsFound:"\u76ee\u524d\u7121\u76f8\u7b26\u7684\u6a19\u8a18\u3002",required:"\u9700\u8981\u4e00\u500b\u6216\u591a\u500b\u6a19\u8a18\u3002"});

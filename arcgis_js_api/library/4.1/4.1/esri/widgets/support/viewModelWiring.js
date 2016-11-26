@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../core/watchUtils"],function(e){function t(e){var t="viewModel."+e;return function(){return this.get(t)}}function n(e){return function(t){var n=this.get("viewModel");n&&n.set(e,t)}}function r(e){var t="viewModel."+e;return function(){var e=this.get(t);return e?e.apply(this.viewModel,arguments):void 0}}function i(t,n){var r=o(t,n),i=e.init(t,"viewModel",function(e,i){r.forEach(function(e){e.remove()}),r.length=0,e&&(r=o(t,n)),t.own.apply(t,r)});t.own(i)}function o(e,t){return Array.isArray(t)||(t=[t]),t.map(function(t){return e.viewModel.on(t,function(n){e.emit(t,n)})})}return{createGetterDelegate:t,createSetterDelegate:n,createMethodDelegate:r,setUpEventDelegates:i}});
+//>>built
+define(["../../core/watchUtils"],function(e){function f(a,b){Array.isArray(b)||(b=[b]);return b.map(function(b){return a.viewModel.on(b,function(d){a.emit(b,d)})})}return{createGetterDelegate:function(a){var b="viewModel."+a;return function(){return this.get(b)}},createSetterDelegate:function(a){return function(b){var c=this.get("viewModel");c&&c.set(a,b)}},createMethodDelegate:function(a){var b="viewModel."+a;return function(){var a=this.get(b);if(a)return a.apply(this.viewModel,arguments)}},setUpEventDelegates:function(a,
+b){var c=f(a,b),d=e.init(a,"viewModel",function(d,e){c.forEach(function(a){a.remove()});c.length=0;d&&(c=f(a,b));a.own.apply(a,c)});a.own(d)}}});

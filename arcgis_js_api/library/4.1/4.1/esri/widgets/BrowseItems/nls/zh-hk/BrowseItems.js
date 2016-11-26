@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"圖層 ${name} 不包含可用於篩選的欄位。",addToViewer:"將圖層新增到地圖",noItemsToDisplay:"目前沒有可顯示的項目。",searchFor:"搜尋內容",searching:"正在搜尋",items:{organizationLabel:"我的組織",onlineLabel:"ArcGIS Online",contentLabel:"我的內容",favoritesLabel:"我的最愛"},title:"選擇 Web 地圖",searchTitle:"搜尋",ok:"確定",cancel:"取消",placeholder:"輸入搜尋詞彙",instructionsLeft:"您希望操作的是什麼?",instructionsRight:"選擇一個可配置的應用程式。",go:"轉到",selectDetails:"選擇",configure:"建立(C)",close:"關閉",learnMoreConfigurableApps:"瞭解有關可配置應用程式的詳細資訊"});
+//>>built
+define({noFilterFields:"\u5716\u5c64 ${name} \u4e0d\u5305\u542b\u53ef\u7528\u65bc\u7be9\u9078\u7684\u6b04\u4f4d\u3002",addToViewer:"\u5c07\u5716\u5c64\u65b0\u589e\u5230\u5730\u5716",noItemsToDisplay:"\u76ee\u524d\u6c92\u6709\u53ef\u986f\u793a\u7684\u9805\u76ee\u3002",searchFor:"\u641c\u5c0b\u5167\u5bb9",searching:"\u6b63\u5728\u641c\u5c0b",items:{organizationLabel:"\u6211\u7684\u7d44\u7e54",onlineLabel:"ArcGIS Online",contentLabel:"\u6211\u7684\u5167\u5bb9",favoritesLabel:"\u6211\u7684\u6700\u611b"},
+title:"\u9078\u64c7 Web \u5730\u5716",searchTitle:"\u641c\u5c0b",ok:"\u78ba\u5b9a",cancel:"\u53d6\u6d88",placeholder:"\u8f38\u5165\u641c\u5c0b\u8a5e\u5f59",instructionsLeft:"\u60a8\u5e0c\u671b\u64cd\u4f5c\u7684\u662f\u4ec0\u9ebc?",instructionsRight:"\u9078\u64c7\u4e00\u500b\u53ef\u914d\u7f6e\u7684\u61c9\u7528\u7a0b\u5f0f\u3002",go:"\u8f49\u5230",selectDetails:"\u9078\u64c7",configure:"\u5efa\u7acb(C)",close:"\u95dc\u9589",learnMoreConfigurableApps:"\u77ad\u89e3\u6709\u95dc\u53ef\u914d\u7f6e\u61c9\u7528\u7a0b\u5f0f\u7684\u8a73\u7d30\u8cc7\u8a0a"});

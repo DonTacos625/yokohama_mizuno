@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"Informationen",add:"Hinzufügen",all:"Alle",apply:"Übernehmen",auth:{logOut:"Abmelden",signIn:"Anmelden"},back:"Zurück",cancel:"Abbrechen",change:"Ändern",clear:"Löschen",close:"Schließen",configure:"Konfigurieren",control:{pause:"Anhalten",play:"Wiedergeben",resume:"Fortsetzen",stop:"Stoppen"},copy:"Kopieren",create:"Erstellen",cut:"Ausschneiden","delete":"Löschen",details:"Details",edit:"Bearbeiten",error:"Fehler",esri:"Esri",exit:"Beenden",fieldsSummary:"Liste der Attribute und Werte",find:"Suchen",form:{no:"Nein",ok:"OK",password:"Kennwort",submit:"Übermitteln",username:"Benutzername",yes:"Ja"},help:"Hilfe",home:"Startseite",info:"Info",information:"Informationen",layer:"Layer",loading:"Wird geladen",maximize:"Maximieren",menu:"Menü",more:"Weitere",none:"Kein",open:"Öffnen",pagination:{first:"Erster",last:"Letzte(r)",next:"Nächstes",page:"Seite",pageText:"{index} von {total}",previous:"Zurück"},paste:"Einfügen",preview:"Vorschau",print:"Drucken",publish:"Veröffentlichen",redo:"Wiederholen",refresh:"Aktualisieren",remove:"Entfernen",rename:"Umbenennen",reset:"Zurücksetzen",restore:"Wiederherstellen",save:"Speichern",search:"Suche",searching:"Suchen",select:"Auswählen",settings:"Einstellungen",sort:"Sortieren",share:"Freigeben",title:"Titel",untitled:"Unbenannt",upload:"Hochladen",undo:"Rückgängig",view:"Ansicht",visibility:{hide:"Ausblenden",show:"Anzeigen",toggle:"Umschalten"},warning:"Warnung"});
+//>>built
+define({about:"Informationen",add:"Hinzuf\u00fcgen",all:"Alle",apply:"\u00dcbernehmen",auth:{logOut:"Abmelden",signIn:"Anmelden"},back:"Zur\u00fcck",cancel:"Abbrechen",change:"\u00c4ndern",clear:"L\u00f6schen",close:"Schlie\u00dfen",configure:"Konfigurieren",control:{pause:"Anhalten",play:"Wiedergeben",resume:"Fortsetzen",stop:"Stoppen"},copy:"Kopieren",create:"Erstellen",cut:"Ausschneiden","delete":"L\u00f6schen",details:"Details",edit:"Bearbeiten",error:"Fehler",esri:"Esri",exit:"Beenden",fieldsSummary:"Liste der Attribute und Werte",
+find:"Suchen",form:{no:"Nein",ok:"OK",password:"Kennwort",submit:"\u00dcbermitteln",username:"Benutzername",yes:"Ja"},help:"Hilfe",home:"Startseite",info:"Info",information:"Informationen",layer:"Layer",loading:"Wird geladen",maximize:"Maximieren",menu:"Men\u00fc",more:"Weitere",none:"Kein",open:"\u00d6ffnen",pagination:{first:"Erster",last:"Letzte(r)",next:"N\u00e4chstes",page:"Seite",pageText:"{index} von {total}",previous:"Zur\u00fcck"},paste:"Einf\u00fcgen",preview:"Vorschau",print:"Drucken",
+publish:"Ver\u00f6ffentlichen",redo:"Wiederholen",refresh:"Aktualisieren",remove:"Entfernen",rename:"Umbenennen",reset:"Zur\u00fccksetzen",restore:"Wiederherstellen",save:"Speichern",search:"Suche",searching:"Suchen",select:"Ausw\u00e4hlen",settings:"Einstellungen",sort:"Sortieren",share:"Freigeben",title:"Titel",untitled:"Unbenannt",upload:"Hochladen",undo:"R\u00fcckg\u00e4ngig",view:"Ansicht",visibility:{hide:"Ausblenden",show:"Anzeigen",toggle:"Umschalten"},warning:"Warnung"});

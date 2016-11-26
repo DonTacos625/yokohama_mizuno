@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({statsAvg:"Keskiarvo: ${avg}",count:"Määrä: ${count}",percent:"${num} %",high:"Suuri",low:"Alhainen",color:{changeMinMaxToolTIp:"Kirjoita arvo.",handleToolTip:"Etsi aineistoarvojen ja värien vastineet.",maxValueToolTip:"Kirjoita suurin odotettu aineistoarvo.",minValueToolTip:"Kirjoita pienin odotettu aineistoarvo.",changeSymbol:"Muuta symbolia"},size:{handleToolTip:"Etsi aineistoarvojen ja symbolin koon vastineet.",sizeInputBoxLines:"Määritä paksuudeksi 0–18 pikseliä.",sizeInputBoxPoints:"Määritä symbolin kooksi 1–120 pikseliä"}});
+//>>built
+define({statsAvg:"Keskiarvo: ${avg}",count:"M\u00e4\u00e4r\u00e4: ${count}",percent:"${num} %",high:"Suuri",low:"Alhainen",color:{changeMinMaxToolTIp:"Kirjoita arvo.",handleToolTip:"Etsi aineistoarvojen ja v\u00e4rien vastineet.",maxValueToolTip:"Kirjoita suurin odotettu aineistoarvo.",minValueToolTip:"Kirjoita pienin odotettu aineistoarvo.",changeSymbol:"Muuta symbolia"},size:{handleToolTip:"Etsi aineistoarvojen ja symbolin koon vastineet.",sizeInputBoxLines:"M\u00e4\u00e4rit\u00e4 paksuudeksi 0\u201318 pikseli\u00e4.",
+sizeInputBoxPoints:"M\u00e4\u00e4rit\u00e4 symbolin kooksi 1\u2013120 pikseli\u00e4"}});

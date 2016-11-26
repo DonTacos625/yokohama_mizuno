@@ -1,25 +1,4 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../geometry/ScreenPoint"],function(e){return{toScreenPoint:function(n,r,t){var o;return t||(t=new e),Array.isArray(n)?(o=n,n=o[0],r=o[1]):"object"==typeof n&&(o=n,n=o.x,r=o.y),t.x=n,t.y=r,t}}});
+//>>built
+define(["../../geometry/ScreenPoint"],function(d){return{toScreenPoint:function(b,a,c){c||(c=new d);Array.isArray(b)?(a=b,b=a[0],a=a[1]):"object"===typeof b&&(a=b,b=a.x,a=a.y);c.x=b;c.y=a;return c}}});

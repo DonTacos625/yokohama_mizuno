@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({transparency:"Слайд",suggested:"Рекомендуем",recent:"Последние",more:"Еще",moreColorsTooltip:"Показать больше цветов.",paletteTooltip:"Выбрать цвет.",noColorTooltip:"Нет цвета",hexInputTooltip:"Пользовательский цвет в шестнадцатиричной записи (#FFFF00)."});
+//>>built
+define({transparency:"\u0421\u043b\u0430\u0439\u0434",suggested:"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c",recent:"\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435",more:"\u0415\u0449\u0435",moreColorsTooltip:"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435 \u0446\u0432\u0435\u0442\u043e\u0432.",paletteTooltip:"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u0446\u0432\u0435\u0442.",noColorTooltip:"\u041d\u0435\u0442 \u0446\u0432\u0435\u0442\u0430",
+hexInputTooltip:"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0439 \u0446\u0432\u0435\u0442 \u0432 \u0448\u0435\u0441\u0442\u043d\u0430\u0434\u0446\u0430\u0442\u0438\u0440\u0438\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0438\u0441\u0438 (#FFFF00)."});

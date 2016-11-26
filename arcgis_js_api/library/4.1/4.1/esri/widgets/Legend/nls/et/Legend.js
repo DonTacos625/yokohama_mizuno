@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({points:"Punktid",lines:"Jooned",polygons:"Polügoonid",creatingLegend:"Legendi loomine",noLegend:"Legend puudub",dotValue:"1 punkt = {value} {unit}",currentObservations:"Praegused vaatlused",previousObservations:"Eelmised vaatlused",high:"Tugev",low:"Nõrk",esriMetersPerSecond:"m/sek",esriKilometersPerHour:"km/t",esriKnots:"sõlme",esriFeetPerSecond:"jalga/sek",esriMilesPerHour:"miili/t",showField:"{field}",showNormField:"{field} jagatud väärtusega {normField}",showNormPct:"{field} protsendina koguarvust",showRatio:"Väärtuse {field} ja {normField} suhe",showRatioPercent:"{field} protsendina väärtusest {normField}",showRatioPercentTotal:"{field} protsendina väärtusest {field} ja {normField}"});
+//>>built
+define({points:"Punktid",lines:"Jooned",polygons:"Pol\u00fcgoonid",creatingLegend:"Legendi loomine",noLegend:"Legend puudub",dotValue:"1\u00a0punkt \x3d {value} {unit}",currentObservations:"Praegused vaatlused",previousObservations:"Eelmised vaatlused",high:"Tugev",low:"N\u00f5rk",esriMetersPerSecond:"m/sek",esriKilometersPerHour:"km/t",esriKnots:"s\u00f5lme",esriFeetPerSecond:"jalga/sek",esriMilesPerHour:"miili/t",showField:"{field}",showNormField:"{field}\u00a0jagatud v\u00e4\u00e4rtusega\u00a0{normField}",
+showNormPct:"{field} protsendina koguarvust",showRatio:"V\u00e4\u00e4rtuse {field} ja {normField} suhe",showRatioPercent:"{field} protsendina v\u00e4\u00e4rtusest {normField}",showRatioPercentTotal:"{field}\u00a0protsendina v\u00e4\u00e4rtusest\u00a0{field}\u00a0ja {normField}"});

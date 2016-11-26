@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["dojo/_base/lang","../../Color"],function(n,r){var t={equal:function(n,r){return n&&r&&n.r===r.r&&n.g===r.g&&n.b===r.b&&n.a===r.a},normalizeHex:function(r){return"#"+n.trim(r).replace(/#/g,"").substr(0,6)},normalizeColor:function(n){return new r(n)},isValidHex:function(n){return t.isShorthandHex(n)||t.isLonghandHex(n)},_shortHandHex:/^#[0-9A-F]{3}$/i,isShorthandHex:function(n){return n&&4===n.length&&t._shortHandHex.test(n)},_longhandHex:/^#[0-9A-F]{6}$/i,isLonghandHex:function(n){return n&&7===n.length&&t._longhandHex.test(n)},toHex:function(n){return t.normalizeColor(n).toHex()},getContrastingColor:function(n){return t.isBright(n)?this.darker(n):this.brighter(n,3)},isBright:function(n){var r=.299*n.r+.587*n.g+.114*n.b;return r>=127},darker:function(n,t){t=t?t:1;var e=Math.pow(.7,t);return new r([Math.round(n.r*e),Math.round(n.g*e),Math.round(n.b*e),n.a])},brighter:function(n,t){t=t?t:1;var e=Math.pow(.7,t),o=n.r,a=n.g,i=n.b,u=30;return u>o&&(o=u),u>a&&(a=u),u>i&&(i=u),new r([Math.min(255,Math.round(o/e)),Math.min(255,Math.round(a/e)),Math.min(255,Math.round(i/e)),n.a])}};return t});
+//>>built
+define(["dojo/_base/lang","../../Color"],function(k,d){var b={equal:function(a,c){return a&&c&&a.r===c.r&&a.g===c.g&&a.b===c.b&&a.a===c.a},normalizeHex:function(a){return"#"+k.trim(a).replace(/#/g,"").substr(0,6)},normalizeColor:function(a){return new d(a)},isValidHex:function(a){return b.isShorthandHex(a)||b.isLonghandHex(a)},_shortHandHex:/^#[0-9A-F]{3}$/i,isShorthandHex:function(a){return a&&4===a.length&&b._shortHandHex.test(a)},_longhandHex:/^#[0-9A-F]{6}$/i,isLonghandHex:function(a){return a&&
+7===a.length&&b._longhandHex.test(a)},toHex:function(a){return b.normalizeColor(a).toHex()},getContrastingColor:function(a){return b.isBright(a)?this.darker(a):this.brighter(a,3)},isBright:function(a){return 127<=0.299*a.r+0.587*a.g+0.114*a.b},darker:function(a,c){var b=Math.pow(0.7,c?c:1);return new d([Math.round(a.r*b),Math.round(a.g*b),Math.round(a.b*b),a.a])},brighter:function(a,b){var e=Math.pow(0.7,b?b:1),f=a.r,g=a.g,h=a.b;30>f&&(f=30);30>g&&(g=30);30>h&&(h=30);return new d([Math.min(255,Math.round(f/
+e)),Math.min(255,Math.round(g/e)),Math.min(255,Math.round(h/e)),a.a])}};return b});

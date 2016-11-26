@@ -1,25 +1,7 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({about:"Par",add:"Pievienot",all:"Visi",apply:"Lietot",auth:{logOut:"Atteikties",signIn:"Pierakstīties"},back:"Atpakaļ",cancel:"Atcelt",change:"Mainīt",clear:"Notīrīt",close:"Aizvērt",configure:"Konfigurēt",control:{pause:"Pauze",play:"Atskaņot",resume:"Atsākt",stop:"Apturēt"},copy:"Kopēt",create:"Izveidot",cut:"Griezt","delete":"Dzēst",details:"Detaļas",edit:"Rediģēt",error:"Kļūda",esri:"Esri",exit:"Iziet",fieldsSummary:"Atribūtu un vērtību saraksts",find:"Atrast",form:{no:"Nē",ok:"Labi",password:"Parole",submit:"Iesniegt",username:"Lietotājvārds",yes:"Jā"},help:"Palīdzība",home:"Mājas",info:"Informācija",information:"Informācija",layer:"Slānis",loading:"Ielādē",maximize:"Maksimizēt",menu:"Izvēlne",more:"Vairāk",none:"Nav",open:"Atvērts",pagination:{first:"Pirmais",last:"Pēdējais",next:"Tālāk",page:"Lapa",pageText:"{index} no {total}",previous:"Iepriekšējais"},paste:"Ielīmēt",preview:"Priekšskatījums",print:"Drukāt",publish:"Publicēt",redo:"Atatsaukt",refresh:"Atjaunot",remove:"Noņemt",rename:"Pārdēvēt",reset:"Atiestatīt",restore:"Atjaunot",save:"Saglabāt",search:"Meklēt",searching:"Meklē",select:"Izvēlēties",settings:"Iestatījumi",sort:"Kārtot",share:"Koplietot",title:"Nosaukums",untitled:"Bez virsraksta",upload:"Augšupielādēt",undo:"Atsaukt",view:"Skatīt",visibility:{hide:"Paslēpt",show:"Parādīt",toggle:"Pārslēgt"},warning:"Brīdinājums"});
+//>>built
+define({about:"Par",add:"Pievienot",all:"Visi",apply:"Lietot",auth:{logOut:"Atteikties",signIn:"Pierakst\u012bties"},back:"Atpaka\u013c",cancel:"Atcelt",change:"Main\u012bt",clear:"Not\u012br\u012bt",close:"Aizv\u0113rt",configure:"Konfigur\u0113t",control:{pause:"Pauze",play:"Atska\u0146ot",resume:"Ats\u0101kt",stop:"Aptur\u0113t"},copy:"Kop\u0113t",create:"Izveidot",cut:"Griezt","delete":"Dz\u0113st",details:"Deta\u013cas",edit:"Redi\u0123\u0113t",error:"K\u013c\u016bda",esri:"Esri",exit:"Iziet",
+fieldsSummary:"Atrib\u016btu un v\u0113rt\u012bbu saraksts",find:"Atrast",form:{no:"N\u0113",ok:"Labi",password:"Parole",submit:"Iesniegt",username:"Lietot\u0101jv\u0101rds",yes:"J\u0101"},help:"Pal\u012bdz\u012bba",home:"M\u0101jas",info:"Inform\u0101cija",information:"Inform\u0101cija",layer:"Sl\u0101nis",loading:"Iel\u0101d\u0113",maximize:"Maksimiz\u0113t",menu:"Izv\u0113lne",more:"Vair\u0101k",none:"Nav",open:"Atv\u0113rts",pagination:{first:"Pirmais",last:"P\u0113d\u0113jais",next:"T\u0101l\u0101k",
+page:"Lapa",pageText:"{index} no {total}",previous:"Iepriek\u0161\u0113jais"},paste:"Iel\u012bm\u0113t",preview:"Priek\u0161skat\u012bjums",print:"Druk\u0101t",publish:"Public\u0113t",redo:"Atatsaukt",refresh:"Atjaunot",remove:"No\u0146emt",rename:"P\u0101rd\u0113v\u0113t",reset:"Atiestat\u012bt",restore:"Atjaunot",save:"Saglab\u0101t",search:"Mekl\u0113t",searching:"Mekl\u0113",select:"Izv\u0113l\u0113ties",settings:"Iestat\u012bjumi",sort:"K\u0101rtot",share:"Koplietot",title:"Nosaukums",untitled:"Bez virsraksta",
+upload:"Aug\u0161upiel\u0101d\u0113t",undo:"Atsaukt",view:"Skat\u012bt",visibility:{hide:"Pasl\u0113pt",show:"Par\u0101d\u012bt",toggle:"P\u0101rsl\u0113gt"},warning:"Br\u012bdin\u0101jums"});

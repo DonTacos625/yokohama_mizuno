@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../languageUtils","./fieldStats"],function(n,t,r,u){function e(n,t,e,i){if(1===i.length){if(r.isArray(i[0]))return u.calculateStat(n,i[0],-1);if(r.isImmutableArray(i[0]))return u.calculateStat(n,i[0].toArray(),-1)}return u.calculateStat(n,i,-1)}function i(n,t){n.stdev=function(n,r){return t(n,r,function(n,t,r){return e("stdev",n,t,r)})},n.variance=function(n,r){return t(n,r,function(n,t,r){return e("variance",n,t,r)})},n.average=function(n,r){return t(n,r,function(n,t,r){return e("mean",n,t,r)})},n.mean=function(n,r){return t(n,r,function(n,t,r){return e("mean",n,t,r)})},n.sum=function(n,r){return t(n,r,function(n,t,r){return e("sum",n,t,r)})},n.min=function(n,r){return t(n,r,function(n,t,r){return e("min",n,t,r)})},n.max=function(n,r){return t(n,r,function(n,t,r){return e("max",n,t,r)})},n.distinct=function(n,r){return t(n,r,function(n,t,r){return e("distinct",n,t,r)})},n.count=function(n,u){return t(n,u,function(n,t,u){if(r.pcCheck(u,1,1),r.isArray(u[0])||r.isString(u[0]))return u[0].length;if(r.isImmutableArray(u[0]))return u[0].length();throw new Error("Invalid Parameters for Count")})}}t.registerFunctions=i});
+//>>built
+define(["require","exports","../languageUtils","./fieldStats"],function(l,k,g,h){function f(d,e,b,a){if(1===a.length){if(g.isArray(a[0]))return h.calculateStat(d,a[0],-1);if(g.isImmutableArray(a[0]))return h.calculateStat(d,a[0].toArray(),-1)}return h.calculateStat(d,a,-1)}k.registerFunctions=function(d,e){d.stdev=function(b,a){return e(b,a,function(a,b,c){return f("stdev",a,b,c)})};d.variance=function(b,a){return e(b,a,function(a,b,c){return f("variance",a,b,c)})};d.average=function(b,a){return e(b,
+a,function(a,b,c){return f("mean",a,b,c)})};d.mean=function(b,a){return e(b,a,function(a,b,c){return f("mean",a,b,c)})};d.sum=function(b,a){return e(b,a,function(a,b,c){return f("sum",a,b,c)})};d.min=function(b,a){return e(b,a,function(a,b,c){return f("min",a,b,c)})};d.max=function(b,a){return e(b,a,function(a,b,c){return f("max",a,b,c)})};d.distinct=function(b,a){return e(b,a,function(a,b,c){return f("distinct",a,b,c)})};d.count=function(b,a){return e(b,a,function(a,b,c){g.pcCheck(c,1,1);if(g.isArray(c[0])||
+g.isString(c[0]))return c[0].length;if(g.isImmutableArray(c[0]))return c[0].length();throw Error("Invalid Parameters for Count");})}}});

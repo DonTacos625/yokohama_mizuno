@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","../../support/mathUtils"],function(a,r,t){function n(a){return a-Math.floor(a)}function e(a,r,e){a=t.clamp(a,0,.9999991);var i=n(a*c[0]),o=n(a*c[1]),f=n(a*c[2]),u=n(a*c[3]);r[e+0]=256*(i-i*v[0]),r[e+1]=256*(o-i*v[1]),r[e+2]=256*(f-o*v[2]),r[e+3]=256*(u-f*v[3])}function i(a,r){var t=a[r+0]/256,n=a[r+1]/256,e=a[r+2]/256,i=a[r+3]/256,o=0;return o+=t*h[0],o+=n*h[1],o+=e*h[2],o+=i*h[3]}function o(a,r){for(var t=a,n=new Uint8Array(4*t*t),i=t/2-.5,o=r/2,f=0;t>f;f++)for(var u=0;t>u;u++){var c=u+t*f,v=u-i,h=f-i,s=Math.sqrt(v*v+h*h)-o;s=s/a+.5,e(s,n,4*c)}return n}function f(a,r,t){t&&(r/=Math.SQRT2);for(var n=new Uint8Array(4*a*a),i=0;a>i;i++)for(var o=0;a>o;o++){var f=o-.5*(a-.5),u=i-.5*(a-.5),c=i*a+o;if(t){var v=(f+u)/Math.SQRT2;u=(u-f)/Math.SQRT2,f=v}var h=Math.max(Math.abs(f),Math.abs(u))-.5*r;h=h/a+.5,e(h,n,4*c)}return n}function u(a,r,t){t&&(r*=Math.SQRT2);for(var n=.5*r,i=new Uint8Array(4*a*a),o=0;a>o;o++)for(var f=0;a>f;f++){var u=f-.5*a-.5,c=o-.5*a-.5,v=o*a+f;if(t){var h=(u+c)/Math.SQRT2;c=(c-u)/Math.SQRT2,u=h}u=Math.abs(u),c=Math.abs(c);var s=void 0;s=u>c?u>n?Math.sqrt((u-n)*(u-n)+c*c):c:c>n?Math.sqrt(u*u+(c-n)*(c-n)):u,s=s/a+.5,e(s,i,4*v)}return i}var c=[16777216,65536,256,1],v=[0,1/256,1/256,1/256],h=[1/16777216,1/65536,1/256,1];r.packFloat=e,r.unpackFloat=i,r.computeSignedDistancefieldCicle=o,r.computeSignedDistancefieldSquare=f,r.computeSignedDistancefieldCrossAndX=u});
+//>>built
+define(["require","exports","../../support/mathUtils"],function(t,n,s){function p(a,b,g){a=s.clamp(a,0,0.9999991);var h=a*m[0]-Math.floor(a*m[0]),f=a*m[1]-Math.floor(a*m[1]),d=a*m[2]-Math.floor(a*m[2]);a=a*m[3]-Math.floor(a*m[3]);b[g+0]=256*(h-h*q[0]);b[g+1]=256*(f-h*q[1]);b[g+2]=256*(d-f*q[2]);b[g+3]=256*(a-d*q[3])}var m=[16777216,65536,256,1],q=[0,1/256,1/256,1/256],r=[1/16777216,1/65536,1/256,1];n.packFloat=p;n.unpackFloat=function(a,b){var g=a[b+1]/256,h=a[b+2]/256,f=a[b+3]/256,d;d=0+a[b+0]/256*
+r[0];d+=g*r[1];d+=h*r[2];return d+=f*r[3]};n.computeSignedDistancefieldCicle=function(a,b){for(var g=new Uint8Array(4*a*a),h=a/2-0.5,f=b/2,d=0;d<a;d++)for(var c=0;c<a;c++){var e=c+a*d,l=c-h,k=d-h,l=Math.sqrt(l*l+k*k)-f,l=l/a+0.5;p(l,g,4*e)}return g};n.computeSignedDistancefieldSquare=function(a,b,g){g&&(b/=Math.SQRT2);for(var h=new Uint8Array(4*a*a),f=0;f<a;f++)for(var d=0;d<a;d++){var c=d-0.5*(a-0.5),e=f-0.5*(a-0.5),l=f*a+d;if(g)var k=(c+e)/Math.SQRT2,e=(e-c)/Math.SQRT2,c=k;c=Math.max(Math.abs(c),
+Math.abs(e))-0.5*b;c=c/a+0.5;p(c,h,4*l)}return h};n.computeSignedDistancefieldCrossAndX=function(a,b,g){g&&(b*=Math.SQRT2);b*=0.5;for(var h=new Uint8Array(4*a*a),f=0;f<a;f++)for(var d=0;d<a;d++){var c=d-0.5*a-0.5,e=f-0.5*a-0.5,l=f*a+d;if(g)var k=(c+e)/Math.SQRT2,e=(e-c)/Math.SQRT2,c=k;c=Math.abs(c);e=Math.abs(e);k=void 0;k=c>e?c>b?Math.sqrt((c-b)*(c-b)+e*e):e:e>b?Math.sqrt(c*c+(e-b)*(e-b)):c;k=k/a+0.5;p(k,h,4*l)}return h}});

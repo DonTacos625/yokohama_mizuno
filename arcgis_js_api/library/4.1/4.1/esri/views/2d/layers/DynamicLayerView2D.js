@@ -1,25 +1,9 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["../../../geometry/Extent","../../../core/HandleRegistry","../../../layers/support/ExportImageParameters","../engine/Bitmap","../viewpointUtils","./LayerView2D"],function(e,t,i,a,s,r){var n=r.createSubclass({declaredClass:"esri.views.2d.layers.DynamicLayerView2D",constructor:function(e){this._update=this._update.bind(this),this._hdls=new t,this._hdls.add(this.watch("view.state.version,view.stationary,suspended",this._update))},destroy:function(){this._hdls.destroy(),this._hdls=null,this._exportImageParameters&&(this._exportImageParameters.layer=null,this._exportImageParameters.destroy(),this._exportImageParameters=null)},getPopupData:function(e){var t=this.view.scale,i=this.layer.allSublayers.filter(function(e){var i=0===e.minScale||t<=e.minScale,a=0===e.maxScale||t>=e.maxScale;return e.popupTemplate&&e.visible&&i&&a});return i.map(function(t){var i=t.createQuery();return i.geometry=e,i.outFields=this.getTemplateOutFields(t.popupTemplate),t.queryFeatures(i).then(function(e){return e.features})},this)},getTemplateOutFields:function(e){if(!e||!e.fieldInfos)return["*"];var t=[];return e.fieldInfos.forEach(function(e){var i=e.fieldName&&e.fieldName.toLowerCase();i&&"shape"!==i&&0!==i.indexOf("relationships/")&&t.push(e.fieldName)}),t},_update:function(){if(this.view.stationary&&!this.suspended){var t=this.view,r=t.state,n=this.layer,o=r.size.concat();this._imagePromise&&(this._imagePromise.cancel(),this._imagePromise=null),n.version<10.3&&s.getOuterSize(o,r.viewpoint,o),o[0]=Math.min(o[0],n.maxImageWidth||2048),o[1]=Math.min(o[1],n.maxImageHeight||2048),this.updating=!0,this._exportImageParameters?this._exportImageParameters.scale!==r.scale&&(this._exportImageParameters.scale=r.scale):(this._exportImageParameters=new i({layer:this.layer,scale:r.scale}),this._hdls.add(this._exportImageParameters.watch("version",function(e){this._imageVersion!==e&&(this._imageVersion=e,this._update())}.bind(this)))),this._imageVersion=this._exportImageParameters.version,this._imagePromise=n.fetchImage({extent:s.getExtent(new e,r.viewpoint,o),width:o[0],height:o[1],rotation:r.rotation,exportImageParameters:this._exportImageParameters}),this._imagePromise.then(function(e){var t=e.options,i=this.container;this._imagePromise=null,this.view.stationary&&!this.suspended&&(i.removeAllChildren(),i.addChild(new a({coords:[t.extent.center.x,t.extent.center.y],resolution:t.extent.width/t.width,size:[.5*t.width,.5*t.height],source:e.img,rotation:-t.rotation})))}.bind(this),function(e){"cancel"!==e.dojoType&&(this.container.removeAllChildren(),this._imagePromise=null)}.bind(this)).always(function(){this.updating=!1}.bind(this))}}});return n});
+//>>built
+define("../../../geometry/Extent ../../../core/HandleRegistry ../../../layers/support/ExportImageParameters ../engine/Bitmap ../viewpointUtils ./LayerView2D".split(" "),function(f,g,h,k,e,l){return l.createSubclass({declaredClass:"esri.views.2d.layers.DynamicLayerView2D",constructor:function(b){this._update=this._update.bind(this);this._hdls=new g;this._hdls.add(this.watch("view.state.version,view.stationary,suspended",this._update))},destroy:function(){this._hdls.destroy();this._hdls=null;this._exportImageParameters&&
+(this._exportImageParameters.layer=null,this._exportImageParameters.destroy(),this._exportImageParameters=null)},getPopupData:function(b){var c=this.view.scale;return this.layer.allSublayers.filter(function(a){var d=0===a.minScale||c<=a.minScale,b=0===a.maxScale||c>=a.maxScale;return a.popupTemplate&&a.visible&&d&&b}).map(function(a){var d=a.createQuery();d.geometry=b;d.outFields=this.getTemplateOutFields(a.popupTemplate);return a.queryFeatures(d).then(function(a){return a.features})},this)},getTemplateOutFields:function(b){if(!b||
+!b.fieldInfos)return["*"];var c=[];b.fieldInfos.forEach(function(a){var d=a.fieldName&&a.fieldName.toLowerCase();d&&("shape"!==d&&0!==d.indexOf("relationships/"))&&c.push(a.fieldName)});return c},_update:function(){if(this.view.stationary&&!this.suspended){var b=this.view.state,c=this.layer,a=b.size.concat();this._imagePromise&&(this._imagePromise.cancel(),this._imagePromise=null);10.3>c.version&&e.getOuterSize(a,b.viewpoint,a);a[0]=Math.min(a[0],c.maxImageWidth||2048);a[1]=Math.min(a[1],c.maxImageHeight||
+2048);this.updating=!0;this._exportImageParameters?this._exportImageParameters.scale!==b.scale&&(this._exportImageParameters.scale=b.scale):(this._exportImageParameters=new h({layer:this.layer,scale:b.scale}),this._hdls.add(this._exportImageParameters.watch("version",function(a){this._imageVersion!==a&&(this._imageVersion=a,this._update())}.bind(this))));this._imageVersion=this._exportImageParameters.version;this._imagePromise=c.fetchImage({extent:e.getExtent(new f,b.viewpoint,a),width:a[0],height:a[1],
+rotation:b.rotation,exportImageParameters:this._exportImageParameters});this._imagePromise.then(function(a){var b=a.options,c=this.container;this._imagePromise=null;this.view.stationary&&!this.suspended&&(c.removeAllChildren(),c.addChild(new k({coords:[b.extent.center.x,b.extent.center.y],resolution:b.extent.width/b.width,size:[0.5*b.width,0.5*b.height],source:a.img,rotation:-b.rotation})))}.bind(this),function(a){"cancel"!==a.dojoType&&(this.container.removeAllChildren(),this._imagePromise=null)}.bind(this)).always(function(){this.updating=
+!1}.bind(this))}}})});

@@ -1,25 +1,8 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define(["require","exports","dojo/_base/lang","../../core/Error","../Font","../SimpleLineSymbol","../SimpleMarkerSymbol","../PictureMarkerSymbol","../SimpleFillSymbol","../TextSymbol","../WebStyleSymbol","../Symbol3D","../LineSymbol3D","../PointSymbol3D","../PolygonSymbol3D","../LabelSymbol3D","../LineSymbol3DLayer","../IconSymbol3DLayer","../FillSymbol3DLayer","../TextSymbol3DLayer","../../Color"],function(e,o,t,r,l,n,i,c,a,s,f,m,y,u,b,S,d,w,p,L,D){function g(e){return e in z?z[e]:(console.log(e+' cannot be mapped to Icon symbol. Fallback to "circle"'),"circle")}function h(e,o,t){if(void 0===o&&(o=!1),void 0===t&&(t=!1),!e)return{symbol:null};var l;if(e instanceof m||e instanceof f)l=e;else if(e instanceof n)l=v(e);else if(e instanceof i)l=k(e);else if(e instanceof c)l=k(e);else if(e instanceof a)l=x(e);else{if(!(e instanceof s))return{error:new r("symbol-conversion:unsupported-2d-symbol","Unsupported 2D symbol of tyoe '"+(e.type||e.declaredClass)+"'",{symbol:e})};l=T(e)}if(o&&(l.id=e.id),t&&l.isInstanceOf(m))for(var y=0;y<l.symbolLayers.length;++y)l.symbolLayers.getItemAt(y)._ignoreDrivers=!0;return{symbol:l}}function v(e){return new y(new d({size:e.width||1,material:{color:e.color?e.color.clone():[255,255,255]}}))}function k(e){var o,t,r,l=e.color?e.color.clone():new D([255,255,255]);e instanceof c?(e.color&&0===e.color.r&&0===e.color.g&&0===e.color.b&&(l=new D([255,255,255])),o=e.source.imageData&&e.source.contentType?{href:"data:"+e.source.contentType+";base64,"+e.source.imageData}:{href:e.url},t=e.width):(o={primitive:g(e.style)},t=e.size,e.outline&&e.outline.color&&e.outline.width>0&&(r={size:e.outline.width,color:e.outline.color.clone()}));var n={size:t,screenOffset:[e.xoffset,e.yoffset],resource:o,material:{color:l},outline:r};return new u(new w(n))}function x(e){var o=new p({material:{color:e.color?e.color.clone():[255,255,255]}});return e.outline&&e.outline.color&&(o.outline={size:e.outline.width||0,color:e.outline.color}),new b(o)}function T(e){var o;switch(e.verticalAlignment){case"top":o="top";break;case"middle":o="center";break;case"bottom":o="bottom";break;default:o="center"}switch(e.horizontalAlignment){case"left":o+="Left";break;case"center":o+="Center";break;case"right":o+="Right";break;default:o+="Center"}var r=t.clone(l.defaultProps);return e.font&&t.mixin(r,e.font),new S(new L({size:r.size,font:{family:r.family,weight:r.weight,style:r.style},material:{color:e.color.clone()},placement:o,screenOffset:[e.xoffset,e.yoffset],text:e.text}))}var z={};z[i.STYLE_CIRCLE]="circle",z[i.STYLE_CROSS]="cross",z[i.STYLE_DIAMOND]="kite",z[i.STYLE_SQUARE]="square",z[i.STYLE_X]="x",o.to3D=h});
+//>>built
+define("require exports dojo/_base/lang ../../core/Error ../Font ../SimpleLineSymbol ../SimpleMarkerSymbol ../PictureMarkerSymbol ../SimpleFillSymbol ../TextSymbol ../WebStyleSymbol ../Symbol3D ../LineSymbol3D ../PointSymbol3D ../PolygonSymbol3D ../LabelSymbol3D ../LineSymbol3DLayer ../IconSymbol3DLayer ../FillSymbol3DLayer ../TextSymbol3DLayer ../../Color".split(" "),function(D,n,g,p,q,r,e,h,s,t,u,k,v,w,x,y,z,A,B,C,l){function m(a){var e=a.color?a.color.clone():new l([255,255,255]),c,b,f;a instanceof
+h?(a.color&&(0===a.color.r&&0===a.color.g&&0===a.color.b)&&(e=new l([255,255,255])),c=a.source.imageData&&a.source.contentType?{href:"data:"+a.source.contentType+";base64,"+a.source.imageData}:{href:a.url},b=a.width):(c=a.style,c in d?c=d[c]:(console.log(c+' cannot be mapped to Icon symbol. Fallback to "circle"'),c="circle"),c={primitive:c},b=a.size,a.outline&&(a.outline.color&&0<a.outline.width)&&(f={size:a.outline.width,color:a.outline.color.clone()}));return new w(new A({size:b,screenOffset:[a.xoffset,
+a.yoffset],resource:c,material:{color:e},outline:f}))}var d={};d[e.STYLE_CIRCLE]="circle";d[e.STYLE_CROSS]="cross";d[e.STYLE_DIAMOND]="kite";d[e.STYLE_SQUARE]="square";d[e.STYLE_X]="x";n.to3D=function(a,d,c){void 0===d&&(d=!1);void 0===c&&(c=!1);if(!a)return{symbol:null};var b;if(a instanceof k||a instanceof u)b=a;else if(a instanceof r)b=new v(new z({size:a.width||1,material:{color:a.color?a.color.clone():[255,255,255]}}));else if(a instanceof e)b=m(a);else if(a instanceof h)b=m(a);else if(a instanceof
+s)b=new B({material:{color:a.color?a.color.clone():[255,255,255]}}),a.outline&&a.outline.color&&(b.outline={size:a.outline.width||0,color:a.outline.color}),b=new x(b);else if(a instanceof t){switch(a.verticalAlignment){case "top":b="top";break;case "middle":b="center";break;case "bottom":b="bottom";break;default:b="center"}switch(a.horizontalAlignment){case "left":b+="Left";break;case "center":b+="Center";break;case "right":b+="Right";break;default:b+="Center"}var f=g.clone(q.defaultProps);a.font&&
+g.mixin(f,a.font);b=new y(new C({size:f.size,font:{family:f.family,weight:f.weight,style:f.style},material:{color:a.color.clone()},placement:b,screenOffset:[a.xoffset,a.yoffset],text:a.text}))}else return{error:new p("symbol-conversion:unsupported-2d-symbol","Unsupported 2D symbol of tyoe '"+(a.type||a.declaredClass)+"'",{symbol:a})};d&&(b.id=a.id);if(c&&b.isInstanceOf(k))for(a=0;a<b.symbolLayers.length;++a)b.symbolLayers.getItemAt(a)._ignoreDrivers=!0;return{symbol:b}}});

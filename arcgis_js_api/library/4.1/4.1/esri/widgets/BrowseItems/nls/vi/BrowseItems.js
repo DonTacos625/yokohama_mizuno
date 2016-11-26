@@ -1,25 +1,5 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({noFilterFields:"Lớp ${name} không có trường nào có thể dùng để lọc.",addToViewer:"Thêm lớp vào bản đồ",noItemsToDisplay:"Hiện không có mục nào khả dụng để hiển thị.",searchFor:"Tìm kiếm với",searching:"Đang tìm kiếm",items:{organizationLabel:"Tổ chức của tôi",onlineLabel:"ArcGIS Online",contentLabel:"Nội dung của tôi",favoritesLabel:"Mục yêu thích của tôi"},title:"Chọn Bản đồ Web",searchTitle:"Tìm kiếm",ok:"Ok",cancel:"Hủy",placeholder:"Nhập cụm từ tìm kiếm",instructionsLeft:"Bạn muốn làm gì?",instructionsRight:"Chọn ứng dụng có thể cấu hình.",go:"Đi",selectDetails:"CHỌN",configure:"Tạo",close:"Đóng",learnMoreConfigurableApps:"Tìm hiểu thêm về ứng dụng có thể cấu hình"});
+//>>built
+define({noFilterFields:"L\u1edbp ${name} kh\u00f4ng c\u00f3 tr\u01b0\u1eddng n\u00e0o c\u00f3 th\u1ec3 d\u00f9ng \u0111\u1ec3 l\u1ecdc.",addToViewer:"Th\u00eam l\u1edbp v\u00e0o b\u1ea3n \u0111\u1ed3",noItemsToDisplay:"Hi\u1ec7n kh\u00f4ng c\u00f3 m\u1ee5c n\u00e0o kh\u1ea3 d\u1ee5ng \u0111\u1ec3 hi\u1ec3n th\u1ecb.",searchFor:"T\u00ecm ki\u1ebfm v\u1edbi",searching:"\u0110ang t\u00ecm ki\u1ebfm",items:{organizationLabel:"T\u1ed5 ch\u1ee9c c\u1ee7a t\u00f4i",onlineLabel:"ArcGIS Online",contentLabel:"N\u1ed9i dung c\u1ee7a t\u00f4i",
+favoritesLabel:"M\u1ee5c y\u00eau th\u00edch c\u1ee7a t\u00f4i"},title:"Ch\u1ecdn B\u1ea3n \u0111\u1ed3 Web",searchTitle:"T\u00ecm ki\u1ebfm",ok:"Ok",cancel:"H\u1ee7y",placeholder:"Nh\u1eadp c\u1ee5m t\u1eeb t\u00ecm ki\u1ebfm",instructionsLeft:"B\u1ea1n mu\u1ed1n l\u00e0m g\u00ec?",instructionsRight:"Ch\u1ecdn \u1ee9ng d\u1ee5ng c\u00f3 th\u1ec3 c\u1ea5u h\u00ecnh.",go:"\u0110i",selectDetails:"CH\u1eccN",configure:"T\u1ea1o",close:"\u0110\u00f3ng",learnMoreConfigurableApps:"T\u00ecm hi\u1ec3u th\u00eam v\u1ec1 \u1ee9ng d\u1ee5ng c\u00f3 th\u1ec3 c\u1ea5u h\u00ecnh"});

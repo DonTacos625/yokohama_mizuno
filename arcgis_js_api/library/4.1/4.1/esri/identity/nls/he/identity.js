@@ -1,25 +1,6 @@
-// COPYRIGHT © 2016 Esri
-//
-// All rights reserved under the copyright laws of the United States
-// and applicable international laws, treaties, and conventions.
-//
-// This material is licensed for use under the Esri Master License
-// Agreement (MLA), and is bound by the terms of that agreement.
-// You may redistribute and use this code without modification,
-// provided you adhere to the terms of the MLA and include this
-// copyright notice.
-//
-// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
-//
-// For additional information, contact:
-// Environmental Systems Research Institute, Inc.
-// Attn: Contracts and Legal Services Department
-// 380 New York Street
-// Redlands, California, USA 92373
-// USA
-//
-// email: contracts@esri.com
-//
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-
-define({lblItem:"פריט",title:"היכנס לחשבון",info:"אנא היכנס לחשבונך כדי לגשת לפריט ב-{server} {resource}",oAuthInfo:"היכנס בבקשה כדי להמשיך.",lblUser:"שם משתמש:",lblPwd:"סיסמה:",lblOk:"אישור",lblSigning:"הירשם...",lblCancel:"בטל",errorMsg:"משתמש/סיסמה לא חוקיים. אנא נסה שנית.",invalidUser:"המשתמש או הסיסמה שהכנסת לא נכונים.",forbidden:"שם המשתמש והסיסמה תקינים, אך אין לך גישה למשאב זה.",noAuthService:"לא ניתן לגשת לשירות האימות."});
+//>>built
+define({lblItem:"\u05e4\u05e8\u05d9\u05d8",title:"\u05d4\u05d9\u05db\u05e0\u05e1 \u05dc\u05d7\u05e9\u05d1\u05d5\u05df",info:"\u05d0\u05e0\u05d0 \u05d4\u05d9\u05db\u05e0\u05e1 \u05dc\u05d7\u05e9\u05d1\u05d5\u05e0\u05da \u05db\u05d3\u05d9 \u05dc\u05d2\u05e9\u05ea \u05dc\u05e4\u05e8\u05d9\u05d8 \u05d1-{server} {resource}",oAuthInfo:"\u05d4\u05d9\u05db\u05e0\u05e1 \u05d1\u05d1\u05e7\u05e9\u05d4 \u05db\u05d3\u05d9 \u05dc\u05d4\u05de\u05e9\u05d9\u05da.",lblUser:"\u05e9\u05dd \u05de\u05e9\u05ea\u05de\u05e9:",
+lblPwd:"\u05e1\u05d9\u05e1\u05de\u05d4:",lblOk:"\u05d0\u05d9\u05e9\u05d5\u05e8",lblSigning:"\u05d4\u05d9\u05e8\u05e9\u05dd...",lblCancel:"\u05d1\u05d8\u05dc",errorMsg:"\u05de\u05e9\u05ea\u05de\u05e9/\u05e1\u05d9\u05e1\u05de\u05d4 \u05dc\u05d0 \u05d7\u05d5\u05e7\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d0 \u05e0\u05e1\u05d4 \u05e9\u05e0\u05d9\u05ea.",invalidUser:"\u05d4\u05de\u05e9\u05ea\u05de\u05e9 \u05d0\u05d5 \u05d4\u05e1\u05d9\u05e1\u05de\u05d4 \u05e9\u05d4\u05db\u05e0\u05e1\u05ea \u05dc\u05d0 \u05e0\u05db\u05d5\u05e0\u05d9\u05dd.",
+forbidden:"\u05e9\u05dd \u05d4\u05de\u05e9\u05ea\u05de\u05e9 \u05d5\u05d4\u05e1\u05d9\u05e1\u05de\u05d4 \u05ea\u05e7\u05d9\u05e0\u05d9\u05dd, \u05d0\u05da \u05d0\u05d9\u05df \u05dc\u05da \u05d2\u05d9\u05e9\u05d4 \u05dc\u05de\u05e9\u05d0\u05d1 \u05d6\u05d4.",noAuthService:"\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d2\u05e9\u05ea \u05dc\u05e9\u05d9\u05e8\u05d5\u05ea \u05d4\u05d0\u05d9\u05de\u05d5\u05ea."});
