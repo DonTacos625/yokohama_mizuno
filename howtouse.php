@@ -108,7 +108,7 @@
 								<li>入力終了後、「登録する」ボタンを押す</li>
 								<li>入力の注意に沿って入力がされていなければ、エラーが出力されるので、再度入力をする</li>
 								<li>「登録が完了しました」で登録が完了<br>再度ログイン画面よりログインをする</li>
-								<li>なお、初回ログイン時は自動的に<a href="#2">会員詳細情報登録</a>ページに遷移します</li>
+								<li>なお、初回ログイン時は自動的に<a href="#2">個人情報編集</a>ページに遷移します</li>
 							</ol>
 							<a class="button" href="#index">▲ 目次に戻る</a>
 						</div>
@@ -120,7 +120,7 @@
 								<li>SNS連帯の項目にあるFacebookログインバナーを押す</li>
 								<li>Facebook側での認証をする</li>
 								<li>認証完了後、もう一度バナーを押す</li>
-								<li>初回ログイン時は<a href="#2">会員詳細情報登録</a>ページに遷移します</li>
+								<li>初回ログイン時は<a href="#2">個人情報編集</a>ページに遷移します</li>
 								<li>2回目以降のログインの際は、同様にバナーを押す</li>
 							</ol>
 							<a class="button" href="#index">▲ 目次に戻る</a>
@@ -141,7 +141,7 @@
 								<li>年代：あなたの年代を選択</li>
 							</ul>
 							<h4>嗜好情報の入力</h4>
-							　５段階評価で入力してください
+							　あなたが訪れたい観光スポットの評価度合いを５段階で入力してください
 							<table id="table7765" border="1"><tr><td>満足度</td><td>(1)低い</td><td><---></td><td>(5)高い</td></tr><tr><td>アクセス</td><td>(1)困難</td><td><---></td><td>(5)容易</td></tr><tr><td>人混みの少なさ</td><td>(1)少ない</td><td><---></td><td>(5)多い</td></tr><tr><td>バリアフリー</td><td>(1)進んでいない</td><td><---></td><td>(5)進んでいる</td></tr><tr><td>コストパフォーマンス</td><td>(1)低い</td><td><---></td><td>(5)高い</td></tr><tr><td>雰囲気</td><td>(1)悪い</td><td><---></td><td>(5)良い</td></tr><tr><td>快適度</td><td>(1)少ない</td><td><---></td><td>(5)多い</td></tr><tr><td>おすすめ度</td><td>(1)低い</td><td><---></td><td>(5)高い</td></tr></table><style type="text/css"><!-- #table7765{text-align:left;border:solid 1px #ffffff;border-collapse:collapse}#table7765>tbody>tr>td{border:solid 1px #ffffff;padding:4px;min-width:60px} --></style>
 							記入後、「登録する」ボタンを押す<br><br>
 							<a class="button" href="#index">▲ 目次に戻る</a>
