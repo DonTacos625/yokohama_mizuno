@@ -109,8 +109,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<title>推薦スポット</title>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-  <script src="./arcgis_js_api/library/4.1/4.1/init.js"></script>
+  <link rel="stylesheet" href="https://study-yokohama-sightseeing.herokuapp.com/arcgis_js_api/library/4.1/4.1/dijit/themes/claro/claro.css" />
+  <link rel="stylesheet" href="https://study-yokohama-sightseeing.herokuapp.com/arcgis_js_api/library/4.1/4.1/esri/css/main.css" />
+  <script src="https://study-yokohama-sightseeing.herokuapp.com/arcgis_js_api/library/4.1/4.1/init.js"></script>
   <!--google解析-->
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
