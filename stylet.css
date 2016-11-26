@@ -46,6 +46,10 @@ ul,ol,dl{
 	margin: 0px;
 }
 
+.contentswrap2{
+	position: relative;
+	margin: 0px;
+}
 
 /* ========================================  #page ページ外枠 */
 #page {
@@ -215,11 +219,12 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 /* ========================================  地図について */
 
 #viewDiv {
+	position: absolute;
 	padding: 0;
 	margin: 0;
 	width: 100%;
 	height:400px;
-	
+
 }
 #viewDiv2 {
 	padding: 0;

@@ -259,7 +259,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			require_once('left.php');
 			?>
 			<div id ="main">
-			<div class ="contentswrap">
+			<div class ="contentswrap2">
 				<h3>あなたに推薦する観光スポットは</h3>
 <!--			</div>
 		</div>
