@@ -111,6 +111,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
   <!--<script src="https://js.arcgis.com/4.1/"></script>-->
+  <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo/dojo.js"></script>
   <!--google解析-->
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -167,6 +168,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
   ]
 };
+
 	require([
 		"esri/Map",
 		"esri/views/MapView",
