@@ -69,7 +69,7 @@ $my_no = $_SESSION["my_no"];
 						</ul>
 					</form>
 					-->
-					<div class="label2" align="center">メニューを選んでください</div>
+					<div class="label2" align="center">カテゴリー一覧</div>
 					<ul>
 						<li><a href="./localinfo2.php?c_check=1">飲食</a></li>
 						<li><a href="./localinfo2.php?c_check=2">ショッピング</a></li>
