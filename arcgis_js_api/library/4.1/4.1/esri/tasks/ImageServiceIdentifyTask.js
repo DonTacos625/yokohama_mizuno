@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/4.1/esri/copyright.txt for details.
+//>>built
+define(["dojo/_base/lang","../request","../geometry/support/normalizeUtils","./Task","./support/ImageServiceIdentifyResult"],function(d,e,f,b,g){b=b.createSubclass({declaredClass:"esri.tasks.ImageServiceIdentifyTask",__msigns:[{n:"execute",c:1,a:[{i:0,p:["geometry"]}],e:2}],properties:{parsedUrl:{get:function(){var a=this._parseUrl(this.url);a.path+="/identify";return a}},url:{}},execute:function(a,b){var c=b.assembly,c=this._encode(d.mixin({},this.parsedUrl.query,{f:"json"},a.toJSON(c&&c[0])));return e(this.parsedUrl.path,
+{query:c,callbackParamName:"callback"}).then(this._handleExecuteResponse)},_handleExecuteResponse:function(a){return g.fromJSON(a.data)}});f._createWrappers(b);return b});
