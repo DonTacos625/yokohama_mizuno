@@ -47,7 +47,6 @@ ul,ol,dl{
 }
 
 .contentswrap2{
-	position: relative;
 	margin: 0px;
 }
 
@@ -230,10 +229,6 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	margin: 0;
 	width: 100%;
 	height:300px;
-}
-
-#spotlist {
-	margin-top: 400px;
 }
 
 
