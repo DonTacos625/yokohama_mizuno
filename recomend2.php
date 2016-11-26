@@ -270,6 +270,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="contents">
 		<div id ="main">
 			<div class ="contentswrap">-->
+				<div id="spotlist">
 				<table id="table5932" border="1">
 					<?php
 					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
@@ -301,6 +302,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
 					<br>
 				</p>
+				</div>
 			</div>
 		</div>
 	</div>
