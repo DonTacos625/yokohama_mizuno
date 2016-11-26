@@ -99,18 +99,19 @@
 								<label><input type="radio" name="menu" value="1" checked>個人情報編集</label>
 								<br><br>
 								<label><input type="radio" name="menu" value="2">グループ編集</label>
-								<?php
+								<!--<?php
 								if(!isset($_SESSION["fb"]))
 									echo "<br><br><label><input type='radio' name='menu' value='3'>パスワード変更</label>";
 								if($_SESSION["anq"]==0)
 									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える(推薦システムを1度以上利用してからお答えください)</label>";
-								?>
+								?>-->
 								<br><br>
 								<input type="submit" value="送信">
 							</b>
 						</tr>
 					</form>
 					</table>
+					アンケート機能は調整中です。
 				</div>
 			</div>
 		</div>

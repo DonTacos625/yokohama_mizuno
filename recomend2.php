@@ -261,15 +261,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<div id ="main">
 			<div class ="contentswrap">
 				<h3>あなたに推薦する観光スポットは</h3>
-			</div>
+<!--			</div>
 		</div>
 	</div>
-	</div>
+	</div>-->
 	<div id="viewDiv"></div>
-	<div id="page">
+<!--	<div id="page">
 		<div id="contents">
 		<div id ="main">
-			<div class ="contentswrap">
+			<div class ="contentswrap">-->
 				<table id="table5932" border="1">
 					<?php
 					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
