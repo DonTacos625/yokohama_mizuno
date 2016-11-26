@@ -110,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<title>推薦スポット</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-  <!--<script src="https://js.arcgis.com/4.1/"></script>--> 
+  <!--<script src="https://js.arcgis.com/4.1/"></script>-->
   <!--google解析-->
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
