@@ -1,5 +1,0 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["dojo/_base/lang","../request","./Task","./support/FindResult"],function(b,c,d,e){return d.createSubclass({declaredClass:"esri.tasks.FindTask",properties:{parsedUrl:{get:function(){var a=this._parseUrl(this.url);a.path+="/find";return a}},gdbVersion:{value:null,type:String},url:{}},execute:function(a){a=this._encode(b.mixin({},this.parsedUrl.query,{f:"json"},a.toJSON()));this.gdbVersion&&(a.gdbVersion=this.gdbVersion);return c(this.parsedUrl.path,{query:a,callbackParamName:"callback"}).then(this._handleExecuteResponse)},
-_handleExecuteResponse:function(a){a=a.data;a.results=(a.results||[]).map(function(a){return e.fromJSON(a)});return a}})});
