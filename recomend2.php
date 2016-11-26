@@ -270,6 +270,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="contents">
 		<div id ="main">
 			<div class ="contentswrap">-->
+			<br>
 				<table id="table5932" border="1">
 					<?php
 					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
