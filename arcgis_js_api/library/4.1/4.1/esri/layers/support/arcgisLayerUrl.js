@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","../../core/urlUtils"],function(k,b,g){function e(a){var d=g.urlToObject(a).path.match(b.match);if(!d)return null;a=d[1];var c=d[2],h=d[3],d=d[4],e=c.indexOf("/");-1!==e&&(c=c.slice(e+1));return{title:f(c),serverType:h,sublayer:null!=d&&""!==d?parseInt(d,10):null,url:{path:a}}}function f(a){a=a.replace(/\s*[/_]+\s*/g," ");return a[0].toUpperCase()+a.slice(1)}b.serverTypes=["MapServer","ImageServer","FeatureServer","SceneServer","StreamServer"];b.match=RegExp("^((?:https?:)?\\/\\/\\S+?\\/rest\\/services\\/(.+?)\\/("+
-b.serverTypes.join("|")+"))(?:\\/(?:layers\\/)?(\\d+))?","i");b.test=function(a){return!!b.match.test(a)};b.parse=e;b.cleanTitle=f;b.titleFromUrlAndName=function(a,d){var c=[];if(a){var b=e(a);b&&b.title&&c.push(b.title)}d&&(b=f(d),c.push(b));if(2===c.length){if(-1!==c[0].toLowerCase().indexOf(c[1].toLowerCase()))return c[0];if(-1!==c[1].toLowerCase().indexOf(c[0].toLowerCase()))return c[1]}return c.join(" - ")};b.isHostedAgolService=function(a){if(!a)return!1;a=a.toLowerCase();var b=-1!==a.indexOf(".arcgis.com/");
-a=-1!==a.indexOf("//services")||-1!==a.indexOf("//tiles")||-1!==a.indexOf("//features");return b&&a}});
+
+define(["require","exports","../../core/urlUtils"],function(e,r,t){function n(e){return!!r.match.test(e)}function i(e){var n=t.urlToObject(e),i=n.path.match(r.match);if(!i)return null;var a=i[1],u=i[2],o=i[3],l=i[4],c=u.indexOf("/");return-1!==c&&(u=u.slice(c+1)),{title:s(u),serverType:o,sublayer:null!=l&&""!==l?parseInt(l,10):null,url:{path:a}}}function s(e){return e=e.replace(/\s*[\/_]+\s*/g," "),e[0].toUpperCase()+e.slice(1)}function a(e,r){var t=[];if(e){var n=i(e);n&&n.title&&t.push(n.title)}if(r){var a=s(r);t.push(a)}if(2===t.length){if(-1!==t[0].toLowerCase().indexOf(t[1].toLowerCase()))return t[0];if(-1!==t[1].toLowerCase().indexOf(t[0].toLowerCase()))return t[1]}return t.join(" - ")}function u(e){if(!e)return!1;e=e.toLowerCase();var r=".arcgis.com/",t="//services",n="//tiles",i="//features",s=-1!==e.indexOf(r),a=-1!==e.indexOf(t)||-1!==e.indexOf(n)||-1!==e.indexOf(i);return s&&a}r.serverTypes=["MapServer","ImageServer","FeatureServer","SceneServer","StreamServer"],r.match=new RegExp("^((?:https?:)?\\/\\/\\S+?\\/rest\\/services\\/(.+?)\\/("+r.serverTypes.join("|")+"))(?:\\/(?:layers\\/)?(\\d+))?","i"),r.test=n,r.parse=i,r.cleanTitle=s,r.titleFromUrlAndName=a,r.isHostedAgolService=u});

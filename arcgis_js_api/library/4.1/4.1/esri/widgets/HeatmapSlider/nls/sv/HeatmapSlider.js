@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({statsAvg:"Genomsnitt: ${avg}",count:"Antal: ${count}",percent:"${num}%",high:"H\u00f6g",low:"L\u00e5g",color:{changeMinMaxToolTIp:"Ange ett v\u00e4rde.",handleToolTip:"Matcha datav\u00e4rden till f\u00e4rger.",maxValueToolTip:"Ange det st\u00f6rsta f\u00f6rv\u00e4ntade datav\u00e4rdet.",minValueToolTip:"Ange det minsta f\u00f6rv\u00e4ntade datav\u00e4rdet.",changeSymbol:"Byta symbol"},size:{handleToolTip:"Matcha datav\u00e4rden till symbolstorlekar.",sizeInputBoxLines:"Ange linjetjocklek fr\u00e5n 0 till 18 pixlar.",
-sizeInputBoxPoints:"Ange symbolstorlek fr\u00e5n 1 till 120 pixlar"}});
+
+define({statsAvg:"Genomsnitt: ${avg}",count:"Antal: ${count}",percent:"${num}%",high:"Hög",low:"Låg",color:{changeMinMaxToolTIp:"Ange ett värde.",handleToolTip:"Matcha datavärden till färger.",maxValueToolTip:"Ange det största förväntade datavärdet.",minValueToolTip:"Ange det minsta förväntade datavärdet.",changeSymbol:"Byta symbol"},size:{handleToolTip:"Matcha datavärden till symbolstorlekar.",sizeInputBoxLines:"Ange linjetjocklek från 0 till 18 pixlar.",sizeInputBoxPoints:"Ange symbolstorlek från 1 till 120 pixlar"}});

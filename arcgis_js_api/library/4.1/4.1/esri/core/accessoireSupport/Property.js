@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["dojo/has"],function(e){e=function(a,b){this.name=a;b&&this.mixIn(b)};e.prototype={name:null,getter:null,setter:null,reader:null,getterArity:0,setterArity:0,dependsOn:null,chain:null,value:void 0,readOnly:!1,copy:null,type:null,mixIn:function(a){a.hasOwnProperty("getter")&&(this.getter=a.getter,this.getterArity=a.getter.length);a.hasOwnProperty("setter")&&(this.setter=a.setter,this.setterArity=a.setter.length);a.hasOwnProperty("reader")&&(this.reader=a.reader);a.hasOwnProperty("value")&&(this.value=
-a.value);a.hasOwnProperty("readOnly")&&(this.readOnly=a.readOnly);a.hasOwnProperty("copy")&&(this.copy=a.copy);a.hasOwnProperty("type")&&(this.type=a.type);a.hasOwnProperty("dependsOn")&&(this.dependsOn=this.dependsOn?this.dependsOn.concat(a.dependsOn):a.dependsOn.concat());if(a.hasOwnProperty("json")){var b=this.json;b||(this.json=b={});a.json.hasOwnProperty("ignore")&&(b.ignore=a.json.ignore);a.json.readFrom&&(b.readFrom=b.readFrom?b.readFrom.concat(a.json.readFrom):a.json.readFrom.slice())}a.hasOwnProperty("chain")&&
-(this.chain=this.chain?this.chain.concat(a.chain.filter(function(a){return-1===this.chain.indexOf(a)},this)):a.chain.concat())},getDescriptor:function(){var a=this;return{enumerable:!0,configurable:!0,get:function(){return this._accessorProps?this._accessorProps.get(a.name):void 0},set:function(b){var d=this._accessorProps,c=a.name;if(d){if(!Object.isFrozen(this)){if(a.readOnly)throw new TypeError("Cannot assign to read only property '"+c+"' of "+this.declaredClass);if(!a.setter&&d.get(c)===b)return b;
-d.access[c]=!0;d.set(c,b);d.access[c]=!1}}else Object.defineProperty(this,c,{enumerable:!0,configurable:!0,writable:!0,value:b})}}}};return e});
+
+define(["dojo/has"],function(e){var t=e("dojo-debug-messages"),r=function(e,t){this.name=e,t&&this.mixIn(t)};return r.prototype={name:null,getter:null,setter:null,reader:null,getterArity:0,setterArity:0,dependsOn:null,chain:null,value:void 0,readOnly:!1,copy:null,type:null,mixIn:function(e){if(e.hasOwnProperty("getter")&&(this.getter=e.getter,this.getterArity=e.getter.length),e.hasOwnProperty("setter")&&(this.setter=e.setter,this.setterArity=e.setter.length),e.hasOwnProperty("reader")&&(this.reader=e.reader),e.hasOwnProperty("value")&&(this.value=e.value),e.hasOwnProperty("readOnly")&&(this.readOnly=e.readOnly),e.hasOwnProperty("copy")&&(this.copy=e.copy),e.hasOwnProperty("type")&&(this.type=e.type),e.hasOwnProperty("dependsOn")&&(this.dependsOn=this.dependsOn?this.dependsOn.concat(e.dependsOn):e.dependsOn.concat()),e.hasOwnProperty("json")){var t=this.json;t||(this.json=t={}),e.json.hasOwnProperty("ignore")&&(t.ignore=e.json.ignore),e.json.readFrom&&(t.readFrom=t.readFrom?t.readFrom.concat(e.json.readFrom):e.json.readFrom.slice())}e.hasOwnProperty("chain")&&(this.chain?this.chain=this.chain.concat(e.chain.filter(function(e){return-1===this.chain.indexOf(e)},this)):this.chain=e.chain.concat())},getDescriptor:function(){var e=this,r={enumerable:!0,configurable:!0};return r.get=function(){return this._accessorProps?this._accessorProps.get(e.name):void 0},r.set=function(r){var n=this._accessorProps,s=e.name;if(!n)return void Object.defineProperty(this,s,{enumerable:!0,configurable:!0,writable:!0,value:r});if(!Object.isFrozen(this)){if(e.readOnly)throw new TypeError("Cannot assign to read only property '"+s+"' of "+this.declaredClass);if(t&&n.access[s])throw new Error("["+this.declaredClass+"] _"+s+"Setter function is trying to write the property");if(!e.setter&&n.get(s)===r)return r;n.access[s]=!0,n.set(s,r),n.access[s]=!1}},r}},r});

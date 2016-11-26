@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../../../core/declare","../../lib/glMatrix","../../support/mathUtils","../NavigationConstants"],function(u,e,v,w){var p=e.vec2d,b=e.vec3d,f=e.mat4d,q=b.create(),g=b.create(),n=p.create(),k=f.create(),s=b.create(),t=[3,1.5],l=w.Rotate.PivotPoint;return u([],{declaredClass:"esri.views.3d.navigation.mixins.RotateMixin",type:"rotate",constructor:function(){this._rotLastPoint=p.create()},begin:function(a,c){this.navigation.begin(this);this.active=!0;this.emit("begin");this.setPoiAuto(a);this.normalizeCoordinate(a,
-this._rotLastPoint)},update:function(a,c){void 0===c&&(c=l.POI);var b,d;switch(c){case l.EYE:b=this.targetCamera.center;d=this.targetCamera.eye;break;default:b=this.targetCamera.eye,d=this.targetCamera.center,c!==l.POI&&console.error("[RotateMixin.update]: invalid pivot specified")}this._applyRotation(a,c,b,d);this.constrainTargetEyeByElevation();this.fixTargetUpVector();this.targetAndCurrentChanged();this.emit("update")},_applyRotation:function(a,c,e,d){this.renderCoordsHelper.worldUpAtPosition(d,
-q);this.normalizeCoordinate(a,n);a=(n[1]-this._rotLastPoint[1])*t[c-1];var r=(n[0]-this._rotLastPoint[0])*t[c-1];b.subtract(e,d,g);var m=b.length(g),h=v.acos(b.dot(g,q)/m);c===l.POI?a=this.limitTiltByConstraints(h+a,d,m)-h:(h=0.5*Math.PI-h,m=0.495*Math.PI,a=h-Math.max(-m,Math.min(m,h+-0.5*a)));f.identity(k);b.cross(this.targetCamera.up,g,s);c==l.POI&&(r=-r);f.rotate(k,r,q);f.rotate(k,a,s);f.multiplyVec3(k,g);b.add(d,g,e);f.multiplyVec3(k,this.targetCamera.up);p.set(n,this._rotLastPoint)},end:function(a){this.active=
-!1;this.emit("end");this.navigation.end(this)}})});
+
+define(["../../../../core/declare","../../lib/glMatrix","../../support/mathUtils","../NavigationConstants"],function(t,i,e,a){var r=i.vec2d,o=i.vec3d,n=i.mat4d,s=o.create(),h=o.create(),c=r.create(),d=n.create(),l=o.create(),u=[3,1.5],v=a.Rotate.PivotPoint,g=t([],{declaredClass:"esri.views.3d.navigation.mixins.RotateMixin",type:"rotate",constructor:function(){this._rotLastPoint=r.create()},begin:function(t,i){void 0===i&&(i=v.POI),this.navigation.begin(this),this.active=!0,this.emit("begin"),this.setPoiAuto(t),this.normalizeCoordinate(t,this._rotLastPoint)},update:function(t,i){void 0===i&&(i=v.POI);var e,a;switch(i){case v.EYE:e=this.targetCamera.center,a=this.targetCamera.eye;break;default:e=this.targetCamera.eye,a=this.targetCamera.center,i!==v.POI&&console.error("[RotateMixin.update]: invalid pivot specified")}this._applyRotation(t,i,e,a),this.constrainTargetEyeByElevation(),this.fixTargetUpVector(),this.targetAndCurrentChanged(),this.emit("update")},_applyRotation:function(t,i,a,g){this.renderCoordsHelper.worldUpAtPosition(g,s),this.normalizeCoordinate(t,c);var m=(c[1]-this._rotLastPoint[1])*u[i-1],p=(c[0]-this._rotLastPoint[0])*u[i-1];o.subtract(a,g,h);var P=o.length(h),C=e.acos(o.dot(h,s)/P);if(i===v.POI)m=this.limitTiltByConstraints(C+m,g,P)-C;else{m*=-.5,C=.5*Math.PI-C;var f=.5*Math.PI*.99;m=C-Math.max(-f,Math.min(f,C+m))}n.identity(d),o.cross(this.targetCamera.up,h,l),i==v.POI&&(p=-p),n.rotate(d,p,s),n.rotate(d,m,l),n.multiplyVec3(d,h),o.add(g,h,a),n.multiplyVec3(d,this.targetCamera.up),r.set(c,this._rotLastPoint)},end:function(t){this.active=!1,this.emit("end"),this.navigation.end(this)}});return g});

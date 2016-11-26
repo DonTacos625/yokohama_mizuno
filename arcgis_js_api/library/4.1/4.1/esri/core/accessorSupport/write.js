@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","./PropertyOrigin","./utils","./extensions/serializableProperty"],function(v,g,p,m,s){function q(a,c,b,e){var h={};void 0!==b&&(null!==b||c.writeNull)&&c.write.call(a,b,h,e);return h}function t(a,c,b,e){a=a.store.originOf(c);return b.writeAlways||void 0===e||void 0===e.origin||a>=p.nameToId(e.origin)}function k(a,c,b){void 0===b&&(b=[]);if(-1!==b.indexOf(a))return b;b.push(a);a=c[a];if(!a||!a.writeWith)return b;a.writeWith.forEach(function(a){k(a,c,b)});return b}function u(a,
-c,b){return k(a,c).some(function(a){return b[a]})}function r(a,c,b){var e=m.getProperties(a),h=e.metadatas,l={},g=[],n={},f;for(f in h){var d=s.originSpecificPropertyDefinition(h[f],b);if((n[f]=d)&&d.writable&&d.write)t(e,f,d,b)?(d=q(a,d,a.get(f),b),0<Object.keys(d).length&&(c=m.merge(c,d),l[f]=!0)):d.writeWith&&g.push(f)}g.filter(function(a){return u(a,n,l)}).forEach(function(e){var d=a.get(e),d=q(a,n[e],d,b);0<Object.keys(d).length&&(c=m.merge(c,d),l[e]=!0)});if(b&&b.writtenProperties)for(var k in l)b.writtenProperties.push({target:a,
-propName:k,oldOrigin:p.idToReadableName(e.store.originOf(k)),newOrigin:b.origin});return c}g.write=r;Object.defineProperty(g,"__esModule",{value:!0});g.default=r});
+
+define(["require","exports","./PropertyOrigin","./utils","./extensions/serializableProperty"],function(r,e,i,t,n){function o(r){return r&&r.writable&&!!r.write}function u(r,e,i,t){var n={};return void 0===i||null===i&&!e.writeNull||e.write.call(r,i,n,t),n}function a(r,e,t,n){var o=r.store.originOf(e);return t.writeAlways||void 0===n||void 0===n.origin||o>=i.nameToId(n.origin)}function f(r,e,i){if(void 0===i&&(i=[]),-1!==i.indexOf(r))return i;i.push(r);var t=e[r];return t&&t.writeWith?(t.writeWith.forEach(function(r){f(r,e,i)}),i):i}function l(r,e,i){var t=f(r,e);return t.some(function(r){return i[r]})}function s(r,e,f){var s=t.getProperties(r),c=s.metadatas,g={},v=[],d={};for(var p in c){var w=n.originSpecificPropertyDefinition(c[p],f);if(d[p]=w,o(w))if(a(s,p,w,f)){var h=u(r,w,r.get(p),f);Object.keys(h).length>0&&(e=t.merge(e,h),g[p]=!0)}else w.writeWith&&v.push(p)}var O=v.filter(function(r){return l(r,d,g)});if(O.forEach(function(i){var n=r.get(i),o=d[i],a=u(r,o,n,f);Object.keys(a).length>0&&(e=t.merge(e,a),g[i]=!0)}),f&&f.writtenProperties)for(var m in g)f.writtenProperties.push({target:r,propName:m,oldOrigin:i.idToReadableName(s.store.originOf(m)),newOrigin:f.origin});return e}e.write=s,Object.defineProperty(e,"__esModule",{value:!0}),e["default"]=s});

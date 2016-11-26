@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({statsAvg:"\u039c\u03ad\u03c3\u03b7 \u03c4\u03b9\u03bc\u03ae : ${avg}",count:"\u03a0\u03bb\u03ae\u03b8\u03bf\u03c2: ${count}",percent:"${num}%",high:"\u03a5\u03c8\u03b7\u03bb\u03cc",low:"\u03a7\u03b1\u03bc\u03b7\u03bb\u03cc",color:{changeMinMaxToolTIp:"\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03bc\u03b9\u03b1 \u03c4\u03b9\u03bc\u03ae.",handleToolTip:"\u0391\u03bd\u03c4\u03b9\u03c3\u03c4\u03bf\u03af\u03c7\u03b9\u03c3\u03b7 \u03c4\u03b9\u03bc\u03ce\u03bd \u03b4\u03b5\u03b4\u03bf\u03bc\u03ad\u03bd\u03c9\u03bd \u03bc\u03b5 \u03c7\u03c1\u03ce\u03bc\u03b1\u03c4\u03b1.",
-maxValueToolTip:"\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03c4\u03b7 \u03bc\u03ad\u03b3\u03b9\u03c3\u03c4\u03b7 \u03b1\u03bd\u03b1\u03bc\u03b5\u03bd\u03cc\u03bc\u03b5\u03bd\u03b7 \u03c4\u03b9\u03bc\u03ae \u03b4\u03b5\u03b4\u03bf\u03bc\u03ad\u03bd\u03c9\u03bd.",minValueToolTip:"\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03c4\u03b7 \u03bc\u03b9\u03ba\u03c1\u03cc\u03c4\u03b5\u03c1\u03b7 \u03b1\u03bd\u03b1\u03bc\u03b5\u03bd\u03cc\u03bc\u03b5\u03bd\u03b7 \u03c4\u03b9\u03bc\u03ae \u03b4\u03b5\u03b4\u03bf\u03bc\u03ad\u03bd\u03c9\u03bd.",
-changeSymbol:"\u0391\u03bb\u03bb\u03b1\u03b3\u03ae \u03c3\u03c5\u03bc\u03b2\u03cc\u03bb\u03bf\u03c5"},size:{handleToolTip:"\u0391\u03bd\u03c4\u03b9\u03c3\u03c4\u03bf\u03af\u03c7\u03b9\u03c3\u03b7 \u03c4\u03b9\u03bc\u03ce\u03bd \u03b4\u03b5\u03b4\u03bf\u03bc\u03ad\u03bd\u03c9\u03bd \u03bc\u03b5 \u03c4\u03bf \u03bc\u03ad\u03b3\u03b5\u03b8\u03bf\u03c2 \u03c3\u03c5\u03bc\u03b2\u03cc\u03bb\u03bf\u03c5.",sizeInputBoxLines:"\u039f\u03c1\u03af\u03c3\u03c4\u03b5 \u03c4\u03bf \u03c0\u03ac\u03c7\u03bf\u03c2 \u03b3\u03c1\u03b1\u03bc\u03bc\u03ae\u03c2 \u03b1\u03c0\u03cc 0 \u03ad\u03c9\u03c2 18 pixel.",
-sizeInputBoxPoints:"\u039f\u03c1\u03af\u03c3\u03c4\u03b5 \u03c4\u03bf \u03bc\u03ad\u03b3\u03b5\u03b8\u03bf\u03c2 \u03c4\u03bf\u03c5 \u03c3\u03c5\u03bc\u03b2\u03cc\u03bb\u03bf\u03c5 \u03b1\u03c0\u03cc 1 \u03ad\u03c9\u03c2 120 pixel"}});
+
+define({statsAvg:"Μέση τιμή : ${avg}",count:"Πλήθος: ${count}",percent:"${num}%",high:"Υψηλό",low:"Χαμηλό",color:{changeMinMaxToolTIp:"Πληκτρολογήστε μια τιμή.",handleToolTip:"Αντιστοίχιση τιμών δεδομένων με χρώματα.",maxValueToolTip:"Πληκτρολογήστε τη μέγιστη αναμενόμενη τιμή δεδομένων.",minValueToolTip:"Πληκτρολογήστε τη μικρότερη αναμενόμενη τιμή δεδομένων.",changeSymbol:"Αλλαγή συμβόλου"},size:{handleToolTip:"Αντιστοίχιση τιμών δεδομένων με το μέγεθος συμβόλου.",sizeInputBoxLines:"Ορίστε το πάχος γραμμής από 0 έως 18 pixel.",sizeInputBoxPoints:"Ορίστε το μέγεθος του συμβόλου από 1 έως 120 pixel"}});

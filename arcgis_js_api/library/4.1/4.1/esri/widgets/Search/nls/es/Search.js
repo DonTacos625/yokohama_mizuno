@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"B\u00fasqueda",clearButtonTitle:"Borrar b\u00fasqueda",placeholder:"Buscar direcci\u00f3n o lugar",searchIn:"Buscar en",lonlat:"Longitud, latitud",reverseLonLatHeader:"\u00bfQuisiste decir?",all:"Todo",allPlaceholder:"Buscar direcci\u00f3n o lugar",emptyValue:"Introduce un t\u00e9rmino de b\u00fasqueda.",untitledResult:"Sin t\u00edtulo",untitledSource:"Fuente sin t\u00edtulo",noResults:"Sin resultados",noResultsFound:"No se ha encontrado ning\u00fan resultado para {value}.",
-showMoreResults:"Mostrar m\u00e1s resultados",hideMoreResults:"Ocultar",searchResult:"Resultado de la b\u00fasqueda",moreResultsHeader:"M\u00e1s resultados",esriLocatorName:"Esri World Geocoder"});
+
+define({searchButtonTitle:"Búsqueda",clearButtonTitle:"Borrar búsqueda",placeholder:"Buscar dirección o lugar",searchIn:"Buscar en",lonlat:"Longitud, latitud",reverseLonLatHeader:"¿Quisiste decir?",all:"Todo",allPlaceholder:"Buscar dirección o lugar",emptyValue:"Introduce un término de búsqueda.",untitledResult:"Sin título",untitledSource:"Fuente sin título",noResults:"Sin resultados",noResultsFound:"No se ha encontrado ningún resultado para {value}.",showMoreResults:"Mostrar más resultados",hideMoreResults:"Ocultar",searchResult:"Resultado de la búsqueda",moreResultsHeader:"Más resultados",esriLocatorName:"Esri World Geocoder"});

@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports dojo/Deferred dojo/promise/all ./promiseUtils ./workers/Connection ./workers/JobProxy".split(" "),function(B,h,r,s,n,t,u){function v(a,b){for(var c=[],f=0,w=e.length;f<w;f++)c.push(e[f].openConnection(a,b));return s(c).then(function(a){})}function x(a){k[a]=!0;if(!l&&k.every(function(a){return a})){for(var b in g)(a=m[b])&&g[b].resolve(a);g={};l=!0}}function y(a){var b=z++;a=new t(a,b);var c=new r;m[b]=a;l?c.resolve(a):g[b]=c;return c.promise}var A=Math.max((navigator.hardwareConcurrency||
-2)-1,2),l=!1,e=[],k=[],p=0,z=0,m={},g={},q=!1;h.open=function(a,b){if(!1===q){for(var c=0;c<A;++c){var f=new u(m,c,x);e.push(f);k.push(!1)}q=!0}return y(a).then(function(a){return v(b,a.id).then(function(){return a}).otherwise(function(a){return n.reject(a)})})};h.terminate=function(){for(var a=0,b=e.length;a<b;a++)e[a].terminate();e=[];k=[];l=!1};h.closeConnection=function(a){if(a)if(m[a.id]&&delete m[a.id],l)for(var b=0,c=e.length;b<c;b++)e[b].closeConnection(a.id);else if(b=g[a.id])b.promise.cancel(),
-delete g[a.id]};h.invoke=function(a,b,c,f,g){var d=null;f&&(d=f.id);if(null===d&&(d=p=(p+1)%e.length,!k[d]&&!e.some(function(a,b,c){d=(d+1)%c.length;return k[d]})))return n.reject(Error("No worker available"));a=e[d].invoke(a,b,c,g);f&&(f.id=d);return a};h.broadcast=function(a,b,c,f){for(var g=[],d=0,h=e.length;d<h;d++)k[d]&&g.push(e[d].invoke(a,b,c,f));return g}});
+
+define(["require","exports","dojo/Deferred","dojo/promise/all","./promiseUtils","./workers/Connection","./workers/JobProxy"],function(n,e,r,o,t,i,u){function a(n,e){if(y===!1){for(var r=0;w>r;++r){var o=new u(b,r,d);g.push(o),k.push(!1)}y=!0}return h(n).then(function(n){return s(e,n.id).then(function(){return n}).otherwise(function(n){return t.reject(n)})})}function f(){for(var n=0,e=g.length;e>n;n++)g[n].terminate();g=[],k=[],m=!1}function c(n){if(n)if(b[n.id]&&delete b[n.id],m)for(var e=0,r=g.length;r>e;e++)g[e].closeConnection(n.id);else{var o=x[n.id];o&&(o.promise.cancel(),delete x[n.id])}}function l(n,e,r,o,i){var u=null;if(o&&(u=o.id),null===u&&(u=C=(C+1)%g.length,!k[u]&&!g.some(function(n,e,r){return u=(u+1)%r.length,k[u]})))return t.reject(new Error("No worker available"));var a=g[u].invoke(n,e,r,i);return o&&(o.id=u),a}function v(n,e,r,o){for(var t=[],i=0,u=g.length;u>i;i++)k[i]&&t.push(g[i].invoke(n,e,r,o));return t}function s(n,e){for(var r=[],t=0,i=g.length;i>t;t++)r.push(g[t].openConnection(n,e));return o(r).then(function(n){})}function d(n){if(k[n]=!0,!m){var e=k.every(function(n){return n});if(e){for(var r in x){var o=b[r];o&&x[r].resolve(o)}x={},m=!0}}}function h(n){var e=j++,o=new i(n,e),t=new r;return b[e]=o,m?t.resolve(o):x[e]=t,t.promise}var p=navigator.hardwareConcurrency||2,w=Math.max(p-1,2),m=!1,g=[],k=[],C=0,j=0,b={},x={},y=!1;e.open=a,e.terminate=f,e.closeConnection=c,e.invoke=l,e.broadcast=v});

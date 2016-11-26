@@ -1,13 +1,19 @@
 {
-  "name":    "esri",
+  "name": "arcgis-js-api",
   "version": "4.1.0",
-  "author":  "Esri Inc",
-  "directories": {
-    "lib": "."
+  "private": true,
+  "description": "Minified, unbuilt version of the ArcGIS API for JavaScript that can be used for bower.",
+  "license": "SEE LICENSE IN copyright.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Esri/arcgis-js-api.git"
   },
-  "main":        "main",
-  "description": "The ArcGIS API for JavaScript (JavaScript API) is a browser based API for developing high performance, easy to use mapping applications. The API allows you to easily embed maps in your web pages. The JavaScript API is hosted by ESRI on ArcGIS Online and is available for free use, subject to the terms and conditions.",
-  "keywords":    [ "Esri", "ArcGIS", "JavaScript", "Map" ],
-  "homepage":    "http://js.arcgis.com",
-  "dojoBuild":   "esri.profile.js"
+  "keywords": [
+    "esrijs",
+    "bower",
+    "esri",
+    "arcgis",
+    "gis"
+  ],
+  "dojoBuild": "esri.profile.js"
 }

@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../declare","../typescript","../JSONSupporter","dojo/_base/lang"],function(k,g,l,m){function h(d,a){if(!d)return a;if(!a)return d;for(var b in a){var c=d[b],f=a[b];Array.isArray(f)&&Array.isArray(c)?d[b]=c.concat(f):d[b]="object"===typeof f&&"object"===typeof c?h(c,f):f}return d}return{subclass:function(d,a){return function(b){b=g.declareDefinition(b,d);a&&(b.instanceMembers.classMetadata=h(a,b.instanceMembers.classMetadata));var c=b.instanceMembers.classMetadata;if(c&&c.properties)for(var f in c.properties){var e=
-c.properties[f];e&&(!e.reader&&e.type)&&(e.type===Date?e.reader=function(a){return null!=a?new Date(a):null}:-1!==e.type._meta.bases.indexOf(l)&&(e.reader=function(a){return function(b){return a.fromJSON(b)}}(e.type)))}return m.mixin(k(b.bases,b.instanceMembers),b.classMembers)}},shared:g.shared,property:function(d){return function(a,b){var c=Object.getPrototypeOf(a),c=c&&c.classMetadata;if(!a.classMetadata||a.classMetadata===c)a.classMetadata={};a.classMetadata.properties=a.classMetadata.properties||
-{};a.classMetadata.properties[b]=d||{}}}}});
+
+define(["../declare","../typescript","../JSONSupporter","dojo/_base/lang"],function(e,a,r,t){function s(e,a){if(!e)return a;if(!a)return e;for(var r in a){var t=e[r],n=a[r];Array.isArray(n)&&Array.isArray(t)?e[r]=t.concat(n):"object"==typeof n&&"object"==typeof t?e[r]=s(t,n):e[r]=n}return e}var n={subclass:function(n,i){return function(c){var o=a.declareDefinition(c,n);i&&(o.instanceMembers.classMetadata=s(i,o.instanceMembers.classMetadata));var p=o.instanceMembers.classMetadata;if(p&&p.properties)for(var u in p.properties){var f=p.properties[u];f&&!f.reader&&f.type&&(f.type===Date?f.reader=function(e){return null!=e?new Date(e):null}:-1!==f.type._meta.bases.indexOf(r)&&(f.reader=function(e){return function(a){return e.fromJSON(a)}}(f.type)))}return t.mixin(e(o.bases,o.instanceMembers),o.classMembers)}},shared:a.shared,property:function(e){return function(a,r){var t=Object.getPrototypeOf(a),s=t&&t.classMetadata;a.classMetadata&&a.classMetadata!==s||(a.classMetadata={}),a.classMetadata.properties=a.classMetadata.properties||{},a.classMetadata.properties[r]=e||{}}}};return n});

@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../core/declare","dojo/_base/array","dojo/_base/lang","../core/lang","./Renderer"],function(m,n,p,l,q){return m(q,{declaredClass:"esri.renderer.ScaleDependentRenderer",constructor:function(a){this.setRendererInfos(a&&a.rendererInfos||[])},setRendererInfos:function(a){this.rendererInfos=a;this._setRangeType();return this},getSymbol:function(a){var b=this.getRendererInfo(a);return b&&b.renderer&&b.renderer.getSymbol(a)},getRendererInfo:function(a){a=a.getLayer().getMap();return"zoom"===this.rangeType?
-this.getRendererInfoByZoom(a.getZoom()):this.getRendererInfoByScale(a.getScale())},getRendererInfoByZoom:function(a){var b,c=this.rendererInfos,e,d=0;do b=c[d],a>=b.minZoom&&a<=b.maxZoom&&(e=b),d++;while(!e&&d<c.length);return e},getRendererInfoByScale:function(a){var b,c=this.rendererInfos,e,d=0,f,g,h,k;do b=c[d],f=b.minScale,g=b.maxScale,h=!f,k=!g,!h&&a<=f&&(h=!0),!k&&a>=g&&(k=!0),h&&k&&(e=b),d++;while(!e&&d<c.length);return e},addRendererInfo:function(a){var b,c=0,e,d=this.rendererInfos,f=a.hasOwnProperty("minZoom")?
-"minZoom":"minScale",g=d.length;do{e=d[c];if(g===c||a[f]<e[f])d.splice(c,0,a),this._setRangeType(),b=!0;c++}while(!b&&c<g);return this},_setRangeType:function(){var a=this.rendererInfos;if(a=a&&a[0])this.rangeType=a.hasOwnProperty("minZoom")?"zoom":a.hasOwnProperty("minScale")?"scale":""},toJSON:function(){if("zoom"===this.rangeType)return null;var a=this.rendererInfos||[],b=a[0]&&a[0].minScale,a=p.mixin(this.inherited(arguments),{type:"scaleDependent",minScale:0<b?b:0,rendererInfos:n.map(a,function(a){return l.fixJson({maxScale:0<
-a.maxScale?a.maxScale:0,renderer:a.renderer&&a.renderer.toJSON()})})});return l.fixJson(a)}})});
+
+define(["../core/declare","dojo/_base/array","dojo/_base/lang","../core/lang","./Renderer"],function(e,r,n,t,o){var a=e(o,{declaredClass:"esri.renderer.ScaleDependentRenderer",constructor:function(e){this.setRendererInfos(e&&e.rendererInfos||[])},setRendererInfos:function(e){return this.rendererInfos=e,this._setRangeType(),this},getSymbol:function(e){var r=this.getRendererInfo(e);return r&&r.renderer&&r.renderer.getSymbol(e)},getRendererInfo:function(e){var r,n=e.getLayer().getMap();return r="zoom"===this.rangeType?this.getRendererInfoByZoom(n.getZoom()):this.getRendererInfoByScale(n.getScale())},getRendererInfoByZoom:function(e){var r,n,t=this.rendererInfos,o=0;do r=t[o],e>=r.minZoom&&e<=r.maxZoom&&(n=r),o++;while(!n&&o<t.length);return n},getRendererInfoByScale:function(e){var r,n,t,o,a,i,s=this.rendererInfos,d=0;do r=s[d],t=r.minScale,o=r.maxScale,a=!t,i=!o,!a&&t>=e&&(a=!0),!i&&e>=o&&(i=!0),a&&i&&(n=r),d++;while(!n&&d<s.length);return n},addRendererInfo:function(e){var r,n,t=0,o=this.rendererInfos,a=e.hasOwnProperty("minZoom")?"minZoom":"minScale",i=o.length;do n=o[t],(i===t||e[a]<n[a])&&(o.splice(t,0,e),this._setRangeType(),r=!0),t++;while(!r&&i>t);return this},_setRangeType:function(){var e=this.rendererInfos,r=e&&e[0];r&&(this.rangeType=r.hasOwnProperty("minZoom")?"zoom":r.hasOwnProperty("minScale")?"scale":"")},toJSON:function(){if("zoom"===this.rangeType)return null;var e=this.rendererInfos||[],o=e[0]&&e[0].minScale,a=n.mixin(this.inherited(arguments),{type:"scaleDependent",minScale:o>0?o:0,rendererInfos:r.map(e,function(e){return t.fixJson({maxScale:e.maxScale>0?e.maxScale:0,renderer:e.renderer&&e.renderer.toJSON()})})});return t.fixJson(a)}});return a});

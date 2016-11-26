@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../../core/Evented","../../../webscene/Lighting"],function(g,h){var c=new Date("March 15, 2015 12:00:00 UTC"),d=new Date,b={target:null,date:null},e={target:null,timezoneOffset:0};return h.createSubclass([g],{declaredClass:"esri.views.3d.environment.SceneViewLighting",properties:{cameraTrackingEnabled:{value:!0},ambientOcclusionEnabled:{value:!1},date:{cast:function(a){return a},set:function(a){null!=a&&(this._set("date",new Date(a)),a!==c&&a!==this._autoUpdateDate&&(this.positionTimezoneInfo.autoUpdated=
-!1),b.target=this,d.setTime(this._get("date").getTime()),b.date=d,this.emit("date-will-change",b))}}},constructor:function(){this.positionTimezoneInfo={hours:0,minutes:0,seconds:0,autoUpdated:!0};this._autoUpdateDate=null},getDefaults:function(){return{date:c}},_calculateTimezoneOffset:function(a){return Math.round(a.hours+a.minutes/60+a.seconds/3600)},autoUpdate:function(a,b){var c=this._calculateTimezoneOffset(this.positionTimezoneInfo);this.positionTimezoneInfo.hours=b.hours;this.positionTimezoneInfo.minutes=
-b.minutes;this.positionTimezoneInfo.seconds=b.seconds;this.positionTimezoneInfo.autoUpdated=!0;if(null!=a){var d=this.date&&this.date.getTime();this.date=this._autoUpdateDate=a;this._autoUpdateDate=null}var f=this._calculateTimezoneOffset(this.positionTimezoneInfo);c!==f&&(e.target=this,e.timezoneOffset=f,this.emit("timezone-will-change",e));if(null!=a)return d!==a.getTime()}})});
+
+define(["../../../core/Evented","../../../webscene/Lighting"],function(e,t){var i=new Date("March 15, 2015 12:00:00 UTC"),n=new Date,o={target:null,date:null},s={target:null,timezoneOffset:0},a=t.createSubclass([e],{declaredClass:"esri.views.3d.environment.SceneViewLighting",properties:{cameraTrackingEnabled:{value:!0},ambientOcclusionEnabled:{value:!1},date:{cast:function(e){return e},set:function(e){null!=e&&(this._set("date",new Date(e)),e!==i&&e!==this._autoUpdateDate&&(this.positionTimezoneInfo.autoUpdated=!1),o.target=this,n.setTime(this._get("date").getTime()),o.date=n,this.emit("date-will-change",o))}}},constructor:function(){this.positionTimezoneInfo={hours:0,minutes:0,seconds:0,autoUpdated:!0},this._autoUpdateDate=null},getDefaults:function(){return{date:i}},_calculateTimezoneOffset:function(e){return Math.round(e.hours+e.minutes/60+e.seconds/3600)},autoUpdate:function(e,t){var i=this._calculateTimezoneOffset(this.positionTimezoneInfo);if(this.positionTimezoneInfo.hours=t.hours,this.positionTimezoneInfo.minutes=t.minutes,this.positionTimezoneInfo.seconds=t.seconds,this.positionTimezoneInfo.autoUpdated=!0,null!=e){var n=this.date&&this.date.getTime();this._autoUpdateDate=e,this.date=e,this._autoUpdateDate=null}var o=this._calculateTimezoneOffset(this.positionTimezoneInfo);return i!==o&&(s.target=this,s.timezoneOffset=o,this.emit("timezone-will-change",s)),null!=e?n!==e.getTime():void 0}});return a});

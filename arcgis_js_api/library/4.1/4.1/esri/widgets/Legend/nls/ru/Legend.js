@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({points:"\u0422\u043e\u0447\u043a\u0438",lines:"\u041b\u0438\u043d\u0438\u0438",polygons:"\u041f\u043e\u043b\u0438\u0433\u043e\u043d\u044b",creatingLegend:"\u041f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u0438\u0435 \u043b\u0435\u0433\u0435\u043d\u0434\u044b",noLegend:"\u0411\u0435\u0437 \u043b\u0435\u0433\u0435\u043d\u0434\u044b",dotValue:"1 \u0442\u043e\u0447\u043a\u0430 \x3d {value} {unit}",currentObservations:"\u0422\u0435\u043a\u0443\u0449\u0438\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u044f",
-previousObservations:"\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u044f",high:"\u0412\u044b\u0441\u043e\u043a\u0438\u0439",low:"\u041d\u0438\u0437\u043a\u0438\u0439",esriMetersPerSecond:"\u043c/\u0441",esriKilometersPerHour:"\u043a\u043c/\u0447",esriKnots:"\u0443\u0437\u043b\u044b",esriFeetPerSecond:"\u0444\u0442/\u0441\u0435\u043a",esriMilesPerHour:"\u043c\u0438\u043b\u044c/\u0447\u0430\u0441",showField:"{field}",showNormField:"{field} \u0434\u0435\u043b\u0435\u043d\u043d\u043e\u0435 \u043d\u0430 {normField}",
-showNormPct:"{field} \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445 \u043e\u0442 \u043e\u0431\u0449\u0435\u0433\u043e",showRatio:"\u0414\u043e\u043b\u044f {field} \u043f\u043e \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044e \u043a {normField}",showRatioPercent:"{field} \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445 \u043e\u0442 {normField}",showRatioPercentTotal:"{field} \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445 \u043e\u0442 {field} \u0438 {normField}"});
+
+define({points:"Точки",lines:"Линии",polygons:"Полигоны",creatingLegend:"Построение легенды",noLegend:"Без легенды",dotValue:"1 точка = {value} {unit}",currentObservations:"Текущие наблюдения",previousObservations:"Предыдущие наблюдения",high:"Высокий",low:"Низкий",esriMetersPerSecond:"м/с",esriKilometersPerHour:"км/ч",esriKnots:"узлы",esriFeetPerSecond:"фт/сек",esriMilesPerHour:"миль/час",showField:"{field}",showNormField:"{field} деленное на {normField}",showNormPct:"{field} в процентах от общего",showRatio:"Доля {field} по отношению к {normField}",showRatioPercent:"{field} в процентах от {normField}",showRatioPercentTotal:"{field} в процентах от {field} и {normField}"});

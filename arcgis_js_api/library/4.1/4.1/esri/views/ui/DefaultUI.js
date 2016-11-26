@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("../../core/watchUtils ../../widgets/Attribution ../../widgets/Compass ../../widgets/NavigationToggle ../../widgets/Zoom ./Component ./UI dojo/_base/lang dojo/dom-geometry".split(" "),function(c,d,e,f,g,h,k,l,m){return k.createSubclass({declaredClass:"esri.views.ui.DefaultUI",constructor:function(){this._addComponents=this._addComponents.bind(this);this._componentsWatcher=this._componentsWatcher.bind(this);this._updateViewAwareWidgets=this._updateViewAwareWidgets.bind(this)},getDefaults:function(){return l.mixin(this.inherited(arguments),
-{components:[]})},initialize:function(){this._handles.add([c.init(this,"components",this._componentsWatcher),c.init(this,"view",this._updateViewAwareWidgets)])},_defaultPositionLookup:null,_componentsSetter:function(a){this._set("components",a||[])},_findComponentPosition:function(a){if(!this._defaultPositionLookup){var b=m.isBodyLtr();this._defaultPositionLookup={attribution:"manual",compass:b?"top-left":"top-right","navigation-toggle":b?"top-left":"top-right",zoom:b?"top-left":"top-right"}}return this._defaultPositionLookup[a]},
-_removeComponents:function(a){a.forEach(function(a){if(a=this.find(a))this.remove(a),a.destroy()},this)},_updateViewAwareWidgets:function(a){this.components.forEach(function(b){if(b=(b=this.find(b))&&b.widget)b.viewModel&&b.viewModel.hasOwnProperty("view")?b.viewModel.view=a:b.hasOwnProperty("view")&&b.set("view",a)},this)},_componentsWatcher:function(a,b){this._removeComponents(b);this._addComponents(a)},_addComponents:function(a){this.initialized&&a.forEach(function(a){this.add(this._createComponent(a),
-this._findComponentPosition(a))},this)},_createComponent:function(a){var b=this._createWidget(a);if(b)return new h({id:a,node:b})},_createWidget:function(a){if("attribution"===a)return this._createAttribution();if("compass"===a)return this._createCompass();if("navigation-toggle"===a)return this._createNavigationToggle();if("zoom"===a)return this._createZoom()},_createAttribution:function(){var a=new d({viewModel:{view:this.view}});a.startup();return a},_createCompass:function(){var a=new e({viewModel:{view:this.view}});
-a.startup();return a},_createNavigationToggle:function(){var a=new f({viewModel:{view:this.view}});a.startup();return a},_createZoom:function(){var a=new g({viewModel:{view:this.view}});a.startup();return a}})});
+
+define(["../../core/watchUtils","../../widgets/Attribution","../../widgets/Compass","../../widgets/NavigationToggle","../../widgets/Zoom","./Component","./UI","dojo/_base/lang","dojo/dom-geometry"],function(t,i,e,o,n,s,a,r,d){return a.createSubclass({declaredClass:"esri.views.ui.DefaultUI",constructor:function(){this._addComponents=this._addComponents.bind(this),this._componentsWatcher=this._componentsWatcher.bind(this),this._updateViewAwareWidgets=this._updateViewAwareWidgets.bind(this)},getDefaults:function(){return r.mixin(this.inherited(arguments),{components:[]})},initialize:function(){this._handles.add([t.init(this,"components",this._componentsWatcher),t.init(this,"view",this._updateViewAwareWidgets)])},_defaultPositionLookup:null,_componentsSetter:function(t){this._set("components",t||[])},_findComponentPosition:function(t){if(!this._defaultPositionLookup){var i=d.isBodyLtr();this._defaultPositionLookup={attribution:"manual",compass:i?"top-left":"top-right","navigation-toggle":i?"top-left":"top-right",zoom:i?"top-left":"top-right"}}return this._defaultPositionLookup[t]},_removeComponents:function(t){t.forEach(function(t){var i=this.find(t);i&&(this.remove(i),i.destroy())},this)},_updateViewAwareWidgets:function(t){this.components.forEach(function(i){var e=this.find(i),o=e&&e.widget;o&&(o.viewModel&&o.viewModel.hasOwnProperty("view")?o.viewModel.view=t:o.hasOwnProperty("view")&&o.set("view",t))},this)},_componentsWatcher:function(t,i){this._removeComponents(i),this._addComponents(t)},_addComponents:function(t){this.initialized&&t.forEach(function(t){this.add(this._createComponent(t),this._findComponentPosition(t))},this)},_createComponent:function(t){var i=this._createWidget(t);return i?new s({id:t,node:i}):void 0},_createWidget:function(t){return"attribution"===t?this._createAttribution():"compass"===t?this._createCompass():"navigation-toggle"===t?this._createNavigationToggle():"zoom"===t?this._createZoom():void 0},_createAttribution:function(){var t=new i({viewModel:{view:this.view}});return t.startup(),t},_createCompass:function(){var t=new e({viewModel:{view:this.view}});return t.startup(),t},_createNavigationToggle:function(){var t=new o({viewModel:{view:this.view}});return t.startup(),t},_createZoom:function(){var t=new n({viewModel:{view:this.view}});return t.startup(),t}})});

@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"\uac80\uc0c9",clearButtonTitle:"\uac80\uc0c9 \uc9c0\uc6b0\uae30",placeholder:"\uc8fc\uc18c \ub610\ub294 \uc7a5\uc18c \ucc3e\uae30",searchIn:"\ub2e4\uc74c\uc5d0\uc11c \uac80\uc0c9",lonlat:"\uacbd\ub3c4, \uc704\ub3c4",reverseLonLatHeader:"\uc218\ud589\ud560 \uc791\uc5c5",all:"\ubaa8\ub450",allPlaceholder:"\uc8fc\uc18c \ub610\ub294 \uc7a5\uc18c \ucc3e\uae30",emptyValue:"\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694.",untitledResult:"\uc81c\ubaa9 \uc5c6\uc74c",untitledSource:"\uc81c\ubaa9 \uc5c6\ub294 \uc6d0\ubcf8",
-noResults:"\uacb0\uacfc \uc5c6\uc74c",noResultsFound:"{value}\uc5d0 \ub300\ud55c \uacb0\uacfc\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.",showMoreResults:"\ub354 \ub9ce\uc740 \uacb0\uacfc \ubcf4\uae30",hideMoreResults:"\uc228\uae30\uae30",searchResult:"\uac80\uc0c9 \uacb0\uacfc",moreResultsHeader:"\ub354 \ub9ce\uc740 \uacb0\uacfc",esriLocatorName:"ESRI World Geocoder"});
+
+define({searchButtonTitle:"검색",clearButtonTitle:"검색 지우기",placeholder:"주소 또는 장소 찾기",searchIn:"다음에서 검색",lonlat:"경도, 위도",reverseLonLatHeader:"수행할 작업",all:"모두",allPlaceholder:"주소 또는 장소 찾기",emptyValue:"검색어를 입력하세요.",untitledResult:"제목 없음",untitledSource:"제목 없는 원본",noResults:"결과 없음",noResultsFound:"{value}에 대한 결과를 찾을 수 없습니다.",showMoreResults:"더 많은 결과 보기",hideMoreResults:"숨기기",searchResult:"검색 결과",moreResultsHeader:"더 많은 결과",esriLocatorName:"ESRI World Geocoder"});

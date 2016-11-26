@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"\u0e0a\u0e31\u0e49\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 ${name} \u0e44\u0e21\u0e48\u0e21\u0e35\u0e1f\u0e34\u0e25\u0e14\u0e4c\u0e17\u0e35\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e43\u0e0a\u0e49\u0e01\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e01\u0e23\u0e2d\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25",addToViewer:"\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e0a\u0e31\u0e49\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e44\u0e1b\u0e22\u0e31\u0e07\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48",noItemsToDisplay:"\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19\u0e44\u0e21\u0e48\u0e21\u0e35\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e17\u0e35\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e41\u0e2a\u0e14\u0e07\u0e1c\u0e25\u0e44\u0e14\u0e49",
-searchFor:"\u0e04\u0e49\u0e19\u0e2b\u0e32",searching:"\u0e01\u0e33\u0e25\u0e31\u0e07\u0e04\u0e49\u0e19\u0e2b\u0e32",items:{organizationLabel:"\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23\u0e02\u0e2d\u0e07\u0e09\u0e31\u0e19",onlineLabel:"ArcGIS Online",contentLabel:"\u0e40\u0e19\u0e37\u0e49\u0e2d\u0e2b\u0e32\u0e02\u0e2d\u0e07\u0e09\u0e31\u0e19",favoritesLabel:"\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e42\u0e1b\u0e23\u0e14\u0e02\u0e2d\u0e07\u0e09\u0e31\u0e19"},title:"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e40\u0e27\u0e47\u0e1a\u0e41\u0e21\u0e1e",
-searchTitle:"\u0e04\u0e49\u0e19\u0e2b\u0e32",ok:"\u0e15\u0e01\u0e25\u0e07",cancel:"\u0e22\u0e01\u0e40\u0e25\u0e34\u0e01",placeholder:"\u0e43\u0e2a\u0e48\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e01\u0e32\u0e23\u0e04\u0e49\u0e19\u0e2b\u0e32",instructionsLeft:"\u0e04\u0e38\u0e13\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e08\u0e30\u0e17\u0e33\u0e2d\u0e30\u0e44\u0e23?",instructionsRight:"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e41\u0e2d\u0e1e\u0e1e\u0e25\u0e34\u0e40\u0e04\u0e17\u0e35\u0e48\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07",
-go:"\u0e44\u0e1b",selectDetails:"\u0e40\u0e25\u0e37\u0e2d\u0e01",configure:"\u0e2a\u0e23\u0e49\u0e32\u0e07",close:"\u0e1b\u0e34\u0e14",learnMoreConfigurableApps:"\u0e40\u0e23\u0e35\u0e22\u0e19\u0e23\u0e39\u0e49\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21\u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e41\u0e2d\u0e1b\u0e1e\u0e25\u0e34\u0e40\u0e04\u0e0a\u0e31\u0e19\u0e17\u0e35\u0e48\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e04\u0e48\u0e32\u0e44\u0e14\u0e49"});
+
+define({noFilterFields:"ชั้นข้อมูล ${name} ไม่มีฟิลด์ที่สามารถใช้กับการกรองข้อมูล",addToViewer:"เพิ่มชั้นข้อมูลไปยังแผนที่",noItemsToDisplay:"ปัจจุบันไม่มีรายการที่สามารถแสดงผลได้",searchFor:"ค้นหา",searching:"กำลังค้นหา",items:{organizationLabel:"องค์กรของฉัน",onlineLabel:"ArcGIS Online",contentLabel:"เนื้อหาของฉัน",favoritesLabel:"รายการโปรดของฉัน"},title:"เลือกเว็บแมพ",searchTitle:"ค้นหา",ok:"ตกลง",cancel:"ยกเลิก",placeholder:"ใส่เงื่อนไขการค้นหา",instructionsLeft:"คุณต้องการจะทำอะไร?",instructionsRight:"เลือกแอพพลิเคที่กำหนดเอง",go:"ไป",selectDetails:"เลือก",configure:"สร้าง",close:"ปิด",learnMoreConfigurableApps:"เรียนรู้เพิ่มเติมเกี่ยวแอปพลิเคชันที่กำหนดค่าได้"});

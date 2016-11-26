@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("./declare ./accessorSupport/Properties ./accessorSupport/get ./accessorSupport/introspection ./accessorSupport/set ./accessorSupport/watch".split(" "),function(c,e,h,f,k,g){e=e.default;c.before(function(a,b){c.hasMixin(a,d)&&f.processPrototype(b)});c.after(function(a){c.hasMixin(a,d)&&(f.processClass(a),Object.defineProperties(a.prototype,{initialized:{get:function(){return this.__accessor__&&this.__accessor__.initialized||!1}},destroyed:{get:function(){return this.__accessor__&&this.__accessor__.destroyed||
-!1}}}))});var d=c(null,{declaredClass:"esri.core.Accessor","-chains-":{initialize:"after",destroy:"before"},constructor:function(){if(this.constructor===d)throw Error("[accessor] cannot instanciate Accessor. This can be fixed by creating a subclass of Accessor");Object.defineProperty(this,"__accessor__",{value:new e(this)});if(0<arguments.length&&this.normalizeCtorArgs){for(var a=[],b=0;b<arguments.length;b++)a.push(arguments[b]);this.__accessor__.ctorArgs=this.normalizeCtorArgs.apply(this,a)}},__accessor__:null,
-postscript:function(a){var b=this.__accessor__;a=b.ctorArgs||a;var c;null!=this.getDefaults&&(c=this.getDefaults(a||{}),this.set(c));b.initialize();a&&(this.set(a),b.ctorArgs=null);this.initialize()},initialize:function(){},destroy:function(){if(this.__accessor__)g.removeTarget(this),this.__accessor__.destroy();else try{throw Error("instance is already destroyed");}catch(a){console.warn(a.stack)}},get:function(a){return h.get(this,a)},hasOwnProperty:function(a){return this.__accessor__?this.__accessor__.has(a):
-Object.prototype.hasOwnProperty.call(this,a)},keys:function(){return this.__accessor__?this.__accessor__.keys():[]},notifyChange:function(a){this.__accessor__.propertyInvalidated(a)},set:function(a,b){k.set(this,a,b);return this},watch:function(a,b,c){return g.watch(this,a,b,c)},_clearOverride:function(a){return this.__accessor__.clearOverride(a)},_override:function(a,b){return this.__accessor__.override(a,b)},_isOverridden:function(a){return this.__accessor__.isOverridden(a)},_get:function(a){return this.__accessor__.internalGet(a)},
-_set:function(a,b){return this.__accessor__.internalSet(a,b)}});return d});
+
+define(["./declare","./accessorSupport/Properties","./accessorSupport/get","./accessorSupport/introspection","./accessorSupport/set","./accessorSupport/watch"],function(t,e,s,r,i,c){e=e["default"],t.before(function(e,s){t.hasMixin(e,o)&&r.processPrototype(s)}),t.after(function(e){t.hasMixin(e,o)&&(r.processClass(e),Object.defineProperties(e.prototype,{initialized:{get:function(){return this.__accessor__&&this.__accessor__.initialized||!1}},destroyed:{get:function(){return this.__accessor__&&this.__accessor__.destroyed||!1}}}))});var n="__accessor__",o=t(null,{declaredClass:"esri.core.Accessor","-chains-":{initialize:"after",destroy:"before"},constructor:function(){if(this.constructor===o)throw new Error("[accessor] cannot instanciate Accessor. This can be fixed by creating a subclass of Accessor");if(Object.defineProperty(this,n,{value:new e(this)}),arguments.length>0&&this.normalizeCtorArgs){for(var t=[],s=0;s<arguments.length;s++)t.push(arguments[s]);this.__accessor__.ctorArgs=this.normalizeCtorArgs.apply(this,t)}},__accessor__:null,postscript:function(t){var e,s=this.__accessor__,r=s.ctorArgs||t;null!=this.getDefaults&&(e=this.getDefaults(r||{}),this.set(e)),s.initialize(),r&&(this.set(r),s.ctorArgs=null),this.initialize()},initialize:function(){},destroy:function(){if(this.__accessor__)c.removeTarget(this),this.__accessor__.destroy();else try{throw new Error("instance is already destroyed")}catch(t){console.warn(t.stack)}},get:function(t){return s.get(this,t)},hasOwnProperty:function(t){return this.__accessor__?this.__accessor__.has(t):Object.prototype.hasOwnProperty.call(this,t)},keys:function(){return this.__accessor__?this.__accessor__.keys():[]},notifyChange:function(t){this.__accessor__.propertyInvalidated(t)},set:function(t,e){return i.set(this,t,e),this},watch:function(t,e,s){return c.watch(this,t,e,s)},_clearOverride:function(t){return this.__accessor__.clearOverride(t)},_override:function(t,e){return this.__accessor__.override(t,e)},_isOverridden:function(t){return this.__accessor__.isOverridden(t)},_get:function(t){return this.__accessor__.internalGet(t)},_set:function(t,e){return this.__accessor__.internalSet(t,e)}});return o});

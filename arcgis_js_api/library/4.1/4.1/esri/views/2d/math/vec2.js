@@ -1,9 +1,45 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["./common"],function(g){var f=g.GLMAT_ARRAY_TYPE,h=g.GLMAT_RANDOM,d={create:function(){var a=new f(2);a[0]=0;a[1]=0;return a},clone:function(a){var b=new f(2);b[0]=a[0];b[1]=a[1];return b},fromValues:function(a,b){var c=new f(2);c[0]=a;c[1]=b;return c},copy:function(a,b){a[0]=b[0];a[1]=b[1];return a},set:function(a,b,c){a[0]=b;a[1]=c;return a},add:function(a,b,c){a[0]=b[0]+c[0];a[1]=b[1]+c[1];return a},subtract:function(a,b,c){a[0]=b[0]-c[0];a[1]=b[1]-c[1];return a}};d.sub=d.subtract;d.multiply=
-function(a,b,c){a[0]=b[0]*c[0];a[1]=b[1]*c[1];return a};d.mul=d.multiply;d.divide=function(a,b,c){a[0]=b[0]/c[0];a[1]=b[1]/c[1];return a};d.div=d.divide;d.min=function(a,b,c){a[0]=Math.min(b[0],c[0]);a[1]=Math.min(b[1],c[1]);return a};d.max=function(a,b,c){a[0]=Math.max(b[0],c[0]);a[1]=Math.max(b[1],c[1]);return a};d.scale=function(a,b,c){a[0]=b[0]*c;a[1]=b[1]*c;return a};d.scaleAndAdd=function(a,b,c,d){a[0]=b[0]+c[0]*d;a[1]=b[1]+c[1]*d;return a};d.distance=function(a,b){var c=b[0]-a[0],d=b[1]-a[1];
-return Math.sqrt(c*c+d*d)};d.dist=d.distance;d.squaredDistance=function(a,b){var c=b[0]-a[0],d=b[1]-a[1];return c*c+d*d};d.sqrDist=d.squaredDistance;d.length=function(a){var b=a[0];a=a[1];return Math.sqrt(b*b+a*a)};d.len=d.length;d.squaredLength=function(a){var b=a[0];a=a[1];return b*b+a*a};d.sqrLen=d.squaredLength;d.negate=function(a,b){a[0]=-b[0];a[1]=-b[1];return a};d.inverse=function(a,b){a[0]=1/b[0];a[1]=1/b[1];return a};d.normalize=function(a,b){var c=b[0],d=b[1],c=c*c+d*d;0<c&&(c=1/Math.sqrt(c),
-a[0]=b[0]*c,a[1]=b[1]*c);return a};d.dot=function(a,b){return a[0]*b[0]+a[1]*b[1]};d.cross=function(a,b,c){b=b[0]*c[1]-b[1]*c[0];a[0]=a[1]=0;a[2]=b;return a};d.lerp=function(a,b,c,d){var e=b[0];b=b[1];a[0]=e+d*(c[0]-e);a[1]=b+d*(c[1]-b);return a};d.random=function(a,b){b=b||1;var c=2*h()*Math.PI;a[0]=Math.cos(c)*b;a[1]=Math.sin(c)*b;return a};d.transformMat2=function(a,b,c){var d=b[0];b=b[1];a[0]=c[0]*d+c[2]*b;a[1]=c[1]*d+c[3]*b;return a};d.transformMat2d=function(a,b,c){var d=b[0];b=b[1];a[0]=c[0]*
-d+c[2]*b+c[4];a[1]=c[1]*d+c[3]*b+c[5];return a};d.transformMat3=function(a,b,c){var d=b[0];b=b[1];a[0]=c[0]*d+c[3]*b+c[6];a[1]=c[1]*d+c[4]*b+c[7];return a};d.transformMat4=function(a,b,c){var d=b[0];b=b[1];a[0]=c[0]*d+c[4]*b+c[12];a[1]=c[1]*d+c[5]*b+c[13];return a};d.forEach=function(){var a=d.create();return function(b,c,d,e,f,g){c||(c=2);d||(d=0);for(e=e?Math.min(e*c+d,b.length):b.length;d<e;d+=c)a[0]=b[d],a[1]=b[d+1],f(a,a,g),b[d]=a[0],b[d+1]=a[1];return b}}();d.str=function(a){return"vec2("+a[0]+
-", "+a[1]+")"};return d});
+
+/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE. */
+
+define(["./common"],function(n){var r=n.GLMAT_ARRAY_TYPE,t=n.GLMAT_RANDOM,u={};return u.create=function(){var n=new r(2);return n[0]=0,n[1]=0,n},u.clone=function(n){var t=new r(2);return t[0]=n[0],t[1]=n[1],t},u.fromValues=function(n,t){var u=new r(2);return u[0]=n,u[1]=t,u},u.copy=function(n,r){return n[0]=r[0],n[1]=r[1],n},u.set=function(n,r,t){return n[0]=r,n[1]=t,n},u.add=function(n,r,t){return n[0]=r[0]+t[0],n[1]=r[1]+t[1],n},u.subtract=function(n,r,t){return n[0]=r[0]-t[0],n[1]=r[1]-t[1],n},u.sub=u.subtract,u.multiply=function(n,r,t){return n[0]=r[0]*t[0],n[1]=r[1]*t[1],n},u.mul=u.multiply,u.divide=function(n,r,t){return n[0]=r[0]/t[0],n[1]=r[1]/t[1],n},u.div=u.divide,u.min=function(n,r,t){return n[0]=Math.min(r[0],t[0]),n[1]=Math.min(r[1],t[1]),n},u.max=function(n,r,t){return n[0]=Math.max(r[0],t[0]),n[1]=Math.max(r[1],t[1]),n},u.scale=function(n,r,t){return n[0]=r[0]*t,n[1]=r[1]*t,n},u.scaleAndAdd=function(n,r,t,u){return n[0]=r[0]+t[0]*u,n[1]=r[1]+t[1]*u,n},u.distance=function(n,r){var t=r[0]-n[0],u=r[1]-n[1];return Math.sqrt(t*t+u*u)},u.dist=u.distance,u.squaredDistance=function(n,r){var t=r[0]-n[0],u=r[1]-n[1];return t*t+u*u},u.sqrDist=u.squaredDistance,u.length=function(n){var r=n[0],t=n[1];return Math.sqrt(r*r+t*t)},u.len=u.length,u.squaredLength=function(n){var r=n[0],t=n[1];return r*r+t*t},u.sqrLen=u.squaredLength,u.negate=function(n,r){return n[0]=-r[0],n[1]=-r[1],n},u.inverse=function(n,r){return n[0]=1/r[0],n[1]=1/r[1],n},u.normalize=function(n,r){var t=r[0],u=r[1],e=t*t+u*u;return e>0&&(e=1/Math.sqrt(e),n[0]=r[0]*e,n[1]=r[1]*e),n},u.dot=function(n,r){return n[0]*r[0]+n[1]*r[1]},u.cross=function(n,r,t){var u=r[0]*t[1]-r[1]*t[0];return n[0]=n[1]=0,n[2]=u,n},u.lerp=function(n,r,t,u){var e=r[0],a=r[1];return n[0]=e+u*(t[0]-e),n[1]=a+u*(t[1]-a),n},u.random=function(n,r){r=r||1;var u=2*t()*Math.PI;return n[0]=Math.cos(u)*r,n[1]=Math.sin(u)*r,n},u.transformMat2=function(n,r,t){var u=r[0],e=r[1];return n[0]=t[0]*u+t[2]*e,n[1]=t[1]*u+t[3]*e,n},u.transformMat2d=function(n,r,t){var u=r[0],e=r[1];return n[0]=t[0]*u+t[2]*e+t[4],n[1]=t[1]*u+t[3]*e+t[5],n},u.transformMat3=function(n,r,t){var u=r[0],e=r[1];return n[0]=t[0]*u+t[3]*e+t[6],n[1]=t[1]*u+t[4]*e+t[7],n},u.transformMat4=function(n,r,t){var u=r[0],e=r[1];return n[0]=t[0]*u+t[4]*e+t[12],n[1]=t[1]*u+t[5]*e+t[13],n},u.forEach=function(){var n=u.create();return function(r,t,u,e,a,i){var c,o;for(t||(t=2),u||(u=0),o=e?Math.min(e*t+u,r.length):r.length,c=u;o>c;c+=t)n[0]=r[c],n[1]=r[c+1],a(n,n,i),r[c]=n[0],r[c+1]=n[1];return r}}(),u.str=function(n){return"vec2("+n[0]+", "+n[1]+")"},u});

@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"Ara",clearButtonTitle:"Aramay\u0131 temizle",placeholder:"Adres veya yer bul",searchIn:"\u015eurada Ara:",lonlat:"Boylam, Enlem",reverseLonLatHeader:"\u015eunu mu demek istediniz?",all:"T\u00fcm\u00fc",allPlaceholder:"Adres veya yer bul",emptyValue:"Arama terimi girin.",untitledResult:"Ba\u015fl\u0131ks\u0131z",untitledSource:"Ba\u015fl\u0131ks\u0131z kaynak",noResults:"Sonu\u00e7 yok",noResultsFound:"{value} i\u00e7in herhangi bir sonu\u00e7 bulunamad\u0131.",showMoreResults:"Daha fazla sonu\u00e7 g\u00f6ster",
-hideMoreResults:"Gizle",searchResult:"Sonu\u00e7 ara",moreResultsHeader:"Di\u011fer sonu\u00e7lar",esriLocatorName:"Esri D\u00fcnya Co\u011frafi Kodlay\u0131c\u0131s\u0131"});
+
+define({searchButtonTitle:"Ara",clearButtonTitle:"Aramayı temizle",placeholder:"Adres veya yer bul",searchIn:"Şurada Ara:",lonlat:"Boylam, Enlem",reverseLonLatHeader:"Şunu mu demek istediniz?",all:"Tümü",allPlaceholder:"Adres veya yer bul",emptyValue:"Arama terimi girin.",untitledResult:"Başlıksız",untitledSource:"Başlıksız kaynak",noResults:"Sonuç yok",noResultsFound:"{value} için herhangi bir sonuç bulunamadı.",showMoreResults:"Daha fazla sonuç göster",hideMoreResults:"Gizle",searchResult:"Sonuç ara",moreResultsHeader:"Diğer sonuçlar",esriLocatorName:"Esri Dünya Coğrafi Kodlayıcısı"});

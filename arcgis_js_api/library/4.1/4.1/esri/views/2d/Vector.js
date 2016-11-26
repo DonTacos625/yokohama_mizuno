@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../core/declare","../../geometry/Extent","../../core/Accessoire"],function(d,e,f){var g=0;return d([f],{declaredClass:"esri.views.2d.Vector",constructor:function(){this.id="vec"+g++},_graphicSetter:function(a,b){if(a===b)return b;this.extent=a?this._getGraphicExtent(a):null;this.graphicChanged();return a},_symbolSetter:function(a,b){if(a===b)return b;this._symbolChangeHandle&&(this._symbolChangeHandle.remove(),this._symbolChangeHandle=null);this.symbolChanged();return a},_colorSetter:function(a,
-b){if(a===b)return b;this.symbolChanged();return a},_sizeSetter:function(a,b){if(a===b)return b;this.symbolChanged();return a},_opacitySetter:function(a,b){if(a===b)return b;this.symbolChanged();return a},_rotationAngleSetter:function(a,b){if(a===b)return b;this.symbolChanged();return a},_outlineSizeSetter:function(a,b){if(a===b)return b;this.symbolChanged();return a},_geometrySetter:function(a,b){if(a===b)return b;this.graphicChanged();return a},_projectedGeometrySetter:function(a,b){if(a===b)return b;
-this.graphicChanged();return a},_parentSetter:function(a,b){if(a===b)return b;a&&this._requestDrawFlag&&a.requestVectorDraw(this);return a},graphicChanged:function(){this._graphicChanged=!0;this.requestDraw()},symbolChanged:function(){this._symbolChanged=!0;this.requestDraw()},rendered:function(){this._symbolChanged=this._graphicChanged=!1},requestDraw:function(){this._requestDrawFlag||(this._requestDrawFlag=!0,this.parent&&this.parent.requestVectorDraw(this))},_getGraphicExtent:function(a){a=a.geometry;
-var b=null;if(a&&(b=a.extent,!b)){var c;if("esri.geometry.Point"===a.declaredClass)b=a.x,c=a.y;else if("esri.geometry.Multipoint"===a.declaredClass)b=a.points[0][0],c=a.points[0][1];else return null;b=new e(b,c,b,c,a.spatialReference)}return b}})});
+
+define(["../../core/declare","../../geometry/Extent","../../core/Accessoire"],function(e,t,r){function n(){return"vec"+i++}var i=0,s=e([r],{declaredClass:"esri.views.2d.Vector",constructor:function(){this.id=n()},_graphicSetter:function(e,t){return e===t?t:(e?this.extent=this._getGraphicExtent(e):this.extent=null,this.graphicChanged(),e)},_symbolSetter:function(e,t){return e===t?t:(this._symbolChangeHandle&&(this._symbolChangeHandle.remove(),this._symbolChangeHandle=null),this.symbolChanged(),e)},_colorSetter:function(e,t){return e===t?t:(this.symbolChanged(),e)},_sizeSetter:function(e,t){return e===t?t:(this.symbolChanged(),e)},_opacitySetter:function(e,t){return e===t?t:(this.symbolChanged(),e)},_rotationAngleSetter:function(e,t){return e===t?t:(this.symbolChanged(),e)},_outlineSizeSetter:function(e,t){return e===t?t:(this.symbolChanged(),e)},_geometrySetter:function(e,t){return e===t?t:(this.graphicChanged(),e)},_projectedGeometrySetter:function(e,t){return e===t?t:(this.graphicChanged(),e)},_parentSetter:function(e,t){return e===t?t:(e&&this._requestDrawFlag&&e.requestVectorDraw(this),e)},graphicChanged:function(){this._graphicChanged=!0,this.requestDraw()},symbolChanged:function(){this._symbolChanged=!0,this.requestDraw()},rendered:function(){this._graphicChanged=!1,this._symbolChanged=!1},requestDraw:function(){this._requestDrawFlag||(this._requestDrawFlag=!0,this.parent&&this.parent.requestVectorDraw(this))},_getGraphicExtent:function(e){var r=e.geometry,n=null;if(r&&(n=r.extent,!n)){var i,s;if("esri.geometry.Point"===r.declaredClass)i=r.x,s=r.y;else{if("esri.geometry.Multipoint"!==r.declaredClass)return null;i=r.points[0][0],s=r.points[0][1]}n=new t(i,s,i,s,r.spatialReference)}return n}});return s});

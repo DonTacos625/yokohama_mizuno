@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({about:"O aplikaci",add:"P\u0159idat",all:"V\u0161echny",apply:"Pou\u017e\u00edt",auth:{logOut:"Odhl\u00e1sit",signIn:"P\u0159ihl\u00e1sit"},back:"Zp\u011bt",cancel:"Storno",change:"Zm\u011bnit",clear:"Vypr\u00e1zdnit",close:"Zav\u0159\u00edt",configure:"Konfigurovat",control:{pause:"Pozastavit",play:"P\u0159ehr\u00e1t",resume:"Obnovit",stop:"Ukon\u010dit iteraci (Stop)"},copy:"Kop\u00edrovat",create:"Vytvo\u0159it",cut:"Vyjmout","delete":"Smazat",details:"Podrobnosti",edit:"Editovat",error:"Chyba",
-esri:"Esri",exit:"Konec",fieldsSummary:"Seznam atribut\u016f a hodnot",find:"Naj\u00edt",form:{no:"Ne",ok:"OK",password:"Heslo",submit:"Odeslat",username:"U\u017eivatelsk\u00e9 jm\u00e9no",yes:"Ano"},help:"N\u00e1pov\u011bda",home:"Dom\u016f",info:"Informace",information:"Informace",layer:"Vrstva",loading:"Na\u010d\u00edt\u00e1n\u00ed",maximize:"Maximalizovat",menu:"Nab\u00eddka",more:"V\u00edce",none:"\u017d\u00e1dn\u00fd",open:"Otev\u0159\u00edt",pagination:{first:"Prvn\u00ed",last:"Posledn\u00ed",
-next:"Dal\u0161\u00ed",page:"Str\u00e1nka",pageText:"{index} z {total}",previous:"P\u0159edchoz\u00ed"},paste:"Vlo\u017eit",preview:"N\u00e1hled",print:"Tisk",publish:"Publikovat",redo:"Znovu",refresh:"Obnovit",remove:"Odebrat",rename:"P\u0159ejmenovat",reset:"Obnovit",restore:"Obnovit",save:"Ulo\u017eit",search:"Hledat",searching:"Vyhled\u00e1v\u00e1n\u00ed",select:"Vybrat",settings:"Nastaven\u00ed",sort:"Se\u0159adit (Sort)",share:"Sd\u00edlet",title:"Nadpis",untitled:"Bez n\u00e1zvu",upload:"Nahr\u00e1t",
-undo:"Vr\u00e1tit",view:"Zobrazit",visibility:{hide:"Skr\u00fdt",show:"Zobrazit",toggle:"P\u0159epnout"},warning:"Varov\u00e1n\u00ed"});
+
+define({about:"O aplikaci",add:"Přidat",all:"Všechny",apply:"Použít",auth:{logOut:"Odhlásit",signIn:"Přihlásit"},back:"Zpět",cancel:"Storno",change:"Změnit",clear:"Vyprázdnit",close:"Zavřít",configure:"Konfigurovat",control:{pause:"Pozastavit",play:"Přehrát",resume:"Obnovit",stop:"Ukončit iteraci (Stop)"},copy:"Kopírovat",create:"Vytvořit",cut:"Vyjmout","delete":"Smazat",details:"Podrobnosti",edit:"Editovat",error:"Chyba",esri:"Esri",exit:"Konec",fieldsSummary:"Seznam atributů a hodnot",find:"Najít",form:{no:"Ne",ok:"OK",password:"Heslo",submit:"Odeslat",username:"Uživatelské jméno",yes:"Ano"},help:"Nápověda",home:"Domů",info:"Informace",information:"Informace",layer:"Vrstva",loading:"Načítání",maximize:"Maximalizovat",menu:"Nabídka",more:"Více",none:"Žádný",open:"Otevřít",pagination:{first:"První",last:"Poslední",next:"Další",page:"Stránka",pageText:"{index} z {total}",previous:"Předchozí"},paste:"Vložit",preview:"Náhled",print:"Tisk",publish:"Publikovat",redo:"Znovu",refresh:"Obnovit",remove:"Odebrat",rename:"Přejmenovat",reset:"Obnovit",restore:"Obnovit",save:"Uložit",search:"Hledat",searching:"Vyhledávání",select:"Vybrat",settings:"Nastavení",sort:"Seřadit (Sort)",share:"Sdílet",title:"Nadpis",untitled:"Bez názvu",upload:"Nahrát",undo:"Vrátit",view:"Zobrazit",visibility:{hide:"Skrýt",show:"Zobrazit",toggle:"Přepnout"},warning:"Varování"});

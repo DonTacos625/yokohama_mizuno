@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"Stratul tematic ${name} nu con\u0163ine niciun c\u00e2mp care s\u0103 poat\u0103 fi utilizat pentru filtrare.",addToViewer:"Ad\u0103ugare strat tematic \u00een hart\u0103",noItemsToDisplay:"\u00cen prezent, nu exist\u0103 elemente disponibile pentru afi\u015fare.",searchFor:"C\u0103utare dup\u0103",searching:"Se caut\u0103",items:{organizationLabel:"Organiza\u0163ia mea",onlineLabel:"ArcGIS Online",contentLabel:"Resursele mele",favoritesLabel:"Preferin\u0163ele mele"},title:"Selectare hart\u0103 web",
-searchTitle:"C\u0103utare",ok:"OK",cancel:"Anulare",placeholder:"Introducere termen de c\u0103utare",instructionsLeft:"Ce dori\u0163i s\u0103 face\u0163i?",instructionsRight:"Selecta\u0163i o aplica\u0163ie configurabil\u0103.",go:"Pornire",selectDetails:"SELECTARE",configure:"Creare",close:"\u00cenchidere",learnMoreConfigurableApps:"Afla\u0163i mai multe despre aplica\u0163iile configurabile"});
+
+define({noFilterFields:"Stratul tematic ${name} nu conţine niciun câmp care să poată fi utilizat pentru filtrare.",addToViewer:"Adăugare strat tematic în hartă",noItemsToDisplay:"În prezent, nu există elemente disponibile pentru afişare.",searchFor:"Căutare după",searching:"Se caută",items:{organizationLabel:"Organizaţia mea",onlineLabel:"ArcGIS Online",contentLabel:"Resursele mele",favoritesLabel:"Preferinţele mele"},title:"Selectare hartă web",searchTitle:"Căutare",ok:"OK",cancel:"Anulare",placeholder:"Introducere termen de căutare",instructionsLeft:"Ce doriţi să faceţi?",instructionsRight:"Selectaţi o aplicaţie configurabilă.",go:"Pornire",selectDetails:"SELECTARE",configure:"Creare",close:"Închidere",learnMoreConfigurableApps:"Aflaţi mai multe despre aplicaţiile configurabile"});

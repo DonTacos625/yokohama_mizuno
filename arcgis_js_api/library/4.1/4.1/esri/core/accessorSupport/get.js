@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","./utils"],function(m,e,f){function h(a,d,c){if(null!=c.getItemAt||Array.isArray(c)){var b=parseInt(a,10);if(!isNaN(b))return Array.isArray(c)?c[b]:c.getItemAt(b)}b=f.getProperties(c);return d?f.isPropertyDeclared(b,a)?b.get(a):c[a]:f.isPropertyDeclared(b,a)?b.internalGet(a):c[a]}function k(a,d,c,b){if(null==a)return a;a=h(d[b],c,a);return!a&&b<d.length-1?void 0:b===d.length-1?a:k(a,d,c,b+1)}function g(a,d,c,b){void 0===c&&(c=!1);void 0===b&&(b=0);return"string"===typeof d&&
--1===d.indexOf(".")?h(d,c,a):k(a,f.pathToArray(d),c,b)}function l(a,d){return g(a,d,!0)}e.valueOf=g;e.get=l;e.exists=function(a,d){return void 0!==g(d,a,!0)};Object.defineProperty(e,"__esModule",{value:!0});e.default=l});
+
+define(["require","exports","./utils"],function(e,r,t){function n(e,r,n){if(null!=n.getItemAt||Array.isArray(n)){var i=parseInt(e,10);if(!isNaN(i))return Array.isArray(n)?n[i]:n.getItemAt(i)}var u=t.getProperties(n);return r?t.isPropertyDeclared(u,e)?u.get(e):n[e]:t.isPropertyDeclared(u,e)?u.internalGet(e):n[e]}function i(e,r,t,u){if(null==e)return e;var o=r[u],a=n(o,t,e);return!a&&u<r.length-1?void 0:u===r.length-1?a:i(a,r,t,u+1)}function u(e,r,u,o){return void 0===u&&(u=!1),void 0===o&&(o=0),"string"==typeof r&&-1===r.indexOf(".")?n(r,u,e):i(e,t.pathToArray(r),u,o)}function o(e,r){return u(e,r,!0)}function a(e,r){return void 0!==u(r,e,!0)}r.valueOf=u,r.get=o,r.exists=a,Object.defineProperty(r,"__esModule",{value:!0}),r["default"]=o});

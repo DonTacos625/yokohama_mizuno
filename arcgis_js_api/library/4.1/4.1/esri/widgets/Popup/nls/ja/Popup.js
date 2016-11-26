@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({zoom:"\u30ba\u30fc\u30e0",next:"\u6b21\u306e\u30d5\u30a3\u30fc\u30c1\u30e3",previous:"\u524d\u306e\u30d5\u30a3\u30fc\u30c1\u30e3",close:"\u9589\u3058\u308b",dock:"\u30c9\u30c3\u30ad\u30f3\u30b0",undock:"\u30c9\u30c3\u30ad\u30f3\u30b0\u89e3\u9664",menu:"\u30e1\u30cb\u30e5\u30fc",untitled:"\u7121\u984c",pageText:"{index} / {total}",noFeaturesFound:"\u30d5\u30a3\u30fc\u30c1\u30e3\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093",selectedFeature:"\u9078\u629e\u30d5\u30a3\u30fc\u30c1\u30e3",selectedFeatures:"{total} \u4ef6\u306e\u7d50\u679c",
-loading:"\u8aad\u307f\u8fbc\u3093\u3067\u3044\u307e\u3059"});
+
+define({zoom:"ズーム",next:"次のフィーチャ",previous:"前のフィーチャ",close:"閉じる",dock:"ドッキング",undock:"ドッキング解除",menu:"メニュー",untitled:"無題",pageText:"{index} / {total}",noFeaturesFound:"フィーチャが見つかりません",selectedFeature:"選択フィーチャ",selectedFeatures:"{total} 件の結果",loading:"読み込んでいます"});

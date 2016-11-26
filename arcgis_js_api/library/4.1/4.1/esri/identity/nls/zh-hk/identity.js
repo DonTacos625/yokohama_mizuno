@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({lblItem:"\u9805\u76ee",title:"\u767b\u5165",info:"\u8acb\u767b\u5165\u4ee5\u5b58\u53d6 {server} {resource} \u4e0a\u7684\u9805\u76ee",oAuthInfo:"\u8acb\u767b\u5165\u4ee5\u7e7c\u7e8c\u3002",lblUser:"\u4f7f\u7528\u8005\u540d\u7a31:",lblPwd:"\u5bc6\u78bc:",lblOk:"\u78ba\u5b9a",lblSigning:"\u6b63\u5728\u767b\u5165...",lblCancel:"\u53d6\u6d88",errorMsg:"\u7121\u6548\u7684\u4f7f\u7528\u8005\u540d\u7a31\u6216\u5bc6\u78bc\u3002\u8acb\u91cd\u8a66\u3002",invalidUser:"\u8f38\u5165\u7684\u4f7f\u7528\u8005\u540d\u7a31\u6216\u5bc6\u78bc\u4e0d\u6b63\u78ba\u3002",
-forbidden:"\u4f7f\u7528\u8005\u540d\u7a31\u548c\u5bc6\u78bc\u6709\u6548\uff0c\u4f46\u60a8\u6c92\u6709\u5b58\u53d6\u6b64\u8cc7\u6e90\u7684\u6b0a\u9650\u3002",noAuthService:"\u7121\u6cd5\u5b58\u53d6\u8eab\u4efd\u9a57\u8b49\u670d\u52d9\u3002"});
+
+define({lblItem:"項目",title:"登入",info:"請登入以存取 {server} {resource} 上的項目",oAuthInfo:"請登入以繼續。",lblUser:"使用者名稱:",lblPwd:"密碼:",lblOk:"確定",lblSigning:"正在登入...",lblCancel:"取消",errorMsg:"無效的使用者名稱或密碼。請重試。",invalidUser:"輸入的使用者名稱或密碼不正確。",forbidden:"使用者名稱和密碼有效，但您沒有存取此資源的權限。",noAuthService:"無法存取身份驗證服務。"});

@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"Warstwa ${name} nie zawiera p\u00f3l, kt\u00f3rych mo\u017cna by u\u017cy\u0107 do filtrowania.",addToViewer:"Dodaj warstw\u0119 do mapy",noItemsToDisplay:"Obecnie nie ma element\u00f3w do wy\u015bwietlenia.",searchFor:"Wyszukaj",searching:"Wyszukiwanie",items:{organizationLabel:"Moja instytucja",onlineLabel:"ArcGIS Online",contentLabel:"Moje zasoby",favoritesLabel:"Moje ulubione"},title:"Wyb\u00f3r mapy internetowej",searchTitle:"Wyszukaj",ok:"OK",cancel:"Anuluj",placeholder:"Wprowad\u017a wyszukiwane wyra\u017cenie",
-instructionsLeft:"Co chcesz zrobi\u0107?",instructionsRight:"Wybierz konfigurowaln\u0105 aplikacj\u0119.",go:"Przejd\u017a",selectDetails:"WYBIERZ",configure:"Utw\u00f3rz",close:"Zamknij",learnMoreConfigurableApps:"Dodatkowe informacje o konfigurowalnych aplikacjach"});
+
+define({noFilterFields:"Warstwa ${name} nie zawiera pól, których można by użyć do filtrowania.",addToViewer:"Dodaj warstwę do mapy",noItemsToDisplay:"Obecnie nie ma elementów do wyświetlenia.",searchFor:"Wyszukaj",searching:"Wyszukiwanie",items:{organizationLabel:"Moja instytucja",onlineLabel:"ArcGIS Online",contentLabel:"Moje zasoby",favoritesLabel:"Moje ulubione"},title:"Wybór mapy internetowej",searchTitle:"Wyszukaj",ok:"OK",cancel:"Anuluj",placeholder:"Wprowadź wyszukiwane wyrażenie",instructionsLeft:"Co chcesz zrobić?",instructionsRight:"Wybierz konfigurowalną aplikację.",go:"Przejdź",selectDetails:"WYBIERZ",configure:"Utwórz",close:"Zamknij",learnMoreConfigurableApps:"Dodatkowe informacje o konfigurowalnych aplikacjach"});

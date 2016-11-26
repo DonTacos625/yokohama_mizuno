@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../declare","../typescript","../JSONSupport","dojo/_base/lang"],function(k,g,l,m){function h(d,a){if(!d)return a;if(!a)return d;for(var b in a){var c=d[b],f=a[b];Array.isArray(f)&&Array.isArray(c)?d[b]=c.concat(f):d[b]="object"===typeof f&&"object"===typeof c?h(c,f):f}return d}return{subclass:function(d,a){return function(b){b=g.declareDefinition(b,d);c&&(b.instanceMembers.properties=h(c,b.instanceMembers.properties));var c=b.instanceMembers.properties;if(c)for(var a in c){var e=c[a];e&&
-(!e.reader&&e.type)&&(e.type===Date?e.reader=function(a){return null!=a?new Date(a):null}:-1!==e.type._meta.bases.indexOf(l)&&(e.reader=function(a){return function(b){return a.fromJSON(b)}}(e.type)))}return m.mixin(k(b.bases,b.instanceMembers),b.classMembers)}},shared:g.shared,property:function(d){return function(a,b){var c=Object.getPrototypeOf(a),c=c&&c.properties;if(!a.properties||a.properties===c)a.properties={};a.properties=a.properties||{};a.properties[b]=d||{}}}}});
+
+define(["../declare","../typescript","../JSONSupport","dojo/_base/lang"],function(e,r,t,n){function i(e,r){if(!e)return r;if(!r)return e;for(var t in r){var n=e[t],o=r[t];Array.isArray(o)&&Array.isArray(n)?e[t]=n.concat(o):"object"==typeof o&&"object"==typeof n?e[t]=i(n,o):e[t]=o}return e}var o={subclass:function(o,s){return function(s){var a=r.declareDefinition(s,o);p&&(a.instanceMembers.properties=i(p,a.instanceMembers.properties));var p=a.instanceMembers.properties;if(p)for(var c in p){var u=p[c];u&&!u.reader&&u.type&&(u.type===Date?u.reader=function(e){return null!=e?new Date(e):null}:-1!==u.type._meta.bases.indexOf(t)&&(u.reader=function(e){return function(r){return e.fromJSON(r)}}(u.type)))}return n.mixin(e(a.bases,a.instanceMembers),a.classMembers)}},shared:r.shared,property:function(e){return function(r,t){var n=Object.getPrototypeOf(r),i=n&&n.properties;r.properties&&r.properties!==i||(r.properties={}),r.properties=r.properties||{},r.properties[t]=e||{}}}};return o});

@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({addTags:"\u30bf\u30b0\u306e\u8ffd\u52a0",noTagsFound:"\u4e00\u81f4\u3059\u308b\u65e2\u5b58\u306e\u30bf\u30b0\u304c\u3042\u308a\u307e\u305b\u3093\u3002",required:"1 \u3064\u4ee5\u4e0a\u306e\u30bf\u30b0\u304c\u5fc5\u8981\u3067\u3059\u3002"});
+
+define({addTags:"タグの追加",noTagsFound:"一致する既存のタグがありません。",required:"1 つ以上のタグが必要です。"});

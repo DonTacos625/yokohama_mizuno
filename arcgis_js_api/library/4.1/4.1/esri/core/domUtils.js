@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["dojo/on","dojo/dom-style","dojo/has"],function(n,p,q){var d={show:function(a){if(a=d.getNode(a))a.style.display="block"},getNode:function(a){return a&&a.domNode||a},hide:function(a){if(a=d.getNode(a))a.style.display="none"},toggle:function(a){if(a=d.getNode(a))a.style.display="none"===a.style.display?"block":"none"},documentBox:8>=q("ie")?{w:document.documentElement.clientWidth,h:document.documentElement.clientHeight}:{w:window.innerWidth,h:window.innerHeight},setScrollable:function(a){if(a=
-this.getNode(a)){var d=0,g=0,h=0,k=0,l=0,m=0;return[n(a,"touchstart",function(e){d=e.touches[0].screenX;g=e.touches[0].screenY;h=a.scrollWidth;k=a.scrollHeight;l=a.clientWidth;m=a.clientHeight}),n(a,"touchmove",function(e){e.preventDefault();var f=a.firstChild;f instanceof Text&&(f=a.childNodes[1]);var b=f._currentX||0,c=f._currentY||0,b=b+(e.touches[0].screenX-d);0<b?b=0:0>b&&Math.abs(b)+l>h&&(b=-1*(h-l));f._currentX=b;c+=e.touches[0].screenY-g;0<c?c=0:0>c&&Math.abs(c)+m>k&&(c=-1*(k-m));f._currentY=
-c;p.set(f,{"-webkit-transition-property":"-webkit-transform","-webkit-transform":"translate("+b+"px, "+c+"px)"});d=e.touches[0].screenX;g=e.touches[0].screenY})]}}};return d});
+
+define(["dojo/on","dojo/dom-style","dojo/has"],function(e,t,n){var o={show:function(e){e=o.getNode(e),e&&(e.style.display="block")},getNode:function(e){return e&&e.domNode||e},hide:function(e){e=o.getNode(e),e&&(e.style.display="none")},toggle:function(e){e=o.getNode(e),e&&(e.style.display="none"===e.style.display?"block":"none")},documentBox:n("ie")<=8?{w:document.documentElement.clientWidth,h:document.documentElement.clientHeight}:{w:window.innerWidth,h:window.innerHeight},setScrollable:function(n){if(n=this.getNode(n)){var o=0,c=0,i=0,r=0,s=0,d=0;return[e(n,"touchstart",function(e){o=e.touches[0].screenX,c=e.touches[0].screenY,i=n.scrollWidth,r=n.scrollHeight,s=n.clientWidth,d=n.clientHeight}),e(n,"touchmove",function(e){e.preventDefault();var l=n.firstChild;l instanceof Text&&(l=n.childNodes[1]);var u=l._currentX||0,h=l._currentY||0;u+=e.touches[0].screenX-o,u>0?u=0:0>u&&Math.abs(u)+s>i&&(u=-1*(i-s)),l._currentX=u,h+=e.touches[0].screenY-c,h>0?h=0:0>h&&Math.abs(h)+d>r&&(h=-1*(r-d)),l._currentY=h,t.set(l,{"-webkit-transition-property":"-webkit-transform","-webkit-transform":"translate("+u+"px, "+h+"px)"}),o=e.touches[0].screenX,c=e.touches[0].screenY})]}}};return o});

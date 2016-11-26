@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({points:"\u9ede",lines:"\u7dda",polygons:"\u9762",creatingLegend:"\u5efa\u7acb\u5716\u4f8b",noLegend:"\u7121\u5716\u4f8b",dotValue:"1 \u500b\u5713\u9ede \x3d {value} {unit}",currentObservations:"\u76ee\u524d\u89c0\u6e2c\u9ede",previousObservations:"\u4e4b\u524d\u7684\u89c0\u6e2c\u9ede",high:"\u9ad8",low:"\u4f4e",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"\u7bc0",esriFeetPerSecond:"ft/sec",esriMilesPerHour:"mph",showField:"{field}",showNormField:"{field} \u9664\u4ee5 {normField}",
-showNormPct:"{field} \u70ba\u7e3d\u6578\u7684\u767e\u5206\u6bd4",showRatio:"{field} \u5c0d {normField} \u7684\u6bd4\u7387",showRatioPercent:"{field} \u70ba {normField} \u7684\u767e\u5206\u6bd4",showRatioPercentTotal:"{field} \u70ba {field} \u8207 {normField} \u7684\u767e\u5206\u6bd4"});
+
+define({points:"點",lines:"線",polygons:"面",creatingLegend:"建立圖例",noLegend:"無圖例",dotValue:"1 個圓點 = {value} {unit}",currentObservations:"目前觀測點",previousObservations:"之前的觀測點",high:"高",low:"低",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"節",esriFeetPerSecond:"ft/sec",esriMilesPerHour:"mph",showField:"{field}",showNormField:"{field} 除以 {normField}",showNormPct:"{field} 為總數的百分比",showRatio:"{field} 對 {normField} 的比率",showRatioPercent:"{field} 為 {normField} 的百分比",showRatioPercentTotal:"{field} 為 {field} 與 {normField} 的百分比"});

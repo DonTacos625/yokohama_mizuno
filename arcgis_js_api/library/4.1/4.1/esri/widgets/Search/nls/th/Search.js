@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"\u0e04\u0e49\u0e19\u0e2b\u0e32",clearButtonTitle:"\u0e25\u0e1a\u0e04\u0e33\u0e04\u0e49\u0e19\u0e2b\u0e32",placeholder:"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e17\u0e35\u0e48\u0e2d\u0e22\u0e39\u0e48\u0e2b\u0e23\u0e37\u0e2d\u0e2a\u0e16\u0e32\u0e19\u0e17\u0e35\u0e48",searchIn:"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e43\u0e19",lonlat:"\u0e25\u0e2d\u0e07\u0e08\u0e34\u0e08\u0e39\u0e14, \u0e25\u0e30\u0e15\u0e34\u0e08\u0e39\u0e14",reverseLonLatHeader:"\u0e04\u0e38\u0e13\u0e2b\u0e21\u0e32\u0e22\u0e16\u0e36\u0e07?",
-all:"\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14",allPlaceholder:"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e17\u0e35\u0e48\u0e2d\u0e22\u0e39\u0e48\u0e2b\u0e23\u0e37\u0e2d\u0e2a\u0e16\u0e32\u0e19\u0e17\u0e35\u0e48",emptyValue:"\u0e01\u0e23\u0e38\u0e13\u0e32\u0e01\u0e23\u0e2d\u0e01\u0e04\u0e33\u0e04\u0e49\u0e19\u0e2b\u0e32",untitledResult:"\u0e44\u0e21\u0e48\u0e21\u0e35\u0e2b\u0e31\u0e27\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07",untitledSource:"\u0e41\u0e2b\u0e25\u0e48\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e17\u0e35\u0e48\u0e44\u0e21\u0e48\u0e21\u0e35\u0e0a\u0e37\u0e48\u0e2d",
-noResults:"\u0e44\u0e21\u0e48\u0e21\u0e35\u0e1c\u0e25\u0e25\u0e31\u0e1e\u0e18\u0e4c",noResultsFound:"\u0e44\u0e21\u0e48\u0e1e\u0e1a\u0e1c\u0e25\u0e25\u0e31\u0e25\u0e31\u0e1e\u0e18\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a {value}.",showMoreResults:"\u0e41\u0e2a\u0e14\u0e07\u0e1c\u0e25\u0e25\u0e31\u0e1e\u0e18\u0e4c\u0e40\u0e1e\u0e34\u0e48\u0e21",hideMoreResults:"\u0e0b\u0e48\u0e2d\u0e19",searchResult:"\u0e1c\u0e25\u0e25\u0e31\u0e1e\u0e18\u0e4c\u0e01\u0e32\u0e23\u0e04\u0e49\u0e19\u0e2b\u0e32",moreResultsHeader:"\u0e1c\u0e25\u0e25\u0e31\u0e1e\u0e18\u0e4c\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21",
-esriLocatorName:"Esri World Geocoder"});
+
+define({searchButtonTitle:"ค้นหา",clearButtonTitle:"ลบคำค้นหา",placeholder:"ค้นหาที่อยู่หรือสถานที่",searchIn:"ค้นหาใน",lonlat:"ลองจิจูด, ละติจูด",reverseLonLatHeader:"คุณหมายถึง?",all:"ทั้งหมด",allPlaceholder:"ค้นหาที่อยู่หรือสถานที่",emptyValue:"กรุณากรอกคำค้นหา",untitledResult:"ไม่มีหัวเรื่อง",untitledSource:"แหล่งข้อมูลที่ไม่มีชื่อ",noResults:"ไม่มีผลลัพธ์",noResultsFound:"ไม่พบผลลัลัพธ์สำหรับ {value}.",showMoreResults:"แสดงผลลัพธ์เพิ่ม",hideMoreResults:"ซ่อน",searchResult:"ผลลัพธ์การค้นหา",moreResultsHeader:"ผลลัพธ์เพิ่มเติม",esriLocatorName:"Esri World Geocoder"});

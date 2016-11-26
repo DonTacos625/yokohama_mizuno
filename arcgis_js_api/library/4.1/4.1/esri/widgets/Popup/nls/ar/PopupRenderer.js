@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({attach:"\u0627\u0644\u0645\u0631\u0641\u0642\u0627\u062a",fields:"\u062d\u0642\u0648\u0644",fieldsSummary:"\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062c\u062f\u0648\u0644\u064a\u0629 \u0648\u0627\u0644\u0642\u064a\u0645",media:"\u0648\u0633\u0627\u0626\u0637",next:"\u0627\u0644\u062a\u0627\u0644\u064a",numCharts:"\u0639\u062f\u062f \u0627\u0644\u0645\u062e\u0637\u0637\u0627\u062a",numImages:"\u0639\u062f\u062f \u0627\u0644\u0635\u0648\u0631",
-noTitle:"\u0628\u0644\u0627 \u0639\u0646\u0648\u0627\u0646",previous:"\u0627\u0644\u0633\u0627\u0628\u0642",view:"\u0639\u0631\u0636"});
+
+define({attach:"المرفقات",fields:"حقول",fieldsSummary:"قائمة البيانات الجدولية والقيم",media:"وسائط",next:"التالي",numCharts:"عدد المخططات",numImages:"عدد الصور",noTitle:"بلا عنوان",previous:"السابق",view:"عرض"});

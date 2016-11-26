@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports ../core/tsSupport/extendsHelper ../core/tsSupport/decorateHelper ../core/typescript dojo/Deferred ../geometry/support/jsonUtils ./core/errorMessages ./core/messageHandler ./core/ExtensionBase".split(" "),function(n,p,h,e,f,k,l,c,d,m){return function(g){function b(){g.apply(this,arguments);this.availableDisplaySize=this.displaySize=this.previousState=this.mapWidgetProxy=null}h(b,g);b.prototype.dojoConstructor=function(){this.displaySize={width:0,height:0}};b.prototype._initializeResponseReceived=
-function(a){var b=this;return this.inherited(arguments).then(function(){b.previousState=a.state||{};b.availableDisplaySize=a.availableSize||{width:0,height:0};return b.getMapWidgetProxy(a.mapWidgetId).then(function(a){b.mapWidgetProxy=a})})};b.prototype._messageReceived=function(a){switch(a.functionName.toLowerCase()){case "drawcomplete":return this._drawComplete(a.args);case "availablesizechanged":return this._availableDisplaySizeChanged(a.args)}};b.prototype.activateMapDrawing=function(a){if(!this._isHostInitialized())throw Error(c.hostNotReady);
-d._sendMessage({functionName:"activateDrawing",args:a})};b.prototype.deactivateMapDrawing=function(){if(!this._isHostInitialized())throw Error(c.hostNotReady);d._sendMessage({functionName:"deactivateDrawing"})};b.prototype._drawComplete=function(a){a=l.fromJSON(a.geometry);this.mapDrawComplete(a);this.emit("draw-complete",{geometry:a})};b.prototype.mapDrawComplete=function(a){};b.prototype.setDisplaySize=function(a){var b=this;if(!this._isHostInitialized())return(new k).reject(Error(c.hostNotReady));
-this.displaySize=a;return d._sendMessageWithReply({functionName:"setSize",args:a}).then(function(a){b.displaySize=a})};b.prototype._availableDisplaySizeChanged=function(a){this.availableDisplaySize=a.availableSize;this.availableDisplaySizeChanged(this.availableDisplaySize);this.emit("available-display-size-changed",{size:this.availableDisplaySize})};b.prototype.availableDisplaySizeChanged=function(a){};b.prototype.deactivateMapTool=function(a){if(!this._isHostInitialized())throw Error(c.hostNotReady);
-d._sendMessage({functionName:"deactivateTool",args:{state:a}})};e([f.shared("esri.opsdashboard.MapToolProxy")],b.prototype,"declaredClass",void 0);return b=e([f.subclass()],b)}(m)});
+
+define(["require","exports","../core/tsSupport/extendsHelper","../core/tsSupport/decorateHelper","../core/typescript","dojo/Deferred","../geometry/support/jsonUtils","./core/errorMessages","./core/messageHandler","./core/ExtensionBase"],function(e,t,i,a,o,s,r,n,p,l){var d=function(e){function t(){e.apply(this,arguments),this.mapWidgetProxy=null,this.previousState=null,this.displaySize=null,this.availableDisplaySize=null}return i(t,e),t.prototype.dojoConstructor=function(){this.displaySize={width:0,height:0}},t.prototype._initializeResponseReceived=function(e){var t=this;return this.inherited(arguments).then(function(){return t.previousState=e.state||{},t.availableDisplaySize=e.availableSize||{width:0,height:0},t.getMapWidgetProxy(e.mapWidgetId).then(function(e){t.mapWidgetProxy=e})})},t.prototype._messageReceived=function(e){switch(e.functionName.toLowerCase()){case"drawcomplete":return this._drawComplete(e.args);case"availablesizechanged":return this._availableDisplaySizeChanged(e.args)}},t.prototype.activateMapDrawing=function(e){if(!this._isHostInitialized())throw new Error(n.hostNotReady);p._sendMessage({functionName:"activateDrawing",args:e})},t.prototype.deactivateMapDrawing=function(){if(!this._isHostInitialized())throw new Error(n.hostNotReady);p._sendMessage({functionName:"deactivateDrawing"})},t.prototype._drawComplete=function(e){var t=r.fromJSON(e.geometry);this.mapDrawComplete(t),this.emit("draw-complete",{geometry:t})},t.prototype.mapDrawComplete=function(e){},t.prototype.setDisplaySize=function(e){var t=this;return this._isHostInitialized()?(this.displaySize=e,p._sendMessageWithReply({functionName:"setSize",args:e}).then(function(e){t.displaySize=e})):(new s).reject(new Error(n.hostNotReady))},t.prototype._availableDisplaySizeChanged=function(e){this.availableDisplaySize=e.availableSize,this.availableDisplaySizeChanged(this.availableDisplaySize),this.emit("available-display-size-changed",{size:this.availableDisplaySize})},t.prototype.availableDisplaySizeChanged=function(e){},t.prototype.deactivateMapTool=function(e){if(!this._isHostInitialized())throw new Error(n.hostNotReady);p._sendMessage({functionName:"deactivateTool",args:{state:e}})},a([o.shared("esri.opsdashboard.MapToolProxy")],t.prototype,"declaredClass",void 0),t=a([o.subclass()],t)}(l);return d});

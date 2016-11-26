@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require ../../../core/declare dojo/Deferred ../../../request ../../../core/Accessoire ../../../core/AccessoirePromise".split(" "),function(e,f,g,h,k,l){return f([k,l],{initialize:function(){var a=this,b=this.layer.then(function(){return a._getFeatureCount().then(function(c){c=a._canUseSnapshot(c&&c.count)?0:1;return a._createController(c)})}).then(function(c){a.activeController=c});this.addResolvingPromise(b)},controllerModulePaths:{"0":"./SnapshotController",1:"./OnDemandController"},_getFeatureCount:function(){var a=
-this.layer,b=a.timeDefinition;return h(a.source.parsedUrl.path+"/query",{query:{f:"json",where:a.definitionExpression||"1\x3d1",timeExtent:b&&b.toJSON(),returnCountOnly:!0},callbackParamName:"callback"}).then(function(a){return a.data})},_canUseSnapshot:function(a){var b=this.layer,c=b.geometryType;return("polyline"===c||"polygon"===c||"multipoint"===c)&&a<=b.maxRecordCountForAuto||"point"===c&&a<=b.maxPointCountForAuto},_createController:function(a){var b=new g;(a=this.controllerModulePaths[a])?
-e([a],function(a){var d=new a({layer:this.layer,layerView:this.layerView});d.then(function(){b.resolve(d)},function(a){b.reject(a)})}.bind(this)):b.reject(Error('Module path not found for controller type: "'+this.mode+'"'));return b.promise}})});
+
+define(["require","../../../core/declare","dojo/Deferred","../../../request","../../../core/Accessoire","../../../core/AccessoirePromise"],function(e,t,r,n,o,i){var a=t([o,i],{initialize:function(){var e=this,t=this.layer.then(function(){return e._getFeatureCount().then(function(t){var r=e._canUseSnapshot(t&&t.count)?0:1;return e._createController(r)})}).then(function(t){e.activeController=t});this.addResolvingPromise(t)},controllerModulePaths:{0:"./SnapshotController",1:"./OnDemandController"},_getFeatureCount:function(){var e=this.layer,t=e.timeDefinition,r=n(e.source.parsedUrl.path+"/query",{query:{f:"json",where:e.definitionExpression||"1=1",timeExtent:t&&t.toJSON(),returnCountOnly:!0},callbackParamName:"callback"}).then(function(e){return e.data});return r},_canUseSnapshot:function(e){var t=this.layer,r=t.geometryType;return("polyline"===r||"polygon"===r||"multipoint"===r)&&e<=t.maxRecordCountForAuto||"point"===r&&e<=t.maxPointCountForAuto},_createController:function(t){var n=new r,o=this.controllerModulePaths[t];return o?e([o],function(e){var t=new e({layer:this.layer,layerView:this.layerView});t.then(function(){n.resolve(t)},function(e){n.reject(e)})}.bind(this)):n.reject(new Error('Module path not found for controller type: "'+this.mode+'"')),n.promise}});return a});

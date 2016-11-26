@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports dojo/_base/lang dojo/when ./arcgisLayerUrl ../../core/promiseUtils ../../core/requireUtils ../../request ../../core/Error ./arcgisLayerUrl".split(" "),function(h,k,d,q,r,e,l,m,s,t){function u(b,a){return b.sublayerIds.map(function(c){return new b.Constructor(d.mixin({},a,{layerId:c,sublayerTitleMode:"service-name"}))})}function v(b){var a=t.parse(b);if(!a)return e.reject(s("arcgis-layers:url-mismatch","The url '${url}' is not a valid arcgis resource",{url:b}));var c=a.serverType,
-n=a.sublayer;switch(c){case "MapServer":c=null!=n?"FeatureLayer":w(b).then(function(a){return a?"TileLayer":"MapImageLayer"});break;case "ImageServer":c=f(b).then(function(a){var b=a.tileInfo&&a.tileInfo.format;return a.tileInfo?b&&"LERC"===b.toUpperCase()&&a.cacheType&&"elevation"===a.cacheType.toLowerCase()?"ElevationLayer":"TileLayer":"ImageryLayer"});break;case "SceneServer":c=f(a.url.path).then(function(a){return a&&Array.isArray(a.layers)&&0<a.layers.length&&"IntegratedMesh"===a.layers[0].layerType?
-"IntegratedMeshLayer":"SceneLayer"});break;default:c={FeatureServer:"FeatureLayer",StreamServer:"StreamLayer"}[c]}var x={FeatureLayer:!0,SceneLayer:!0},g={parsedUrl:a,Constructor:null,sublayerIds:null},d;return q(c).then(function(a){d=a;if(x[a]&&null==n)return y(b).then(function(a){1!==a.length&&(g.sublayerIds=a)})}).then(function(){return l.when(h,p+"/"+d)}).then(function(a){g.Constructor=a;return g})}function y(b){return f(b).then(function(a){return a&&Array.isArray(a.layers)?a.layers.map(function(a){return a.id}).reverse():
-[]})}function w(b){return f(b).then(function(a){return a.tileInfo})}function z(b,a){var c=b.Constructor.prototype.declaredClass;return"esri.layers.FeatureLayer"===c||"esri.layers.StreamLayer"===c?d.mixin({returnZ:!0,outFields:["*"]},a):a}function f(b){return m(b,{responseType:"json",callbackParamName:"callback",query:{f:"json"}}).then(function(a){return a.data})}var p="..";k.fromUrl=function(b){return v(b.url).then(function(a){var c=z(a,d.mixin({},b.properties,{url:b.url}));return a.sublayerIds?l.when(h,
-p+"/GroupLayer").then(function(b){var d=new b({title:a.parsedUrl.title});u(a,c).forEach(function(a){return d.add(a)});return e.resolve(d)}):e.resolve(new a.Constructor(c))})};k.fetchServerVersion=function(b){if(!r.test(b))return e.reject();b=b.replace(/(.*\/rest)\/.*/i,"$1")+"/info";return m(b,{query:{f:"json"},responseType:"json",callbackParamName:"callback"}).then(function(a){return a.data&&a.data.currentVersion?a.data.currentVersion:e.reject()})}});
+
+define(["require","exports","dojo/_base/lang","dojo/when","./arcgisLayerUrl","../../core/promiseUtils","../../core/requireUtils","../../request","../../core/Error","./arcgisLayerUrl"],function(e,r,n,t,a,u,o,i,s,c){function l(r){return h(r.url).then(function(t){var a=m(t,n.mixin({},r.properties,{url:r.url}));return t.sublayerIds?o.when(e,b+"/GroupLayer").then(function(e){var r=new e({title:t.parsedUrl.title});return f(t,a).forEach(function(e){return r.add(e)}),u.resolve(r)}):u.resolve(new t.Constructor(a))})}function y(e){if(!a.test(e))return u.reject();var r=e.replace(/(.*\/rest)\/.*/i,"$1")+"/info";return i(r,{query:{f:"json"},responseType:"json",callbackParamName:"callback"}).then(function(e){return e.data&&e.data.currentVersion?e.data.currentVersion:u.reject()})}function f(e,r){return e.sublayerIds.map(function(t){return new e.Constructor(n.mixin({},r,{layerId:t,sublayerTitleMode:"service-name"}))})}function h(e){var r=c.parse(e);if(!r)return u.reject(new s("arcgis-layers:url-mismatch","The url '${url}' is not a valid arcgis resource",{url:e}));var n,a=r.serverType,o=r.sublayer,i={FeatureServer:"FeatureLayer",StreamServer:"StreamLayer"};switch(a){case"MapServer":n=null!=o?"FeatureLayer":v(e).then(function(e){return e?"TileLayer":"MapImageLayer"});break;case"ImageServer":n=L(e).then(function(e){var r=e.tileInfo&&e.tileInfo.format;return e.tileInfo?r&&"LERC"===r.toUpperCase()&&e.cacheType&&"elevation"===e.cacheType.toLowerCase()?"ElevationLayer":"TileLayer":"ImageryLayer"});break;case"SceneServer":n=L(r.url.path).then(function(e){return e&&Array.isArray(e.layers)&&e.layers.length>0&&"IntegratedMesh"===e.layers[0].layerType?"IntegratedMeshLayer":"SceneLayer"});break;default:n=i[a]}var l,y={FeatureLayer:!0,SceneLayer:!0},f={parsedUrl:r,Constructor:null,sublayerIds:null};return t(n).then(function(r){return l=r,y[r]&&null==o?d(e).then(function(e){1!==e.length&&(f.sublayerIds=e)}):void 0}).then(function(){return p(l)}).then(function(e){return f.Constructor=e,f})}function d(e){return L(e).then(function(e){return e&&Array.isArray(e.layers)?e.layers.map(function(e){return e.id}).reverse():[]})}function p(r){return o.when(e,b+"/"+r)}function v(e){return L(e).then(function(e){return e.tileInfo})}function m(e,r){var t=e.Constructor.prototype.declaredClass;return"esri.layers.FeatureLayer"===t||"esri.layers.StreamLayer"===t?n.mixin({returnZ:!0,outFields:["*"]},r):r}function L(e){return i(e,{responseType:"json",callbackParamName:"callback",query:{f:"json"}}).then(function(e){return e.data})}var b="..";r.fromUrl=l,r.fetchServerVersion=y});

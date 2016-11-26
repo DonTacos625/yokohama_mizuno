@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["dojo/on","../core/Accessor","../core/Scheduler","../core/watchUtils"],function(l,m,n,p){var g=[0,0];return m.createSubclass({declaredClass:"esri.views.DOMContainer",properties:{container:{},height:{},position:{},resizing:{},size:{dependsOn:["width","height"],readOnly:!0},suspended:{},width:{}},constructor:function(){Object.defineProperty(this,"_measureInfo",{enumerable:!1,writable:!1,value:{task:null,freq:16,time:750}})},initialize:function(){var b=this._measureInfo,c=null;p.init(this,"container",
-function(a,d,f,e){c&&(c.remove(),c=null,b.freq=16,b.time=750);b.task&&(b.task.remove(),b.task=null);a?(c=l(window,"resize",function(){b.freq=16;b.time=750}.bind(e)),b.task=n.addFrameTask({prepare:function(b){var a=this._measureInfo;a.time+=b.deltaTime;a.time<a.freq||(a.time=0,this._measure()?(a.freq=16,this.resizing=!0):(a.freq=Math.min(750,2*a.freq),512<=a.freq&&(this.resizing=!1)))}.bind(e)})):this.resizing=!1;this._measure();a=this.root;d=this.surface;f=this.width;e=this.height;a&&(d&&f&&e)&&(a.style.width=
-d.style.width=f+"px",a.style.height=d.style.height=e+"px")})},destroy:function(){this.container=null},_measureInfo:null,size:null,_sizeGetter:function(){return[this.width,this.height]},position:null,height:0,resizing:!1,suspended:!0,width:0,pageToContainer:function(b,c,a){var d=this.position;b-=d[0];c-=d[1];a?(a[0]=b,a[1]=c):a=[b,c];return a},containerToPage:function(b,c,a){var d=this.position;b+=d[0];c+=d[1];a?(a[0]=b,a[1]=c):a=[b,c];return a},_measure:function(){var b=this.container,c=b?b.clientWidth:
-0,a=b?b.clientHeight:0;if(0===c||0===a||"hidden"===window.getComputedStyle(b).visibility)return this.suspended=!0,!1;var d=this.root,f=this.surface,e=this.width,k=this.height,h=this.position;if(c===e&&a===k)return this.suspended=!1;d&&f&&(d.style.width=f.style.width=c+"px",d.style.height=f.style.height=a+"px");this.width=c;this.height=a;this.suspended=!1;d=b.ownerDocument||window.document;d=d.parentWindow||d.defaultView;b=b.getBoundingClientRect();g[0]=b.left+d.pageXOffset;g[1]=b.top+d.pageYOffset;
-if(!h||g[0]!==h[0]||g[1]!==h[1])this.position=g.slice();this.emit("resize",{oldWidth:e,oldHeight:k,width:c,height:a});return!0}})});
+
+define(["dojo/on","../core/Accessor","../core/Scheduler","../core/watchUtils"],function(e,i,t,n){var s=[0,0],r=function(e){var i=e.ownerDocument||window.document,t=i.parentWindow||i.defaultView,n=e.getBoundingClientRect();return s[0]=n.left+t.pageXOffset,s[1]=n.top+t.pageYOffset,s},h=16,o=750,a=512,u=2,d=i.createSubclass({declaredClass:"esri.views.DOMContainer",properties:{container:{},height:{},position:{},resizing:{},size:{dependsOn:["width","height"],readOnly:!0},suspended:{},width:{}},constructor:function(){Object.defineProperty(this,"_measureInfo",{enumerable:!1,writable:!1,value:{task:null,freq:h,time:o}})},initialize:function(){var i=this._measureInfo,s=null;n.init(this,"container",function(n,r,d,l){s&&(s.remove(),s=null,i.freq=h,i.time=o),i.task&&(i.task.remove(),i.task=null),n?(s=e(window,"resize",function(){i.freq=h,i.time=o}.bind(l)),i.task=t.addFrameTask({prepare:function(e){var i=this._measureInfo;if(i.time+=e.deltaTime,!(i.time<i.freq)){i.time=0;var t=this._measure();t?(i.freq=h,this.resizing=!0):(i.freq=Math.min(o,i.freq*u),i.freq>=a&&(this.resizing=!1))}}.bind(l)})):this.resizing=!1,this._measure();var c=this.root,f=this.surface,p=this.width,g=this.height;c&&f&&p&&g&&(c.style.width=f.style.width=p+"px",c.style.height=f.style.height=g+"px")})},destroy:function(){this.container=null},_measureInfo:null,size:null,_sizeGetter:function(){return[this.width,this.height]},position:null,height:0,resizing:!1,suspended:!0,width:0,pageToContainer:function(e,i,t){var n=this.position;return e-=n[0],i-=n[1],t?(t[0]=e,t[1]=i):t=[e,i],t},containerToPage:function(e,i,t){var n=this.position;return e+=n[0],i+=n[1],t?(t[0]=e,t[1]=i):t=[e,i],t},_measure:function(){var e=this.container,i=e?e.clientWidth:0,t=e?e.clientHeight:0;if(0===i||0===t||"hidden"===window.getComputedStyle(e).visibility)return this.suspended=!0,!1;var n=this.root,s=this.surface,h=this.width,o=this.height,a=this.position;if(i===h&&t===o)return this.suspended=!1,!1;n&&s&&(n.style.width=s.style.width=i+"px",n.style.height=s.style.height=t+"px"),this.width=i,this.height=t,this.suspended=!1;var u=r(e);return a&&u[0]===a[0]&&u[1]===a[1]||(this.position=u.slice()),this.emit("resize",{oldWidth:h,oldHeight:o,width:i,height:t}),!0}});return d});

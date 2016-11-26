@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports ./core/tsSupport/declareExtendsHelper ./core/tsSupport/decorateHelper dojo/_base/lang ./core/JSONSupport ./core/lang ./geometry/Point ./views/3d/support/mathUtils ./core/accessorSupport/decorators".split(" "),function(p,q,l,f,m,n,c,g,h,d){return function(k){function b(a){k.call(this);this.position=null;this.tilt=this.heading=0;this.fov=55}l(b,k);b.prototype.getDefaults=function(a){if(!a.position)return{position:new g([0,0,0])}};b.prototype.normalizeCtorArgs=function(a,b,d,
-f){var e={};if(m.isObject(a)&&c.isDefined(a))if(c.isDefined(a.position)||c.isDefined(a.tilt)||c.isDefined(a.heading)||c.isDefined(a.fov))c.isDefined(a.position)&&(e.position=new g(a.position)),c.isDefined(a.heading)&&(e.heading=a.heading),c.isDefined(a.tilt)&&(e.tilt=a.tilt),c.isDefined(a.fov)&&(e.fov=a.fov);else if(c.isDefined(a)&&(c.isDefined(a.x)||Array.isArray(a)))e.position=new g(a);c.isDefined(b)&&(e.heading=b);c.isDefined(d)&&(e.tilt=d);c.isDefined(f)&&(e.fov=f);return e};b.prototype.equals=
-function(a){return!a?!1:this.tilt===a.tilt&&this.heading===a.heading&&this.fov===a.fov&&this.position.equals(a.position)};b.prototype.clone=function(){return new b({position:this.position.clone(),heading:this.heading,tilt:this.tilt,fov:this.fov})};b.prototype.toJSON=function(){var a={position:this.position.toJSON(),heading:this.heading,tilt:this.tilt};return c.fixJson(a)};f([d.property({type:g})],b.prototype,"position",void 0);f([d.property(),d.cast(h.cyclicalDeg.normalize)],b.prototype,"heading",
-void 0);f([d.property(),d.cast(function(a){return h.clamp(a,-180,180)})],b.prototype,"tilt",void 0);f([d.property({json:{readable:!1,writable:!1}})],b.prototype,"fov",void 0);return b=f([d.subclass("esri.Camera")],b)}(d.declared(n))});
+
+define(["require","exports","./core/tsSupport/declareExtendsHelper","./core/tsSupport/decorateHelper","dojo/_base/lang","./core/JSONSupport","./core/lang","./geometry/Point","./views/3d/support/mathUtils","./core/accessorSupport/decorators"],function(i,t,e,o,n,r,s,p,a,d){var f=function(i){function t(t){i.call(this),this.position=null,this.heading=0,this.tilt=0,this.fov=55}return e(t,i),t.prototype.getDefaults=function(i){return i.position?void 0:{position:new p([0,0,0])}},t.prototype.normalizeCtorArgs=function(i,t,e,o){var r={};return n.isObject(i)&&s.isDefined(i)&&(s.isDefined(i.position)||s.isDefined(i.tilt)||s.isDefined(i.heading)||s.isDefined(i.fov)?(s.isDefined(i.position)&&(r.position=new p(i.position)),s.isDefined(i.heading)&&(r.heading=i.heading),s.isDefined(i.tilt)&&(r.tilt=i.tilt),s.isDefined(i.fov)&&(r.fov=i.fov)):s.isDefined(i)&&(s.isDefined(i.x)||Array.isArray(i))&&(r.position=new p(i))),s.isDefined(t)&&(r.heading=t),s.isDefined(e)&&(r.tilt=e),s.isDefined(o)&&(r.fov=o),r},t.prototype.equals=function(i){return i?this.tilt===i.tilt&&this.heading===i.heading&&this.fov===i.fov&&this.position.equals(i.position):!1},t.prototype.clone=function(){return new t({position:this.position.clone(),heading:this.heading,tilt:this.tilt,fov:this.fov})},t.prototype.toJSON=function(){var i={position:this.position.toJSON(),heading:this.heading,tilt:this.tilt};return s.fixJson(i)},o([d.property({type:p})],t.prototype,"position",void 0),o([d.property(),d.cast(a.cyclicalDeg.normalize)],t.prototype,"heading",void 0),o([d.property(),d.cast(function(i){return a.clamp(i,-180,180)})],t.prototype,"tilt",void 0),o([d.property({json:{readable:!1,writable:!1}})],t.prototype,"fov",void 0),t=o([d.subclass("esri.Camera")],t)}(d.declared(r));return f});

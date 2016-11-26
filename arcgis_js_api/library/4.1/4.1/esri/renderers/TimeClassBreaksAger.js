@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("../core/declare dojo/_base/array dojo/_base/lang dojo/date ../core/lang ../symbols/support/jsonUtils ../Color ./SymbolAger".split(" "),function(k,l,m,n,p,q,r,s){var b=k(s,{declaredClass:"esri.renderer.TimeClassBreaksAger",constructor:function(c,a){this.infos=c;this.timeUnits=a||"day";c.sort(function(a,c){return a.minAge<c.minAge?-1:a.minAge>c.minAge?1:0})},getAgedSymbol:function(c,a){var e=a.getLayer(),b=a.attributes,f=p.isDefined;c=q.fromJSON(c.toJSON());var g=e._map.timeExtent.endTime;if(!g)return c;
-var h=n.difference(new Date(b[e._startTimeField]),g,this.timeUnits);l.some(this.infos,function(a){if(h>=a.minAge&&h<=a.maxAge){var e=a.color,b=a.size;a=a.alpha;e&&c.setColor(e);f(b)&&this._setSymbolSize(c,b);f(a)&&c.color&&(c.color.a=a);return!0}},this);return c},toJSON:function(){var c={agerClassBreakInfos:[]},a,b,d;c.timeUnits=this._getRestUnits(this.timeUnits);for(a=0;a<this.infos.length;a+=1)b=this.infos[a],d={},d.oldestAge=Infinity===b.maxAge?null:b.maxAge,d.size=b.size,b.color&&(d.color=r.toJSON(b.color)),
-b.alpha&&(d.alpha=Math.round(255*b.alpha)),c.agerClassBreakInfos[a]=d;return c},_getRestUnits:function(c){var a="esriTimeUnitsDays";switch(c){case b.UNIT_SECONDS:a="esriTimeUnitsSeconds";break;case b.UNIT_MILLISECONDS:a="esriTimeUnitsMilliseconds";break;case b.UNIT_HOURS:a="esriTimeUnitsHours";break;case b.UNIT_MINUTES:a="esriTimeUnitsMinutes";break;case b.UNIT_MONTHS:a="esriTimeUnitsMonths";break;case b.UNIT_WEEKS:a="esriTimeUnitsWeeks";break;case b.UNIT_YEARS:a="esriTimeUnitsYears"}return a}});
-m.mixin(b,{UNIT_DAYS:"day",UNIT_HOURS:"hour",UNIT_MILLISECONDS:"millisecond",UNIT_MINUTES:"minute",UNIT_MONTHS:"month",UNIT_SECONDS:"second",UNIT_WEEKS:"week",UNIT_YEARS:"year"});return b});
+
+define(["../core/declare","dojo/_base/array","dojo/_base/lang","dojo/date","../core/lang","../symbols/support/jsonUtils","../Color","./SymbolAger"],function(e,s,i,t,r,n,o,a){var m={UNIT_DAYS:"day",UNIT_HOURS:"hour",UNIT_MILLISECONDS:"millisecond",UNIT_MINUTES:"minute",UNIT_MONTHS:"month",UNIT_SECONDS:"second",UNIT_WEEKS:"week",UNIT_YEARS:"year"},l=e(a,{declaredClass:"esri.renderer.TimeClassBreaksAger",constructor:function(e,s){this.infos=e,this.timeUnits=s||"day",e.sort(function(e,s){return e.minAge<s.minAge?-1:e.minAge>s.minAge?1:0})},getAgedSymbol:function(e,i){var o=i.getLayer(),a=i.attributes,m=r.isDefined;e=n.fromJSON(e.toJSON());var l=o._map.timeExtent,U=l.endTime;if(!U)return e;var c=new Date(a[o._startTimeField]),T=t.difference(c,U,this.timeUnits);return s.some(this.infos,function(s){if(T>=s.minAge&&T<=s.maxAge){var i=s.color,t=s.size,r=s.alpha;return i&&e.setColor(i),m(t)&&this._setSymbolSize(e,t),m(r)&&e.color&&(e.color.a=r),!0}},this),e},toJSON:function(){var e,s,i,t={agerClassBreakInfos:[]};for(t.timeUnits=this._getRestUnits(this.timeUnits),e=0;e<this.infos.length;e+=1)s=this.infos[e],i={},i.oldestAge=s.maxAge===1/0?null:s.maxAge,i.size=s.size,s.color&&(i.color=o.toJSON(s.color)),s.alpha&&(i.alpha=Math.round(255*s.alpha)),t.agerClassBreakInfos[e]=i;return t},_getRestUnits:function(e){var s="esriTimeUnitsDays";switch(e){case l.UNIT_SECONDS:s="esriTimeUnitsSeconds";break;case l.UNIT_MILLISECONDS:s="esriTimeUnitsMilliseconds";break;case l.UNIT_HOURS:s="esriTimeUnitsHours";break;case l.UNIT_MINUTES:s="esriTimeUnitsMinutes";break;case l.UNIT_MONTHS:s="esriTimeUnitsMonths";break;case l.UNIT_WEEKS:s="esriTimeUnitsWeeks";break;case l.UNIT_YEARS:s="esriTimeUnitsYears"}return s}});return i.mixin(l,m),l});

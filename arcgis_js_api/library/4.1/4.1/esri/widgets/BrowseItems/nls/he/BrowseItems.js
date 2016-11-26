@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"\u05dc\u05e9\u05db\u05d1\u05d4 ${name} \u05d0\u05d9\u05df \u05e9\u05d3\u05d5\u05ea \u05e9\u05e0\u05d9\u05ea\u05df \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05d4\u05dd \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e1\u05d9\u05e0\u05d5\u05df.",addToViewer:"\u05d4\u05d5\u05e1\u05e3 \u05e9\u05db\u05d1\u05d4 \u05dc\u05de\u05e4\u05d4",noItemsToDisplay:"\u05db\u05e8\u05d2\u05e2 \u05d0\u05d9\u05df \u05e4\u05e8\u05d9\u05d8\u05d9\u05dd \u05d6\u05de\u05d9\u05e0\u05d9\u05dd \u05dc\u05e6\u05e4\u05d9\u05d4.",
-searchFor:"\u05d7\u05e4\u05e9",searching:"\u05de\u05d7\u05e4\u05e9",items:{organizationLabel:"\u05d4\u05d0\u05e8\u05d2\u05d5\u05df \u05e9\u05dc\u05d9",onlineLabel:"ArcGIS Online",contentLabel:"\u05d4\u05ea\u05d5\u05db\u05df \u05e9\u05dc\u05d9",favoritesLabel:"\u05d4\u05de\u05d5\u05e2\u05d3\u05e4\u05d9\u05dd \u05e9\u05dc\u05d9"},title:"\u05d1\u05d7\u05e8 Web Map",searchTitle:"\u05d7\u05e4\u05e9",ok:"\u05d0\u05d9\u05e9\u05d5\u05e8",cancel:"\u05d1\u05d9\u05d8\u05d5\u05dc",placeholder:"\u05d4\u05db\u05e0\u05e1 \u05de\u05d5\u05e0\u05d7 \u05dc\u05d7\u05d9\u05e4\u05d5\u05e9",
-instructionsLeft:"\u05de\u05d4 \u05d1\u05e8\u05e6\u05d5\u05e0\u05da \u05dc\u05e2\u05e9\u05d5\u05ea?",instructionsRight:"\u05d1\u05d7\u05e8 \u05d0\u05e4\u05dc\u05d9\u05e7\u05e6\u05d9\u05d4 \u05e0\u05d9\u05ea\u05e0\u05ea \u05dc\u05d4\u05d2\u05d3\u05e8\u05d4.",go:"\u05d4\u05e4\u05e2\u05dc",selectDetails:"\u05d1\u05d7\u05e8",configure:"\u05e6\u05d5\u05e8",close:"\u05e1\u05d2\u05d5\u05e8",learnMoreConfigurableApps:"\u05dc\u05de\u05d3 \u05e2\u05d5\u05d3 \u05d0\u05d5\u05d3\u05d5\u05ea \u05d0\u05e4\u05dc\u05d9\u05e7\u05e6\u05d9\u05d5\u05ea \u05e0\u05d9\u05ea\u05e0\u05d5\u05ea \u05dc\u05d4\u05d2\u05d3\u05e8\u05d4"});
+
+define({noFilterFields:"לשכבה ${name} אין שדות שניתן להשתמש בהם עבור הסינון.",addToViewer:"הוסף שכבה למפה",noItemsToDisplay:"כרגע אין פריטים זמינים לצפיה.",searchFor:"חפש",searching:"מחפש",items:{organizationLabel:"הארגון שלי",onlineLabel:"ArcGIS Online",contentLabel:"התוכן שלי",favoritesLabel:"המועדפים שלי"},title:"בחר Web Map",searchTitle:"חפש",ok:"אישור",cancel:"ביטול",placeholder:"הכנס מונח לחיפוש",instructionsLeft:"מה ברצונך לעשות?",instructionsRight:"בחר אפליקציה ניתנת להגדרה.",go:"הפעל",selectDetails:"בחר",configure:"צור",close:"סגור",learnMoreConfigurableApps:"למד עוד אודות אפליקציות ניתנות להגדרה"});

@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("../mixins/ConstraintsMixin ../../support/mathUtils ../../support/earthUtils ../../lib/glMatrix ../../constraints/SceneViewAltitudeConstraint ../../constraints/SceneViewTiltConstraint ../../webgl-engine/lib/Util".split(" "),function(k,f,h,q,n,m,r){var g=q.vec3d,l=g.create();return k.createSubclass({declaredClass:"esri.views.3d.navigation.spherical.ConstraintsSpherical",defaultConstraints:{tilt:new k.Tilt({min:function(){return f.deg2rad(m.MAX_DEFAULT)},max:f.makePiecewiseLinearFunction([[4E3,
-f.deg2rad(m.MIN_DEFAULT)],[5E4,f.deg2rad(88)],[6E6,f.deg2rad(88)],[2E7,f.deg2rad(m.MAX_DEFAULT)]])}),altitude:new k.Altitude({min:function(){return n.MIN_DEFAULT},max:function(){return n.MAX_DEFAULT}}),collision:new k.Collision},initialize:function(){this.captainNemoAltitudeThreshold=2E4;this.captainNemoElevationThreshold=-500},limitAltitude:function(a,b,c,d){g.scale(c,a/d,l);g.subtract(b,l,l);var e=this.renderCoordsHelper.getAltitude(l),f=this.constraints.altitude.apply(this,e);if(1E-6<Math.abs(e-
-f)){a=g.length(b);f+=h.earthRadius;b=g.dot(c,b)/(a*d);b*=-2*a;c=b*b-4*(-(f*f)+a*a);if(0>c)return this.minPoiDist;c=Math.sqrt(c);return c<b?(b-c)/2:(c-b)/2}return a},limitTiltByAltitudeConstraints:function(a,b,c,d){b=g.length(b);var e=b*b,k=c*c,l=Math.sqrt(e+k-2*b*c*Math.cos(Math.PI-a))-h.earthRadius,m=this.constraints.altitude.min(),n=this.constraints.altitude.max(),p;if((void 0===d||0<d)&&l<m)p=m;else if((void 0===d||0>d)&&l>n)p=n;void 0!==p&&(a=p+h.earthRadius,a=Math.PI-f.acos((-(a*a)+e+k)/(2*b*
-c)));return a},distanceToSilhouette:function(a,b,c,d,e){e||(e={maxFarNearRatio:0,distance:0});a=g.dot(a.eye,a.eye);b=h.earthRadius*h.earthRadius;e.maxFarNearRatio=this.maxFarNearRatio;this.isNemoMode(a,d)?(d=h.earthRadius+d,e.distance=Math.sqrt(a-d*d)):a>b?(e.maxFarNearRatio=f.clamp(2E4-19E3*((Math.log(Math.sqrt(a)-h.earthRadius)-7.983)/9.011),1E3,2E4),e.distance=Math.sqrt(a-b)):e.distance=this.maxFarNearRatio*this.minNearDistance;e.distance*=1.2;return e},isNemoMode:function(a,b){var c=h.earthRadius+
-this.captainNemoAltitudeThreshold;return a<c*c&&b<this.captainNemoElevationThreshold},intersectManifold:function(a,b,c,d){return r.raySphereClosestPositive(a,b,h.earthRadius+c,d)},getFallbackCenterAlongViewDirection:function(a,b,c){var d=g.dot(a,a),e=h.earthRadius*h.earthRadius,d=d>e?Math.sqrt(d-e)/3:1;g.subtract(b,a,c);g.scale(c,d/g.length(c),c);g.add(c,a)}})});
+
+define(["../mixins/ConstraintsMixin","../../support/mathUtils","../../support/earthUtils","../../lib/glMatrix","../../constraints/SceneViewAltitudeConstraint","../../constraints/SceneViewTiltConstraint","../../webgl-engine/lib/Util"],function(t,i,e,a,r,n,s){var o=a.vec3d,d=o.create(),l=t.createSubclass({declaredClass:"esri.views.3d.navigation.spherical.ConstraintsSpherical",defaultConstraints:{tilt:new t.Tilt({min:function(){return i.deg2rad(n.MAX_DEFAULT)},max:i.makePiecewiseLinearFunction([[4e3,i.deg2rad(n.MIN_DEFAULT)],[5e4,i.deg2rad(88)],[6e6,i.deg2rad(88)],[2e7,i.deg2rad(n.MAX_DEFAULT)]])}),altitude:new t.Altitude({min:function(){return r.MIN_DEFAULT},max:function(){return r.MAX_DEFAULT}}),collision:new t.Collision},initialize:function(){this.captainNemoAltitudeThreshold=h,this.captainNemoElevationThreshold=u},limitAltitude:function(t,i,a,r){o.scale(a,t/r,d),o.subtract(i,d,d);var n=this.renderCoordsHelper.getAltitude(d),s=this.constraints.altitude.apply(this,n);if(Math.abs(n-s)>1e-6){var l=o.length(i),h=r,u=s+e.earthRadius,c=o.dot(a,i)/(l*h),m=-2*l*c,M=-(u*u)+l*l,v=m*m-4*M;if(0>v)return this.minPoiDist;var f=Math.sqrt(v);return m>f?(m-f)/2:(f-m)/2}return t},limitTiltByAltitudeConstraints:function(t,a,r,n){var s,d=o.length(a),l=d*d,h=r*r,u=Math.sqrt(l+h-2*d*r*Math.cos(Math.PI-t))-e.earthRadius,c=this.constraints.altitude.min(),m=this.constraints.altitude.max();if((void 0===n||n>0)&&c>u?s=c:(void 0===n||0>n)&&u>m&&(s=m),void 0!==s){var M=s+e.earthRadius,v=M*M;t=Math.PI-i.acos((-v+l+h)/(2*d*r))}return t},distanceToSilhouette:function(t,a,r,n,s){s||(s={maxFarNearRatio:0,distance:0});var d=o.dot(t.eye,t.eye),l=e.earthRadius*e.earthRadius;if(s.maxFarNearRatio=this.maxFarNearRatio,this.isNemoMode(d,n)){var h=e.earthRadius+n,u=h*h;s.distance=Math.sqrt(d-u)}else d>l?(s.maxFarNearRatio=i.clamp(2e4-(Math.log(Math.sqrt(d)-e.earthRadius)-7.983)/9.011*19e3,1e3,2e4),s.distance=Math.sqrt(d-l)):s.distance=this.maxFarNearRatio*this.minNearDistance;return s.distance*=1.2,s},isNemoMode:function(t,i){var a=e.earthRadius+this.captainNemoAltitudeThreshold,r=a*a;return r>t&&i<this.captainNemoElevationThreshold},intersectManifold:function(t,i,a,r){return s.raySphereClosestPositive(t,i,e.earthRadius+a,r)},getFallbackCenterAlongViewDirection:function(t,i,a){var r=o.dot(t,t),n=e.earthRadius*e.earthRadius,s=r>n?Math.sqrt(r-n)/3:1;o.subtract(i,t,a),o.scale(a,s/o.length(a),a),o.add(a,t)}}),h=2e4,u=-500;return l});

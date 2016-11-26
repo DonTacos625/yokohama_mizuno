@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({zoom:"\u7f29\u653e\u81f3",next:"\u4e0b\u4e00\u4e2a\u8981\u7d20",previous:"\u4e0a\u4e00\u4e2a\u8981\u7d20",close:"\u5173\u95ed",dock:"\u505c\u9760",undock:"\u672a\u505c\u9760",menu:"\u83dc\u5355",untitled:"\u65e0\u6807\u9898",pageText:"{index}/{total}",noFeaturesFound:"\u672a\u627e\u5230\u8981\u7d20",selectedFeature:"\u6240\u9009\u8981\u7d20",selectedFeatures:"{total} \u6761\u7ed3\u679c",loading:"\u52a0\u8f7d"});
+
+define({zoom:"缩放至",next:"下一个要素",previous:"上一个要素",close:"关闭",dock:"停靠",undock:"未停靠",menu:"菜单",untitled:"无标题",pageText:"{index}/{total}",noFeaturesFound:"未找到要素",selectedFeature:"所选要素",selectedFeatures:"{total} 条结果",loading:"加载"});

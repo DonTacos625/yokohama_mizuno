@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports ../Scheduler ../ArrayPool ../lang ./utils ./get ./wire".split(" "),function(B,h,y,m,r,k,g,s){function t(a){if(!a.removed){var b=a.callback,c=a.propertyName,d=a.oldValue,e=a.target,f=g.valueOf(e,c,!0);r.equals(d,f)||(a.oldValue=f,b.call(e,f,d,c,e))}}function u(){if(q){q=null;var a=e;l={};f={};e=v.acquire();for(var b=0;b<a.length;b++)t(a[b]);v.release(a)}}function z(a,b,c){return k.parse(a,b,c,function(a,b,c){var h=g.valueOf(a,b,!0),n,p=s.wire(a,b,function(a,b){n||(n={uid:k.uid(),
-target:a,propertyName:b,oldValue:h,callback:c,removed:!1});var d=n,p=d.uid,g=k.uid(d.target),m=l[p];m?e.splice(e.indexOf(m),1):(l[p]=d,f[g]||(f[g]=w.acquire()),f[g].push(p));e.push(d);q||(q=y.schedule(u))});return{remove:k.once(function(){p.remove();n&&(n.removed=!0)})}})}function A(a,b,c){return k.parse(a,b,c,function(a,b,c){var e=g.valueOf(a,b,!0),f=!1;return s.wire(a,b,function(a,b){if(!f){f=!0;var d=g.valueOf(a,b,!0);r.equals(e,d)||c.call(a,d,e,b,a);e=g.valueOf(a,b,!0);f=!1}})})}function x(a,
-b,c,d){void 0===d&&(d=!1);return d?A(a,b,c):z(a,b,c)}var v=new m,w=new m,l={},f={},e=[],q;h.dispatchTarget=function(a){var b="string"!==typeof a?k.uid(a):a;if(a=f[b]){delete f[b];for(b=0;b<a.length;b++){var c=a[b],d=l[c];delete l[c];e.splice(e.indexOf(d),1);t(d)}w.release(a)}};h.removeTarget=function(a){var b="string"!==typeof a?k.uid(a):a;if(a=f[b]){delete f[b];for(b=0;b<a.length;b++){var c=a[b],d=l[c];delete l[c];e.splice(e.indexOf(d),1)}}};h.dispatch=u;h.watch=x;Object.defineProperty(h,"__esModule",
-{value:!0});h.default=x});
+
+define(["require","exports","../Scheduler","../ArrayPool","../lang","./utils","./get","./wire"],function(e,r,a,t,n,u,i,l){function o(e){var r=e.uid,t=u.uid(e.target),n=w[r];n?q.splice(q.indexOf(n),1):(w[r]=e,y[t]||(y[t]=m.acquire()),y[t].push(r)),q.push(e),h||(h=a.schedule(v))}function f(e){if(!e.removed){var r=e.callback,a=e.propertyName,t=e.oldValue,u=e.target,l=i.valueOf(u,a,!0);n.equals(t,l)||(e.oldValue=l,r.call(u,l,t,a,u))}}function c(e){var r="string"!=typeof e?u.uid(e):e,a=y[r];if(a){delete y[r];for(var t=0,n=a;t<n.length;t++){var i=n[t],l=w[i];delete w[i],q.splice(q.indexOf(l),1),f(l)}m.release(a)}}function d(e){var r="string"!=typeof e?u.uid(e):e,a=y[r];if(a){delete y[r];for(var t=0,n=a;t<n.length;t++){var i=n[t],l=w[i];delete w[i],q.splice(q.indexOf(l),1)}}}function v(){if(h){h=null;var e=q;w={},y={},q=O.acquire();for(var r=0,a=e;r<a.length;r++){var t=a[r];f(t)}O.release(e)}}function s(e,r,a){return u.parse(e,r,a,function(e,r,a){var t,n=i.valueOf(e,r,!0),f=l.wire(e,r,function(e,r){t||(t={uid:u.uid(),target:e,propertyName:r,oldValue:n,callback:a,removed:!1}),o(t)});return{remove:u.once(function(){f.remove(),t&&(t.removed=!0)})}})}function p(e,r,a){return u.parse(e,r,a,function(e,r,a){var t=i.valueOf(e,r,!0),u=!1;return l.wire(e,r,function(e,r){if(!u){u=!0;var l=i.valueOf(e,r,!0);n.equals(t,l)||a.call(e,l,t,r,e),t=i.valueOf(e,r,!0),u=!1}})})}function g(e,r,a,t){return void 0===t&&(t=!1),t?p(e,r,a):s(e,r,a)}var h,O=new t,m=new t,w={},y={},q=[];r.dispatchTarget=c,r.removeTarget=d,r.dispatch=v,r.watch=g,Object.defineProperty(r,"__esModule",{value:!0}),r["default"]=g});

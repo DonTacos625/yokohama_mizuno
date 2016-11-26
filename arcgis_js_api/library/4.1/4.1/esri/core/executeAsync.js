@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../dojo/Deferred"],function(b){return function(g,c){var a;c||(c=500);var d=new b(function(){a&&clearTimeout(a)}),f=function(){if(!d.isFulfilled()){for(var b=Date.now(),e=!1;!e&&Date.now()-b<c;)e=!0===g();e?d.resolve():a=setTimeout(f,0)}};a=setTimeout(f,0);return d.promise}});
+
+define(["../../dojo/Deferred"],function(e){var n=function(n,o){var r;o||(o=500);var t=new e(function(){r&&clearTimeout(r)}),i=function(){if(!t.isFulfilled()){for(var e=Date.now(),u=!1;!u&&Date.now()-e<o;)u=n()===!0;u?t.resolve():r=setTimeout(i,0)}};return r=setTimeout(i,0),t.promise};return n});

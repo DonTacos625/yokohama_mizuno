@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../core/declare"],function(d){return d([],{constructor:function(){this._credentials=[]},addCredential:function(a){if(a&&(a.url&&a.token)&&!this.findCredential(a.url)){var b=this._getServiceRoot(a.url);b&&this._credentials.push({rootUrl:b,token:a.token})}},findCredential:function(a){if(!a||!this._credentials.length)return null;var b=-1,c=this._credentials,d=this._getServiceRoot(a);c.some(function(a,c){if(a.rootUrl===d)return b=c,!0});return-1<b?c[b]:null},_getServiceRoot:function(a){var b=
-/(.+\/rest\/services\/.*\/?vectortileserver)/i,c=/(.+\/sharing\/.*)/i;return b.test(a)?a.match(b)[1]:c.test(a)?a.match(c)[1]:null}})});
+
+define(["../../core/declare"],function(t){var e=t([],{constructor:function(){this._credentials=[]},addCredential:function(t){if(t&&t.url&&t.token&&!this.findCredential(t.url)){var e=this._getServiceRoot(t.url);e&&this._credentials.push({rootUrl:e,token:t.token})}},findCredential:function(t){if(!t||!this._credentials.length)return null;var e=-1,r=this._credentials,n=this._getServiceRoot(t);return r.some(function(t,r){return t.rootUrl===n?(e=r,!0):void 0}),e>-1?r[e]:null},_getServiceRoot:function(t){var e=/(.+\/rest\/services\/.*\/?vectortileserver)/i,r=/(.+\/sharing\/.*)/i;return e.test(t)?t.match(e)[1]:r.test(t)?t.match(r)[1]:null}});return e});

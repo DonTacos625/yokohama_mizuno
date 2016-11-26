@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports ../../core/Error ../../core/Warning ../Symbol3D ../CartographicLineSymbol ../SimpleLineSymbol ../SimpleMarkerSymbol ../PictureMarkerSymbol ../PictureFillSymbol ../SimpleFillSymbol ../TextSymbol ../PointSymbol3D ../LineSymbol3D ../PolygonSymbol3D ../MeshSymbol3D ../LabelSymbol3D ../WebStyleSymbol ./symbolConversion".split(" "),function(A,d,h,k,l,e,m,n,p,q,r,s,t,u,v,w,x,f,y){function g(a){return!a?null:"esriSLS"===a.type?void 0!==a.cap?e:m:z[a.type]||null}var z={esriSMS:n,esriPMS:p,
-esriTS:s,esriCLS:e,esriSFS:r,esriPFS:q,PointSymbol3D:t,LineSymbol3D:u,PolygonSymbol3D:v,MeshSymbol3D:w,LabelSymbol3D:x,styleSymbolReference:f};d.read=function(a,c,b){if(c=g(a))return c=new c,c.read(a,b),c;b&&(b.messages&&a)&&b.messages.push(new k("symbol:unsupported","Symbols of type '"+(a.type||"unknown")+"' are not supported",{definition:a,context:b}));return null};d.write=function(a,c,b){if(!a)return null;if(b&&"web-scene"===b.origin&&!a.isInstanceOf(l)&&!a.isInstanceOf(f)){var d=y.to3D(a);if(d.symbol)return d.symbol.write(c,
-b);b.messages&&b.messages.push(new h("symbol:unsupported","Symbols of type '"+a.declaredClass+"' are not supported in scenes. Use 3D symbology instead when working with WebScene and SceneView",{symbol:a,context:b,error:d.error}));return null}return a.write(c,b)};d.fromJSON=function(a,c){var b=g(a);return b?b.fromJSON(a,c):null}});
+
+define(["require","exports","../../core/Error","../../core/Warning","../Symbol3D","../CartographicLineSymbol","../SimpleLineSymbol","../SimpleMarkerSymbol","../PictureMarkerSymbol","../PictureFillSymbol","../SimpleFillSymbol","../TextSymbol","../PointSymbol3D","../LineSymbol3D","../PolygonSymbol3D","../MeshSymbol3D","../LabelSymbol3D","../WebStyleSymbol","./symbolConversion"],function(e,o,r,n,l,s,i,t,S,y,m,b,u,a,c,p,f,d,D){function w(e){return e?"esriSLS"===e.type?void 0!==e.cap?s:i:h[e.type]||null:null}function g(e,o,r){var l=w(e);if(l){var s=new l;return s.read(e,r),s}return r&&r.messages&&e&&r.messages.push(new n("symbol:unsupported","Symbols of type '"+(e.type||"unknown")+"' are not supported",{definition:e,context:r})),null}function L(e,o,n){if(!e)return null;if(!n||"web-scene"!==n.origin||e.isInstanceOf(l)||e.isInstanceOf(d))return e.write(o,n);var s=D.to3D(e);return s.symbol?s.symbol.write(o,n):(n.messages&&n.messages.push(new r("symbol:unsupported","Symbols of type '"+e.declaredClass+"' are not supported in scenes. Use 3D symbology instead when working with WebScene and SceneView",{symbol:e,context:n,error:s.error})),null)}function P(e,o){var r=w(e);return r?r.fromJSON(e,o):null}var h={esriSMS:t,esriPMS:S,esriTS:b,esriCLS:s,esriSFS:m,esriPFS:y,PointSymbol3D:u,LineSymbol3D:a,PolygonSymbol3D:c,MeshSymbol3D:p,LabelSymbol3D:f,styleSymbolReference:d};o.read=g,o.write=L,o.fromJSON=P});

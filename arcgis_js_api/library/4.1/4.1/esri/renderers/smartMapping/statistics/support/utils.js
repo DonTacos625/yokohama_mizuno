@@ -1,9 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","dojo/string","../../../../core/Error","../../../../tasks/support/ClassBreaksDefinition"],function(w,d,n,p,q){function h(a){return n.pad(a,2,"0")}function l(a,c){var b;"date"===c||"number"===c?("number"===c&&(a=new Date(a)),b="TIMESTAMP'"+a.getUTCFullYear()+"-"+h(a.getUTCMonth()+1)+"-"+h(a.getUTCDate())+" "+h(a.getUTCHours())+":"+h(a.getUTCMinutes())+":"+h(a.getUTCSeconds())+"'"):b=a;return b}function m(a,c){var b;if(c instanceof Date)b="date";else if("number"===typeof c)b=
-"number";else if("string"===typeof c){var e=a.getField(c);"\x3cnow\x3e"===c.toLowerCase()?b="":e&&e.type===r&&(b="field")}return b}function k(a,c){return new p(a,c)}var s=["integer","small-integer","single","double"],r="date",t={years:365,months:30,days:1,hours:1/24,minutes:1/1440,seconds:1/86400,milliseconds:1/864E5},u=/(https?:)?\/\/services.*\.arcgis\.com/i,v=Math.LOG10E;d.isFeatureCollection=function(a){return!a.url};d.canUseSQL92Expression=function(a){return u.test(a.url)};d.msSinceUnixEpochSQL=
-function(a,c){var b=new Date(0),b="("+l(c,m(a,c))+" - "+l(b,m(a,b))+")",e=t.milliseconds,f="/";1>e&&(e=1/e,f="*");return 1===e?b:"("+b+" "+f+" "+e+")"};d.getFieldExpr=function(a,c){var b=a.field,e=a.normalizationType,f=a.normalizationField,d=b;"percent-of-total"===e?d="(("+b+" / "+c+") * 100)":"log"===e?d="(log("+b+") * "+v+")":"field"===e&&(d="("+b+" / "+f+")");return d};d.getGRWhereInfo=function(a){var c=a.field,b=a.normalizationType,e=a.normalizationField;a=a.layer.definitionExpression;var f;"log"===
-b?f="(NOT "+c+" \x3d 0)":"field"===b&&(f="(NOT "+e+" \x3d 0)");return{where:f?f+(a?" AND "+a:""):a,excludeZerosExpr:f}};d.createCBDefn=function(a,c){var b=a.field,e=a.classificationMethod||"equal-interval",f=a.normalizationType,d=a.normalizationField,g=new q;g.classificationField=b;g.breakCount=c;g.classificationMethod=e;g.standardDeviationInterval="standard-deviation"===e?a.standardDeviationInterval||1:void 0;g.normalizationType=f;g.normalizationField="field"===f?d:void 0;return g};d.createError=
-k;d.getRangeExpr=function(a,c,b){c=null!=c?a+" \x3e\x3d "+c:"";a=null!=b?a+" \x3c\x3d "+b:"";b="";return(b=c&&a?c+" AND "+a:c||a)?"("+b+")":""};d.verifyFieldType=function(a,c,b,e,f){var d;if(b){if(b.name===c.objectIdField||-1===f.indexOf(b.type))a.reject(k(e,"'field' should be one of these types: "+f.join(","))),d=!0}else a.reject(k(e,"unknown 'field'.")),d=!0;return d};d.verifyNumericField=function(a,c,b,e){var d;if(b){if(b.name===c.objectIdField||-1===s.indexOf(b.type))a.reject(k(e,"'field' should be numeric.")),
-d=!0}else a.reject(k(e,"unknown 'field'.")),d=!0;return d}});
+
+define(["require","exports","dojo/string","../../../../core/Error","../../../../tasks/support/ClassBreaksDefinition"],function(e,n,i,t,r){function o(e){return!e.url}function a(e){return E.test(e.url)}function l(e){return i.pad(e,2,"0")}function s(e,n){var i;return"date"===n||"number"===n?("number"===n&&(e=new Date(e)),i="TIMESTAMP'"+e.getUTCFullYear()+"-"+l(e.getUTCMonth()+1)+"-"+l(e.getUTCDate())+" "+l(e.getUTCHours())+":"+l(e.getUTCMinutes())+":"+l(e.getUTCSeconds())+"'"):i=e,i}function u(e,n){var i;if(n instanceof Date)i="date";else if("number"==typeof n)i="number";else if("string"==typeof n){var t=e.getField(n);"<now>"===n.toLowerCase()?i="":t&&t.type===F&&(i="field")}return i}function d(e,n,i,t){var r="("+s(i,u(e,i))+" - "+s(n,u(e,n))+")",o=x[t],a="/";1>o&&(o=1/o,a="*");var l=1===o?r:"("+r+" "+a+" "+o+")";return{sqlExpression:l,sqlWhere:null}}function c(e,n){return d(e,new Date(0),n,"milliseconds").sqlExpression}function f(e,n){var i=e.field,t=e.normalizationType,r=e.normalizationField,o=i;return"percent-of-total"===t?o="(("+i+" / "+n+") * 100)":"log"===t?o="(log("+i+") * "+D+")":"field"===t&&(o="("+i+" / "+r+")"),o}function p(e){var n,i=e.layer,t=e.field,r=e.normalizationType,o=e.normalizationField,a=i.definitionExpression;return"log"===r?n="(NOT "+t+" = 0)":"field"===r&&(n="(NOT "+o+" = 0)"),{where:n?n+(a?" AND "+a:""):a,excludeZerosExpr:n}}function m(e,n){var i=e.field,t=e.classificationMethod||C,o=e.normalizationType,a=e.normalizationField,l=new r;return l.classificationField=i,l.breakCount=n,l.classificationMethod=t,l.standardDeviationInterval="standard-deviation"===t?e.standardDeviationInterval||b:void 0,l.normalizationType=o,l.normalizationField="field"===o?a:void 0,l}function v(e,n){return new t(e,n)}function g(e,n,i){var t=null!=n?e+" >= "+n:"",r=null!=i?e+" <= "+i:"",o="";return o=t&&r?t+" AND "+r:t||r,o?"("+o+")":""}function y(e,n,i,t,r){var o;return i?(i.name===n.objectIdField||-1===r.indexOf(i.type))&&(e.reject(v(t,"'field' should be one of these types: "+r.join(","))),o=!0):(e.reject(v(t,"unknown 'field'.")),o=!0),o}function T(e,n,i,t){var r;return i?(i.name===n.objectIdField||-1===h.indexOf(i.type))&&(e.reject(v(t,"'field' should be numeric.")),r=!0):(e.reject(v(t,"unknown 'field'.")),r=!0),r}var h=["integer","small-integer","single","double"],F="date",x={years:365,months:30,days:1,hours:1/24,minutes:1/1440,seconds:1/86400,milliseconds:1/864e5},E=/(https?:)?\/\/services.*\.arcgis\.com/i,C="equal-interval",b=1,D=Math.LOG10E;n.isFeatureCollection=o,n.canUseSQL92Expression=a,n.msSinceUnixEpochSQL=c,n.getFieldExpr=f,n.getGRWhereInfo=p,n.createCBDefn=m,n.createError=v,n.getRangeExpr=g,n.verifyFieldType=y,n.verifyNumericField=T});

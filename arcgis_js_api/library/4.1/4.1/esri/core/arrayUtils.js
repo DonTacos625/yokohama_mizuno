@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define([],function(){function g(a,b){return-1===a.indexOf(b)}function h(a,b,c){return!a.some(b.bind(null,c))}return{findIndex:function(a,b,c){for(var d=a.length,f,e=0;e<d;e++)if(f=a[e],b.call(c,f,e,a))return e;return-1},find:function(a,b,c){for(var d=a.length,f,e=0;e<d;e++)if(f=a[e],b.call(c,f,e,a))return f},equals:function(a,b){if(!a&&!b)return!0;if(!a||!b||a.length!=b.length)return!1;for(var c=0;c<a.length;c++)if(a[c]!==b[c])return!1;return!0},difference:function(a,b,c){var d;c?(d=b.filter(h.bind(null,
-a,c)),a=a.filter(h.bind(null,b,c))):(d=b.filter(g.bind(null,a)),a=a.filter(g.bind(null,b)));return{added:d,removed:a}},range:function(a,b){null==b&&(b=a,a=0);for(var c=Array(b-a),d=a;d<b;d++)c[d-a]=d;return c}}});
+
+define([],function(){function n(n,r){return-1===n.indexOf(r)}function r(n,r,e){return!n.some(r.bind(null,e))}var e={findIndex:function(n,r,e){for(var t,f=n.length,i=0;f>i;i++)if(t=n[i],r.call(e,t,i,n))return i;return-1},find:function(n,r,e){for(var t,f=n.length,i=0;f>i;i++)if(t=n[i],r.call(e,t,i,n))return t},equals:function(n,r){if(!n&&!r)return!0;if(!n||!r)return!1;if(n.length!=r.length)return!1;for(var e=0;e<n.length;e++)if(n[e]!==r[e])return!1;return!0},difference:function(e,t,f){var i,u;return f?(i=t.filter(r.bind(null,e,f)),u=e.filter(r.bind(null,t,f))):(i=t.filter(n.bind(null,e)),u=e.filter(n.bind(null,t))),{added:i,removed:u}},range:function(n,r){null==r&&(r=n,n=0);for(var e=new Array(r-n),t=n;r>t;t++)e[t-n]=t;return e}};return e});

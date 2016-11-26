@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({transparency:"\ud22c\uba85\ub3c4",suggested:"\ucd94\ucc9c",recent:"\ucd5c\uadfc",more:"\ub354 \ubcf4\uae30",moreColorsTooltip:"\ub354 \ub9ce\uc740 \uc0c9\uc0c1\uc744 \ud655\uc778\ud558\uc138\uc694.",paletteTooltip:"\uc0c9\uc0c1\uc744 \uc120\ud0dd\ud569\ub2c8\ub2e4.",noColorTooltip:"\uc0c9\uc0c1 \uc5c6\uc74c",hexInputTooltip:"16\uc9c4\uc218 \ud45c\uae30\ubc95\uc73c\ub85c \ud45c\uc2dc\ud55c \uc0ac\uc6a9\uc790 \uc815\uc758 \uc0c9\uc0c1\uc785\ub2c8\ub2e4(#FFFF00)."});
+
+define({transparency:"투명도",suggested:"추천",recent:"최근",more:"더 보기",moreColorsTooltip:"더 많은 색상을 확인하세요.",paletteTooltip:"색상을 선택합니다.",noColorTooltip:"색상 없음",hexInputTooltip:"16진수 표기법으로 표시한 사용자 정의 색상입니다(#FFFF00)."});

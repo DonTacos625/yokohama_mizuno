@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["dojo/_base/array"],function(g){return{_serializeLayerDefinitions:function(a){var b=[],c=!1,e=/[:;]/;if(a&&(g.forEach(a,function(a,d){a&&(b.push([d,a]),!c&&e.test(a)&&(c=!0))}),0<b.length)){var d;c?(d={},g.forEach(b,function(a){d[a[0]]=a[1]}),d=JSON.stringify(d)):(d=[],g.forEach(b,function(a){d.push(a[0]+":"+a[1])}),d=d.join(";"));return d}return null},_serializeTimeOptions:function(a,b){if(a){var c=[];g.forEach(a,function(a,d){if(a){var f=a.toJSON();b&&-1!==g.indexOf(b,d)&&(f.useTime=!1);
-c.push('"'+d+'":'+JSON.stringify(f))}});if(c.length)return"{"+c.join(",")+"}"}},_getVisibleLayers:function(a,b){var c=[],e,d,f;if(!a)return c;if(b){c=b.concat();for(f=0;f<a.length;f++)e=a[f],d=g.indexOf(a,e.id),e.subLayerIds&&-1<d&&(c.splice(d,1),c=c.concat(e.subLayerIds))}else c=this._getDefaultVisibleLayers(a);return c},_getDefaultVisibleLayers:function(a){var b=[],c;if(!a)return b;for(c=0;c<a.length;c++)0<=a[c].parentLayerId&&-1===g.indexOf(b,a[c].parentLayerId)&&g.some(a,function(b){return b.id===
-a[c].parentLayerId})||a[c].defaultVisibility&&b.push(a[c].id);return b},_getLayersForScale:function(a,b){var c=[];if(0<a&&b){var e;for(e=0;e<b.length;e++)if(!(0<=b[e].parentLayerId&&-1===g.indexOf(c,b[e].parentLayerId)&&g.some(b,function(a){return a.id===b[e].parentLayerId}))&&0<=b[e].id){var d=!0,f=b[e].maxScale,h=b[e].minScale;if(0<f||0<h)0<f&&0<h?d=f<=a&&a<=h:0<f?d=f<=a:0<h&&(d=a<=h);d&&c.push(b[e].id)}}return c}}});
+
+define(["dojo/_base/array"],function(e){var r={_serializeLayerDefinitions:function(r){var n=[],i=!1,t=/[:;]/;if(r&&(e.forEach(r,function(e,r){e&&(n.push([r,e]),!i&&t.test(e)&&(i=!0))}),n.length>0)){var a;return i?(a={},e.forEach(n,function(e){a[e[0]]=e[1]}),a=JSON.stringify(a)):(a=[],e.forEach(n,function(e){a.push(e[0]+":"+e[1])}),a=a.join(";")),a}return null},_serializeTimeOptions:function(r,n){if(r){var i=[];return e.forEach(r,function(r,t){if(r){var a=r.toJSON();n&&-1!==e.indexOf(n,t)&&(a.useTime=!1),i.push('"'+t+'":'+JSON.stringify(a))}}),i.length?"{"+i.join(",")+"}":void 0}},_getVisibleLayers:function(r,n){var i,t,a,f=[];if(!r)return f;if(n)for(f=n.concat(),a=0;a<r.length;a++)i=r[a],t=e.indexOf(r,i.id),i.subLayerIds&&t>-1&&(f.splice(t,1),f=f.concat(i.subLayerIds));else f=this._getDefaultVisibleLayers(r);return f},_getDefaultVisibleLayers:function(r){var n,i=[];if(!r)return i;for(n=0;n<r.length;n++)r[n].parentLayerId>=0&&-1===e.indexOf(i,r[n].parentLayerId)&&e.some(r,function(e){return e.id===r[n].parentLayerId})||r[n].defaultVisibility&&i.push(r[n].id);return i},_getLayersForScale:function(r,n){var i=[];if(r>0&&n){var t;for(t=0;t<n.length;t++)if(!(n[t].parentLayerId>=0&&-1===e.indexOf(i,n[t].parentLayerId)&&e.some(n,function(e){return e.id===n[t].parentLayerId}))&&n[t].id>=0){var a=!0,f=n[t].maxScale,u=n[t].minScale;(f>0||u>0)&&(f>0&&u>0?a=r>=f&&u>=r:f>0?a=r>=f:u>0&&(a=u>=r)),a&&i.push(n[t].id)}}return i}};return r});

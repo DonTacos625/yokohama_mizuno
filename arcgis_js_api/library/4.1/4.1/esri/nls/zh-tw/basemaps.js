@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({streets:"\u8857\u9053\u5716",satellite:"\u5f71\u50cf\u5716",hybrid:"\u5e36\u6a19\u7c64\u7684\u5f71\u50cf\u5716",terrain:"\u5e36\u6a19\u7c64\u7684\u5730\u57df\u5716",topo:"\u5730\u5f62\u5716",gray:"\u6dfa\u7070\u8272\u756b\u5e03\u5730\u5716","dark-gray":"\u6df1\u7070\u8272\u756b\u5e03\u5730\u5716",oceans:"\u6d77\u6d0b\u5716","national-geographic":"\u570b\u5bb6\u5730\u7406",osm:"OpenStreetMap","streets-night-vector":"\u4e16\u754c\u8857\u9053\u5716 (\u591c\u665a)","streets-relief-vector":"\u4e16\u754c\u8857\u9053\u5716 (\u5305\u542b\u6551\u6fdf\u4e2d\u5fc3)",
-"streets-navigation-vector":"\u4e16\u754c\u5c0e\u822a\u5716"});
+
+define({streets:"街道圖",satellite:"影像圖",hybrid:"帶標籤的影像圖",terrain:"帶標籤的地域圖",topo:"地形圖",gray:"淺灰色畫布地圖","dark-gray":"深灰色畫布地圖",oceans:"海洋圖","national-geographic":"國家地理",osm:"OpenStreetMap","streets-night-vector":"世界街道圖 (夜晚)","streets-relief-vector":"世界街道圖 (包含救濟中心)","streets-navigation-vector":"世界導航圖"});

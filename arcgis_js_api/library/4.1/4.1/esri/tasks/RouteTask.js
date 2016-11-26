@@ -1,9 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("../geometry/support/normalizeUtils ../Graphic ../request ./support/NAMessage ./support/RouteResult ./Task ./support/NAServiceDescription dojo/Deferred dojo/_base/array dojo/_base/lang".split(" "),function(u,v,w,x,y,e,z,l,m,k){e=e.createSubclass([z],{declaredClass:"esri.tasks.RouteTask",__msigns:[{n:"solve",c:1,a:[{i:0,p:["stops.features","barriers.features","polylineBarriers.features","polygonBarriers.features"]}],e:2}],properties:{parsedUrl:{get:function(){var f=this._parseUrl(this.url);
-f.path+="/solve";return f}},url:{}},solve:function(f,c){var b=new l,a=new l,e=this.__msigns[0].a[0].p,g=c&&c.assembly&&c.assembly[0]||{};this._isInputGeometryZAware(g,e)?a=this.getServiceDescription():a.resolve({dontCheck:!0});a.then(k.hitch(this,function(a){!a.hasZ&&!a.dontCheck&&this._dropZValuesOffInputGeometry(g,e);a=this._encode(k.mixin({},this.parsedUrl.query,{f:"json"},f.toJSON(g)));w(this.parsedUrl.path,{query:a,callbackParamName:"callback"}).then(k.hitch(this,function(a){b.resolve(this._handleSolveResponse(a))}),
-b.reject)}),b.reject);return b.promise},_handleSolveResponse:function(f){var c=[],b=[],a=f.data,e=a.routes?a.routes.features:[],g=a.stops?a.stops.features:[];f=a.barriers?a.barriers.features:[];var k=a.polygonBarriers?a.polygonBarriers.features:[],l=a.polylineBarriers?a.polylineBarriers.features:[],n=a.messages,h=m.forEach,p=m.indexOf,q=!0,d,r,s=a.routes&&a.routes.spatialReference||a.stops&&a.stops.spatialReference||a.barriers&&a.barriers.spatialReference||a.polygonBarriers&&a.polygonBarriers.spatialReference||
-a.polylineBarriers&&a.polylineBarriers.spatialReference;h(a.directions||[],function(a){c.push(d=a.routeName);b[d]={directions:a}});h(e,function(a){if(-1===p(c,d=a.attributes.Name))c.push(d),b[d]={};b[d].route=a});h(g,function(a){r=a.attributes;if(-1===p(c,d=r.RouteName||"esri.tasks.RouteTask.NULL_ROUTE_NAME"))c.push(d),b[d]={};"esri.tasks.RouteTask.NULL_ROUTE_NAME"!==d&&(q=!1);void 0===b[d].stops&&(b[d].stops=[]);b[d].stops.push(a)});0<g.length&&!0===q&&(b[c[0]].stops=b["esri.tasks.RouteTask.NULL_ROUTE_NAME"].stops,
-delete b["esri.tasks.RouteTask.NULL_ROUTE_NAME"],c.splice(m.indexOf(c,"esri.tasks.RouteTask.NULL_ROUTE_NAME"),1));var t=[];h(c,function(a,c){b[a].routeName="esri.tasks.RouteTask.NULL_ROUTE_NAME"===a?null:a;b[a].spatialReference=s;t.push(y.fromJSON(b[a]))});a=function(a){h(a,function(b,c){b.geometry&&(b.geometry.spatialReference=s);a[c]=v.fromJSON(b)});return a};h(n,function(a,b){n[b]=x.fromJSON(a)});return{routeResults:t,barriers:a(f),polygonBarriers:a(k),polylineBarriers:a(l),messages:n}}});u._createWrappers(e);
-return e});
+
+define(["../geometry/support/normalizeUtils","../Graphic","../request","./support/NAMessage","./support/RouteResult","./Task","./support/NAServiceDescription","dojo/Deferred","dojo/_base/array","dojo/_base/lang"],function(e,r,s,t,a,o,i,n,p,u){var l=o.createSubclass([i],{declaredClass:"esri.tasks.RouteTask",__msigns:[{n:"solve",c:1,a:[{i:0,p:["stops.features","barriers.features","polylineBarriers.features","polygonBarriers.features"]}],e:2}],properties:{parsedUrl:{get:function(){var e=this._parseUrl(this.url);return e.path+="/solve",e}},url:{}},solve:function(e,r){var t=new n,a=new n,o=this.__msigns[0].a[0].p,i=r&&r.assembly&&r.assembly[0]||{};return this._isInputGeometryZAware(i,o)?a=this.getServiceDescription():a.resolve({dontCheck:!0}),a.then(u.hitch(this,function(r){r.hasZ||r.dontCheck||this._dropZValuesOffInputGeometry(i,o);var a=this._encode(u.mixin({},this.parsedUrl.query,{f:"json"},e.toJSON(i)));s(this.parsedUrl.path,{query:a,callbackParamName:"callback"}).then(u.hitch(this,function(e){t.resolve(this._handleSolveResponse(e))}),t.reject)}),t.reject),t.promise},_handleSolveResponse:function(e){var s,o,i=[],n=[],u=e.data,l=u.directions||[],c=u.routes?u.routes.features:[],f=u.stops?u.stops.features:[],h=u.barriers?u.barriers.features:[],d=u.polygonBarriers?u.polygonBarriers.features:[],m=u.polylineBarriers?u.polylineBarriers.features:[],y=u.messages,g="esri.tasks.RouteTask.NULL_ROUTE_NAME",v=p.forEach,R=p.indexOf,b=!0,_=u.routes&&u.routes.spatialReference||u.stops&&u.stops.spatialReference||u.barriers&&u.barriers.spatialReference||u.polygonBarriers&&u.polygonBarriers.spatialReference||u.polylineBarriers&&u.polylineBarriers.spatialReference;v(l,function(e){i.push(s=e.routeName),n[s]={directions:e}}),v(c,function(e){-1===R(i,s=e.attributes.Name)&&(i.push(s),n[s]={}),n[s].route=e}),v(f,function(e){o=e.attributes,-1===R(i,s=o.RouteName||g)&&(i.push(s),n[s]={}),s!==g&&(b=!1),void 0===n[s].stops&&(n[s].stops=[]),n[s].stops.push(e)}),f.length>0&&b===!0&&(n[i[0]].stops=n[g].stops,delete n[g],i.splice(p.indexOf(i,g),1));var N=[];v(i,function(e,r){n[e].routeName=e===g?null:e,n[e].spatialReference=_,N.push(a.fromJSON(n[e]))});var B=function(e){return v(e,function(s,t){s.geometry&&(s.geometry.spatialReference=_),e[t]=r.fromJSON(s)}),e};return v(y,function(e,r){y[r]=t.fromJSON(e)}),{routeResults:N,barriers:B(h),polygonBarriers:B(d),polylineBarriers:B(m),messages:y}}});return e._createWrappers(l),l});

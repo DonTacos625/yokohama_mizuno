@@ -1,199 +1,25 @@
-/* eslint-env worker */
-/* jshint worker: true */
-
-/**
- * @classdesc
- * The worker class is the script which initializes the WebWorkers. It is functioning as a bootstrap-loader allowing the
- * calling API to use it to load desired modules.
- * The worker is the object who listens to incoming messages and depending on the connection ID channels the messages
- * unto the proper connection/module object.
- * @module esri/code/workers/worker
- * @since 4.0
- */
-
-//--------------------------------------------------------------------------
+// COPYRIGHT © 2016 Esri
 //
-//  Variables
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
 //
-//--------------------------------------------------------------------------
-
-/**
- * A dictionary of connection. Each connection is identified by ID
- * @type {{WorkerConnection}} and array of worker connections
- * @private
- */
-var connections = {};
-
-/**
- * A queue to hold onto promises of outgoing static messages
- * @type {[number, Promise]}
- */
-var outgoingStaticMessages = {};
-
-/**
- * A counter to provide unique kernel message IDs
- * @type {number}
- */
-// not needed at 4.1
-// var staticMsgCount = 0;
-
-var isInitialized = false;
-
-//--------------------------------------------------------------------------
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
 //
-//  Private Methods
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
 //
-//--------------------------------------------------------------------------
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
+// See http://js.arcgis.com/4.1/esri/copyright.txt for details.
 
-/**
- * onmessage event handler which listens to messages coming from the main thread. Depending on the type of the message,
- * the worker will either open a connection, close connection or forward the message onto the target connection object.
- * The API handles five types of messages:
- * 1. <worker-init> fired by the worker to indicate that the worker is up an running
- * 2. <open-connection> request from to open a new connection and load a module
- * 3. <close-connection> request to close and dispose a worker connection
- * 4. <response> any type of response, indicating loading module status, error or a valid response
- * 5. <cancel> a request to cancel an ongoing or awaiting job
- * @private
- * @param e {Object} message data
- */
-function messageHandler(e) {
-  var data = e.data;
-  if (!data) {
-    return;
-  }
-
-  var connectionID = e.data.connection;
-
-  if (data.type === "<configure>") {
-    var configuration = data.configure;
-
-    if (!isInitialized) {
-      self.dojoConfig = configuration.dojoConfig;
-      importScripts(configuration.loaderUrl);
-    
-      require([
-        "dojo/_base/lang",
-        "esri/config" // TODO: see whether it is possible to make relative?
-      ], function (lang, esriConfig) {
-        lang.mixin(esriConfig, configuration.esriConfig);
-        self.postMessage({
-          type: "<worker-configured>"
-        });
-      });
-    }
-    // else {
-      // simply update the config. We already loaded the config so it must be loaded by now
-      // not working at 4.1
-      // var cfg = require("esri/config");
-      // cfg.copy(configure.esriConfig);
-    // }
-  }
-  else if (data.type === "<open-connection>") {
-    // invoke the AMD module loader function require
-    var path = data.data.path;
-    var jobID = data.id;
-
-    // this is simply to reassure that the connection/module does not already exist
-    if (connections[connectionID]) {
-      self.postMessage({
-        type: "<response>",
-        id: jobID,
-        connection: connectionID
-      });
-
-      return;
-    }
-
-    require([
-      "esri/core/workers/WorkerConnection", // TODO: see whether it is possible to make relative?
-      path
-    ],
-    function(WorkerConnection, Module) {
-      // we need to create the connection, then add it to the connections dictionary
-      connections[connectionID] = new WorkerConnection(Module, this, connectionID);
-
-      // send an init message indicating that the worker has loaded the requested module
-      self.postMessage({
-        type: "<response>",
-        id: jobID,
-        data: {
-          connection: connectionID
-        },
-        error: undefined
-      });
-    });
-  }
-  else if (data.type === "<close-connection>") {
-    if (connections[connectionID]) {
-      delete connections[connectionID];
-    }
-  }
-  else if (data.type === "<static-message>") { // it is a kernel message therefore it is no distributet to a connection
-    var msgId = data.id;
-    if (outgoingStaticMessages[msgId]) {
-      var deferred = outgoingStaticMessages[msgId];
-      delete outgoingStaticMessages[msgId];
-
-      if (data.error) {
-        deferred.reject(data.error);
-      }
-      else {
-        deferred.resolve(data.data);
-      }
-    }
-  }
-  else {
-    // we need to distribute the message to the named module
-    var type = e.data.type;
-
-    if (type) {
-      var connection = connections[connectionID];
-      if (connection) {
-        connection.proxy.message(e);
-      }
-    }
-  }
-}
-
-self.addEventListener("message", messageHandler);
-
-
-/// not needed at 4.1
-
-// function invokeStaticMessage(staticMsg: string, data: any) {
-//   // Deferred has already been loaded at this point
-//   var Deferred = require("dojo/Deferred");
-
-//   var msgId = staticMsgCount++;
-
-//   var deferred = new Deferred(reason => {
-//     // post a cancel message in order to allow cancellation on the main thread
-//     postMessage({
-//       type: "<cancel>",
-//       staticMsg: staticMsg,
-//       id: msgId,
-//       data: { reason: reason },
-//       connection: null
-//     });
-
-//     delete outgoingStaticMessages[msgId];
-//   });
-
-//   // add the deferred to the queue
-//   outgoingStaticMessages[msgId] = deferred;
-
-//   // post the message to the main thread
-//   postMessage({
-//     type: "<static-message>",
-//     staticMsg: staticMsg,
-//     id: msgId,
-//     data: data,
-//     connection: null
-//   });
-
-//   return deferred;
-// };
-
-// fire a loaded message in order to notify the workers dispatcher that this worker is ready to process messages
-self.postMessage({ type: "<worker-loaded>" } );
+function messageHandler(e){var o=e.data;if(o){var s=e.data.connection;if("<configure>"===o.type){var n=o.configure;isInitialized||(self.dojoConfig=n.dojoConfig,importScripts(n.loaderUrl),require(["dojo/_base/lang","esri/config"],function(e,o){e.mixin(o,n.esriConfig),self.postMessage({type:"<worker-configured>"})}))}else if("<open-connection>"===o.type){var i=o.data.path,t=o.id;if(connections[s])return void self.postMessage({type:"<response>",id:t,connection:s});require(["esri/core/workers/WorkerConnection",i],function(e,o){connections[s]=new e(o,this,s),self.postMessage({type:"<response>",id:t,data:{connection:s},error:void 0})})}else if("<close-connection>"===o.type)connections[s]&&delete connections[s];else if("<static-message>"===o.type){var r=o.id;if(outgoingStaticMessages[r]){var a=outgoingStaticMessages[r];delete outgoingStaticMessages[r],o.error?a.reject(o.error):a.resolve(o.data)}}else{var c=e.data.type;if(c){var g=connections[s];g&&g.proxy.message(e)}}}}var connections={},outgoingStaticMessages={},isInitialized=!1;self.addEventListener("message",messageHandler),self.postMessage({type:"<worker-loaded>"});

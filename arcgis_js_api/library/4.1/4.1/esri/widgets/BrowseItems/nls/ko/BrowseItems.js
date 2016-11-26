@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"${name} \ub808\uc774\uc5b4\uc5d0 \ud544\ud130\ub9c1\uc5d0 \uc0ac\uc6a9\ud560 \uc218 \uc788\ub294 \ud544\ub4dc\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",addToViewer:"\ub9f5\uc5d0 \ub808\uc774\uc5b4 \ucd94\uac00",noItemsToDisplay:"\ud604\uc7ac \ud45c\uc2dc\ud560 \uc218 \uc788\ub294 \ud56d\ubaa9\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.",searchFor:"\uac80\uc0c9",searching:"\uac80\uc0c9 \uc911",items:{organizationLabel:"\ub0b4 \uae30\uad00",onlineLabel:"ArcGIS Online",contentLabel:"\ub0b4 \ucf58\ud150\uce20",
-favoritesLabel:"\ub0b4 \uc990\uaca8\ucc3e\uae30"},title:"\uc6f9 \ub9f5 \uc120\ud0dd",searchTitle:"\uac80\uc0c9",ok:"\ud655\uc778",cancel:"\ucde8\uc18c",placeholder:"\uac80\uc0c9\uc5b4 \uc785\ub825",instructionsLeft:"\uacc4\uc18d\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?",instructionsRight:"\uad6c\uc131 \uc124\uc815 \uc571\uc744 \uc120\ud0dd\ud569\ub2c8\ub2e4.",go:"\uc774\ub3d9",selectDetails:"\uc120\ud0dd",configure:"\uc0dd\uc131",close:"\ub2eb\uae30",learnMoreConfigurableApps:"\uad6c\uc131 \uc124\uc815 \uc571\uc5d0 \ub300\ud55c \uc790\uc138\ud55c \uc815\ubcf4"});
+
+define({noFilterFields:"${name} 레이어에 필터링에 사용할 수 있는 필드가 없습니다.",addToViewer:"맵에 레이어 추가",noItemsToDisplay:"현재 표시할 수 있는 항목이 없습니다.",searchFor:"검색",searching:"검색 중",items:{organizationLabel:"내 기관",onlineLabel:"ArcGIS Online",contentLabel:"내 콘텐츠",favoritesLabel:"내 즐겨찾기"},title:"웹 맵 선택",searchTitle:"검색",ok:"확인",cancel:"취소",placeholder:"검색어 입력",instructionsLeft:"계속하시겠습니까?",instructionsRight:"구성 설정 앱을 선택합니다.",go:"이동",selectDetails:"선택",configure:"생성",close:"닫기",learnMoreConfigurableApps:"구성 설정 앱에 대한 자세한 정보"});

@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports ../core/tsSupport/declareExtendsHelper ../core/tsSupport/decorateHelper ../core/accessorSupport/decorators ./Layer ./mixins/SceneService ../core/Error ../geometry/SpatialReference dojo/_base/lang".split(" "),function(p,q,k,d,b,l,m,f,g,n){return function(h){function a(e,a){h.call(this);this.geometryType="mesh";this.operationalLayerType="IntegratedMeshLayer";this.spatialReference=null}k(a,h);a.prototype.normalizeCtorArgs=function(e,a){return"string"===typeof e?n.mixin({},{url:e},
-a):e};a.prototype.readSpatialReference=function(a,b){if(null!=b.spatialReference)return g.fromJSON(b.spatialReference);var c=b.store,c=(c=c.indexCRS||c.geographicCRS)&&parseInt(c.substring(c.lastIndexOf("/")+1,c.length),10);return null!=c?new g(c):null};a.prototype.load=function(){var a=this,b=this.loadFromPortal({supportedTypes:["Scene Service"]}).always(function(){return a._fetchService()}).then(function(){return a._verifyRootNodeAndUpdateExtent()});this.addResolvingPromise(b);return this};a.prototype.read=
-function(a,b){this.inherited(arguments,[a,b]);a.layerDefinition&&this.inherited(arguments,[a.layerDefinition,b]);return this};a.prototype._validateLayer=function(a){if(a.layerType&&"IntegratedMesh"!==a.layerType)throw new f("integratedmeshlayer:layer-type-not-supported","IntegratedMeshLayer does not support this layer type",{layerType:a.layerType});if(isNaN(this.version.major)||isNaN(this.version.minor))throw new f("layer:service-version-not-supported","Service version is not supported.",{serviceVersion:this.version.versionString,
-supportedVersions:"1.x"});if(1<this.version.major)throw new f("layer:service-version-too-new","Service version is too new.",{serviceVersion:this.version.versionString,supportedVersions:"1.x"});};d([b.shared("esri.layers.IntegratedMeshLayer")],a.prototype,"declaredClass",void 0);d([b.shared({"3d":"../views/3d/layers/SceneLayerView3D"})],a.prototype,"viewModulePaths",void 0);d([b.property({type:String,readOnly:!0})],a.prototype,"geometryType",void 0);d([b.property()],a.prototype,"operationalLayerType",
-void 0);d([b.property({type:g})],a.prototype,"spatialReference",void 0);d([b.read("spatialReference",["spatialReference","store.indexCRS","store.geographicCRS"])],a.prototype,"readSpatialReference",null);return a=d([b.subclass()],a)}(b.declared(l,m))});
+
+define(["require","exports","../core/tsSupport/declareExtendsHelper","../core/tsSupport/decorateHelper","../core/accessorSupport/decorators","./Layer","./mixins/SceneService","../core/Error","../geometry/SpatialReference","dojo/_base/lang"],function(e,r,t,o,i,n,s,a,p,l){function y(){return n}var d=function(e){function r(r,t){e.call(this),this.geometryType="mesh",this.operationalLayerType="IntegratedMeshLayer",this.spatialReference=null}return t(r,e),r.prototype.normalizeCtorArgs=function(e,r){return"string"==typeof e?l.mixin({},{url:e},r):e},r.prototype.readSpatialReference=function(e,r){if(null!=r.spatialReference)return p.fromJSON(r.spatialReference);var t=r.store,o=t.indexCRS||t.geographicCRS,i=o&&parseInt(o.substring(o.lastIndexOf("/")+1,o.length),10);return null!=i?new p(i):null},r.prototype.load=function(){var e=this,r=this.loadFromPortal({supportedTypes:["Scene Service"]}).always(function(){return e._fetchService()}).then(function(){return e._verifyRootNodeAndUpdateExtent()});return this.addResolvingPromise(r),this},r.prototype.read=function(e,r){return this.inherited(arguments,[e,r]),e.layerDefinition&&this.inherited(arguments,[e.layerDefinition,r]),this},r.prototype._validateLayer=function(e){if(e.layerType&&"IntegratedMesh"!==e.layerType)throw new a("integratedmeshlayer:layer-type-not-supported","IntegratedMeshLayer does not support this layer type",{layerType:e.layerType});if(isNaN(this.version.major)||isNaN(this.version.minor))throw new a("layer:service-version-not-supported","Service version is not supported.",{serviceVersion:this.version.versionString,supportedVersions:"1.x"});if(this.version.major>1)throw new a("layer:service-version-too-new","Service version is too new.",{serviceVersion:this.version.versionString,supportedVersions:"1.x"})},o([i.shared("esri.layers.IntegratedMeshLayer")],r.prototype,"declaredClass",void 0),o([i.shared({"3d":"../views/3d/layers/SceneLayerView3D"})],r.prototype,"viewModulePaths",void 0),o([i.property({type:String,readOnly:!0})],r.prototype,"geometryType",void 0),o([i.property()],r.prototype,"operationalLayerType",void 0),o([i.property({type:p})],r.prototype,"spatialReference",void 0),o([i.read("spatialReference",["spatialReference","store.indexCRS","store.geographicCRS"])],r.prototype,"readSpatialReference",null),r=o([i.subclass()],r)}(i.declared(y(),s));return d});

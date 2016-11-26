@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7",clearButtonTitle:"\u0395\u03ba\u03ba\u03b1\u03b8\u03ac\u03c1\u03b9\u03c3\u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7\u03c2",placeholder:"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03b4\u03b9\u03b5\u03cd\u03b8\u03c5\u03bd\u03c3\u03b7\u03c2 \u03ae \u03bc\u03ad\u03c1\u03bf\u03c5\u03c2",searchIn:"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03b5",lonlat:"\u0393\u03b5\u03c9\u03b3\u03c1\u03b1\u03c6\u03b9\u03ba\u03cc \u03bc\u03ae\u03ba\u03bf\u03c2, \u0393\u03b5\u03c9\u03b3\u03c1\u03b1\u03c6\u03b9\u03ba\u03cc \u03c0\u03bb\u03ac\u03c4\u03bf\u03c2",
-reverseLonLatHeader:"\u03a4\u03b9 \u03b5\u03bd\u03bd\u03bf\u03b5\u03af\u03c4\u03b5;",all:"\u038c\u03bb\u03b5\u03c2",allPlaceholder:"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03b4\u03b9\u03b5\u03cd\u03b8\u03c5\u03bd\u03c3\u03b7\u03c2 \u03ae \u03bc\u03ad\u03c1\u03bf\u03c5\u03c2",emptyValue:"\u0395\u03b9\u03c3\u03b1\u03b3\u03ac\u03b3\u03b5\u03c4\u03b5 \u03cc\u03c1\u03bf \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7\u03c2.",untitledResult:"\u03a7\u03c9\u03c1\u03af\u03c2 \u03c4\u03af\u03c4\u03bb\u03bf",
-untitledSource:"\u0391\u03bd\u03ce\u03bd\u03c5\u03bc\u03b7 \u03c0\u03c1\u03bf\u03ad\u03bb\u03b5\u03c5\u03c3\u03b7",noResults:"\u039a\u03b1\u03bd\u03ad\u03bd\u03b1 \u03b1\u03c0\u03bf\u03c4\u03ad\u03bb\u03b5\u03c3\u03bc\u03b1",noResultsFound:"\u0394\u03b5\u03bd \u03b2\u03c1\u03ad\u03b8\u03b7\u03ba\u03b1\u03bd \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03ad\u03c3\u03bc\u03b1\u03c4\u03b1 \u03b3\u03b9\u03b1 {value}.",showMoreResults:"\u0395\u03bc\u03c6\u03ac\u03bd\u03b9\u03c3\u03b7 \u03c0\u03b5\u03c1\u03b9\u03c3\u03c3\u03cc\u03c4\u03b5\u03c1\u03c9\u03bd \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03b5\u03c3\u03bc\u03ac\u03c4\u03c9\u03bd",
-hideMoreResults:"\u0391\u03c0\u03cc\u03ba\u03c1\u03c5\u03c8\u03b7",searchResult:"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03ad\u03c3\u03bc\u03b1\u03c4\u03bf\u03c2",moreResultsHeader:"\u03a0\u03b5\u03c1\u03b9\u03c3\u03c3\u03cc\u03c4\u03b5\u03c1\u03b1 \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03ad\u03c3\u03bc\u03b1\u03c4\u03b1",esriLocatorName:"\u03a5\u03c0\u03b7\u03c1\u03b5\u03c3\u03af\u03b1 \u03b5\u03cd\u03c1\u03b5\u03c3\u03b7\u03c2 \u03b4\u03b9\u03b5\u03c5\u03b8\u03cd\u03bd\u03c3\u03b5\u03c9\u03bd ESRI"});
+
+define({searchButtonTitle:"Αναζήτηση",clearButtonTitle:"Εκκαθάριση αναζήτησης",placeholder:"Αναζήτηση διεύθυνσης ή μέρους",searchIn:"Αναζήτηση σε",lonlat:"Γεωγραφικό μήκος, Γεωγραφικό πλάτος",reverseLonLatHeader:"Τι εννοείτε;",all:"Όλες",allPlaceholder:"Αναζήτηση διεύθυνσης ή μέρους",emptyValue:"Εισαγάγετε όρο αναζήτησης.",untitledResult:"Χωρίς τίτλο",untitledSource:"Ανώνυμη προέλευση",noResults:"Κανένα αποτέλεσμα",noResultsFound:"Δεν βρέθηκαν αποτελέσματα για {value}.",showMoreResults:"Εμφάνιση περισσότερων αποτελεσμάτων",hideMoreResults:"Απόκρυψη",searchResult:"Αναζήτηση αποτελέσματος",moreResultsHeader:"Περισσότερα αποτελέσματα",esriLocatorName:"Υπηρεσία εύρεσης διευθύνσεων ESRI"});

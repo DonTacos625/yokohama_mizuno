@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({zoom:"Zoomen auf",next:"N\u00e4chstes Feature",previous:"Vorheriges Feature",close:"Schlie\u00dfen",dock:"Andocken",undock:"Abdocken",menu:"Men\u00fc",untitled:"Unbenannt",pageText:"{index} von {total}",noFeaturesFound:"Keine Features gefunden",selectedFeature:"Ausgew\u00e4hltes Feature",selectedFeatures:"{total} Ergebnisse",loading:"Wird geladen"});
+
+define({zoom:"Zoomen auf",next:"Nächstes Feature",previous:"Vorheriges Feature",close:"Schließen",dock:"Andocken",undock:"Abdocken",menu:"Menü",untitled:"Unbenannt",pageText:"{index} von {total}",noFeaturesFound:"Keine Features gefunden",selectedFeature:"Ausgewähltes Feature",selectedFeatures:"{total} Ergebnisse",loading:"Wird geladen"});

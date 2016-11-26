@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({statsAvg:"\u5e73\u5747 : ${avg}",count:"\u6570: ${count}",percent:"${num}%",high:"\u9ad8",low:"\u4f4e",color:{changeMinMaxToolTIp:"\u5024\u3092\u5165\u529b\u3057\u307e\u3059\u3002",handleToolTip:"\u8272\u306e\u30c7\u30fc\u30bf\u5024\u3092\u5408\u308f\u305b\u307e\u3059\u3002",maxValueToolTip:"\u60f3\u5b9a\u3055\u308c\u308b\u6700\u5927\u306e\u30c7\u30fc\u30bf\u5024\u3092\u5165\u529b\u3057\u307e\u3059\u3002",minValueToolTip:"\u60f3\u5b9a\u3055\u308c\u308b\u6700\u5c0f\u306e\u30c7\u30fc\u30bf\u5024\u3092\u5165\u529b\u3057\u307e\u3059\u3002",
-changeSymbol:"\u30b7\u30f3\u30dc\u30eb\u306e\u5909\u66f4"},size:{handleToolTip:"\u30c7\u30fc\u30bf\u5024\u306e\u30b7\u30f3\u30dc\u30eb \u30b5\u30a4\u30ba\u3092\u5408\u308f\u305b\u307e\u3059\u3002",sizeInputBoxLines:"\u30e9\u30a4\u30f3\u306e\u592a\u3055\u3092 0 \uff5e 18 \u30d4\u30af\u30bb\u30eb\u306e\u7bc4\u56f2\u3067\u8a2d\u5b9a\u3057\u307e\u3059\u3002",sizeInputBoxPoints:"\u30b7\u30f3\u30dc\u30eb \u30b5\u30a4\u30ba\u3092 1 \uff5e 120 \u30d4\u30af\u30bb\u30eb\u306e\u7bc4\u56f2\u3067\u8a2d\u5b9a\u3057\u307e\u3059"}});
+
+define({statsAvg:"平均 : ${avg}",count:"数: ${count}",percent:"${num}%",high:"高",low:"低",color:{changeMinMaxToolTIp:"値を入力します。",handleToolTip:"色のデータ値を合わせます。",maxValueToolTip:"想定される最大のデータ値を入力します。",minValueToolTip:"想定される最小のデータ値を入力します。",changeSymbol:"シンボルの変更"},size:{handleToolTip:"データ値のシンボル サイズを合わせます。",sizeInputBoxLines:"ラインの太さを 0 ～ 18 ピクセルの範囲で設定します。",sizeInputBoxPoints:"シンボル サイズを 1 ～ 120 ピクセルの範囲で設定します"}});

@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"Wyszukaj",clearButtonTitle:"Wyczy\u015b\u0107 wyszukiwanie",placeholder:"Znajd\u017a adres lub miejsce",searchIn:"Szukaj w",lonlat:"D\u0142ugo\u015b\u0107 geograficzna, szeroko\u015b\u0107 geograficzna",reverseLonLatHeader:"Czy chodzi\u0142o Ci o?",all:"Wszystkie",allPlaceholder:"Znajd\u017a adres lub miejsce",emptyValue:"Wprowad\u017a wyszukiwany termin",untitledResult:"Bez tytu\u0142u",untitledSource:"\u0179r\u00f3d\u0142o bez nazwy",noResults:"Brak wynik\u00f3w",noResultsFound:"Nie znaleziono wynik\u00f3w dla {value}.",
-showMoreResults:"Poka\u017c wi\u0119cej wynik\u00f3w",hideMoreResults:"Ukryj",searchResult:"Wynik wyszukiwania",moreResultsHeader:"Wi\u0119cej wynik\u00f3w",esriLocatorName:"Esri World Geocoder"});
+
+define({searchButtonTitle:"Wyszukaj",clearButtonTitle:"Wyczyść wyszukiwanie",placeholder:"Znajdź adres lub miejsce",searchIn:"Szukaj w",lonlat:"Długość geograficzna, szerokość geograficzna",reverseLonLatHeader:"Czy chodziło Ci o?",all:"Wszystkie",allPlaceholder:"Znajdź adres lub miejsce",emptyValue:"Wprowadź wyszukiwany termin",untitledResult:"Bez tytułu",untitledSource:"Źródło bez nazwy",noResults:"Brak wyników",noResultsFound:"Nie znaleziono wyników dla {value}.",showMoreResults:"Pokaż więcej wyników",hideMoreResults:"Ukryj",searchResult:"Wynik wyszukiwania",moreResultsHeader:"Więcej wyników",esriLocatorName:"Esri World Geocoder"});

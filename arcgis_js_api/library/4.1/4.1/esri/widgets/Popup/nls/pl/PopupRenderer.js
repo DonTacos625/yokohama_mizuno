@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({attach:"Za\u0142\u0105czniki",fields:"Pola",fieldsSummary:"Lista atrybut\u00f3w i warto\u015bci",media:"Multimedia",next:"Dalej",numCharts:"Liczba wykres\u00f3w",numImages:"Liczba obraz\u00f3w",noTitle:"Bez tytu\u0142u",previous:"Powr\u00f3t",view:"Wy\u015bwietl"});
+
+define({attach:"Załączniki",fields:"Pola",fieldsSummary:"Lista atrybutów i wartości",media:"Multimedia",next:"Dalej",numCharts:"Liczba wykresów",numImages:"Liczba obrazów",noTitle:"Bez tytułu",previous:"Powrót",view:"Wyświetl"});

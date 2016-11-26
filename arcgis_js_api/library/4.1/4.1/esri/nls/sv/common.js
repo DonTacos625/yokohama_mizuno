@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({about:"Om",add:"L\u00e4gg till",all:"Alla",apply:"Anv\u00e4nd",auth:{logOut:"Logga ut",signIn:"Logga in"},back:"Bak\u00e5t",cancel:"Avbryt",change:"\u00c4ndra",clear:"Rensa",close:"St\u00e4ng",configure:"Konfigurera",control:{pause:"Paus",play:"Spela",resume:"\u00c5teruppta",stop:"Stoppa"},copy:"Kopiera",create:"Skapa",cut:"Besk\u00e4r","delete":"Ta bort",details:"Detaljer",edit:"\u00c4ndra",error:"Fel",esri:"Esri",exit:"{Tahoma8}Avsluta",fieldsSummary:"Lista med attribut och v\u00e4rden",
-find:"S\u00f6k",form:{no:"Nej",ok:"OK",password:"h\u00e4mtningen \u00e4r klar",submit:"Skicka",username:"H\u00e4mtningen \u00e4r klar",yes:"Ja"},help:"Hj\u00e4lp",home:"Hem",info:"Info",information:"Information",layer:"Lager",loading:"Laddar",maximize:"Maximera",menu:"Meny",more:"Mer",none:"Inga",open:"\u00d6ppna",pagination:{first:"F\u00f6rsta",last:"Sista",next:"N\u00e4sta",page:"Sida",pageText:"{index} av {total}",previous:"F\u00f6reg\u00e5ende"},paste:"Klistra in",preview:"F\u00f6rhandsgranska",
-print:"Skriv ut",publish:"Publicera",redo:"Upprepa",refresh:"Uppdatera",remove:"Ta bort",rename:"Byt namn",reset:"\u00c5terst\u00e4ll",restore:"\u00c5terst\u00e4ll",save:"Spara",search:"S\u00f6k",searching:"S\u00f6ker",select:"V\u00e4lj",settings:"Settings",sort:"Sortera",share:"Dela",title:"Titel",untitled:"Namnl\u00f6s",upload:"\u00d6verf\u00f6r",undo:"\u00c5ngra",view:"Visa",visibility:{hide:"D\u00f6lj",show:"Visa",toggle:"V\u00e4xla"},warning:"Varning"});
+
+define({about:"Om",add:"Lägg till",all:"Alla",apply:"Använd",auth:{logOut:"Logga ut",signIn:"Logga in"},back:"Bakåt",cancel:"Avbryt",change:"Ändra",clear:"Rensa",close:"Stäng",configure:"Konfigurera",control:{pause:"Paus",play:"Spela",resume:"Återuppta",stop:"Stoppa"},copy:"Kopiera",create:"Skapa",cut:"Beskär","delete":"Ta bort",details:"Detaljer",edit:"Ändra",error:"Fel",esri:"Esri",exit:"{Tahoma8}Avsluta",fieldsSummary:"Lista med attribut och värden",find:"Sök",form:{no:"Nej",ok:"OK",password:"hämtningen är klar",submit:"Skicka",username:"Hämtningen är klar",yes:"Ja"},help:"Hjälp",home:"Hem",info:"Info",information:"Information",layer:"Lager",loading:"Laddar",maximize:"Maximera",menu:"Meny",more:"Mer",none:"Inga",open:"Öppna",pagination:{first:"Första",last:"Sista",next:"Nästa",page:"Sida",pageText:"{index} av {total}",previous:"Föregående"},paste:"Klistra in",preview:"Förhandsgranska",print:"Skriv ut",publish:"Publicera",redo:"Upprepa",refresh:"Uppdatera",remove:"Ta bort",rename:"Byt namn",reset:"Återställ",restore:"Återställ",save:"Spara",search:"Sök",searching:"Söker",select:"Välj",settings:"Settings",sort:"Sortera",share:"Dela",title:"Titel",untitled:"Namnlös",upload:"Överför",undo:"Ångra",view:"Visa",visibility:{hide:"Dölj",show:"Visa",toggle:"Växla"},warning:"Varning"});

@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("require exports dojo/_base/lang ../Renderer ../UniqueValueRenderer ../../symbols/WebStyleSymbol ../../symbols/support/jsonUtils ../../core/promiseUtils ../../symbols/support/symbolUtils".split(" "),function(u,e,h,k,l,m,n,p,q){function g(a){return"uniqueValue"===a.type&&(void 0!==a.styleUrl||void 0!==a.styleName)}function r(a,b){var d=k.fromJSON(a);d.sizeInfo&&(b.sizeInfo=d.sizeInfo);d.colorInfo&&(b.colorInfo=d.colorInfo);d.visualVariables&&(b.visualVariables=d.visualVariables);return b}function s(a,
-b){var d=a.clone;b=h.clone(b);var c={toJSON:function(){return b},clone:function(){return c.apply(d.apply(this))},apply:function(a){a.toJSON=c.toJSON;a.clone=c.clone;return a}};return c.apply(a)}function t(a,b){return q.fetchStyle(a,b).then(function(d){var c=new l({defaultSymbol:a.defaultSymbol?n.fromJSON(a.defaultSymbol,b):void 0,field:a.field1});d.data.items.forEach(function(f){var e=new m({styleUrl:a.styleUrl||void 0,styleName:a.styleName||void 0,portal:a.styleName?b.portal:void 0,name:f.name});
-c.addUniqueValueInfo(f.name,e);!c.defaultSymbol&&f.name===d.data.defaultItem&&(c.defaultSymbol=e)});c.defaultSymbol||(c.defaultSymbol=c.uniqueValueInfos[0].symbol);return r(a,s(c,a))})}e.createRenderer=function(a,b){return g(a)&&(a.styleUrl||a.styleName)?t(a,b):p.resolve(null)};e.isByReferenceRendererJSON=function(a){return g(a)}});
+
+define(["require","exports","dojo/_base/lang","../Renderer","../UniqueValueRenderer","../../symbols/WebStyleSymbol","../../symbols/support/jsonUtils","../../core/promiseUtils","../../symbols/support/symbolUtils"],function(e,l,n,o,t,r,a,u,i){function s(e,l){return y(e)&&(e.styleUrl||e.styleName)?c(e,l):u.resolve(null)}function f(e){return y(e)}function y(e){var l=e;return"uniqueValue"===e.type&&(void 0!==l.styleUrl||void 0!==l.styleName)}function m(e,l){var n=o.fromJSON(e);return n.sizeInfo&&(l.sizeInfo=n.sizeInfo),n.colorInfo&&(l.colorInfo=n.colorInfo),n.visualVariables&&(l.visualVariables=n.visualVariables),l}function d(e,l){var o=e.clone;l=n.clone(l);var t={toJSON:function(){return l},clone:function(){return t.apply(o.apply(this))},apply:function(e){return e.toJSON=t.toJSON,e.clone=t.clone,e}};return t.apply(e)}function c(e,l){return i.fetchStyle(e,l).then(function(n){var o=new t({defaultSymbol:e.defaultSymbol?a.fromJSON(e.defaultSymbol,l):void 0,field:e.field1});return n.data.items.forEach(function(t){var a=new r({styleUrl:e.styleUrl||void 0,styleName:e.styleName||void 0,portal:e.styleName?l.portal:void 0,name:t.name});o.addUniqueValueInfo(t.name,a),o.defaultSymbol||t.name!==n.data.defaultItem||(o.defaultSymbol=a)}),o.defaultSymbol||(o.defaultSymbol=o.uniqueValueInfos[0].symbol),m(e,d(o,e))})}l.createRenderer=s,l.isByReferenceRendererJSON=f});

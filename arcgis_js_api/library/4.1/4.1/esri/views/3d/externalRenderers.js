@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","./externalRenderers/ExternalRendererStore","./support/projectionUtils","./webgl-engine/lib/gl-matrix"],function(w,b,t,h,u){function l(a,d){m.add(a,d)}function n(a,d){m.remove(a,d)}function p(a){a._stage.setNeedsRender()}function q(a,d,b,c,g,f,k){c=c||a.spatialReference;return h.bufferToBuffer(d,c,b,g,a.renderCoordsHelper.spatialReference,f,k)?g:null}function r(a,b,e,c,g,f,k){f=f||a.spatialReference;return h.bufferToBuffer(b,a.renderCoordsHelper.spatialReference,e,c,f,
-g,k)?c:null}function s(a,b,e,c){c||(c=v.create());e=e||a.spatialReference;return h.computeLinearTransformation(e,b,c,a.renderCoordsHelper.spatialReference)?c:null}var v=u.mat4d,m=new t;b.add=l;b.remove=n;b.requestRender=p;b.toRenderCoordinates=q;b.fromRenderCoordinates=r;b.renderCoordinateTransformAt=s;b.bind=function(a){return{add:l.bind(this,a),remove:n.bind(this,a),requestRender:p.bind(this,a),toRenderCoordinates:q.bind(this,a),fromRenderCoordinates:r.bind(this,a),renderCoordinateTransformAt:s.bind(this,
-a)}}});
+
+define(["require","exports","./externalRenderers/ExternalRendererStore","./support/projectionUtils","./webgl-engine/lib/gl-matrix"],function(e,r,n,t,o){function i(e,r){R.add(e,r)}function d(e,r){R.remove(e,r)}function a(e){e._stage.setNeedsRender()}function s(e,r,n,o,i,d,a){return o=o||e.spatialReference,t.bufferToBuffer(r,o,n,i,e.renderCoordsHelper.spatialReference,d,a)?i:null}function f(e,r,n,o,i,d,a){return d=d||e.spatialReference,t.bufferToBuffer(r,e.renderCoordsHelper.spatialReference,n,o,d,i,a)?o:null}function u(e,r,n,o){return o||(o=c.create()),n=n||e.spatialReference,t.computeLinearTransformation(n,r,o,e.renderCoordsHelper.spatialReference)?o:null}function l(e){return{add:i.bind(this,e),remove:d.bind(this,e),requestRender:a.bind(this,e),toRenderCoordinates:s.bind(this,e),fromRenderCoordinates:f.bind(this,e),renderCoordinateTransformAt:u.bind(this,e)}}var c=o.mat4d,R=new n;r.add=i,r.remove=d,r.requestRender=a,r.toRenderCoordinates=s,r.fromRenderCoordinates=f,r.renderCoordinateTransformAt=u,r.bind=l});

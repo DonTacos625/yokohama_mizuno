@@ -1,8 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../Point"],function(n){function r(a,b){var c,d,e;a instanceof n?(c=b.x-a.x,d=b.y-a.y,e=0,null!=a.z&&null!=b.z&&(e=a.z-b.z)):(c=b[0]-a[0],d=b[1]-a[1],e=0,null!=a[2]&&null!=b[2]&&(e=a[2]-b[2]));return Math.sqrt(c*c+d*d+e*e)}function s(a,b,c){var d,e,f;if(a instanceof n)return d=a.x+c*(b.x-a.x),e=a.y+c*(b.y-a.y),null!=a.z&&null!=b.z&&(f=a.z+c*(b.z-a.z)),new n(d,e,f);d=a[0]+c*(b[0]-a[0]);e=a[1]+c*(b[1]-a[1]);return 2<a.length&&2<b.length?[d,e,a[2]+c*(b[2]-a[2])]:[d,e]}function g(a,b){return 1E-8>
-Math.abs(a-b)}function t(a,b,c,d){var e,f=g(a[0],b[0])?1E10:(a[1]-b[1])/(a[0]-b[0]),k=g(c[0],d[0])?1E10:(c[1]-d[1])/(c[0]-d[0]),l=a[1]-f*a[0],h=c[1]-k*c[0];if(g(f,k)){if(g(l,h)){if(g(a[0],b[0]))if(Math.min(a[1],b[1])<Math.max(c[1],d[1])||Math.max(a[1],b[1])>Math.min(c[1],d[1]))a=(a[1]+b[1]+c[1]+d[1]-Math.min(a[1],b[1],c[1],d[1])-Math.max(a[1],b[1],c[1],d[1]))/2,e=(a-l)/f;else return null;else if(Math.min(a[0],b[0])<Math.max(c[0],d[0])||Math.max(a[0],b[0])>Math.min(c[0],d[0]))e=(a[0]+b[0]+c[0]+d[0]-
-Math.min(a[0],b[0],c[0],d[0])-Math.max(a[0],b[0],c[0],d[0]))/2,a=f*e+l;else return null;return[e,a]}return null}g(f,1E10)?(e=a[0],a=k*e+h):g(k,1E10)?(e=c[0],a=f*e+l):(e=-(l-h)/(f-k),a=a[1]===b[1]?a[1]:c[1]===d[1]?c[1]:f*e+l);return[e,a]}return{getLength:r,_getLength:function(a,b){var c=b[0]-a[0],d=b[1]-a[1];return Math.sqrt(c*c+d*d)},getPointOnLine:s,getMidpoint:function(a,b){return s(a,b,0.5)},_equals:g,_getLineIntersection:t,getLineIntersection:function(a,b,c,d,e){(a=t([a.x,a.y],[b.x,b.y],[c.x,
-c.y],[d.x,d.y]))&&(a=new n(a[0],a[1],e));return a},_getLineIntersection2:function(a,b){var c=a[0],d=a[1],e=b[0],f=b[1],k=c[0],c=c[1],l=d[0],d=d[1],h=e[0],q=e[1],e=f[0]-h,h=k-h,g=l-k,f=f[1]-q,q=c-q,m=d-c,p=f*g-e*m;if(0===p)return!1;e=(e*q-f*h)/p;h=(g*q-m*h)/p;return 0<=e&&1>=e&&0<=h&&1>=h?[k+e*(l-k),c+e*(d-c)]:!1},_pointLineDistance:function(a,b){var c=b[0],d=b[1],e=c[0],f=c[1],c=a[0],k=a[1],l=d[0]-e,h=d[1]-f,g=c-e,n=k-f,d=Math.sqrt,m=Math.pow,p=d(m(l,2)+m(h,2)),g=(g*l+n*h)/(p*p),f=f+g*h;return d(m(c-
-(e+g*l),2)+m(k-f,2))},getPathLength:function(a){for(var b=0,c=a.length,d=0;d<c-1;++d)b+=r(a[d],a[d+1]);return b},getPointOnPath:function(a,b){if(0>=b)return a[0];for(var c=0,d=a.length,e=0;e<d-1;++e){var f=r(a[e],a[e+1]);if(b-c<f)return s(a[e],a[e+1],(b-c)/f);c+=f}return a[d-1]}}});
+
+define(["../Point"],function(n){function t(t,e){var r,i,a;return t instanceof n?(r=e.x-t.x,i=e.y-t.y,a=0,null!=t.z&&null!=e.z&&(a=t.z-e.z)):(r=e[0]-t[0],i=e[1]-t[1],a=0,null!=t[2]&&null!=e[2]&&(a=t[2]-e[2])),Math.sqrt(r*r+i*i+a*a)}function e(n,t){var e=t[0]-n[0],r=t[1]-n[1];return Math.sqrt(e*e+r*r)}function r(t,e,r){var i,a,u;return t instanceof n?(i=t.x+r*(e.x-t.x),a=t.y+r*(e.y-t.y),null!=t.z&&null!=e.z&&(u=t.z+r*(e.z-t.z)),new n(i,a,u)):(i=t[0]+r*(e[0]-t[0]),a=t[1]+r*(e[1]-t[1]),t.length>2&&e.length>2?[i,a,t[2]+r*(e[2]-t[2])]:[i,a])}function i(n,t){return r(n,t,.5)}function a(n,t){return Math.abs(n-t)<1e-8}function u(n,t,e,r){var i,u,h=1e10,o=a(n[0],t[0])?h:(n[1]-t[1])/(n[0]-t[0]),f=a(e[0],r[0])?h:(e[1]-r[1])/(e[0]-r[0]),l=n[1]-o*n[0],c=e[1]-f*e[0];if(a(o,f)){if(a(l,c)){if(a(n[0],t[0])){if(!(Math.min(n[1],t[1])<Math.max(e[1],r[1])||Math.max(n[1],t[1])>Math.min(e[1],r[1])))return null;u=(n[1]+t[1]+e[1]+r[1]-Math.min(n[1],t[1],e[1],r[1])-Math.max(n[1],t[1],e[1],r[1]))/2,i=(u-l)/o}else{if(!(Math.min(n[0],t[0])<Math.max(e[0],r[0])||Math.max(n[0],t[0])>Math.min(e[0],r[0])))return null;i=(n[0]+t[0]+e[0]+r[0]-Math.min(n[0],t[0],e[0],r[0])-Math.max(n[0],t[0],e[0],r[0]))/2,u=o*i+l}return[i,u]}return null}return a(o,h)?(i=n[0],u=f*i+c):a(f,h)?(i=e[0],u=o*i+l):(i=-(l-c)/(o-f),u=n[1]===t[1]?n[1]:e[1]===r[1]?e[1]:o*i+l),[i,u]}function h(t,e,r,i,a){var h=u([t.x,t.y],[e.x,e.y],[r.x,r.y],[i.x,i.y]);return h&&(h=new n(h[0],h[1],a)),h}function o(n,t){var e,r,i,a,u=n[0],h=n[1],o=t[0],f=t[1],l=u[0],c=u[1],M=h[0],g=h[1],x=o[0],m=o[1],s=f[0],v=f[1],y=s-x,z=l-x,L=M-l,P=v-m,_=c-m,q=g-c,p=P*L-y*q;return 0===p?!1:(e=(y*_-P*z)/p,r=(L*_-q*z)/p,e>=0&&1>=e&&r>=0&&1>=r?(i=l+e*(M-l),a=c+e*(g-c),[i,a]):!1)}function f(n,t){var e=t[0],r=t[1],i=e[0],a=e[1],u=r[0],h=r[1],o=n[0],f=n[1],l=u-i,c=h-a,M=o-i,g=f-a,x=Math.sqrt,m=Math.pow,s=x(m(l,2)+m(c,2)),v=(M*l+g*c)/(s*s),y=i+v*l,z=a+v*c;return x(m(o-y,2)+m(f-z,2))}function l(n){for(var e=0,r=n.length,i=0;r-1>i;++i)e+=t(n[i],n[i+1]);return e}function c(n,e){if(0>=e)return n[0];for(var i=0,a=n.length,u=0;a-1>u;++u){var h=t(n[u],n[u+1]);if(h>e-i){var o=(e-i)/h;return r(n[u],n[u+1],o)}i+=h}return n[a-1]}var M={getLength:t,_getLength:e,getPointOnLine:r,getMidpoint:i,_equals:a,_getLineIntersection:u,getLineIntersection:h,_getLineIntersection2:o,_pointLineDistance:f,getPathLength:l,getPointOnPath:c};return M});

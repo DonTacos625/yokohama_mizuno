@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({statsAvg:"Pr\u016fm\u011brn\u00e1 : ${avg}",count:"Po\u010det: ${count}",percent:"${num}%",high:"Vysok\u00e1",low:"N\u00edzk\u00e1",color:{changeMinMaxToolTIp:"Zadejte hodnotu.",handleToolTip:"P\u0159i\u0159adit barvy podle hodnoty dat.",maxValueToolTip:"Zadat nejv\u011bt\u0161\u00ed o\u010dek\u00e1vanou datovou hodnotu.",minValueToolTip:"Zadat nejmen\u0161\u00ed o\u010dek\u00e1vanou datovou hodnotu.",changeSymbol:"Zm\u011bnit symbol"},size:{handleToolTip:"P\u0159i\u0159adit velikost symbolu podle hodnoty dat.",
-sizeInputBoxLines:"Nastavte tlou\u0161\u0165ku \u010d\u00e1ry mezi 0 a 18 pixely.",sizeInputBoxPoints:"Nastavte velikost symbolu mezi 1 a 120 pixely."}});
+
+define({statsAvg:"Průměrná : ${avg}",count:"Počet: ${count}",percent:"${num}%",high:"Vysoká",low:"Nízká",color:{changeMinMaxToolTIp:"Zadejte hodnotu.",handleToolTip:"Přiřadit barvy podle hodnoty dat.",maxValueToolTip:"Zadat největší očekávanou datovou hodnotu.",minValueToolTip:"Zadat nejmenší očekávanou datovou hodnotu.",changeSymbol:"Změnit symbol"},size:{handleToolTip:"Přiřadit velikost symbolu podle hodnoty dat.",sizeInputBoxLines:"Nastavte tloušťku čáry mezi 0 a 18 pixely.",sizeInputBoxPoints:"Nastavte velikost symbolu mezi 1 a 120 pixely."}});

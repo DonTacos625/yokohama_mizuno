@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({lblItem:"\u9879\u76ee",title:"\u767b\u5f55",info:"\u8bf7\u767b\u5f55\u4ee5\u8bbf\u95ee {server} {resource} \u4e0a\u7684\u9879\u76ee",oAuthInfo:"\u8bf7\u767b\u5f55\u4ee5\u7ee7\u7eed\u3002",lblUser:"\u7528\u6237\u540d:",lblPwd:"\u5bc6\u7801:",lblOk:"\u786e\u5b9a",lblSigning:"\u6b63\u5728\u767b\u5f55...",lblCancel:"\u53d6\u6d88",errorMsg:"\u65e0\u6548\u7684\u7528\u6237\u540d\u6216\u5bc6\u7801\u3002\u8bf7\u91cd\u8bd5\u3002",invalidUser:"\u60a8\u8f93\u5165\u7684\u7528\u6237\u540d\u6216\u5bc6\u7801\u4e0d\u6b63\u786e\u3002",
-forbidden:"\u7528\u6237\u540d\u548c\u5bc6\u7801\u6709\u6548\uff0c\u4f46\u60a8\u6ca1\u6709\u5bf9\u6b64\u8d44\u6e90\u7684\u8bbf\u95ee\u6743\u9650\u3002",noAuthService:"\u65e0\u6cd5\u8bbf\u95ee\u8eab\u4efd\u9a8c\u8bc1\u670d\u52a1\u3002"});
+
+define({lblItem:"项目",title:"登录",info:"请登录以访问 {server} {resource} 上的项目",oAuthInfo:"请登录以继续。",lblUser:"用户名:",lblPwd:"密码:",lblOk:"确定",lblSigning:"正在登录...",lblCancel:"取消",errorMsg:"无效的用户名或密码。请重试。",invalidUser:"您输入的用户名或密码不正确。",forbidden:"用户名和密码有效，但您没有对此资源的访问权限。",noAuthService:"无法访问身份验证服务。"});

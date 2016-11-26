@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({noFilterFields:"\u30ec\u30a4\u30e4\u30fc ${name} \u306b\u3001\u30d5\u30a3\u30eb\u30bf\u30fc\u3067\u4f7f\u7528\u3067\u304d\u308b\u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u3042\u308a\u307e\u305b\u3093\u3002",addToViewer:"\u30ec\u30a4\u30e4\u30fc\u3092\u30de\u30c3\u30d7\u306b\u8ffd\u52a0",noItemsToDisplay:"\u8868\u793a\u3067\u304d\u308b\u30a2\u30a4\u30c6\u30e0\u306f\u73fe\u5728\u3042\u308a\u307e\u305b\u3093\u3002",searchFor:"\u691c\u7d22",searching:"\u691c\u7d22\u3057\u3066\u3044\u307e\u3059",items:{organizationLabel:"\u7d44\u7e54",
-onlineLabel:"ArcGIS Online",contentLabel:"\u30de\u30a4 \u30b3\u30f3\u30c6\u30f3\u30c4",favoritesLabel:"\u304a\u6c17\u306b\u5165\u308a"},title:"Web \u30de\u30c3\u30d7\u306e\u9078\u629e",searchTitle:"\u691c\u7d22",ok:"OK",cancel:"\u30ad\u30e3\u30f3\u30bb\u30eb",placeholder:"\u691c\u7d22\u8a9e\u53e5\u306e\u5165\u529b",instructionsLeft:"\u76ee\u7684:",instructionsRight:"\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u9078\u629e",go:"\u79fb\u52d5",selectDetails:"\u9078\u629e",configure:"\u4f5c\u6210",close:"\u9589\u3058\u308b",
-learnMoreConfigurableApps:"\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u8a73\u7d30"});
+
+define({noFilterFields:"レイヤー ${name} に、フィルターで使用できるフィールドがありません。",addToViewer:"レイヤーをマップに追加",noItemsToDisplay:"表示できるアイテムは現在ありません。",searchFor:"検索",searching:"検索しています",items:{organizationLabel:"組織",onlineLabel:"ArcGIS Online",contentLabel:"マイ コンテンツ",favoritesLabel:"お気に入り"},title:"Web マップの選択",searchTitle:"検索",ok:"OK",cancel:"キャンセル",placeholder:"検索語句の入力",instructionsLeft:"目的:",instructionsRight:"テンプレートの選択",go:"移動",selectDetails:"選択",configure:"作成",close:"閉じる",learnMoreConfigurableApps:"テンプレートの詳細"});

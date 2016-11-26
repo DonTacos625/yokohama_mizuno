@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({zoom:"Zoom sur",next:"Entit\u00e9 suivante",previous:"Entit\u00e9 pr\u00e9c\u00e9dente",close:"Fermer",dock:"Ancrer",undock:"D\u00e9tacher",menu:"Menu",untitled:"Sans titre",pageText:"{index} sur {total}",noFeaturesFound:"Aucune entit\u00e9 trouv\u00e9e",selectedFeature:"Entit\u00e9 s\u00e9lectionn\u00e9e",selectedFeatures:"{total} r\u00e9sultats",loading:"Chargement"});
+
+define({zoom:"Zoom sur",next:"Entité suivante",previous:"Entité précédente",close:"Fermer",dock:"Ancrer",undock:"Détacher",menu:"Menu",untitled:"Sans titre",pageText:"{index} sur {total}",noFeaturesFound:"Aucune entité trouvée",selectedFeature:"Entité sélectionnée",selectedFeatures:"{total} résultats",loading:"Chargement"});

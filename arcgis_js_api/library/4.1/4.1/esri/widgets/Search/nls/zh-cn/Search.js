@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"\u641c\u7d22",clearButtonTitle:"\u6e05\u9664\u641c\u7d22",placeholder:"\u67e5\u627e\u5730\u5740\u6216\u5730\u70b9",searchIn:"\u641c\u7d22\u8303\u56f4",lonlat:"\u7ecf\u5ea6\u3001\u7eac\u5ea6",reverseLonLatHeader:"\u60a8\u7684\u610f\u601d\u662f?",all:"\u5168\u90e8",allPlaceholder:"\u67e5\u627e\u5730\u5740\u6216\u5730\u70b9",emptyValue:"\u8bf7\u8f93\u5165\u641c\u7d22\u8bcd\u3002",untitledResult:"\u65e0\u6807\u9898",untitledSource:"\u65e0\u6807\u9898\u8d44\u6e90",noResults:"\u65e0\u7ed3\u679c",
-noResultsFound:"\u672a\u627e\u5230 {value} \u7684\u7ed3\u679c\u3002",showMoreResults:"\u663e\u793a\u66f4\u591a\u7ed3\u679c",hideMoreResults:"\u9690\u85cf",searchResult:"\u641c\u7d22\u7ed3\u679c",moreResultsHeader:"\u66f4\u591a\u7ed3\u679c",esriLocatorName:"Esri World Geocoder"});
+
+define({searchButtonTitle:"搜索",clearButtonTitle:"清除搜索",placeholder:"查找地址或地点",searchIn:"搜索范围",lonlat:"经度、纬度",reverseLonLatHeader:"您的意思是?",all:"全部",allPlaceholder:"查找地址或地点",emptyValue:"请输入搜索词。",untitledResult:"无标题",untitledSource:"无标题资源",noResults:"无结果",noResultsFound:"未找到 {value} 的结果。",showMoreResults:"显示更多结果",hideMoreResults:"隐藏",searchResult:"搜索结果",moreResultsHeader:"更多结果",esriLocatorName:"Esri World Geocoder"});

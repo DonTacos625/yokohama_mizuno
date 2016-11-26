@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({streets:"Gater",satellite:"Bilder",hybrid:"Bilder med p\u00e5skrifter",terrain:"Terreng med p\u00e5skrift",topo:"Topografisk",gray:"Lysegr\u00e5tt lerret","dark-gray":"M\u00f8rkegr\u00e5tt lerret",oceans:"Kyst og sj\u00f8","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"World Street Map (Night)","streets-relief-vector":"World Street Map (with Relief)","streets-navigation-vector":"World Navigation Map"});
+
+define({streets:"Gater",satellite:"Bilder",hybrid:"Bilder med påskrifter",terrain:"Terreng med påskrift",topo:"Topografisk",gray:"Lysegrått lerret","dark-gray":"Mørkegrått lerret",oceans:"Kyst og sjø","national-geographic":"National Geographic",osm:"OpenStreetMap","streets-night-vector":"World Street Map (Night)","streets-relief-vector":"World Street Map (with Relief)","streets-navigation-vector":"World Navigation Map"});

@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({attach:"T\u1ec7p \u0111\u00ednh k\u00e8m",fields:"Tr\u01b0\u1eddng",fieldsSummary:"Danh s\u00e1ch c\u00e1c thu\u1ed9c t\u00ednh v\u00e0 gi\u00e1 tr\u1ecb",media:"Ph\u01b0\u01a1ng ti\u1ec7n",next:"Ti\u1ebfp theo",numCharts:"S\u1ed1 l\u01b0\u1ee3ng bi\u1ec3u \u0111\u1ed3",numImages:"S\u1ed1 l\u01b0\u1ee3ng h\u00ecnh \u1ea3nh",noTitle:"Ch\u01b0a c\u00f3 ti\u00eau \u0111\u1ec1",previous:"Tr\u01b0\u1edbc",view:"Xem"});
+
+define({attach:"Tệp đính kèm",fields:"Trường",fieldsSummary:"Danh sách các thuộc tính và giá trị",media:"Phương tiện",next:"Tiếp theo",numCharts:"Số lượng biểu đồ",numImages:"Số lượng hình ảnh",noTitle:"Chưa có tiêu đề",previous:"Trước",view:"Xem"});

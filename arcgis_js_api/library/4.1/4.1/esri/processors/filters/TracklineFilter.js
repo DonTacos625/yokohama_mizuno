@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["../../core/declare","../../Graphic","../../geometry/Polyline","./TrackFilter"],function(h,m,n,p){return h([p],{declaredClass:"esri.processors.TracklineFilter",normalizeCtorArgs:function(a){"string"===typeof a&&(a={trackIdField:a});return a},nextLineId:1,run:function(a){if(this.trackIdField&&a){var e,b,d,k,f;a=this._getTracksAffectedByChanges(a);for(var l=0,h=a.length;l<h;l++){var c,g;e=a[l];if(b=this._getItemsByParent(e,this.output)){c=0;for(g=b.length;c<g;c++)d=b.getItemAt(c),this.output.remove(d)}b=
-this._getItemsByParent(e,this.input);if(1<b.length){f=new n;k=[];c=0;for(g=b.length;c<g;c++)d=b.getItemAt(c),0===c&&(f.spatialReference=d.geometry.spatialReference),k.push(d.geometry);f.addPath(k);b=new m({geometry:f});b.parent=e;this.output.add(b)}}}}})});
+
+define(["../../core/declare","../../Graphic","../../geometry/Polyline","./TrackFilter"],function(e,t,r,i){var n=e([i],{declaredClass:"esri.processors.TracklineFilter",normalizeCtorArgs:function(e){return"string"==typeof e&&(e={trackIdField:e}),e},nextLineId:1,run:function(e){if(this.trackIdField&&e){var i,n,a,s,o,l,c;i=this._getTracksAffectedByChanges(e);for(var g=0,h=i.length;h>g;g++){var f,d;if(n=i[g],a=this._getItemsByParent(n,this.output))for(f=0,d=a.length;d>f;f++)o=a.getItemAt(f),this.output.remove(o);if(a=this._getItemsByParent(n,this.input),a.length>1){for(c=new r,l=[],f=0,d=a.length;d>f;f++)s=a.getItemAt(f),0===f&&(c.spatialReference=s.geometry.spatialReference),l.push(s.geometry);c.addPath(l);var u=new t({geometry:c});u.parent=n,this.output.add(u)}}}}});return n});

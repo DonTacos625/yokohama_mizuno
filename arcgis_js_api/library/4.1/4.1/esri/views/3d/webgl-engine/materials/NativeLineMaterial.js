@@ -1,9 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define("./internal/MaterialUtil ../lib/Util ../lib/gl-matrix ../lib/RenderSlot ../lib/DefaultVertexBufferLayouts ../../../webgl/Util".split(" "),function(v,w,x,E,F,G){var a=x.vec3d,y=x.vec2d,z=x.mat4d,H=w.VertexAttrConstants,b=a.create(),c=a.create(),g=a.create(),t=a.create(),q=y.create(),r=y.create(),A=a.create(),B=a.create(),k=function(C,D,p,u){"string"===typeof p&&(u=p,p=void 0);v.basicMaterialConstructor(this,u);this.lineType=p||k.LINES;var l=F.Pos3,s=G.getStride(l)/4;this.canBeMerged=this.lineType===
-k.LINES;this.setColor=function(d){D=d;this.notifyDirty("matChanged")};this.getColor=function(){return D};this.dispose=function(){};this.getOutputAmount=function(d){d=d/2+1;if(this.lineType===k.STRIP)return d*s;if(this.lineType===k.LINES)return(2*d-2)*s};this.getVertexBufferLayout=function(){return l};this.fillInterleaved=function(d,a,f,l,b,c){d=d.vertexAttr[H.POSITION].data;if(a||this.lineType===k.LINES){l=d.length/3;for(f=0;f<l;f++){var h=3*f,e=d[h],m=d[h+1],n=d[h+2];if(a)var h=e,g=m,e=a[0]*h+a[4]*
-g+a[8]*n+a[12],m=a[1]*h+a[5]*g+a[9]*n+a[13],n=a[2]*h+a[6]*g+a[10]*n+a[14];b[c++]=e;b[c++]=m;b[c++]=n;this.lineType===k.LINES&&(0!==f&&f!==l-1)&&(b[c++]=e,b[c++]=m,b[c++]=n)}}else for(f=0;f<d.length;f++)b[c++]=d[f]};this.intersect=function(d,l,f,p,k,s,h,e,m,n,u,C){if(C){d=d.getData().getVertexAttr("position").position.data;l=Number.MAX_VALUE;for(h=0;h<d.length-5;h+=3){b[0]=d[h];b[1]=d[h+1];b[2]=d[h+2];z.multiplyVec3(f,b);c[0]=d[h+3];c[1]=d[h+4];c[2]=d[h+5];z.multiplyVec3(f,c);m.projectPoint(b,q);m.projectPoint(c,
-r);if(0>q[2]&&0<r[2])a.subtract(b,c,g),e=m.frustumPlanes,n=-(a.dot(e[4],b)+e[4][3]),e=n/a.dot(g,e[4]),a.scale(g,e,g),a.add(b,g,b),m.projectPoint(b,q);else if(0<q[2]&&0>r[2])a.subtract(c,b,g),e=m.frustumPlanes,n=-(a.dot(e[4],c)+e[4][3]),e=n/a.dot(g,e[4]),a.scale(g,e,g),a.add(c,g,c),m.projectPoint(c,r);else if(0>q[2]&&0>r[2])continue;e=w.projectVectorVector2D(q,r,p);e<l&&(l=e,a.set(b,A),a.set(c,B))}2>l&&(f=w.linelineDistance3D(A,B,k,s),p=Number.MAX_VALUE,f[0]&&(a.subtract(f[2],k,t),f=a.length(t),a.scale(t,
-1/f),p=0.98*f/a.dist(k,s)),u(p,t))}};this.getGLMaterials=function(){return{color:I,depthShadowMap:void 0,normal:void 0,depth:void 0,highlight:void 0}};this.getAllTextureIds=function(){return[]}};k.STRIP=1;k.LINES=2;var I=function(a,b){v.basicGLMaterialConstructor(this,a);var c=b.get("simple"),g=a.getColor();this.beginSlot=function(a){return a===E.OPAQUE_MATERIAL};this.getProgram=function(){return c};this.bind=function(a,b){a.bindProgram(c);c.setUniform4fv("color",g);1>g[3]&&a.setBlendingEnabled(!0)};
-this.release=function(a){1>g[3]&&a.setBlendingEnabled(!1)};this.bindView=function(a,b){v.bindView(b.origin,b.view,c)};this.bindInstance=function(a,b){c.setUniformMatrix4fv("model",b.transformation)};this.getDrawMode=function(b){b=b.gl;return a.lineType===k.STRIP?b.LINE_STRIP:b.LINES}};return k});
+
+define(["./internal/MaterialUtil","../lib/Util","../lib/gl-matrix","../lib/RenderSlot","../lib/DefaultVertexBufferLayouts","../../../webgl/Util"],function(t,e,i,n,r,o){var a=i.vec3d,s=i.vec2d,l=i.mat4d,c=e.VertexAttrConstants,u=a.create(),f=a.create(),d=a.create(),h=a.create(),g=s.create(),v=s.create(),p=a.create(),b=a.create(),m=function(i,n,s,S){"string"==typeof s&&(S=s,s=void 0),t.basicMaterialConstructor(this,S),this.lineType=s||m.LINES;var L=r.Pos3,P=o.getStride(L)/4;this.canBeMerged=this.lineType===m.LINES,this.setColor=function(t){n=t,this.notifyDirty("matChanged")},this.getColor=function(){return n},this.dispose=function(){},this.getOutputAmount=function(t){var e=t/2+1;return this.lineType===m.STRIP?e*P:this.lineType===m.LINES?(2*e-2)*P:void 0},this.getVertexBufferLayout=function(){return L},this.fillInterleaved=function(t,e,i,n,r,o){var a,s=t.vertexAttr[c.POSITION].data;if(e||this.lineType===m.LINES){var l=s.length/3;for(a=0;l>a;a++){var u=3*a,f=s[u],d=s[u+1],h=s[u+2];if(e){var g=f,v=d,p=h;f=e[0]*g+e[4]*v+e[8]*p+e[12],d=e[1]*g+e[5]*v+e[9]*p+e[13],h=e[2]*g+e[6]*v+e[10]*p+e[14]}r[o++]=f,r[o++]=d,r[o++]=h,this.lineType===m.LINES&&0!==a&&a!==l-1&&(r[o++]=f,r[o++]=d,r[o++]=h)}}else for(a=0;a<s.length;a++)r[o++]=s[a]},this.intersect=function(t,i,n,r,o,s,c,m,I,S,L,P){if(P){for(var y,E,T,A,V=t.getData().getVertexAttr("position").position.data,M=Number.MAX_VALUE,N=0;N<V.length-5;N+=3){if(u[0]=V[N],u[1]=V[N+1],u[2]=V[N+2],l.multiplyVec3(n,u),f[0]=V[N+3],f[1]=V[N+4],f[2]=V[N+5],l.multiplyVec3(n,f),I.projectPoint(u,g),I.projectPoint(f,v),g[2]<0&&v[2]>0)a.subtract(u,f,d),E=I.frustumPlanes,T=-(a.dot(E[4],u)+E[4][3]),A=T/a.dot(d,E[4]),a.scale(d,A,d),a.add(u,d,u),I.projectPoint(u,g);else if(g[2]>0&&v[2]<0)a.subtract(f,u,d),E=I.frustumPlanes,T=-(a.dot(E[4],f)+E[4][3]),A=T/a.dot(d,E[4]),a.scale(d,A,d),a.add(f,d,f),I.projectPoint(f,v);else if(g[2]<0&&v[2]<0)continue;var x=e.projectVectorVector2D(g,v,r);M>x&&(M=x,y=N,a.set(u,p),a.set(f,b))}if(2>M){var U=e.linelineDistance3D(p,b,o,s),C=Number.MAX_VALUE;if(U[0]){var D=U[2];a.subtract(D,o,h);var w=a.length(h);a.scale(h,1/w),C=.98*w/a.dist(o,s)}L(C,h)}}},this.getGLMaterials=function(){return{color:I,depthShadowMap:void 0,normal:void 0,depth:void 0,highlight:void 0}},this.getAllTextureIds=function(){return[]}};m.STRIP=1,m.LINES=2;var I=function(e,i){t.basicGLMaterialConstructor(this,e);var r=i.get("simple"),o=e.getColor();this.beginSlot=function(t){return t===n.OPAQUE_MATERIAL},this.getProgram=function(){return r},this.bind=function(t,e){t.bindProgram(r),r.setUniform4fv("color",o),o[3]<1&&t.setBlendingEnabled(!0)},this.release=function(t){o[3]<1&&t.setBlendingEnabled(!1)},this.bindView=function(e,i){t.bindView(i.origin,i.view,r)},this.bindInstance=function(t,e){r.setUniformMatrix4fv("model",e.transformation)},this.getDrawMode=function(t){var i=t.gl;return e.lineType===m.STRIP?i.LINE_STRIP:i.LINES}};return m});

@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({searchButtonTitle:"Ie\u0161koti",clearButtonTitle:"Valyti paie\u0161k\u0105",placeholder:"Surasti adres\u0105 arba viet\u0105",searchIn:"Ie\u0161koti",lonlat:"Platuma, ilguma",reverseLonLatHeader:"Tur\u0117jote omenyje?",all:"Viskas",allPlaceholder:"Surasti adres\u0105 arba viet\u0105",emptyValue:"\u012eveskite paie\u0161kos \u017eod\u012f.",untitledResult:"Bevardis",untitledSource:"\u0160altinis be pavadinimo",noResults:"Rezultat\u0173 n\u0117ra",noResultsFound:"Reik\u0161mei {value} rezultat\u0173 nerasta.",
-showMoreResults:"Rodyti daugiau rezultat\u0173",hideMoreResults:"Sl\u0117pti",searchResult:"Paie\u0161kos rezultatas",moreResultsHeader:"Daugiau rezultat\u0173",esriLocatorName:"Esri pasaulio geokoderis"});
+
+define({searchButtonTitle:"Ieškoti",clearButtonTitle:"Valyti paiešką",placeholder:"Surasti adresą arba vietą",searchIn:"Ieškoti",lonlat:"Platuma, ilguma",reverseLonLatHeader:"Turėjote omenyje?",all:"Viskas",allPlaceholder:"Surasti adresą arba vietą",emptyValue:"Įveskite paieškos žodį.",untitledResult:"Bevardis",untitledSource:"Šaltinis be pavadinimo",noResults:"Rezultatų nėra",noResultsFound:"Reikšmei {value} rezultatų nerasta.",showMoreResults:"Rodyti daugiau rezultatų",hideMoreResults:"Slėpti",searchResult:"Paieškos rezultatas",moreResultsHeader:"Daugiau rezultatų",esriLocatorName:"Esri pasaulio geokoderis"});

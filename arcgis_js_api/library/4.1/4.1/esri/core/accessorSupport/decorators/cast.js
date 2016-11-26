@@ -1,6 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","../metadata","../ensureType"],function(p,f,e,g){function h(a){var b="_meta"in a?g.ensureType(a):a;return function(){for(var a=[],c=0;c<arguments.length;c++)a[c-0]=arguments[c];a.push(b);return"number"===typeof a[2]?k.apply(this,a):l.apply(this,a)}}function l(a,b,d,c){e.getPropertyMetadata(a,b).cast=c}function k(a,b,d,c){e.getParameterMetadata(a,b,d).cast=c}function m(a){return function(b,d,c){e.getPropertyMetadata(b,a).cast=b[d]}}var n=Object.prototype.toString;f.autocastMethod=
-function(a,b,d){if(e.hasParametersMetadata(a,b)){var c=e.getParametersMetadata(a,b).filter(function(a){return null!=a.cast});if(c.length){var f=d.value;d.value=function(){for(var a=[],b=0;b<arguments.length;b++)a[b-0]=arguments[b];for(b=0;b<c.length;b++){var d=c[b];a[d.index]=d.cast(a[d.index])}return f.apply(this,a)};return d}}console.warn("Method "+a.declaredClass+"::"+b+" is decorated with @autocast but no parameters are decorated")};f.cast=function(){for(var a=[],b=0;b<arguments.length;b++)a[b-
-0]=arguments[b];if(!(3===a.length&&"string"===typeof a[1])){if(1===a.length&&"[object Function]"===n.call(a[0]))return h(a[0]);if(1===a.length&&"string"===typeof a[0])return m(a[0])}}});
+
+define(["require","exports","../metadata","../ensureType"],function(t,e,a,r){function n(t){var e="_meta"in t?r.ensureType(t):t;return function(){for(var t=[],a=0;a<arguments.length;a++)t[a-0]=arguments[a];return t.push(e),"number"==typeof t[2]?u.apply(this,t):o.apply(this,t)}}function o(t,e,r,n){a.getPropertyMetadata(t,e).cast=n}function u(t,e,r,n){a.getParameterMetadata(t,e,r).cast=n}function s(t){return function(e,r,n){var o=a.getPropertyMetadata(e,t);o.cast=e[r]}}function i(t,e,r){if(!a.hasParametersMetadata(t,e))return void console.warn("Method "+t.declaredClass+"::"+e+" is decorated with @autocast but no parameters are decorated");var n=a.getParametersMetadata(t,e).filter(function(t){return null!=t.cast});if(!n.length)return void console.warn("Method "+t.declaredClass+"::"+e+" is decorated with @autocast but no parameters are decorated");var o=r.value;return r.value=function(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];for(var a=0,r=n;a<r.length;a++){var u=r[a];t[u.index]=u.cast(t[u.index])}return o.apply(this,t)},r}function c(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];return 3!==t.length||"string"!=typeof t[1]?1===t.length&&"[object Function]"===d.call(t[0])?n(t[0]):1===t.length&&"string"==typeof t[0]?s(t[0]):void 0:void 0}var d=Object.prototype.toString;e.autocastMethod=i,e.cast=c});

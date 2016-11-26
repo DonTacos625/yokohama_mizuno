@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["./dictionary"],function(b){var d=Object.prototype.hasOwnProperty,c=function(){this.dirty=b();this.values=b()};c.prototype={destroy:function(){this.values=this.dirty=null},has:function(a){return d.call(this.values,a)},get:function(a){return this.values[a]},remove:function(a){delete this.values[a];delete this.dirty[a]},keys:function(){return Object.keys(this.values)},set:function(a,b){this.dirty[a]=!1;this.values[a]=b},setDirty:function(a){this.dirty[a]=!0},isDirty:function(a){return!0===this.dirty[a]}};
-return c});
+
+define(["./dictionary"],function(t){var i=Object.prototype.hasOwnProperty,e=function(){this.dirty=t(),this.values=t()};return e.prototype={destroy:function(){this.dirty=null,this.values=null},has:function(t){return i.call(this.values,t)},get:function(t){return this.values[t]},remove:function(t){delete this.values[t],delete this.dirty[t]},keys:function(){return Object.keys(this.values)},set:function(t,i){this.dirty[t]=!1,this.values[t]=i},setDirty:function(t){this.dirty[t]=!0},isDirty:function(t){return this.dirty[t]===!0}},e});

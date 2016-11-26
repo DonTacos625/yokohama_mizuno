@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({statsAvg:"Prosjek: ${avg}",count:"Broj: ${count}",percent:"${num} %",high:"Visoko",low:"Nisko",color:{changeMinMaxToolTIp:"Unesite vrijednost.",handleToolTip:"Ujedna\u010di vrijednosti podataka s bojama.",maxValueToolTip:"Unesite najve\u0107u o\u010dekivanu vrijednost podataka.",minValueToolTip:"Unesite najmanju o\u010dekivanu vrijednost podataka.",changeSymbol:"Promijeni simbol"},size:{handleToolTip:"Ujedna\u010di vrijednosti podataka s veli\u010dinom simbola.",sizeInputBoxLines:"Postavi debljinu linije od 0 do 18 piksela.",
-sizeInputBoxPoints:"Postavi veli\u010dinu simbola od 1 do 120 piksela"}});
+
+define({statsAvg:"Prosjek: ${avg}",count:"Broj: ${count}",percent:"${num} %",high:"Visoko",low:"Nisko",color:{changeMinMaxToolTIp:"Unesite vrijednost.",handleToolTip:"Ujednači vrijednosti podataka s bojama.",maxValueToolTip:"Unesite najveću očekivanu vrijednost podataka.",minValueToolTip:"Unesite najmanju očekivanu vrijednost podataka.",changeSymbol:"Promijeni simbol"},size:{handleToolTip:"Ujednači vrijednosti podataka s veličinom simbola.",sizeInputBoxLines:"Postavi debljinu linije od 0 do 18 piksela.",sizeInputBoxPoints:"Postavi veličinu simbola od 1 do 120 piksela"}});

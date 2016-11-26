@@ -1,7 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define(["require","exports","dojo/has"],function(f,h,k){var g={info:0,warn:1,error:2};f=function(){function a(b){void 0===b&&(b={});this.module=b.module||"";this.writer=b.writer||null;this.level=b.level||null;null!=b.enabled&&(this.enabled=!!b.enabled);a._loggers[this.module]=this;b=this.module.lastIndexOf(".");-1!==b&&(this.parent=a.getLogger(this.module.slice(0,b)))}a.prototype.log=function(b){for(var c=[],a=1;a<arguments.length;a++)c[a-1]=arguments[a];this._isEnabled()&&this._matchLevel(b)&&(a=
-this._inheritedWriter())&&a.apply(void 0,[b,this.module].concat(c))};a.prototype.error=function(){for(var b=[],a=0;a<arguments.length;a++)b[a-0]=arguments[a];this.log.apply(this,["error"].concat(b))};a.prototype.warn=function(){for(var b=[],a=0;a<arguments.length;a++)b[a-0]=arguments[a];this.log.apply(this,["warn"].concat(b))};a.prototype.info=function(){for(var a=[],c=0;c<arguments.length;c++)a[c-0]=arguments[c];this.log.apply(this,["info"].concat(a))};a.prototype.getLogger=function(b){return a.getLogger(this.module+
-"."+b)};a.getLogger=function(b){var c=a._loggers[b];c||(c=new a({module:b}));return c};a.prototype._parentWithMember=function(a,c){for(var d=this;d&&null==d[a];)d=d.parent;return d?d[a]:c};a.prototype._inheritedWriter=function(){return this._parentWithMember("writer",this._consoleWriter)};a.prototype._consoleWriter=function(a,c){for(var d=[],e=2;e<arguments.length;e++)d[e-2]=arguments[e];console[a].apply(console,["["+c+"]"].concat(d))};a.prototype._matchLevel=function(a){return g[this._parentWithMember("level",
-"error")]<=g[a]};a.prototype._isEnabled=function(){return this._parentWithMember("enabled",!0)};a._loggers={};return a}();f.getLogger("esri").level="warn";return f});
+
+define(["require","exports","dojo/has"],function(e,t,r){var n={info:0,warn:1,error:2},o=function(){function e(t){void 0===t&&(t={}),this.module=t.module||"",this.writer=t.writer||null,this.level=t.level||null,null!=t.enabled&&(this.enabled=!!t.enabled),e._loggers[this.module]=this;var r=this.module.lastIndexOf(".");-1!==r&&(this.parent=e.getLogger(this.module.slice(0,r)))}return e.prototype.log=function(e){for(var t=[],r=1;r<arguments.length;r++)t[r-1]=arguments[r];if(this._isEnabled()&&this._matchLevel(e)){var n=this._inheritedWriter();n&&n.apply(void 0,[e,this.module].concat(t))}},e.prototype.error=function(){for(var e=[],t=0;t<arguments.length;t++)e[t-0]=arguments[t];this.log.apply(this,["error"].concat(e))},e.prototype.warn=function(){for(var e=[],t=0;t<arguments.length;t++)e[t-0]=arguments[t];this.log.apply(this,["warn"].concat(e))},e.prototype.info=function(){for(var e=[],t=0;t<arguments.length;t++)e[t-0]=arguments[t];this.log.apply(this,["info"].concat(e))},e.prototype.getLogger=function(t){return e.getLogger(this.module+"."+t)},e.getLogger=function(t){var r=e._loggers[t];return r||(r=new e({module:t})),r},e.prototype._parentWithMember=function(e,t){for(var r=this;r&&null==r[e];)r=r.parent;return r?r[e]:t},e.prototype._inheritedWriter=function(){return this._parentWithMember("writer",this._consoleWriter)},e.prototype._consoleWriter=function(e,t){for(var r=[],n=2;n<arguments.length;n++)r[n-2]=arguments[n];console[e].apply(console,["["+t+"]"].concat(r))},e.prototype._matchLevel=function(e){return n[this._parentWithMember("level","error")]<=n[e]},e.prototype._isEnabled=function(){return this._parentWithMember("enabled",!0)},e._loggers={},e}(),i=o.getLogger("esri");return r("dojo-debug-messages")?i.level="info":i.level="warn",o});

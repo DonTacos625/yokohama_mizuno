@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({points:"Ta\u0161kai",lines:"Linijos",polygons:"Poligonai",creatingLegend:"Kuriama legenda",noLegend:"Legendos n\u0117ra",dotValue:"1 ta\u0161kas \x3d {value} {unit}",currentObservations:"Esami matavimai",previousObservations:"Ankstesni matavimai",high:"Auk\u0161tas",low:"\u017demas",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"mazg\u0173",esriFeetPerSecond:"p\u0117d\u0173/sek.",esriMilesPerHour:"myli\u0173/val.",showField:"{field}",showNormField:"{field} padalintas i\u0161 {normField}",
-showNormPct:"{field}}, kaip bendro kiekio procentin\u0117 reik\u0161m\u0117",showRatio:"{field} santykis su {normField}",showRatioPercent:"{field}, kaip {normField} procentin\u0117 reik\u0161m\u0117",showRatioPercentTotal:"{field}, kaip {field} ir {normField} procentin\u0117 reik\u0161m\u0117"});
+
+define({points:"Taškai",lines:"Linijos",polygons:"Poligonai",creatingLegend:"Kuriama legenda",noLegend:"Legendos nėra",dotValue:"1 taškas = {value} {unit}",currentObservations:"Esami matavimai",previousObservations:"Ankstesni matavimai",high:"Aukštas",low:"Žemas",esriMetersPerSecond:"m/s",esriKilometersPerHour:"km/h",esriKnots:"mazgų",esriFeetPerSecond:"pėdų/sek.",esriMilesPerHour:"mylių/val.",showField:"{field}",showNormField:"{field} padalintas iš {normField}",showNormPct:"{field}}, kaip bendro kiekio procentinė reikšmė",showRatio:"{field} santykis su {normField}",showRatioPercent:"{field}, kaip {normField} procentinė reikšmė",showRatioPercentTotal:"{field}, kaip {field} ir {normField} procentinė reikšmė"});

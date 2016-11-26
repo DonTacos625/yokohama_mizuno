@@ -1,5 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({points:"Noktalar",lines:"\u00c7izgiler",polygons:"Alanlar",creatingLegend:"G\u00f6sterim olu\u015fturuluyor",noLegend:"G\u00f6sterim yok",dotValue:"1 Nokta \x3d {value} {unit}",currentObservations:"Ge\u00e7erli g\u00f6zlemler",previousObservations:"\u00d6nceki g\u00f6zlemler",high:"Y\u00fcksek",low:"D\u00fc\u015f\u00fck",esriMetersPerSecond:"m/sn",esriKilometersPerHour:"km/sa",esriKnots:"deniz mili",esriFeetPerSecond:"ft/sn",esriMilesPerHour:"mil/sa",showField:"{field}",showNormField:"{field} b\u00f6l\u00fc {normField}",
-showNormPct:"toplam\u0131n y\u00fczdesi olarak {field}",showRatio:"{field} / {normField}",showRatioPercent:"{normField} y\u00fczdesi olarak {field}",showRatioPercentTotal:"{field} ve {normField} y\u00fczdesi olarak {field}"});
+
+define({points:"Noktalar",lines:"Çizgiler",polygons:"Alanlar",creatingLegend:"Gösterim oluşturuluyor",noLegend:"Gösterim yok",dotValue:"1 Nokta = {value} {unit}",currentObservations:"Geçerli gözlemler",previousObservations:"Önceki gözlemler",high:"Yüksek",low:"Düşük",esriMetersPerSecond:"m/sn",esriKilometersPerHour:"km/sa",esriKnots:"deniz mili",esriFeetPerSecond:"ft/sn",esriMilesPerHour:"mil/sa",showField:"{field}",showNormField:"{field} bölü {normField}",showNormPct:"toplamın yüzdesi olarak {field}",showRatio:"{field} / {normField}",showRatioPercent:"{normField} yüzdesi olarak {field}",showRatioPercentTotal:"{field} ve {normField} yüzdesi olarak {field}"});

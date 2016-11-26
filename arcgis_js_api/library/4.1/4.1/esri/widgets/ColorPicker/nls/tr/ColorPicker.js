@@ -1,4 +1,25 @@
-// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// COPYRIGHT © 2016 Esri
+//
+// All rights reserved under the copyright laws of the United States
+// and applicable international laws, treaties, and conventions.
+//
+// This material is licensed for use under the Esri Master License
+// Agreement (MLA), and is bound by the terms of that agreement.
+// You may redistribute and use this code without modification,
+// provided you adhere to the terms of the MLA and include this
+// copyright notice.
+//
+// See use restrictions at http://www.esri.com/legal/pdfs/mla_e204_e300/english
+//
+// For additional information, contact:
+// Environmental Systems Research Institute, Inc.
+// Attn: Contracts and Legal Services Department
+// 380 New York Street
+// Redlands, California, USA 92373
+// USA
+//
+// email: contracts@esri.com
+//
 // See http://js.arcgis.com/4.1/esri/copyright.txt for details.
-//>>built
-define({transparency:"Saydaml\u0131k",suggested:"\u00d6nerilen",recent:"Yak\u0131n Tarihli",more:"Dahas\u0131",moreColorsTooltip:"Daha fazla renk incele.",paletteTooltip:"Bir renk se\u00e7in.",noColorTooltip:"Renksiz",hexInputTooltip:"Onalt\u0131l\u0131k g\u00f6sterimde \u00f6zel renk (#FFFF00)."});
+
+define({transparency:"Saydamlık",suggested:"Önerilen",recent:"Yakın Tarihli",more:"Dahası",moreColorsTooltip:"Daha fazla renk incele.",paletteTooltip:"Bir renk seçin.",noColorTooltip:"Renksiz",hexInputTooltip:"Onaltılık gösterimde özel renk (#FFFF00)."});
