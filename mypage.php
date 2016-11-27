@@ -100,9 +100,9 @@
 								<br><br>
 								<label><input type="radio" name="menu" value="2">グループ編集</label>
 
-								if(!isset($_SESSION["fb"]))
-									echo "<br><br><label><input type='radio' name='menu' value='3'>パスワード変更</label>";
-								<!--<?phpif($_SESSION["anq"]==0)
+								<?php if(!isset($_SESSION["fb"]))
+									echo "<br><br><label><input type='radio' name='menu' value='3'>パスワード変更</label>";?>
+								<!--<?php if($_SESSION["anq"]==0)
 									echo "<br><br><label><input type='radio' name='menu' value='4'>アンケートに答える(推薦システムを1度以上利用してからお答えください)</label>";
 								?>-->
 								<br><br>
