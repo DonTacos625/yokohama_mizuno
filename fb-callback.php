@@ -105,7 +105,6 @@ if($accessToken!=NULL){
     $_SESSION["gender"] = $row["gender"];
     $_SESSION["age"] = $age;
     $_SESSION["anq"] = $row["anq"];
-    $flag = 1;
   }else{
     $pgsql->query_null("SELECT MAX(no) AS no FROM test");
     if ($pgsql->rows()>0) {
@@ -122,7 +121,7 @@ if($accessToken!=NULL){
       $_SESSION["gender"] = $gender;
       $_SESSION["age"] = $age;
       $_SESSION["anq"] = 0;
-      $flag = 0;
+      $first = 1;
       $sql = "INSERT INTO test(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
       $array = array($no,$usr_id,0,$age,$gender);
       $pgsql->query($sql,$array);
@@ -130,11 +129,11 @@ if($accessToken!=NULL){
   }
 }
 
-if($flag==1){
-  header('Location: https://study-yokohama-sightseeing.herokuapp.com');
+if($first==1){
+  header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
   exit;
 }else{
-  header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+  header('Location: https://study-yokohama-sightseeing.herokuapp.com');
   exit;
 }
 // User is logged in with a long-lived access token.

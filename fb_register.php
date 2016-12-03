@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 					<tr><div class="label2" align="center">嗜好情報の登録</div></tr>
 					<tr>
-					<td align="center" colspan="2">1:悪い <------>  5:良い</td>
+					<td align="center" colspan="3">1:悪い <------>  5:良い</td>
 					<tr>
 						<td align="center" bgcolor="#ffe4e1">
 							<div class="label2">満足度</div>
