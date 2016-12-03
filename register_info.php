@@ -96,7 +96,7 @@ if(isset($_SESSION["my_no"])){
 					<tr><div class="label2" align="center">嗜好情報の登録</div></tr>
 					<tr>
 						<td align="center">
-							<div class="label3">値について</div>
+							<div class="label4">値について</div>
 						</td>
 						<td>1:悪い <------>  5:良い</td>
 					</tr>
