@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require_once("PostgreSQL.php");
 session_start();
 $fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace getenv('ID') with your app id
