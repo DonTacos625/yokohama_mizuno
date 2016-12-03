@@ -82,7 +82,7 @@ if(isset($_SESSION["my_no"])){
 					}
 				}
 				?>
-				<form action="./register_userinfo.php" method="POST">
+				<form action="./register_infosubmit.php" method="POST">
 				<?php
 				if(!isset($_SESSION['fb_access_token'])){
 					require_once("statue.php");

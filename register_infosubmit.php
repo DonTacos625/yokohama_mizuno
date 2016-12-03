@@ -1,7 +1,7 @@
 <?php
 session_start(); //セッションスタート
 //======================================================================
-//  ■： 会員詳細情報登録送信ページ register_userinfo.php
+//  ■： 会員詳細情報登録送信ページ register_infosubmit.php
 //======================================================================
 require_once("PostgreSQL.php");
 $pgsql = new PostgreSQL;

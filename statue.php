@@ -4,14 +4,14 @@
 		<td align="center" ><div class="label">会員番号</div></td>
 		<td><font size=5><?=$my_no ?></font></td>
 	</tr>
-	<tr><td align="center" bgcolor="#ffe4e1"><div class="label">性別</div></td>
+	<tr><td align="center"><div class="label">性別</div></td>
 		<td>
 			<input type="radio" name="gender" value="male"<?php if ($gender!="female"){ print " checked"; }?> >男
 			<input type="radio" name="gender" value="female"<?php if ($gender=="female"){ print " checked"; }?> >女
 		</td>
 	</tr>
 	<tr>
-		<td align="center" bgcolor="#ffe4e1">
+		<td align="center">
 			<div class="label">年代</div>
 		</td>
 		<td>
