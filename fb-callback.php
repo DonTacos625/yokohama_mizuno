@@ -90,7 +90,7 @@ $user = $response->getGraphUser();
 
 echo 'gender: ' . $user['gender'];
 echo 'id: ' . $user['id'];
-echo 'age_range: ' . $user['age_range'];
+echo 'age_range: ' . $user['age_range']['min'];
 var_dump($user['age_range']);
 $usr_id =hash("sha256",$user['id']);
 $array = array($usr_id);
