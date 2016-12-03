@@ -1,6 +1,7 @@
 <!--左サイドメニュー-->
 <div class="subinfo">
 	<div class="label">推薦項目</div>
+	<ul>
 		<?php
 		echo "グループ";
 		echo "<ul><li>";
@@ -36,7 +37,7 @@
 			}
 		}
 		echo "</ul>";
-		echo "重視する項目：";
+		echo "重視する項目";
 		echo "<ul><li>";
 		if($point==0)echo "何も重視しない";
 		if($point==1)echo "満足度";
@@ -49,5 +50,6 @@
 		if($point==8)echo "おすすめ度";
 		echo "</li></ul>";
 		?>
+	</ul>
 </div>
 

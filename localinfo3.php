@@ -42,7 +42,7 @@ if(isset($_SESSION["my_no"])){
 				$eval_count = count($eval);
 				for($i=0;$i<$eval_count;$i++){
 					if($eval[$i]==$my_no){
-						$evalued = "評価済みです";
+						$evalued = "レビュー済み";
 					}
 				}
 			}else{
@@ -230,12 +230,12 @@ if(isset($_SESSION["my_no"])){
 							</td>
 						</tr>
 						<tr>
-							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>評価</b></font></td>
+							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>レビュー</b></font></td>
 							<td>
 								<?php
 									if($evalued == NULL){
 										$valurl = "https://study-yokohama-sightseeing.herokuapp.com/local_evaluation.php?pk=".$pk;
-										echo "<a href='".$valurl."'>評価をする</a>";
+										echo "<a href='".$valurl."'>レビューをする</a>";
 									}else{
 										echo $evalued;
 									}
