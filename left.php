@@ -29,7 +29,6 @@
 					}
 				}
 				echo "性　　別：";
-				echo $_SESSION["gender"];
 				if($gender=="male")
 					echo "男性";
 				else if($gender=="female")
