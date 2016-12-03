@@ -109,9 +109,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<title>推薦スポット</title>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.1/"></script>
-  <?php //require_once("analysis.php");?>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.1/"></script>
+	<?php //require_once("analysis.php");?>
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
 	//spot[i]["spot_lat"]: spot_lat
@@ -215,11 +215,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					fieldInfos: [{
 						fieldName: "分類"
 					},{
-					fieldName: "詳細"
+						fieldName: "詳細"
+					}]
 				}]
-			}]
-		}
-	});
+			}
+		});
 
 	// Add the graphics to the view's graphics layer
 	view.graphics.addMany([pointGraphic]);
@@ -244,43 +244,35 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		echo pwd("recomend2");
 		?>
 		<div id="contents">
-		<div id="menuL">
-		<?php
-		require_once('left.php');
-		require_once("left_recomend.php");
-		?>
-		</div>
+			<div id="menuL">
+				<?php
+				require_once('left.php');
+				require_once("left_recomend.php");
+				?>
+			</div>
 			<div id ="main">
-			<div class ="contentswrap2">
-				<h3>あなたに推薦する観光スポットは</h3>
-<!--			</div>
-		</div>
-	</div>
-	</div>-->
-	<div id="viewDiv"></div>
-<!--	<div id="page">
-		<div id="contents">
-		<div id ="main">
-			<div class ="contentswrap">-->
-			<br>
-				<table id="table5932" border="1">
-					<?php
-					$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
-					for($i=0;$i<10;$i=$i+2){
-						echo "<tr>";
-						$spot_pk = $result10place[$i]['pk'];
-						echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i]['spot_name']."</a></td>";
+				<div class ="contentswrap2">
+					<h3>あなたに推薦する観光スポットは</h3>
+					<div id="viewDiv"></div>
+					<br>
+					<table id="table5932" border="1">
+						<?php
+						$detailurl ="https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
+						for($i=0;$i<10;$i=$i+2){
+							echo "<tr>";
+							$spot_pk = $result10place[$i]['pk'];
+							echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i]['spot_name']."</a></td>";
 							if($result10place[$i+1]["spot_name"]!=NULL)
 								$spot_pk = $result10place[$i+1]['pk'];
-								echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i+1]['spot_name']."</a></td>";
-						echo "</tr>";
-					}
-				?>
-				</table>
-
+							echo "<td><a href=".$detailurl.$spot_pk." target='_blank'>".$result10place[$i+1]['spot_name']."</a></td>";
+							echo "</tr>";
+						}
+						?>
+					</table>
+					<style type="text/css"><!-- #table5932{text-align:left;background:#ffffff;border:solid 2px #ff99d6;border-collapse:collapse}#table5932>tbody>tr>td{border:solid 0px #ff99d6;padding:4px;min-width:60px} --></style>
 				</div>
 			</div>
-	</div>
+		</div>
 	</div>
 </body>
 </html>
