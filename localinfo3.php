@@ -166,9 +166,11 @@ if(isset($_SESSION["my_no"])){
 		echo pwd_spot($spot_category,$spot_name);
 		?>
 		<div id="contents">
+			<div id="menuL">
 			<?php
 			require_once('left.php');
 			?>
+			</div>
 			<div id="main">
 				<div class="contentswrap">
 					<table border="0" cellspacing="3" cellpadding="3" width="600">

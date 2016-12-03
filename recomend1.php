@@ -30,12 +30,14 @@ $my_no = $_SESSION["my_no"];
 	</div>
 	<div id="page">
 		<div id="contents">
+			<div id="menuL">
 			<?php
 				//----------------------------------------
 				// ■左バーの取り込み
 				//----------------------------------------
 			require_once("left.php");
 			?>
+			</div>
 			<div id ="main">
 				<div class ="contentswrap">
 					<form name="form1" method="post" action="./recomend2.php">

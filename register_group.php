@@ -721,9 +721,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	</div>
 	<div id="page">
 		<div id="contents">
+			<div id="menuL">
 			<?php
 			require_once("left.php"); //左バーの取り込み
 			?>
+			</div>
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">

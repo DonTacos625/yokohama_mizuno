@@ -244,9 +244,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		echo pwd("recomend2");
 		?>
 		<div id="contents">
+		<div id="menuL">
 		<?php
-			require_once('left.php');
-			?>
+		require_once('left.php');
+		?>
+		</div>
 			<div id ="main">
 			<div class ="contentswrap2">
 				<h3>あなたに推薦する観光スポットは</h3>

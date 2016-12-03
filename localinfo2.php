@@ -93,9 +93,11 @@ $error="";
 	</div>
 	<div id="page">
 		<div id="contents">
+			<div id="menuL">
 			<?php
 			require_once('left.php');
 			?>
+			</div>
 		</div>
 		<div class ="contentswrap">
 		<div id ="main">

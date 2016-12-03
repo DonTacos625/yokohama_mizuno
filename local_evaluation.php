@@ -206,16 +206,17 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		echo pwd_spot($spot_category,$spot_name);
 		?>
 		<div id="contents">
+			<div id="menuL">
 			<?php
 			require_once('left.php');
 			?>
+			</div>
 			<div id="main">
 				<div class="contentswrap">
 					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
-							<tr><td align="center" colspan="2">
-								<font size="4"><b>観光スポットのレビューを投稿する</b></font></td></tr>
+							<tr><td align="center" colspan="2"><div class="label4">観光スポットのレビューを投稿する</div></td></tr>
 								<tr>
 									<td align="center" bgcolor="#fof8ff"><font size="4"><b>スポット名</b></font></td>
 									<td><?php echo  $spot_name?></td>
