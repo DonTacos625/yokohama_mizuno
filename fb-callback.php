@@ -129,13 +129,13 @@ if($accessToken!=NULL){
   }
 }
 
-if($first==1){
-  header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
-  exit;
-}else{
+// if($first==1){
+//   header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+//   exit;
+// }else{
   header('Location: https://study-yokohama-sightseeing.herokuapp.com');
   exit;
-}
+//}
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
