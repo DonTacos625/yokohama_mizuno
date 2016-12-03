@@ -4,54 +4,14 @@ session_start(); //セッションスタート
 //  ■： 会員詳細情報登録ページ fb_register.php  完成
 //======================================================================
 require_once("PostgreSQL.php");
-
-//require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 
-//エラーメッセージ
-$error = ""; //性別
-$access_error = ""; //アクセスエラー
-
-// POSTメソッドで送信された場合は書き込み処理を実行する
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
+if(isset($_SESSION["my_no"])){
 	$my_no = $_SESSION["my_no"];
-	$access_error = ""; //アクセスエラー
-	// フォームからデータを受け取る
-	//--------------------------------
-	$gender = htmlspecialchars($_POST['gender']);
-	$age = htmlspecialchars($_POST['age']);
-	$a1 = intval(htmlspecialchars($_POST['a1']));
-	$a2 = intval(htmlspecialchars($_POST['a2']));
-	$a3 = intval(htmlspecialchars($_POST['a3']));
-	$a4 = intval(htmlspecialchars($_POST['a4']));
-	$a5 = intval(htmlspecialchars($_POST['a5']));
-	$a6 = intval(htmlspecialchars($_POST['a6']));
-	$a7 = intval(htmlspecialchars($_POST['a7']));
-	$a8 = intval(htmlspecialchars($_POST['a8']));
-
-	//性別,年齢の入力がなかったらエラー出力
-	if(strlen($gender)==0 || strlen($age)==0){
-		$error = "年齢又は性別が未入力です.";
-	}else{
-	//登録クエリを送信
-		$sql = "UPDATE test SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
-		$array = array($gender,$age,$a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$my_no);
-		$pgsql->query($sql,$array);
-		$error = "登録が完了しました.";
-
-		//Sessionの登録
-		$_SESSION["gender"] = json_encode((int)$gender);
-		$_SESSION["age"] = json_encode((int)$age);
-	}
+	$gender = $_SESSION["gender"];
+	$age = $_SESSION["age"];
 }else{
-	if(isset($_SESSION["my_no"])){
-		$my_no = $_SESSION["my_no"];
-		$gender = $_SESSION["gender"];
-		$age = $_SESSION["age"];
-	}else{
-		$access_error = "不正なアクセスです";
-	}
+	$access_error = "不正なアクセスです";
 }
 ?>
 <html>
@@ -68,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<div id="page">
 	<?php
 	//-----------------------------------------------------
-	// □：登録中ではないときにテーブルを読んでデータ表示
+	// □：テーブルを読んでデータ表示
 	//-----------------------------------------------------
-	if (!isset($_POST["submit_toroku"])&&isset($_SESSION["my_no"])){
+	if (isset($_SESSION["my_no"])){
 		//-----------------------------------------------------
 		// □：友達情報テーブル(test)からデータを読む
 		//-----------------------------------------------------
@@ -122,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					}
 				}
 				?>
-				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+				<form action="./register_userinfo.php" method="POST">
 				<?php
 				if(!isset($_SESSION['fb_access_token'])){
 					require_once("statue.php");
