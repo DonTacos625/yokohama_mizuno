@@ -68,8 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$pgsql->query($sql,$array);
 			//Sessionの登録
 			$_SESSION["my_no"] = $row["no"];
-			$_SESSION["gender"] = $row["gender"];
-			$_SESSION["age"] = $row["age"];
 			$_SESSION["anq"] = $row["anq"];
 		}
 		header("Location: ./register_info.php");

@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "登録が完了しました.";
 
 		//Sessionの登録
-		$_SESSION["gender"] = json_encode((int)$gender);
-		$_SESSION["age"] = json_encode((int)$age);
+		$_SESSION["gender"] = $gender;
+		$_SESSION["age"] = $age;
 	}
 }else{
 	$access_error = "不正なアクセスです";
