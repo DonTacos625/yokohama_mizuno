@@ -114,7 +114,7 @@ if(isset($_SESSION["my_no"])){
 					</tr>
 					<tr>
 						<td align="center" bgcolor="#ffe4e1">
-							<div class="label2">アクセス</div>
+							<div class="label2">アクセスのしやすさ</div>
 						</td>
 						<td>
 							<input type="radio" name="a2" value="1"<?php if ($a2==1){ print " checked"; }?> >1

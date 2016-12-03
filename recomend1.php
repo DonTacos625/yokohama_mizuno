@@ -67,7 +67,7 @@ $my_no = $_SESSION["my_no"];
 								?>
 							</p>
 						</ul>
-						<ul><h4>カテゴリーをお選びください。</h4></ul>
+						<ul><h4>観光スポットのカテゴリーをお選びください。(複数選択可)</h4></ul>
 						<ul>
 							<p>
 								<input type="checkbox" name="categorycheck[]" value="1"> 飲食<br>
