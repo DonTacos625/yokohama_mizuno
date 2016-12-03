@@ -1,5 +1,4 @@
 <!--左サイドメニュー-->
-<div id="menuL">
 	<div class="subinfo">
 		<div class="label">あなたの情報</div>
 		<ul>
@@ -44,4 +43,3 @@
 			?>
 		</ul>
 	</div>
-</div>
