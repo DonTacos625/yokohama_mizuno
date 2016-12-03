@@ -39,8 +39,6 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 		require_once("./linkplace.php");
 		echo pwd("login");
 		?>
-	</div>
-	<div id="page">
 		<div id="contents">
 			<table>
 				<tr>

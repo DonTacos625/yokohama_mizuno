@@ -99,8 +99,10 @@ for($i=0;$i<$count;$i++){
 		$gender = "男";
 	}elseif($gender==2){
 		$gender = "女";
-	}else{
+	}elseif($gender==NULL){
 		$gender = "未入力";
+	}else{
+		$gender = $row[$i]["gender"];
 	}
 	echo "<tr>";
 	echo "<td align=\"\center\">$no</td>";

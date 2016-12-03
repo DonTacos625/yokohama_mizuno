@@ -56,10 +56,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	//エラーなし
 	if (strlen($error)==NULL){
 		//--------------------------------------------
-		// □ 会員情報テーブル(friendinfo)をチェック
+		// □ 会員情報テーブル(test)をチェック
 		//--------------------------------------------
 		$array = array($usr_id);
-		$pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$array);
+		$pgsql->query("SELECT no,id,pw,gender,age,anq FROM test WHERE id=$1",$array);
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){
@@ -75,13 +75,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 					exit;
 				}
 			}else{
-				echo "Passwordsが間違っています。".$br;
-				echo $login_html."よりログインし直して下さい。";
+				$error = "Passwordsが間違っています。".$br.$login_html."よりログインし直して下さい。";
 			}
 		}else{	//IDが存在しない場合
-			echo "IDが間違っています。".$br;
-			echo $login_html."よりログインし直して下さい。".$br;
-			echo "登録がまだの方は".$signup_html."より登録してください。";
+			$error = "IDが間違っています。".$br.$login_html."よりログインし直して下さい。".$br."登録がまだの方は".$signup_html."より登録してください。";
 		}
 	}
 }
@@ -90,20 +87,21 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 <html>
 <head>
 	<title>ログイン送信</title>
-			<!--google解析-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87819413-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!--ここまで-->
+	<?php //require_once("analysis.php");?>
 </head>
 <body>
-
+	<div id="page">
+		<?php
+			//----------------------------------------
+			// ■ヘッダーの取り込み
+			//----------------------------------------
+		require_once("./header.php");
+		require_once("./linkplace.php");
+		echo pwd("login");
+		?>
+		<div id="contents">
+			<?php echo $error;?>
+		</div>
+	</div>
 </body>
 </html>
