@@ -2,15 +2,23 @@
 	//======================================================================
 	//  ■：ログインページ
 	//======================================================================
+require_once __DIR__ . '/vendor/autoload.php';
 	session_start(); //セッションスタート
 	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 	$pgsql = new PostgreSQL;
-	echo "工事中です";
-	exit();
 	if(isset($_SESSION["my_no"]))
 		$my_no = $_SESSION["my_no"];
-	?>
+	$fb = new Facebook\Facebook([
+  'app_id' => getenv('ID'), // Replace {app-id} with your app id
+  'app_secret' => getenv('SECRET'),
+  'default_graph_version' => 'v2.7',
+  ]);
 
+	$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ["public_profile"]; // Optional permissions
+$loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php', $permissions);
+?>
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -21,7 +29,7 @@
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript">
 		</script>
-		<!--google解析-->
+		<!--google解析-
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -32,7 +40,7 @@
   ga('send', 'pageview');
 
 </script>
-<!--ここまで-->
+ここまで-->
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -208,8 +216,6 @@
   			</tr>
   		</table>
   		<br><br>
-	  	<table>
-	  	<tr><td>
   		<table>
   			<tr>
   				<td>
@@ -222,6 +228,7 @@
   				<td>
   					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
   					<div id="status"></div>
+  					<?php echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; ?>
   				</td>
   			</tr>
   		</table>
