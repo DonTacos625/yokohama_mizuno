@@ -93,7 +93,7 @@ echo 'id: ' . $user['id'];
 echo 'age_range: ' . $user['age_range']['min'];
 var_dump($user['age_range']);
 */
-if(isset($user['id')){
+if($accessToken!=NULL){
   $usr_id =hash("sha256",$user['id']);
   $age = $user['age_range']['min'];
   $gender = $user['gender'];
