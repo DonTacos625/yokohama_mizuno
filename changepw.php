@@ -70,74 +70,68 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<?php //require_once("analysis.php");?>
 </head>
 <body>
-	<?php
+	<div id="page">
+		<div id="head">
+			<?php
 	//----------------------------------------	
 	// ■ヘッダーの取り込み
 	//----------------------------------------	
-	require_once("header.php");
-	?>
-	<div id="page">
-		<div id="head">
+			require_once("header.php");
+			?>
 			<?php
 			require_once("linkplace.php"); //現在地表示用php
 			echo pwd("changepw"); //現在値の表示
 	//----------------------------------------	
 	// ■ エラーメッセージがあったら表示
 	//----------------------------------------	
-				if(strlen($access_error)>0){
-					echo "<br>";
-					echo $access_error;
-					echo "</dvi></dvi></div></body></html>";
-					exit;
-				}
-				if(strlen($error)>0||strlen($error1)>0||strlen($error2)>0&&$error!="登録完了"){
-					echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-					echo "<br><font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
-					echo "<br><font size=\"6\" color=\"#da0b00\">{$error2}</font><p>";
-				}
-				if($error=="登録完了"){
-					echo "<br><font size=\"6\" color=\"#da0b00\">変更が完了しました</font><p>";
-					echo "</dvi></dvi></div></body></html>";
-					exit;
-				}
-				?>
+			if(strlen($access_error)>0){
+				echo "<br>";
+				echo $access_error;
+				echo "</dvi></dvi></div></body></html>";
+				exit;
+			}
+			if(strlen($error)>0||strlen($error1)>0||strlen($error2)>0&&$error!="登録完了"){
+				echo "<br><font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+				echo "<br><font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+				echo "<br><font size=\"6\" color=\"#da0b00\">{$error2}</font><p>";
+			}
+			if($error=="登録完了"){
+				echo "<br><font size=\"6\" color=\"#da0b00\">変更が完了しました</font><p>";
+				echo "</dvi></dvi></div></body></html>";
+				exit;
+			}
+			?>
+		</div>
+		<div id="contents">
+			<div class="contentswrap">
+				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
+						<tr><div class="label" align="center">パスワード変更</div></tr>
+						<tr>
+							<td align="center"><div class="label">旧パスワード</div></td>
+							<td>
+								<input type="password" name="oldpw" value="<?=$oldpw ?>"><br>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"><div class="label">新パスワード</div></td>
+							<td>
+								<input type="password" name="newpw" value="<?=$newpw ?>"><br>
+								<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"><div class="label">新パスワード(確認用)</div></td>
+							<td>
+								<input type="password" name="newpw2" value="<?=$newpw2 ?>"><br>
+								<font size="2">再度新パスワードの入力をお願いします</font>
+							</td>
+						</tr>
+						<tr><td align="center" colspan="2"><input type="submit" name="Submit" value="変更する"></td></tr>
+					</table>
+				</form>
+			</div>
 		</div>
 	</div>
-<div id="page">
-	<div id="contents">
-		<div class="contentswrap">
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
-			<tr><div class="label" align="center">パスワード変更</div></tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">旧パスワード</div></td>
-				<td>
-					<input type="password" name="oldpw" value="<?=$oldpw ?>"><br>
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">新パスワード</div></td>
-				<td>
-					<input type="password" name="newpw" value="<?=$newpw ?>"><br>
-					<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">新パスワード(確認用)</div></td>
-				<td>
-					<input type="password" name="newpw2" value="<?=$newpw2 ?>"><br>
-					<font size="2">再度新パスワードの入力をお願いします</font>
-				</td>
-			</tr>
-			<tr><td align="center" colspan="2">
-			<input type="submit" name="Submit" value="変更する"></td></tr>
-			</table>
-		</form>
-</div>
-</div>
-</div>
 </body>
 </html>
