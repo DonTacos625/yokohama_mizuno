@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 require_once("PostgreSQL.php");
+$pgsql = new PostgreSQL;
 session_start();
 $fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace getenv('ID') with your app id
@@ -88,7 +89,10 @@ $user = $response->getGraphUser();
 echo 'gender: ' . $user['gender'];
 echo 'id: ' . $user['id'];
 echo 'age_range: ' . $user['age_range'];
-var_dump($user['id']);
+$usr_id =hash("sha256",$user['id']);
+$array = array($usr_id);
+$pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$array);
+
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
