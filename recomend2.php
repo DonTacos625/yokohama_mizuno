@@ -247,6 +247,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="menuL">
 		<?php
 		require_once('left.php');
+		require_once("left_recomend.php");
 		?>
 		</div>
 			<div id ="main">

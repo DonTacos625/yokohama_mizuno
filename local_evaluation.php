@@ -240,7 +240,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 											?>
 										</td>
 									</tr>
-									<tr></tr>
+									</table>
+									<table border="0" cellspacing="3" cellpadding="3" width="600">
 									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>レビュー</b></font></td>
 									</tr>
 									<tr>
