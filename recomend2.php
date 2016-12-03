@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				$UserTable[$i]=floatval($row[$i]);
 			}
 		}else{
-			$error = "選択したグループは未登録です";
+			$error = "選択したグループは登録されていません";
 		}
 		if(strlen($error)==0){
 			for($i=0;$i<$c_checknum;$i++){
