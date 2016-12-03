@@ -215,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
 							<tr><td align="center" colspan="2">
-								<font size="4"><b>観光スポットの評価情報を投稿する</b></font></td></tr>
+								<font size="4"><b>観光スポットのレビューを投稿する</b></font></td></tr>
 								<tr>
 									<td align="center" bgcolor="#fof8ff"><font size="4"><b>スポット名</b></font></td>
 									<td><?php echo  $spot_name?></td>
@@ -240,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 										</td>
 									</tr>
 									<tr></tr>
-									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>評価</b></font></td>
+									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>レビュー</b></font></td>
 									</tr>
 									<tr>
 										<td align="center" colspan="2">1:悪い <------>  5:良い</td>
