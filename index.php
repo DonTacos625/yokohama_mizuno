@@ -72,6 +72,7 @@ if(isset($_SESSION["my_no"]))
   data-width="450"
   data-show-faces="true">
 </div>
+						<div id="sitename">横浜みなとみらい観光推薦システム</div>
 						<h5>本運用中</h5>
 						Webサイトの目的</br>
 						<p>
