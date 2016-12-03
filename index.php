@@ -66,13 +66,7 @@ if(isset($_SESSION["my_no"]))
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
 					<div class="title">
-					<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-						<div id="sitename">横浜みなとみらい観光推薦システム</div>
+					<div id="sitename">横浜みなとみらい観光推薦システム</div>
 						<h5>本運用中</h5>
 						Webサイトの目的</br>
 						<p>
