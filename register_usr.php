@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<td><div class="label" align="center">パスワード</div></td>
 							<td>
 								<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
-								<font size="2">6文字以上かつ半角英小文字,半角英大文字,数字を混在させたもの</font>
+								<font size="2">6文字以上かつ<font color="red"><b>半角英小文字,半角英大文字,数字</b></font>を混在させたもの</font>
 							</td>
 						</tr>
 						<tr>
