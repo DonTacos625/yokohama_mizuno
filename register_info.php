@@ -32,9 +32,9 @@ if(isset($_SESSION["my_no"])){
 	//-----------------------------------------------------
 	if (isset($_SESSION["my_no"])){
 		//-----------------------------------------------------
-		// □：友達情報テーブル(test)からデータを読む
+		// □：友達情報テーブル(friendinfo)からデータを読む
 		//-----------------------------------------------------
-		$sql = "SELECT gender,age,a1,a2,a3,a4,a5,a6,a7,a8 FROM test WHERE no=$1";
+		$sql = "SELECT gender,age,a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo WHERE no=$1";
 		$array = array($my_no);
 		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();

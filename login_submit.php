@@ -56,10 +56,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	//エラーなし
 	if (strlen($error)==NULL){
 		//--------------------------------------------
-		// □ 会員情報テーブル(test)をチェック
+		// □ 会員情報テーブル(friendinfo)をチェック
 		//--------------------------------------------
 		$array = array($usr_id);
-		$pgsql->query("SELECT no,id,pw,gender,age,anq FROM test WHERE id=$1",$array);
+		$pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$array);
 		$row = $pgsql->fetch();
 		if (isset($row['id'])){//IDが存在した場合
 			if ($row["pw"] == hash("sha256",$usr_pw)){

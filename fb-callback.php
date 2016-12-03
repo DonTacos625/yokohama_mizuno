@@ -98,7 +98,7 @@ if($accessToken!=NULL){
   $age = $user['age_range']['min'];
   $gender = $user['gender'];
   $array = array($usr_id);
-  $pgsql->query("SELECT no,gender,age,anq FROM test WHERE id=$1",$array);
+  $pgsql->query("SELECT no,gender,age,anq FROM friendinfo WHERE id=$1",$array);
   $row = $pgsql->fetch();
   if($row){
     $_SESSION["my_no"] = $row["no"];
@@ -106,7 +106,7 @@ if($accessToken!=NULL){
     $_SESSION["age"] = $age;
     $_SESSION["anq"] = $row["anq"];
   }else{
-    $pgsql->query_null("SELECT MAX(no) AS no FROM test");
+    $pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
     if ($pgsql->rows()>0) {
       $row = $pgsql->fetch();
       $no = $row['no'];
@@ -122,7 +122,7 @@ if($accessToken!=NULL){
       $_SESSION["age"] = $age;
       $_SESSION["anq"] = 0;
       $first = 1;
-      $sql = "INSERT INTO test(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
+      $sql = "INSERT INTO friendinfo(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
       $array = array($no,$usr_id,0,$age,$gender);
       $pgsql->query($sql,$array);
     }

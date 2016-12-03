@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "IDに誤りがあります<br>";
 	else{
 		$array = array($usr_id);
-		$pgsql->query("SELECT id FROM test WHERE id=$1",$array); //検索
+		$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
 		$row = $pgsql->fetch();
 		if ($row)
 			$error = "このユーザIDは既に使われています<br>";
@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//登録
 	if (strlen($error)==0 and strlen($error1)==0){
 	//--------------------------------------------
-	// □ 会員情報テーブル(test)に登録
+	// □ 会員情報テーブル(friendinfo)に登録
 	//--------------------------------------------
 		if (!empty($usr_id) and !empty($usr_pw)) {
-			$pgsql->query_null("SELECT MAX(no) AS no FROM test");
+			$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
 			if ($pgsql->rows()>0) {
 				$row = $pgsql->fetch();
 				$no = $row['no'];
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
-			$sql = "INSERT INTO test(no,id,pw,anq) VALUES($1,$2,$3,$4)";
+			$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
 			$array = array($no,$usr_id,$usr_pw,0);
 			$pgsql->query($sql,$array);
 			//Sessionの登録

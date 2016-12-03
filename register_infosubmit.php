@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//登録クエリを送信
-		$sql = "UPDATE test SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
+		$sql = "UPDATE friendinfo SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
 		$array = array($gender,$age,$a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$my_no);
 		$pgsql->query($sql,$array);
 		$error = "登録が完了しました.";
