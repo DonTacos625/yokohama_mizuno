@@ -28,18 +28,7 @@
     });
  });
 </script>
-<!--google解析-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87819413-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!--ここまで-->
+<?php //require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">
@@ -65,8 +54,8 @@
 						</li>
 						<li><a href="#2">マイページ</a>
 							<ul>
-								<li><a href="#21">個人情報編集</a></li>
-								<li><a href="#22">グループ編集</a></li>
+								<li><a href="#21">会員詳細情報編集</a></li>
+								<li><a href="#22">グループ登録・編集</a></li>
 								<li><a href="#23">パスワード変更</a></li>
 								<li><a href="#24">アンケートに答える</a></li>
 							</ul>
@@ -108,7 +97,7 @@
 								<li>入力終了後、「登録する」ボタンを押す</li>
 								<li>入力の注意に沿って入力がされていなければ、エラーが出力されるので、再度入力をする</li>
 								<li>「登録が完了しました」で登録が完了<br>再度ログイン画面よりログインをする</li>
-								<li>なお、初回ログイン時は自動的に<a href="#2">個人情報編集</a>ページに遷移します</li>
+								<li>なお、初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページに遷移します</li>
 							</ol>
 							<a class="button" href="#index">▲ 目次に戻る</a>
 						</div>
@@ -120,7 +109,7 @@
 								<li>SNS連帯の項目にあるFacebookログインバナーを押す</li>
 								<li>Facebook側での認証をする</li>
 								<li>認証完了後、もう一度バナーを押す</li>
-								<li>初回ログイン時は<a href="#2">個人情報編集</a>ページに遷移します</li>
+								<li>初回ログイン時は<a href="#2">会員詳細情報編集</a>ページに遷移します</li>
 								<li>2回目以降のログインの際は、同様にバナーを押す</li>
 							</ol>
 							<a class="button" href="#index">▲ 目次に戻る</a>
@@ -133,7 +122,7 @@
 							項目を選んで「送信」ボタンを押す<br>
 						</p>
 						<div id="21">
-							<h3>個人情報編集</h3>
+							<h3>会員詳細情報編集</h3>
 							<h4>個人ステータスの登録</h4>
 							<ul>
 								<li>会員番号：あなたの会員番号</li>
@@ -148,7 +137,7 @@
 						</div>
 						<br>
 						<div id="22">
-							<h3>グループ編集</h3>
+							<h3>グループ登録・編集</h3>
 							　観光スポットに訪れるグループの編集を行います
 							<ol>
 								<li>項目ごとに該当する<font color="red">会員番号</font>を<font color="red">半角数字</font>入力する<br>(空欄でも構いません)</li>
@@ -226,7 +215,7 @@
 						<div id="41">
 							<h3>推薦項目の入力</h3>
 							<ol>
-								<li>観光するグループを選択する<br><a href="#22">グループ編集</a>で登録したグループが表示される<br><font color="red">グループが未登録の場合は「一人」しか選択できません</font></li>
+								<li>観光するグループを選択する<br><a href="#22">グループ登録・編集</a>で登録したグループが表示される<br><font color="red">グループが未登録の場合は「一人」しか選択できません</font></li>
 								<li>推薦して欲しい観光スポットのカテゴリーを選択する<br>なお、「その他」にはイベント情報等が分類されています</li>
 								<li>観光の際に重視する項目を１つ選択する<br>デフォルトでは「何も重視しない」が選択されています</li>
 								<li>1〜3の項目をすべて選択し終えたら、「送信」ボタンを押す<br>エラー内容が出た場合は、再度入力をする</li>

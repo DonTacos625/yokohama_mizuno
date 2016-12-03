@@ -12,7 +12,7 @@ $error1 = ""; //PW関係
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
+	$pgsql->query_null("SELECT MAX(no) AS no FROM test");
 	if ($pgsql->rows()>0) {
 		$row = $pgsql->fetch();
 		$no = $row['no'];
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "IDに誤りがあります<br>";
 	else{
 		$array = array($usr_id);
-		$pgsql->query("SELECT * FROM friendinfo WHERE id=$1",$array); //検索
+		$pgsql->query("SELECT id FROM test WHERE id=$1",$array); //検索
 		$row = $pgsql->fetch();
 		if ($row)
 			$error = "このユーザIDは既に使われています<br>";
@@ -56,13 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//登録
 	if (strlen($error)==0 and strlen($error1)==0){
 	//--------------------------------------------
-	// □ 会員情報テーブル(friendinfo)に登録
+	// □ 会員情報テーブル(test)に登録
 	//--------------------------------------------
 		if (!empty($usr_id) and !empty($usr_pw)) {
 			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
-			$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
+			$sql = "INSERT INTO test(no,id,pw,anq) VALUES($1,$2,$3,$4)";
 			$array = array($no,$usr_id,$usr_pw,0);
 			$pgsql->query($sql,$array);
 		}
@@ -76,18 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>新規登録</title>
 <link rel="stylesheet" type="text/css" href="stylet.css"></link>
-<!--google解析-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87819413-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!--ここまで-->
+<?php //require_once("analysis.php");?>
 </head>
 <body>
 <?php

@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error = "年齢又は性別が未入力です.";
 	}else{
 	//登録クエリを送信
-		$sql = "UPDATE friendinfo SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
+		$sql = "UPDATE test SET gender=$1, age=$2, a1=$3, a2=$4, a3=$5, a4=$6, a5=$7, a6=$8, a7=$9, a8=$10 WHERE no=$11";
 		$array = array($gender,$age,$a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$my_no);
 		$pgsql->query($sql,$array);
 		$error = "登録が完了しました.";
@@ -59,18 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ユーザ詳細情報登録</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<!--google解析-->
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87819413-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!--ここまで-->
+	<?php //require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">
@@ -80,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//-----------------------------------------------------
 	if (!isset($_POST["submit_toroku"])&&isset($_SESSION["my_no"])){
 		//-----------------------------------------------------
-		// □：友達情報テーブル(friendinfo)からデータを読む
+		// □：友達情報テーブル(test)からデータを読む
 		//-----------------------------------------------------
-		$sql = "SELECT gender,age,a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo WHERE no=$1";
+		$sql = "SELECT gender,age,a1,a2,a3,a4,a5,a6,a7,a8 FROM test WHERE no=$1";
 		$array = array($my_no);
 		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();

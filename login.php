@@ -27,7 +27,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ログインページ</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<?php require_once("analysis.php");?>
+	<?php //require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

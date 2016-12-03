@@ -98,7 +98,7 @@ if(isset($user)){
   $age = $user['age_range']['min'];
   $gender = $user['gender'];
   $array = array($usr_id);
-  $pgsql->query("SELECT no,gender,age,anq FROM friendinfo WHERE id=$1",$array);
+  $pgsql->query("SELECT no,gender,age,anq FROM test WHERE id=$1",$array);
   $row = $pgsql->fetch();
   if(isset($row)){
     $_SESSION["my_no"] = $row["no"];
@@ -107,7 +107,7 @@ if(isset($user)){
     $_SESSION["anq"] = $row["anq"];
     $flag = 1;
   }else{
-    $pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
+    $pgsql->query_null("SELECT MAX(no) AS no FROM test");
     if ($pgsql->rows()>0) {
       $row = $pgsql->fetch();
       $no = $row['no'];
@@ -119,12 +119,6 @@ if(isset($user)){
     if (!empty($usr_id)) {
       // データを追加する
       $_SESSION["my_no"] = $no;
-      if($gender=="male"){
-        $gender = 1;
-      }
-      if($gender=="female"){
-        $gender = 2;
-      }
       $_SESSION["gender"] = $gender;
       $_SESSION["age"] = $age;
       $_SESSION["anq"] = 0;
@@ -143,8 +137,6 @@ if($flag==1){
   header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
   exit;
 }
-
-
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
