@@ -6,8 +6,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 	session_start(); //セッションスタート
 	require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 	$pgsql = new PostgreSQL;
-	if(isset($_SESSION["my_no"]))
+	if(isset($_SESSION["my_no"])){
 		$my_no = $_SESSION["my_no"];
+	}
 	$fb = new Facebook\Facebook([
   'app_id' => getenv('ID'), // Replace {app-id} with your app id
   'app_secret' => getenv('SECRET'),
@@ -17,18 +18,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 	$helper = $fb->getRedirectLoginHelper();
 
 $permissions = ["public_profile"]; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.com/fb-callback.php', $permissions);
+
 ?>
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>ログインページ</title>
-		
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript">
-		</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>ログインページ</title>
+	
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	</script>
 		<!--google解析-
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,9 +43,9 @@ $loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php
 
 </script>
 ここまで-->
-	</head>
-	<body>
-		<script type="text/javascript">
+</head>
+<body>
+	<script type="text/javascript">
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -167,24 +169,24 @@ $loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php
 
   </script>
   <div id="page">
-		<?php
+  	<?php
 			//----------------------------------------
 			// ■ヘッダーの取り込み
 			//----------------------------------------
-		require_once("./header.php");
-		require_once("./linkplace.php");
-		echo pwd("login");
-		?>
-	</div>
+  	require_once("./header.php");
+  	require_once("./linkplace.php");
+  	echo pwd("login");
+  	?>
+  </div>
   <div id="page">
   	<div id="contents">
-  	<table>
-  		<tr>
-	  		<td>
-	  			<div class="label" align="center">会員ログイン</div>
-	  		</td>
-	  	</tr>
-	  </table>
+  		<table>
+  			<tr>
+  				<td>
+  					<div class="label" align="center">会員ログイン</div>
+  				</td>
+  			</tr>
+  		</table>
   		<table cellpadding="5">
   			<form action="./login_submit.php" method="POST">
   				<tr>
@@ -202,13 +204,13 @@ $loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php
   		</table>
   		<br><br>
   		<table>
-  		<tr>
-	  		<td>
-	  			<div class="label" align="center">新規利用登録</div>
-	  		</td>
-	  	</tr>
-	  	</table>
-	  	<table>
+  			<tr>
+  				<td>
+  					<div class="label" align="center">新規利用登録</div>
+  				</td>
+  			</tr>
+  		</table>
+  		<table>
   			<tr>
   				<td>
   					<a href="./register_usr.php"><font size = 4>登録はこちらから</font></a>
@@ -222,8 +224,8 @@ $loginUrl = $helper->getLoginUrl('https://testpoor.herokuapp.com/fb-callback.php
   					<div class="label" align="center">SNS連帯</div>
   				</td>
   			</tr>
-  			</table>
-  			<table>
+  		</table>
+  		<table>
   			<tr>
   				<td>
   					<fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
