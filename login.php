@@ -8,6 +8,7 @@ require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 $pgsql = new PostgreSQL;
 if(isset($_SESSION["my_no"])){
 	$my_no = $_SESSION["my_no"];
+	$error = "ログイン中です";
 }
 $fb = new Facebook\Facebook([
 'app_id' => getenv('ID'), // Replace {app-id} with your app id
@@ -38,6 +39,10 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 		require_once("./header.php");
 		require_once("./linkplace.php");
 		echo pwd("login");
+		if(strlen($error)>0){
+			echo $error;
+			exit();
+		}
 		?>
 		<div id="contents">
 			<table>

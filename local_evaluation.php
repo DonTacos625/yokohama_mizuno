@@ -243,7 +243,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>レビュー</b></font></td>
 									</tr>
 									<tr>
-										<td align="center" colspan="2">1:悪い <------>  5:良い</td>
+										<td align="center">
+							<div class="label4">項目</div>
+						</td>
+						<td>1:悪い <------>  5:良い</td>
 									</tr>
 									<tr><td align="center" bgcolor="#fof8ff"><b>満足度</b></td>
 										<td>
