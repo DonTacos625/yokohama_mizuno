@@ -101,7 +101,7 @@ if($accessToken!=NULL){
   $array = array($usr_id);
   $pgsql->query("SELECT no,gender,age,anq FROM test WHERE id=$1",$array);
   $row = $pgsql->fetch();
-  if(isset($row)){
+  if($row){
     $_SESSION["my_no"] = $row["no"];
     $_SESSION["gender"] = $row["gender"];
     $_SESSION["age"] = $age;
