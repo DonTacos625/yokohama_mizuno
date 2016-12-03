@@ -1,8 +1,7 @@
 {
 	"require": {
         "php": ">=5.3.3",
-        "monolog/monolog": "1.5.*",
-        "fuelphp/upload": "2.0.1",
+        "facebook/php-sdk-v4" : "~5.0",
         "ext-mbstring": "*",
         "ext-gd": "*"
     }
