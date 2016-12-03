@@ -94,16 +94,6 @@ for($i=0;$i<$count;$i++){
 		$id = "Facebook";
 	}
 	$gender = $row[$i]["gender"];
-	$age = $row[$i]["age"];
-	if($gender==1){
-		$gender = "男";
-	}elseif($gender==2){
-		$gender = "女";
-	}elseif($gender==NULL){
-		$gender = "未入力";
-	}else{
-		$gender = $row[$i]["gender"];
-	}
 	echo "<tr>";
 	echo "<td align=\"\center\">$no</td>";
 	echo "<td>$id</td>";
