@@ -216,7 +216,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<input type="hidden" name="pk" value="<?php echo $pk;?>">
 						<table border="0" cellspacing="3" cellpadding="3" width="600">
-							<tr><td align="center" colspan="2"><div class="label4">観光スポットのレビューを投稿する</div></td></tr>
+							<tr><td align="center" colspan="2"><div class="label4"><font size="4">観光スポットのレビューを投稿する</font></div></td></tr>
 								<tr>
 									<td align="center" bgcolor="#fof8ff"><font size="4"><b>スポット名</b></font></td>
 									<td><?php echo  $spot_name?></td>
@@ -242,7 +242,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 									</tr>
 									</table>
 									<table border="0" cellspacing="3" cellpadding="3" width="600">
-									<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>レビュー</b></font></td>
+									<tr><td align="center" colspan="2"><div class="label4"><font size="4">レビュー</font></div></td>
 									</tr>
 									<tr>
 										<td align="center">
