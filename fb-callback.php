@@ -107,6 +107,7 @@ if($accessToken!=NULL){
     $_SESSION["age"] = $age;
     $_SESSION["anq"] = $row["anq"];
     $flag = 1;
+    var_dump($row);
   }else{
     $pgsql->query_null("SELECT MAX(no) AS no FROM test");
     if ($pgsql->rows()>0) {
@@ -127,6 +128,7 @@ if($accessToken!=NULL){
       $sql = "INSERT INTO test(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
       $array = array($no,$usr_id,0,$age,$gender);
       $pgsql->query($sql,$array);
+      echo "追加おｋ";
     }
   }
 }
