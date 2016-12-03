@@ -92,6 +92,7 @@ echo 'age_range: ' . $user['age_range'];
 $usr_id =hash("sha256",$user['id']);
 $array = array($usr_id);
 $pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$array);
+$row = $pgsql->fetch();
 
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
