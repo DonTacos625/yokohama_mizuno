@@ -94,7 +94,6 @@ echo 'age_range: ' . $user['age_range']['min'];
 var_dump($user['age_range']);
 */
 if($accessToken!=NULL){
-  echo "ok";
   $usr_id =hash("sha256",$user['id']);
   $age = $user['age_range']['min'];
   $gender = $user['gender'];
@@ -107,7 +106,6 @@ if($accessToken!=NULL){
     $_SESSION["age"] = $age;
     $_SESSION["anq"] = $row["anq"];
     $flag = 1;
-    var_dump($row);
   }else{
     $pgsql->query_null("SELECT MAX(no) AS no FROM test");
     if ($pgsql->rows()>0) {
@@ -128,17 +126,16 @@ if($accessToken!=NULL){
       $sql = "INSERT INTO test(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
       $array = array($no,$usr_id,0,$age,$gender);
       $pgsql->query($sql,$array);
-      echo "追加おｋ";
     }
   }
 }
 
 if($flag==1){
-  //header('Location: https://study-yokohama-sightseeing.herokuapp.com/index.php');
-  //exit;
+  header('Location: https://study-yokohama-sightseeing.herokuapp.com');
+  exit;
 }else{
-  //header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
-  //exit;
+  header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+  exit;
 }
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
