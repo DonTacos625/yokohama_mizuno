@@ -722,73 +722,73 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<div id="page">
 		<div id="contents">
 			<div id="menuL">
-			<?php
+				<?php
 			require_once("left.php"); //左バーの取り込み
 			?>
-			</div>
-			<div id="main">
-				<!-- #main 本文スペース -->
-				<div class="contentswrap">
-					<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-						<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
-							<tr><div class="label" align="center"><font size="4">グループの登録</font></div></tr>
-							<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red">半角数字</font>で入力してください</tr>
-							<tr>
-								<td align="center" bgcolor="#ffe4e1">
-									<div class="label">家族</div>
-								</td>
-								<td>
-									<input type="text" name="f1" value="<?=$f1 ?>" size="3">
-									<input type="text" name="f2" value="<?=$f2 ?>" size="3">
-									<input type="text" name="f3" value="<?=$f3 ?>" size="3">
-								</td>
-							</tr>
-							<tr>
-								<td align="center" bgcolor="#ffe4e1">
-									<div class="label">恋人/夫婦</div>
-								</td>
-								<td>
-									<input type="text" name="lo" value="<?=$lo ?>" size="3">
-								</td>
-							</tr>
-							<tr>
-								<td align="center" bgcolor="#ffe4e1">
-									<div class="label">友達グループ1</div>
-								</td>
-								<td>
-									<input type="text" name="g11" value="<?=$g11 ?>" size="3">
-									<input type="text" name="g12" value="<?=$g12 ?>" size="3">
-									<input type="text" name="g13" value="<?=$g13 ?>" size="3">
-									<input type="text" name="g14" value="<?=$g14 ?>" size="3">
-									<input type="text" name="g15" value="<?=$g15 ?>" size="3">
-									<input type="text" name="g16" value="<?=$g16 ?>" size="3">
-									<input type="text" name="g17" value="<?=$g17 ?>" size="3">
-									<input type="text" name="g18" value="<?=$g18 ?>" size="3">
-								</td>
-							</tr>
-							<tr>
-								<td align="center" bgcolor="#ffe4e1">
-									<div class="label">友達グループ2</div>
-								</td>
-								<td>
-									<input type="text" name="g21" value="<?=$g21 ?>" size="3">
-									<input type="text" name="g22" value="<?=$g22 ?>" size="3">
-									<input type="text" name="g23" value="<?=$g23 ?>" size="3">
-									<input type="text" name="g24" value="<?=$g24 ?>" size="3">
-									<input type="text" name="g25" value="<?=$g25 ?>" size="3">
-									<input type="text" name="g26" value="<?=$g26 ?>" size="3">
-									<input type="text" name="g27" value="<?=$g27 ?>" size="3">
-									<input type="text" name="g28" value="<?=$g28 ?>" size="3">
-								</td>
-							</tr>
-							<tr><td align="center" colspan="2">
-								<input type="submit" name="submit_relation" value="登録する"></td>
-							</tr>
-						</table>
-					</form>
-				</div>
+		</div>
+		<div id="main">
+			<!-- #main 本文スペース -->
+			<div class="contentswrap">
+				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
+						<tr><div class="label" align="center"><font size="4">グループの登録</font></div></tr>
+						<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red">半角数字</font>で入力してください</tr>
+						<tr>
+							<td align="center">
+								<div class="label">家族</div>
+							</td>
+							<td>
+								<input type="text" name="f1" value="<?=$f1 ?>" size="3">
+								<input type="text" name="f2" value="<?=$f2 ?>" size="3">
+								<input type="text" name="f3" value="<?=$f3 ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="label">恋人/夫婦</div>
+							</td>
+							<td>
+								<input type="text" name="lo" value="<?=$lo ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="label">友達グループ1</div>
+							</td>
+							<td>
+								<input type="text" name="g11" value="<?=$g11 ?>" size="3">
+								<input type="text" name="g12" value="<?=$g12 ?>" size="3">
+								<input type="text" name="g13" value="<?=$g13 ?>" size="3">
+								<input type="text" name="g14" value="<?=$g14 ?>" size="3">
+								<input type="text" name="g15" value="<?=$g15 ?>" size="3">
+								<input type="text" name="g16" value="<?=$g16 ?>" size="3">
+								<input type="text" name="g17" value="<?=$g17 ?>" size="3">
+								<input type="text" name="g18" value="<?=$g18 ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="label">友達グループ2</div>
+							</td>
+							<td>
+								<input type="text" name="g21" value="<?=$g21 ?>" size="3">
+								<input type="text" name="g22" value="<?=$g22 ?>" size="3">
+								<input type="text" name="g23" value="<?=$g23 ?>" size="3">
+								<input type="text" name="g24" value="<?=$g24 ?>" size="3">
+								<input type="text" name="g25" value="<?=$g25 ?>" size="3">
+								<input type="text" name="g26" value="<?=$g26 ?>" size="3">
+								<input type="text" name="g27" value="<?=$g27 ?>" size="3">
+								<input type="text" name="g28" value="<?=$g28 ?>" size="3">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2"><input type="submit" name="submit_relation" value="登録する"></td>
+						</tr>
+					</table>
+				</form>
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>
