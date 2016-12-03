@@ -26,10 +26,12 @@ try {
 if (! isset($accessToken)) {
   if ($helper->getError()) {
     header('HTTP/1.0 401 Unauthorized');
-    echo "Error: " . $helper->getError() . "\n";
+    /*echo "Error: " . $helper->getError() . "\n";
     echo "Error Code: " . $helper->getErrorCode() . "\n";
     echo "Error Reason: " . $helper->getErrorReason() . "\n";
     echo "Error Description: " . $helper->getErrorDescription() . "\n";
+    */
+   echo "アクセスが拒否されました";
   } else {
     header('HTTP/1.0 400 Bad Request');
     echo 'Bad request';
