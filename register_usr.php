@@ -2,6 +2,7 @@
 //======================================================================
 //  ■： 会員登録ページ register_usr.php 
 //======================================================================
+session_start();
 require_once("PostgreSQL.php");
 //require_once("com_require2.php");
 $pgsql = new PostgreSQL;
@@ -12,12 +13,6 @@ $error1 = ""; //PW関係
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$pgsql->query_null("SELECT MAX(no) AS no FROM test");
-	if ($pgsql->rows()>0) {
-		$row = $pgsql->fetch();
-		$no = $row['no'];
-		$no++;
-	}
 
 	// フォームからデータを受け取る
 	//--------------------------------
@@ -59,80 +54,88 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	// □ 会員情報テーブル(test)に登録
 	//--------------------------------------------
 		if (!empty($usr_id) and !empty($usr_pw)) {
+			$pgsql->query_null("SELECT MAX(no) AS no FROM test");
+			if ($pgsql->rows()>0) {
+				$row = $pgsql->fetch();
+				$no = $row['no'];
+				$no++;
+			}
 			//hash化
 			$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
 			$sql = "INSERT INTO test(no,id,pw,anq) VALUES($1,$2,$3,$4)";
 			$array = array($no,$usr_id,$usr_pw,0);
 			$pgsql->query($sql,$array);
+			//Sessionの登録
+			$_SESSION["my_no"] = $row["no"];
+			$_SESSION["gender"] = $row["gender"];
+			$_SESSION["age"] = $row["age"];
+			$_SESSION["anq"] = $row["anq"];
 		}
-		$error = "登録が完了しました";
-		$error1 = "登録が完了しました";
+		header("Location: ./register_info.php");
+		exit;
 	}
 }
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>新規登録</title>
-<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-<?php //require_once("analysis.php");?>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>新規登録</title>
+	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+	<?php //require_once("analysis.php");?>
 </head>
 <body>
-<?php
-	//----------------------------------------	
+	<div id="page">
+		<?php
+			//----------------------------------------
+			// ■ヘッダーの取り込み
+			//----------------------------------------
+		require_once("./header.php");
+		require_once("./linkplace.php");
+		echo pwd("login");
+		?>
+		<div id="contents">
+			<!-- #main 本文スペース -->
+			<div class="contentswrap">
+				<?php
+	//----------------------------------------
 	// ■ エラーメッセージがあったら表示
-	//----------------------------------------	
-	if($error != "登録が完了しました"||$error1 != "登録が完了しました"){
-		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-		echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
-	}else{
-		echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
-		echo "<br><center><a href=\"./login.php\">Login画面へ</a></center>";
-		echo "</body>";
-		echo "</html>";
-		exit;
-	}
-?>
-<div id="page">
-	<div id="head">
-		<a href="./login.php">Loginページへ戻る</a>
-	</div>
-</div>
-<div id="page">
-	<div id="contents">
-		<!-- #main 本文スペース -->
-		<div class="contentswrap">
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
-			<tr><div class="label" align="center">会員登録</div></tr>
+	//----------------------------------------
+				if(strlen($error)>0||strlen($error1)>0){
+					echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
+					echo "<font size=\"6\" color=\"#da0b00\">{$error1}</font><p>";
+				}
+				?>
+				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
+						<tr><div class="label" align="center">会員登録</div></tr>
 
-			<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
-			<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
-			<font size="2">5〜30文字の半角英数字</font></td></tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">パスワード</div></td>
-				<td>
-					<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
-					<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
-				</td>
-			</tr>
-			<tr>
-				<td align="center" bgcolor="#ffe4e1">
-					<div class="label">確認用パスワード</div></td>
-				<td>
-					<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
-					<font size="2">もう一度入力をお願いします</font>
-				</td>
-			</tr>
-			<tr><td align="center" colspan="2">
-			<input type="submit" name="Submit" value="登録する"></td></tr>
-			</table>
-		</form>
-		</div>
-	</div>
-</div>
+						<tr><td align="center" bgcolor="#ffe4e1"><div class="label">ユーザID<br></div></td>
+							<td><input type="text" name="usr_id" value="<?=$usr_id ?>" size="30"><br>
+								<font size="2">5〜30文字の半角英数字</font></td></tr>
+								<tr>
+									<td align="center" bgcolor="#ffe4e1">
+										<div class="label">パスワード</div></td>
+										<td>
+											<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
+											<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
+										</td>
+									</tr>
+									<tr>
+										<td align="center" bgcolor="#ffe4e1">
+											<div class="label">確認用パスワード</div></td>
+											<td>
+												<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
+												<font size="2">もう一度入力をお願いします</font>
+											</td>
+										</tr>
+										<tr><td align="center" colspan="2">
+											<input type="submit" name="Submit" value="登録する"></td></tr>
+										</table>
+									</form>
+								</div>
+							</div>
+						</div>
 
-</body>
-</html>
+					</body>
+					</html>

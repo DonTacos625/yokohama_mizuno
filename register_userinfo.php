@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		?>
 		<?php
 		require_once("linkplace.php"); //現在地表示用php
-		echo pwd("fb_register"); //現在値の表示
+		echo pwd("register_info"); //現在値の表示
 		?>
 		<div id="contents">
 			<!-- #main 本文スペース -->

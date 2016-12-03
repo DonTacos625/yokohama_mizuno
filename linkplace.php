@@ -6,9 +6,12 @@
 		$mypagename = "マイページ";
 		$mypagetag = '<a href="'.$mypage.'.php">マイページ</a>';
 
-		$fbregister ="fb_register";
-		$fbregistername ="会員詳細情報登録";
-		$fbregistertag = '<a href="'.$fbregister.'.php">会員詳細情報登録</a>';
+		$registeruser = "register_usr";
+		$registerusername = "新規会員登録";
+
+		$registerinfo ="register_info";
+		$registerinfoname ="会員詳細情報編集";
+		$registerinfotag = '<a href="'.$registerinfo.'.php">会員詳細情報編集</a>';
 
 		$localinfo ="localinfo";
 		$localinfoname = "観光スポットカテゴリー選択";
@@ -45,6 +48,7 @@
 
 		$login = "login";
 		$loginname = 'ログインページ';
+		$logintag = '<a href="'.$login.'.php">ログインページ</a>';
 
 		$howtouse = "howtouse";
 		$howtousename = "使い方";
@@ -54,8 +58,10 @@
 
 		if($url == $mypage) //マイページ
 			return $toppagetag.$arrow.$mypagename;
-		if($url == $fbregister) //利用者詳細情報
-			return $toppagetag.$arrow.$mypagetag.$arrow.$fbregistername;
+		if($url == $registeruser) //新規会員登録
+			return $toppagetag.$arrow.$logintag.$arrow.$registerusername;
+		if($url == $registerinfo) //会員詳細情報編集
+			return $toppagetag.$arrow.$mypagetag.$arrow.$registerinfoname;
 		if($url == $recomend1) //推薦項目選択
 			return $toppagetag.$arrow.$recomend1name;
 		if($url == $recomend2) //推薦一覧
@@ -74,11 +80,11 @@
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo25name;
 		if($url == $localinfo26) //その他
 			return $toppagetag.$arrow.$localinfotag.$arrow.$localinfo26name;
-		if($url == $changepw)
+		if($url == $changepw) //パスワード変更
 			return $toppagetag.$arrow.$mypagetag.$arrow.$changepwname;
 		if($url == $howtouse) //使い方
 			return $toppagetag.$arrow.$howtousename;
-		if($url == $login) //
+		if($url == $login) //ログイン
 			return $toppagetag.$arrow.$loginname;
 	}
 	function pwd_spot($category,$name){
