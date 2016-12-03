@@ -90,10 +90,17 @@ $count = count($row);
 for($i=0;$i<$count;$i++){
 	$no = $row[$i]["no"];
 	$id = $row[$i]["id"];
+	$gender = $row[$i]["gender"];
+	$age = $row[$i]["age"];
 	if(strlen($id)>30){
 		$id = "Facebook";
 	}
-	$gender = $row[$i]["gender"];
+	if($age==NULL){
+		$age="未記入";
+	}
+	if($gender==NULL){
+		$gender="未記入";
+	}
 	echo "<tr>";
 	echo "<td align=\"\center\">$no</td>";
 	echo "<td>$id</td>";
