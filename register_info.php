@@ -87,6 +87,8 @@ if(isset($_SESSION["my_no"])){
 				if(!isset($_SESSION['fb_access_token'])){
 					require_once("statue.php");
 				}else{
+					$gender = $_SESSION["gender"];
+					$age = $_SESSION["age"];
 					echo "<input type='hidden' name='gender' value='".$gender."'>";
 					echo "<input type='hidden' name='age' value='".$age."'>";
 				}?>
