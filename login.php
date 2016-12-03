@@ -58,7 +58,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 						<td><input type="password" name="usr_pw"></td>
 					</tr>
 					<tr>
-						<td align="right" colspan="4"><input type="submit" value="Submit"></td>
+						<td align="right" colspan="4"><input type="submit" value="ログイン"></td>
 					</tr>
 				</form>
 			</table>
