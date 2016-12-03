@@ -39,12 +39,14 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 		require_once("./header.php");
 		require_once("./linkplace.php");
 		echo pwd("login");
-		if(strlen($error)>0){
-			echo $error;
-			exit();
-		}
 		?>
 		<div id="contents">
+			<?php
+			if(strlen($error)>0){
+				echo $error;
+				exit();
+			}
+			?>
 			<table>
 				<tr>
 					<td>
