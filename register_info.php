@@ -101,7 +101,7 @@ if(isset($_SESSION["my_no"])){
 						<td>1:悪い <------>  5:良い</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">満足度</div>
 						</td>
 						<td>
@@ -113,7 +113,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">アクセスのしやすさ</div>
 						</td>
 						<td>
@@ -125,7 +125,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">人混みの少なさ</div>
 						</td>
 						<td>
@@ -137,7 +137,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">バリアフリー</div>
 						</td>
 						<td>
@@ -149,7 +149,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">コストパフォーマンス</div>
 						</td>
 						<td>
@@ -161,7 +161,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">雰囲気</div>
 						</td>
 						<td>
@@ -173,7 +173,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">快適度/サービスの良さ</div>
 						</td>
 						<td>
@@ -185,7 +185,7 @@ if(isset($_SESSION["my_no"])){
 						</td>
 					</tr>
 					<tr>
-						<td align="center" bgcolor="#ffe4e1">
+						<td align="center">
 							<div class="label2">おすすめ度</div>
 						</td>
 						<td>
