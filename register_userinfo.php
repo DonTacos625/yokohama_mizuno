@@ -50,13 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION["age"] = json_encode((int)$age);
 	}
 }else{
-	if(isset($_SESSION["my_no"])){
-		$my_no = $_SESSION["my_no"];
-		$gender = $_SESSION["gender"];
-		$age = $_SESSION["age"];
-	}else{
-		$access_error = "不正なアクセスです";
-	}
+	$access_error = "不正なアクセスです";
 }
 ?>
 <html>
