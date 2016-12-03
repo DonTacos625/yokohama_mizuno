@@ -131,11 +131,11 @@ if(isset($user)){
 }
 
 if($flag==1){
-  header('Location: https://study-yokohama-sightseeing.herokuapp.com/index.php');
-  exit;
+  //header('Location: https://study-yokohama-sightseeing.herokuapp.com/index.php');
+  //exit;
 }else{
-  header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
-  exit;
+  //header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+  //exit;
 }
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
