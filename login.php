@@ -3,7 +3,6 @@
 	//  ■：ログインページ
 	//======================================================================
 require_once __DIR__ . '/vendor/autoload.php';
-//require_once("analysis.php");
 session_start(); //セッションスタート
 require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 $pgsql = new PostgreSQL;
@@ -28,6 +27,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ログインページ</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">
