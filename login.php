@@ -69,7 +69,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 					</tr>
 				</form>
 			</table>
-			<br><br>
+			<br>
 			<table>
 				<tr>
 					<td>
@@ -82,7 +82,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 					</td>
 				</tr>
 			</table>
-			<br><br>
+			<br>
 			<table>
 				<tr>
 					<td>
