@@ -130,7 +130,7 @@ if($accessToken!=NULL){
 }
 
 if($first==1){
-   header('Location: https://https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+   header('Location: https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
    exit;
 }else{
   header('Location: https://study-yokohama-sightseeing.herokuapp.com');
