@@ -15,37 +15,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$c_check = $_POST["categorycheck"];
 	$point = intval(htmlspecialchars($_POST["pointvalue"]));
 
-	//観光スポットデータのカテゴリーを便宜上埋める
 	$c_checknum =count($c_check);
 
 	if($c_checknum==NULL){
 		$error = "カテゴリーが選択されていません";
 	}else{
-		for($i=0;$i<$c_checknum;$i++){
-			$categorycheck[$i] = intval(htmlspecialchars($c_check[$i]));
-		}
-		if($c_checkknum<6){
-			for($i=$c_checknum;$i<6;$i++){
-				$categorycheck[$i]=0;
-			}
-		}
-
-		$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
-		$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
-		$pgsql->query($sql,$array);
-		$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
-
-		for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
-			$temparray[$i][0] = floatval($PlaceTable[$i]["spot_a1"]);
-			$temparray[$i][1] = floatval($PlaceTable[$i]["spot_a2"]);
-			$temparray[$i][2] = floatval($PlaceTable[$i]["spot_a3"]);
-			$temparray[$i][3] = floatval($PlaceTable[$i]["spot_a4"]);
-			$temparray[$i][4] = floatval($PlaceTable[$i]["spot_a5"]);
-			$temparray[$i][5] = floatval($PlaceTable[$i]["spot_a6"]);
-			$temparray[$i][6] = floatval($PlaceTable[$i]["spot_a7"]);
-			$temparray[$i][7] = floatval($PlaceTable[$i]["spot_a8"]);
-		}
-
 		//グループの関係性の評価値(valueinfo)から抜き出し
 		$array = array($my_no);
 		if($relation==1){
@@ -59,42 +33,68 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		}else{
 			$sql = "SELECT a1,a2,a3,a4,a5,a6,a7,a8 FROM friendinfo where no=$1";
 		}
-
 		//sql文の送信とデータの取り出し
 		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();
-
-		for($i=0;$i<8;$i++){ //キャスト
-			$UserTable[$i]=floatval($row[$i]);
+		if($row){
+			for($i=0;$i<8;$i++){ //キャスト
+				$UserTable[$i]=floatval($row[$i]);
+			}
+		}else{
+			$error = "選択したグループは未登録です";
 		}
+		if(strlen($error)==0){
+			for($i=0;$i<$c_checknum;$i++){
+				$categorycheck[$i] = intval(htmlspecialchars($c_check[$i]));
+			}
+			if($c_checkknum<6){
+				for($i=$c_checknum;$i<6;$i++){
+					$categorycheck[$i]=0; //観光スポットデータのカテゴリーを便宜上埋める
+				}
+			}
+			$sql = "SELECT pk,spot_lng,spot_lat,spot_category,spot_name,spot_a1,spot_a2,spot_a3,spot_a4,spot_a5,spot_a6,spot_a7,spot_a8 FROM localinfo WHERE spot_category in ($1,$2,$3,$4,$5,$6) ORDER BY pk ASC"; //観光スポットデータ(localinfo)テーブルから通し番号(pk)昇順に一覧を出力
+			$array = array($categorycheck[0],$categorycheck[1],$categorycheck[2],$categorycheck[3],$categorycheck[4],$categorycheck[5]);
+			$pgsql->query($sql,$array);
+			$PlaceTable = $pgsql->fetch_all(); //観光スポットデータをPlaceTable配列に格納
 
-		//類似度の算出を行なう
-		$sortedvalue = simList($UserTable,$temparray); //１次元配列
+			for($i=0;$i<count($PlaceTable);$i++){ //評価値の抜き出し
+				$temparray[$i][0] = floatval($PlaceTable[$i]["spot_a1"]);
+				$temparray[$i][1] = floatval($PlaceTable[$i]["spot_a2"]);
+				$temparray[$i][2] = floatval($PlaceTable[$i]["spot_a3"]);
+				$temparray[$i][3] = floatval($PlaceTable[$i]["spot_a4"]);
+				$temparray[$i][4] = floatval($PlaceTable[$i]["spot_a5"]);
+				$temparray[$i][5] = floatval($PlaceTable[$i]["spot_a6"]);
+				$temparray[$i][6] = floatval($PlaceTable[$i]["spot_a7"]);
+				$temparray[$i][7] = floatval($PlaceTable[$i]["spot_a8"]);
+			}
 
-		if($point==1)
-			$pointval = "spot_a1";
-		else if($point==2)
-			$pointval = "spot_a2";
-		else if($point==3)
-			$pointval = "spot_a3";
-		else if($point==4)
-			$pointval = "spot_a4";
-		else if($point==5)
-			$pointval = "spot_a5";
-		else if($point==6)
-			$pointval = "spot_a6";
-		else if($point==7)
-			$pointval = "spot_a7";
-		else if($point==8)
-			$pointval = "spot_a8";
-		else
-			$pointval = NULL;
+			//類似度の算出を行なう
+			$sortedvalue = simList($UserTable,$temparray); //１次元配列
 
-		//重視する項目の評価値が高い順に上から20箇所抜き出す
-		$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
-		//抜き出した箇所の更に上位10位を抜き出す
-		$result10place = array_slice($resultplace,0,10);
+			if($point==1)
+				$pointval = "spot_a1";
+			else if($point==2)
+				$pointval = "spot_a2";
+			else if($point==3)
+				$pointval = "spot_a3";
+			else if($point==4)
+				$pointval = "spot_a4";
+			else if($point==5)
+				$pointval = "spot_a5";
+			else if($point==6)
+				$pointval = "spot_a6";
+			else if($point==7)
+				$pointval = "spot_a7";
+			else if($point==8)
+				$pointval = "spot_a8";
+			else
+				$pointval = NULL;
 
+			//重視する項目の評価値が高い順に上から20箇所抜き出す
+			$resultplace = sort_for_point($sortedvalue,$PlaceTable,$pointval,20); //$point 重視する項目
+			//抜き出した箇所の更に上位10位を抜き出す
+			$result10place = array_slice($resultplace,0,10);
+		}
 	}
 }else{
 	if(!isset($_SESSION["my_no"])){
@@ -246,7 +246,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		<div id="contents">
 			<div id="menuL">
 				<?php
-				require_once('left.php');
 				require_once("left_recomend.php");
 				?>
 			</div>
