@@ -3,7 +3,7 @@
 	<div class="label">推薦項目</div>
 	<ul>
 		<?php
-		echo "グループ:";
+		echo "グループ：";
 		if($relation==1){
 			echo "家族";
 		}else if($relation==2){
@@ -36,7 +36,7 @@
 			}
 		}
 		echo "</ul>";
-		echo "重視する項目:";
+		echo "重視する項目：";
 		if($point==0)echo "何も重視しない";
 		if($point==1)echo "満足度";
 		if($point==2)echo "アクセスのしやすさ";
