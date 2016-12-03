@@ -88,24 +88,6 @@ echo 'gender: ' . $user['gender'];
 echo 'id: ' . $user['id'];
 echo 'age_range: ' . $user['age_range'];
 var_dump($user['id']);
-
-require_once("PostgreSQL.php");
-$pgsql = new PostgreSQL;
-if(isset($user['id'])){
-
-	$sql="SELECT no,age,gender,anq FROM friendinfo WHERE id=$1";
-	$stl = array($user['id']);
-	$pgsql->query($sql,$stl); //検索
-	$row = $pgsql->fetch();
-
-	if(isset($row['no'])){
-		$echo "おｋ";
-	}
-	echo "登録されてないよ";
-}
-
-
-
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
