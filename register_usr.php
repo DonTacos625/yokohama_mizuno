@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				}
 				?>
 				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
+					<table align="center" border="0" cellspacing="2" cellpadding="2"  width="600px">
 						<tr><div class="label" align="center">会員登録</div></tr>
 						<tr>
 							<td align="center"><div class="label">ユーザID<br></div></td>
