@@ -48,7 +48,7 @@ $my_no = $_SESSION["my_no"];
 
 								<SELECT name='groupvalue'>
 									<OPTION value='1' selected>家族</OPTION>
-									<OPTION value='2'>恋人</OPTION>
+									<OPTION value='2'>恋人/夫婦</OPTION>
 									<OPTION value='3'>友達グループ1</OPTION>
 									<OPTION value='4'>友達グループ2</OPTION>
 									<OPTION value='0'>一人</OPTION>

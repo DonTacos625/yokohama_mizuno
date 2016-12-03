@@ -745,7 +745,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							</tr>
 							<tr>
 								<td align="center" bgcolor="#ffe4e1">
-									<div class="label">恋人</div>
+									<div class="label">恋人/夫婦</div>
 								</td>
 								<td>
 									<input type="text" name="lo" value="<?=$lo ?>" size="3">
