@@ -16,7 +16,8 @@ if(isset($_SESSION["my_no"]))
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>横浜みなとみらい観光推薦システム</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<script type="text/javascript">
+	<script>
+		if (window.location.hash == "#_=_") window.location.hash = "";
 	</script>
 	<?php //require_once("analysis.php");?>
 </head>
