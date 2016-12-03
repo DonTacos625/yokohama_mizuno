@@ -51,5 +51,15 @@
 		echo "</li></ul>";
 		?>
 	</ul>
+	<div class="label">マーカーの凡例</div>
+	<ul>
+		<img src="./marker/purple.png">飲食<br>
+		<img src="./marker/yellow.png">ショッピング<br>
+		<img src="./marker/red.png">テーマパーク・公園<br>
+
+		<img src="./marker/orange.png">名所・史跡<br>
+		<img src="./marker/ltblue.png">芸術・博物館<br>
+		<img src="./marker/blue.png">その他<br>
+		</ul>
 </div>
 
