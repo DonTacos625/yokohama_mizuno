@@ -95,6 +95,7 @@ $pgsql->query("SELECT no,id,pw,gender,age,anq FROM friendinfo WHERE id=$1",$arra
 $row = $pgsql->fetch();
 if(isset($row)){
   echo "ok";
+  var_dump($_SESSION);
 }
 
 // User is logged in with a long-lived access token.
