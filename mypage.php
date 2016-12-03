@@ -5,12 +5,14 @@
 session_start(); //セッションスタート
 require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 $pgsql = new PostgreSQL;
+if(isset($_SESSION["my_no"]))
+	$my_no = $_SESSION["my_no"];
 
-if ($_SERVER["REQUEST_METHOD"]=="POST"){
+/*if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	$menu = htmlspecialchars($_POST["menu"], ENT_QUOTES);	//menu番号
 
 	if($menu==1){
-		header('Location: https://study-yokohama-sightseeing.herokuapp.com/fb_register.php');
+		header('Location: https://study-yokohama-sightseeing.herokuapp.com/register_info.php');
 		exit;
 	}
 	if($menu==2){
@@ -36,9 +38,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 }else{
 	if(isset($_SESSION["my_no"]))
 		$my_no = $_SESSION["my_no"];
-}
-
-
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>マイページ</title>
-	
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 	</script>
@@ -101,9 +100,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 					</form>
 					</table>
 				-->
-				<div class="label2" align="center">メニュー 一覧</div>
+				<div class="label2" align="center">マイページメニュー 一覧</div>
 				<ul>
-					<li><a href="https://study-yokohama-sightseeing.herokuapp.com/fb_register.php">会員詳細情報編集</a></li>
+					<li><a href="https://study-yokohama-sightseeing.herokuapp.com/register_info.php">会員詳細情報編集</a></li>
 					<li><a href="https://study-yokohama-sightseeing.herokuapp.com/register_group.php">グループ登録・編集</a></li>
 					<?php if(!isset($_SESSION["fb_access_token"])){
 						echo "<li><a href='https://study-yokohama-sightseeing.herokuapp.com/changepw.php'>パスワード変更</a></li>";

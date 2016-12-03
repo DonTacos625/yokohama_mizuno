@@ -7,6 +7,8 @@ require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
 $pgsql = new PostgreSQL;
 if(isset($_SESSION["my_no"]))
 	$my_no = $_SESSION["my_no"];
+echo "工事中です";
+exit;
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +47,7 @@ if(isset($_SESSION["my_no"]))
 				<!-- #main 本文スペース -->
 				<div class="contentswrap"> 
 					<div class="title">	
-						<h5>横浜みなとみらい観光支援システム</h5>
-						<br>
-						<h2>運用停止中</h2>
-						<br>
+						<h5>本運用中</h5>
 						Webサイトの目的</br>
 						<p>
 						個人又はグループ観光回遊行動を支援するための観光情報の共有と推薦になります。

@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 					header("Location: ./index.php");
 					exit;
 				}else{
-					header("Location: ./fb_register.php");
+					header("Location: ./register_info.php");
 					exit;
 				}
 			}else{

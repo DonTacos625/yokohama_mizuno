@@ -1,7 +1,7 @@
 <?php
 session_start(); //セッションスタート
 //======================================================================
-//  ■： 会員詳細情報登録ページ fb_register.php  完成
+//  ■： 会員詳細情報登録ページ register_info.php  完成
 //======================================================================
 require_once("PostgreSQL.php");
 $pgsql = new PostgreSQL;
@@ -93,7 +93,11 @@ if(isset($_SESSION["my_no"])){
 				<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
 					<tr><div class="label2" align="center">嗜好情報の登録</div></tr>
 					<tr>
-					<td align="center" colspan="3">1:悪い <------>  5:良い</td>
+						<td align="center">
+							<div class="label2">値について</div>
+						</td>
+						<td>1:悪い <------>  5:良い</td>
+					</tr>
 					<tr>
 						<td align="center" bgcolor="#ffe4e1">
 							<div class="label2">満足度</div>
