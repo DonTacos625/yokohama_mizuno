@@ -63,11 +63,12 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			//Sessionの登録
 		$_SESSION["my_no"] = $no;
 		$_SESSION["anq"] = 0;
+		$first==1
 	}
 	//sessionを消す
 	unset($_SESSION['oauth_token']);
 	unset($_SESSION['oauth_token_secret']);
-	if($_SESSION["gender"]==NULL||$_SESSION["age"]==NULL){
+	if($first==1){
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/register_info.php' ) ;
 		exit ;
 	}else{

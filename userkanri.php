@@ -93,7 +93,7 @@ for($i=0;$i<$count;$i++){
 	$gender = $row[$i]["gender"];
 	$age = $row[$i]["age"];
 	if(strlen($id)>30){
-		$id = $sns;
+		$id = $row[$i]["sns"];
 	}
 	if($age==NULL){
 		$age="未記入";
