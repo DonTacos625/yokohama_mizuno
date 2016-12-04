@@ -35,7 +35,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	//(ここらへんは、Twitter の API ドキュメントをうまく使ってください)
 
 	//GETしたユーザー情報をvar_dump
-	var_dump( $user );
+	//var_dump( $user );
 	echo $user["id"];
 
 	unset($_SESSION['oauth_token']);
