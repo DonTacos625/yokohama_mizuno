@@ -42,7 +42,7 @@
 			}
 			?>
 		</ul>
-		<div class="label">シェア</div>
+		<div class="label">SNS</div>
 		<ul>
 		<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fstudy-yokohama-sightseeing.herokuapp.com%2Findex.php&width=136&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId=783967058409220" width="136" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 		</ul>
