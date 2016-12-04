@@ -35,6 +35,7 @@ $user = $connection->get("account/verify_credentials");
 
 //GETしたユーザー情報をvar_dump
 var_dump( $user );
+echo $user["id"];
 
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
