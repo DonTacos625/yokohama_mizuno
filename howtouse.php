@@ -117,7 +117,7 @@ session_start(); //セッションスタート
 						<div id="12">
 							<h3>SNSをつかって登録/ログイン</h3>
 							<div id="121">
-								<p>Facebookをつかう</p>
+								<h4>Facebookをつかう</h4>
 								<ol>
 									<li>ページ上部の項目「ログイン」を押す</li>
 									<li>SNS連帯の項目にある「Log in with Facebook!」を押す</li>
@@ -127,7 +127,7 @@ session_start(); //セッションスタート
 								</ol>
 							</div>
 							<div id="122">
-								<p>Twitterをつかう</p>
+								<h4>Twitterをつかう</h4>
 								<ol>
 									<li>ページ上部の項目「ログイン」を押す</li>
 									<li>SNS連帯の項目にある「Log in with Twitter!」を押す</li>
