@@ -1,17 +1,17 @@
 <?php
-	session_start(); //セッションスタート
-	?>
+session_start(); //セッションスタート
+?>
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="stylet.css">
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>使い方</title>
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<!-- スムーズスクロール部分の記述 -->
-		<script>
-			$(function(){
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylet.css">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>使い方</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<!-- スムーズスクロール部分の記述 -->
+	<script>
+		$(function(){
    // #で始まるアンカーを押した場合に処理
    $('a[href^=#]').click(function() {
       // スクロールの速度
@@ -49,7 +49,12 @@
 						<li><a href="#1">ユーザ登録/ログイン</a>
 							<ul>
 								<li><a href="#11">SNSを使わずに登録/ログイン</a></li>
-								<li><a href="#12">SNSをつかって登録/ログイン</a></li>
+								<li><a href="#12">SNSをつかって登録/ログイン</a>
+									<ul>
+										<li><a href="#121">Facebookを使う</a></li>
+										<li><a href="#122">Twitterを使う</a></li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 						<li><a href="#2">マイページ</a>
@@ -111,14 +116,26 @@
 						<br>
 						<div id="12">
 							<h3>SNSをつかって登録/ログイン</h3>
-							<p>Facebookを使ったユーザ登録です</p>
-							<ol>
-								<li>ページ上部の項目「ログイン」を押す</li>
-								<li>SNS連帯の項目にある「Log in with Facebook!」を押す</li>
-								<li>Facebook側での認証をする</li>
-								<li>初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページへ遷移する</li>
-								<li>2回目以降のログインの際は、同様にバナーを押す</li>
-							</ol>
+							<div id="121">
+								<p>Facebookをつかう</p>
+								<ol>
+									<li>ページ上部の項目「ログイン」を押す</li>
+									<li>SNS連帯の項目にある「Log in with Facebook!」を押す</li>
+									<li>Facebook側での認証をする</li>
+									<li>初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページへ遷移する</li>
+									<li>2回目以降のログインの際は、同様に「Log in with Facebook!」を押す</li>
+								</ol>
+							</div>
+							<div id="122">
+								<p>Twitterをつかう</p>
+								<ol>
+									<li>ページ上部の項目「ログイン」を押す</li>
+									<li>SNS連帯の項目にある「Log in with Twitter!」を押す</li>
+									<li>Twitter側での認証をする</li>
+									<li>初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページへ遷移する</li>
+									<li>2回目以降のログインの際は、同様に「Log in with Twitter!」を押す</li>
+								</ol>
+							</div>
 							<a class="button" href="#index">▲ 目次に戻る</a>
 						</div>
 					</div>

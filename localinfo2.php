@@ -58,7 +58,6 @@ $error="";
 		else
 			echo "その他";
 		?></title>
-	
 	<link rel="stylesheet" type="text/css" href="stylet.css">
 	<?php //require_once("analysis.php");?>
 </head>

@@ -14,19 +14,19 @@ function toPostgreSqlArray($data)
 function toPhpArray($data)
 {
 	$data       = str_replace('{', '', $data);
-	$data       = str_replace('}', '', $data);
-	$array_data = explode(',', $data);
+		$data       = str_replace('}', '', $data);
+			$array_data = explode(',', $data);
 
-	return $array_data;
-}
+				return $array_data;
+			}
 
-if(isset($_SESSION["my_no"])){
-	$my_no = $_SESSION["my_no"];
-	if($_GET['pk']!=NULL){
-		$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
-		if(preg_match('/^([0-9])/', $pk)){
-			$sql = "SELECT spot_lng,spot_lat,spot_name,spot_category,spot_pic,spot_visited,spot_url,spot_content,spot_eval FROM localinfo WHERE pk=$1";
-			$array = array($pk);
+			if(isset($_SESSION["my_no"])){
+				$my_no = $_SESSION["my_no"];
+				if($_GET['pk']!=NULL){
+					$pk=json_decode(json_encode($_GET['pk'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),true);
+					if(preg_match('/^([0-9])/', $pk)){
+						$sql = "SELECT spot_lng,spot_lat,spot_name,spot_category,spot_pic,spot_visited,spot_url,spot_content,spot_eval FROM localinfo WHERE pk=$1";
+						$array = array($pk);
 			$pgsql -> query($sql,$array);
 			$row = $pgsql->fetch_all();
 			if($row){
@@ -68,41 +68,41 @@ if(isset($_SESSION["my_no"])){
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.1/"></script>
-<?php //require_once("analysis.php");?>
+	<script src="https://js.arcgis.com/4.1/"></script>
+	<?php //require_once("analysis.php");?>
 	<script>
-	var spot_lng = <? echo $spot_lng?>;
-	var spot_lat = <? echo $spot_lat?>;
-	var spot_category =<? echo $spot_category?>;
-	var urlhttp = "http://";
-	var pointpic = "";
-	var cat_name = "";
-	var spoturl = "";
-	var valurl = "https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
-	require([
-		"esri/Map",
-		"esri/views/MapView",
-		"esri/Graphic",
-		"esri/geometry/Point",
-		"esri/symbols/PictureMarkerSymbol",
-		"dojo/domReady!"
-		], function(
-			Map, MapView,
-			Graphic, Point,
-			PictureMarkerSymbol,
-			PopupTemplate
-			) {
+		var spot_lng = <? echo $spot_lng?>;
+		var spot_lat = <? echo $spot_lat?>;
+		var spot_category =<? echo $spot_category?>;
+		var urlhttp = "http://";
+		var pointpic = "";
+		var cat_name = "";
+		var spoturl = "";
+		var valurl = "https://study-yokohama-sightseeing.herokuapp.com/localinfo3.php?pk=";
+		require([
+			"esri/Map",
+			"esri/views/MapView",
+			"esri/Graphic",
+			"esri/geometry/Point",
+			"esri/symbols/PictureMarkerSymbol",
+			"dojo/domReady!"
+			], function(
+				Map, MapView,
+				Graphic, Point,
+				PictureMarkerSymbol,
+				PopupTemplate
+				) {
 
-			var map = new Map({
-				basemap: "streets"
-			});
+				var map = new Map({
+					basemap: "streets"
+				});
 
-			var view = new MapView({
-				center: [spot_lng, spot_lat],
-				container: "viewDiv2",
-				map: map,
-				zoom: 15
-			});
+				var view = new MapView({
+					center: [spot_lng, spot_lat],
+					container: "viewDiv2",
+					map: map,
+					zoom: 15
+				});
 
 		/**********************
 		 * Create a point graphic
@@ -167,26 +167,24 @@ if(isset($_SESSION["my_no"])){
 		?>
 		<div id="contents">
 			<div id="menuL">
-			<?php
-			require_once('left.php');
-			?>
+				<?php
+				require_once('left.php');
+				?>
 			</div>
 			<div id="main">
 				<div class="contentswrap">
 					<table border="0" cellspacing="3" cellpadding="3" width="600">
-						<tr><td align="center" bgcolor="#fof8ff" colspan="2">
-								<font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
+						<tr><td align="center" bgcolor="#fof8ff" colspan="2"><font size="4"><b>観光スポットの詳細情報</b></font></td></tr>
 						<tr>
+							<td align='center' width="300"><div id="viewDiv2"></div></td>
 							<td align='center' width="300">
-							<div id="viewDiv2"></div></td>
-							<td align='center' width="300">
-							<?php
-							if($spot_pic!=NULL){
-								echo "<img src='thumbnail.php?url=".$spot_pic."&width=300' alt='".$spot_name."'>";
-							}else{
-								echo "<img src='./uploaded_pic/no_image.jpg' alt='写真なし'>";
-							}
-							?>
+								<?php
+								if($spot_pic!=NULL){
+									echo "<img src='thumbnail.php?url=".$spot_pic."&width=300' alt='".$spot_name."'>";
+								}else{
+									echo "<img src='./uploaded_pic/no_image.jpg' alt='写真なし'>";
+								}
+								?>
 							</td>
 						</tr>
 						<tr>
@@ -220,12 +218,12 @@ if(isset($_SESSION["my_no"])){
 							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>参考URL</b></font></td>
 							<td>
 								<?php
-									if($spot_url!=NULL){
-										$url = "http://".$spot_url;
-										echo "<a href='".$url."'>リンク</a>";
-									}else{
-										echo "なし";
-									}
+								if($spot_url!=NULL){
+									$url = "http://".$spot_url;
+									echo "<a href='".$url."'>リンク</a>";
+								}else{
+									echo "なし";
+								}
 								?>
 							</td>
 						</tr>
@@ -233,12 +231,12 @@ if(isset($_SESSION["my_no"])){
 							<td align="center" bgcolor="#fof8ff" width="100"><font size="4"><b>レビュー</b></font></td>
 							<td>
 								<?php
-									if($evalued == NULL){
-										$valurl = "https://study-yokohama-sightseeing.herokuapp.com/local_evaluation.php?pk=".$pk;
-										echo "<a href='".$valurl."'>レビューをする</a>";
-									}else{
-										echo $evalued;
-									}
+								if($evalued == NULL){
+									$valurl = "https://study-yokohama-sightseeing.herokuapp.com/local_evaluation.php?pk=".$pk;
+									echo "<a href='".$valurl."'>レビューをする</a>";
+								}else{
+									echo $evalued;
+								}
 								?>
 							</td>
 						</tr>

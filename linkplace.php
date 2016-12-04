@@ -1,4 +1,8 @@
 <?php
+/*
+	現在地を返すfunciton
+*/
+
 	function pwd($url){
 		$toppagetag = "<a href='./index.php'>トップページ</a>";
 

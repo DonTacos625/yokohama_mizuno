@@ -24,9 +24,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 
 //アプリでは、access_token(配列になっています)をうまく使って、Twitter上のアカウントを操作していきます
 	$access_token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
-
 //ちなみに、この変数の中に、OAuthトークンとトークンシークレットが配列となって入っています。
-
 
 //OAuthトークンとシークレットも使って TwitterOAuth をインスタンス化
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
@@ -70,10 +68,10 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	//sessionを消す
 	unset($_SESSION['oauth_token']);
 	unset($_SESSION['oauth_token_secret']);
-	if($first==1){
+	if($first==1){//初回登録時
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/register_info.php' ) ;
 		exit ;
-	}else{
+	}else{ //それ以外
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/index.php' ) ;
 		exit ;
 	}
@@ -91,3 +89,12 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	echo "不正なアクセス";
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitterコールバック</title>
+	<?php //require_once("analysis.php");?>
+</head>
+<body>
+</body>
+</html>
