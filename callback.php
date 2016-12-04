@@ -16,7 +16,7 @@ $request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
 if (isset($_REQUEST['oauth_token']) && $request_token['oauth_token'] !== $_REQUEST['oauth_token']) {
     die( 'Error!' );
 }
-
+if(isset( $_GET['oauth_token'] ) && !empty( $_GET['oauth_token'] ) && isset( $_GET['oauth_verifier'] ) && !empty( $_GET['oauth_verifier'] ) ){
 //OAuth トークンも用いて TwitterOAuth をインスタンス化
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
 
@@ -39,5 +39,15 @@ echo $user["id"];
 
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
+}
+elseif( isset( $_GET['denied'] ) && !empty( $_GET['denied'] ) )
+	{
+		// エラーメッセージを出力して終了
+		echo 'You have rejected the app...Bye...' ;
 
+		// 何故か昔、迷惑ユーザーをとりあえずYahoo!に飛ばすという謎文化がありました…
+		header( 'Location: http://www.yahoo.co.jp/' ) ;
+
+		exit ;
+	}
 ?>
