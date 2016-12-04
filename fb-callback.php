@@ -122,8 +122,9 @@ if($accessToken!=NULL){
       $_SESSION["age"] = $age;
       $_SESSION["anq"] = 0;
       $first = 1;
-      $sql = "INSERT INTO friendinfo(no,id,anq,age,gender) VALUES($1,$2,$3,$4,$5)";
-      $array = array($no,$usr_id,0,$age,$gender);
+      $sns="Facebook";
+      $sql = "INSERT INTO friendinfo(no,id,anq,age,gender,sns) VALUES($1,$2,$3,$4,$5,$6)";
+      $array = array($no,$usr_id,0,$age,$gender,$sns);
       $pgsql->query($sql,$array);
     }
   }

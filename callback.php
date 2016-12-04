@@ -55,11 +55,10 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			$no = $row['no'];
 			$no++;
 		}
-			//hash化
-		$usr_pw = hash("sha256",$usr_pw);
 			// データを追加する
-		$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
-		$array = array($no,$usr_id,$usr_pw,0);
+		$sns="Twitter";
+		$sql = "INSERT INTO friendinfo(no,id,anq,sns) VALUES($1,$2,$3,$4)";
+		$array = array($no,$usr_id,0,$sns);
 		$pgsql->query($sql,$array);
 			//Sessionの登録
 		$_SESSION["my_no"] = $no;
