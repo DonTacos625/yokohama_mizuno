@@ -92,12 +92,8 @@ for($i=0;$i<$count;$i++){
 	$id = $row[$i]["id"];
 	$gender = $row[$i]["gender"];
 	$age = $row[$i]["age"];
-	if($sns=="Facebook"){
-		$id = "Facebook";
-	}elseif($sns=="Twitter"){
-		$id = "Twitter";
-	}else{
-		$id = $row[$i]["id"];
+	if(strlen($id)>30){
+		$id = $sns;
 	}
 	if($age==NULL){
 		$age="未記入";
