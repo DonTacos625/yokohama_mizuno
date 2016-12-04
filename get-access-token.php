@@ -6,8 +6,8 @@
 **************************************************/
 
 	// 設定項目
-	$api_key = '' ;		// APIキー
-	$api_secret = '' ;		// APIシークレット
+	$api_key = getenv("API_Key") ;		// APIキー
+	$api_secret = getenv('API_Secret') ;		// APIシークレット
 
 	// Callback URL
 	// * 自動的にこのプログラムのURLが指定されるようにしていますが、もし不具合がある場合は、直接、URLを指定して下さい。
@@ -376,14 +376,6 @@
 		$html .=  '<h2>エラー内容</h2>' ;
 		$html .= '<p>' . $error . '</p>' ;
 	}
-
-	// 検証用にレスポンスヘッダーを出力 [本番環境では不要]
-	$html .= '<h2>取得したデータ</h2>' ;
-	$html .= '<p>下記のデータを取得できました。</p>' ;
-	$html .= 	'<h3>ボディ</h3>' ;
-	$html .= 	'<p><textarea rows="8">' . $response . '</textarea></p>' ;
-	$html .= 	'<h3>レスポンスヘッダー</h3>' ;
-	$html .= 	'<p><textarea rows="8">' . $header . '</textarea></p>' ;
 
 	// アプリケーション連携の解除
 	$html .= '<h2 style="color:red">アプリケーション連携の解除</h2>' ;
