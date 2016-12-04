@@ -1,7 +1,8 @@
 <?php
 // Twitterのコールバック用PHP
 session_start();
-
+require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+$pgsql = new PostgreSQL;
 require_once 'common.php';
 require_once 'twitteroauth/autoload.php';
 
