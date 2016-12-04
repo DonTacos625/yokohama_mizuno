@@ -102,7 +102,7 @@ if($accessToken!=NULL){
   $row = $pgsql->fetch();
   if($row){
     $_SESSION["my_no"] = $row["no"];
-    $_SESSION["gender"] = $row["gender"];
+    $_SESSION["gender"] = $gender;
     $_SESSION["age"] = $age;
     $_SESSION["anq"] = $row["anq"];
   }else{
