@@ -111,7 +111,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 				<tr>
 					<td>
 						<?php echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; ?>
-						<?php echo '<a href="' . htmlspecialchars($url) . '">Log in with Facebook!</a>'; ?>
+						<?php echo '<a href="' . htmlspecialchars($url) . '">Log in with Twitter!</a>'; ?>
 					</td>
 				</tr>
 			</table>

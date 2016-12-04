@@ -21,14 +21,22 @@ if (isset($_REQUEST['oauth_token']) && $request_token['oauth_token'] !== $_REQUE
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
 
 //アプリでは、access_token(配列になっています)をうまく使って、Twitter上のアカウントを操作していきます
-$_SESSION['access_token'] = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
+$access_token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
 /*
 ちなみに、この変数の中に、OAuthトークンとトークンシークレットが配列となって入っています。
 */
 
-//セッションIDをリジェネレート
-session_regenerate_id();
+//OAuthトークンとシークレットも使って TwitterOAuth をインスタンス化
+$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
-//マイページへリダイレクト
-header( 'location: /mypage.php' );
+//ユーザー情報をGET
+$user = $connection->get("account/verify_credentials");
+//(ここらへんは、Twitter の API ドキュメントをうまく使ってください)
+
+//GETしたユーザー情報をvar_dump
+var_dump( $user );
+
+unset($_SESSION['oauth_token']);
+unset($_SESSION['oauth_token_secret']);
+
 ?>
