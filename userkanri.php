@@ -84,7 +84,7 @@ if (strlen($error)>0){
 //----------------------------------------
 // □：テーブルからデータを読む (friendinfoテーブル)
 //----------------------------------------
-$pgsql->query_null("SELECT no,id,gender,age FROM friendinfo ORDER BY no ASC");
+$pgsql->query_null("SELECT no,id,gender,age,sns FROM friendinfo ORDER BY no ASC");
 $row = $pgsql->fetch_all(); //該当行全て取り出し
 $count = count($row);
 for($i=0;$i<$count;$i++){
@@ -92,8 +92,12 @@ for($i=0;$i<$count;$i++){
 	$id = $row[$i]["id"];
 	$gender = $row[$i]["gender"];
 	$age = $row[$i]["age"];
-	if(strlen($id)>30){
+	if($sns=="Facebook"){
 		$id = "Facebook";
+	}elseif($sns=="Twitter"){
+		$id = "Twitter";
+	}else{
+		$id = $row[$i]["id"];
 	}
 	if($age==NULL){
 		$age="未記入";
