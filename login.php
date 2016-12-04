@@ -92,6 +92,7 @@ $loginUrl = $helper->getLoginUrl('https://study-yokohama-sightseeing.herokuapp.c
 				<tr>
 					<td>
 						<?php echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; ?>
+						<a href="./get-access-token.php">Log in with Twitter!</a>
 					</td>
 				</tr>
 			</table>
