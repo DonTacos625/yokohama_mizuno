@@ -4,7 +4,6 @@
 //======================================================================
 session_start();
 require_once("PostgreSQL.php");
-//require_once("com_require2.php");
 $pgsql = new PostgreSQL;
 
 //エラーメッセージ
