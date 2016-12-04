@@ -36,7 +36,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 
 	//GETしたユーザー情報をvar_dump
 	var_dump( $user );
-	//echo $user["id"];
+	echo htmlspecialchars($user->name);
 
 	unset($_SESSION['oauth_token']);
 	unset($_SESSION['oauth_token_secret']);
