@@ -63,7 +63,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			//Sessionの登録
 		$_SESSION["my_no"] = $no;
 		$_SESSION["anq"] = 0;
-		$first==1
+		$first==1;
 	}
 	//sessionを消す
 	unset($_SESSION['oauth_token']);
