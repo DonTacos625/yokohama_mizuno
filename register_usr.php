@@ -107,21 +107,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<table align="center" border="0" cellspacing="2" cellpadding="2"  width="600px">
 						<tr><div class="label2" align="center">会員登録</div></tr>
 						<tr>
-							<td><div class="label" align="center">ユーザID</div></td>
+							<td><div class="label2" align="center">ユーザID</div></td>
 							<td>
 								<input type="text" name="usr_id" value="<?=$usr_id ?>" size="30">
 								<br><font size="2">5〜30文字の半角英数字</font>
 							</td>
 						</tr>
 						<tr>
-							<td><div class="label" align="center">パスワード</div></td>
+							<td><div class="label2" align="center">パスワード</div></td>
 							<td>
 								<input type="password" name="usr_pw" value="<?=$usr_pw ?>"><br>
 								<font size="2">6文字以上かつ<font color="red"><b>半角英小文字,半角英大文字,数字</b></font>を混在させたもの</font>
 							</td>
 						</tr>
 						<tr>
-							<td><div class="label" align="center">確認用パスワード</div></td>
+							<td><div class="label2" align="center">確認用パスワード</div></td>
 							<td>
 								<input type="password" name="usr_pw2" value="<?=$usr_pw2 ?>"><br>
 								<font size="2">もう一度パスワードの入力をお願いします</font>
