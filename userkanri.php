@@ -78,7 +78,7 @@ if (strlen($error)>0){
 <td align="center"><font size="2">番号</font></td>
 <td align="center"><font size="2">ID</font></td>
 <td align="center"><font size="2">性別</font></td>
-<td align="center"><font size="2">年代</font></td>
+<td align="center"><font size="2">年代(年齢)</font></td>
 </tr>
 <?php
 //----------------------------------------
