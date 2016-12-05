@@ -92,7 +92,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 			<table>
 				<tr>
 					<td>
-						<div class="label" align="center">新規利用登録</div>
+						<div class="label" align="center" size="100px">新規利用登録</div>
 					</td>
 				</tr>
 				<tr>
