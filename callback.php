@@ -43,7 +43,8 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 		$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
 		$row = $pgsql->fetch();
 		if($row){
-			$first==2;
+			echo ok;
+			exit;
 			$_SESSION["my_no"] = $row["no"];
 			$_SESSION["gender"] = $row["gender"];
 			$_SESSION["age"] = $row["age"];
