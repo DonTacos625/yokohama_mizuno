@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>会員詳細情報登録</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

@@ -11,7 +11,7 @@ $my_no = $_SESSION["my_no"];
 	<title>観光スポット情報閲覧</title>
 	
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

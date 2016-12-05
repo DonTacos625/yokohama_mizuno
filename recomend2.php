@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<title>推薦スポット</title>
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 	<script>
 	//spot[i]["spot_lng"]: spot_lng
 	//spot[i]["spot_lat"]: spot_lat

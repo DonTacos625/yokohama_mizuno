@@ -47,7 +47,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ログインページ</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">
@@ -111,6 +111,10 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 				<tr>
 					<td>
 						<?php echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; ?>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<?php echo '<a href="' . htmlspecialchars($url) . '">Log in with Twitter!</a>'; ?>
 					</td>
 				</tr>

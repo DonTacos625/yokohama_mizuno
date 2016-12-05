@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
 	<title>観光スポットのレビュー入力</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 
 <body>

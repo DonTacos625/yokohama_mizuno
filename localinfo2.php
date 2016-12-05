@@ -59,7 +59,7 @@ $error="";
 			echo "その他";
 		?></title>
 	<link rel="stylesheet" type="text/css" href="stylet.css">
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

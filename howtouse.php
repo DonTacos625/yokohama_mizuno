@@ -28,7 +28,7 @@ session_start(); //セッションスタート
     });
  });
 </script>
-<?php //require_once("analysis.php");?>
+<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

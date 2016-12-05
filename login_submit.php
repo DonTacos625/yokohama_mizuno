@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
 	<title>ログイン送信</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php //require_once("analysis.php");?>
+	<?php require_once("analysis.php");?>
 </head>
 <body>
 	<div id="page">

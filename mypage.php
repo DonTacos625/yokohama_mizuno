@@ -50,7 +50,7 @@ if(isset($_SESSION["my_no"]))
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript">
 		</script>
-		<?php //require_once("analysis.php");?>
+		<?php require_once("analysis.php");?>
 	</head>
 	<body>
 		<div id="page">
