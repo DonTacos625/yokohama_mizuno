@@ -47,6 +47,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			$_SESSION["gender"] = $row["gender"];
 			$_SESSION["age"] = $row["age"];
 			$_SESSION["anq"] = $row["anq"];
+			$_SESSION["sns"] = "Twitter";
 			$first=2;
 		}else{
 			$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
@@ -63,6 +64,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			//Sessionの登録
 			$_SESSION["my_no"] = $no;
 			$_SESSION["anq"] = 0;
+			$_SESSION["sns"] = "Twitter";
 			$first=1;
 		}
 	}

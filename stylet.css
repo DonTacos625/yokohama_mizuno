@@ -273,14 +273,12 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 }
 
 .label3{
-	height: 20px;
-	width: 200px;
 	padding: 7px 5px 5px 10px;
 	margin: 0px 0px 10px;
-	border-left: 10px solid #ff6666;
+	border-left: 10px solid #FF82B2;
 	font-weight: bold;
 	color: #FFFFFF;
-	background-color: #b2ffff;
+	background-color: #ff9ece;
 }
 
 .label4{

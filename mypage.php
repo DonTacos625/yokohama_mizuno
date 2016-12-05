@@ -106,7 +106,7 @@ if(isset($_SESSION["my_no"]))
 				<ul>
 					<li><a href="https://study-yokohama-sightseeing.herokuapp.com/register_info.php">会員詳細情報編集</a></li>
 					<li><a href="https://study-yokohama-sightseeing.herokuapp.com/register_group.php">グループ登録・編集</a></li>
-					<?php if(!isset($_SESSION["fb_access_token"])){
+					<?php if(!isset($_SESSION["fb_access_token"])||!isset($_SESSION["sns"])){
 						echo "<li><a href='https://study-yokohama-sightseeing.herokuapp.com/changepw.php'>パスワード変更</a></li>";
 					}?>
 				</ul>
