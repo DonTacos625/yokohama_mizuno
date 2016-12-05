@@ -47,6 +47,8 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			$_SESSION["gender"] = $row["gender"];
 			$_SESSION["age"] = $row["age"];
 			$_SESSION["anq"] = $row["anq"];
+			echo $_SESSION["anq"];
+			exit;
 			$first=2;
 		}else{
 			$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
