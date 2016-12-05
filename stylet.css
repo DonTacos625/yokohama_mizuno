@@ -288,6 +288,16 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	font-weight: bold;
 }
 
+.label5{
+	padding: 7px 5px 5px 10px;
+	margin: 0px 0px 10px;
+	border-left: 10px solid #F4CC0B;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #0066cc;
+	width:200px;
+}
+
 .subh {
 	padding: 5px 0px 0px 3px;
 	margin: 0px;

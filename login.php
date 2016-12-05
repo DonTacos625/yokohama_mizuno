@@ -69,7 +69,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 			<table>
 				<tr>
 					<td>
-						<div class="label" align="center">会員ログイン</div>
+						<div class="label5" align="center">会員ログイン</div>
 					</td>
 				</tr>
 			</table>
@@ -92,7 +92,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 			<table>
 				<tr>
 					<td>
-						<div class="label" align="center" size="100px">新規利用登録</div>
+						<div class="label5" align="center">新規利用登録</div>
 					</td>
 				</tr>
 				<tr>
@@ -103,7 +103,7 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 			</table>
 			<br>
 			<table>
-				<tr><td><div class="label" align="center" size="100px">SNS連帯</div></td></tr>
+				<tr><td><div class="label5" align="center">SNS連帯</div></td></tr>
 				<tr>
 					<td><div class="icon"><?php echo '<a href="' . htmlspecialchars($loginUrl) . '"><img src="./logo/FB-f-Logo__blue_50.png" width="50" height="50" alt="Facebook" /></a>'; ?></div></td>
 					<td><div class="icon"><?php echo '<a href="' . htmlspecialchars($url) . '"><img src="./logo/Twitter_Social_Icon_Rounded_Square_Color.png" width="50" height="50" alt="Twitter" /></a>'; ?></div>
