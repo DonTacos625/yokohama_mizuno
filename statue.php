@@ -1,5 +1,5 @@
 <table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
-	<tr><div class="label" align="center">個人ステータスの登録</div></tr>
+	<tr><div class="label2" align="center">個人ステータスの登録</div></tr>
 	<tr>
 		<td align="center" ><div class="label">会員番号</div></td>
 		<td><font size=5><?=$my_no ?></font></td>

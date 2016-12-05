@@ -731,11 +731,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div class="contentswrap">
 				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
-						<tr><div class="label" align="center"><font size="4">グループの登録</font></div></tr>
+						<tr><div class="label2" align="center"><font size="4">グループの登録</font></div></tr>
 						<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red">半角数字</font>で入力してください</tr>
 						<tr>
 							<td align="center">
-								<div class="label">家族</div>
+								<div class="label2">家族</div>
 							</td>
 							<td>
 								<input type="text" name="f1" value="<?=$f1 ?>" size="3">
@@ -745,7 +745,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						</tr>
 						<tr>
 							<td align="center">
-								<div class="label">恋人/夫婦</div>
+								<div class="label2">恋人/夫婦</div>
 							</td>
 							<td>
 								<input type="text" name="lo" value="<?=$lo ?>" size="3">
@@ -753,7 +753,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						</tr>
 						<tr>
 							<td align="center">
-								<div class="label">友達グループ1</div>
+								<div class="label2">友達グループ1</div>
 							</td>
 							<td>
 								<input type="text" name="g11" value="<?=$g11 ?>" size="3">
@@ -768,7 +768,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						</tr>
 						<tr>
 							<td align="center">
-								<div class="label">友達グループ2</div>
+								<div class="label2">友達グループ2</div>
 							</td>
 							<td>
 								<input type="text" name="g21" value="<?=$g21 ?>" size="3">

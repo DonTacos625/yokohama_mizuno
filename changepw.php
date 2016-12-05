@@ -106,22 +106,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div class="contentswrap">
 				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="600px">
-						<tr><div class="label" align="center">パスワード変更</div></tr>
+						<tr><div class="label2" align="center">パスワード変更</div></tr>
 						<tr>
-							<td align="center"><div class="label">旧パスワード</div></td>
+							<td align="center"><div class="label2">旧パスワード</div></td>
 							<td>
 								<input type="password" name="oldpw" value="<?=$oldpw ?>"><br>
 							</td>
 						</tr>
 						<tr>
-							<td align="center"><div class="label">新パスワード</div></td>
+							<td align="center"><div class="label2">新パスワード</div></td>
 							<td>
 								<input type="password" name="newpw" value="<?=$newpw ?>"><br>
 								<font size="2">6文字以上かつ半角英[小文字/大文字],数字を混在させたもの</font>
 							</td>
 						</tr>
 						<tr>
-							<td align="center"><div class="label">新パスワード(確認用)</div></td>
+							<td align="center"><div class="label2">新パスワード(確認用)</div></td>
 							<td>
 								<input type="password" name="newpw2" value="<?=$newpw2 ?>"><br>
 								<font size="2">再度新パスワードの入力をお願いします</font>
