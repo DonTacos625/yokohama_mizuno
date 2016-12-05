@@ -40,7 +40,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	if($access_token!=NULL){
 		$usr_id = hash("sha256",htmlspecialchars($user->id));
 		$array = array($usr_id);
-		$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
+		$pgsql->query("SELECT id,no,gender,age,anq FROM friendinfo WHERE id=$1",$array); //検索
 		$row = $pgsql->fetch();
 		if($row){
 			var_dump($row);
@@ -75,8 +75,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	if($first==1){//初回登録時
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/register_info.php' ) ;
 		exit ;
-	}
-	if($first==2){ //それ以外
+	}else{ //それ以外
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/index.php' ) ;
 		exit ;
 	}
