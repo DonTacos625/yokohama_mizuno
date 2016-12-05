@@ -67,9 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<title>パスワード変更</title>
 	<!-- style.cssの読み込み -->
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<div id="head">
 			<?php

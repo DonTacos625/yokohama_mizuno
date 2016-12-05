@@ -10,9 +10,9 @@ $my_no = $_SESSION["my_no"];
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>スポット推薦</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-	<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<?php
 			//----------------------------------------

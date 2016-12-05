@@ -22,9 +22,9 @@ if(isset($_SESSION["my_no"])){
 	<script>
 		if (window.location.hash == "#_=_") window.location.hash = "";
 	</script>
-	<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 	<?php
 	//-----------------------------------------------------

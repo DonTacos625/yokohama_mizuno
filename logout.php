@@ -17,9 +17,9 @@ if (isset($_COOKIE["PHPSESSID"])) {
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ログアウト</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
-		<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<div id ="header.php">
 			<?php

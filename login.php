@@ -47,9 +47,9 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ログインページ</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<?php require_once("analysis.php");?>
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<?php
 			//----------------------------------------
@@ -102,23 +102,9 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 				</tr>
 			</table>
 			<br>
-			<table>
-				<tr>
-					<td>
-						<div class="label" align="center">SNS連帯</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>'; ?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php echo '<a href="' . htmlspecialchars($url) . '">Log in with Twitter!</a>'; ?>
-					</td>
-				</tr>
-			</table>
+			<div class="label" align="center">SNS連帯</div>
+			<div class="icon"><?php echo '<a href="' . htmlspecialchars($loginUrl) . '"><img src="./logo/FB-f-Logo__blue_72.png" width="72" height="72" alt="Facebook" /></a>'; ?></div>
+			<div class="icon"><?php echo '<a href="' . htmlspecialchars($url) . '"><img src="./logo/Twitter_Social_Icon_Rounded_Square_Color.png" width="72" height="72" alt="Twitter" /></a>'; ?></div>
 		</div>
 	</div>
 </body>

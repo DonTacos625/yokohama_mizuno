@@ -69,7 +69,6 @@ function toPhpArray($data)
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 	<script src="https://js.arcgis.com/4.1/"></script>
-	<?php require_once("analysis.php");?>
 	<script>
 		var spot_lng = <? echo $spot_lng?>;
 		var spot_lat = <? echo $spot_lat?>;
@@ -152,8 +151,8 @@ function toPhpArray($data)
 
 </script>
 </head>
-
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<?php
 		require_once('header.php');

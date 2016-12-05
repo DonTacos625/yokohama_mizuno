@@ -28,9 +28,9 @@ session_start(); //セッションスタート
     });
  });
 </script>
-<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<?php
 		//----------------------------------------

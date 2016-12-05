@@ -167,6 +167,11 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	color: #00060C;
 }
 
+.icon{
+	padding:36px;
+}
+
+
 /* ========================================  menuL 左サイドメニュー */
 #menuL {
 	float: left;

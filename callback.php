@@ -93,8 +93,8 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 <html>
 <head>
 	<title>Twitterコールバック</title>
-	<?php require_once("analysis.php");?>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 </body>
 </html>
