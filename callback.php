@@ -37,7 +37,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 	//var_dump( $user );
 	//echo htmlspecialchars($user->id); //id出力
 
-	if(isset($access_token)){
+	if($access_token!=NULL){
 		$usr_id = hash("sha256",htmlspecialchars($user->id));
 		$array = array($usr_id);
 		$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
