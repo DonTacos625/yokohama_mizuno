@@ -47,7 +47,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 			$_SESSION["gender"] = $row["gender"];
 			$_SESSION["age"] = $row["age"];
 			$_SESSION["anq"] = $row["anq"];
-			echo $_SESSION["anq"];
+			$first=2;
 		}else{
 			$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
 			if ($pgsql->rows()>0) {
@@ -73,7 +73,7 @@ if(isset( $_REQUEST['oauth_token']) && !empty( $_GET['oauth_token'] ) && isset( 
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/register_info.php' ) ;
 		exit ;
 	}
-	if(first==2){ //それ以外
+	if($first==2){ //それ以外
 		header( 'Location: https://study-yokohama-sightseeing.herokuapp.com/index.php' ) ;
 		exit ;
 	}
