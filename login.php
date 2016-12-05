@@ -103,8 +103,8 @@ $url = $connection->url('oauth/authenticate', array('oauth_token' => $request_to
 			</table>
 			<br>
 			<div class="label5" align="center">SNS連帯</div>
-				<div class="icon"><?php echo '<a href="' . htmlspecialchars($loginUrl) . '"><img src="./logo/FB-f-Logo__blue_50.png" width="50" height="50" alt="Facebook" /></a>'; ?>
-				<?php echo '<a href="' . htmlspecialchars($url) . '"><img src="./logo/Twitter_Social_Icon_Rounded_Square_Color.png" width="50" height="50" alt="Twitter" /></a>'; ?></div>
+				<div class="icon"><?php echo '<a href="' . htmlspecialchars($loginUrl) . '"><img src="./logo/FB-f-Logo__blue_50.png" width="50" height="50" alt="Facebook" /></a>'; ?></div>
+				<div class="icon"><?php echo '<a href="' . htmlspecialchars($url) . '"><img src="./logo/Twitter_Social_Icon_Rounded_Square_Color.png" width="50" height="50" alt="Twitter" /></a>'; ?></div>
 		</div>
 	</div>
 </body>
