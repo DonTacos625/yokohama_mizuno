@@ -120,20 +120,20 @@ session_start(); //セッションスタート
 								<h4>Facebookをつかう</h4>
 								<ol>
 									<li>ページ上部の項目「ログイン」を押す</li>
-									<li>SNS連帯の項目にある「Log in with Facebook!」を押す</li>
+									<li>SNS連帯の項目にあるFacebookアイコンを押す</li>
 									<li>Facebook側での認証をする</li>
 									<li>初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページへ遷移する</li>
-									<li>2回目以降のログインの際は、同様に「Log in with Facebook!」を押す</li>
+									<li>2回目以降のログインの際は、同様にFacebookアイコンを押す</li>
 								</ol>
 							</div>
 							<div id="122">
 								<h4>Twitterをつかう</h4>
 								<ol>
 									<li>ページ上部の項目「ログイン」を押す</li>
-									<li>SNS連帯の項目にある「Log in with Twitter!」を押す</li>
+									<li>SNS連帯の項目にあるTwitterアイコンを押す</li>
 									<li>Twitter側での認証をする</li>
 									<li>初回ログイン時は自動的に<a href="#2">会員詳細情報編集</a>ページへ遷移する</li>
-									<li>2回目以降のログインの際は、同様に「Log in with Twitter!」を押す</li>
+									<li>2回目以降のログインの際は、同様にTwitterアイコンを押す</li>
 								</ol>
 							</div>
 							<a class="button" href="#index">▲ 目次に戻る</a>
