@@ -3,8 +3,8 @@
 	//  ■：トップページ画面 index.php
 	//======================================================================
 session_start(); //セッションスタート
-require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
-$pgsql = new PostgreSQL;
+//require_once("PostgreSQL.php"); //sql接続用PHPの読み込み
+//$pgsql = new PostgreSQL;
 if(isset($_SESSION["my_no"]))
 	$my_no = $_SESSION["my_no"];
 //echo "工事中です";

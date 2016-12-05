@@ -86,8 +86,8 @@ ul,ol,dl{
 ul.menu_f02{
 	height: 30px;
 	margin: 20px 0px 0px 0px;
-	border-bottom: 5px solid #F4CC0B;
-	background-color: #0066cc;
+	border-bottom: 5px solid #FF82B2;
+	background-color: #ffa3d1;
 }
 
 
@@ -104,14 +104,14 @@ ul.menu_f02 li a{
 	height: 20px;
 	width: 150px;
 	padding: 10px 0px 0px;
-	border-bottom: 5px solid #F4CC0B;
+	border-bottom: 5px solid #FF82B2;
 	font-size: 14px;
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
 	display: block;
 	text-align: center;
-	background-color: #0066cc;
+	background-color: #ffa3d1;
 }
 
 
@@ -124,7 +124,7 @@ ul.menu_f02 li a.nowthis{
 
 ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	padding: 10px 0px 0px;
-	border-bottom: 5px solid #D3FBFE;
+	border-bottom: 5px solid #fff;
 	color: #FFFFFF;
 }
 
@@ -149,7 +149,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	clear: both;
 	padding: 3px 0px 3px 5px;
 	margin: 2em 0px 1em;
-	border-left: 10px solid #F4CC0B;
+	border-left: 10px solid #FF82B2;
 	font-size: 120%;
 	background-color: #F6F6F6;
 }
@@ -242,7 +242,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 .title{
 	padding: 0px 0px 0px 10px;
 	margin: 0px 0px 20px;
-	border-left: 5px solid #0066cc;
+	border-left: 5px solid #ffa3d1;
 }
 .title1{
 	padding: 0px 0px 0px 10px;
@@ -257,16 +257,16 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 .label{
 	padding: 7px 5px 5px 10px;
 	margin: 0px 0px 10px;
-	border-left: 10px solid #F4CC0B;
+	border-left: 10px solid #FF82B2;
 	font-weight: bold;
 	color: #FFFFFF;
-	background-color: #0066cc;
+	background-color: #ffa3d1;
 }
 
 .label2{
 	padding: 7px 5px 5px 10px;
 	margin: 0px 0px 10px;
-	border-left: 10px solid #F4CC0B;
+	border-left: 10px solid #FF82B2;
 	font-weight: bold;
 	color: #FFFFFF;
 	background-color: #3ad63a;
@@ -280,7 +280,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	border-left: 10px solid #ff6666;
 	font-weight: bold;
 	color: #FFFFFF;
-	background-color: #b2ffff;;
+	background-color: #b2ffff;
 }
 
 .label4{
@@ -292,10 +292,10 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 .label5{
 	padding: 7px 5px 5px 10px;
 	margin: 0px 0px 10px;
-	border-left: 10px solid #F4CC0B;
+	border-left: 10px solid #FF82B2;
 	font-weight: bold;
 	color: #FFFFFF;
-	background-color: #0066cc;
+	background-color: #ffa3d1;
 	width:200px;
 }
 
