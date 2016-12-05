@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 	}
 }else{
-	if(isset($_SESSION["my_no"])&&!isset($_SESSION["fb"])){
+	if(isset($_SESSION["my_no"])&&!isset($_SESSION["fb_access_token"])&&!isset($_SESSION["sns"])){
 		$my_no = $_SESSION["my_no"];
 	}else{
 		$access_error = "不正なアクセスです";
