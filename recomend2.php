@@ -36,14 +36,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		//sql文の送信とデータの取り出し
 		$pgsql->query($sql,$array);
 		$row = $pgsql->fetch();
+
 		if($row){
-			for($i=0;$i<8;$i++){ //キャスト
-				$UserTable[$i]=floatval($row[$i]);
+			if($row[0]!=NULL&&$row[1]!=NULL&&$row[2]!=NULL&&$row[3]!=NULL&&$row[4]!=NULL&&$row[5]!=NULL&&$row[6]!=NULL&&$row[7]!=NULL){
+				for($i=0;$i<8;$i++){ //キャスト
+					$UserTable[$i]=floatval($row[$i]);
+				}
+			}else{
+				$error = "選択したグループは登録されていません";
 			}
 		}else{
 			$error = "選択したグループは登録されていません";
-		}
-		if(strlen($error)==0){
+		}if(strlen($error)==0){
 			for($i=0;$i<$c_checknum;$i++){
 				$categorycheck[$i] = intval(htmlspecialchars($c_check[$i]));
 			}
@@ -228,7 +232,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </script>
 </head>
 <body>
-<?php include_once("analyticstracking.php") ?>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="page">
 		<?php
 			//----------------------------------------
