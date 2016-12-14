@@ -9,6 +9,7 @@ if(isset($_SESSION["my_no"])){
 	$my_no = $_SESSION["my_no"];
 	$gender = $_SESSION["gender"];
 	$age = $_SESSION["age"];
+	$anq=$_SESSION["anq"];
 }
 //echo "工事中です";
 //exit;
