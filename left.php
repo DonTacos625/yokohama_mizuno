@@ -9,12 +9,23 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 		$anqURL=getenv("anqURL");
 		if($_SESSION["anq"]==1){
 			echo "<script type='text/javascript'>";
-			echo "window.open('".$anqURL."')";
+			echo "location.href='".$anqURL."'";
 			echo "</script>";
 		}
 	}
 }
 ?>
+<script type="text/javascript">
+	function check(){
+		if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+			return true; // 「OK」時は送信を実行
+		}
+		else{ // 「キャンセル」時の処理
+			window.alert('キャンセルされました'); // 警告ダイアログを表示
+			return false; // 送信を中止
+		}
+	}
+</script>
 <div class="subinfo">
 	<div class="label">あなたの情報</div>
 	<ul>
@@ -62,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(isset($_SESSION["anq"])&&$_SESSION["anq"]==0){
 		echo "<div class='label'>アンケート</div>";
 		echo "<ul>";
-		echo "<form action=".$_SERVER['PHP_SELF']." method='POST' accept-charset='utf-8'>";
+		echo "<form action=".$_SERVER['PHP_SELF']." method='POST' accept-charset='utf-8' onSubmit='return check()'>";
 		echo "<input type='submit' value='アンケートに答える'>";
 		echo "</form>";
 		echo "注意:<br>回答は<font color='red'><b>１度のみ</b></font>です。<br><b>推薦システムを1度以上利用してからご回答下さい</b>";

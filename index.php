@@ -11,8 +11,6 @@ if(isset($_SESSION["my_no"])){
 	$age = $_SESSION["age"];
 	$anq=$_SESSION["anq"];
 }
-//echo "工事中です";
-//exit;
 ?>
 
 <!DOCTYPE html>
