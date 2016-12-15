@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 ?>
 <script type="text/javascript">
 	function check(){
-		if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+		if(window.confirm('アンケートページに遷移しても宜しいですか？')){ // 確認ダイアログを表示
 			return true; // 「OK」時は送信を実行
 		}
 		else{ // 「キャンセル」時の処理
