@@ -51,18 +51,18 @@ if(isset($_SESSION["my_no"])){
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
 					<div class="title">
-					<div id="sitename">横浜みなとみらい観光推薦システム</div>
-						<h5>本運用中</h5>
-						Webサイトの目的</br>
+						<div id="indexsitename">横浜みなとみらい観光推薦システム　<font color="blue">本運用中</font></div>
+						<h6>目的</h6>
 						<p>
 						家族や友達、恋人、ご夫婦など、とくに<font color="red"><b>グループ</b></font>での観光回遊行動を<br>支援するための観光情報の共有と推薦になります。
 						</p>
-						使い方</br>
+						<h6>使い方</h6>
 						<p>
 						皆さまに横浜の観光スポットを推薦することがメインとなります。<br>
 						実際に訪れたことのある観光スポットについてはレビューをお願いします。<br>
 						詳しい使い方は<a href="./howtouse.php" title="使い方">こちら</a>。
 						</p>
+						<h6>連絡先</h6>
 						<p>不具合等ございましたら、下記メールアドレスにご連絡ください。<br>
 						作成者 水谷<br>
 						y.mizutani[アットマーク]uec.ac.jp<br>

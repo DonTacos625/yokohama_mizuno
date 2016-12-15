@@ -167,6 +167,21 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	color: #00060C;
 }
 
+#main h6 {
+	clear: both;
+	padding: 3px 0px 3px 5px;
+	margin: 10px 0px 1em;
+	border-left: 10px solid #FF82B2;
+	font-size: 120%;
+	background-color: #F6F6F6;
+}
+
+#indexsitename {
+	font-size: 25px;
+	font-weight: bold;
+	color: #666666;
+}
+
 .icon{
 	padding:25px;
 	float:left;
