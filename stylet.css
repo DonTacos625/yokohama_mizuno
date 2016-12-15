@@ -187,6 +187,25 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	float:left;
 }
 
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl{
+	padding-left: 15px;
+	margin-bottom: 15px;
+	height: 90px;
+	overflow: auto;
+}
+/*日付設定*/
+#new dt {
+	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
+	float: left;
+	width: 8em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 8em;
+}
 
 /* ========================================  menuL 左サイドメニュー */
 #menuL {
