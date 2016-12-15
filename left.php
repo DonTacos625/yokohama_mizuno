@@ -1,4 +1,20 @@
 <!--左サイドメニュー-->
+<?php
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
+	if(isset($_SESSION["my_no"])&&$_SESSION["anq"]==0){
+		$sql="UPDATE friendinfo SET anq=$1 WHERE no=$2";
+		$array = array(1,$_SESSION["my_no"]);
+		$pgsql -> query($sql,$array);
+		$_SESSION["anq"]=1;
+		$anqURL=getenv("anqURL");
+		if($_SESSION["anq"]==1){
+			echo "<script type='text/javascript'>";
+			echo "window.open('".$anqURL."')";
+			echo "</script>";
+		}
+	}
+}
+?>
 <div class="subinfo">
 	<div class="label">あなたの情報</div>
 	<ul>
@@ -42,15 +58,17 @@
 		}
 		?>
 	</ul>
-	<!--<?php
+	<?php
 	if(isset($_SESSION["anq"])&&$_SESSION["anq"]==0){
 		echo "<div class='label'>アンケート</div>";
 		echo "<ul>";
-		echo "<a href='https://goo.gl/forms/7P4aRZcYafIVZsrT2' title='アンケート'>アンケートに答える</a><br>";
+		echo "<form action=".$_SERVER['PHP_SELF']." method='POST' accept-charset='utf-8'>";
+		echo "<input type='submit' value='アンケートに答える'>";
+		echo "</form>";
 		echo "注意:<br>回答は<font color='red'><b>１度のみ</b></font>です。<br><b>推薦システムを1度以上利用してからご回答下さい</b>";
 		echo "</ul>";
 	}
-	?>-->
+	?>
 	<div class="label">SNS</div>
 	<ul>
 		<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fstudy-yokohama-sightseeing.herokuapp.com%2Findex.php&width=136&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId=783967058409220" width="136" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
