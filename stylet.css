@@ -193,7 +193,7 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 #new dl{
 	padding-left: 15px;
 	margin-bottom: 15px;
-	height: 90px;
+	height: 75px;
 	overflow: auto;
 }
 /*日付設定*/
@@ -202,9 +202,13 @@ ul.menu_f02 li a:hover , ul.menu_f01 li a.nowthis{
 	float: left;
 	width: 8em;
 }
-/*記事設定*/
-#new dd {
-	padding-left: 8em;
+.newicon {
+	background: #F00;
+	color: #FFF;
+	font-size: 10px;
+	padding: 0px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
 }
 
 /* ========================================  menuL 左サイドメニュー */
