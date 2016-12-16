@@ -18,7 +18,7 @@ if(isset($_SESSION["my_no"])){
 <head>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>横浜みなとみらい観光推薦システム</title>
+	<title>横浜みなとみらい観光スポット推薦システム</title>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script>
 		if (window.location.hash == "#_=_") window.location.hash = "";
