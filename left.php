@@ -75,8 +75,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(isset($_SESSION["anq"])&&$_SESSION["anq"]==0){
 		echo "<div class='label'>アンケート</div>";
 		echo "<ul>";
-		echo "<form name='submit_anq' method='POST' accept-charset='utf-8' onSubmit='return check()'>";
-		echo "<input type='submit' value='アンケートに答える'>";
+		echo "<form action=".$_SERVER['PHP_SELF']." method='POST' accept-charset='utf-8' onSubmit='return check()'>";
+		echo "<input type='submit' name='submit_anq' value='アンケートに答える'>";
 		echo "</form>";
 		echo "注意:<br>回答は<font color='red'><b>１度のみ</b></font>です。<br><b>推薦システムを1度以上利用してからご回答下さい</b>";
 		echo "</ul>";

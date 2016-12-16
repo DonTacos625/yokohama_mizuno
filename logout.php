@@ -31,7 +31,7 @@ if (isset($_COOKIE["PHPSESSID"])) {
 			<div id="main">
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
-					みなとみらい観光支援サイトからログアウトしました。
+					ログアウトしました。
 				</div>
 			</div>
 		</div>
