@@ -57,6 +57,8 @@ if(isset($_SESSION["my_no"])){
 						<div id="new">
 							<dl id="newinfo">
 								<dt>2016/12/16</dt>
+								<dd>嗜好情報のバグを解消しました<span class="newicon">NEW</span></dd>
+								<dt>2016/12/16</dt>
 								<dd>トップページの仕様変更・アンケート機能・グループお試し機能追加<span class="newicon">NEW</span></dd>
 								<dt>2016/12/05</dt>
 								<dd>本運用開始</dd>
