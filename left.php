@@ -1,16 +1,18 @@
 <!--左サイドメニュー-->
 <?php
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
-	if(isset($_SESSION["my_no"])&&$_SESSION["anq"]==0){
-		$sql="UPDATE friendinfo SET anq=$1 WHERE no=$2";
-		$array = array(1,$_SESSION["my_no"]);
-		$pgsql -> query($sql,$array);
-		$_SESSION["anq"]=1;
-		$anqURL=getenv("anqURL");
-		if($_SESSION["anq"]==1){
-			echo "<script type='text/javascript'>";
-			echo "location.href='".$anqURL."'";
-			echo "</script>";
+	if(isset($_POST["submit_anq"])){
+		if(isset($_SESSION["my_no"])&&$_SESSION["anq"]==0){
+			$sql="UPDATE friendinfo SET anq=$1 WHERE no=$2";
+			$array = array(1,$_SESSION["my_no"]);
+			$pgsql -> query($sql,$array);
+			$_SESSION["anq"]=1;
+			$anqURL=getenv("anqURL");
+			if($_SESSION["anq"]==1){
+				echo "<script type='text/javascript'>";
+				echo "location.href='".$anqURL."'";
+				echo "</script>";
+			}
 		}
 	}
 }
@@ -73,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(isset($_SESSION["anq"])&&$_SESSION["anq"]==0){
 		echo "<div class='label'>アンケート</div>";
 		echo "<ul>";
-		echo "<form action=".$_SERVER['PHP_SELF']." method='POST' accept-charset='utf-8' onSubmit='return check()'>";
+		echo "<form action=".$_SERVER['PHP_SELF']." name='submit_anq' method='POST' accept-charset='utf-8' onSubmit='return check()'>";
 		echo "<input type='submit' value='アンケートに答える'>";
 		echo "</form>";
 		echo "注意:<br>回答は<font color='red'><b>１度のみ</b></font>です。<br><b>推薦システムを1度以上利用してからご回答下さい</b>";
