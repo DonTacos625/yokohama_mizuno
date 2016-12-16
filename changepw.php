@@ -13,43 +13,44 @@ $error1 = ""; //PW関係
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	if(isset($_POST["change"])){
+		$my_no = $_SESSION["my_no"];
 
-	$my_no = $_SESSION["my_no"];
+		// フォームからデータを受け取る
+		//--------------------------------
+		$oldpw = htmlspecialchars($_POST["oldpw"], ENT_QUOTES); //旧パスワード
+		$newpw = htmlspecialchars($_POST["newpw"], ENT_QUOTES);	//新パスワード
+		$newpw2 = htmlspecialchars($_POST["newpw2"], ENT_QUOTES);	//新パスワード確認
 
-	// フォームからデータを受け取る
-	//--------------------------------
-	$oldpw = htmlspecialchars($_POST["oldpw"], ENT_QUOTES); //旧パスワード
-	$newpw = htmlspecialchars($_POST["newpw"], ENT_QUOTES);	//新パスワード
-	$newpw2 = htmlspecialchars($_POST["newpw2"], ENT_QUOTES);	//新パスワード確認
+		//--------------------------------
+		// □ 入力内容チェック
+		//--------------------------------
 
-	//--------------------------------
-	// □ 入力内容チェック
-	//--------------------------------
-
-	//パスワード
-	if(strlen($oldpw)==0)
-		$error = "旧パスワードが未入力です<br>";
-	else if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $oldpw))
-		$error ="旧パスワードに誤りがあります<br>";
-	else if(strlen($newpw)==0)
-		$error1 = "新パスワードが未入力です<br>";
-	else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $newpw))
-		$error1 = " 新パスワードに誤りがあります<br>";
-	else if($newpw != $newpw2)
-		$error2 = "新パスワードと確認用パスワードが一致しません<br>";
-	else{
-		$sql = "SELECT no,pw FROM friendinfo WHERE no=$1";
-		$array = array($my_no);
-		$pgsql->query($sql,$array);
-		$row = $pgsql->fetch();
-		if($row["pw"]==hash("sha256",$oldpw)){
-			$newpw =hash("sha256",$newpw);
-			$sql = "UPDATE friendinfo SET pw=$1 WHERE no=$2";
-			$array = array($newpw,$my_no);
+		//パスワード
+		if(strlen($oldpw)==0)
+			$error = "旧パスワードが未入力です<br>";
+		else if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $oldpw))
+			$error ="旧パスワードに誤りがあります<br>";
+		else if(strlen($newpw)==0)
+			$error1 = "新パスワードが未入力です<br>";
+		else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $newpw))
+			$error1 = " 新パスワードに誤りがあります<br>";
+		else if($newpw != $newpw2)
+			$error2 = "新パスワードと確認用パスワードが一致しません<br>";
+		else{
+			$sql = "SELECT no,pw FROM friendinfo WHERE no=$1";
+			$array = array($my_no);
 			$pgsql->query($sql,$array);
-			$error = "登録完了";
-		}else{
-			$error = "旧パスワードに誤りがあります<br>";
+			$row = $pgsql->fetch();
+			if($row["pw"]==hash("sha256",$oldpw)){
+				$newpw =hash("sha256",$newpw);
+				$sql = "UPDATE friendinfo SET pw=$1 WHERE no=$2";
+				$array = array($newpw,$my_no);
+				$pgsql->query($sql,$array);
+				$error = "登録完了";
+			}else{
+				$error = "旧パスワードに誤りがあります<br>";
+			}
 		}
 	}
 }else{
@@ -127,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 								<font size="2">再度新パスワードの入力をお願いします</font>
 							</td>
 						</tr>
-						<tr><td align="center" colspan="2"><input type="submit" name="Submit" value="変更する"></td></tr>
+						<tr><td align="center" colspan="2"><input type="submit" name="change" value="変更する"></td></tr>
 					</table>
 				</form>
 			</div>

@@ -82,7 +82,7 @@ $my_no = $_SESSION["my_no"];
 								</SELECT>
 							</p>
 							<p>
-								<input type="submit" name="Submit" value=" 送信 ">
+								<input type="submit" name="recomend" value=" 送信 ">
 							</p>
 						</ul>
 					</form>

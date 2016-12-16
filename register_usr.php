@@ -12,65 +12,66 @@ $error1 = ""; //PW関係
 
 // POSTメソッドで送信された場合は書き込み処理を実行する
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	if(isset($_POST["submit_user"])){
+		// フォームからデータを受け取る
+		//--------------------------------
+		$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
+		$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
+		$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
 
-	// フォームからデータを受け取る
-	//--------------------------------
-	$usr_id = htmlspecialchars($_POST["usr_id"], ENT_QUOTES);	//ID
-	$usr_pw = htmlspecialchars($_POST["usr_pw"], ENT_QUOTES);	//パスワード
-	$usr_pw2 = htmlspecialchars($_POST["usr_pw2"], ENT_QUOTES);	//パスワード確認
+		//--------------------------------
+		// □ 入力内容チェック
+		//--------------------------------
 
-	//--------------------------------
-	// □ 入力内容チェック
-	//--------------------------------
+		//パスワード
+		if(strlen($usr_pw)==0)
+			$error1 = "パスワードが未入力です<br>";
+		else if(strlen($usr_pw)==0)
+			$error1 = "確認用パスワードが未入力です<br>";
+		else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $usr_pw))
+			$error1 = "パスワードに誤りがあります<br>";
+		else if($usr_pw != $usr_pw2)
+			$error1 = "パスワードが一致しません<br>";
+		else
+			$error1 = "";
 
-	//パスワード
-	if(strlen($usr_pw)==0)
-		$error1 = "パスワードが未入力です<br>";
-	else if(strlen($usr_pw)==0)
-		$error1 = "確認用パスワードが未入力です<br>";
-	else if (!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/', $usr_pw))
-		$error1 = "パスワードに誤りがあります<br>";
-	else if($usr_pw != $usr_pw2)
-		$error1 = "パスワードが一致しません<br>";
-	else
-		$error1 = "";
-
-	//ユーザID
-	if (strlen($usr_id)==0)
-		$error = "ユーザIDが未入力です<br>";
-	else if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id))
-		$error = "IDに誤りがあります<br>";
-	else{
-		$array = array($usr_id);
-		$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
-		$row = $pgsql->fetch();
-		if ($row)
-			$error = "このユーザIDは既に使われています<br>";
-	}
-	//登録
-	if (strlen($error)==0 and strlen($error1)==0){
-	//--------------------------------------------
-	// □ 会員情報テーブル(friendinfo)に登録
-	//--------------------------------------------
-		if (!empty($usr_id) and !empty($usr_pw)) {
-			$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
-			if ($pgsql->rows()>0) {
-				$row = $pgsql->fetch();
-				$no = $row['no'];
-				$no++;
-			}
-			//hash化
-			$usr_pw = hash("sha256",$usr_pw);
-			// データを追加する
-			$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
-			$array = array($no,$usr_id,$usr_pw,0);
-			$pgsql->query($sql,$array);
-			//Sessionの登録
-			$_SESSION["my_no"] = $row["no"];
-			$_SESSION["anq"] = $row["anq"];
+		//ユーザID
+		if (strlen($usr_id)==0)
+			$error = "ユーザIDが未入力です<br>";
+		else if (!preg_match('/\A[a-z\d]{5,30}+\z/i', $usr_id))
+			$error = "IDに誤りがあります<br>";
+		else{
+			$array = array($usr_id);
+			$pgsql->query("SELECT id FROM friendinfo WHERE id=$1",$array); //検索
+			$row = $pgsql->fetch();
+			if ($row)
+				$error = "このユーザIDは既に使われています<br>";
 		}
-		header("Location: ./register_info.php");
-		exit;
+		//登録
+		if (strlen($error)==0 and strlen($error1)==0){
+		//--------------------------------------------
+		// □ 会員情報テーブル(friendinfo)に登録
+		//--------------------------------------------
+			if (!empty($usr_id) and !empty($usr_pw)) {
+				$pgsql->query_null("SELECT MAX(no) AS no FROM friendinfo");
+				if ($pgsql->rows()>0) {
+					$row = $pgsql->fetch();
+					$no = $row['no'];
+					$no++;
+				}
+				//hash化
+				$usr_pw = hash("sha256",$usr_pw);
+				// データを追加する
+				$sql = "INSERT INTO friendinfo(no,id,pw,anq) VALUES($1,$2,$3,$4)";
+				$array = array($no,$usr_id,$usr_pw,0);
+				$pgsql->query($sql,$array);
+				//Sessionの登録
+				$_SESSION["my_no"] = $row["no"];
+				$_SESSION["anq"] = $row["anq"];
+			}
+			header("Location: ./register_info.php");
+			exit;
+		}
 	}
 }
 ?>
@@ -127,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 								<font size="2">もう一度パスワードの入力をお願いします</font>
 							</td>
 						</tr>
-						<tr><td align="center" colspan="2"><input type="submit" name="Submit" value="登録する"></td></tr>
+						<tr><td align="center" colspan="2"><input type="submit" name="submit_user" value="登録する"></td></tr>
 					</table>
 				</form>
 			</div>
