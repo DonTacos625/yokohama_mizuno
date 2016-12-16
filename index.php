@@ -52,7 +52,7 @@ if(isset($_SESSION["my_no"])){
 				<!-- #main 本文スペース -->
 				<div class="contentswrap">
 					<div class="title">
-						<div id="indexsitename">横浜みなとみらい観光推薦システム　<font color="blue">本運用中</font></div>
+						<div id="indexsitename">横浜みなとみらい観光スポット推薦システム　<font color="blue">本運用中</font></div>
 						<h6>更新履歴</h6>
 						<div id="new">
 							<dl id="newinfo">
