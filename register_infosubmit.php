@@ -85,7 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					if($error != "登録が完了しました."){
 						echo "<font size=\"6\" color=\"#da0b00\">{$error}</font><p>";
 					}else{
-						echo "登録が完了しました";
+						echo "登録が完了しました。<br>";
+						echo "この情報は<a href='./mypage.php' title='マイページ'>マイページ</a>の「会員詳細情報編集」よりいつでも変更可能です。"
 						echo "</dvi></div></body></html>";
 						exit;
 					}

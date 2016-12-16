@@ -240,7 +240,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			//----------------------------------------
 		require_once("./header.php");
 		if(strlen($error)!=0){
-			echo $error;
+			if($error != "選択したグループは登録されていません"){
+				echo $error;
+			}else{
+				echo $error;
+				echo "<a href='./register_group.php' title='グループ登録'>こちら</a>よりグループの登録をしてください";
+			}
 			echo "</div></body></html>";
 			exit;
 		}

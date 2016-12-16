@@ -638,6 +638,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ユーザ詳細情報登録</title>
 	<link rel="stylesheet" type="text/css" href="stylet.css"></link>
+	<script type="text/javascript">
+		function tbox1(){
+			document.group.f1.value="7";
+			document.group.f2.value="1";
+			document.group.f3.value="5";
+			document.group.lo.value="1";
+			document.group.g11.value="2";
+			document.group.g12.value="3";
+			document.group.g13.value="4";
+			document.group.g14.value="16";
+			document.group.g15.value="43";
+		}
+	</script>
 </head>
 <body>
 <?php include_once("analyticstracking.php") ?>
@@ -732,7 +745,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
 						<tr><div class="label2" align="center"><font size="4">グループの登録</font></div></tr>
-						<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red">半角数字</font>で入力してください</tr>
+						<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red"><b>半角数字</b></font>で入力してください<br>機能を<font color="blue"><b>お試し</b></font>で使ってみたい方は<input type="button" value="自動入力" onclick="tbox1()">を押し、「登録する」を押してください。</tr>
 						<tr>
 							<td align="center">
 								<div class="label2">家族</div>
