@@ -15,7 +15,9 @@
 
 		$registerinfo ="register_info";
 		$registerinfoname ="会員詳細情報編集";
-		$registerinfotag = '<a href="'.$registerinfo.'.php">会員詳細情報編集</a>';
+
+		$registergroup ="register_group";
+		$registergroupname ="グループ登録・編集";
 
 		$localinfo ="localinfo";
 		$localinfoname = "観光スポットカテゴリー選択";
@@ -66,6 +68,8 @@
 			return $toppagetag.$arrow.$logintag.$arrow.$registerusername;
 		if($url == $registerinfo) //会員詳細情報編集
 			return $toppagetag.$arrow.$mypagetag.$arrow.$registerinfoname;
+		if($url == $registergroup) //グループ登録・編集
+			return $toppagetag.$arrow.$mypagetag.$arrow.$registergroupname;
 		if($url == $recomend1) //推薦項目選択
 			return $toppagetag.$arrow.$recomend1name;
 		if($url == $recomend2) //推薦一覧

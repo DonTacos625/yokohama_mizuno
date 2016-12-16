@@ -714,7 +714,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				exit;
 			}
 			require_once("linkplace.php"); //現在地表示用php
-			echo pwd("fb_register"); //現在値の表示
+			echo pwd("register_group"); //現在値の表示
 			echo "<br>";
 
 			if (strlen($error)>0||strlen($error1)>0||strlen($error2)>0||strlen($error3)>0){ //エラーメッセージの出力
