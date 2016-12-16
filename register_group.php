@@ -742,7 +742,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<div id="main">
 			<!-- #main 本文スペース -->
 			<div class="contentswrap">
-				<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+				<<form name="group" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<table align="center" border="0" cellspacing="3" cellpadding="3"  width="500px">
 						<tr><div class="label2" align="center"><font size="4">グループの登録</font></div></tr>
 						<tr><font color="red">自分の番号以外</font>の会員番号を<font color="red"><b>半角数字</b></font>で入力してください<br>機能を<font color="blue"><b>お試し</b></font>で使ってみたい方は<input type="button" value="自動入力" onclick="tbox1()">を押し、「登録する」を押してください。</tr>
