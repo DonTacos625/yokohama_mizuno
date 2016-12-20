@@ -40,26 +40,7 @@ $my_no = $_SESSION["my_no"];
 			</div>
 			<div id ="main">
 				<div class ="contentswrap">
-					<!--<form name="category" method="get" action="./localinfo2.php">
-						<ul><h4>カテゴリーをお選びください。</h4></ul>
-						<ul>
-							<p>
-								<input type="radio" name="c_check" value="1" checked> 飲食<br>
-								<input type="radio" name="c_check" value="2"> ショッピング<br>
-								<input type="radio" name="c_check" value="3"> テーマパーク・公園<br>
-								<input type="radio" name="c_check" value="4"> 名所・史跡<br>
-								<input type="radio" name="c_check" value="5"> 芸術・博物館<br>
-								<input type="radio" name="c_check" value="6"> その他<br>
-							</p>
-						</ul>
-						<ul>
-						<p>
-								<input type="submit" name="submit" value="送信">
-						</p>
-						</ul>
-					</form>
-					-->
-					<div class="label2" align="center">カテゴリー一覧</div>
+					<h6>カテゴリーから探す</h6>
 					<ul>
 						<li><a href="./localinfo2.php?c_check=1">飲食</a></li>
 						<li><a href="./localinfo2.php?c_check=2">ショッピング</a></li>
@@ -68,6 +49,8 @@ $my_no = $_SESSION["my_no"];
 						<li><a href="./localinfo2.php?c_check=5">芸術・博物館</a></li>
 						<li><a href="./localinfo2.php?c_check=6">その他</a></li>
 					</ul>
+					<h6>地図から探す</h6>
+					<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="yokohama_map" src="//uec-yamamoto.maps.arcgis.com/apps/Embed/index.html?webmap=c09c8c1dd8bc4a708e69d7a74ea1605e&amp;extent=139.6153,35.4369,139.6627,35.4645&amp;zoom=true&amp;scale=false&amp;legendlayers=true&amp;disable_scroll=true&amp;theme=light"></iframe>
 				</div>
 			</div>
 		</div>
