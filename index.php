@@ -56,10 +56,12 @@ if(isset($_SESSION["my_no"])){
 						<h6>更新履歴</h6>
 						<div id="new">
 							<dl id="newinfo">
+								<dt>2016/12/21</dt>
+								<dd>観光スポットの閲覧機能で、地図からの検索が可能になりました<span class="newicon">NEW</span></dd>
 								<dt>2016/12/16</dt>
-								<dd>嗜好情報のバグを解消しました<span class="newicon">NEW</span></dd>
+								<dd>嗜好情報のバグを解消しました</dd>
 								<dt>2016/12/16</dt>
-								<dd>トップページの仕様変更・アンケート機能・グループお試し機能追加<span class="newicon">NEW</span></dd>
+								<dd>トップページの仕様変更・アンケート機能・グループお試し機能追加</dd>
 								<dt>2016/12/05</dt>
 								<dd>本運用開始</dd>
 								<dt>2016/12/02</dt>
